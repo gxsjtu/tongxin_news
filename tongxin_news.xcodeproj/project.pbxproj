@@ -8,11 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		35C712181B8595B3004B267A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712171B8595B3004B267A /* AppDelegate.swift */; };
-		35C7121A1B8595B3004B267A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712191B8595B3004B267A /* ViewController.swift */; };
 		35C7121D1B8595B3004B267A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121B1B8595B3004B267A /* Main.storyboard */; };
 		35C7121F1B8595B3004B267A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121E1B8595B3004B267A /* Images.xcassets */; };
-		35C712221B8595B3004B267A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35C712201B8595B3004B267A /* LaunchScreen.xib */; };
 		35C7122E1B8595B3004B267A /* tongxin_newsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7122D1B8595B3004B267A /* tongxin_newsTests.swift */; };
+		35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712401B85C0BE004B267A /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +25,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		35C712121B8595B3004B267A /* tongxin_news.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tongxin_news.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35C712121B8595B3004B267A /* 同鑫资讯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "同鑫资讯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C712161B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35C712171B8595B3004B267A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		35C712191B8595B3004B267A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		35C7121C1B8595B3004B267A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35C7121E1B8595B3004B267A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		35C712211B8595B3004B267A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		35C712271B8595B3004B267A /* tongxin_newsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tongxin_newsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C7122C1B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35C7122D1B8595B3004B267A /* tongxin_newsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tongxin_newsTests.swift; sourceTree = "<group>"; };
+		35C712401B85C0BE004B267A /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +66,7 @@
 		35C712131B8595B3004B267A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				35C712121B8595B3004B267A /* tongxin_news.app */,
+				35C712121B8595B3004B267A /* 同鑫资讯.app */,
 				35C712271B8595B3004B267A /* tongxin_newsTests.xctest */,
 			);
 			name = Products;
@@ -78,11 +76,10 @@
 			isa = PBXGroup;
 			children = (
 				35C712171B8595B3004B267A /* AppDelegate.swift */,
-				35C712191B8595B3004B267A /* ViewController.swift */,
 				35C7121B1B8595B3004B267A /* Main.storyboard */,
 				35C7121E1B8595B3004B267A /* Images.xcassets */,
-				35C712201B8595B3004B267A /* LaunchScreen.xib */,
 				35C712151B8595B3004B267A /* Supporting Files */,
+				35C712401B85C0BE004B267A /* LogInViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -129,7 +126,7 @@
 			);
 			name = tongxin_news;
 			productName = tongxin_news;
-			productReference = 35C712121B8595B3004B267A /* tongxin_news.app */;
+			productReference = 35C712121B8595B3004B267A /* 同鑫资讯.app */;
 			productType = "com.apple.product-type.application";
 		};
 		35C712261B8595B3004B267A /* tongxin_newsTests */ = {
@@ -193,7 +190,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				35C7121D1B8595B3004B267A /* Main.storyboard in Resources */,
-				35C712221B8595B3004B267A /* LaunchScreen.xib in Resources */,
 				35C7121F1B8595B3004B267A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -212,7 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35C7121A1B8595B3004B267A /* ViewController.swift in Sources */,
+				35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */,
 				35C712181B8595B3004B267A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,14 +238,6 @@
 				35C7121C1B8595B3004B267A /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		35C712201B8595B3004B267A /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				35C712211B8595B3004B267A /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -340,10 +328,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = tongxin_news/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "同鑫资讯";
 			};
 			name = Debug;
 		};
@@ -351,10 +340,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = tongxin_news/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "同鑫资讯";
 			};
 			name = Release;
 		};

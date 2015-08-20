@@ -16,6 +16,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        if let isLoggedIn = NSUserDefaults.standardUserDefaults().stringForKey("isLoggedIn")
+        {
+            if isLoggedIn == "yes"
+            {
+                return true
+            }
+        }
+        if let logInVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
+        {
+            self.window?.rootViewController = logInVC
+        }
         return true
     }
 
