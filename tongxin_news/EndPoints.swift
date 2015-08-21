@@ -11,4 +11,5 @@ import Foundation
 enum EndPoints: String
 {
     case SignIn = "http://172.20.68.245:8077/Handlers/LoginHandler.ashx"
+    case UserSet = "http://172.20.68.245:8077/Handlers/UserInfoHandler.ashx"
 }

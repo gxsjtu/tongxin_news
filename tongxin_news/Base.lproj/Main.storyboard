@@ -273,8 +273,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="我" image="user" id="jHp-CH-KFX"/>
                     <connections>
-                        <outlet property="TxtDateValue" destination="GXK-p1-Nvu" id="KG3-Qz-XR9"/>
-                        <outlet property="TxtMoblie" destination="7qz-UU-gq7" id="zXr-W9-AVb"/>
+                        <outlet property="TxtDateValue" destination="GXK-p1-Nvu" id="dGa-QP-LaG"/>
+                        <outlet property="TxtMobile" destination="7qz-UU-gq7" id="aco-lf-Iwz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMA-ZO-RTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
