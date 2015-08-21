@@ -17,8 +17,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lblMobile: UITextField!
     @IBOutlet weak var lblPassword: UITextField!
     
-    var mobile = ""
-    var password = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,9 +25,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         imgLogInLogo.image = UIImage(named: "logo")
         btnLogInName.delegate = self
         btnLogInPwd.delegate = self
-        
-        mobile = lblMobile.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        password = lblPassword.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +48,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     */
 
     @IBAction func didLogInClicked(sender: AnyObject) {
+        let mobile = lblMobile.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let password = lblPassword.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         if mobile == ""
         {
             let alert = SKTipAlertView()
@@ -64,7 +61,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         {
             let alert = SKTipAlertView()
             alert.showRedNotificationForString("密码不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-            return 
+            return
         }
         
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -88,7 +85,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                         else
                         {
                             NSUserDefaults.standardUserDefaults().setObject("yes", forKey: "isLoggedIn")
-                            NSUserDefaults.standardUserDefaults().setObject(self.mobile, forKey: "mobile")
+                            NSUserDefaults.standardUserDefaults().setObject(mobile, forKey: "mobile")
                             //转向home页面
                             if let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("HomeTabBarVC") as? HomeTabBarViewController
                             {
