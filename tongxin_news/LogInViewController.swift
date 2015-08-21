@@ -68,6 +68,10 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                         else
                         {
                             NSUserDefaults.standardUserDefaults().setObject("yes", forKey: "isLoggedIn")
+                            if let delegate = UIApplication.sharedApplication().delegate as? AppDelegate
+                            {
+                                delegate.mobile = self.lblMobile.text
+                            }
                             //转向home页面
                             if let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("HomeTabBarVC") as? HomeTabBarViewController
                             {
