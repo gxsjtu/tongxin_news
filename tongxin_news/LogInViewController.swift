@@ -64,7 +64,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         {
             let alert = SKTipAlertView()
             alert.showRedNotificationForString("密码不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-            return 
+            return
         }
         
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
