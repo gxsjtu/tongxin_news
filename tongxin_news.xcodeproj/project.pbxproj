@@ -31,6 +31,7 @@
 		35C712921B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7128E1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m */; };
 		35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */; };
 		35C712971B86CC79004B267A /* MXPullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712961B86CC79004B267A /* MXPullDownMenu.m */; };
+		35C712991B86CF09004B267A /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712981B86CF09004B267A /* InboxViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +70,7 @@
 		35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListLabelCell.m; sourceTree = "<group>"; };
 		35C712951B86CC79004B267A /* MXPullDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXPullDownMenu.h; sourceTree = "<group>"; };
 		35C712961B86CC79004B267A /* MXPullDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXPullDownMenu.m; sourceTree = "<group>"; };
+		35C712981B86CF09004B267A /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				35C7127C1B86B008004B267A /* EndPoints.swift */,
 				35C712401B85C0BE004B267A /* LogInViewController.swift */,
 				35C712811B86B126004B267A /* HomeTabBarViewController.swift */,
+				35C712981B86CF09004B267A /* InboxViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				35C712761B86AFA5004B267A /* ParameterEncoding.swift in Sources */,
 				35C7127D1B86B008004B267A /* EndPoints.swift in Sources */,
 				35C712821B86B126004B267A /* HomeTabBarViewController.swift in Sources */,
+				35C712991B86CF09004B267A /* InboxViewController.swift in Sources */,
 				35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */,
 				35C712721B86AFA5004B267A /* Alamofire.swift in Sources */,
 				35C712791B86AFA5004B267A /* ServerTrustPolicy.swift in Sources */,
