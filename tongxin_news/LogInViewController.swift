@@ -53,6 +53,20 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     */
 
     @IBAction func didLogInClicked(sender: AnyObject) {
+        if mobile == ""
+        {
+            let alert = SKTipAlertView()
+            alert.showRedNotificationForString("手机号不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+            return
+        }
+        
+        if password == ""
+        {
+            let alert = SKTipAlertView()
+            alert.showRedNotificationForString("密码不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+            return 
+        }
+        
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile, "password": password, "method": "signin"])
             .responseJSON { (request, response, data, error) in
