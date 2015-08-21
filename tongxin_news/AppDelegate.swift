@@ -16,9 +16,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound |
-            UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
+//        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound |
+//            UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
 
+        var systemVesion : NSString = UIDevice.currentDevice().systemVersion
+        if systemVesion.doubleValue < 8.0{
+            UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound | UIRemoteNotificationType.Badge)
+            UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationType.Alert)
+        }else{
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+            var userNotificationSettings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge, categories: nil)
+            UIApplication.sharedApplication().registerUserNotificationSettings(userNotificationSettings)
+        }
+        
+        
         if let isLoggedIn = NSUserDefaults.standardUserDefaults().stringForKey("isLoggedIn")
         {
             if isLoggedIn == "yes"
@@ -63,5 +74,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         println(deviceToken)
     }
+    
+    //注册消息推送失败
+    
+    func application(application: UIApplication,didFailToRegisterForRemoteNotificationsWithError error:NSError)
+    
+    {
+    
+    println("Register Remote Notifications error:");
+    
+    //    NSLog(@"Register Remote Notifications error:{%@}",error.localizedDescription);
+    
+    }
+    
+    
 }
 

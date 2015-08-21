@@ -41,9 +41,6 @@ func IsLogin(){
         {
             self.presentViewController(loginVC, animated: true, completion: nil)
         }
-        request(.GET, EndPoints.UserSet.rawValue, parameters: ["mobile": "aa", "password": "aa", "method": "signin"])
-            .responseJSON { (request, response, data, error) in
-        }
     }
     else
     {
@@ -68,5 +65,16 @@ func IsLogin(){
                 
            }
     }
+    }
+    
+    @IBAction func LoginOutClick(sender: AnyObject) {
+        //点击退出按钮删除存储的登录用户信息
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("isLoggedIn")
+        NSUserDefaults.standardUserDefaults().removeObjectForKey("mobile")
+        //转向login页面
+        if let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
+        {
+            self.presentViewController(loginVC, animated: true, completion: nil)
+        }
     }
 }
