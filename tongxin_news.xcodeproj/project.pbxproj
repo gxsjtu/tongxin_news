@@ -10,19 +10,8 @@
 		35C712181B8595B3004B267A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712171B8595B3004B267A /* AppDelegate.swift */; };
 		35C7121D1B8595B3004B267A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121B1B8595B3004B267A /* Main.storyboard */; };
 		35C7121F1B8595B3004B267A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121E1B8595B3004B267A /* Images.xcassets */; };
-		35C7122E1B8595B3004B267A /* tongxin_newsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7122D1B8595B3004B267A /* tongxin_newsTests.swift */; };
 		35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712401B85C0BE004B267A /* LogInViewController.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		35C712281B8595B3004B267A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 35C7120A1B8595B3004B267A /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 35C712111B8595B3004B267A;
-			remoteInfo = tongxin_news;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		35C712121B8595B3004B267A /* 同鑫资讯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "同鑫资讯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -30,21 +19,11 @@
 		35C712171B8595B3004B267A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35C7121C1B8595B3004B267A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35C7121E1B8595B3004B267A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		35C712271B8595B3004B267A /* tongxin_newsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = tongxin_newsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		35C7122C1B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		35C7122D1B8595B3004B267A /* tongxin_newsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tongxin_newsTests.swift; sourceTree = "<group>"; };
 		35C712401B85C0BE004B267A /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		35C7120F1B8595B3004B267A /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		35C712241B8595B3004B267A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,7 +37,6 @@
 			isa = PBXGroup;
 			children = (
 				35C712141B8595B3004B267A /* tongxin_news */,
-				35C7122A1B8595B3004B267A /* tongxin_newsTests */,
 				35C712131B8595B3004B267A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,7 +45,6 @@
 			isa = PBXGroup;
 			children = (
 				35C712121B8595B3004B267A /* 同鑫资讯.app */,
-				35C712271B8595B3004B267A /* tongxin_newsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,23 +69,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		35C7122A1B8595B3004B267A /* tongxin_newsTests */ = {
-			isa = PBXGroup;
-			children = (
-				35C7122D1B8595B3004B267A /* tongxin_newsTests.swift */,
-				35C7122B1B8595B3004B267A /* Supporting Files */,
-			);
-			path = tongxin_newsTests;
-			sourceTree = "<group>";
-		};
-		35C7122B1B8595B3004B267A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				35C7122C1B8595B3004B267A /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,24 +89,6 @@
 			productReference = 35C712121B8595B3004B267A /* 同鑫资讯.app */;
 			productType = "com.apple.product-type.application";
 		};
-		35C712261B8595B3004B267A /* tongxin_newsTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 35C712341B8595B3004B267A /* Build configuration list for PBXNativeTarget "tongxin_newsTests" */;
-			buildPhases = (
-				35C712231B8595B3004B267A /* Sources */,
-				35C712241B8595B3004B267A /* Frameworks */,
-				35C712251B8595B3004B267A /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				35C712291B8595B3004B267A /* PBXTargetDependency */,
-			);
-			name = tongxin_newsTests;
-			productName = tongxin_newsTests;
-			productReference = 35C712271B8595B3004B267A /* tongxin_newsTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,10 +100,6 @@
 				TargetAttributes = {
 					35C712111B8595B3004B267A = {
 						CreatedOnToolsVersion = 6.4;
-					};
-					35C712261B8595B3004B267A = {
-						CreatedOnToolsVersion = 6.4;
-						TestTargetID = 35C712111B8595B3004B267A;
 					};
 				};
 			};
@@ -179,7 +117,6 @@
 			projectRoot = "";
 			targets = (
 				35C712111B8595B3004B267A /* tongxin_news */,
-				35C712261B8595B3004B267A /* tongxin_newsTests */,
 			);
 		};
 /* End PBXProject section */
@@ -191,13 +128,6 @@
 			files = (
 				35C7121D1B8595B3004B267A /* Main.storyboard in Resources */,
 				35C7121F1B8595B3004B267A /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		35C712251B8595B3004B267A /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,23 +143,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		35C712231B8595B3004B267A /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				35C7122E1B8595B3004B267A /* tongxin_newsTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		35C712291B8595B3004B267A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 35C712111B8595B3004B267A /* tongxin_news */;
-			targetProxy = 35C712281B8595B3004B267A /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		35C7121B1B8595B3004B267A /* Main.storyboard */ = {
@@ -348,40 +262,6 @@
 			};
 			name = Release;
 		};
-		35C712351B8595B3004B267A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = tongxin_newsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tongxin_news.app/tongxin_news";
-			};
-			name = Debug;
-		};
-		35C712361B8595B3004B267A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = tongxin_newsTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tongxin_news.app/tongxin_news";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -399,15 +279,6 @@
 			buildConfigurations = (
 				35C712321B8595B3004B267A /* Debug */,
 				35C712331B8595B3004B267A /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		35C712341B8595B3004B267A /* Build configuration list for PBXNativeTarget "tongxin_newsTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				35C712351B8595B3004B267A /* Debug */,
-				35C712361B8595B3004B267A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

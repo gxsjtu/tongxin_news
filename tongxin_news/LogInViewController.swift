@@ -22,7 +22,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         imgLogInLogo.image = UIImage(named: "logo")
         btnLogInName.delegate = self
         btnLogInPwd.delegate = self
-        
     }
 
     override func didReceiveMemoryWarning() {
