@@ -26,6 +26,7 @@
 		35C7127D1B86B008004B267A /* EndPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7127C1B86B008004B267A /* EndPoints.swift */; };
 		35C712801B86B09E004B267A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7127F1B86B09E004B267A /* SwiftyJSON.swift */; };
 		35C712821B86B126004B267A /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712811B86B126004B267A /* HomeTabBarViewController.swift */; };
+		35C712861B86B2BE004B267A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712851B86B2BE004B267A /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		35C7127C1B86B008004B267A /* EndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
 		35C7127F1B86B09E004B267A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		35C712811B86B126004B267A /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
+		35C712841B86B2BE004B267A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		35C712851B86B2BE004B267A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,16 +88,17 @@
 		35C712141B8595B3004B267A /* tongxin_news */ = {
 			isa = PBXGroup;
 			children = (
+				35C712831B86B2AE004B267A /* MBProgressHUD */,
 				35C712151B8595B3004B267A /* Supporting Files */,
 				35C7127E1B86B077004B267A /* SwiftyJSON */,
 				35C712671B86AF12004B267A /* Alamofire */,
 				35C7125F1B86AEB7004B267A /* SKAlertView */,
 				35C712171B8595B3004B267A /* AppDelegate.swift */,
+				35C712601B86AEE8004B267A /* tongxin_news-Bridging-Header.h */,
 				35C7121B1B8595B3004B267A /* Main.storyboard */,
 				35C7121E1B8595B3004B267A /* Images.xcassets */,
 				35C7127C1B86B008004B267A /* EndPoints.swift */,
 				35C712401B85C0BE004B267A /* LogInViewController.swift */,
-				35C712601B86AEE8004B267A /* tongxin_news-Bridging-Header.h */,
 				35C712811B86B126004B267A /* HomeTabBarViewController.swift */,
 			);
 			path = tongxin_news;
@@ -142,6 +146,15 @@
 				35C7127F1B86B09E004B267A /* SwiftyJSON.swift */,
 			);
 			name = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		35C712831B86B2AE004B267A /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				35C712841B86B2BE004B267A /* MBProgressHUD.h */,
+				35C712851B86B2BE004B267A /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +239,7 @@
 				35C712731B86AFA5004B267A /* Download.swift in Sources */,
 				35C712741B86AFA5004B267A /* Manager.swift in Sources */,
 				35C712801B86B09E004B267A /* SwiftyJSON.swift in Sources */,
+				35C712861B86B2BE004B267A /* MBProgressHUD.m in Sources */,
 				35C712771B86AFA5004B267A /* Request.swift in Sources */,
 				35C712781B86AFA5004B267A /* ResponseSerialization.swift in Sources */,
 				35C712181B8595B3004B267A /* AppDelegate.swift in Sources */,

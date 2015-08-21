@@ -47,6 +47,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     */
 
     @IBAction func didLogInClicked(sender: AnyObject) {
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": lblMobile.text, "password": lblPassword.text, "method": "signin"])
             .responseJSON { (request, response, data, error) in
                 if let anError = error
@@ -76,5 +77,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
         }
+        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
     }
 }
