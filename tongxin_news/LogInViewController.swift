@@ -50,6 +50,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": lblMobile.text, "password": lblPassword.text, "method": "signin"])
             .responseJSON { (request, response, data, error) in
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error
                 {
                     println(anError)
@@ -63,7 +64,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                         {
                             let alert = SKTipAlertView()
                             alert.showRedNotificationForString("账号密码错误，请重新输入！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                            return
                         }
                         else
                         {
@@ -77,6 +77,5 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
         }
-        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
     }
 }

@@ -118,7 +118,7 @@
             </objects>
             <point key="canvasLocation" x="422" y="935"/>
         </scene>
-        <!--Item 1-->
+        <!--收件箱-->
         <scene sceneID="FHl-Pg-2HT">
             <objects>
                 <viewController id="GGb-re-f6b" customClass="HomeTabBarViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
@@ -131,7 +131,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="t9X-c4-gt8"/>
+                    <tabBarItem key="tabBarItem" title="收件箱" image="box" selectedImage="box" id="t9X-c4-gt8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QtG-B4-m2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,6 +157,9 @@
             <point key="canvasLocation" x="-118" y="620"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="box" width="32" height="32"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
