@@ -14,6 +14,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var btnLogInName: UITextField!
     @IBOutlet weak var imgLogInBg: UIImageView!
     @IBOutlet weak var imgLogInLogo: UIImageView!
+    @IBOutlet weak var lblMobile: UITextField!
+    @IBOutlet weak var lblPassword: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,4 +46,42 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
     */
 
+    @IBAction func didLogInClicked(sender: AnyObject) {
+        request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": lblMobile.text, "password": lblPassword.text, "method": "signin"])
+            .responseJSON { (request, response, data, error) in
+                if let anError = error
+                {
+                    println(anError)
+                }
+                else if let data: AnyObject = data
+                {
+                    let res = JSON(data)
+                    if let result = res["result"].string
+                    {
+                        if result == "error"
+                        {
+                            let alert = SKTipAlertView()
+                            alert.showRedNotificationForString("账号密码错误，请重新输入！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                            return
+                        }
+                        else
+                        {
+                            if let appId = res["appId"].string
+                            {
+                                NSUserDefaults.standardUserDefaults().setObject(appId, forKey: "appId")
+                            }
+                            if let appSecret = res["appSecret"].string
+                            {
+                                NSUserDefaults.standardUserDefaults().setObject(appSecret, forKey: "appSecret")
+                            }
+                            //转向home页面
+                            if let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("HomeTabBarVC") as? HomeTabBarViewController
+                            {
+                                self.presentViewController(homeVC, animated: true, completion: nil)
+                            }
+                        }
+                    }
+                }
+        }
+    }
 }

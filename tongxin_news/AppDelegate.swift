@@ -20,6 +20,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         {
             if isLoggedIn == "yes"
             {
+                //转向home页面
+                if let homeVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("HomeTabBarVC") as? HomeTabBarViewController
+                {
+                    self.window?.rootViewController = homeVC
+                }
                 return true
             }
         }

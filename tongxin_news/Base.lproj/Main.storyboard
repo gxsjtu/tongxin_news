@@ -47,6 +47,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="didLogInClicked:" destination="4cq-Lm-6BC" eventType="touchUpInside" id="RbV-i1-6nE"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="895-mm-QNF">
                                 <rect key="frame" x="120" y="50" width="80" height="80"/>
@@ -88,11 +91,70 @@
                         <outlet property="btnLogInPwd" destination="pPq-vK-8Ru" id="XaC-JH-QtM"/>
                         <outlet property="imgLogInBg" destination="4SZ-6H-1TY" id="rya-Hi-D87"/>
                         <outlet property="imgLogInLogo" destination="895-mm-QNF" id="glL-5Z-bH8"/>
+                        <outlet property="lblMobile" destination="zVu-Bf-EF0" id="UoZ-37-rmg"/>
+                        <outlet property="lblPassword" destination="pPq-vK-8Ru" id="P4R-Mq-1Oc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vpt-qr-del" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="225" y="268"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="MN1-23-aZ5">
+            <objects>
+                <viewController id="ifT-na-ShG" customClass="HomeTabBarViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c6c-3s-OgB"/>
+                        <viewControllerLayoutGuide type="bottom" id="uhg-gU-ugw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4MN-XW-GdE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="MQA-kt-1Uk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WNX-NT-fnO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="422" y="935"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="FHl-Pg-2HT">
+            <objects>
+                <viewController id="GGb-re-f6b" customClass="HomeTabBarViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Y2i-jG-rCu"/>
+                        <viewControllerLayoutGuide type="bottom" id="CNw-Gt-JmZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yd0-2v-HOu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="t9X-c4-gt8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QtG-B4-m2Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="422" y="305"/>
+        </scene>
+        <!--Home Tab Bar View Controller-->
+        <scene sceneID="Woj-t2-ARA">
+            <objects>
+                <tabBarController storyboardIdentifier="HomeTabBarVC" id="HeL-gn-24I" customClass="HomeTabBarViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="nEF-5e-wfx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="GGb-re-f6b" kind="relationship" relationship="viewControllers" id="eRG-31-VHO"/>
+                        <segue destination="ifT-na-ShG" kind="relationship" relationship="viewControllers" id="Njb-Wx-J6i"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xkv-Ye-q8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-118" y="620"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
