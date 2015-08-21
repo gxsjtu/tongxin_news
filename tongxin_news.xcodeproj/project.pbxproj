@@ -28,6 +28,11 @@
 		35C712801B86B09E004B267A /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C7127F1B86B09E004B267A /* SwiftyJSON.swift */; };
 		35C712821B86B126004B267A /* HomeTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712811B86B126004B267A /* HomeTabBarViewController.swift */; };
 		35C712861B86B2BE004B267A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712851B86B2BE004B267A /* MBProgressHUD.m */; };
+		35C712911B86CC5D004B267A /* HTHorizontalSelectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7128B1B86CC5D004B267A /* HTHorizontalSelectionList.m */; };
+		35C712921B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7128E1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m */; };
+		35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */; };
+		35C712971B86CC79004B267A /* MXPullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712961B86CC79004B267A /* MXPullDownMenu.m */; };
+		35C712991B86CF09004B267A /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712981B86CF09004B267A /* InboxViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +63,16 @@
 		35C712811B86B126004B267A /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
 		35C712841B86B2BE004B267A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		35C712851B86B2BE004B267A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		35C7128A1B86CC5D004B267A /* HTHorizontalSelectionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionList.h; sourceTree = "<group>"; };
+		35C7128B1B86CC5D004B267A /* HTHorizontalSelectionList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionList.m; sourceTree = "<group>"; };
+		35C7128C1B86CC5D004B267A /* HTHorizontalSelectionListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionListCell.h; sourceTree = "<group>"; };
+		35C7128D1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionListCustomViewCell.h; sourceTree = "<group>"; };
+		35C7128E1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListCustomViewCell.m; sourceTree = "<group>"; };
+		35C7128F1B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionListLabelCell.h; sourceTree = "<group>"; };
+		35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListLabelCell.m; sourceTree = "<group>"; };
+		35C712951B86CC79004B267A /* MXPullDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXPullDownMenu.h; sourceTree = "<group>"; };
+		35C712961B86CC79004B267A /* MXPullDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXPullDownMenu.m; sourceTree = "<group>"; };
+		35C712981B86CF09004B267A /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +105,8 @@
 		35C712141B8595B3004B267A /* tongxin_news */ = {
 			isa = PBXGroup;
 			children = (
+				35C712941B86CC6F004B267A /* MXPullDownMenu */,
+				35C712891B86CC4C004B267A /* HTHorizontalSelectionList */,
 				35C712831B86B2AE004B267A /* MBProgressHUD */,
 				35C712151B8595B3004B267A /* Supporting Files */,
 				35C7127E1B86B077004B267A /* SwiftyJSON */,
@@ -160,6 +177,29 @@
 			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		35C712891B86CC4C004B267A /* HTHorizontalSelectionList */ = {
+			isa = PBXGroup;
+			children = (
+				35C7128A1B86CC5D004B267A /* HTHorizontalSelectionList.h */,
+				35C7128B1B86CC5D004B267A /* HTHorizontalSelectionList.m */,
+				35C7128C1B86CC5D004B267A /* HTHorizontalSelectionListCell.h */,
+				35C7128D1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.h */,
+				35C7128E1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m */,
+				35C7128F1B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.h */,
+				35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */,
+			);
+			name = HTHorizontalSelectionList;
+			sourceTree = "<group>";
+		};
+		35C712941B86CC6F004B267A /* MXPullDownMenu */ = {
+			isa = PBXGroup;
+			children = (
+				35C712951B86CC79004B267A /* MXPullDownMenu.h */,
+				35C712961B86CC79004B267A /* MXPullDownMenu.m */,
+			);
+			name = MXPullDownMenu;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,6 +231,11 @@
 				TargetAttributes = {
 					35C712111B8595B3004B267A = {
 						CreatedOnToolsVersion = 6.4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -232,11 +277,14 @@
 				35C712761B86AFA5004B267A /* ParameterEncoding.swift in Sources */,
 				35C7127D1B86B008004B267A /* EndPoints.swift in Sources */,
 				35C712821B86B126004B267A /* HomeTabBarViewController.swift in Sources */,
+				35C712991B86CF09004B267A /* InboxViewController.swift in Sources */,
 				35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */,
 				35C712721B86AFA5004B267A /* Alamofire.swift in Sources */,
 				35C712791B86AFA5004B267A /* ServerTrustPolicy.swift in Sources */,
+				35C712921B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m in Sources */,
 				35C712751B86AFA5004B267A /* MultipartFormData.swift in Sources */,
 				35C712661B86AEE9004B267A /* SKTipAlertView.m in Sources */,
+				35C712911B86CC5D004B267A /* HTHorizontalSelectionList.m in Sources */,
 				35C7127B1B86AFA5004B267A /* Validation.swift in Sources */,
 				35C7127A1B86AFA5004B267A /* Upload.swift in Sources */,
 				35C712731B86AFA5004B267A /* Download.swift in Sources */,
@@ -246,7 +294,9 @@
 				35C712771B86AFA5004B267A /* Request.swift in Sources */,
 				1A4298851B86C98900390ECC /* UserSettingViewController.swift in Sources */,
 				35C712781B86AFA5004B267A /* ResponseSerialization.swift in Sources */,
+				35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */,
 				35C712181B8595B3004B267A /* AppDelegate.swift in Sources */,
+				35C712971B86CC79004B267A /* MXPullDownMenu.m in Sources */,
 				35C712651B86AEE9004B267A /* SKAlertView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

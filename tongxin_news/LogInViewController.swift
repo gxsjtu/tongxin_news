@@ -16,6 +16,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var imgLogInLogo: UIImageView!
     @IBOutlet weak var lblMobile: UITextField!
     @IBOutlet weak var lblPassword: UITextField!
+    
+    var mobile = ""
+    var password = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,6 +27,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         imgLogInLogo.image = UIImage(named: "logo")
         btnLogInName.delegate = self
         btnLogInPwd.delegate = self
+        
+        mobile = lblMobile.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        password = lblPassword.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +54,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func didLogInClicked(sender: AnyObject) {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": lblMobile.text, "password": lblPassword.text, "method": "signin"])
+        request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile, "password": password, "method": "signin"])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error
@@ -68,6 +74,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                         else
                         {
                             NSUserDefaults.standardUserDefaults().setObject("yes", forKey: "isLoggedIn")
+                            NSUserDefaults.standardUserDefaults().setObject(self.mobile, forKey: "mobile")
                             //转向home页面
                             if let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("HomeTabBarVC") as? HomeTabBarViewController
                             {
