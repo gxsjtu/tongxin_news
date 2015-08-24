@@ -13,6 +13,8 @@ class UserSettingViewController : UIViewController
 
     @IBOutlet weak var TxtMobile: UITextField!
     
+    @IBOutlet weak var imgUserBackground: UIImageView!
+    @IBOutlet weak var imgUserLogo: UIImageView!
     @IBOutlet weak var TxtDateValue: UITextField!
     
     override func viewDidLoad() {
@@ -20,6 +22,9 @@ class UserSettingViewController : UIViewController
         
         self.TxtMobile.enabled = false
         self.TxtDateValue.enabled = false
+        
+        imgUserBackground.image = UIImage(named: "background")
+        imgUserLogo.image = UIImage(named: "logo")
         
         IsLogin()
         // Do any additional setup after loading the view.
