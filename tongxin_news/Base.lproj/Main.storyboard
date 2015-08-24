@@ -230,7 +230,7 @@
         <!--我-->
         <scene sceneID="vMN-og-zHl">
             <objects>
-                <viewController id="as7-B9-UyQ" sceneMemberID="viewController">
+                <viewController id="as7-B9-UyQ" customClass="UserSettingViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LIw-cb-lf0"/>
                         <viewControllerLayoutGuide type="bottom" id="Klh-R7-3O3"/>
@@ -238,9 +238,47 @@
                     <view key="view" contentMode="scaleToFill" id="Op1-ai-T7u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="注册手机号：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhZ-rT-M95">
+                                <rect key="frame" x="28" y="128" width="264" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7qz-UU-gq7">
+                                <rect key="frame" x="28" y="172" width="264" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="服务有效期至：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9N-nd-dGN">
+                                <rect key="frame" x="28" y="255" width="264" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GXK-p1-Nvu">
+                                <rect key="frame" x="28" y="299" width="264" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhj-o1-FUn">
+                                <rect key="frame" x="33" y="450" width="259" height="40"/>
+                                <color key="backgroundColor" red="0.76148200757575757" green="0.36435972278031731" blue="0.28608360499575952" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="退出当前登陆用户">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="LoginOutClick:" destination="as7-B9-UyQ" eventType="touchUpInside" id="3WF-E8-O7T"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="我" image="user" id="jHp-CH-KFX"/>
+                    <connections>
+                        <outlet property="TxtDateValue" destination="GXK-p1-Nvu" id="dGa-QP-LaG"/>
+                        <outlet property="TxtMobile" destination="7qz-UU-gq7" id="aco-lf-Iwz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMA-ZO-RTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

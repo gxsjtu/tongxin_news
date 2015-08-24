@@ -162,7 +162,7 @@
 				35C7127C1B86B008004B267A /* EndPoints.swift */,
 				35C712401B85C0BE004B267A /* LogInViewController.swift */,
 				35C712811B86B126004B267A /* HomeTabBarViewController.swift */,
-				35C712981B86CF09004B267A /* InboxViewController.swift */,
+				1A4298861B86FDA800390ECC /* UserSettingViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
