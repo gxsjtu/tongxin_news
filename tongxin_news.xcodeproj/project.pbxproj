@@ -14,6 +14,8 @@
 		35AC875C1B8AB15900B44C7E /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC87531B8AB15900B44C7E /* UIScrollView+MJExtension.m */; };
 		35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC87551B8AB15900B44C7E /* UIScrollView+MJRefresh.m */; };
 		35AC875E1B8AB15900B44C7E /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC87571B8AB15900B44C7E /* UIView+MJExtension.m */; };
+		35AC87601B8AB2F800B44C7E /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */; };
+		35AC87641B8AB8B900B44C7E /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC87631B8AB8B900B44C7E /* InboxViewController.swift */; };
 		35C712181B8595B3004B267A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712171B8595B3004B267A /* AppDelegate.swift */; };
 		35C7121D1B8595B3004B267A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121B1B8595B3004B267A /* Main.storyboard */; };
 		35C7121F1B8595B3004B267A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121E1B8595B3004B267A /* Images.xcassets */; };
@@ -38,7 +40,6 @@
 		35C712921B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7128E1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m */; };
 		35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */; };
 		35C712971B86CC79004B267A /* MXPullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712961B86CC79004B267A /* MXPullDownMenu.m */; };
-		35C712991B86CF09004B267A /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712981B86CF09004B267A /* InboxViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,7 +58,9 @@
 		35AC87551B8AB15900B44C7E /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		35AC87561B8AB15900B44C7E /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		35AC87571B8AB15900B44C7E /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
-		35C712121B8595B3004B267A /* 同鑫资讯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "同鑫资讯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
+		35AC87631B8AB8B900B44C7E /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
+		35C712121B8595B3004B267A /* tongxin_info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tongxin_info.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C712161B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35C712171B8595B3004B267A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35C7121C1B8595B3004B267A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,7 +95,6 @@
 		35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListLabelCell.m; sourceTree = "<group>"; };
 		35C712951B86CC79004B267A /* MXPullDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXPullDownMenu.h; sourceTree = "<group>"; };
 		35C712961B86CC79004B267A /* MXPullDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXPullDownMenu.m; sourceTree = "<group>"; };
-		35C712981B86CF09004B267A /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +141,7 @@
 		35C712131B8595B3004B267A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				35C712121B8595B3004B267A /* 同鑫资讯.app */,
+				35C712121B8595B3004B267A /* tongxin_info.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,7 +164,8 @@
 				35C7127C1B86B008004B267A /* EndPoints.swift */,
 				35C712401B85C0BE004B267A /* LogInViewController.swift */,
 				35C712811B86B126004B267A /* HomeTabBarViewController.swift */,
-				1A4298861B86FDA800390ECC /* UserSettingViewController.swift */,
+				35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */,
+				35AC87631B8AB8B900B44C7E /* InboxViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -260,7 +263,7 @@
 			);
 			name = tongxin_news;
 			productName = tongxin_news;
-			productReference = 35C712121B8595B3004B267A /* 同鑫资讯.app */;
+			productReference = 35C712121B8595B3004B267A /* tongxin_info.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -320,9 +323,9 @@
 			files = (
 				35C712761B86AFA5004B267A /* ParameterEncoding.swift in Sources */,
 				35AC875E1B8AB15900B44C7E /* UIView+MJExtension.m in Sources */,
+				35AC87601B8AB2F800B44C7E /* UserSettingViewController.swift in Sources */,
 				35C7127D1B86B008004B267A /* EndPoints.swift in Sources */,
 				35C712821B86B126004B267A /* HomeTabBarViewController.swift in Sources */,
-				35C712991B86CF09004B267A /* InboxViewController.swift in Sources */,
 				35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */,
 				35C712721B86AFA5004B267A /* Alamofire.swift in Sources */,
 				35C712791B86AFA5004B267A /* ServerTrustPolicy.swift in Sources */,
@@ -337,6 +340,7 @@
 				35AC875B1B8AB15900B44C7E /* MJRefreshHeaderView.m in Sources */,
 				35AC875C1B8AB15900B44C7E /* UIScrollView+MJExtension.m in Sources */,
 				35C712801B86B09E004B267A /* SwiftyJSON.swift in Sources */,
+				35AC87641B8AB8B900B44C7E /* InboxViewController.swift in Sources */,
 				35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */,
 				35C712861B86B2BE004B267A /* MBProgressHUD.m in Sources */,
 				35C712771B86AFA5004B267A /* Request.swift in Sources */,
@@ -456,7 +460,7 @@
 				INFOPLIST_FILE = tongxin_news/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "同鑫资讯";
+				PRODUCT_NAME = tongxin_info;
 				SWIFT_OBJC_BRIDGING_HEADER = "tongxin_news/tongxin_news-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -472,7 +476,7 @@
 				INFOPLIST_FILE = tongxin_news/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "同鑫资讯";
+				PRODUCT_NAME = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "tongxin_news/tongxin_news-Bridging-Header.h";
 			};
 			name = Release;
