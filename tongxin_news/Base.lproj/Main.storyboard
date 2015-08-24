@@ -162,7 +162,7 @@
         <!--收件箱-->
         <scene sceneID="xED-Fi-xdx">
             <objects>
-                <viewController id="HhN-9W-iAJ" customClass="InBoxViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HhN-9W-iAJ" customClass="InboxViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KtO-Hm-X8y"/>
                         <viewControllerLayoutGuide type="bottom" id="X5x-HS-dqm"/>
@@ -195,6 +195,20 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fwt-Uy-8ku" id="aiL-aJ-XV9">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBE-9j-b6d">
+                                                    <rect key="frame" x="8" y="8" width="198" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1D-uj-zVS">
+                                                    <rect key="frame" x="227" y="8" width="85" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -214,7 +228,8 @@
                     <tabBarItem key="tabBarItem" title="收件箱" image="box" id="e7n-eI-w4A"/>
                     <connections>
                         <outlet property="searchBarCon" destination="Gcc-6i-zLJ" id="1z2-DF-Ri5"/>
-                        <outlet property="tbData" destination="CWQ-eA-vrw" id="tbQ-hZ-04P"/>
+                        <outlet property="searchCon" destination="Gcc-6i-zLJ" id="PoM-SA-4T3"/>
+                        <outlet property="tbData" destination="CWQ-eA-vrw" id="Xie-Ux-IIg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVc-yB-iW3" userLabel="First Responder" sceneMemberID="firstResponder"/>

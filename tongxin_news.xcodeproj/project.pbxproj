@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A4298871B86FDA800390ECC /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4298861B86FDA800390ECC /* UserSettingViewController.swift */; };
+		1A4ECFBB1B8AC1040084EE27 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4ECFBA1B8AC1040084EE27 /* InboxViewController.swift */; };
 		35C712181B8595B3004B267A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712171B8595B3004B267A /* AppDelegate.swift */; };
 		35C7121D1B8595B3004B267A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121B1B8595B3004B267A /* Main.storyboard */; };
 		35C7121F1B8595B3004B267A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121E1B8595B3004B267A /* Images.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		1A4298861B86FDA800390ECC /* UserSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
+		1A4ECFBA1B8AC1040084EE27 /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		35C712121B8595B3004B267A /* 同鑫资讯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "同鑫资讯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C712161B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35C712171B8595B3004B267A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				35C712401B85C0BE004B267A /* LogInViewController.swift */,
 				35C712811B86B126004B267A /* HomeTabBarViewController.swift */,
 				1A4298861B86FDA800390ECC /* UserSettingViewController.swift */,
+				1A4ECFBA1B8AC1040084EE27 /* InboxViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				35C712861B86B2BE004B267A /* MBProgressHUD.m in Sources */,
 				35C712771B86AFA5004B267A /* Request.swift in Sources */,
 				35C712781B86AFA5004B267A /* ResponseSerialization.swift in Sources */,
+				1A4ECFBB1B8AC1040084EE27 /* InboxViewController.swift in Sources */,
 				35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */,
 				35C712181B8595B3004B267A /* AppDelegate.swift in Sources */,
 				35C712971B86CC79004B267A /* MXPullDownMenu.m in Sources */,
