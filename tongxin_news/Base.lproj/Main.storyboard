@@ -121,7 +121,7 @@
         <!--行情-->
         <scene sceneID="hYJ-wm-2aY">
             <objects>
-                <viewController id="YUd-7R-Tb7" sceneMemberID="viewController">
+                <viewController id="YUd-7R-Tb7" customClass="PriceViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="m0N-ZL-nwu"/>
                         <viewControllerLayoutGuide type="bottom" id="JSe-uG-vA2"/>
@@ -129,9 +129,35 @@
                     <view key="view" contentMode="scaleToFill" id="Xjl-1K-e3W">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5qx-JR-mAN">
+                                <rect key="frame" x="0.0" y="70" width="320" height="449"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkK-kU-9xD">
+                                <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8L3-I5-MRe"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JSe-uG-vA2" firstAttribute="top" secondItem="5qx-JR-mAN" secondAttribute="bottom" id="7P6-nT-iii"/>
+                            <constraint firstItem="vkK-kU-9xD" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leadingMargin" constant="-16" id="Asd-BD-iP6"/>
+                            <constraint firstItem="5qx-JR-mAN" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leadingMargin" constant="-16" id="NcW-P8-a6D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5qx-JR-mAN" secondAttribute="trailing" constant="-16" id="bbw-0Q-oY1"/>
+                            <constraint firstItem="5qx-JR-mAN" firstAttribute="top" secondItem="vkK-kU-9xD" secondAttribute="top" constant="50" id="hHg-hC-t4m"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vkK-kU-9xD" secondAttribute="trailing" constant="-16" id="qhJ-Jb-GUk"/>
+                            <constraint firstItem="vkK-kU-9xD" firstAttribute="top" secondItem="m0N-ZL-nwu" secondAttribute="bottom" id="xDD-mM-KQu"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="行情" image="price" id="XRP-Vr-ZEW"/>
+                    <connections>
+                        <outlet property="tvPriceTableView" destination="5qx-JR-mAN" id="Cs1-4J-X8X"/>
+                        <outlet property="vSelectionView" destination="vkK-kU-9xD" id="Jbh-s6-zmU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeG-fc-qnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
