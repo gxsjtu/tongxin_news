@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A4298871B86FDA800390ECC /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4298861B86FDA800390ECC /* UserSettingViewController.swift */; };
+		1A4ECFB91B8AAA9E0084EE27 /* InBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4ECFB81B8AAA9E0084EE27 /* InBoxViewController.swift */; };
 		35C712181B8595B3004B267A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712171B8595B3004B267A /* AppDelegate.swift */; };
 		35C7121D1B8595B3004B267A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121B1B8595B3004B267A /* Main.storyboard */; };
 		35C7121F1B8595B3004B267A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121E1B8595B3004B267A /* Images.xcassets */; };
@@ -32,11 +33,11 @@
 		35C712921B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7128E1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m */; };
 		35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */; };
 		35C712971B86CC79004B267A /* MXPullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712961B86CC79004B267A /* MXPullDownMenu.m */; };
-		35C712991B86CF09004B267A /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712981B86CF09004B267A /* InboxViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A4298861B86FDA800390ECC /* UserSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
+		1A4ECFB81B8AAA9E0084EE27 /* InBoxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InBoxViewController.swift; sourceTree = "<group>"; };
 		35C712121B8595B3004B267A /* 同鑫资讯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "同鑫资讯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C712161B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35C712171B8595B3004B267A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,7 +73,6 @@
 		35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListLabelCell.m; sourceTree = "<group>"; };
 		35C712951B86CC79004B267A /* MXPullDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXPullDownMenu.h; sourceTree = "<group>"; };
 		35C712961B86CC79004B267A /* MXPullDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXPullDownMenu.m; sourceTree = "<group>"; };
-		35C712981B86CF09004B267A /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +120,7 @@
 				35C712401B85C0BE004B267A /* LogInViewController.swift */,
 				35C712811B86B126004B267A /* HomeTabBarViewController.swift */,
 				1A4298861B86FDA800390ECC /* UserSettingViewController.swift */,
+				1A4ECFB81B8AAA9E0084EE27 /* InBoxViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -278,7 +279,6 @@
 				35C712761B86AFA5004B267A /* ParameterEncoding.swift in Sources */,
 				35C7127D1B86B008004B267A /* EndPoints.swift in Sources */,
 				35C712821B86B126004B267A /* HomeTabBarViewController.swift in Sources */,
-				35C712991B86CF09004B267A /* InboxViewController.swift in Sources */,
 				35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */,
 				35C712721B86AFA5004B267A /* Alamofire.swift in Sources */,
 				35C712791B86AFA5004B267A /* ServerTrustPolicy.swift in Sources */,
@@ -287,6 +287,7 @@
 				35C712661B86AEE9004B267A /* SKTipAlertView.m in Sources */,
 				35C712911B86CC5D004B267A /* HTHorizontalSelectionList.m in Sources */,
 				35C7127B1B86AFA5004B267A /* Validation.swift in Sources */,
+				1A4ECFB91B8AAA9E0084EE27 /* InBoxViewController.swift in Sources */,
 				35C7127A1B86AFA5004B267A /* Upload.swift in Sources */,
 				35C712731B86AFA5004B267A /* Download.swift in Sources */,
 				35C712741B86AFA5004B267A /* Manager.swift in Sources */,
