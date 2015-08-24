@@ -50,6 +50,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBAction func didLogInClicked(sender: AnyObject) {
         let mobile = lblMobile.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         let password = lblPassword.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let token = NSUserDefaults.standardUserDefaults().stringForKey("token")
+        
         if mobile == ""
         {
             let alert = SKTipAlertView()
@@ -64,8 +66,15 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        if token == nil
+        {
+            let alert = SKTipAlertView()
+            alert.showRedNotificationForString("获取设备码失败，请重新登录！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+            return
+        }
+        
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile, "password": password, "method": "signin"])
+        request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile, "password": password, "method": "signin", "token": token!,])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error

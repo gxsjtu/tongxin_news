@@ -72,14 +72,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        println(deviceToken)
+        NSUserDefaults.standardUserDefaults().setObject(deviceToken, forKey: "token")
     }
     
     //注册消息推送失败
-    
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError)
     {
-        println(error)
+        
     }
     
     
