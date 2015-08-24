@@ -130,30 +130,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5qx-JR-mAN">
-                                <rect key="frame" x="0.0" y="70" width="320" height="449"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkK-kU-9xD">
-                                <rect key="frame" x="0.0" y="20" width="320" height="50"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="35"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="8L3-I5-MRe"/>
+                                    <constraint firstAttribute="height" constant="35" id="8Bt-fv-R6j"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5qx-JR-mAN">
+                                <rect key="frame" x="0.0" y="98" width="320" height="426"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVj-O3-gKb">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9mr-cG-V2A"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="实时行情" id="YiI-8f-Gmu">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="MoQ-2Z-ZAF">
+                                            <connections>
+                                                <action selector="btnRefreshPrice:" destination="YUd-7R-Tb7" id="lQE-Hb-ZaL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JSe-uG-vA2" firstAttribute="top" secondItem="5qx-JR-mAN" secondAttribute="bottom" id="7P6-nT-iii"/>
-                            <constraint firstItem="vkK-kU-9xD" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leadingMargin" constant="-16" id="Asd-BD-iP6"/>
-                            <constraint firstItem="5qx-JR-mAN" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leadingMargin" constant="-16" id="NcW-P8-a6D"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5qx-JR-mAN" secondAttribute="trailing" constant="-16" id="bbw-0Q-oY1"/>
-                            <constraint firstItem="5qx-JR-mAN" firstAttribute="top" secondItem="vkK-kU-9xD" secondAttribute="top" constant="50" id="hHg-hC-t4m"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="vkK-kU-9xD" secondAttribute="trailing" constant="-16" id="qhJ-Jb-GUk"/>
-                            <constraint firstItem="vkK-kU-9xD" firstAttribute="top" secondItem="m0N-ZL-nwu" secondAttribute="bottom" id="xDD-mM-KQu"/>
+                            <constraint firstItem="JSe-uG-vA2" firstAttribute="top" secondItem="5qx-JR-mAN" secondAttribute="bottom" id="7Vy-uE-ALC"/>
+                            <constraint firstItem="aVj-O3-gKb" firstAttribute="top" secondItem="m0N-ZL-nwu" secondAttribute="bottom" id="PpD-nH-oQa"/>
+                            <constraint firstItem="vkK-kU-9xD" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leadingMargin" constant="-16" id="TgA-md-9pC"/>
+                            <constraint firstItem="vkK-kU-9xD" firstAttribute="top" secondItem="aVj-O3-gKb" secondAttribute="top" constant="44" id="Vws-Oz-yWj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aVj-O3-gKb" secondAttribute="trailing" constant="-16" id="aoN-ij-CWl"/>
+                            <constraint firstItem="5qx-JR-mAN" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leadingMargin" constant="-16" id="gQ1-Pi-CoD"/>
+                            <constraint firstItem="5qx-JR-mAN" firstAttribute="top" secondItem="vkK-kU-9xD" secondAttribute="top" constant="34" id="ifp-BL-miL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vkK-kU-9xD" secondAttribute="trailing" constant="-16" id="pLa-qI-74j"/>
+                            <constraint firstItem="aVj-O3-gKb" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leadingMargin" constant="-16" id="plQ-dK-y8p"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5qx-JR-mAN" secondAttribute="trailing" constant="-16" id="yvg-AS-AMU"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="行情" image="price" id="XRP-Vr-ZEW"/>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tvPriceTableView" destination="5qx-JR-mAN" id="Cs1-4J-X8X"/>
                         <outlet property="vSelectionView" destination="vkK-kU-9xD" id="Jbh-s6-zmU"/>
