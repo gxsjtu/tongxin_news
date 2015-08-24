@@ -36,24 +36,25 @@ class UserSettingViewController : UIViewController
     }
     
 
-func IsLogin(){
-    var isLogined : String? = NSUserDefaults.standardUserDefaults().stringForKey("isLoggedIn")
+    func IsLogin()
+    {
+        var isLogined : String? = NSUserDefaults.standardUserDefaults().stringForKey("isLoggedIn")
 
-    if(isLogined != "yes")
-    {
-        //转向login页面
-        if let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
+        if(isLogined != "yes")
         {
-            self.presentViewController(loginVC, animated: true, completion: nil)
+            //转向login页面
+            if let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
+            {
+                self.presentViewController(loginVC, animated: true, completion: nil)
+            }
         }
-    }
-    else
-    {
-           var mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
-        
+        else
+        {
+            var mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+            let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             request(.GET, EndPoints.UserSet.rawValue, parameters:["mobile":mobile!,"method":"getUserInfo"])
                 .responseJSON { (request,response,data,error) in
-                
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error
                 {
                     println(anError)
@@ -69,7 +70,7 @@ func IsLogin(){
                 }
                 
            }
-    }
+        }
     }
     
     @IBAction func LoginOutClick(sender: AnyObject) {
