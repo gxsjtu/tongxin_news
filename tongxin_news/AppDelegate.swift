@@ -77,14 +77,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     //注册消息推送失败
     
-    func application(application: UIApplication,didFailToRegisterForRemoteNotificationsWithError error:NSError)
-    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError)
     {
-    
-    println("Register Remote Notifications error:");
-    
-    //    NSLog(@"Register Remote Notifications error:{%@}",error.localizedDescription);
-    
+        println(error)
     }
     
     

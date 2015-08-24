@@ -60,7 +60,7 @@
 		35AC87571B8AB15900B44C7E /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
 		35AC87631B8AB8B900B44C7E /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
-		35C712121B8595B3004B267A /* tongxin_info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tongxin_info.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		35C712121B8595B3004B267A /* 同鑫资讯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "同鑫资讯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C712161B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35C712171B8595B3004B267A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35C7121C1B8595B3004B267A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 		35C712131B8595B3004B267A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				35C712121B8595B3004B267A /* tongxin_info.app */,
+				35C712121B8595B3004B267A /* 同鑫资讯.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 			);
 			name = tongxin_news;
 			productName = tongxin_news;
-			productReference = 35C712121B8595B3004B267A /* tongxin_info.app */;
+			productReference = 35C712121B8595B3004B267A /* 同鑫资讯.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -408,6 +408,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "同鑫资讯";
+				PROVISIONING_PROFILE = "0aca49c0-9e09-4dd8-a3bf-6275ae9805d0";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -445,6 +447,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "同鑫资讯";
+				PROVISIONING_PROFILE = "0aca49c0-9e09-4dd8-a3bf-6275ae9805d0";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -460,7 +464,8 @@
 				INFOPLIST_FILE = tongxin_news/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = tongxin_info;
+				PRODUCT_NAME = "同鑫资讯";
+				PROVISIONING_PROFILE = "0aca49c0-9e09-4dd8-a3bf-6275ae9805d0";
 				SWIFT_OBJC_BRIDGING_HEADER = "tongxin_news/tongxin_news-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -476,7 +481,8 @@
 				INFOPLIST_FILE = tongxin_news/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "";
+				PRODUCT_NAME = "同鑫资讯";
+				PROVISIONING_PROFILE = "0aca49c0-9e09-4dd8-a3bf-6275ae9805d0";
 				SWIFT_OBJC_BRIDGING_HEADER = "tongxin_news/tongxin_news-Bridging-Header.h";
 			};
 			name = Release;
