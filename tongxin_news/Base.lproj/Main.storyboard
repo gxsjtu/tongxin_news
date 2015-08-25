@@ -146,6 +146,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IbR-O3-h2z" id="hGi-wk-3aS">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ycC-fZ-orG" kind="modal" identifier="Price2PriceDetail" id="ltu-MC-PDC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -186,6 +189,70 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeG-fc-qnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="558" y="319"/>
+        </scene>
+        <!--Price Detail View Controller-->
+        <scene sceneID="876-yt-7fG">
+            <objects>
+                <viewController id="ycC-fZ-orG" customClass="PriceDetailViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rE0-qd-goo"/>
+                        <viewControllerLayoutGuide type="bottom" id="Qg3-0Y-QHP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DoC-GZ-1MN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vao-A8-tM1">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PriceDetailCell" id="PHI-DY-RFt">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PHI-DY-RFt" id="g4L-S9-Ifp">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ycC-fZ-orG" id="MI6-A2-h2k"/>
+                                    <outlet property="delegate" destination="ycC-fZ-orG" id="FCu-1Z-fA5"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-R4-0lz">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="gWX-lG-DDT"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="t7e-pf-Vl2">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="K2d-p5-8rN">
+                                            <connections>
+                                                <segue destination="d52-W3-FHO" kind="unwind" unwindAction="unwindFromPriceDetail2Price:" id="CWg-NX-P2U"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h6A-R4-0lz" firstAttribute="top" secondItem="rE0-qd-goo" secondAttribute="bottom" id="KzF-Gn-QDC"/>
+                            <constraint firstItem="h6A-R4-0lz" firstAttribute="top" secondItem="vao-A8-tM1" secondAttribute="top" constant="-44" id="OSO-q5-wC7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h6A-R4-0lz" secondAttribute="trailing" constant="-16" id="URk-mu-W9P"/>
+                            <constraint firstItem="vao-A8-tM1" firstAttribute="leading" secondItem="DoC-GZ-1MN" secondAttribute="leadingMargin" constant="-16" id="Zkq-4b-p0s"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vao-A8-tM1" secondAttribute="trailing" constant="-16" id="wby-Zi-T7o"/>
+                            <constraint firstItem="Qg3-0Y-QHP" firstAttribute="top" secondItem="vao-A8-tM1" secondAttribute="bottom" id="wvJ-xN-fjj"/>
+                            <constraint firstItem="h6A-R4-0lz" firstAttribute="leading" secondItem="DoC-GZ-1MN" secondAttribute="leadingMargin" constant="-16" id="x9M-bK-T5P"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navBarPriceDetail" destination="h6A-R4-0lz" id="Hvk-kL-4xD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sax-aV-QZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="d52-W3-FHO" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="934" y="237"/>
         </scene>
         <!--Home Tab Bar View Controller-->
         <scene sceneID="Woj-t2-ARA">

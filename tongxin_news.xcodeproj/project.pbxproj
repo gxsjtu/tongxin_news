@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		355C95A51B8AF089005595EA /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A41B8AF089005595EA /* PriceViewController.swift */; };
+		355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A61B8C0665005595EA /* PriceDetailViewController.swift */; };
 		35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */; };
 		35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874D1B8AB15900B44C7E /* MJRefreshConst.m */; };
 		35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874F1B8AB15900B44C7E /* MJRefreshFooterView.m */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		355C95A41B8AF089005595EA /* PriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
+		355C95A61B8C0665005595EA /* PriceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceDetailViewController.swift; sourceTree = "<group>"; };
 		35AC87491B8AB15900B44C7E /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		35AC874A1B8AB15900B44C7E /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
 		35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 				35C712811B86B126004B267A /* HomeTabBarViewController.swift */,
 				35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */,
 				355C95A41B8AF089005595EA /* PriceViewController.swift */,
+				355C95A61B8C0665005595EA /* PriceDetailViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				35C712971B86CC79004B267A /* MXPullDownMenu.m in Sources */,
 				35C712651B86AEE9004B267A /* SKAlertView.m in Sources */,
 				35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */,
+				355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
