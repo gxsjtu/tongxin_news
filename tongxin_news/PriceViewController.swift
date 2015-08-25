@@ -79,7 +79,8 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
 
                 if let anError = error
                 {
-                    println(anError)
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请点击右上角刷新按钮！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
                 else if let data: AnyObject = data
                 {
@@ -146,8 +147,9 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PriceCell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("PriceCell", forIndexPath: indexPath) as! PriceVCTableViewCell
         cell.textLabel?.text = marketData[indexPath.row].1
+        cell.lblPriceCellMarketId.text = marketData[indexPath.row].0
         return cell
     }
     
@@ -166,10 +168,12 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
             if let des = segue.destinationViewController as? PriceDetailViewController
             {
                 des.group = self.selectionData[self.selection.selectedButtonIndex]
-                if let cell = sender as? UITableViewCell
+                if let cell = sender as? PriceVCTableViewCell
                 {
                     des.market = cell.textLabel!.text!
+                    des.marketId = cell.lblPriceCellMarketId.text!
                 }
+                des.mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")!
             }
         }
     }
