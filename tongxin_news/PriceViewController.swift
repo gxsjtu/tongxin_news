@@ -86,6 +86,9 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
                 {
                     if let res1 = JSON(data).array
                     {
+                        self.marketData.removeAll(keepCapacity: true)
+                        self.market.removeAll(keepCapacity: true)
+                        self.selectionData.removeAll(keepCapacity: true)
                         for r in res1
                         {
                             if let res2 = r.dictionary

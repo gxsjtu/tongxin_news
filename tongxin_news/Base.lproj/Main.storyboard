@@ -23,7 +23,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAV-Pv-Iq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="-96"/>
+            <point key="canvasLocation" x="-67" y="-116"/>
         </scene>
         <!--登陆-->
         <scene sceneID="qew-oz-Mwi">
@@ -112,11 +112,12 @@
                         <outlet property="imgLogInLogo" destination="895-mm-QNF" id="glL-5Z-bH8"/>
                         <outlet property="lblMobile" destination="zVu-Bf-EF0" id="UoZ-37-rmg"/>
                         <outlet property="lblPassword" destination="pPq-vK-8Ru" id="P4R-Mq-1Oc"/>
+                        <segue destination="HeL-gn-24I" kind="modal" id="o9O-aA-WZM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vpt-qr-del" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="225" y="268"/>
+            <point key="canvasLocation" x="-511" y="88"/>
         </scene>
         <!--行情-->
         <scene sceneID="hYJ-wm-2aY">
@@ -203,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeG-fc-qnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="319"/>
+            <point key="canvasLocation" x="428" y="237"/>
         </scene>
         <!--Price Detail View Controller-->
         <scene sceneID="876-yt-7fG">
@@ -229,7 +230,11 @@
                                                 <segue destination="d52-W3-FHO" kind="unwind" unwindAction="unwindFromPriceDetail2Price:" id="CWg-NX-P2U"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="wEX-hS-b8G"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="wEX-hS-b8G">
+                                            <connections>
+                                                <action selector="btnRefresh:" destination="ycC-fZ-orG" id="eeN-jV-eeC"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -328,6 +333,7 @@
         <scene sceneID="Woj-t2-ARA">
             <objects>
                 <tabBarController storyboardIdentifier="HomeTabBarVC" id="HeL-gn-24I" customClass="HomeTabBarViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="I5Q-II-tg2"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="nEF-5e-wfx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -344,7 +350,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xkv-Ye-q8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="620"/>
+            <point key="canvasLocation" x="-511" y="820"/>
         </scene>
         <!--收件箱-->
         <scene sceneID="xED-Fi-xdx">
@@ -426,7 +432,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVc-yB-iW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="1462"/>
+            <point key="canvasLocation" x="-610" y="1650"/>
         </scene>
         <!--商圈-->
         <scene sceneID="2ko-MZ-RM4">
@@ -445,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaD-39-NmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="471" y="1564"/>
+            <point key="canvasLocation" x="-203" y="1650"/>
         </scene>
         <!--我-->
         <scene sceneID="vMN-og-zHl">
@@ -552,7 +558,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMA-ZO-RTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="424" y="932"/>
+            <point key="canvasLocation" x="558" y="1118"/>
         </scene>
     </scenes>
     <resources>

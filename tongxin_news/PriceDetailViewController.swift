@@ -29,6 +29,11 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         tvPriceDetail.delegate = self
     }
 
+    @IBAction func btnRefresh(sender: AnyObject) {
+        getProducts()
+        tvPriceDetail.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -66,11 +71,11 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 {
                     if let res = JSON(data).array
                     {
+                        self.products.removeAll(keepCapacity: true)
                         for item in res
                         {
                             if let i = item.dictionary
-                            {
-                                self.products.append((i["ProductName"]!.stringValue, i["ProductId"]!.stringValue, i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue))
+                            {self.products.append((i["ProductName"]!.stringValue, i["ProductId"]!.stringValue, i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue))
                             }
                         }
                         self.tvPriceDetail.reloadData()
