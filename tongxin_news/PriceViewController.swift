@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, HTHorizontalSelectionListDataSource {
+class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, HTHorizontalSelectionListDataSource, UITableViewDelegate, UITableViewDataSource {
 
     @IBAction func btnRefreshPrice(sender: AnyObject) {
 
@@ -17,7 +17,9 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     
     @IBOutlet weak var tvPriceTableView: UITableView!
     var selectionData = [String]()
+    var marketData = [(String, String)]()
     var selection: HTHorizontalSelectionList!
+    var market = Dictionary<String, [(String, String)]>()
     
     @IBOutlet weak var vSelectionView: UIView!
     
@@ -28,6 +30,8 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         selection = HTHorizontalSelectionList(frame: CGRect(x: 0, y: 0, width: vSelectionView.frame.width, height: vSelectionView.frame.height))
         selection?.delegate = self
         selection?.dataSource = self
+        tvPriceTableView.delegate = self
+        tvPriceTableView.dataSource = self
         
         self.selection.selectionIndicatorStyle = HTHorizontalSelectionIndicatorStyle.BottomBar
         self.selection.selectionIndicatorColor = UIColor.redColor()
@@ -87,13 +91,25 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
                             if let res2 = r.dictionary
                             {
                                 self.selectionData.append(res2["name"]!.string!)
+                                if let res3 = res2["markets"]?.array
+                                {
+                                    var oneMarket = [(String, String)]()
+                                    for r3 in res3
+                                    {
+                                        if let res4 = r3.dictionary
+                                        {
+                                            oneMarket.append((res4["id"]!.stringValue, res4["name"]!.stringValue))
+                                        }
+                                    }
+                                    self.market[res2["name"]!.string!] = oneMarket
+                                }
                             }
                         }
                         self.selection.reloadData()
+                        self.selectionList(self.selection, didSelectButtonWithIndex: 0)
                     }
                 }
         }
-        self.selection.reloadData()
     }
     
     func handleSwipes(sender:UISwipeGestureRecognizer) {
@@ -116,7 +132,27 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     }
     
     func selectionList(selectionList: HTHorizontalSelectionList!, didSelectButtonWithIndex index: Int) {
-
+        let group = selectionData[index]
+        marketData.removeAll(keepCapacity: true)
+        for m in market[group]!
+        {
+            marketData.append(m)
+        }
+        self.tvPriceTableView.reloadData()
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("PriceCell", forIndexPath: indexPath) as! UITableViewCell
+        cell.textLabel?.text = marketData[indexPath.row].1
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return marketData.count
     }
     
 
