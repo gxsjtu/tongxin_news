@@ -12,6 +12,7 @@ enum EndPoints: String
 {
     case SignIn = "http://172.20.68.245:8077/Handlers/LoginHandler.ashx"
     case UserSet = "http://172.20.68.245:8077/Handlers/UserInfoHandler.ashx"
+    case InBoxMsg = "http://172.20.68.245:8077/Handlers/InboxMsgHandler.ashx"
     case GetProductHierarchy = "http://172.20.68.245:8077/Handlers/XHMarketHandler.ashx"
     case GetPrices = "http://172.20.68.245:8077/Handlers/PriceHandler.ashx"
 }
