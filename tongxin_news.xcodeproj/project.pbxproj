@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A4ECFBE1B8AF7D90084EE27 /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4ECFBD1B8AF7D90084EE27 /* InboxViewController.swift */; };
 		355C95A51B8AF089005595EA /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A41B8AF089005595EA /* PriceViewController.swift */; };
 		355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A61B8C0665005595EA /* PriceDetailViewController.swift */; };
 		355C95A91B8C1407005595EA /* PriceVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1A4ECFBD1B8AF7D90084EE27 /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		355C95A41B8AF089005595EA /* PriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
 		355C95A61B8C0665005595EA /* PriceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceDetailViewController.swift; sourceTree = "<group>"; };
 		355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceVCTableViewCell.swift; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 				355C95AB1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift in Sources */,
 				35AC875B1B8AB15900B44C7E /* MJRefreshHeaderView.m in Sources */,
 				35AC875C1B8AB15900B44C7E /* UIScrollView+MJExtension.m in Sources */,
+				1A4ECFBE1B8AF7D90084EE27 /* InboxViewController.swift in Sources */,
 				35C712801B86B09E004B267A /* SwiftyJSON.swift in Sources */,
 				35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */,
 				35C712861B86B2BE004B267A /* MBProgressHUD.m in Sources */,

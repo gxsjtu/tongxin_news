@@ -66,12 +66,12 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        if token == nil
-        {
-            let alert = SKTipAlertView()
-            alert.showRedNotificationForString("获取设备码失败，请重新登录！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-            return
-        }
+//        if token == nil
+//        {
+//            let alert = SKTipAlertView()
+//            alert.showRedNotificationForString("获取设备码失败，请重新登录！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+//            return
+//        }
         
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile, "password": password, "method": "signin", "token": token!])
@@ -104,5 +104,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
         }
+
     }
 }
