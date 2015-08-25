@@ -17,7 +17,8 @@ class PriceDetailVCTableViewCell: UITableViewCell {
 
     @IBOutlet weak var lblPriceDetailName: UILabel!
     @IBOutlet weak var lblPriceDetailDate: UILabel!
-    @IBOutlet weak var lblPriceDetailDetail: UILabel!
+    @IBOutlet weak var lblPriceDetailLow: UILabel!
+    @IBOutlet weak var lblPriceDetailHigh: UILabel!
     
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
