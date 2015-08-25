@@ -9,11 +9,6 @@
 import UIKit
 
 class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, HTHorizontalSelectionListDataSource, UITableViewDelegate, UITableViewDataSource {
-
-    @IBAction func btnRefreshPrice(sender: AnyObject) {
-
-        
-    }
     
     @IBOutlet weak var tvPriceTableView: UITableView!
     var selectionData = [String]()
