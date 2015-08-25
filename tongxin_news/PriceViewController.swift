@@ -66,6 +66,10 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btnRefresh(sender: AnyObject) {
+        getProductHierarchy()
+    }
+    
     func getProductHierarchy()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -101,6 +105,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
                             }
                         }
                         self.selection.reloadData()
+                        self.selection.setSelectedButtonIndex(0, animated: true)
                         self.selectionList(self.selection, didSelectButtonWithIndex: 0)
                     }
                 }

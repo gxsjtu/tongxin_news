@@ -156,7 +156,11 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="实时行情" id="YiI-8f-Gmu">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="MoQ-2Z-ZAF"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="MoQ-2Z-ZAF">
+                                            <connections>
+                                                <action selector="btnRefresh:" destination="YUd-7R-Tb7" id="T1K-J1-bNt"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
