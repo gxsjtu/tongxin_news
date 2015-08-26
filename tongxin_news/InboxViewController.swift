@@ -3,6 +3,7 @@ import UIKit
 class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate
 {
     
+    //@IBOutlet weak var lblMsg: UILabel!
     @IBOutlet weak var searchCon: UISearchBar!
     
     @IBOutlet weak var tbData: UITableView!
@@ -12,7 +13,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //self.lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
          initLoadDatas()
         //self.resInfos = self.msgInfos
         
@@ -26,8 +27,6 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
         self.tbData.addFooterWithCallback(pullUpLoadDatas)
         tbData.headerRefreshingText = "正在刷新..."
         tbData.footerRefreshingText = "正在刷新..."
-//        self.tbData.addHeaderWithTarget(self, action: "pullDownLoadDatas")
-//        self.tbData.addFooterWithTarget(self, action: "pullUpLoadDatas")
         // Do any additional setup after loading the view.
     }
     
@@ -42,18 +41,22 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 25
+        var msg : String = resInfos[indexPath.row].msg!
+        var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: 196, height: 0))
+        lb.initAutoHeight(lb.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
+        return (lb.frame.height + 15)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        var msg : String = resInfos[indexPath.row].msg!
         let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
-        (tbCell.viewWithTag(1) as! UILabel).text = resInfos[indexPath.row].msg
+        (tbCell.viewWithTag(1) as! UILabel).initAutoHeight((tbCell.viewWithTag(1) as! UILabel).frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
         (tbCell.viewWithTag(2) as! UILabel).text = format.stringFromDate(resInfos[indexPath.row].dateStr!)
-        
         return tbCell
     }
+    
     
     
     func initLoadDatas()
@@ -240,3 +243,23 @@ class MsgInfo : NSObject
     var msg : String?
     var dateStr : NSDate?
 }
+
+extension UILabel{
+    func initAutoHeight(rect:CGRect,textColor:UIColor, fontSize:CGFloat, text:NSString, lineSpacing:CGFloat){//自适应高度
+    self.frame = rect
+    self.textColor = textColor
+    self.font = UIFont.systemFontOfSize(fontSize)
+    self.lineBreakMode = NSLineBreakMode.ByWordWrapping
+    self.numberOfLines = 0
+    var attributedString = NSMutableAttributedString(string: text as String)
+    var paragraphStyle = NSMutableParagraphStyle()
+    paragraphStyle.lineSpacing = lineSpacing
+    paragraphStyle.lineBreakMode = NSLineBreakMode.ByCharWrapping
+    attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, text.length))
+    self.attributedText = attributedString
+    self.sizeToFit()
+    self.frame.size.width = rect.width
+    self.frame.size.height = max(self.frame.size.height, rect.height)
+    }
+}
+

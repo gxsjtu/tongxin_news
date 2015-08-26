@@ -214,7 +214,6 @@
 		35C712141B8595B3004B267A /* tongxin_news */ = {
 			isa = PBXGroup;
 			children = (
-				355C95B61B8D624E005595EA /* Haneke */,
 				35AC87481B8AB14A00B44C7E /* MJRefresh */,
 				35C712941B86CC6F004B267A /* MXPullDownMenu */,
 				35C712891B86CC4C004B267A /* HTHorizontalSelectionList */,
@@ -236,10 +235,6 @@
 				355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */,
 				355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */,
 				355C95AC1B8C5145005595EA /* InboxViewController.swift */,
-				355C95AE1B8C5FF9005595EA /* CommentViewController.swift */,
-				355C95B01B8D48D9005595EA /* CommentVCTableViewCell.swift */,
-				355C95B21B8D55AC005595EA /* CommentDetailVCTableViewCell.swift */,
-				355C95B41B8D5BF6005595EA /* CommentDetailViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
