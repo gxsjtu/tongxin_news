@@ -19,9 +19,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8f-rX-dHr">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="oOb-X8-iEB"/>
+                                    <constraint firstAttribute="height" constant="64" id="oOb-X8-iEB"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="同鑫评论" id="U60-Eq-Oys">
@@ -70,11 +70,11 @@
                             <constraint firstItem="vjY-lB-WuW" firstAttribute="leading" secondItem="Kep-V5-kRz" secondAttribute="leadingMargin" constant="-16" id="2MS-JU-zT9"/>
                             <constraint firstItem="vjY-lB-WuW" firstAttribute="top" secondItem="Sg9-Qy-HPQ" secondAttribute="top" constant="34" id="6hg-T8-fDX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vjY-lB-WuW" secondAttribute="trailing" constant="-16" id="Nw5-1R-ELs"/>
-                            <constraint firstItem="S8f-rX-dHr" firstAttribute="top" secondItem="aEm-li-Esw" secondAttribute="bottom" id="THJ-sl-Abp"/>
+                            <constraint firstItem="S8f-rX-dHr" firstAttribute="top" secondItem="aEm-li-Esw" secondAttribute="bottom" constant="-20" id="THJ-sl-Abp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Sg9-Qy-HPQ" secondAttribute="trailing" constant="-16" id="Umr-6E-1my"/>
                             <constraint firstItem="S8f-rX-dHr" firstAttribute="leading" secondItem="Kep-V5-kRz" secondAttribute="leadingMargin" constant="-16" id="aFt-pC-LXm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="S8f-rX-dHr" secondAttribute="trailing" constant="-16" id="iXA-z7-GYC"/>
-                            <constraint firstItem="S8f-rX-dHr" firstAttribute="top" secondItem="Sg9-Qy-HPQ" secondAttribute="top" constant="-44" id="jP4-Ob-SFB"/>
+                            <constraint firstItem="S8f-rX-dHr" firstAttribute="top" secondItem="Sg9-Qy-HPQ" secondAttribute="top" constant="-64" id="jP4-Ob-SFB"/>
                             <constraint firstItem="Sg9-Qy-HPQ" firstAttribute="leading" secondItem="Kep-V5-kRz" secondAttribute="leadingMargin" constant="-16" id="mE8-3c-ftZ"/>
                             <constraint firstItem="gpf-vX-aaa" firstAttribute="top" secondItem="vjY-lB-WuW" secondAttribute="bottom" id="q7r-6x-MhU"/>
                         </constraints>
@@ -232,11 +232,15 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aVj-O3-gKb">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVj-O3-gKb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="9mr-cG-V2A"/>
+                                    <constraint firstAttribute="height" constant="64" id="9mr-cG-V2A"/>
                                 </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="实时行情" id="YiI-8f-Gmu">
                                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="MoQ-2Z-ZAF">
@@ -250,9 +254,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aVj-O3-gKb" firstAttribute="top" secondItem="m0N-ZL-nwu" secondAttribute="bottom" id="PpD-nH-oQa"/>
+                            <constraint firstItem="aVj-O3-gKb" firstAttribute="top" secondItem="m0N-ZL-nwu" secondAttribute="bottom" constant="-20" id="PpD-nH-oQa"/>
                             <constraint firstItem="vkK-kU-9xD" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leadingMargin" constant="-16" id="TgA-md-9pC"/>
-                            <constraint firstItem="vkK-kU-9xD" firstAttribute="top" secondItem="aVj-O3-gKb" secondAttribute="top" constant="44" id="Vws-Oz-yWj"/>
+                            <constraint firstItem="vkK-kU-9xD" firstAttribute="top" secondItem="aVj-O3-gKb" secondAttribute="top" constant="64" id="Vws-Oz-yWj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aVj-O3-gKb" secondAttribute="trailing" constant="-16" id="aoN-ij-CWl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vkK-kU-9xD" secondAttribute="trailing" constant="-16" id="pLa-qI-74j"/>
                             <constraint firstItem="aVj-O3-gKb" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leadingMargin" constant="-16" id="plQ-dK-y8p"/>
@@ -283,9 +287,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCX-OW-QSA">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="ehT-1A-Dsm"/>
+                                    <constraint firstAttribute="height" constant="64" id="ehT-1A-Dsm"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="Title" id="AFc-X5-czp">
@@ -303,7 +307,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vft-Qg-y3U">
-                                <rect key="frame" x="0.0" y="72" width="320" height="496"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentDetailCell" rowHeight="65" id="hrE-AN-MrY" customClass="CommentDetailVCTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
@@ -365,11 +369,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="XCX-OW-QSA" secondAttribute="trailing" constant="-16" id="Fdp-gw-xDz"/>
-                            <constraint firstItem="XCX-OW-QSA" firstAttribute="top" secondItem="Vft-Qg-y3U" secondAttribute="top" constant="-44" id="NXx-yz-CdN"/>
+                            <constraint firstItem="XCX-OW-QSA" firstAttribute="top" secondItem="Vft-Qg-y3U" secondAttribute="top" constant="-64" id="NXx-yz-CdN"/>
                             <constraint firstItem="XCX-OW-QSA" firstAttribute="leading" secondItem="Fvq-EE-uJ3" secondAttribute="leadingMargin" constant="-16" id="OZU-C6-E2g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Vft-Qg-y3U" secondAttribute="trailing" constant="-16" id="Uzg-eY-57W"/>
                             <constraint firstItem="pPt-aR-dlf" firstAttribute="top" secondItem="Vft-Qg-y3U" secondAttribute="bottom" id="YOT-3O-k9c"/>
-                            <constraint firstItem="XCX-OW-QSA" firstAttribute="top" secondItem="gmy-Mt-wcX" secondAttribute="bottom" constant="8" id="ZTl-Iz-TgC"/>
+                            <constraint firstItem="XCX-OW-QSA" firstAttribute="top" secondItem="gmy-Mt-wcX" secondAttribute="bottom" constant="-20" id="ZTl-Iz-TgC"/>
                             <constraint firstItem="Vft-Qg-y3U" firstAttribute="leading" secondItem="Fvq-EE-uJ3" secondAttribute="leadingMargin" constant="-16" id="zf7-eP-tWC"/>
                         </constraints>
                     </view>
@@ -396,9 +400,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-R4-0lz">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="gWX-lG-DDT"/>
+                                    <constraint firstAttribute="height" constant="64" id="gWX-lG-DDT"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="Title" id="t7e-pf-Vl2">
@@ -487,8 +491,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="h6A-R4-0lz" firstAttribute="top" secondItem="rE0-qd-goo" secondAttribute="bottom" id="KzF-Gn-QDC"/>
-                            <constraint firstItem="h6A-R4-0lz" firstAttribute="top" secondItem="vao-A8-tM1" secondAttribute="top" constant="-44" id="OSO-q5-wC7"/>
+                            <constraint firstItem="h6A-R4-0lz" firstAttribute="top" secondItem="rE0-qd-goo" secondAttribute="bottom" constant="-20" id="KzF-Gn-QDC"/>
+                            <constraint firstItem="h6A-R4-0lz" firstAttribute="top" secondItem="vao-A8-tM1" secondAttribute="top" constant="-64" id="OSO-q5-wC7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h6A-R4-0lz" secondAttribute="trailing" constant="-16" id="URk-mu-W9P"/>
                             <constraint firstItem="vao-A8-tM1" firstAttribute="leading" secondItem="DoC-GZ-1MN" secondAttribute="leadingMargin" constant="-16" id="Zkq-4b-p0s"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vao-A8-tM1" secondAttribute="trailing" constant="-16" id="wby-Zi-T7o"/>
@@ -542,9 +546,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWu-61-hd3">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="TJn-sh-X9H"/>
+                                    <constraint firstAttribute="height" constant="64" id="TJn-sh-X9H"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="收件箱" id="iE2-WC-aDt">
@@ -569,12 +573,6 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fwt-Uy-8ku" id="aiL-aJ-XV9">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBE-9j-b6d">
-                                                    <rect key="frame" x="8" y="8" width="196" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S1D-uj-zVS">
                                                     <rect key="frame" x="212" y="8" width="100" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
@@ -597,7 +595,7 @@
                             <constraint firstItem="Gcc-6i-zLJ" firstAttribute="leading" secondItem="yOA-L1-X3Q" secondAttribute="leadingMargin" constant="-16" id="CQt-bD-k3J"/>
                             <constraint firstItem="gWu-61-hd3" firstAttribute="leading" secondItem="yOA-L1-X3Q" secondAttribute="leadingMargin" constant="-16" id="TF3-J2-sHr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Gcc-6i-zLJ" secondAttribute="trailing" constant="-16" id="WqI-tv-49A"/>
-                            <constraint firstItem="gWu-61-hd3" firstAttribute="top" secondItem="KtO-Hm-X8y" secondAttribute="bottom" id="gEo-Hr-haH"/>
+                            <constraint firstItem="gWu-61-hd3" firstAttribute="top" secondItem="KtO-Hm-X8y" secondAttribute="bottom" constant="-20" id="gEo-Hr-haH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gWu-61-hd3" secondAttribute="trailing" constant="-16" id="q6S-jC-LI4"/>
                         </constraints>
                     </view>
