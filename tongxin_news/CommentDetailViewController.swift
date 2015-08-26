@@ -72,6 +72,7 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
         request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["marketId": marketId, "method": "getProducts"])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                println(request)
                 if let anError = error
                 {
                     let alert = SKTipAlertView()
@@ -81,11 +82,13 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
                 {
                     if let res = JSON(data).array
                     {
+                        println(res)
                         self.products.removeAll(keepCapacity: true)
                         for item in res
                         {
                             if let i = item.dictionary
-                            {self.products.append((i["avatar"]!.stringValue, i["url"]!.stringValue, i["title"]!.stringValue, i["date"]!.stringValue, i["id"]!.stringValue))
+                            {
+                                self.products.append((i["avatar"]!.stringValue, i["url"]!.stringValue, i["title"]!.stringValue, i["date"]!.stringValue, i["id"]!.stringValue))
                             }
                         }
                         self.tvCommentDetail.reloadData()
