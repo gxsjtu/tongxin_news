@@ -157,7 +157,6 @@
 		35C712141B8595B3004B267A /* tongxin_news */ = {
 			isa = PBXGroup;
 			children = (
-				355C95AC1B8C5145005595EA /* InboxViewController.swift */,
 				35AC87481B8AB14A00B44C7E /* MJRefresh */,
 				35C712941B86CC6F004B267A /* MXPullDownMenu */,
 				35C712891B86CC4C004B267A /* HTHorizontalSelectionList */,
@@ -178,6 +177,7 @@
 				355C95A61B8C0665005595EA /* PriceDetailViewController.swift */,
 				355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */,
 				355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */,
+				355C95AC1B8C5145005595EA /* InboxViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
