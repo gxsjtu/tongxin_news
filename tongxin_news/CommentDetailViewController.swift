@@ -43,10 +43,9 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CommentDetailCell", forIndexPath: indexPath) as! CommentDetailVCTableViewCell
         
-        cell.textLabel?.numberOfLines = 0
+        cell.imgCommentDetailLogo.hnk_setImageFromURL(NSURL(string: products[indexPath.row].0))
         cell.lblCommentDetailDate.text = products[indexPath.row].3
-        cell.textLabel?.text = products[indexPath.row].2
-        cell.imageView?.hnk_setImageFromURL(NSURL(string: products[indexPath.row].0))
+        cell.lblCommentDetailTitle.text = products[indexPath.row].2
         
         return cell
     }
@@ -63,16 +62,14 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBAction func btnRefresh(sender: AnyObject) {
         getComments()
-        tvCommentDetail.reloadData()
     }
     
     func getComments()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["marketId": marketId, "method": "getProducts"])
+        request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getproducts", "marketId": marketId])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                println(request)
                 if let anError = error
                 {
                     let alert = SKTipAlertView()
@@ -82,7 +79,6 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
                 {
                     if let res = JSON(data).array
                     {
-                        println(res)
                         self.products.removeAll(keepCapacity: true)
                         for item in res
                         {

@@ -22,7 +22,6 @@
 		35AC87601B8AB2F800B44C7E /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */; };
 		35B2783E1B8D94AB00FA2399 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35B2783C1B8D94AB00FA2399 /* Main.storyboard */; };
 		35B278441B8D952100FA2399 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278401B8D952100FA2399 /* CommentDetailViewController.swift */; };
-		35B278451B8D952100FA2399 /* CommentDetailVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278411B8D952100FA2399 /* CommentDetailVCTableViewCell.swift */; };
 		35B278461B8D952100FA2399 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278421B8D952100FA2399 /* CommentViewController.swift */; };
 		35B278471B8D952100FA2399 /* CommentVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278431B8D952100FA2399 /* CommentVCTableViewCell.swift */; };
 		35B278591B8D955500FA2399 /* HNKCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B2784A1B8D955500FA2399 /* HNKCache.m */; };
@@ -33,6 +32,7 @@
 		35B2785E1B8D955500FA2399 /* UIButton+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B278541B8D955500FA2399 /* UIButton+Haneke.m */; };
 		35B2785F1B8D955500FA2399 /* UIImageView+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B278561B8D955500FA2399 /* UIImageView+Haneke.m */; };
 		35B278601B8D955500FA2399 /* UIView+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B278581B8D955500FA2399 /* UIView+Haneke.m */; };
+		35B278621B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278611B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift */; };
 		35C712181B8595B3004B267A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712171B8595B3004B267A /* AppDelegate.swift */; };
 		35C7121F1B8595B3004B267A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121E1B8595B3004B267A /* Images.xcassets */; };
 		35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712401B85C0BE004B267A /* LogInViewController.swift */; };
@@ -82,7 +82,6 @@
 		35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
 		35B2783D1B8D94AB00FA2399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35B278401B8D952100FA2399 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
-		35B278411B8D952100FA2399 /* CommentDetailVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailVCTableViewCell.swift; sourceTree = "<group>"; };
 		35B278421B8D952100FA2399 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		35B278431B8D952100FA2399 /* CommentVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentVCTableViewCell.swift; sourceTree = "<group>"; };
 		35B278481B8D955500FA2399 /* Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Haneke.h; sourceTree = "<group>"; };
@@ -102,6 +101,7 @@
 		35B278561B8D955500FA2399 /* UIImageView+Haneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Haneke.m"; sourceTree = "<group>"; };
 		35B278571B8D955500FA2399 /* UIView+Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Haneke.h"; sourceTree = "<group>"; };
 		35B278581B8D955500FA2399 /* UIView+Haneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Haneke.m"; sourceTree = "<group>"; };
+		35B278611B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailVCTableViewCell.swift; sourceTree = "<group>"; };
 		35C712121B8595B3004B267A /* 同鑫资讯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "同鑫资讯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C712161B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35C712171B8595B3004B267A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -214,10 +214,6 @@
 		35C712141B8595B3004B267A /* tongxin_news */ = {
 			isa = PBXGroup;
 			children = (
-				35B278401B8D952100FA2399 /* CommentDetailViewController.swift */,
-				35B278411B8D952100FA2399 /* CommentDetailVCTableViewCell.swift */,
-				35B278421B8D952100FA2399 /* CommentViewController.swift */,
-				35B278431B8D952100FA2399 /* CommentVCTableViewCell.swift */,
 				35B2783F1B8D950200FA2399 /* Haneke */,
 				35AC87481B8AB14A00B44C7E /* MJRefresh */,
 				35C712941B86CC6F004B267A /* MXPullDownMenu */,
@@ -240,6 +236,10 @@
 				355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */,
 				355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */,
 				355C95AC1B8C5145005595EA /* InboxViewController.swift */,
+				35B278401B8D952100FA2399 /* CommentDetailViewController.swift */,
+				35B278421B8D952100FA2399 /* CommentViewController.swift */,
+				35B278431B8D952100FA2399 /* CommentVCTableViewCell.swift */,
+				35B278611B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -400,6 +400,7 @@
 				35AC875E1B8AB15900B44C7E /* UIView+MJExtension.m in Sources */,
 				35AC87601B8AB2F800B44C7E /* UserSettingViewController.swift in Sources */,
 				35C7127D1B86B008004B267A /* EndPoints.swift in Sources */,
+				35B278621B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift in Sources */,
 				35C712821B86B126004B267A /* HomeTabBarViewController.swift in Sources */,
 				35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */,
 				355C95A91B8C1407005595EA /* PriceVCTableViewCell.swift in Sources */,
@@ -440,7 +441,6 @@
 				35C712971B86CC79004B267A /* MXPullDownMenu.m in Sources */,
 				35C712651B86AEE9004B267A /* SKAlertView.m in Sources */,
 				35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */,
-				35B278451B8D952100FA2399 /* CommentDetailVCTableViewCell.swift in Sources */,
 				355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
