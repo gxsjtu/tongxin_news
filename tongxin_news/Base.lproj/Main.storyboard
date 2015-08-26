@@ -222,7 +222,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblPriceCellMarketId" destination="bOi-tg-Mnj" id="x09-Mp-cTh"/>
-                                            <segue destination="ycC-fZ-orG" kind="modal" identifier="Price2PriceDetail" id="ltu-MC-PDC"/>
+                                            <segue destination="UyF-N1-fe0" kind="modal" id="6bI-X9-Tyj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -264,6 +264,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeG-fc-qnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="428" y="237"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bnN-SN-6PO">
+            <objects>
+                <viewController id="UyF-N1-fe0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gmy-Mt-wcX"/>
+                        <viewControllerLayoutGuide type="bottom" id="pPt-aR-dlf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fvq-EE-uJ3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCX-OW-QSA">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ehT-1A-Dsm"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="AFc-X5-czp">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="8KZ-bd-Nl4">
+                                            <connections>
+                                                <segue destination="Smj-sN-SPc" kind="unwind" unwindAction="unwindFromCommentDetail2Comment:" id="b3x-do-53e"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="r0w-bv-aeq"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vft-Qg-y3U">
+                                <rect key="frame" x="0.0" y="72" width="320" height="496"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentDetailCell" id="hrE-AN-MrY" customClass="CommentDetailVCTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hrE-AN-MrY" id="nKi-wd-Gcp">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-vC-Z91">
+                                                    <rect key="frame" x="242" y="11" width="70" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="XCX-OW-QSA" secondAttribute="trailing" constant="-16" id="Fdp-gw-xDz"/>
+                            <constraint firstItem="XCX-OW-QSA" firstAttribute="top" secondItem="Vft-Qg-y3U" secondAttribute="top" constant="-44" id="NXx-yz-CdN"/>
+                            <constraint firstItem="XCX-OW-QSA" firstAttribute="leading" secondItem="Fvq-EE-uJ3" secondAttribute="leadingMargin" constant="-16" id="OZU-C6-E2g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vft-Qg-y3U" secondAttribute="trailing" constant="-16" id="Uzg-eY-57W"/>
+                            <constraint firstItem="pPt-aR-dlf" firstAttribute="top" secondItem="Vft-Qg-y3U" secondAttribute="bottom" id="YOT-3O-k9c"/>
+                            <constraint firstItem="XCX-OW-QSA" firstAttribute="top" secondItem="gmy-Mt-wcX" secondAttribute="bottom" constant="8" id="ZTl-Iz-TgC"/>
+                            <constraint firstItem="Vft-Qg-y3U" firstAttribute="leading" secondItem="Fvq-EE-uJ3" secondAttribute="leadingMargin" constant="-16" id="zf7-eP-tWC"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7px-Ic-zth" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Smj-sN-SPc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="638" y="-143"/>
         </scene>
         <!--Price Detail View Controller-->
         <scene sceneID="876-yt-7fG">
