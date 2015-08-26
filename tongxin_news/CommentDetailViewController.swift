@@ -8,8 +8,9 @@
 
 import UIKit
 
-class CommentDetailViewController: UIViewController {
+class CommentDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    //avatar, url, title, date, id
     var products = [(String, String, String, String, String)]()
     var market = "未知"
     var group = "未知"
@@ -27,6 +28,24 @@ class CommentDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.products.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("CommentDetailCell", forIndexPath: indexPath) as! CommentDetailVCTableViewCell
+        
+        cell.lblCommentDetailDate.text = products[indexPath.row].3
+        cell.textLabel?.text = products[indexPath.row].2
+        cell.imageView?.hnk_setImageFromURL(NSURL(string: products[indexPath.row].0))
+        
+        return cell
     }
     
     /*

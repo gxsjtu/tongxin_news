@@ -16,6 +16,14 @@
 		355C95B11B8D48D9005595EA /* CommentVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95B01B8D48D9005595EA /* CommentVCTableViewCell.swift */; };
 		355C95B31B8D55AC005595EA /* CommentDetailVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95B21B8D55AC005595EA /* CommentDetailVCTableViewCell.swift */; };
 		355C95B51B8D5BF6005595EA /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95B41B8D5BF6005595EA /* CommentDetailViewController.swift */; };
+		355C95C81B8D626B005595EA /* HNKCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95B91B8D626B005595EA /* HNKCache.m */; };
+		355C95C91B8D626B005595EA /* HNKDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95BB1B8D626B005595EA /* HNKDiskCache.m */; };
+		355C95CA1B8D626B005595EA /* HNKDiskFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95BD1B8D626B005595EA /* HNKDiskFetcher.m */; };
+		355C95CB1B8D626B005595EA /* HNKNetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95BF1B8D626B005595EA /* HNKNetworkFetcher.m */; };
+		355C95CC1B8D626B005595EA /* HNKSimpleFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95C11B8D626B005595EA /* HNKSimpleFetcher.m */; };
+		355C95CD1B8D626B005595EA /* UIButton+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95C31B8D626B005595EA /* UIButton+Haneke.m */; };
+		355C95CE1B8D626B005595EA /* UIImageView+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95C51B8D626B005595EA /* UIImageView+Haneke.m */; };
+		355C95CF1B8D626B005595EA /* UIView+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95C71B8D626B005595EA /* UIView+Haneke.m */; };
 		35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */; };
 		35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874D1B8AB15900B44C7E /* MJRefreshConst.m */; };
 		35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874F1B8AB15900B44C7E /* MJRefreshFooterView.m */; };
@@ -60,6 +68,23 @@
 		355C95B01B8D48D9005595EA /* CommentVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentVCTableViewCell.swift; sourceTree = "<group>"; };
 		355C95B21B8D55AC005595EA /* CommentDetailVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailVCTableViewCell.swift; sourceTree = "<group>"; };
 		355C95B41B8D5BF6005595EA /* CommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
+		355C95B71B8D626B005595EA /* Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Haneke.h; sourceTree = "<group>"; };
+		355C95B81B8D626B005595EA /* HNKCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKCache.h; sourceTree = "<group>"; };
+		355C95B91B8D626B005595EA /* HNKCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKCache.m; sourceTree = "<group>"; };
+		355C95BA1B8D626B005595EA /* HNKDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKDiskCache.h; sourceTree = "<group>"; };
+		355C95BB1B8D626B005595EA /* HNKDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKDiskCache.m; sourceTree = "<group>"; };
+		355C95BC1B8D626B005595EA /* HNKDiskFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKDiskFetcher.h; sourceTree = "<group>"; };
+		355C95BD1B8D626B005595EA /* HNKDiskFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKDiskFetcher.m; sourceTree = "<group>"; };
+		355C95BE1B8D626B005595EA /* HNKNetworkFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKNetworkFetcher.h; sourceTree = "<group>"; };
+		355C95BF1B8D626B005595EA /* HNKNetworkFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKNetworkFetcher.m; sourceTree = "<group>"; };
+		355C95C01B8D626B005595EA /* HNKSimpleFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKSimpleFetcher.h; sourceTree = "<group>"; };
+		355C95C11B8D626B005595EA /* HNKSimpleFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKSimpleFetcher.m; sourceTree = "<group>"; };
+		355C95C21B8D626B005595EA /* UIButton+Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Haneke.h"; sourceTree = "<group>"; };
+		355C95C31B8D626B005595EA /* UIButton+Haneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Haneke.m"; sourceTree = "<group>"; };
+		355C95C41B8D626B005595EA /* UIImageView+Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Haneke.h"; sourceTree = "<group>"; };
+		355C95C51B8D626B005595EA /* UIImageView+Haneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Haneke.m"; sourceTree = "<group>"; };
+		355C95C61B8D626B005595EA /* UIView+Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Haneke.h"; sourceTree = "<group>"; };
+		355C95C71B8D626B005595EA /* UIView+Haneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Haneke.m"; sourceTree = "<group>"; };
 		35AC87491B8AB15900B44C7E /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		35AC874A1B8AB15900B44C7E /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
 		35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
@@ -124,6 +149,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		355C95B61B8D624E005595EA /* Haneke */ = {
+			isa = PBXGroup;
+			children = (
+				355C95B71B8D626B005595EA /* Haneke.h */,
+				355C95B81B8D626B005595EA /* HNKCache.h */,
+				355C95B91B8D626B005595EA /* HNKCache.m */,
+				355C95BA1B8D626B005595EA /* HNKDiskCache.h */,
+				355C95BB1B8D626B005595EA /* HNKDiskCache.m */,
+				355C95BC1B8D626B005595EA /* HNKDiskFetcher.h */,
+				355C95BD1B8D626B005595EA /* HNKDiskFetcher.m */,
+				355C95BE1B8D626B005595EA /* HNKNetworkFetcher.h */,
+				355C95BF1B8D626B005595EA /* HNKNetworkFetcher.m */,
+				355C95C01B8D626B005595EA /* HNKSimpleFetcher.h */,
+				355C95C11B8D626B005595EA /* HNKSimpleFetcher.m */,
+				355C95C21B8D626B005595EA /* UIButton+Haneke.h */,
+				355C95C31B8D626B005595EA /* UIButton+Haneke.m */,
+				355C95C41B8D626B005595EA /* UIImageView+Haneke.h */,
+				355C95C51B8D626B005595EA /* UIImageView+Haneke.m */,
+				355C95C61B8D626B005595EA /* UIView+Haneke.h */,
+				355C95C71B8D626B005595EA /* UIView+Haneke.m */,
+			);
+			name = Haneke;
+			sourceTree = "<group>";
+		};
 		35AC87481B8AB14A00B44C7E /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +214,7 @@
 		35C712141B8595B3004B267A /* tongxin_news */ = {
 			isa = PBXGroup;
 			children = (
+				355C95B61B8D624E005595EA /* Haneke */,
 				35AC87481B8AB14A00B44C7E /* MJRefresh */,
 				35C712941B86CC6F004B267A /* MXPullDownMenu */,
 				35C712891B86CC4C004B267A /* HTHorizontalSelectionList */,
@@ -361,12 +411,16 @@
 				35C712751B86AFA5004B267A /* MultipartFormData.swift in Sources */,
 				35C712661B86AEE9004B267A /* SKTipAlertView.m in Sources */,
 				35C712911B86CC5D004B267A /* HTHorizontalSelectionList.m in Sources */,
+				355C95CE1B8D626B005595EA /* UIImageView+Haneke.m in Sources */,
+				355C95CD1B8D626B005595EA /* UIButton+Haneke.m in Sources */,
 				35C7127B1B86AFA5004B267A /* Validation.swift in Sources */,
 				35C7127A1B86AFA5004B267A /* Upload.swift in Sources */,
 				35C712731B86AFA5004B267A /* Download.swift in Sources */,
 				35C712741B86AFA5004B267A /* Manager.swift in Sources */,
 				355C95AB1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift in Sources */,
+				355C95CC1B8D626B005595EA /* HNKSimpleFetcher.m in Sources */,
 				35AC875B1B8AB15900B44C7E /* MJRefreshHeaderView.m in Sources */,
+				355C95CB1B8D626B005595EA /* HNKNetworkFetcher.m in Sources */,
 				35AC875C1B8AB15900B44C7E /* UIScrollView+MJExtension.m in Sources */,
 				35C712801B86B09E004B267A /* SwiftyJSON.swift in Sources */,
 				35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */,
@@ -376,9 +430,13 @@
 				35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */,
 				35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */,
 				35C712781B86AFA5004B267A /* ResponseSerialization.swift in Sources */,
+				355C95CF1B8D626B005595EA /* UIView+Haneke.m in Sources */,
 				35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */,
 				35C712181B8595B3004B267A /* AppDelegate.swift in Sources */,
 				35C712971B86CC79004B267A /* MXPullDownMenu.m in Sources */,
+				355C95CA1B8D626B005595EA /* HNKDiskFetcher.m in Sources */,
+				355C95C91B8D626B005595EA /* HNKDiskCache.m in Sources */,
+				355C95C81B8D626B005595EA /* HNKCache.m in Sources */,
 				35C712651B86AEE9004B267A /* SKAlertView.m in Sources */,
 				35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */,
 				355C95B31B8D55AC005595EA /* CommentDetailVCTableViewCell.swift in Sources */,

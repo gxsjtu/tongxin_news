@@ -10,6 +10,8 @@ import UIKit
 
 class CommentDetailVCTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblCommentDetailDate: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
