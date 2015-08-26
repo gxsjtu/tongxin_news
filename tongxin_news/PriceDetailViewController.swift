@@ -31,7 +31,6 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
     @IBAction func btnRefresh(sender: AnyObject) {
         getProducts()
-        tvPriceDetail.reloadData()
     }
     
     override func didReceiveMemoryWarning() {

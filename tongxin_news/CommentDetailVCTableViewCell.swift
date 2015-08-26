@@ -9,9 +9,9 @@
 import UIKit
 
 class CommentDetailVCTableViewCell: UITableViewCell {
-
+    @IBOutlet weak var lblCommentDetailTitle: UILabel!
+    @IBOutlet weak var imgCommentDetailLogo: UIImageView!
     @IBOutlet weak var lblCommentDetailDate: UILabel!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

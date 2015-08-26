@@ -291,35 +291,71 @@
                                     <navigationItem title="Title" id="AFc-X5-czp">
                                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="8KZ-bd-Nl4">
                                             <connections>
-                                                <segue destination="Smj-sN-SPc" kind="unwind" unwindAction="unwindFromCommentDetail2Comment:" id="b3x-do-53e"/>
+                                                <segue destination="Smj-sN-SPc" kind="unwind" unwindAction="unwindFromCommentDetail2Comment:" id="oRR-6L-tX1"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="r0w-bv-aeq"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="r0w-bv-aeq">
+                                            <connections>
+                                                <action selector="btnRefresh:" destination="UyF-N1-fe0" id="Wr8-kO-Ss0"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vft-Qg-y3U">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vft-Qg-y3U">
                                 <rect key="frame" x="0.0" y="72" width="320" height="496"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentDetailCell" id="hrE-AN-MrY" customClass="CommentDetailVCTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentDetailCell" rowHeight="65" id="hrE-AN-MrY" customClass="CommentDetailVCTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hrE-AN-MrY" id="nKi-wd-Gcp">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-vC-Z91">
-                                                    <rect key="frame" x="242" y="11" width="70" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-vC-Z91">
+                                                    <rect key="frame" x="70" y="40" width="203" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="j5f-sB-XeW"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0lj-jc-CYr">
+                                                    <rect key="frame" x="70" y="0.0" width="211" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="6ZW-hx-ITY"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NAV-fl-zrg">
+                                                    <rect key="frame" x="2" y="2" width="60" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="CvH-3S-ZXV"/>
+                                                        <constraint firstAttribute="width" constant="60" id="q8L-Tm-wrC"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="NAV-fl-zrg" firstAttribute="leading" secondItem="nKi-wd-Gcp" secondAttribute="leadingMargin" constant="-6" id="7NU-VO-I36"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0lj-jc-CYr" secondAttribute="trailing" constant="-2" id="DdR-Lm-Ffn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Rbt-vC-Z91" secondAttribute="trailing" constant="6" id="EcZ-tT-dfS"/>
+                                                <constraint firstItem="Rbt-vC-Z91" firstAttribute="leading" secondItem="NAV-fl-zrg" secondAttribute="leading" constant="68" id="Lz2-43-WtH"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Rbt-vC-Z91" secondAttribute="bottom" constant="-4" id="PVj-oz-2Oe"/>
+                                                <constraint firstItem="0lj-jc-CYr" firstAttribute="leading" secondItem="NAV-fl-zrg" secondAttribute="leading" constant="68" id="REQ-B9-ML1"/>
+                                                <constraint firstAttribute="centerY" secondItem="NAV-fl-zrg" secondAttribute="centerY" id="THh-Xh-eYh"/>
+                                                <constraint firstItem="0lj-jc-CYr" firstAttribute="top" secondItem="nKi-wd-Gcp" secondAttribute="topMargin" constant="-8" id="c7M-Wa-d8P"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lblCommentDetailDate" destination="Rbt-vC-Z91" id="NXk-eO-Ian"/>
+                                            <outlet property="imgCommentDetailLogo" destination="NAV-fl-zrg" id="mgh-aw-A92"/>
+                                            <outlet property="lblCommentDetailDate" destination="Rbt-vC-Z91" id="Luo-Hb-wD0"/>
+                                            <outlet property="lblCommentDetailTitle" destination="0lj-jc-CYr" id="9zC-Hg-o1j"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="UyF-N1-fe0" id="kzp-M6-IB5"/>
                                     <outlet property="delegate" destination="UyF-N1-fe0" id="Yv8-9V-apc"/>
@@ -339,6 +375,7 @@
                     </view>
                     <connections>
                         <outlet property="navBarCommentetail" destination="XCX-OW-QSA" id="LxE-TI-CwT"/>
+                        <outlet property="tvCommentDetail" destination="Vft-Qg-y3U" id="gAG-VM-aEW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7px-Ic-zth" userLabel="First Responder" sceneMemberID="firstResponder"/>
