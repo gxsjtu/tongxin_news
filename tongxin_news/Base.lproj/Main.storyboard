@@ -12,13 +12,77 @@
                     <view key="view" contentMode="scaleToFill" id="Kep-V5-kRz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8f-rX-dHr">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="oOb-X8-iEB"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="同鑫评论" id="U60-Eq-Oys">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="WZw-MZ-OV7">
+                                            <connections>
+                                                <action selector="btnRefresh:" destination="LSS-2S-FyB" id="cb5-eJ-ih6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sg9-Qy-HPQ">
+                                <rect key="frame" x="0.0" y="64" width="320" height="35"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="1Po-NS-88B"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vjY-lB-WuW">
+                                <rect key="frame" x="0.0" y="98" width="320" height="421"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentCell" id="OF6-hl-H3r" customClass="CommentVCTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OF6-hl-H3r" id="HXD-h4-hs4">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJN-hw-ekJ">
+                                                    <rect key="frame" x="122" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblCommentMarketId" destination="MJN-hw-ekJ" id="bGE-SB-8Zw"/>
+                                            <segue destination="UyF-N1-fe0" kind="modal" identifier="Comment2CommentDetail" id="QyR-O3-GfZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vjY-lB-WuW" firstAttribute="leading" secondItem="Kep-V5-kRz" secondAttribute="leadingMargin" constant="-16" id="2MS-JU-zT9"/>
+                            <constraint firstItem="vjY-lB-WuW" firstAttribute="top" secondItem="Sg9-Qy-HPQ" secondAttribute="top" constant="34" id="6hg-T8-fDX"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vjY-lB-WuW" secondAttribute="trailing" constant="-16" id="Nw5-1R-ELs"/>
+                            <constraint firstItem="S8f-rX-dHr" firstAttribute="top" secondItem="aEm-li-Esw" secondAttribute="bottom" id="THJ-sl-Abp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Sg9-Qy-HPQ" secondAttribute="trailing" constant="-16" id="Umr-6E-1my"/>
+                            <constraint firstItem="S8f-rX-dHr" firstAttribute="leading" secondItem="Kep-V5-kRz" secondAttribute="leadingMargin" constant="-16" id="aFt-pC-LXm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="S8f-rX-dHr" secondAttribute="trailing" constant="-16" id="iXA-z7-GYC"/>
+                            <constraint firstItem="S8f-rX-dHr" firstAttribute="top" secondItem="Sg9-Qy-HPQ" secondAttribute="top" constant="-44" id="jP4-Ob-SFB"/>
+                            <constraint firstItem="Sg9-Qy-HPQ" firstAttribute="leading" secondItem="Kep-V5-kRz" secondAttribute="leadingMargin" constant="-16" id="mE8-3c-ftZ"/>
+                            <constraint firstItem="gpf-vX-aaa" firstAttribute="top" secondItem="vjY-lB-WuW" secondAttribute="bottom" id="q7r-6x-MhU"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="评论" image="comment" id="ab0-YT-EIU"/>
+                    <connections>
+                        <outlet property="tvComment" destination="vjY-lB-WuW" id="mCd-Tt-rLF"/>
+                        <outlet property="vSelectionView" destination="Sg9-Qy-HPQ" id="CmL-5D-KFg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAV-Pv-Iq3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="57" y="-96"/>
+            <point key="canvasLocation" x="-67" y="-116"/>
         </scene>
         <!--登陆-->
         <scene sceneID="qew-oz-Mwi">
@@ -77,11 +141,12 @@
                         <outlet property="imgLogInLogo" destination="895-mm-QNF" id="glL-5Z-bH8"/>
                         <outlet property="lblMobile" destination="zVu-Bf-EF0" id="UoZ-37-rmg"/>
                         <outlet property="lblPassword" destination="pPq-vK-8Ru" id="P4R-Mq-1Oc"/>
+                        <segue destination="HeL-gn-24I" kind="modal" identifier="login2home" id="o9O-aA-WZM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vpt-qr-del" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="225" y="268"/>
+            <point key="canvasLocation" x="-511" y="88"/>
         </scene>
         <!--行情-->
         <scene sceneID="hYJ-wm-2aY">
@@ -118,8 +183,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lblPriceCellMarketId" destination="bOi-tg-Mnj" id="Uzk-D0-GJP"/>
-                                            <segue destination="ycC-fZ-orG" kind="modal" identifier="Price2PriceDetail" id="ltu-MC-PDC"/>
+                                            <outlet property="lblPriceCellMarketId" destination="bOi-tg-Mnj" id="x09-Mp-cTh"/>
+                                            <segue destination="ycC-fZ-orG" kind="modal" identifier="Price2PriceDetail" id="uYb-4C-u3f"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -150,7 +215,83 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeG-fc-qnH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="558" y="319"/>
+            <point key="canvasLocation" x="428" y="237"/>
+        </scene>
+        <!--Comment Detail View Controller-->
+        <scene sceneID="bnN-SN-6PO">
+            <objects>
+                <viewController id="UyF-N1-fe0" customClass="CommentDetailViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gmy-Mt-wcX"/>
+                        <viewControllerLayoutGuide type="bottom" id="pPt-aR-dlf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fvq-EE-uJ3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCX-OW-QSA">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ehT-1A-Dsm"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="AFc-X5-czp">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="8KZ-bd-Nl4">
+                                            <connections>
+                                                <segue destination="Smj-sN-SPc" kind="unwind" unwindAction="unwindFromCommentDetail2Comment:" id="b3x-do-53e"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="r0w-bv-aeq"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Vft-Qg-y3U">
+                                <rect key="frame" x="0.0" y="72" width="320" height="496"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentDetailCell" id="hrE-AN-MrY" customClass="CommentDetailVCTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hrE-AN-MrY" id="nKi-wd-Gcp">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-vC-Z91">
+                                                    <rect key="frame" x="242" y="11" width="70" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblCommentDetailDate" destination="Rbt-vC-Z91" id="NXk-eO-Ian"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="UyF-N1-fe0" id="kzp-M6-IB5"/>
+                                    <outlet property="delegate" destination="UyF-N1-fe0" id="Yv8-9V-apc"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="XCX-OW-QSA" secondAttribute="trailing" constant="-16" id="Fdp-gw-xDz"/>
+                            <constraint firstItem="XCX-OW-QSA" firstAttribute="top" secondItem="Vft-Qg-y3U" secondAttribute="top" constant="-44" id="NXx-yz-CdN"/>
+                            <constraint firstItem="XCX-OW-QSA" firstAttribute="leading" secondItem="Fvq-EE-uJ3" secondAttribute="leadingMargin" constant="-16" id="OZU-C6-E2g"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Vft-Qg-y3U" secondAttribute="trailing" constant="-16" id="Uzg-eY-57W"/>
+                            <constraint firstItem="pPt-aR-dlf" firstAttribute="top" secondItem="Vft-Qg-y3U" secondAttribute="bottom" id="YOT-3O-k9c"/>
+                            <constraint firstItem="XCX-OW-QSA" firstAttribute="top" secondItem="gmy-Mt-wcX" secondAttribute="bottom" constant="8" id="ZTl-Iz-TgC"/>
+                            <constraint firstItem="Vft-Qg-y3U" firstAttribute="leading" secondItem="Fvq-EE-uJ3" secondAttribute="leadingMargin" constant="-16" id="zf7-eP-tWC"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navBarCommentetail" destination="XCX-OW-QSA" id="LxE-TI-CwT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7px-Ic-zth" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Smj-sN-SPc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="922" y="-116"/>
         </scene>
         <!--Price Detail View Controller-->
         <scene sceneID="876-yt-7fG">
@@ -170,7 +311,11 @@
                                                 <segue destination="d52-W3-FHO" kind="unwind" unwindAction="unwindFromPriceDetail2Price:" id="CWg-NX-P2U"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="wEX-hS-b8G"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="wEX-hS-b8G">
+                                            <connections>
+                                                <action selector="btnRefresh:" destination="ycC-fZ-orG" id="eeN-jV-eeC"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -208,10 +353,22 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RT8-6q-18A" firstAttribute="leading" secondItem="g4L-S9-Ifp" secondAttribute="leadingMargin" id="1zL-MY-79x"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bZ6-D2-Xg4" secondAttribute="trailing" constant="-8" id="5m4-8T-0LZ"/>
+                                                <constraint firstItem="lzE-BW-5tU" firstAttribute="trailing" secondItem="g4L-S9-Ifp" secondAttribute="trailingMargin" constant="8" id="6FD-zj-TrR"/>
+                                                <constraint firstItem="RT8-6q-18A" firstAttribute="top" secondItem="bZ6-D2-Xg4" secondAttribute="top" id="9RU-R6-OnO"/>
+                                                <constraint firstItem="2i6-it-j1b" firstAttribute="leading" secondItem="g4L-S9-Ifp" secondAttribute="leadingMargin" id="KwL-5A-Owa"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="RT8-6q-18A" secondAttribute="bottom" constant="-8" id="Ssd-nw-2Qi"/>
+                                                <constraint firstItem="RT8-6q-18A" firstAttribute="top" secondItem="2i6-it-j1b" secondAttribute="top" constant="22" id="Z2o-zu-yjR"/>
+                                                <constraint firstItem="lzE-BW-5tU" firstAttribute="top" secondItem="g4L-S9-Ifp" secondAttribute="topMargin" constant="-8" id="cfM-qQ-4Ta"/>
+                                                <constraint firstItem="2i6-it-j1b" firstAttribute="top" secondItem="g4L-S9-Ifp" secondAttribute="topMargin" constant="-8" id="dqD-oQ-bJ6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblPriceDetailDate" destination="lzE-BW-5tU" id="cMa-Gb-Mra"/>
-                                            <outlet property="lblPriceDetailDetail" destination="RT8-6q-18A" id="Mzo-dy-HYi"/>
+                                            <outlet property="lblPriceDetailHigh" destination="bZ6-D2-Xg4" id="KIO-uH-gxY"/>
+                                            <outlet property="lblPriceDetailLow" destination="RT8-6q-18A" id="7gu-T7-Xmc"/>
                                             <outlet property="lblPriceDetailName" destination="2i6-it-j1b" id="n2A-Ig-L6g"/>
                                         </connections>
                                     </tableViewCell>
@@ -228,12 +385,13 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sax-aV-QZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="d52-W3-FHO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="934" y="237"/>
+            <point key="canvasLocation" x="931" y="508"/>
         </scene>
         <!--Home Tab Bar View Controller-->
         <scene sceneID="Woj-t2-ARA">
             <objects>
                 <tabBarController storyboardIdentifier="HomeTabBarVC" id="HeL-gn-24I" customClass="HomeTabBarViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="I5Q-II-tg2"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="nEF-5e-wfx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -250,7 +408,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xkv-Ye-q8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="620"/>
+            <point key="canvasLocation" x="-511" y="820"/>
         </scene>
         <!--收件箱-->
         <scene sceneID="xED-Fi-xdx">
@@ -316,7 +474,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LVc-yB-iW3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-118" y="1462"/>
+            <point key="canvasLocation" x="-610" y="1650"/>
         </scene>
         <!--商圈-->
         <scene sceneID="2ko-MZ-RM4">
@@ -331,7 +489,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaD-39-NmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="471" y="1564"/>
+            <point key="canvasLocation" x="-203" y="1650"/>
         </scene>
         <!--我-->
         <scene sceneID="vMN-og-zHl">
@@ -399,7 +557,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMA-ZO-RTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="424" y="932"/>
+            <point key="canvasLocation" x="558" y="1118"/>
         </scene>
     </scenes>
     <resources>

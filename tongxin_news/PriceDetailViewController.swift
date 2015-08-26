@@ -29,6 +29,11 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         tvPriceDetail.delegate = self
     }
 
+    @IBAction func btnRefresh(sender: AnyObject) {
+        getProducts()
+        tvPriceDetail.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,7 +51,8 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCellWithIdentifier("PriceDetailCell", forIndexPath: indexPath) as! PriceDetailVCTableViewCell
         cell.lblPriceDetailName.text = products[indexPath.row].0
         cell.lblPriceDetailDate.text = products[indexPath.row].4
-        cell.lblPriceDetailDetail.text = "最低" + products[indexPath.row].2 + "  " + "最高" + products[indexPath.row].3
+        cell.lblPriceDetailLow.text = "最低 " + products[indexPath.row].2
+        cell.lblPriceDetailHigh.text = "最高 " + products[indexPath.row].3
         return cell
     }
     
@@ -65,14 +71,13 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 {
                     if let res = JSON(data).array
                     {
+                        self.products.removeAll(keepCapacity: true)
                         for item in res
                         {
                             if let i = item.dictionary
-                            {
-                                self.products.append((i["ProductName"]!.stringValue, i["ProductId"]!.stringValue, i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue))
+                            {self.products.append((i["ProductName"]!.stringValue, i["ProductId"]!.stringValue, i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue))
                             }
                         }
-                        println(self.products)
                         self.tvPriceDetail.reloadData()
                     }
                 }

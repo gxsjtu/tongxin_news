@@ -1,23 +1,26 @@
 //
-//  PriceViewController.swift
+//  CommentViewController.swift
 //  tongxin_news
 //
-//  Created by 郭轩 on 15/8/24.
+//  Created by 郭轩 on 15/8/25.
 //  Copyright (c) 2015年 郭轩. All rights reserved.
 //
 
 import UIKit
 
-class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, HTHorizontalSelectionListDataSource, UITableViewDelegate, UITableViewDataSource {
+class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate, HTHorizontalSelectionListDataSource, UITableViewDelegate, UITableViewDataSource {
+
+    @IBOutlet weak var tvComment: UITableView!
+    @IBOutlet weak var vSelectionView: UIView!
     
-    @IBOutlet weak var tvPriceTableView: UITableView!
     var selectionData = [String]()
     var marketData = [(String, String)]()
     var selection: HTHorizontalSelectionList!
     var market = Dictionary<String, [(String, String)]>()
     
-    @IBOutlet weak var vSelectionView: UIView!
-    
+    @IBAction func btnRefresh(sender: AnyObject) {
+        getCommentHierarchy()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,8 +28,8 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         selection = HTHorizontalSelectionList(frame: CGRect(x: 0, y: 0, width: vSelectionView.frame.width, height: vSelectionView.frame.height))
         selection?.delegate = self
         selection?.dataSource = self
-        tvPriceTableView.delegate = self
-        tvPriceTableView.dataSource = self
+        tvComment.delegate = self
+        tvComment.dataSource = self
         
         self.selection.selectionIndicatorStyle = HTHorizontalSelectionIndicatorStyle.BottomBar
         self.selection.selectionIndicatorColor = UIColor.redColor()
@@ -55,10 +58,11 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         leftSwipe.direction = .Left
         rightSwipe.direction = .Right
         
-        tvPriceTableView.addGestureRecognizer(leftSwipe)
-        tvPriceTableView.addGestureRecognizer(rightSwipe)
+        tvComment.addGestureRecognizer(leftSwipe)
+        tvComment.addGestureRecognizer(rightSwipe)
         
-        self.getProductHierarchy()
+        self.getCommentHierarchy()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,17 +70,13 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func btnRefresh(sender: AnyObject) {
-        getProductHierarchy()
-    }
-    
-    func getProductHierarchy()
+    func getCommentHierarchy()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.GetProductHierarchy.rawValue, parameters: ["method": "getmarkets"])
+        request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getmarkets"])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-
+                
                 if let anError = error
                 {
                     let alert = SKTipAlertView()
@@ -115,7 +115,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
                 }
         }
     }
-    
+
     func handleSwipes(sender:UISwipeGestureRecognizer) {
         if (sender.direction == .Left && selection.selectedButtonIndex < selectionData.count - 1) {
             selection.selectedButtonIndex++
@@ -142,7 +142,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         {
             marketData.append(m)
         }
-        self.tvPriceTableView.reloadData()
+        self.tvComment.reloadData()
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -150,9 +150,9 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PriceCell", forIndexPath: indexPath) as! PriceVCTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("CommentCell", forIndexPath: indexPath) as! CommentVCTableViewCell
         cell.textLabel?.text = marketData[indexPath.row].1
-        cell.lblPriceCellMarketId.text = marketData[indexPath.row].0
+        cell.lblCommentMarketId.text = marketData[indexPath.row].0
         return cell
     }
     
@@ -160,25 +160,22 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         return marketData.count
     }
     
-    @IBAction func unwindFromPriceDetail2Price(segue:UIStoryboardSegue){}
-    
-    // MARK: - Navigation
+    @IBAction func unwindFromCommentDetail2Comment(segue:UIStoryboardSegue){}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "Price2PriceDetail"
+        if segue.identifier == "Comment2CommentDetail"
         {
-            if let des = segue.destinationViewController as? PriceDetailViewController
+            if let des = segue.destinationViewController as? CommentDetailViewController
             {
                 des.group = self.selectionData[self.selection.selectedButtonIndex]
-                if let cell = sender as? PriceVCTableViewCell
+                if let cell = sender as? CommentVCTableViewCell
                 {
                     des.market = cell.textLabel!.text!
-                    des.marketId = cell.lblPriceCellMarketId.text!
+                    des.marketId = cell.lblCommentMarketId.text!
                 }
                 des.mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")!
             }
         }
     }
-
 }

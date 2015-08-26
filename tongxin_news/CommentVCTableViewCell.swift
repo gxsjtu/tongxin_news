@@ -1,25 +1,21 @@
 //
-//  PriceDetailVCTableViewCell.swift
+//  CommentVCTableViewCell.swift
 //  tongxin_news
 //
-//  Created by 郭轩 on 15/8/25.
+//  Created by 郭轩 on 15/8/26.
 //  Copyright (c) 2015年 郭轩. All rights reserved.
 //
 
 import UIKit
 
-class PriceDetailVCTableViewCell: UITableViewCell {
+class CommentVCTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblCommentMarketId: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
-    @IBOutlet weak var lblPriceDetailName: UILabel!
-    @IBOutlet weak var lblPriceDetailDate: UILabel!
-    @IBOutlet weak var lblPriceDetailLow: UILabel!
-    @IBOutlet weak var lblPriceDetailHigh: UILabel!
-    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
