@@ -13,6 +13,7 @@
 		355C95AB1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */; };
 		355C95AD1B8C5145005595EA /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95AC1B8C5145005595EA /* InboxViewController.swift */; };
 		355C95AF1B8C5FF9005595EA /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95AE1B8C5FF9005595EA /* CommentViewController.swift */; };
+		355C95B11B8D48D9005595EA /* CommentVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95B01B8D48D9005595EA /* CommentVCTableViewCell.swift */; };
 		35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */; };
 		35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874D1B8AB15900B44C7E /* MJRefreshConst.m */; };
 		35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874F1B8AB15900B44C7E /* MJRefreshFooterView.m */; };
@@ -54,6 +55,7 @@
 		355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceDetailVCTableViewCell.swift; sourceTree = "<group>"; };
 		355C95AC1B8C5145005595EA /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		355C95AE1B8C5FF9005595EA /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		355C95B01B8D48D9005595EA /* CommentVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentVCTableViewCell.swift; sourceTree = "<group>"; };
 		35AC87491B8AB15900B44C7E /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		35AC874A1B8AB15900B44C7E /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
 		35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */,
 				355C95AC1B8C5145005595EA /* InboxViewController.swift */,
 				355C95AE1B8C5FF9005595EA /* CommentViewController.swift */,
+				355C95B01B8D48D9005595EA /* CommentVCTableViewCell.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				35C712971B86CC79004B267A /* MXPullDownMenu.m in Sources */,
 				35C712651B86AEE9004B267A /* SKAlertView.m in Sources */,
 				35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */,
+				355C95B11B8D48D9005595EA /* CommentVCTableViewCell.swift in Sources */,
 				355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
