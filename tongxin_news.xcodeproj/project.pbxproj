@@ -12,18 +12,6 @@
 		355C95A91B8C1407005595EA /* PriceVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */; };
 		355C95AB1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */; };
 		355C95AD1B8C5145005595EA /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95AC1B8C5145005595EA /* InboxViewController.swift */; };
-		355C95AF1B8C5FF9005595EA /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95AE1B8C5FF9005595EA /* CommentViewController.swift */; };
-		355C95B11B8D48D9005595EA /* CommentVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95B01B8D48D9005595EA /* CommentVCTableViewCell.swift */; };
-		355C95B31B8D55AC005595EA /* CommentDetailVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95B21B8D55AC005595EA /* CommentDetailVCTableViewCell.swift */; };
-		355C95B51B8D5BF6005595EA /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95B41B8D5BF6005595EA /* CommentDetailViewController.swift */; };
-		355C95C81B8D626B005595EA /* HNKCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95B91B8D626B005595EA /* HNKCache.m */; };
-		355C95C91B8D626B005595EA /* HNKDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95BB1B8D626B005595EA /* HNKDiskCache.m */; };
-		355C95CA1B8D626B005595EA /* HNKDiskFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95BD1B8D626B005595EA /* HNKDiskFetcher.m */; };
-		355C95CB1B8D626B005595EA /* HNKNetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95BF1B8D626B005595EA /* HNKNetworkFetcher.m */; };
-		355C95CC1B8D626B005595EA /* HNKSimpleFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95C11B8D626B005595EA /* HNKSimpleFetcher.m */; };
-		355C95CD1B8D626B005595EA /* UIButton+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95C31B8D626B005595EA /* UIButton+Haneke.m */; };
-		355C95CE1B8D626B005595EA /* UIImageView+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95C51B8D626B005595EA /* UIImageView+Haneke.m */; };
-		355C95CF1B8D626B005595EA /* UIView+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 355C95C71B8D626B005595EA /* UIView+Haneke.m */; };
 		35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */; };
 		35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874D1B8AB15900B44C7E /* MJRefreshConst.m */; };
 		35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874F1B8AB15900B44C7E /* MJRefreshFooterView.m */; };
@@ -32,8 +20,20 @@
 		35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC87551B8AB15900B44C7E /* UIScrollView+MJRefresh.m */; };
 		35AC875E1B8AB15900B44C7E /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC87571B8AB15900B44C7E /* UIView+MJExtension.m */; };
 		35AC87601B8AB2F800B44C7E /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */; };
+		35B2783E1B8D94AB00FA2399 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35B2783C1B8D94AB00FA2399 /* Main.storyboard */; };
+		35B278441B8D952100FA2399 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278401B8D952100FA2399 /* CommentDetailViewController.swift */; };
+		35B278451B8D952100FA2399 /* CommentDetailVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278411B8D952100FA2399 /* CommentDetailVCTableViewCell.swift */; };
+		35B278461B8D952100FA2399 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278421B8D952100FA2399 /* CommentViewController.swift */; };
+		35B278471B8D952100FA2399 /* CommentVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278431B8D952100FA2399 /* CommentVCTableViewCell.swift */; };
+		35B278591B8D955500FA2399 /* HNKCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B2784A1B8D955500FA2399 /* HNKCache.m */; };
+		35B2785A1B8D955500FA2399 /* HNKDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B2784C1B8D955500FA2399 /* HNKDiskCache.m */; };
+		35B2785B1B8D955500FA2399 /* HNKDiskFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B2784E1B8D955500FA2399 /* HNKDiskFetcher.m */; };
+		35B2785C1B8D955500FA2399 /* HNKNetworkFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B278501B8D955500FA2399 /* HNKNetworkFetcher.m */; };
+		35B2785D1B8D955500FA2399 /* HNKSimpleFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B278521B8D955500FA2399 /* HNKSimpleFetcher.m */; };
+		35B2785E1B8D955500FA2399 /* UIButton+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B278541B8D955500FA2399 /* UIButton+Haneke.m */; };
+		35B2785F1B8D955500FA2399 /* UIImageView+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B278561B8D955500FA2399 /* UIImageView+Haneke.m */; };
+		35B278601B8D955500FA2399 /* UIView+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B278581B8D955500FA2399 /* UIView+Haneke.m */; };
 		35C712181B8595B3004B267A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712171B8595B3004B267A /* AppDelegate.swift */; };
-		35C7121D1B8595B3004B267A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121B1B8595B3004B267A /* Main.storyboard */; };
 		35C7121F1B8595B3004B267A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121E1B8595B3004B267A /* Images.xcassets */; };
 		35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712401B85C0BE004B267A /* LogInViewController.swift */; };
 		35C712651B86AEE9004B267A /* SKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712621B86AEE9004B267A /* SKAlertView.m */; };
@@ -64,27 +64,6 @@
 		355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceVCTableViewCell.swift; sourceTree = "<group>"; };
 		355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceDetailVCTableViewCell.swift; sourceTree = "<group>"; };
 		355C95AC1B8C5145005595EA /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
-		355C95AE1B8C5FF9005595EA /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
-		355C95B01B8D48D9005595EA /* CommentVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentVCTableViewCell.swift; sourceTree = "<group>"; };
-		355C95B21B8D55AC005595EA /* CommentDetailVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailVCTableViewCell.swift; sourceTree = "<group>"; };
-		355C95B41B8D5BF6005595EA /* CommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
-		355C95B71B8D626B005595EA /* Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Haneke.h; sourceTree = "<group>"; };
-		355C95B81B8D626B005595EA /* HNKCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKCache.h; sourceTree = "<group>"; };
-		355C95B91B8D626B005595EA /* HNKCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKCache.m; sourceTree = "<group>"; };
-		355C95BA1B8D626B005595EA /* HNKDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKDiskCache.h; sourceTree = "<group>"; };
-		355C95BB1B8D626B005595EA /* HNKDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKDiskCache.m; sourceTree = "<group>"; };
-		355C95BC1B8D626B005595EA /* HNKDiskFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKDiskFetcher.h; sourceTree = "<group>"; };
-		355C95BD1B8D626B005595EA /* HNKDiskFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKDiskFetcher.m; sourceTree = "<group>"; };
-		355C95BE1B8D626B005595EA /* HNKNetworkFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKNetworkFetcher.h; sourceTree = "<group>"; };
-		355C95BF1B8D626B005595EA /* HNKNetworkFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKNetworkFetcher.m; sourceTree = "<group>"; };
-		355C95C01B8D626B005595EA /* HNKSimpleFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKSimpleFetcher.h; sourceTree = "<group>"; };
-		355C95C11B8D626B005595EA /* HNKSimpleFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKSimpleFetcher.m; sourceTree = "<group>"; };
-		355C95C21B8D626B005595EA /* UIButton+Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Haneke.h"; sourceTree = "<group>"; };
-		355C95C31B8D626B005595EA /* UIButton+Haneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Haneke.m"; sourceTree = "<group>"; };
-		355C95C41B8D626B005595EA /* UIImageView+Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Haneke.h"; sourceTree = "<group>"; };
-		355C95C51B8D626B005595EA /* UIImageView+Haneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Haneke.m"; sourceTree = "<group>"; };
-		355C95C61B8D626B005595EA /* UIView+Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Haneke.h"; sourceTree = "<group>"; };
-		355C95C71B8D626B005595EA /* UIView+Haneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Haneke.m"; sourceTree = "<group>"; };
 		35AC87491B8AB15900B44C7E /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		35AC874A1B8AB15900B44C7E /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
 		35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
@@ -101,10 +80,31 @@
 		35AC87561B8AB15900B44C7E /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		35AC87571B8AB15900B44C7E /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
+		35B2783D1B8D94AB00FA2399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		35B278401B8D952100FA2399 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
+		35B278411B8D952100FA2399 /* CommentDetailVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailVCTableViewCell.swift; sourceTree = "<group>"; };
+		35B278421B8D952100FA2399 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		35B278431B8D952100FA2399 /* CommentVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentVCTableViewCell.swift; sourceTree = "<group>"; };
+		35B278481B8D955500FA2399 /* Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Haneke.h; sourceTree = "<group>"; };
+		35B278491B8D955500FA2399 /* HNKCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKCache.h; sourceTree = "<group>"; };
+		35B2784A1B8D955500FA2399 /* HNKCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKCache.m; sourceTree = "<group>"; };
+		35B2784B1B8D955500FA2399 /* HNKDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKDiskCache.h; sourceTree = "<group>"; };
+		35B2784C1B8D955500FA2399 /* HNKDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKDiskCache.m; sourceTree = "<group>"; };
+		35B2784D1B8D955500FA2399 /* HNKDiskFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKDiskFetcher.h; sourceTree = "<group>"; };
+		35B2784E1B8D955500FA2399 /* HNKDiskFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKDiskFetcher.m; sourceTree = "<group>"; };
+		35B2784F1B8D955500FA2399 /* HNKNetworkFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKNetworkFetcher.h; sourceTree = "<group>"; };
+		35B278501B8D955500FA2399 /* HNKNetworkFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKNetworkFetcher.m; sourceTree = "<group>"; };
+		35B278511B8D955500FA2399 /* HNKSimpleFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HNKSimpleFetcher.h; sourceTree = "<group>"; };
+		35B278521B8D955500FA2399 /* HNKSimpleFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HNKSimpleFetcher.m; sourceTree = "<group>"; };
+		35B278531B8D955500FA2399 /* UIButton+Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Haneke.h"; sourceTree = "<group>"; };
+		35B278541B8D955500FA2399 /* UIButton+Haneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Haneke.m"; sourceTree = "<group>"; };
+		35B278551B8D955500FA2399 /* UIImageView+Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Haneke.h"; sourceTree = "<group>"; };
+		35B278561B8D955500FA2399 /* UIImageView+Haneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Haneke.m"; sourceTree = "<group>"; };
+		35B278571B8D955500FA2399 /* UIView+Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Haneke.h"; sourceTree = "<group>"; };
+		35B278581B8D955500FA2399 /* UIView+Haneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Haneke.m"; sourceTree = "<group>"; };
 		35C712121B8595B3004B267A /* 同鑫资讯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "同鑫资讯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C712161B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35C712171B8595B3004B267A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		35C7121C1B8595B3004B267A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35C7121E1B8595B3004B267A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		35C712401B85C0BE004B267A /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		35C712601B86AEE8004B267A /* tongxin_news-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tongxin_news-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -149,30 +149,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		355C95B61B8D624E005595EA /* Haneke */ = {
-			isa = PBXGroup;
-			children = (
-				355C95B71B8D626B005595EA /* Haneke.h */,
-				355C95B81B8D626B005595EA /* HNKCache.h */,
-				355C95B91B8D626B005595EA /* HNKCache.m */,
-				355C95BA1B8D626B005595EA /* HNKDiskCache.h */,
-				355C95BB1B8D626B005595EA /* HNKDiskCache.m */,
-				355C95BC1B8D626B005595EA /* HNKDiskFetcher.h */,
-				355C95BD1B8D626B005595EA /* HNKDiskFetcher.m */,
-				355C95BE1B8D626B005595EA /* HNKNetworkFetcher.h */,
-				355C95BF1B8D626B005595EA /* HNKNetworkFetcher.m */,
-				355C95C01B8D626B005595EA /* HNKSimpleFetcher.h */,
-				355C95C11B8D626B005595EA /* HNKSimpleFetcher.m */,
-				355C95C21B8D626B005595EA /* UIButton+Haneke.h */,
-				355C95C31B8D626B005595EA /* UIButton+Haneke.m */,
-				355C95C41B8D626B005595EA /* UIImageView+Haneke.h */,
-				355C95C51B8D626B005595EA /* UIImageView+Haneke.m */,
-				355C95C61B8D626B005595EA /* UIView+Haneke.h */,
-				355C95C71B8D626B005595EA /* UIView+Haneke.m */,
-			);
-			name = Haneke;
-			sourceTree = "<group>";
-		};
 		35AC87481B8AB14A00B44C7E /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +171,30 @@
 			name = MJRefresh;
 			sourceTree = "<group>";
 		};
+		35B2783F1B8D950200FA2399 /* Haneke */ = {
+			isa = PBXGroup;
+			children = (
+				35B278481B8D955500FA2399 /* Haneke.h */,
+				35B278491B8D955500FA2399 /* HNKCache.h */,
+				35B2784A1B8D955500FA2399 /* HNKCache.m */,
+				35B2784B1B8D955500FA2399 /* HNKDiskCache.h */,
+				35B2784C1B8D955500FA2399 /* HNKDiskCache.m */,
+				35B2784D1B8D955500FA2399 /* HNKDiskFetcher.h */,
+				35B2784E1B8D955500FA2399 /* HNKDiskFetcher.m */,
+				35B2784F1B8D955500FA2399 /* HNKNetworkFetcher.h */,
+				35B278501B8D955500FA2399 /* HNKNetworkFetcher.m */,
+				35B278511B8D955500FA2399 /* HNKSimpleFetcher.h */,
+				35B278521B8D955500FA2399 /* HNKSimpleFetcher.m */,
+				35B278531B8D955500FA2399 /* UIButton+Haneke.h */,
+				35B278541B8D955500FA2399 /* UIButton+Haneke.m */,
+				35B278551B8D955500FA2399 /* UIImageView+Haneke.h */,
+				35B278561B8D955500FA2399 /* UIImageView+Haneke.m */,
+				35B278571B8D955500FA2399 /* UIView+Haneke.h */,
+				35B278581B8D955500FA2399 /* UIView+Haneke.m */,
+			);
+			name = Haneke;
+			sourceTree = "<group>";
+		};
 		35C712091B8595B3004B267A = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +214,11 @@
 		35C712141B8595B3004B267A /* tongxin_news */ = {
 			isa = PBXGroup;
 			children = (
+				35B278401B8D952100FA2399 /* CommentDetailViewController.swift */,
+				35B278411B8D952100FA2399 /* CommentDetailVCTableViewCell.swift */,
+				35B278421B8D952100FA2399 /* CommentViewController.swift */,
+				35B278431B8D952100FA2399 /* CommentVCTableViewCell.swift */,
+				35B2783F1B8D950200FA2399 /* Haneke */,
 				35AC87481B8AB14A00B44C7E /* MJRefresh */,
 				35C712941B86CC6F004B267A /* MXPullDownMenu */,
 				35C712891B86CC4C004B267A /* HTHorizontalSelectionList */,
@@ -223,8 +228,8 @@
 				35C712671B86AF12004B267A /* Alamofire */,
 				35C7125F1B86AEB7004B267A /* SKAlertView */,
 				35C712171B8595B3004B267A /* AppDelegate.swift */,
+				35B2783C1B8D94AB00FA2399 /* Main.storyboard */,
 				35C712601B86AEE8004B267A /* tongxin_news-Bridging-Header.h */,
-				35C7121B1B8595B3004B267A /* Main.storyboard */,
 				35C7121E1B8595B3004B267A /* Images.xcassets */,
 				35C7127C1B86B008004B267A /* EndPoints.swift */,
 				35C712401B85C0BE004B267A /* LogInViewController.swift */,
@@ -378,8 +383,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35C7121D1B8595B3004B267A /* Main.storyboard in Resources */,
 				35C7121F1B8595B3004B267A /* Images.xcassets in Resources */,
+				35B2783E1B8D94AB00FA2399 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,44 +403,44 @@
 				35C712821B86B126004B267A /* HomeTabBarViewController.swift in Sources */,
 				35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */,
 				355C95A91B8C1407005595EA /* PriceVCTableViewCell.swift in Sources */,
-				355C95AF1B8C5FF9005595EA /* CommentViewController.swift in Sources */,
 				355C95A51B8AF089005595EA /* PriceViewController.swift in Sources */,
+				35B278461B8D952100FA2399 /* CommentViewController.swift in Sources */,
 				35C712721B86AFA5004B267A /* Alamofire.swift in Sources */,
 				35C712791B86AFA5004B267A /* ServerTrustPolicy.swift in Sources */,
 				35C712921B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m in Sources */,
 				35C712751B86AFA5004B267A /* MultipartFormData.swift in Sources */,
 				35C712661B86AEE9004B267A /* SKTipAlertView.m in Sources */,
 				35C712911B86CC5D004B267A /* HTHorizontalSelectionList.m in Sources */,
-				355C95CE1B8D626B005595EA /* UIImageView+Haneke.m in Sources */,
-				355C95CD1B8D626B005595EA /* UIButton+Haneke.m in Sources */,
+				35B2785F1B8D955500FA2399 /* UIImageView+Haneke.m in Sources */,
+				35B2785E1B8D955500FA2399 /* UIButton+Haneke.m in Sources */,
 				35C7127B1B86AFA5004B267A /* Validation.swift in Sources */,
+				35B278441B8D952100FA2399 /* CommentDetailViewController.swift in Sources */,
 				35C7127A1B86AFA5004B267A /* Upload.swift in Sources */,
 				35C712731B86AFA5004B267A /* Download.swift in Sources */,
 				35C712741B86AFA5004B267A /* Manager.swift in Sources */,
+				35B2785D1B8D955500FA2399 /* HNKSimpleFetcher.m in Sources */,
 				355C95AB1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift in Sources */,
-				355C95CC1B8D626B005595EA /* HNKSimpleFetcher.m in Sources */,
+				35B2785C1B8D955500FA2399 /* HNKNetworkFetcher.m in Sources */,
 				35AC875B1B8AB15900B44C7E /* MJRefreshHeaderView.m in Sources */,
-				355C95CB1B8D626B005595EA /* HNKNetworkFetcher.m in Sources */,
 				35AC875C1B8AB15900B44C7E /* UIScrollView+MJExtension.m in Sources */,
 				35C712801B86B09E004B267A /* SwiftyJSON.swift in Sources */,
 				35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */,
-				355C95B51B8D5BF6005595EA /* CommentDetailViewController.swift in Sources */,
 				35C712861B86B2BE004B267A /* MBProgressHUD.m in Sources */,
 				35C712771B86AFA5004B267A /* Request.swift in Sources */,
 				35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */,
 				35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */,
+				35B278471B8D952100FA2399 /* CommentVCTableViewCell.swift in Sources */,
+				35B278601B8D955500FA2399 /* UIView+Haneke.m in Sources */,
 				35C712781B86AFA5004B267A /* ResponseSerialization.swift in Sources */,
-				355C95CF1B8D626B005595EA /* UIView+Haneke.m in Sources */,
 				35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */,
 				35C712181B8595B3004B267A /* AppDelegate.swift in Sources */,
+				35B2785B1B8D955500FA2399 /* HNKDiskFetcher.m in Sources */,
+				35B2785A1B8D955500FA2399 /* HNKDiskCache.m in Sources */,
+				35B278591B8D955500FA2399 /* HNKCache.m in Sources */,
 				35C712971B86CC79004B267A /* MXPullDownMenu.m in Sources */,
-				355C95CA1B8D626B005595EA /* HNKDiskFetcher.m in Sources */,
-				355C95C91B8D626B005595EA /* HNKDiskCache.m in Sources */,
-				355C95C81B8D626B005595EA /* HNKCache.m in Sources */,
 				35C712651B86AEE9004B267A /* SKAlertView.m in Sources */,
 				35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */,
-				355C95B31B8D55AC005595EA /* CommentDetailVCTableViewCell.swift in Sources */,
-				355C95B11B8D48D9005595EA /* CommentVCTableViewCell.swift in Sources */,
+				35B278451B8D952100FA2399 /* CommentDetailVCTableViewCell.swift in Sources */,
 				355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -443,10 +448,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		35C7121B1B8595B3004B267A /* Main.storyboard */ = {
+		35B2783C1B8D94AB00FA2399 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				35C7121C1B8595B3004B267A /* Base */,
+				35B2783D1B8D94AB00FA2399 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
