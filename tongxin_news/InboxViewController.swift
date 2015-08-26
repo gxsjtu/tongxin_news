@@ -42,7 +42,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         var msg : String = resInfos[indexPath.row].msg!
-        var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: 196, height: 0))
+        var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 0))
         lb.initAutoHeight(lb.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
         return (lb.frame.height + 15)
     }
@@ -51,8 +51,14 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
         var format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
         var msg : String = resInfos[indexPath.row].msg!
+        var lblMsg : UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 0))
+        lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        lblMsg.numberOfLines = 0
+        lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
         let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
-        (tbCell.viewWithTag(1) as! UILabel).initAutoHeight((tbCell.viewWithTag(1) as! UILabel).frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
+//        (tbCell.viewWithTag(1) as! UILabel).initAutoHeight((tbCell.viewWithTag(1) as! UILabel).frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
+        
+        tbCell.addSubview(lblMsg)
         (tbCell.viewWithTag(2) as! UILabel).text = format.stringFromDate(resInfos[indexPath.row].dateStr!)
         return tbCell
     }
