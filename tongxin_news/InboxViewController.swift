@@ -5,18 +5,22 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
     
     //@IBOutlet weak var lblMsg: UILabel!
     @IBOutlet weak var searchCon: UISearchBar!
-    
+    @IBOutlet weak var navInbox: UINavigationBar!
     @IBOutlet weak var tbData: UITableView!
     
     var msgInfos : Array<MsgInfo> = []
     var resInfos : Array<MsgInfo> = []
+    
+    override func viewWillAppear(animated: Bool) {
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
          initLoadDatas()
         //self.resInfos = self.msgInfos
-        
+        self.navInbox.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.tbData.dataSource = self
         self.tbData.delegate = self
         self.searchCon.delegate = self

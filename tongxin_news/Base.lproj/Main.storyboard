@@ -553,14 +553,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gWu-61-hd3">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWu-61-hd3">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="TJn-sh-X9H"/>
                                 </constraints>
                                 <items>
                                     <navigationItem title="收件箱" id="iE2-WC-aDt">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="2iE-zf-5IL"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="2iE-zf-5IL">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -609,6 +611,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="收件箱" image="box" id="e7n-eI-w4A"/>
                     <connections>
+                        <outlet property="navInbox" destination="gWu-61-hd3" id="wgZ-3s-zB1"/>
                         <outlet property="searchCon" destination="Gcc-6i-zLJ" id="lb0-v3-qia"/>
                         <outlet property="tbData" destination="CWQ-eA-vrw" id="9FR-sG-qbE"/>
                     </connections>
