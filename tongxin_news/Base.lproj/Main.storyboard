@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8f-rX-dHr">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S8f-rX-dHr">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="oOb-X8-iEB"/>
@@ -26,6 +26,7 @@
                                 <items>
                                     <navigationItem title="同鑫评论" id="U60-Eq-Oys">
                                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="WZw-MZ-OV7">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="btnRefresh:" destination="LSS-2S-FyB" id="cb5-eJ-ih6"/>
                                             </connections>
@@ -81,6 +82,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="评论" image="comment" id="ab0-YT-EIU"/>
                     <connections>
+                        <outlet property="navComment" destination="S8f-rX-dHr" id="9hr-Pr-R7A"/>
                         <outlet property="tvComment" destination="vjY-lB-WuW" id="mCd-Tt-rLF"/>
                         <outlet property="vSelectionView" destination="Sg9-Qy-HPQ" id="CmL-5D-KFg"/>
                     </connections>
@@ -244,6 +246,7 @@
                                 <items>
                                     <navigationItem title="实时行情" id="YiI-8f-Gmu">
                                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="MoQ-2Z-ZAF">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="btnRefresh:" destination="YUd-7R-Tb7" id="T1K-J1-bNt"/>
                                             </connections>
@@ -266,6 +269,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="navPrice" destination="aVj-O3-gKb" id="auH-kE-wyv"/>
                         <outlet property="tvPriceTableView" destination="5qx-JR-mAN" id="Cs1-4J-X8X"/>
                         <outlet property="vSelectionView" destination="vkK-kU-9xD" id="Jbh-s6-zmU"/>
                     </connections>
@@ -286,7 +290,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XCX-OW-QSA">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCX-OW-QSA">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="ehT-1A-Dsm"/>
@@ -294,11 +298,13 @@
                                 <items>
                                     <navigationItem title="Title" id="AFc-X5-czp">
                                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="8KZ-bd-Nl4">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <segue destination="Smj-sN-SPc" kind="unwind" unwindAction="unwindFromCommentDetail2Comment:" id="oRR-6L-tX1"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="r0w-bv-aeq">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="btnRefresh:" destination="UyF-N1-fe0" id="Wr8-kO-Ss0"/>
                                             </connections>
@@ -399,7 +405,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-R4-0lz">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-R4-0lz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="gWX-lG-DDT"/>
@@ -407,11 +413,13 @@
                                 <items>
                                     <navigationItem title="Title" id="t7e-pf-Vl2">
                                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="K2d-p5-8rN">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <segue destination="d52-W3-FHO" kind="unwind" unwindAction="unwindFromPriceDetail2Price:" id="CWg-NX-P2U"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="wEX-hS-b8G">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <connections>
                                                 <action selector="btnRefresh:" destination="ycC-fZ-orG" id="eeN-jV-eeC"/>
                                             </connections>

@@ -22,7 +22,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        self.navBarPriceDetail.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navBarPriceDetail.topItem?.title = group + " - " + market
         getProducts()
         tvPriceDetail.dataSource = self

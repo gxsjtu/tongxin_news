@@ -10,6 +10,7 @@ import UIKit
 
 class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate, HTHorizontalSelectionListDataSource, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var navComment: UINavigationBar!
     @IBOutlet weak var tvComment: UITableView!
     @IBOutlet weak var vSelectionView: UIView!
     
@@ -25,6 +26,7 @@ class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navComment.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         selection = HTHorizontalSelectionList(frame: CGRect(x: 0, y: 0, width: vSelectionView.frame.width, height: vSelectionView.frame.height))
         selection?.delegate = self
         selection?.dataSource = self
