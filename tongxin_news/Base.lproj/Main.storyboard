@@ -25,7 +25,11 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="同鑫评论" id="U60-Eq-Oys">
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="WZw-MZ-OV7"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="WZw-MZ-OV7">
+                                            <connections>
+                                                <action selector="btnRefresh:" destination="LSS-2S-FyB" id="cb5-eJ-ih6"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -55,6 +59,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblCommentMarketId" destination="MJN-hw-ekJ" id="bGE-SB-8Zw"/>
+                                            <segue destination="UyF-N1-fe0" kind="modal" identifier="Comment2CommentDetail" id="QyR-O3-GfZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -222,7 +227,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="lblPriceCellMarketId" destination="bOi-tg-Mnj" id="x09-Mp-cTh"/>
-                                            <segue destination="UyF-N1-fe0" kind="modal" id="6bI-X9-Tyj"/>
+                                            <segue destination="ycC-fZ-orG" kind="modal" identifier="Price2PriceDetail" id="uYb-4C-u3f"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -265,10 +270,10 @@
             </objects>
             <point key="canvasLocation" x="428" y="237"/>
         </scene>
-        <!--View Controller-->
+        <!--Comment Detail View Controller-->
         <scene sceneID="bnN-SN-6PO">
             <objects>
-                <viewController id="UyF-N1-fe0" sceneMemberID="viewController">
+                <viewController id="UyF-N1-fe0" customClass="CommentDetailViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gmy-Mt-wcX"/>
                         <viewControllerLayoutGuide type="bottom" id="pPt-aR-dlf"/>
@@ -325,11 +330,14 @@
                             <constraint firstItem="Vft-Qg-y3U" firstAttribute="leading" secondItem="Fvq-EE-uJ3" secondAttribute="leadingMargin" constant="-16" id="zf7-eP-tWC"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navBarCommentetail" destination="XCX-OW-QSA" id="LxE-TI-CwT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7px-Ic-zth" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Smj-sN-SPc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="638" y="-143"/>
+            <point key="canvasLocation" x="922" y="-116"/>
         </scene>
         <!--Price Detail View Controller-->
         <scene sceneID="876-yt-7fG">
@@ -452,7 +460,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sax-aV-QZu" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="d52-W3-FHO" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="934" y="237"/>
+            <point key="canvasLocation" x="931" y="508"/>
         </scene>
         <!--Home Tab Bar View Controller-->
         <scene sceneID="Woj-t2-ARA">

@@ -18,6 +18,9 @@ class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate
     var selection: HTHorizontalSelectionList!
     var market = Dictionary<String, [(String, String)]>()
     
+    @IBAction func btnRefresh(sender: AnyObject) {
+        getCommentHierarchy()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -70,7 +73,7 @@ class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate
     func getCommentHierarchy()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.GetProductHierarchy.rawValue, parameters: ["method": "getmarkets"])
+        request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getmarkets"])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
@@ -160,14 +163,19 @@ class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate
     @IBAction func unwindFromCommentDetail2Comment(segue:UIStoryboardSegue){}
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "Comment2CommentDetail"
+        {
+            if let des = segue.destinationViewController as? CommentDetailViewController
+            {
+                des.group = self.selectionData[self.selection.selectedButtonIndex]
+                if let cell = sender as? CommentVCTableViewCell
+                {
+                    des.market = cell.textLabel!.text!
+                    des.marketId = cell.lblCommentMarketId.text!
+                }
+                des.mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")!
+            }
+        }
     }
-    */
-
 }
