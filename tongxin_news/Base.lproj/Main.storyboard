@@ -126,13 +126,6 @@
                                     <action selector="didLogInClicked:" destination="4cq-Lm-6BC" eventType="touchUpInside" id="RbV-i1-6nE"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="895-mm-QNF">
-                                <rect key="frame" x="120" y="50" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="VQq-Zk-Vuf"/>
-                                    <constraint firstAttribute="width" constant="80" id="p5n-l2-8qr"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="上海同鑫 版权所有" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ude-Yo-5Up">
                                 <rect key="frame" x="90" y="527" width="141" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -147,6 +140,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="895-mm-QNF">
+                                <rect key="frame" x="120" y="50" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="VQq-Zk-Vuf"/>
+                                    <constraint firstAttribute="width" constant="80" id="p5n-l2-8qr"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -294,7 +294,11 @@
                                                 <segue destination="Smj-sN-SPc" kind="unwind" unwindAction="unwindFromCommentDetail2Comment:" id="b3x-do-53e"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="r0w-bv-aeq"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="r0w-bv-aeq">
+                                            <connections>
+                                                <action selector="btnRefresh:" destination="UyF-N1-fe0" id="mVa-9f-hcb"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -339,6 +343,7 @@
                     </view>
                     <connections>
                         <outlet property="navBarCommentetail" destination="XCX-OW-QSA" id="LxE-TI-CwT"/>
+                        <outlet property="tvCommentDetail" destination="Vft-Qg-y3U" id="VTb-GF-gFO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7px-Ic-zth" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -645,7 +650,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yvq-wV-PKo">
                                 <rect key="frame" x="120" y="50" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="0yY-FB-ZOr"/>
+                                    <constraint firstAttribute="height" constant="80" id="Mlz-Hc-rmQ"/>
+                                    <constraint firstAttribute="width" constant="80" id="chB-PF-SBb"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhj-o1-FUn">
@@ -669,19 +675,19 @@
                             <constraint firstItem="e9N-nd-dGN" firstAttribute="top" secondItem="7qz-UU-gq7" secondAttribute="top" constant="44" id="Czr-rf-j4t"/>
                             <constraint firstItem="Jx8-c8-6SN" firstAttribute="leading" secondItem="Op1-ai-T7u" secondAttribute="leadingMargin" constant="-16" id="GNX-Cy-kfb"/>
                             <constraint firstItem="GXK-p1-Nvu" firstAttribute="trailing" secondItem="Op1-ai-T7u" secondAttribute="trailingMargin" id="Jkc-24-Fbe"/>
-                            <constraint firstItem="KhZ-rT-M95" firstAttribute="top" secondItem="Yvq-wV-PKo" secondAttribute="top" constant="99" id="Qoo-nk-UIQ"/>
+                            <constraint firstItem="Yvq-wV-PKo" firstAttribute="top" secondItem="LIw-cb-lf0" secondAttribute="bottom" constant="30" id="LVL-PO-4jc"/>
                             <constraint firstItem="Klh-R7-3O3" firstAttribute="top" secondItem="Jx8-c8-6SN" secondAttribute="bottom" id="Vac-4O-Bu7"/>
+                            <constraint firstItem="KhZ-rT-M95" firstAttribute="top" secondItem="Jx8-c8-6SN" secondAttribute="top" constant="175" id="VqC-ui-ptz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Jx8-c8-6SN" secondAttribute="trailing" constant="-22" id="Vuf-uM-FNe"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Yvq-wV-PKo" secondAttribute="trailing" constant="104" id="Wm9-ps-Ad2"/>
-                            <constraint firstItem="Yvq-wV-PKo" firstAttribute="leading" secondItem="Op1-ai-T7u" secondAttribute="leadingMargin" constant="104" id="WzK-B7-yMb"/>
+                            <constraint firstItem="KhZ-rT-M95" firstAttribute="leading" secondItem="Op1-ai-T7u" secondAttribute="leadingMargin" id="ZHe-4v-rIb"/>
                             <constraint firstItem="Jx8-c8-6SN" firstAttribute="top" secondItem="LIw-cb-lf0" secondAttribute="bottom" constant="-46" id="aif-fB-3HQ"/>
                             <constraint firstItem="7qz-UU-gq7" firstAttribute="trailing" secondItem="Op1-ai-T7u" secondAttribute="trailingMargin" id="bCz-Ik-w20"/>
                             <constraint firstItem="KhZ-rT-M95" firstAttribute="leading" secondItem="Op1-ai-T7u" secondAttribute="leadingMargin" id="daN-I4-BpJ"/>
                             <constraint firstItem="7qz-UU-gq7" firstAttribute="leading" secondItem="Op1-ai-T7u" secondAttribute="leadingMargin" id="ezq-wd-Rx2"/>
                             <constraint firstItem="e9N-nd-dGN" firstAttribute="top" secondItem="GXK-p1-Nvu" secondAttribute="top" constant="-37" id="gAa-D9-ExC"/>
-                            <constraint firstItem="Yvq-wV-PKo" firstAttribute="top" secondItem="LIw-cb-lf0" secondAttribute="bottom" constant="30" id="gkr-yf-g0X"/>
                             <constraint firstItem="Bhj-o1-FUn" firstAttribute="leading" secondItem="Op1-ai-T7u" secondAttribute="leadingMargin" id="jmN-EX-aMa"/>
                             <constraint firstItem="Bhj-o1-FUn" firstAttribute="trailing" secondItem="Op1-ai-T7u" secondAttribute="trailingMargin" id="l8k-0y-MQX"/>
+                            <constraint firstAttribute="centerX" secondItem="Yvq-wV-PKo" secondAttribute="centerX" id="mH1-gS-JEq"/>
                             <constraint firstItem="GXK-p1-Nvu" firstAttribute="leading" secondItem="Op1-ai-T7u" secondAttribute="leadingMargin" id="pTU-9o-IIY"/>
                             <constraint firstItem="KhZ-rT-M95" firstAttribute="top" secondItem="7qz-UU-gq7" secondAttribute="top" constant="-35" id="rc8-p2-J4E"/>
                             <constraint firstItem="e9N-nd-dGN" firstAttribute="leading" secondItem="Op1-ai-T7u" secondAttribute="leadingMargin" id="sSf-tf-5g9"/>
