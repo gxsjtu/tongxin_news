@@ -567,14 +567,14 @@
                                 </items>
                             </navigationBar>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Gcc-6i-zLJ">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="100" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="djS-HO-fkq"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CWQ-eA-vrw">
-                                <rect key="frame" x="0.0" y="108" width="320" height="411"/>
+                                <rect key="frame" x="0.0" y="144" width="320" height="411"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Fwt-Uy-8ku">
@@ -594,13 +594,20 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6yI-HX-nhB">
+                                <rect key="frame" x="94" y="68" width="133" height="29"/>
+                                <segments>
+                                    <segment title="行情报价"/>
+                                    <segment title="同鑫评论"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Gcc-6i-zLJ" firstAttribute="top" secondItem="CWQ-eA-vrw" secondAttribute="top" constant="-44" id="3Ag-lX-Gss"/>
                             <constraint firstItem="CWQ-eA-vrw" firstAttribute="leading" secondItem="yOA-L1-X3Q" secondAttribute="leadingMargin" constant="-16" id="3Ib-fP-9QN"/>
-                            <constraint firstItem="X5x-HS-dqm" firstAttribute="top" secondItem="CWQ-eA-vrw" secondAttribute="bottom" id="9Pk-se-h1Q"/>
-                            <constraint firstItem="Gcc-6i-zLJ" firstAttribute="top" secondItem="KtO-Hm-X8y" secondAttribute="bottom" constant="44" id="A2Y-8l-D1g"/>
+                            <constraint firstItem="X5x-HS-dqm" firstAttribute="top" secondItem="CWQ-eA-vrw" secondAttribute="bottom" constant="-36" id="9Pk-se-h1Q"/>
+                            <constraint firstItem="Gcc-6i-zLJ" firstAttribute="top" secondItem="KtO-Hm-X8y" secondAttribute="bottom" constant="80" id="A2Y-8l-D1g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CWQ-eA-vrw" secondAttribute="trailing" constant="-16" id="B1K-oL-Bxp"/>
                             <constraint firstItem="Gcc-6i-zLJ" firstAttribute="leading" secondItem="yOA-L1-X3Q" secondAttribute="leadingMargin" constant="-16" id="CQt-bD-k3J"/>
                             <constraint firstItem="gWu-61-hd3" firstAttribute="leading" secondItem="yOA-L1-X3Q" secondAttribute="leadingMargin" constant="-16" id="TF3-J2-sHr"/>
