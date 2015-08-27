@@ -33,6 +33,7 @@
 		35B2785F1B8D955500FA2399 /* UIImageView+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B278561B8D955500FA2399 /* UIImageView+Haneke.m */; };
 		35B278601B8D955500FA2399 /* UIView+Haneke.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B278581B8D955500FA2399 /* UIView+Haneke.m */; };
 		35B278621B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278611B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift */; };
+		35B278641B8EA2FD00FA2399 /* CommentContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278631B8EA2FD00FA2399 /* CommentContentViewController.swift */; };
 		35C712181B8595B3004B267A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712171B8595B3004B267A /* AppDelegate.swift */; };
 		35C7121F1B8595B3004B267A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121E1B8595B3004B267A /* Images.xcassets */; };
 		35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712401B85C0BE004B267A /* LogInViewController.swift */; };
@@ -102,6 +103,7 @@
 		35B278571B8D955500FA2399 /* UIView+Haneke.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Haneke.h"; sourceTree = "<group>"; };
 		35B278581B8D955500FA2399 /* UIView+Haneke.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Haneke.m"; sourceTree = "<group>"; };
 		35B278611B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailVCTableViewCell.swift; sourceTree = "<group>"; };
+		35B278631B8EA2FD00FA2399 /* CommentContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentContentViewController.swift; sourceTree = "<group>"; };
 		35C712121B8595B3004B267A /* 同鑫资讯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "同鑫资讯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C712161B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35C712171B8595B3004B267A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				35B278421B8D952100FA2399 /* CommentViewController.swift */,
 				35B278431B8D952100FA2399 /* CommentVCTableViewCell.swift */,
 				35B278611B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift */,
+				35B278631B8EA2FD00FA2399 /* CommentContentViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				35C712861B86B2BE004B267A /* MBProgressHUD.m in Sources */,
 				35C712771B86AFA5004B267A /* Request.swift in Sources */,
 				35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */,
+				35B278641B8EA2FD00FA2399 /* CommentContentViewController.swift in Sources */,
 				35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */,
 				35B278471B8D952100FA2399 /* CommentVCTableViewCell.swift in Sources */,
 				35B278601B8D955500FA2399 /* UIView+Haneke.m in Sources */,
