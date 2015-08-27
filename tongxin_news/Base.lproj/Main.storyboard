@@ -321,7 +321,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-vC-Z91">
-                                                    <rect key="frame" x="197" y="40" width="90" height="20"/>
+                                                    <rect key="frame" x="197" y="42" width="90" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="05a-GR-bAT"/>
                                                         <constraint firstAttribute="width" constant="90" id="3Zh-4A-1hr"/>
@@ -338,7 +338,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6i-kF-iZS">
-                                                    <rect key="frame" x="70" y="39" width="119" height="21"/>
+                                                    <rect key="frame" x="70" y="41" width="119" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="SKW-aa-auy"/>
                                                         <constraint firstAttribute="width" constant="119" id="kwB-Z7-HtN"/>
@@ -364,9 +364,9 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Rbt-vC-Z91" secondAttribute="bottom" constant="-4" id="3Rj-KI-Pl3"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Rbt-vC-Z91" secondAttribute="bottom" constant="-6" id="3Rj-KI-Pl3"/>
                                                 <constraint firstItem="0lj-jc-CYr" firstAttribute="top" secondItem="nKi-wd-Gcp" secondAttribute="topMargin" constant="-8" id="4mU-aC-5tU"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="s6i-kF-iZS" secondAttribute="bottom" constant="-4" id="NLJ-af-lux"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="s6i-kF-iZS" secondAttribute="bottom" constant="-6" id="NLJ-af-lux"/>
                                                 <constraint firstAttribute="centerY" secondItem="NAV-fl-zrg" secondAttribute="centerY" id="SMz-Ka-qUG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Rbt-vC-Z91" secondAttribute="trailing" constant="-8" id="TwL-a2-skn"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0lj-jc-CYr" secondAttribute="trailing" constant="-2" id="Ugy-wP-jYG"/>
