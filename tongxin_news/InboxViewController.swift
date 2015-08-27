@@ -41,25 +41,43 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        var format = NSDateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
         var msg : String = resInfos[indexPath.row].msg!
-        var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 0))
+        var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
+        var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
         lb.initAutoHeight(lb.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
-        return (lb.frame.height + 15)
+        var lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
+        lbDate.initAutoHeight(lbDate.frame, textColor: UIColor.yellowColor(), fontSize: 10, text: date, lineSpacing: 1)
+        return (lb.frame.height + lbDate.frame.height + 25)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
         var msg : String = resInfos[indexPath.row].msg!
-        var lblMsg : UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 0))
+        var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
+        if(tbCell.viewWithTag(1) != nil){
+            tbCell.viewWithTag(1)?.removeFromSuperview()
+        }
+        if(tbCell.viewWithTag(2) != nil){
+            tbCell.viewWithTag(2)?.removeFromSuperview()
+        }
+        
+        var lblMsg : UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
+        lblMsg.tag = 1
         lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
         lblMsg.numberOfLines = 0
         lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
-        let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
-//        (tbCell.viewWithTag(1) as! UILabel).initAutoHeight((tbCell.viewWithTag(1) as! UILabel).frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
-        
         tbCell.addSubview(lblMsg)
-        (tbCell.viewWithTag(2) as! UILabel).text = format.stringFromDate(resInfos[indexPath.row].dateStr!)
+        var lblDate : UILabel = UILabel(frame: CGRect(x: 0, y: lblMsg.frame.size.height + 10, width: 320, height: 0))
+        lblDate.tag = 2
+        lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        lblDate.numberOfLines = 0
+        lblDate.initAutoHeight(lblDate.frame, textColor: UIColor.orangeColor(), fontSize: 10, text: date, lineSpacing: 1)
+        tbCell.addSubview(lblDate)
+
         return tbCell
     }
     
