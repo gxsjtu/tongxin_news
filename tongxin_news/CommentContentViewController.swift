@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommentContentViewController: UIViewController {
+class CommentContentViewController: UIViewController, UIWebViewDelegate {
     
     var navTitle = "未知"
     var url = "http://app.shtx.com.cn/404.html"
@@ -19,6 +19,7 @@ class CommentContentViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.wvCommentContent.delegate = self
         self.navCommentContent.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navCommentContent.topItem?.title = navTitle
         self.wvCommentContent.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
@@ -27,6 +28,14 @@ class CommentContentViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        MBProgressHUD.showHUDAddedTo(self.wvCommentContent, animated: true)
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        MBProgressHUD.hideHUDForView(self.wvCommentContent, animated: true)
     }
     
 
