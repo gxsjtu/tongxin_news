@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>C56257E7-1274-4B2F-8EE1-4E1D365766B3</string>
 	<key>IDESourceControlProjectName</key>
-	<string>tongxin_news</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2FFC8833E9F76EBBEEB827E5F540D60FE197705D</key>
 		<string>https://github.com/gxsjtu/tongxin_news.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>tongxin_news.xcodeproj</string>
+	<string>tongxin_news.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2FFC8833E9F76EBBEEB827E5F540D60FE197705D</key>

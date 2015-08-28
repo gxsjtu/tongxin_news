@@ -104,7 +104,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             lblDate.tag = 2
             lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblDate.numberOfLines = 0
-            lblDate.initAutoHeight(lblDate.frame, textColor: UIColor.orangeColor(), fontSize: 10, text: date, lineSpacing: 1)
+            lblDate.initAutoHeight(lblDate.frame, textColor: UIColor.orangeColor(), fontSize: 14, text: date, lineSpacing: 1)
             tbCell.addSubview(lblDate)
             
 
@@ -152,7 +152,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
 
            if(self.segmentindex == 0)
            {
-            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":mobile!,"method":"getInboxMsg"]).responseJSON{
+            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":"15802161396","method":"getInboxMsg"]).responseJSON{
                 (request,response,data,error) in
                 
                 if let anError = error
@@ -183,7 +183,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             }
             else//评论
            {
-            request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getCommentByMobile", "mobile": mobile!])
+            request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getCommentByMobile", "mobile": "15802161396"])
                 .responseJSON { (request, response, data, error) in
 
                     if let anError = error
@@ -280,6 +280,8 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             }
         }
         
+            if(minDate != nil)
+            {
         request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":mobile!,"method":"getMsgByAction","actionStr" : "pullUp","dateStr": format.stringFromDate(minDate!)]).responseJSON{
             (request,response,data,error) in
             
@@ -306,7 +308,11 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                 self.tbData.reloadData()
                 self.tbData.footerEndRefreshing()
             }
+                }
             
+            }else
+            {
+                self.tbData.footerEndRefreshing()
             }
         }
         else
@@ -326,6 +332,8 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                 }
             }
             
+            if(minDate != nil)
+            {
             request(.GET, EndPoints.GetCommentHierarchy.rawValue,parameters:["mobile":mobile!,"method":"getComByAction","actionStr" : "pullUp","dateStr": format.stringFromDate(minDate!)]).responseJSON{
                 (request,response,data,error) in
                 
@@ -356,7 +364,9 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                     self.tbData.footerEndRefreshing()
                 }
             }
-
+            }else{
+                self.tbData.footerEndRefreshing()
+            }
         }
 
     }
@@ -385,7 +395,8 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             }
         }
         
-        
+        if(maxDate != nil)
+        {
         request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":mobile!,"method":"getMsgByAction","actionStr" : "pullDown","dateStr": format.stringFromDate(maxDate!)]).responseJSON{
             (request,response,data,error) in
             
@@ -412,8 +423,12 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                 self.tbData.reloadData()
                 self.tbData.headerEndRefreshing()
             }
-
-        }
+            }
+            }
+            else
+        {
+                self.tbData.headerEndRefreshing()
+            }
         }
         else
         {
@@ -432,6 +447,8 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                 }
             }
             
+            if(maxDate != nil)
+            {
             request(.GET, EndPoints.GetCommentHierarchy.rawValue,parameters:["mobile":mobile!,"method":"getComByAction","actionStr" : "pullDown","dateStr": format.stringFromDate(maxDate!)]).responseJSON{
                 (request,response,data,error) in
                 
@@ -461,6 +478,11 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                     self.tbData.reloadData()
                     self.tbData.headerEndRefreshing()
                 }
+            }
+            }
+            else
+            {
+                self.tbData.headerEndRefreshing()
             }
         }
     }
