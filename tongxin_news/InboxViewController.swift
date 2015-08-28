@@ -152,7 +152,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
 
            if(self.segmentindex == 0)
            {
-            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":"15802161396","method":"getInboxMsg"]).responseJSON{
+            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":mobile!,"method":"getInboxMsg"]).responseJSON{
                 (request,response,data,error) in
                 
                 if let anError = error
@@ -183,7 +183,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             }
             else//评论
            {
-            request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getCommentByMobile", "mobile": "15802161396"])
+            request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getCommentByMobile", "mobile": mobile!])
                 .responseJSON { (request, response, data, error) in
 
                     if let anError = error
