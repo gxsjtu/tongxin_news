@@ -12,6 +12,8 @@ class CommentDetailVCTableViewCell: UITableViewCell {
     @IBOutlet weak var lblCommentDetailTitle: UILabel!
     @IBOutlet weak var imgCommentDetailLogo: UIImageView!
     @IBOutlet weak var lblCommentDetailDate: UILabel!
+    @IBOutlet weak var lblCommentDetailName: UILabel!
+    @IBOutlet weak var lblCommentDetailUrl: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

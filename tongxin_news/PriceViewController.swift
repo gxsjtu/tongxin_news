@@ -10,6 +10,7 @@ import UIKit
 
 class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, HTHorizontalSelectionListDataSource, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var navPrice: UINavigationBar!
     @IBOutlet weak var tvPriceTableView: UITableView!
     var selectionData = [String]()
     var marketData = [(String, String)]()
@@ -22,6 +23,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navPrice.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         selection = HTHorizontalSelectionList(frame: CGRect(x: 0, y: 0, width: vSelectionView.frame.width, height: vSelectionView.frame.height))
         selection?.delegate = self
         selection?.dataSource = self

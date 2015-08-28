@@ -22,7 +22,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        self.navBarPriceDetail.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navBarPriceDetail.topItem?.title = group + " - " + market
         getProducts()
         tvPriceDetail.dataSource = self
@@ -52,7 +52,13 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         cell.lblPriceDetailDate.text = products[indexPath.row].4
         cell.lblPriceDetailLow.text = "最低 " + products[indexPath.row].2
         cell.lblPriceDetailHigh.text = "最高 " + products[indexPath.row].3
+        cell.lblPriceDetailId.text = products[indexPath.row].1
         return cell
+    }
+    
+    @IBAction func unwindFromPriceHistory2PriceDetail(segue: UIStoryboardSegue)
+    {
+    
     }
     
     func getProducts()
@@ -82,15 +88,35 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 }
         }
     }
-
-    /*
-    // MARK: - Navigation
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        if identifier == "PriceDetail2PriceHistory"
+        {
+            if let cell = sender as? PriceDetailVCTableViewCell
+            {
+                if cell.lblPriceDetailLow.text == "最低 ***"
+                {
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("您尚未订阅该产品，无法查阅历史数据！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                    return false
+                }
+            }
+        }
+        return true
+    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "PriceDetail2PriceHistory"
+        {
+            if let cell = sender as? PriceDetailVCTableViewCell
+            {
+                if let des = segue.destinationViewController as? PriceHistoryViewController
+                {
+                    des.navTitle = market + " - " + cell.lblPriceDetailName.text!
+                    des.productId = cell.lblPriceDetailId.text!
+                }
+            }
+        }
     }
-    */
-
 }

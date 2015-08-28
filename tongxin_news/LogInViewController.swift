@@ -104,11 +104,5 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
         }
-
-        //转向home页面
-        if let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("HomeTabBarVC") as? HomeTabBarViewController
-        {
-            self.presentViewController(homeVC, animated: true, completion: nil)
-        }
     }
 }
