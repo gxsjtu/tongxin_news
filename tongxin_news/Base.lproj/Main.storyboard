@@ -972,6 +972,9 @@
                                     <segment title="行情报价"/>
                                     <segment title="同鑫评论"/>
                                 </segments>
+                                <connections>
+                                    <action selector="indexChange:" destination="HhN-9W-iAJ" eventType="valueChanged" id="TKD-Jc-d6y"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CWQ-eA-vrw">
                                 <rect key="frame" x="0.0" y="144" width="320" height="411"/>
@@ -1005,6 +1008,7 @@
                     <connections>
                         <outlet property="navInbox" destination="gWu-61-hd3" id="wgZ-3s-zB1"/>
                         <outlet property="searchCon" destination="Gcc-6i-zLJ" id="lb0-v3-qia"/>
+                        <outlet property="segmentCon" destination="6yI-HX-nhB" id="w4g-0w-aQK"/>
                         <outlet property="tbData" destination="CWQ-eA-vrw" id="9FR-sG-qbE"/>
                     </connections>
                 </viewController>

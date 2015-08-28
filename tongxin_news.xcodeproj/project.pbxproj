@@ -36,9 +36,6 @@
 		35B278641B8EA2FD00FA2399 /* CommentContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278631B8EA2FD00FA2399 /* CommentContentViewController.swift */; };
 		35B278991B8FFEFD00FA2399 /* PriceHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278981B8FFEFD00FA2399 /* PriceHistoryViewController.swift */; };
 		35B2789B1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B2789A1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift */; };
-		35B278B21B9045B800FA2399 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278AF1B9045B800FA2399 /* Chart.swift */; };
-		35B278B31B9045B800FA2399 /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278B01B9045B800FA2399 /* ChartColors.swift */; };
-		35B278B41B9045B800FA2399 /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278B11B9045B800FA2399 /* ChartSeries.swift */; };
 		35B278B61B9045F600FA2399 /* PriceChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278B51B9045F600FA2399 /* PriceChartViewController.swift */; };
 		35C712181B8595B3004B267A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712171B8595B3004B267A /* AppDelegate.swift */; };
 		35C7121F1B8595B3004B267A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121E1B8595B3004B267A /* Images.xcassets */; };
@@ -112,9 +109,6 @@
 		35B278631B8EA2FD00FA2399 /* CommentContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentContentViewController.swift; sourceTree = "<group>"; };
 		35B278981B8FFEFD00FA2399 /* PriceHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceHistoryViewController.swift; sourceTree = "<group>"; };
 		35B2789A1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceHistoryTableViewCell.swift; sourceTree = "<group>"; };
-		35B278AF1B9045B800FA2399 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
-		35B278B01B9045B800FA2399 /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
-		35B278B11B9045B800FA2399 /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
 		35B278B51B9045F600FA2399 /* PriceChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceChartViewController.swift; sourceTree = "<group>"; };
 		35C712121B8595B3004B267A /* 同鑫资讯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "同鑫资讯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C712161B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -209,16 +203,6 @@
 			name = Haneke;
 			sourceTree = "<group>";
 		};
-		35B278AE1B90458D00FA2399 /* SwiftChart */ = {
-			isa = PBXGroup;
-			children = (
-				35B278AF1B9045B800FA2399 /* Chart.swift */,
-				35B278B01B9045B800FA2399 /* ChartColors.swift */,
-				35B278B11B9045B800FA2399 /* ChartSeries.swift */,
-			);
-			name = SwiftChart;
-			sourceTree = "<group>";
-		};
 		35C712091B8595B3004B267A = {
 			isa = PBXGroup;
 			children = (
@@ -238,7 +222,6 @@
 		35C712141B8595B3004B267A /* tongxin_news */ = {
 			isa = PBXGroup;
 			children = (
-				35B278AE1B90458D00FA2399 /* SwiftChart */,
 				35B2783F1B8D950200FA2399 /* Haneke */,
 				35AC87481B8AB14A00B44C7E /* MJRefresh */,
 				35C712941B86CC6F004B267A /* MXPullDownMenu */,
@@ -424,7 +407,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35B278B31B9045B800FA2399 /* ChartColors.swift in Sources */,
 				355C95AD1B8C5145005595EA /* InboxViewController.swift in Sources */,
 				35C712761B86AFA5004B267A /* ParameterEncoding.swift in Sources */,
 				35AC875E1B8AB15900B44C7E /* UIView+MJExtension.m in Sources */,
@@ -456,7 +438,6 @@
 				35AC875C1B8AB15900B44C7E /* UIScrollView+MJExtension.m in Sources */,
 				35C712801B86B09E004B267A /* SwiftyJSON.swift in Sources */,
 				35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */,
-				35B278B41B9045B800FA2399 /* ChartSeries.swift in Sources */,
 				35C712861B86B2BE004B267A /* MBProgressHUD.m in Sources */,
 				35C712771B86AFA5004B267A /* Request.swift in Sources */,
 				35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */,
@@ -474,7 +455,6 @@
 				35B278591B8D955500FA2399 /* HNKCache.m in Sources */,
 				35C712971B86CC79004B267A /* MXPullDownMenu.m in Sources */,
 				35B278991B8FFEFD00FA2399 /* PriceHistoryViewController.swift in Sources */,
-				35B278B21B9045B800FA2399 /* Chart.swift in Sources */,
 				35C712651B86AEE9004B267A /* SKAlertView.m in Sources */,
 				35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */,
 				355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */,
