@@ -18,7 +18,10 @@ class PriceChartViewController: UIViewController {
     
     var low = [Float]()
     var high = [Float]()
-    var date = [Float]()
+    var date = [String]()
+    var labels: Array<Float> = []
+    var labelsAsString: Array<String> = []
+    var start = -1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,23 +29,31 @@ class PriceChartViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navChart.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navChart.topItem?.title = navTitle
-    
+        
+        for (l: String, h: String, d: String, c: String) in history.reverse()
+        {
+            low.append((l as NSString).floatValue)
+            high.append((h as NSString).floatValue)
+            date.append(d)
+            labels.append(Float(start++))
+        }
+        
+        let chart = Chart(frame: CGRect(x: 10, y: 10, width: self.vChart.frame.width - 20, height: self.vChart.frame.height - 120))
+        chart.xLabels = labels
+        chart.xLabelsFormatter = {(labelIndex: Int, labelValue: Float) -> String in
+            return ""}
+        let series0 = ChartSeries(low)
+        series0.color = UIColor.greenColor()
+        chart.addSeries(series0)
+        let series1 = ChartSeries(high)
+        series1.color = UIColor.redColor()
+        chart.addSeries(series1)
+        
+        self.vChart.addSubview(chart)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

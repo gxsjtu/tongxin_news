@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3515CB211B94367200EC54D7 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB1E1B94367200EC54D7 /* Chart.swift */; };
+		3515CB221B94367200EC54D7 /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB1F1B94367200EC54D7 /* ChartColors.swift */; };
+		3515CB231B94367200EC54D7 /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB201B94367200EC54D7 /* ChartSeries.swift */; };
 		355C95A51B8AF089005595EA /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A41B8AF089005595EA /* PriceViewController.swift */; };
 		355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A61B8C0665005595EA /* PriceDetailViewController.swift */; };
 		355C95A91B8C1407005595EA /* PriceVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */; };
@@ -63,6 +66,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3515CB1E1B94367200EC54D7 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
+		3515CB1F1B94367200EC54D7 /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
+		3515CB201B94367200EC54D7 /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
 		355C95A41B8AF089005595EA /* PriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
 		355C95A61B8C0665005595EA /* PriceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceDetailViewController.swift; sourceTree = "<group>"; };
 		355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceVCTableViewCell.swift; sourceTree = "<group>"; };
@@ -157,6 +163,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3515CB1D1B94366700EC54D7 /* SwiftChart */ = {
+			isa = PBXGroup;
+			children = (
+				3515CB1E1B94367200EC54D7 /* Chart.swift */,
+				3515CB1F1B94367200EC54D7 /* ChartColors.swift */,
+				3515CB201B94367200EC54D7 /* ChartSeries.swift */,
+			);
+			name = SwiftChart;
+			sourceTree = "<group>";
+		};
 		35AC87481B8AB14A00B44C7E /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +238,7 @@
 		35C712141B8595B3004B267A /* tongxin_news */ = {
 			isa = PBXGroup;
 			children = (
+				3515CB1D1B94366700EC54D7 /* SwiftChart */,
 				35B2783F1B8D950200FA2399 /* Haneke */,
 				35AC87481B8AB14A00B44C7E /* MJRefresh */,
 				35C712941B86CC6F004B267A /* MXPullDownMenu */,
@@ -427,7 +444,9 @@
 				35B2785F1B8D955500FA2399 /* UIImageView+Haneke.m in Sources */,
 				35B2785E1B8D955500FA2399 /* UIButton+Haneke.m in Sources */,
 				35C7127B1B86AFA5004B267A /* Validation.swift in Sources */,
+				3515CB211B94367200EC54D7 /* Chart.swift in Sources */,
 				35B278441B8D952100FA2399 /* CommentDetailViewController.swift in Sources */,
+				3515CB221B94367200EC54D7 /* ChartColors.swift in Sources */,
 				35C7127A1B86AFA5004B267A /* Upload.swift in Sources */,
 				35C712731B86AFA5004B267A /* Download.swift in Sources */,
 				35C712741B86AFA5004B267A /* Manager.swift in Sources */,
@@ -444,6 +463,7 @@
 				35B278641B8EA2FD00FA2399 /* CommentContentViewController.swift in Sources */,
 				35B278B61B9045F600FA2399 /* PriceChartViewController.swift in Sources */,
 				35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */,
+				3515CB231B94367200EC54D7 /* ChartSeries.swift in Sources */,
 				35B278471B8D952100FA2399 /* CommentVCTableViewCell.swift in Sources */,
 				35B278601B8D955500FA2399 /* UIView+Haneke.m in Sources */,
 				35C712781B86AFA5004B267A /* ResponseSerialization.swift in Sources */,

@@ -966,7 +966,7 @@
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6yI-HX-nhB">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6yI-HX-nhB">
                                 <rect key="frame" x="94" y="68" width="133" height="29"/>
                                 <segments>
                                     <segment title="行情报价"/>
@@ -992,12 +992,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="6yI-HX-nhB" secondAttribute="centerX" constant="-0.5" id="0cF-NX-fd0"/>
                             <constraint firstItem="Gcc-6i-zLJ" firstAttribute="top" secondItem="CWQ-eA-vrw" secondAttribute="top" constant="-44" id="3Ag-lX-Gss"/>
                             <constraint firstItem="CWQ-eA-vrw" firstAttribute="leading" secondItem="yOA-L1-X3Q" secondAttribute="leadingMargin" constant="-16" id="3Ib-fP-9QN"/>
+                            <constraint firstItem="6yI-HX-nhB" firstAttribute="top" secondItem="gWu-61-hd3" secondAttribute="top" constant="68" id="3Xj-qJ-mFr"/>
                             <constraint firstItem="X5x-HS-dqm" firstAttribute="top" secondItem="CWQ-eA-vrw" secondAttribute="bottom" constant="-36" id="9Pk-se-h1Q"/>
                             <constraint firstItem="Gcc-6i-zLJ" firstAttribute="top" secondItem="KtO-Hm-X8y" secondAttribute="bottom" constant="80" id="A2Y-8l-D1g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CWQ-eA-vrw" secondAttribute="trailing" constant="-16" id="B1K-oL-Bxp"/>
                             <constraint firstItem="Gcc-6i-zLJ" firstAttribute="leading" secondItem="yOA-L1-X3Q" secondAttribute="leadingMargin" constant="-16" id="CQt-bD-k3J"/>
+                            <constraint firstItem="Gcc-6i-zLJ" firstAttribute="bottom" secondItem="6yI-HX-nhB" secondAttribute="bottom" constant="48" id="MoF-IU-112"/>
                             <constraint firstItem="gWu-61-hd3" firstAttribute="leading" secondItem="yOA-L1-X3Q" secondAttribute="leadingMargin" constant="-16" id="TF3-J2-sHr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Gcc-6i-zLJ" secondAttribute="trailing" constant="-16" id="WqI-tv-49A"/>
                             <constraint firstItem="gWu-61-hd3" firstAttribute="top" secondItem="KtO-Hm-X8y" secondAttribute="bottom" constant="-20" id="gEo-Hr-haH"/>
