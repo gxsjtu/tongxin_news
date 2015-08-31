@@ -10,6 +10,7 @@ import UIKit
 
 class PriceChartViewController: UIViewController {
     
+    @IBOutlet weak var lblPriceChart: UILabel!
     @IBOutlet weak var vChart: UIView!
     @IBOutlet weak var navChart: UINavigationBar!
     var navTitle = "未知"
