@@ -106,8 +106,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             lblDate.numberOfLines = 0
             lblDate.initAutoHeight(lblDate.frame, textColor: UIColor.orangeColor(), fontSize: 10, text: date, lineSpacing: 1)
             tbCell.addSubview(lblDate)
-            
-
+        
         }
         else
         {
