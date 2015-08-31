@@ -15,6 +15,10 @@ class PriceChartViewController: UIViewController {
     var navTitle = "未知"
         //low, high, date, change
     var history = [(String, String, String, String)]()
+    
+    var low = [Float]()
+    var high = [Float]()
+    var date = [Float]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,22 +26,7 @@ class PriceChartViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navChart.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navChart.topItem?.title = navTitle
-        
-//        let chart = LineChartView()
-//        vChart.addSubview(chart)
-//        
-//        //chart的约束
-//        //添加constraints
-//        let leading = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.LeadingMargin, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.LeadingMargin, multiplier: 1, constant: 0)
-//        
-//        let traling = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.TrailingMargin, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.TrailingMargin, multiplier: 1, constant: 0)
-//        
-//        let top = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
-//        
-//        let bottom = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
-//        
-//        chart.setTranslatesAutoresizingMaskIntoConstraints(false)
-//        NSLayoutConstraint.activateConstraints([leading, traling, top, bottom])
+    
     }
 
     override func didReceiveMemoryWarning() {
