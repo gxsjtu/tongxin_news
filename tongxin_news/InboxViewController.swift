@@ -40,6 +40,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       if(segmentindex == 0)
@@ -119,17 +120,6 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             return tbCell2
         }
 
-    }
-    
-    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        if(segmentindex == 1)
-        {
-        var sb = UIStoryboard(name: "Main", bundle: nil)
-        var vc  = sb.instantiateViewControllerWithIdentifier("ComContentView") as! CommentContentViewController
-        vc.url = self.resComInfos[indexPath.row].url!
-        vc.navTitle = self.resComInfos[indexPath.row].title!
-        self.presentViewController(vc, animated: true, completion:nil)
-        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
