@@ -3,6 +3,7 @@ import UIKit
 class InboxViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate
 {
     
+    @IBOutlet weak var clearBar: UIBarButtonItem!
     @IBOutlet weak var segmentCon: UISegmentedControl!
     //@IBOutlet weak var lblMsg: UILabel!
     @IBOutlet weak var searchCon: UISearchBar!
@@ -34,7 +35,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         self.tbData.delegate = self
         self.searchCon.delegate = self
         
-    
         self.tbData.addHeaderWithCallback(pullDownLoadDatas)
         self.tbData.addFooterWithCallback(pullUpLoadDatas)
         tbData.headerRefreshingText = "正在刷新..."
@@ -191,7 +191,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
            {
                 self.msgInfos = []
                 self.resInfos = []
-            
             request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getInboxMsg"]).responseJSON{
                 (request,response,data,error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
@@ -312,26 +311,11 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         var minDate : NSDate?
         var finalDate : String?
         var actionStr : String?
-//        var mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
         var format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
 
         if(self.segmentindex == 0)
         {
-//        for info in resInfos
-//        {
-//            if(minDate == nil)
-//            {
-//                minDate = info.dateStr
-//            }
-//            else
-//            {
-//                if(minDate?.timeIntervalSinceReferenceDate >= info.dateStr?.timeIntervalSinceReferenceDate)
-//                {
-//                    minDate = info.dateStr
-//                }
-//            }
-//        }
             minDate = self.minDateForMsg
             if(minDate != nil)
             {
@@ -384,20 +368,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         }
         else//评论
         {
-//            for comInfo in resComInfos
-//            {
-//                if(minDate == nil)
-//                {
-//                    minDate = comInfo.date
-//                }
-//                else
-//                {
-//                    if(minDate?.timeIntervalSinceReferenceDate >= comInfo.date?.timeIntervalSinceReferenceDate)
-//                    {
-//                        minDate = comInfo.date
-//                    }
-//                }
-//            }
             
             minDate = self.minDateForCom
             if(minDate != nil)
@@ -463,26 +433,11 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         var maxDate : NSDate?
         var finalDate : String?
         var actionStr : String?
-        //var mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
         var format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
         
         if(self.segmentindex == 0)
         {
-//        for info in resInfos
-//        {
-//            if(maxDate == nil)
-//            {
-//                maxDate = info.dateStr
-//            }
-//            else
-//            {
-//                if(maxDate?.timeIntervalSinceReferenceDate <= info.dateStr?.timeIntervalSinceReferenceDate)
-//                {
-//                    maxDate = info.dateStr
-//                }
-//            }
-//        }
             maxDate = self.maxDateForMsg
             
             if(maxDate != nil)
@@ -504,6 +459,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             }
             request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
                 (request,response,data,error) in
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
                 if let anError = error
                 {
@@ -529,6 +485,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     self.tbData.reloadData()
                     self.tbData.headerEndRefreshing()
                     self.isLoadOK = "YES"
+                    self.segmentCon.enabled = true
                     if(self.msgInfos.count > 0)
                     {
                         self.maxDateForMsg = self.msgInfos.first?.dateStr
@@ -538,20 +495,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         }
         else//评论
         {
-//            for comInfo in resComInfos
-//            {
-//                if(maxDate == nil)
-//                {
-//                    maxDate = comInfo.date
-//                }
-//                else
-//                {
-//                    if(maxDate?.timeIntervalSinceReferenceDate <= comInfo.date?.timeIntervalSinceReferenceDate)
-//                    {
-//                        maxDate = comInfo.date
-//                    }
-//                }
-//            }
             
             maxDate = self.maxDateForCom
             
@@ -574,7 +517,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             }
             request(.GET, EndPoints.GetCommentHierarchy.rawValue,parameters:["mobile":self.mobile!,"method":"getComByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
                 (request,response,data,error) in
-                
+                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error
                 {
                     self.isLoadOK = "NO"
@@ -604,7 +547,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     self.tbData.reloadData()
                     self.tbData.headerEndRefreshing()
                     self.isLoadOK = "YES"
-                    
+                    self.segmentCon.enabled = true
                     if(self.comInfos.count > 0)
                     {
                         self.maxDateForCom = self.comInfos.first?.date
@@ -646,34 +589,55 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         {
         case 0:
             self.segmentindex = 0
-            if(self.msgInfos.count > 0)
+            if(self.maxDateForMsg != nil)
             {
-                self.resInfos = self.msgInfos
-                self.tbData.reloadData()
-                self.segmentCon.enabled = true
+//                self.resInfos = self.msgInfos
+//                self.tbData.reloadData()
+//                self.segmentCon.enabled = true
+                let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                pullDownLoadDatas()
             }
             else
             {
                 initLoadDatas()
+                //pullDownLoadDatas()
             }
             //self.segmentCon.enabled = false
         case 1:
             self.segmentindex = 1
-            if(self.comInfos.count > 0)
+            if(self.maxDateForCom != nil)
             {
-                self.resComInfos = self.comInfos
-                self.tbData.reloadData()
-                self.segmentCon.enabled = true
+//                self.resComInfos = self.comInfos
+//                self.tbData.reloadData()
+//                self.segmentCon.enabled = true
+                let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                pullDownLoadDatas()//来回切换选项卡应该是一个下拉加载新数据的动作
             }
             else
             {
                 initLoadDatas()
+                //pullDownLoadDatas()
             }
             //self.segmentCon.enabled = false
         default:
             break
         }
     }
+    
+    @IBAction func clearMsg(sender: AnyObject) {
+        if(segmentindex == 0)
+        {
+            self.resInfos = []
+            self.msgInfos = []
+        }
+        else
+        {
+            self.resComInfos = []
+            self.comInfos = []
+        }
+            self.tbData.reloadData()        
+    }
+    
     
 }
 
