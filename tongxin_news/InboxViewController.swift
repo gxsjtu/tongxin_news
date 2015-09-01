@@ -18,6 +18,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
     var resComInfos : Array<CommentInfo> = []
     var nowDate : NSDate?
     var nowDateForCom : NSDate?
+    var mobile : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,27 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
     
      override func viewWillAppear(animated: Bool) {
         initLoadDatas()
+        
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+        request(.GET,EndPoints.MessageInfo.rawValue,parameters:["mobile":self.mobile!,"method":"clearMessage"]).responseJSON{
+        (request,response, data, error) in
+            if let anError = error
+            {
+                println(anError)
+            }
+            else if let res : AnyObject = data
+            {
+                var result = JSON(res)
+                if(result["result"].string! == "ok")
+                {
+                    println("清理成功")
+                }
+                else
+                {
+                    println("清理失败")
+                }
+            }
+        }
     
     }
     
@@ -169,7 +191,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
         }
         else
         {
-            var mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+            self.mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
             var format = NSDateFormatter()
             format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
             let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -178,7 +200,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                 self.msgInfos = []
                 self.resInfos = []
             
-            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":mobile!,"method":"getInboxMsg"]).responseJSON{
+            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getInboxMsg"]).responseJSON{
                 (request,response,data,error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error
@@ -212,7 +234,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             self.comInfos = []
             self.resComInfos = []
             
-            request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getCommentByMobile", "mobile": mobile!])
+            request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getCommentByMobile", "mobile": self.mobile!])
                 .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                     if let anError = error
@@ -291,7 +313,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
         var minDate : NSDate?
         var finalDate : String?
         var actionStr : String?
-        var mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+//        var mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
         var format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
 
@@ -329,7 +351,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                 
                 self.nowDate = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
             }
-            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
+            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
                 (request,response,data,error) in
                 
                 if let anError = error
@@ -392,7 +414,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                 self.nowDateForCom = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
             }
             
-            request(.GET, EndPoints.GetCommentHierarchy.rawValue,parameters:["mobile":mobile!,"method":"getComByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
+            request(.GET, EndPoints.GetCommentHierarchy.rawValue,parameters:["mobile":self.mobile!,"method":"getComByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
                 (request,response,data,error) in
                 
                 if let anError = error
@@ -435,7 +457,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
         var maxDate : NSDate?
         var finalDate : String?
         var actionStr : String?
-        var mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+        //var mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
         var format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
         
@@ -473,7 +495,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                 
                 self.nowDate = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
             }
-            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
+            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
                 (request,response,data,error) in
                 
                 if let anError = error
@@ -535,7 +557,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                 
                 self.nowDateForCom = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
             }
-            request(.GET, EndPoints.GetCommentHierarchy.rawValue,parameters:["mobile":mobile!,"method":"getComByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
+            request(.GET, EndPoints.GetCommentHierarchy.rawValue,parameters:["mobile":self.mobile!,"method":"getComByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
                 (request,response,data,error) in
                 
                 if let anError = error
