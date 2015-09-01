@@ -5,7 +5,6 @@
 #import "SKAlertView.h"
 #import "SKTipAlertView.h"
 #import "MBProgressHUD.h"
-#import "MXPullDownMenu.h"
 #import "HTHorizontalSelectionList.h"
 #import "MJRefresh.h"
 #import "Haneke.h"
