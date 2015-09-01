@@ -31,7 +31,6 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
         
     
         self.tbData.addHeaderWithCallback(pullDownLoadDatas)
-        
         self.tbData.addFooterWithCallback(pullUpLoadDatas)
         tbData.headerRefreshingText = "正在刷新..."
         tbData.footerRefreshingText = "正在刷新..."
@@ -92,13 +91,6 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             if(tbCell.viewWithTag(2) != nil){
                 tbCell.viewWithTag(2)?.removeFromSuperview()
             }
-            if(tbCell.viewWithTag(3) != nil){
-                tbCell.viewWithTag(3)?.removeFromSuperview()
-            }
-            if(tbCell.viewWithTag(4) != nil){
-                tbCell.viewWithTag(4)?.removeFromSuperview()
-            }
-
            
             var msg : String = resInfos[indexPath.row].msg!
             var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
