@@ -989,7 +989,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Gcc-6i-zLJ">
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcc-6i-zLJ">
                                 <rect key="frame" x="0.0" y="100" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="djS-HO-fkq"/>
