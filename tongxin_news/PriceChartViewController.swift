@@ -8,8 +8,10 @@
 
 import UIKit
 
-class PriceChartViewController: UIViewController {
+class PriceChartViewController: UIViewController, ChartDelegate {
     
+    @IBOutlet weak var lblPriceChartPrice: UILabel!
+    @IBOutlet weak var lblPriceChartDate: UILabel!
     @IBOutlet weak var lblPriceChart: UILabel!
     @IBOutlet weak var vChart: UIView!
     @IBOutlet weak var navChart: UINavigationBar!
@@ -20,9 +22,19 @@ class PriceChartViewController: UIViewController {
     var low = [Float]()
     var high = [Float]()
     var date = [String]()
-    var labels: Array<Float> = []
-    var labelsAsString: Array<String> = []
-    var start = -1
+    
+    func didTouchChart(chart: Chart, indexes: Array<Int?>, x: Float, left: CGFloat) {
+        for (serieIndex, dataIndex) in enumerate(indexes) {
+            if dataIndex != nil {
+                lblPriceChartDate.text = date[dataIndex!]
+                lblPriceChartPrice.text = "最低 " + String(stringInterpolationSegment: low[dataIndex!]) + "  最高 " + String(stringInterpolationSegment: high[dataIndex!])
+            }
+        }
+    }
+    
+    func didFinishTouchingChart(chart: Chart) {
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +48,10 @@ class PriceChartViewController: UIViewController {
             low.append((l as NSString).floatValue)
             high.append((h as NSString).floatValue)
             date.append(d)
-            labels.append(Float(start++))
         }
         
         let chart = Chart(frame: CGRect(x: 10, y: 10, width: self.vChart.frame.width - 20, height: self.vChart.frame.height - 120))
-        chart.xLabels = labels
+        chart.delegate = self
         chart.xLabelsFormatter = {(labelIndex: Int, labelValue: Float) -> String in
             return ""}
         let series0 = ChartSeries(low)
