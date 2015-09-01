@@ -94,7 +94,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         }
         else
         {
-            return 60
+            return 64
         }
     }
     
