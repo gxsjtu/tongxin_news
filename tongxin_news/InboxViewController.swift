@@ -120,6 +120,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             (tbCell2.viewWithTag(3) as! UILabel).text = self.resComInfos[indexPath.row].proName
             (tbCell2.viewWithTag(4) as! UILabel).text = format.stringFromDate(self.resComInfos[indexPath.row].date!)
             (tbCell2.viewWithTag(5) as! UILabel).text = self.resComInfos[indexPath.row].url
+            (tbCell2.viewWithTag(6) as! UILabel).text = self.resComInfos[indexPath.row].marketName
 
             return tbCell2
         }
@@ -133,8 +134,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             {
                 if let cell = sender as? UITableViewCell
                 {
-                  
-                    des.navTitle = (cell.viewWithTag(2) as! UILabel).text!
+                    des.navTitle = (cell.viewWithTag(6) as! UILabel).text! + "-" + (cell.viewWithTag(3) as! UILabel).text!
                     des.url = (cell.viewWithTag(5) as! UILabel).text!
                 }
             }
@@ -225,6 +225,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                                 comInfo.url = item["url"].string!
                                 comInfo.date = format.dateFromString(item["date"].string!)
                                 comInfo.proName = item["productname"].string!
+                                comInfo.marketName = item["marketname"].string!
                                 self.comInfos.append(comInfo)
                             }
                             self.comInfos.sort({ (c1 : CommentInfo, c2 : CommentInfo) -> Bool in
@@ -401,6 +402,8 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                         comInfo.imgUrl = item["avatar"].string!
                         comInfo.url = item["url"].string!
                         comInfo.date = format.dateFromString(item["date"].string!)
+                        comInfo.proName = item["productname"].string!
+                        comInfo.marketName = item["marketname"].string!
                         self.comInfos.append(comInfo)                    }
                     self.comInfos.sort({ (s1:CommentInfo, s2:CommentInfo) -> Bool in
                         s1.date?.timeIntervalSinceReferenceDate >= s2.date?.timeIntervalSinceReferenceDate
@@ -547,6 +550,8 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                         comInfo.imgUrl = item["avatar"].string!
                         comInfo.url = item["url"].string!
                         comInfo.date = format.dateFromString(item["date"].string!)
+                        comInfo.proName = item["productname"].string!
+                        comInfo.marketName = item["marketname"].string!
                         self.comInfos.append(comInfo)                    }
                         self.comInfos.sort({ (s1:CommentInfo, s2:CommentInfo) -> Bool in
                         s1.date?.timeIntervalSinceReferenceDate >= s2.date?.timeIntervalSinceReferenceDate
@@ -637,6 +642,7 @@ class CommentInfo : NSObject
     var url : String?
     var imgUrl : String?
     var proName : String?
+    var marketName : String?
 }
 
 extension UILabel{
