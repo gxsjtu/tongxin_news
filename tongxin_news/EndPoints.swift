@@ -16,4 +16,5 @@ enum EndPoints: String
     case GetProductHierarchy = "http://api.shtx.com.cn/Handlers/XHMarketHandler.ashx"
     case GetPrices = "http://api.shtx.com.cn/Handlers/PriceHandler.ashx"
     case GetCommentHierarchy = "http://api.shtx.com.cn/Handlers/PLHandler.ashx"
+    case MessageInfo = "http://api.shtx.com.cn/Handlers/MessageHandler.ashx"
 }
