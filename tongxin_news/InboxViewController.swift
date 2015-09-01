@@ -20,6 +20,12 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     var nowDateForCom : NSDate?
     var mobile : String?
     var isLoadOK : String?//是否下拉加载数据成功 用来清零未读消息
+    
+    //记录刷新时间
+    var maxDateForMsg : NSDate?
+    var minDateForMsg : NSDate?
+    var maxDateForCom : NSDate?
+    var minDateForCom : NSDate?
     override func viewDidLoad() {
         super.viewDidLoad()
          initLoadDatas()
@@ -38,6 +44,22 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
+        if(self.segmentindex == 0)
+        {
+            self.resInfos = []
+            self.resInfos = self.msgInfos
+        }
+        else
+        {
+            self.resComInfos = []
+            self.resComInfos = self.comInfos
+        }
+        self.tbData.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
@@ -195,6 +217,11 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     self.resInfos = self.msgInfos
                     self.tbData.reloadData()
                     self.segmentCon.enabled = true
+                    if(self.msgInfos.count > 0)
+                    {
+                    self.maxDateForMsg = self.msgInfos.first?.dateStr
+                    self.minDateForMsg = self.msgInfos.last?.dateStr
+                    }
                 }
             }
 
@@ -234,6 +261,11 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                             self.resComInfos = self.comInfos
                             self.tbData.reloadData()
                             self.segmentCon.enabled = true
+                            if(self.comInfos.count > 0)
+                            {
+                                self.maxDateForCom = self.comInfos.first?.date
+                                self.minDateForCom = self.comInfos.last?.date
+                            }
                         }
                     }
             }
@@ -286,21 +318,21 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
 
         if(self.segmentindex == 0)
         {
-        for info in resInfos
-        {
-            if(minDate == nil)
-            {
-                minDate = info.dateStr
-            }
-            else
-            {
-                if(minDate?.timeIntervalSinceReferenceDate >= info.dateStr?.timeIntervalSinceReferenceDate)
-                {
-                    minDate = info.dateStr
-                }
-            }
-        }
-        
+//        for info in resInfos
+//        {
+//            if(minDate == nil)
+//            {
+//                minDate = info.dateStr
+//            }
+//            else
+//            {
+//                if(minDate?.timeIntervalSinceReferenceDate >= info.dateStr?.timeIntervalSinceReferenceDate)
+//                {
+//                    minDate = info.dateStr
+//                }
+//            }
+//        }
+            minDate = self.minDateForMsg
             if(minDate != nil)
             {
                 actionStr = "pullUp"
@@ -343,26 +375,31 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     self.resInfos = self.msgInfos
                     self.tbData.reloadData()
                     self.tbData.footerEndRefreshing()
+                    if(self.msgInfos.count > 0)
+                    {
+                        self.minDateForMsg = self.msgInfos.last?.dateStr
+                    }
                 }
             }
         }
         else//评论
         {
-            for comInfo in resComInfos
-            {
-                if(minDate == nil)
-                {
-                    minDate = comInfo.date
-                }
-                else
-                {
-                    if(minDate?.timeIntervalSinceReferenceDate >= comInfo.date?.timeIntervalSinceReferenceDate)
-                    {
-                        minDate = comInfo.date
-                    }
-                }
-            }
+//            for comInfo in resComInfos
+//            {
+//                if(minDate == nil)
+//                {
+//                    minDate = comInfo.date
+//                }
+//                else
+//                {
+//                    if(minDate?.timeIntervalSinceReferenceDate >= comInfo.date?.timeIntervalSinceReferenceDate)
+//                    {
+//                        minDate = comInfo.date
+//                    }
+//                }
+//            }
             
+            minDate = self.minDateForCom
             if(minDate != nil)
             {
                 actionStr = "pullUp"
@@ -411,10 +448,10 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     self.resComInfos = self.comInfos
                     self.tbData.reloadData()
                     self.tbData.footerEndRefreshing()
-                }
-                else
-                {
-                    self.tbData.footerEndRefreshing()
+                    if(self.comInfos.count > 0)
+                    {
+                        self.minDateForCom = self.comInfos.last?.date
+                    }
                 }
             }
         }
@@ -432,21 +469,22 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         
         if(self.segmentindex == 0)
         {
-        for info in resInfos
-        {
-            if(maxDate == nil)
-            {
-                maxDate = info.dateStr
-            }
-            else
-            {
-                if(maxDate?.timeIntervalSinceReferenceDate <= info.dateStr?.timeIntervalSinceReferenceDate)
-                {
-                    maxDate = info.dateStr
-                }
-            }
-        }
-        
+//        for info in resInfos
+//        {
+//            if(maxDate == nil)
+//            {
+//                maxDate = info.dateStr
+//            }
+//            else
+//            {
+//                if(maxDate?.timeIntervalSinceReferenceDate <= info.dateStr?.timeIntervalSinceReferenceDate)
+//                {
+//                    maxDate = info.dateStr
+//                }
+//            }
+//        }
+            maxDate = self.maxDateForMsg
+            
             if(maxDate != nil)
             {
             finalDate = format.stringFromDate(maxDate!)
@@ -491,25 +529,31 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     self.tbData.reloadData()
                     self.tbData.headerEndRefreshing()
                     self.isLoadOK = "YES"
+                    if(self.msgInfos.count > 0)
+                    {
+                        self.maxDateForMsg = self.msgInfos.first?.dateStr
+                    }
                 }
             }
         }
         else//评论
         {
-            for comInfo in resComInfos
-            {
-                if(maxDate == nil)
-                {
-                    maxDate = comInfo.date
-                }
-                else
-                {
-                    if(maxDate?.timeIntervalSinceReferenceDate <= comInfo.date?.timeIntervalSinceReferenceDate)
-                    {
-                        maxDate = comInfo.date
-                    }
-                }
-            }
+//            for comInfo in resComInfos
+//            {
+//                if(maxDate == nil)
+//                {
+//                    maxDate = comInfo.date
+//                }
+//                else
+//                {
+//                    if(maxDate?.timeIntervalSinceReferenceDate <= comInfo.date?.timeIntervalSinceReferenceDate)
+//                    {
+//                        maxDate = comInfo.date
+//                    }
+//                }
+//            }
+            
+            maxDate = self.maxDateForCom
             
             if(maxDate != nil)
             {
@@ -560,6 +604,11 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     self.tbData.reloadData()
                     self.tbData.headerEndRefreshing()
                     self.isLoadOK = "YES"
+                    
+                    if(self.comInfos.count > 0)
+                    {
+                        self.maxDateForCom = self.comInfos.first?.date
+                    }
                 }
             }
         }

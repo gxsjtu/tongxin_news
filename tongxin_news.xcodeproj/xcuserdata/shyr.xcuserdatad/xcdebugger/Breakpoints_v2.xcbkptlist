@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tongxin_news/InboxViewController.swift"
-            timestampString = "462777928.427372"
+            timestampString = "462780992.01602"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "426"
-            endingLineNumber = "426"
+            startingLineNumber = "463"
+            endingLineNumber = "463"
             landmarkName = "pullDownLoadDatas()"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tongxin_news/InboxViewController.swift"
-            timestampString = "462777928.427372"
+            timestampString = "462780992.01602"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "471"
-            endingLineNumber = "471"
+            startingLineNumber = "509"
+            endingLineNumber = "509"
             landmarkName = "pullDownLoadDatas()"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tongxin_news/InboxViewController.swift"
-            timestampString = "462777928.427372"
+            timestampString = "462780992.01602"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "477"
-            endingLineNumber = "477"
+            startingLineNumber = "515"
+            endingLineNumber = "515"
             landmarkName = "pullDownLoadDatas()"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tongxin_news/InboxViewController.swift"
-            timestampString = "462777928.427372"
+            timestampString = "462780992.01602"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "568"
-            endingLineNumber = "568"
+            startingLineNumber = "617"
+            endingLineNumber = "617"
             landmarkName = "pullDownLoadDatas()"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tongxin_news/InboxViewController.swift"
-            timestampString = "462777928.427372"
+            timestampString = "462780992.01602"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "569"
-            endingLineNumber = "569"
+            startingLineNumber = "618"
+            endingLineNumber = "618"
             landmarkName = "pullDownLoadDatas()"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tongxin_news/InboxViewController.swift"
-            timestampString = "462777928.427372"
+            timestampString = "462780992.01602"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "583"
-            endingLineNumber = "583"
+            startingLineNumber = "632"
+            endingLineNumber = "632"
             landmarkName = "pullDownLoadDatas()"
             landmarkType = "5">
          </BreakpointContent>
