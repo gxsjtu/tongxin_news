@@ -177,6 +177,11 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
 
     }
     
+    @IBAction func unwindFromComment2Inbox(segue: UIStoryboardSegue)
+    {
+    
+    }
+    
     func initLoadDatas()
     {
         var isLogined : String? = NSUserDefaults.standardUserDefaults().stringForKey("isLoggedIn")

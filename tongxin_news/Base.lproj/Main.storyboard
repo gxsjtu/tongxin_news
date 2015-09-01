@@ -1017,7 +1017,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell2" rowHeight="65" id="XSC-gX-GOJ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell2" rowHeight="65" id="XSC-gX-GOJ">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XSC-gX-GOJ" id="fUW-1i-U5t">
@@ -1078,6 +1078,9 @@
                                                 <constraint firstItem="b5G-Bp-hIy" firstAttribute="leading" secondItem="rYC-we-wG8" secondAttribute="leading" constant="-68" id="VvX-eU-Fac"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="HxM-A0-bGR" kind="modal" identifier="ComToCommentDetail" id="9N3-fj-VN2"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1128,7 +1131,60 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaD-39-NmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-203" y="1650"/>
+            <point key="canvasLocation" x="-258" y="1650"/>
+        </scene>
+        <!--Comment Content View Controller-->
+        <scene sceneID="Dck-5d-kFQ">
+            <objects>
+                <viewController id="HxM-A0-bGR" customClass="CommentContentViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WpS-Uk-b7e"/>
+                        <viewControllerLayoutGuide type="bottom" id="5gy-6N-0qv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WXO-Jr-RsO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UUm-2v-2UL">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="w0F-Ao-OzV"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="qaa-wN-bfT">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="tXF-kc-yi5">
+                                            <connections>
+                                                <segue destination="Iqs-4M-HjL" kind="unwind" unwindAction="unwindFromComment2Inbox:" id="5de-g7-Kgu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2hK-He-nNP">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2hK-He-nNP" firstAttribute="leading" secondItem="WXO-Jr-RsO" secondAttribute="leadingMargin" constant="-16" id="MqH-8M-CPa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UUm-2v-2UL" secondAttribute="trailing" constant="-16" id="N28-rn-wQE"/>
+                            <constraint firstItem="UUm-2v-2UL" firstAttribute="top" secondItem="WpS-Uk-b7e" secondAttribute="bottom" constant="-20" id="Xp5-8U-1jn"/>
+                            <constraint firstItem="2hK-He-nNP" firstAttribute="top" secondItem="UUm-2v-2UL" secondAttribute="top" constant="64" id="eiE-ln-1J5"/>
+                            <constraint firstItem="UUm-2v-2UL" firstAttribute="leading" secondItem="WXO-Jr-RsO" secondAttribute="leadingMargin" constant="-16" id="kRf-9j-8UC"/>
+                            <constraint firstItem="5gy-6N-0qv" firstAttribute="top" secondItem="2hK-He-nNP" secondAttribute="bottom" id="wHb-el-tHE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2hK-He-nNP" secondAttribute="trailing" constant="-16" id="xdU-qa-pQl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navCommentContent" destination="UUm-2v-2UL" id="clx-bd-pux"/>
+                        <outlet property="wvCommentContent" destination="2hK-He-nNP" id="CLb-gJ-cAj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="V5H-OY-1Yd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Iqs-4M-HjL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-351" y="2327"/>
         </scene>
         <!--我-->
         <scene sceneID="vMN-og-zHl">
