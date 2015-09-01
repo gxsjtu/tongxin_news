@@ -16,11 +16,13 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
     
     var comInfos : Array<CommentInfo> = []
     var resComInfos : Array<CommentInfo> = []
+    var nowDate : NSDate?
+    var nowDateForCom : NSDate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
-         initLoadDatas()
+         //initLoadDatas()
         //self.resInfos = self.msgInfos
         self.navInbox.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.tbData.dataSource = self
@@ -41,6 +43,12 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
         // Dispose of any resources that can be recreated.
     }
     
+     override func viewWillAppear(animated: Bool) {
+        initLoadDatas()
+    
+    }
+    
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       if(segmentindex == 0)
       {
@@ -59,11 +67,11 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             format.dateFormat = "yyyy-MM-dd HH:mm:ss"
             var msg : String = resInfos[indexPath.row].msg!
             var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
-            var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
+            var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width - 10, height: 0))
             lb.initAutoHeight(lb.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
             var lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
             lbDate.initAutoHeight(lbDate.frame, textColor: UIColor.yellowColor(), fontSize: 10, text: date, lineSpacing: 1)
-            return (lb.frame.height + lbDate.frame.height + 25)
+            return (lb.frame.height + lbDate.frame.height + 10)
         }
         else
         {
@@ -72,65 +80,88 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
-        var format = NSDateFormatter()
-        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        if(tbCell.viewWithTag(1) != nil){
-            tbCell.viewWithTag(1)?.removeFromSuperview()
-        }
-        if(tbCell.viewWithTag(2) != nil){
-            tbCell.viewWithTag(2)?.removeFromSuperview()
-        }
-        if(tbCell.viewWithTag(3) != nil){
-            tbCell.viewWithTag(3)?.removeFromSuperview()
-        }
-        if(tbCell.viewWithTag(4) != nil){
-            tbCell.viewWithTag(4)?.removeFromSuperview()
-        }
+
         if(self.segmentindex == 0)
         {
+            let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+            var format = NSDateFormatter()
+            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            if(tbCell.viewWithTag(1) != nil){
+                tbCell.viewWithTag(1)?.removeFromSuperview()
+            }
+            if(tbCell.viewWithTag(2) != nil){
+                tbCell.viewWithTag(2)?.removeFromSuperview()
+            }
+            if(tbCell.viewWithTag(3) != nil){
+                tbCell.viewWithTag(3)?.removeFromSuperview()
+            }
+            if(tbCell.viewWithTag(4) != nil){
+                tbCell.viewWithTag(4)?.removeFromSuperview()
+            }
+
            
             var msg : String = resInfos[indexPath.row].msg!
             var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
 
             
-            var lblMsg : UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
+            var lblMsg : UILabel = UILabel(frame: CGRect(x: 5, y: 2, width: tbCell.frame.size.width, height: 0))
             lblMsg.tag = 1
             lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblMsg.numberOfLines = 0
             lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
             tbCell.addSubview(lblMsg)
-            var lblDate : UILabel = UILabel(frame: CGRect(x: 0, y: lblMsg.frame.size.height + 10, width: 320, height: 0))
+            var lblDate : UILabel = UILabel(frame: CGRect(x: 5, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
             lblDate.tag = 2
             lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblDate.numberOfLines = 0
             lblDate.initAutoHeight(lblDate.frame, textColor: UIColor.orangeColor(), fontSize: 14, text: date, lineSpacing: 1)
             tbCell.addSubview(lblDate)
+            tbCell.accessoryType = UITableViewCellAccessoryType.None
             
-
+            return tbCell
         }
         else
         {
-            var logoImg : UIImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 60, height: 60))
-            logoImg.hnk_setImageFromURL(NSURL(string: self.resComInfos[indexPath.row].imgUrl!))
-            logoImg.tag = 1
-            tbCell.addSubview(logoImg)
-            var lblTitle : UILabel = UILabel(frame: CGRect(x: (logoImg.frame.size.width+5), y: 0,width: 210,height: 40))
-           lblTitle.tag = 2
-            lblTitle.text = self.resComInfos[indexPath.row].title!
-            lblTitle.font = UIFont.systemFontOfSize(16)
-            tbCell.addSubview(lblTitle)
-            var lblDate : UILabel = UILabel(frame: CGRect(x: (logoImg.frame.size.width + 5), y: (lblTitle.frame.size.height), width: 210, height: 20))
-            lblDate.textColor = UIColor.orangeColor()
-            lblDate.font = UIFont.systemFontOfSize(14)
-            lblDate.tag = 3
-            lblDate.text = format.stringFromDate(self.resComInfos[indexPath.row].date!)
-            tbCell.addSubview(lblDate)
+            var format = NSDateFormatter()
+            format.dateFormat = "yyyy-MM-dd"
+            let tbCell2 = tableView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as! UITableViewCell
+            (tbCell2.viewWithTag(1) as! UIImageView).hnk_setImageFromURL(NSURL(string: self.resComInfos[indexPath.row].imgUrl!))
+            (tbCell2.viewWithTag(2) as! UILabel).text = self.resComInfos[indexPath.row].title!
+            (tbCell2.viewWithTag(3) as! UILabel).text = self.resComInfos[indexPath.row].proName
+            (tbCell2.viewWithTag(4) as! UILabel).text = format.stringFromDate(self.resComInfos[indexPath.row].date!)
+            (tbCell2.viewWithTag(5) as! UILabel).text = self.resComInfos[indexPath.row].url
+
+            return tbCell2
         }
-        return tbCell
+
     }
     
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        if(segmentindex == 1)
+        {
+        var sb = UIStoryboard(name: "Main", bundle: nil)
+        var vc  = sb.instantiateViewControllerWithIdentifier("ComContentView") as! CommentContentViewController
+        vc.url = self.resComInfos[indexPath.row].url!
+        vc.navTitle = self.resComInfos[indexPath.row].title!
+        self.presentViewController(vc, animated: true, completion:nil)
+        }
+    }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ComToCommentDetail"
+        {
+            if let des = segue.destinationViewController as? CommentContentViewController
+            {
+                if let cell = sender as? UITableViewCell
+                {
+                  
+                    des.navTitle = (cell.viewWithTag(2) as! UILabel).text!
+                    des.url = (cell.viewWithTag(5) as! UILabel).text!
+                }
+            }
+        }
+
+    }
     
     func initLoadDatas()
     {
@@ -149,12 +180,15 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             var mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
             var format = NSDateFormatter()
             format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
-
+            let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
            if(self.segmentindex == 0)
            {
+                self.msgInfos = []
+                self.resInfos = []
+            
             request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":mobile!,"method":"getInboxMsg"]).responseJSON{
                 (request,response,data,error) in
-                
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error
                 {
                     println(anError)
@@ -183,9 +217,12 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             }
             else//评论
            {
+            self.comInfos = []
+            self.resComInfos = []
+            
             request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getCommentByMobile", "mobile": mobile!])
                 .responseJSON { (request, response, data, error) in
-
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                     if let anError = error
                     {
                         println(anError)
@@ -203,6 +240,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                                 comInfo.imgUrl = item["avatar"].string!
                                 comInfo.url = item["url"].string!
                                 comInfo.date = format.dateFromString(item["date"].string!)
+                                comInfo.proName = item["productname"].string!
                                 self.comInfos.append(comInfo)
                             }
                             self.comInfos.sort({ (c1 : CommentInfo, c2 : CommentInfo) -> Bool in
@@ -259,6 +297,8 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
     func pullUpLoadDatas()
     {
         var minDate : NSDate?
+        var finalDate : String?
+        var actionStr : String?
         var mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
         var format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
@@ -282,40 +322,50 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
         
             if(minDate != nil)
             {
-        request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":mobile!,"method":"getMsgByAction","actionStr" : "pullUp","dateStr": format.stringFromDate(minDate!)]).responseJSON{
-            (request,response,data,error) in
-            
-            if let anError = error
-            {
-                println(anError)
-            }
-            else if let dataList : NSArray = data! as? NSArray
-            {
-                
-                for (var i = 0; i < dataList.count; i++)
-                {
-                    let res = JSON(dataList[i])
-                    
-                    var msgData : MsgInfo = MsgInfo()
-                    msgData.dateStr =  format.dateFromString(res["date"].string!)
-                    msgData.msg = res["msg"].string
-                    self.msgInfos.append(msgData)
-                }
-                self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
-                    s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
-                })
-                self.resInfos = self.msgInfos
-                self.tbData.reloadData()
-                self.tbData.footerEndRefreshing()
-            }
-                }
+                actionStr = "pullUp"
+                finalDate = format.stringFromDate(minDate!)
             
             }else
             {
-                self.tbData.footerEndRefreshing()
+                if(self.nowDate == nil)
+                {
+                self.nowDate = NSDate()
+                }
+                var dateStr : String = format.stringFromDate(self.nowDate!)//如果上一次刷新时间为空赋值当前时间 不为空直接把上次刷新时间传给方法
+                finalDate = dateStr
+                actionStr = "pullDown"
+                
+                self.nowDate = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
+            }
+            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
+                (request,response,data,error) in
+                
+                if let anError = error
+                {
+                    println(anError)
+                }
+                else if let dataList : NSArray = data! as? NSArray
+                {
+                    
+                    for (var i = 0; i < dataList.count; i++)
+                    {
+                        let res = JSON(dataList[i])
+                        
+                        var msgData : MsgInfo = MsgInfo()
+                        msgData.dateStr =  format.dateFromString(res["date"].string!)
+                        msgData.msg = res["msg"].string
+                        self.msgInfos.append(msgData)
+                    }
+                    self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
+                        s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
+                    })
+                    self.resInfos = self.msgInfos
+                    self.tbData.reloadData()
+                    self.tbData.footerEndRefreshing()
+                }
             }
         }
-        else
+        else//评论
         {
             for comInfo in resComInfos
             {
@@ -334,7 +384,23 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             
             if(minDate != nil)
             {
-            request(.GET, EndPoints.GetCommentHierarchy.rawValue,parameters:["mobile":mobile!,"method":"getComByAction","actionStr" : "pullUp","dateStr": format.stringFromDate(minDate!)]).responseJSON{
+                actionStr = "pullUp"
+                finalDate = format.stringFromDate(minDate!)
+                
+            }else
+            {
+                if(self.nowDateForCom == nil)
+                {
+                    self.nowDateForCom = NSDate()
+                }
+                var dateStr : String = format.stringFromDate(self.nowDateForCom!)//如果上一次刷新时间为空赋值当前时间 不为空直接把上次刷新时间传给方法
+                finalDate = dateStr
+                actionStr = "pullDown"
+                
+                self.nowDateForCom = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
+            }
+            
+            request(.GET, EndPoints.GetCommentHierarchy.rawValue,parameters:["mobile":mobile!,"method":"getComByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
                 (request,response,data,error) in
                 
                 if let anError = error
@@ -363,9 +429,10 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                     self.tbData.reloadData()
                     self.tbData.footerEndRefreshing()
                 }
-            }
-            }else{
-                self.tbData.footerEndRefreshing()
+                else
+                {
+                    self.tbData.footerEndRefreshing()
+                }
             }
         }
 
@@ -374,6 +441,8 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
     func pullDownLoadDatas()
     {
         var maxDate : NSDate?
+        var finalDate : String?
+        var actionStr : String?
         var mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
         var format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
@@ -395,42 +464,52 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             }
         }
         
-        if(maxDate != nil)
-        {
-        request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":mobile!,"method":"getMsgByAction","actionStr" : "pullDown","dateStr": format.stringFromDate(maxDate!)]).responseJSON{
-            (request,response,data,error) in
-            
-            if let anError = error
+            if(maxDate != nil)
             {
-                println(anError)
-            }
-            else if let dataList : NSArray = data! as? NSArray
-            {
-                
-                for (var i = 0; i < dataList.count; i++)
-                {
-                    let res = JSON(dataList[i])
-                    
-                    var msgData : MsgInfo = MsgInfo()
-                    msgData.dateStr =  format.dateFromString(res["date"].string!)
-                    msgData.msg = res["msg"].string
-                    self.msgInfos.append(msgData)
-                }
-                self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
-                    s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
-                })
-                self.resInfos = self.msgInfos
-                self.tbData.reloadData()
-                self.tbData.headerEndRefreshing()
-            }
-            }
+            finalDate = format.stringFromDate(maxDate!)
+            actionStr = "pullDown"
             }
             else
-        {
-                self.tbData.headerEndRefreshing()
+            {
+                if(self.nowDate == nil)
+                {
+                self.nowDate = NSDate()
+                }
+                var dateStr : String = format.stringFromDate(self.nowDate!)//如果上一次刷新时间为空赋值当前时间 不为空直接把上次刷新时间传给方法
+                finalDate = dateStr
+                actionStr = "pullDown"
+                
+                self.nowDate = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
+            }
+            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
+                (request,response,data,error) in
+                
+                if let anError = error
+                {
+                    println(anError)
+                }
+                else if let dataList : NSArray = data! as? NSArray
+                {
+                    
+                    for (var i = 0; i < dataList.count; i++)
+                    {
+                        let res = JSON(dataList[i])
+                        
+                        var msgData : MsgInfo = MsgInfo()
+                        msgData.dateStr =  format.dateFromString(res["date"].string!)
+                        msgData.msg = res["msg"].string
+                        self.msgInfos.append(msgData)
+                    }
+                    self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
+                        s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
+                    })
+                    self.resInfos = self.msgInfos
+                    self.tbData.reloadData()
+                    self.tbData.headerEndRefreshing()
+                }
             }
         }
-        else
+        else//评论
         {
             for comInfo in resComInfos
             {
@@ -449,7 +528,22 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             
             if(maxDate != nil)
             {
-            request(.GET, EndPoints.GetCommentHierarchy.rawValue,parameters:["mobile":mobile!,"method":"getComByAction","actionStr" : "pullDown","dateStr": format.stringFromDate(maxDate!)]).responseJSON{
+                actionStr = "pullDown"
+                finalDate = format.stringFromDate(maxDate!)
+                
+            }else
+            {
+                if(self.nowDateForCom == nil)
+                {
+                    self.nowDateForCom = NSDate()
+                }
+                var dateStr : String = format.stringFromDate(self.nowDateForCom!)//如果上一次刷新时间为空赋值当前时间 不为空直接把上次刷新时间传给方法
+                finalDate = dateStr
+                actionStr = "pullDown"
+                
+                self.nowDateForCom = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
+            }
+            request(.GET, EndPoints.GetCommentHierarchy.rawValue,parameters:["mobile":mobile!,"method":"getComByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
                 (request,response,data,error) in
                 
                 if let anError = error
@@ -478,11 +572,6 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                     self.tbData.reloadData()
                     self.tbData.headerEndRefreshing()
                 }
-            }
-            }
-            else
-            {
-                self.tbData.headerEndRefreshing()
             }
         }
     }
@@ -537,6 +626,7 @@ class CommentInfo : NSObject
     var title : String?
     var url : String?
     var imgUrl : String?
+    var proName : String?
 }
 
 extension UILabel{
