@@ -1,6 +1,6 @@
 import UIKit
 
-class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate
+class InboxViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate
 {
     
     @IBOutlet weak var segmentCon: UISegmentedControl!
@@ -34,6 +34,10 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
         tbData.headerRefreshingText = "正在刷新..."
         tbData.footerRefreshingText = "正在刷新..."
         // Do any additional setup after loading the view.
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
@@ -266,13 +270,8 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                 }
             }
         }
-       //self.tbData.reloadData()
-    }
-    
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         self.tbData.reloadData()
     }
-    
     
     //上拉加载更小日期
     func pullUpLoadDatas()
