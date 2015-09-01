@@ -19,12 +19,10 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
     var nowDate : NSDate?
     var nowDateForCom : NSDate?
     var mobile : String?
-    
+    var isLoadOK : String?//是否下拉加载数据成功 用来清零未读消息
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
-         //initLoadDatas()
-        //self.resInfos = self.msgInfos
+         initLoadDatas()
         self.navInbox.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.tbData.dataSource = self
         self.tbData.delegate = self
@@ -42,33 +40,6 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-     override func viewWillAppear(animated: Bool) {
-        initLoadDatas()
-        
-        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
-        request(.GET,EndPoints.MessageInfo.rawValue,parameters:["mobile":self.mobile!,"method":"clearMessage"]).responseJSON{
-        (request,response, data, error) in
-            if let anError = error
-            {
-                println(anError)
-            }
-            else if let res : AnyObject = data
-            {
-                var result = JSON(res)
-                if(result["result"].string! == "ok")
-                {
-                    println("清理成功")
-                }
-                else
-                {
-                    println("清理失败")
-                }
-            }
-        }
-    
-    }
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       if(segmentindex == 0)
@@ -273,6 +244,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
             }
            }
         }
+        
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
@@ -505,6 +477,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                 
                 if let anError = error
                 {
+                    self.isLoadOK = "NO"
                     println(anError)
                 }
                 else if let dataList : NSArray = data! as? NSArray
@@ -525,6 +498,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                     self.resInfos = self.msgInfos
                     self.tbData.reloadData()
                     self.tbData.headerEndRefreshing()
+                    self.isLoadOK = "YES"
                 }
             }
         }
@@ -567,6 +541,7 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                 
                 if let anError = error
                 {
+                    self.isLoadOK = "NO"
                     println(anError)
                 }
                 else if let dataList : NSArray = data! as? NSArray
@@ -590,9 +565,36 @@ class InboxViewController : UIViewController,UITableViewDataSource,UITableViewDe
                     self.resComInfos = self.comInfos
                     self.tbData.reloadData()
                     self.tbData.headerEndRefreshing()
+                    self.isLoadOK = "YES"
                 }
             }
         }
+        
+        if self.isLoadOK == "YES"
+        {
+            //下拉成功 未读消息清零
+            UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+            request(.GET,EndPoints.MessageInfo.rawValue,parameters:["mobile":self.mobile!,"method":"clearMessage"]).responseJSON{
+                (request,response, data, error) in
+                if let anError = error
+                {
+                    println(anError)
+                }
+                else if let res : AnyObject = data
+                {
+                    var result = JSON(res)
+                    if(result["result"].string! == "ok")
+                    {
+                        println("清理成功")
+                    }
+                    else
+                    {
+                        println("清理失败")
+                    }
+                }
+            }
+        }
+
     }
     
     @IBAction func indexChange(sender: AnyObject) {
