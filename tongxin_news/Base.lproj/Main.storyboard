@@ -985,6 +985,9 @@
                                     <navigationItem title="收件箱" id="iE2-WC-aDt">
                                         <barButtonItem key="rightBarButtonItem" title="清空" id="2iE-zf-5IL">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="clearMsg:" destination="HhN-9W-iAJ" id="GSN-5L-Nfx"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
