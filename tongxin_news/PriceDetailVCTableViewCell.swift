@@ -15,6 +15,7 @@ class PriceDetailVCTableViewCell: UITableViewCell {
         // Initialization code
     }
 
+    @IBOutlet weak var lblPriceDetailChange: UILabel!
     @IBOutlet weak var lblPriceDetailName: UILabel!
     @IBOutlet weak var lblPriceDetailDate: UILabel!
     @IBOutlet weak var lblPriceDetailLow: UILabel!

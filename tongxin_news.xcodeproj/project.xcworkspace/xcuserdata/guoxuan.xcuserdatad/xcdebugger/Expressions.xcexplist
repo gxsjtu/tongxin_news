@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = ":PriceHistoryViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "end">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = ":PriceDetailViewController.swift">
          <PersistentStrings>
             <PersistentString

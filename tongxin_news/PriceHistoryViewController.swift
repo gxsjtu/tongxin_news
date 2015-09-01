@@ -26,8 +26,8 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
     var start = NSDate().dateByAddingTimeInterval(-24*60*60*7)
     let formatter = NSDateFormatter()
     
-    //low, high, date
-    var history = [(String, String, String)]()
+    //low, high, date, change
+    var history = [(String, String, String, String)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +45,7 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
         formatter.dateFormat = "yyyy-MM-dd"
         txtPriceHistoryStart.text = formatter.stringFromDate(start)
         txtPriceHistoryEnd.text = formatter.stringFromDate(end)
+        self.btnPriceHistoryQuery.layer.cornerRadius = 6.0
         
         getPriceHistory()
     }
@@ -52,6 +53,11 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         whichTxtSelected = textField.tag
         return false
+    }
+    
+    @IBAction func unwindFromChart2History(segue: UIStoryboardSegue)
+    {
+        
     }
     
     func getPriceHistory()
@@ -63,7 +69,7 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
                 if let anError = error
                 {
                     let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("加载失败，请点击右上角刷新按钮！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
                 else if let data: AnyObject = data
                 {
@@ -74,7 +80,7 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
                         {
                             if let i = item.dictionary
                             {
-                                self.history.append((i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue))
+                                self.history.append((i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue))
                             }
                         }
                         self.tvPriceHistory.reloadData()
@@ -98,6 +104,37 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
         cell.lblPriceHistoryLow.text = history[indexPath.row].0
         cell.lblPriceHistoryHigh.text = history[indexPath.row].1
         
+        if history[indexPath.row].3 == ""
+        {
+            cell.lblPriceHistoryChange.hidden = true
+        }
+        else if history[indexPath.row].3 == "***"
+        {
+            cell.lblPriceHistoryChange.textColor = UIColor.blackColor()
+            cell.lblPriceHistoryChange.text = "涨跌 ***"
+        }
+        else
+        {
+            if let change = history[indexPath.row].3.toInt()
+            {
+                if change == 0
+                {
+                    cell.lblPriceHistoryChange.textColor = UIColor.blackColor()
+                    cell.lblPriceHistoryChange.text = "平"
+                }
+                else if change > 0
+                {
+                    cell.lblPriceHistoryChange.textColor = UIColor.redColor()
+                    cell.lblPriceHistoryChange.text = "涨 " + String(change)
+                }
+                else
+                {
+                    cell.lblPriceHistoryChange.textColor = UIColor.greenColor()
+                    cell.lblPriceHistoryChange.text = "跌 " + String(-change)
+                }
+            }
+        }
+        
         return cell
     }
 
@@ -110,10 +147,10 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
             let alert = SKTipAlertView()
             alert.showRedNotificationForString("截止日期必须晚于起始日期！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
         }
-        else if end.timeIntervalSinceDate(start) > 24 * 60 * 60 * 30
+        else if end.timeIntervalSinceDate(start) > 24 * 60 * 60 * 30 * 3
         {
             let alert = SKTipAlertView()
-            alert.showRedNotificationForString("查询时间跨度不能超过三个月！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+            alert.showRedNotificationForString("查询时间跨度不能超过90天！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
         }
         else
         {
@@ -152,14 +189,18 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
             txtPriceHistoryEnd.text = selectedDate
         }
     }
-    /*
-    // MARK: - Navigation
+
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "PriceHistory2Chart"
+        {
+            if let des = segue.destinationViewController as? PriceChartViewController
+            {
+                des.navTitle = self.navTitle
+                des.history = self.history
+            }
+        }
     }
-    */
 
 }

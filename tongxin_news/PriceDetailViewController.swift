@@ -10,7 +10,7 @@ import UIKit
 
 class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var products = [(String, String, String, String, String)]()
+    var products = [(String, String, String, String, String, String)]()
     var market = "未知"
     var group = "未知"
     var mobile = ""
@@ -53,6 +53,36 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         cell.lblPriceDetailLow.text = "最低 " + products[indexPath.row].2
         cell.lblPriceDetailHigh.text = "最高 " + products[indexPath.row].3
         cell.lblPriceDetailId.text = products[indexPath.row].1
+        if products[indexPath.row].5 == ""
+        {
+            cell.lblPriceDetailChange.hidden = true
+        }
+        else if products[indexPath.row].5 == "***"
+        {
+            cell.lblPriceDetailChange.textColor = UIColor.blackColor()
+            cell.lblPriceDetailChange.text = "涨跌 ***"
+        }
+        else
+        {
+            if let change = products[indexPath.row].5.toInt()
+            {
+                if change == 0
+                {
+                    cell.lblPriceDetailChange.textColor = UIColor.blackColor()
+                    cell.lblPriceDetailChange.text = "平"
+                }
+                else if change > 0
+                {
+                    cell.lblPriceDetailChange.textColor = UIColor.redColor()
+                    cell.lblPriceDetailChange.text = "涨 " + String(change)
+                }
+                else
+                {
+                    cell.lblPriceDetailChange.textColor = UIColor.greenColor()
+                    cell.lblPriceDetailChange.text = "跌 " + String(-change)
+                }
+            }
+        }
         return cell
     }
     
@@ -80,7 +110,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
                         for item in res
                         {
                             if let i = item.dictionary
-                            {self.products.append((i["ProductName"]!.stringValue, i["ProductId"]!.stringValue, i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue))
+                            {self.products.append((i["ProductName"]!.stringValue, i["ProductId"]!.stringValue, i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue))
                             }
                         }
                         self.tvPriceDetail.reloadData()

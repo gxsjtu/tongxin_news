@@ -10,6 +10,7 @@ import UIKit
 
 class PriceHistoryTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblPriceHistoryChange: UILabel!
     @IBOutlet weak var lblPriceHistoryDate: UILabel!
     @IBOutlet weak var lblPriceHistoryLow: UILabel!
     @IBOutlet weak var lblPriceHistoryHigh: UILabel!
