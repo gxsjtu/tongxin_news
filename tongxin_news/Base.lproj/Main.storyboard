@@ -107,9 +107,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVu-Bf-EF0">
-                                <rect key="frame" x="16" y="156" width="288" height="30"/>
+                                <rect key="frame" x="16" y="156" width="288" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ZEr-un-mEZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="ZEr-un-mEZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -142,9 +142,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pPq-vK-8Ru">
-                                <rect key="frame" x="16" y="210" width="288" height="30"/>
+                                <rect key="frame" x="16" y="210" width="288" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Whd-96-iuD"/>
+                                    <constraint firstAttribute="height" constant="40" id="Whd-96-iuD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -985,11 +985,14 @@
                                     <navigationItem title="收件箱" id="iE2-WC-aDt">
                                         <barButtonItem key="rightBarButtonItem" title="清空" id="2iE-zf-5IL">
                                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <action selector="clearMsg:" destination="HhN-9W-iAJ" id="GSN-5L-Nfx"/>
+                                            </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Gcc-6i-zLJ">
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcc-6i-zLJ">
                                 <rect key="frame" x="0.0" y="100" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="djS-HO-fkq"/>
@@ -1007,7 +1010,7 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CWQ-eA-vrw">
-                                <rect key="frame" x="0.0" y="144" width="320" height="411"/>
+                                <rect key="frame" x="0.0" y="144" width="320" height="375"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Fwt-Uy-8ku">
@@ -1097,13 +1100,13 @@
                             <constraint firstItem="Gcc-6i-zLJ" firstAttribute="top" secondItem="CWQ-eA-vrw" secondAttribute="top" constant="-44" id="3Ag-lX-Gss"/>
                             <constraint firstItem="CWQ-eA-vrw" firstAttribute="leading" secondItem="yOA-L1-X3Q" secondAttribute="leadingMargin" constant="-16" id="3Ib-fP-9QN"/>
                             <constraint firstItem="6yI-HX-nhB" firstAttribute="top" secondItem="gWu-61-hd3" secondAttribute="top" constant="68" id="3Xj-qJ-mFr"/>
-                            <constraint firstItem="X5x-HS-dqm" firstAttribute="top" secondItem="CWQ-eA-vrw" secondAttribute="bottom" constant="-36" id="9Pk-se-h1Q"/>
                             <constraint firstItem="Gcc-6i-zLJ" firstAttribute="top" secondItem="KtO-Hm-X8y" secondAttribute="bottom" constant="80" id="A2Y-8l-D1g"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CWQ-eA-vrw" secondAttribute="trailing" constant="-16" id="B1K-oL-Bxp"/>
                             <constraint firstItem="Gcc-6i-zLJ" firstAttribute="leading" secondItem="yOA-L1-X3Q" secondAttribute="leadingMargin" constant="-16" id="CQt-bD-k3J"/>
                             <constraint firstItem="Gcc-6i-zLJ" firstAttribute="bottom" secondItem="6yI-HX-nhB" secondAttribute="bottom" constant="48" id="MoF-IU-112"/>
                             <constraint firstItem="gWu-61-hd3" firstAttribute="leading" secondItem="yOA-L1-X3Q" secondAttribute="leadingMargin" constant="-16" id="TF3-J2-sHr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Gcc-6i-zLJ" secondAttribute="trailing" constant="-16" id="WqI-tv-49A"/>
+                            <constraint firstItem="X5x-HS-dqm" firstAttribute="top" secondItem="CWQ-eA-vrw" secondAttribute="bottom" id="aRy-Ly-EfL"/>
                             <constraint firstItem="gWu-61-hd3" firstAttribute="top" secondItem="KtO-Hm-X8y" secondAttribute="bottom" constant="-20" id="gEo-Hr-haH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gWu-61-hd3" secondAttribute="trailing" constant="-16" id="q6S-jC-LI4"/>
                         </constraints>

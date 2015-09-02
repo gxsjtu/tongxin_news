@@ -80,5 +80,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: "token")
     }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        NSNotificationCenter.defaultCenter().postNotificationName("Badge", object: nil, userInfo: userInfo)
+    }
 }
 

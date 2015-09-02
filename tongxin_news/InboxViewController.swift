@@ -40,6 +40,20 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         tbData.headerRefreshingText = "正在刷新..."
         tbData.footerRefreshingText = "正在刷新..."
         // Do any additional setup after loading the view.
+        
+        //监听Badge消息
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBadgeNumber:", name: "Badge", object: nil)
+    }
+    
+    func updateBadgeNumber(notification: NSNotification)
+    {
+        if let aps: AnyObject = notification.userInfo?["aps"] {
+            if let apsDict = aps as? [String : AnyObject]{
+                if let badge: AnyObject = apsDict["badge"] {
+                    self.tabBarItem.badgeValue = String(badge as! Int)
+                }
+            }
+        }
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
@@ -560,6 +574,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         {
             //下拉成功 未读消息清零
             UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+            self.tabBarItem.badgeValue = nil
             request(.GET,EndPoints.MessageInfo.rawValue,parameters:["mobile":self.mobile!,"method":"clearMessage"]).responseJSON{
                 (request,response, data, error) in
                 if let anError = error

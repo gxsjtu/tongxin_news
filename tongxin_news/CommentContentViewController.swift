@@ -11,7 +11,7 @@ import UIKit
 class CommentContentViewController: UIViewController, UIWebViewDelegate {
     
     var navTitle = "未知"
-    var url = "http://app.shtx.com.cn/404.html"
+    var url = "http://app.shtx.com.cn/statichtml/404.html"
 
     @IBOutlet weak var wvCommentContent: UIWebView!
     @IBOutlet weak var navCommentContent: UINavigationBar!
