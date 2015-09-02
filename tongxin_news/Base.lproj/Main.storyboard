@@ -366,6 +366,12 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EMI-sO-eAN">
+                                                    <rect key="frame" x="186" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Rbt-vC-Z91" secondAttribute="bottom" constant="-4" id="3Rj-KI-Pl3"/>
@@ -382,6 +388,7 @@
                                         <connections>
                                             <outlet property="imgCommentDetailLogo" destination="NAV-fl-zrg" id="mgh-aw-A92"/>
                                             <outlet property="lblCommentDetailDate" destination="Rbt-vC-Z91" id="1Ek-QJ-yk0"/>
+                                            <outlet property="lblCommentDetailIsOrdered" destination="EMI-sO-eAN" id="dWF-g7-noX"/>
                                             <outlet property="lblCommentDetailName" destination="s6i-kF-iZS" id="Iht-ne-ptD"/>
                                             <outlet property="lblCommentDetailTitle" destination="0lj-jc-CYr" id="9zC-Hg-o1j"/>
                                             <outlet property="lblCommentDetailUrl" destination="lr9-yK-tLd" id="eQP-zO-khO"/>
@@ -568,6 +575,12 @@
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bew-GB-7bj">
+                                                    <rect key="frame" x="141" y="8" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="RT8-6q-18A" firstAttribute="leading" secondItem="g4L-S9-Ifp" secondAttribute="leadingMargin" id="1zL-MY-79x"/>
@@ -589,6 +602,7 @@
                                             <outlet property="lblPriceDetailDate" destination="lzE-BW-5tU" id="cMa-Gb-Mra"/>
                                             <outlet property="lblPriceDetailHigh" destination="bZ6-D2-Xg4" id="KIO-uH-gxY"/>
                                             <outlet property="lblPriceDetailId" destination="KH6-yX-2IX" id="ueb-ve-Rih"/>
+                                            <outlet property="lblPriceDetailIsOrdered" destination="bew-GB-7bj" id="9le-0u-TXq"/>
                                             <outlet property="lblPriceDetailLow" destination="RT8-6q-18A" id="7gu-T7-Xmc"/>
                                             <outlet property="lblPriceDetailName" destination="2i6-it-j1b" id="n2A-Ig-L6g"/>
                                             <segue destination="ktW-bq-n8X" kind="modal" identifier="PriceDetail2PriceHistory" id="aqn-SM-eJQ"/>

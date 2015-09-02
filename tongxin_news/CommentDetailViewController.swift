@@ -11,7 +11,7 @@ import UIKit
 class CommentDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     //avatar, url, title, date, id, productname
-    var products = [(String, String, String, String, String, String)]()
+    var products = [(String, String, String, String, String, String, String)]()
     var market = "未知"
     var group = "未知"
     var mobile = ""
@@ -50,6 +50,7 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
         cell.lblCommentDetailTitle.text = products[indexPath.row].2
         cell.lblCommentDetailName.text = products[indexPath.row].5
         cell.lblCommentDetailUrl.text = products[indexPath.row].1
+        cell.lblCommentDetailIsOrdered.text = products[indexPath.row].6
         return cell
     }
     
@@ -67,21 +68,21 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
 
-//    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-//        if identifier == "CommentDetail2CommentContent"
-//        {
-//            if let cell = sender as? CommentDetailVCTableViewCell
-//            {
-//                if cell.lblPriceDetailLow.text == "最低 ***"
-//                {
-//                    let alert = SKTipAlertView()
-//                    alert.showRedNotificationForString("您尚未订阅该产品，无法查阅历史数据！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-//                    return false
-//                }
-//            }
-//        }
-//        return true
-//    }
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        if identifier == "CommentDetail2CommentContent"
+        {
+            if let cell = sender as? CommentDetailVCTableViewCell
+            {
+                if cell.lblCommentDetailIsOrdered.text == "NO"
+                {
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("您尚未订阅该产品，无法查阅历史数据！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                    return false
+                }
+            }
+        }
+        return true
+    }
     
     @IBAction func commentContent2CommentDetail(segue: UIStoryboardSegue)
     {
@@ -112,7 +113,7 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
                         {
                             if let i = item.dictionary
                             {
-                                self.products.append((i["avatar"]!.stringValue, i["url"]!.stringValue, i["title"]!.stringValue, i["date"]!.stringValue, i["id"]!.stringValue, i["productname"]!.stringValue))
+                                self.products.append((i["avatar"]!.stringValue, i["url"]!.stringValue, i["title"]!.stringValue, i["date"]!.stringValue, i["id"]!.stringValue, i["productname"]!.stringValue, i["isOrder"]!.stringValue))
                             }
                         }
                         self.tvCommentDetail.reloadData()

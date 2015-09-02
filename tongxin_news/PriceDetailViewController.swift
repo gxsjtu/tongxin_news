@@ -10,7 +10,7 @@ import UIKit
 
 class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var products = [(String, String, String, String, String, String)]()
+    var products = [(String, String, String, String, String, String, String)]()
     var market = "未知"
     var group = "未知"
     var mobile = ""
@@ -53,6 +53,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         cell.lblPriceDetailLow.text = "最低 " + products[indexPath.row].2
         cell.lblPriceDetailHigh.text = "最高 " + products[indexPath.row].3
         cell.lblPriceDetailId.text = products[indexPath.row].1
+        cell.lblPriceDetailIsOrdered.text = products[indexPath.row].6
         if products[indexPath.row].5 == ""
         {
             cell.lblPriceDetailChange.hidden = true
@@ -110,7 +111,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
                         for item in res
                         {
                             if let i = item.dictionary
-                            {self.products.append((i["ProductName"]!.stringValue, i["ProductId"]!.stringValue, i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue))
+                            {self.products.append((i["ProductName"]!.stringValue, i["ProductId"]!.stringValue, i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue, i["isOrder"]!.stringValue))
                             }
                         }
                         self.tvPriceDetail.reloadData()
@@ -124,7 +125,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         {
             if let cell = sender as? PriceDetailVCTableViewCell
             {
-                if cell.lblPriceDetailLow.text == "最低 ***"
+                if cell.lblPriceDetailIsOrdered.text == "NO"
                 {
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("您尚未订阅该产品，无法查阅历史数据！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
