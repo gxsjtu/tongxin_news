@@ -107,9 +107,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVu-Bf-EF0">
-                                <rect key="frame" x="16" y="156" width="288" height="30"/>
+                                <rect key="frame" x="16" y="156" width="288" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="ZEr-un-mEZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="ZEr-un-mEZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -142,9 +142,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pPq-vK-8Ru">
-                                <rect key="frame" x="16" y="210" width="288" height="30"/>
+                                <rect key="frame" x="16" y="210" width="288" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Whd-96-iuD"/>
+                                    <constraint firstAttribute="height" constant="40" id="Whd-96-iuD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
