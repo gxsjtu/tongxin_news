@@ -212,70 +212,18 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IbR-O3-h2z" id="hGi-wk-3aS">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35e-xD-LZV">
-                                                    <rect key="frame" x="8" y="0.0" width="185" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="185" id="GHc-RA-7db"/>
-                                                        <constraint firstAttribute="height" constant="21" id="zYW-jV-qiw"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyd-mz-lNe">
-                                                    <rect key="frame" x="201" y="0.0" width="86" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="430-Pg-zXq"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="low" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qah-Fy-gUX">
-                                                    <rect key="frame" x="8" y="22" width="125" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="E7g-pg-qnf"/>
-                                                        <constraint firstAttribute="width" constant="125" id="H1q-78-xVK"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="high" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cfv-WI-3So">
-                                                    <rect key="frame" x="107" y="22" width="136" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="136" id="7PI-Oj-Gmi"/>
-                                                        <constraint firstAttribute="height" constant="21" id="TVH-QQ-ajW"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="change" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ul-sS-GgU">
-                                                    <rect key="frame" x="201" y="22" width="86" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="4pt-UV-I7N"/>
-                                                        <constraint firstAttribute="width" constant="86" id="8W4-jU-gVZ"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FF-qa-xRy">
+                                                    <rect key="frame" x="122" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="dyd-mz-lNe" secondAttribute="trailing" constant="-8" id="1s9-Ag-ZgF"/>
-                                                <constraint firstItem="Qah-Fy-gUX" firstAttribute="leading" secondItem="hGi-wk-3aS" secondAttribute="leadingMargin" id="3UC-Ti-D2R"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="1Ul-sS-GgU" secondAttribute="bottom" constant="-8" id="Hcf-P0-L9o"/>
-                                                <constraint firstItem="Cfv-WI-3So" firstAttribute="leading" secondItem="Qah-Fy-gUX" secondAttribute="leading" constant="99" id="ITN-On-Mhy"/>
-                                                <constraint firstItem="35e-xD-LZV" firstAttribute="top" secondItem="hGi-wk-3aS" secondAttribute="topMargin" constant="-8" id="JaA-QR-pBZ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Qah-Fy-gUX" secondAttribute="bottom" constant="-8" id="LDo-Fo-SzV"/>
-                                                <constraint firstItem="1Ul-sS-GgU" firstAttribute="leading" secondItem="Cfv-WI-3So" secondAttribute="leading" constant="94" id="RtX-RL-f4e"/>
-                                                <constraint firstItem="35e-xD-LZV" firstAttribute="leading" secondItem="hGi-wk-3aS" secondAttribute="leadingMargin" id="Tgq-Wf-SBl"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Cfv-WI-3So" secondAttribute="bottom" constant="-8" id="gU6-89-WQh"/>
-                                                <constraint firstItem="dyd-mz-lNe" firstAttribute="leading" secondItem="35e-xD-LZV" secondAttribute="leading" constant="193" id="lYT-Tk-7A9"/>
-                                                <constraint firstItem="dyd-mz-lNe" firstAttribute="top" secondItem="hGi-wk-3aS" secondAttribute="topMargin" constant="-8" id="qDb-WY-ayF"/>
-                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblPriceCellMarketId" destination="4FF-qa-xRy" id="oiP-Pz-BHh"/>
+                                            <segue destination="ycC-fZ-orG" kind="modal" identifier="Price2PriceDetail" id="l4p-CJ-ciP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -528,7 +476,7 @@
         <!--Price Detail View Controller-->
         <scene sceneID="876-yt-7fG">
             <objects>
-                <viewController storyboardIdentifier="PriceDetailVC" id="ycC-fZ-orG" customClass="PriceDetailViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ycC-fZ-orG" customClass="PriceDetailViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rE0-qd-goo"/>
                         <viewControllerLayoutGuide type="bottom" id="Qg3-0Y-QHP"/>
