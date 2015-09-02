@@ -128,7 +128,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 if cell.lblPriceDetailIsOrdered.text == "NO"
                 {
                     let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("您尚未订阅该产品，无法查阅历史数据！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                    alert.showRedNotificationForString("您尚未订阅该产品，无法查看历史数据！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                     return false
                 }
             }
