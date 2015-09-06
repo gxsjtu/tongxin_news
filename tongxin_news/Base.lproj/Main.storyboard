@@ -1037,6 +1037,9 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fwt-Uy-8ku" id="aiL-aJ-XV9">
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="HxM-A0-bGR" kind="modal" identifier="ComToCommentDetail" id="vHv-cP-Pfo"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
