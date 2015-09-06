@@ -4,7 +4,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
 {
     
     @IBOutlet weak var clearBar: UIBarButtonItem!
-    @IBOutlet weak var segmentCon: UISegmentedControl!
+    //@IBOutlet weak var segmentCon: UISegmentedControl!
     //@IBOutlet weak var lblMsg: UILabel!
     @IBOutlet weak var searchCon: UISearchBar!
     @IBOutlet weak var navInbox: UINavigationBar!
@@ -15,8 +15,8 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     var segmentindex : Int = 0
     var products = [(String, String, String, String, String)]()
     
-    var comInfos : Array<CommentInfo> = []
-    var resComInfos : Array<CommentInfo> = []
+//    var comInfos : Array<CommentInfo> = []
+//    var resComInfos : Array<CommentInfo> = []
     var nowDate : NSDate?
     var nowDateForCom : NSDate?
     var mobile : String?
@@ -25,8 +25,8 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     //记录刷新时间
     var maxDateForMsg : NSDate?
     var minDateForMsg : NSDate?
-    var maxDateForCom : NSDate?
-    var minDateForCom : NSDate?
+//    var maxDateForCom : NSDate?
+//    var minDateForCom : NSDate?
     override func viewDidLoad() {
         super.viewDidLoad()
          initLoadDatas()
@@ -63,16 +63,9 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.text = ""
-        if(self.segmentindex == 0)
-        {
             self.resInfos = []
             self.resInfos = self.msgInfos
-        }
-        else
-        {
-            self.resComInfos = []
-            self.resComInfos = self.comInfos
-        }
+
         self.tbData.reloadData()
     }
     
@@ -83,19 +76,10 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
 
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      if(segmentindex == 0)
-      {
         return self.resInfos.count
-        }
-        else
-      {
-        return self.resComInfos.count
-        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if(self.segmentindex == 0)
-        {
             var format = NSDateFormatter()
             format.dateFormat = "yyyy-MM-dd HH:mm:ss"
             var msg : String = resInfos[indexPath.row].msg!
@@ -105,25 +89,26 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             var lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
             lbDate.initAutoHeight(lbDate.frame, textColor: UIColor.yellowColor(), fontSize: 10, text: date, lineSpacing: 1)
             return (lb.frame.height + lbDate.frame.height + 10)
-        }
-        else
-        {
-            return 64
-        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        if(self.segmentindex == 0)
+        var format = NSDateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        
+        if(resInfos[indexPath.row].url != nil)
         {
             let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
-            var format = NSDateFormatter()
-            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            
             if(tbCell.viewWithTag(1) != nil){
                 tbCell.viewWithTag(1)?.removeFromSuperview()
             }
             if(tbCell.viewWithTag(2) != nil){
                 tbCell.viewWithTag(2)?.removeFromSuperview()
+            }
+            if(tbCell.viewWithTag(3) != nil)
+            {
+                tbCell.viewWithTag(3)?.removeFromSuperview()
             }
            
             var msg : String = resInfos[indexPath.row].msg!
@@ -142,27 +127,59 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             lblDate.numberOfLines = 0
             lblDate.initAutoHeight(lblDate.frame, textColor: UIColor.orangeColor(), fontSize: 14, text: date, lineSpacing: 1)
             tbCell.addSubview(lblDate)
-            tbCell.accessoryType = UITableViewCellAccessoryType.None
+            var lblUrl : UILabel = UILabel()
+            lblUrl.tag = 3
+            lblUrl.text = resInfos[indexPath.row].url
+            lblUrl.hidden = true
+            tbCell.addSubview(lblUrl)
+            tbCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             
             return tbCell
         }
-        else
-        {
-            var format = NSDateFormatter()
-            format.dateFormat = "yyyy-MM-dd"
-            let tbCell2 = tableView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as! UITableViewCell
-            (tbCell2.viewWithTag(1) as! UIImageView).hnk_setImageFromURL(NSURL(string: self.resComInfos[indexPath.row].imgUrl!))
-            (tbCell2.viewWithTag(2) as! UILabel).text = self.resComInfos[indexPath.row].title!
-            (tbCell2.viewWithTag(3) as! UILabel).text = self.resComInfos[indexPath.row].proName
-            (tbCell2.viewWithTag(4) as! UILabel).text = format.stringFromDate(self.resComInfos[indexPath.row].date!)
-            (tbCell2.viewWithTag(5) as! UILabel).text = self.resComInfos[indexPath.row].url
-            (tbCell2.viewWithTag(6) as! UILabel).text = self.resComInfos[indexPath.row].marketName
-
-            return tbCell2
+    else
+    {
+        let tbCell = tableView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as! UITableViewCell
+        
+        if(tbCell.viewWithTag(1) != nil){
+            tbCell.viewWithTag(1)?.removeFromSuperview()
         }
+        if(tbCell.viewWithTag(2) != nil){
+            tbCell.viewWithTag(2)?.removeFromSuperview()
+        }
+        if(tbCell.viewWithTag(3) != nil)
+        {
+            tbCell.viewWithTag(3)?.removeFromSuperview()
+        }
+        
+        var msg : String = resInfos[indexPath.row].msg!
+        var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
+        
+        
+        var lblMsg : UILabel = UILabel(frame: CGRect(x: 5, y: 2, width: tbCell.frame.size.width, height: 0))
+        lblMsg.tag = 1
+        lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        lblMsg.numberOfLines = 0
+        lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
+        tbCell.addSubview(lblMsg)
+        var lblDate : UILabel = UILabel(frame: CGRect(x: 5, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
+        lblDate.tag = 2
+        lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        lblDate.numberOfLines = 0
+        lblDate.initAutoHeight(lblDate.frame, textColor: UIColor.orangeColor(), fontSize: 14, text: date, lineSpacing: 1)
+        tbCell.addSubview(lblDate)
+        var lblUrl : UILabel = UILabel()
+        lblUrl.tag = 3
+        lblUrl.text = resInfos[indexPath.row].url
+        lblUrl.hidden = true
+        tbCell.addSubview(lblUrl)
 
+        tbCell.accessoryType = UITableViewCellAccessoryType.None
+        
+        return tbCell
+    }
     }
     
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ComToCommentDetail"
         {
@@ -170,8 +187,8 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             {
                 if let cell = sender as? UITableViewCell
                 {
-                    des.navTitle = (cell.viewWithTag(6) as! UILabel).text! + "-" + (cell.viewWithTag(3) as! UILabel).text!
-                    des.url = (cell.viewWithTag(5) as! UILabel).text!
+                    des.navTitle = "同鑫评论"
+                    des.url = (cell.viewWithTag(3) as! UILabel).text!
                 }
             }
         }
@@ -201,8 +218,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             var format = NSDateFormatter()
             format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
             let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-           if(self.segmentindex == 0)
-           {
+
                 self.msgInfos = []
                 self.resInfos = []
             request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getInboxMsg"]).responseJSON{
@@ -222,6 +238,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                         var msgData : MsgInfo = MsgInfo()
                         msgData.dateStr =  format.dateFromString(res["date"].string!)
                         msgData.msg = res["msg"].string
+                        msgData.url = res["url"].string
                         self.msgInfos.append(msgData)
                     }
                     self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
@@ -229,7 +246,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     })
                     self.resInfos = self.msgInfos
                     self.tbData.reloadData()
-                    self.segmentCon.enabled = true
+                    //self.segmentCon.enabled = true
                     if(self.msgInfos.count > 0)
                     {
                     self.maxDateForMsg = self.msgInfos.first?.dateStr
@@ -238,51 +255,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 }
             }
 
-            }
-            else//评论
-           {
-            self.comInfos = []
-            self.resComInfos = []
-            
-            request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getCommentByMobile", "mobile": self.mobile!])
-                .responseJSON { (request, response, data, error) in
-                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                    if let anError = error
-                    {
-                        println(anError)
-                    }
-                    else if let data: AnyObject = data
-                    {
-                        if let res = JSON(data).array
-                        {
-                            for item in res
-                            {
-                                var comInfo : CommentInfo = CommentInfo()
-                                //comInfo
-                                comInfo.id = (item["id"].string!).toInt()
-                                comInfo.title = item["title"].string!
-                                comInfo.imgUrl = item["avatar"].string!
-                                comInfo.url = item["url"].string!
-                                comInfo.date = format.dateFromString(item["date"].string!)
-                                comInfo.proName = item["productname"].string!
-                                comInfo.marketName = item["marketname"].string!
-                                self.comInfos.append(comInfo)
-                            }
-                            self.comInfos.sort({ (c1 : CommentInfo, c2 : CommentInfo) -> Bool in
-                                c1.date?.timeIntervalSinceReferenceDate >= c2.date?.timeIntervalSinceReferenceDate
-                            })
-                            self.resComInfos = self.comInfos
-                            self.tbData.reloadData()
-                            self.segmentCon.enabled = true
-                            if(self.comInfos.count > 0)
-                            {
-                                self.maxDateForCom = self.comInfos.first?.date
-                                self.minDateForCom = self.comInfos.last?.date
-                            }
-                        }
-                    }
-            }
-           }
         }
         
     }
@@ -291,28 +263,16 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         if(searchText == "")
         {
             self.resInfos = self.msgInfos
-            self.resComInfos = self.comInfos
+            //self.resComInfos = self.comInfos
         }
         else
         {
-            if(self.segmentindex == 0)
-            {
             self.resInfos = Array<MsgInfo>()
             for msgInfo in self.msgInfos
             {
                 if(msgInfo.msg!.componentsSeparatedByString(searchText).count > 1)
                 {
                     resInfos.append(msgInfo)
-                }
-            }
-            }else{
-                self.resComInfos = Array<CommentInfo>()
-                for comInfo in self.comInfos
-                {
-                    if(comInfo.title!.componentsSeparatedByString(searchText).count > 1)
-                    {
-                        resComInfos.append(comInfo)
-                    }
                 }
             }
         }
@@ -328,8 +288,8 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         var format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
 
-        if(self.segmentindex == 0)
-        {
+//        if(self.segmentindex == 0)
+//        {
             minDate = self.minDateForMsg
             if(minDate != nil)
             {
@@ -365,6 +325,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                         var msgData : MsgInfo = MsgInfo()
                         msgData.dateStr =  format.dateFromString(res["date"].string!)
                         msgData.msg = res["msg"].string
+                        msgData.url = res["url"].string
                         self.msgInfos.append(msgData)
                     }
                     self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
@@ -379,66 +340,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     }
                 }
             }
-        }
-        else//评论
-        {
-            
-            minDate = self.minDateForCom
-            if(minDate != nil)
-            {
-                actionStr = "pullUp"
-                finalDate = format.stringFromDate(minDate!)
-                
-            }else
-            {
-                if(self.nowDateForCom == nil)
-                {
-                    self.nowDateForCom = NSDate()
-                }
-                var dateStr : String = format.stringFromDate(self.nowDateForCom!)//如果上一次刷新时间为空赋值当前时间 不为空直接把上次刷新时间传给方法
-                finalDate = dateStr
-                actionStr = "pullDown"
-                
-                self.nowDateForCom = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
-            }
-            
-            request(.GET, EndPoints.GetCommentHierarchy.rawValue,parameters:["mobile":self.mobile!,"method":"getComByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
-                (request,response,data,error) in
-                
-                if let anError = error
-                {
-                    println(anError)
-                }
-                else if let dataList : NSArray = data! as? NSArray
-                {
-                    
-                    for (var i = 0; i < dataList.count; i++)
-                    {
-                        let item = JSON(dataList[i])
-                        
-                        var comInfo : CommentInfo = CommentInfo()
-                        //comInfo
-                        comInfo.id = (item["id"].string!).toInt()
-                        comInfo.title = item["title"].string!
-                        comInfo.imgUrl = item["avatar"].string!
-                        comInfo.url = item["url"].string!
-                        comInfo.date = format.dateFromString(item["date"].string!)
-                        comInfo.proName = item["productname"].string!
-                        comInfo.marketName = item["marketname"].string!
-                        self.comInfos.append(comInfo)                    }
-                    self.comInfos.sort({ (s1:CommentInfo, s2:CommentInfo) -> Bool in
-                        s1.date?.timeIntervalSinceReferenceDate >= s2.date?.timeIntervalSinceReferenceDate
-                    })
-                    self.resComInfos = self.comInfos
-                    self.tbData.reloadData()
-                    self.tbData.footerEndRefreshing()
-                    if(self.comInfos.count > 0)
-                    {
-                        self.minDateForCom = self.comInfos.last?.date
-                    }
-                }
-            }
-        }
 
     }
     //下拉加载更大日期
@@ -449,9 +350,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         var actionStr : String?
         var format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
-        
-        if(self.segmentindex == 0)
-        {
+
             maxDate = self.maxDateForMsg
             
             if(maxDate != nil)
@@ -490,6 +389,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                         var msgData : MsgInfo = MsgInfo()
                         msgData.dateStr =  format.dateFromString(res["date"].string!)
                         msgData.msg = res["msg"].string
+                        msgData.url = res["url"].string
                         self.msgInfos.append(msgData)
                     }
                     self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
@@ -499,76 +399,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     self.tbData.reloadData()
                     self.tbData.headerEndRefreshing()
                     self.isLoadOK = "YES"
-                    self.segmentCon.enabled = true
+                    //self.segmentCon.enabled = true
                     if(self.msgInfos.count > 0)
                     {
                         self.maxDateForMsg = self.msgInfos.first?.dateStr
                     }
                 }
             }
-        }
-        else//评论
-        {
-            
-            maxDate = self.maxDateForCom
-            
-            if(maxDate != nil)
-            {
-                actionStr = "pullDown"
-                finalDate = format.stringFromDate(maxDate!)
-                
-            }else
-            {
-                if(self.nowDateForCom == nil)
-                {
-                    self.nowDateForCom = NSDate()
-                }
-                var dateStr : String = format.stringFromDate(self.nowDateForCom!)//如果上一次刷新时间为空赋值当前时间 不为空直接把上次刷新时间传给方法
-                finalDate = dateStr
-                actionStr = "pullDown"
-                
-                self.nowDateForCom = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
-            }
-            request(.GET, EndPoints.GetCommentHierarchy.rawValue,parameters:["mobile":self.mobile!,"method":"getComByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
-                (request,response,data,error) in
-                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = error
-                {
-                    self.isLoadOK = "NO"
-                    println(anError)
-                }
-                else if let dataList : NSArray = data! as? NSArray
-                {
-                    
-                    for (var i = 0; i < dataList.count; i++)
-                    {
-                        let item = JSON(dataList[i])
-                        
-                        var comInfo : CommentInfo = CommentInfo()
-                        //comInfo
-                        comInfo.id = (item["id"].string!).toInt()
-                        comInfo.title = item["title"].string!
-                        comInfo.imgUrl = item["avatar"].string!
-                        comInfo.url = item["url"].string!
-                        comInfo.date = format.dateFromString(item["date"].string!)
-                        comInfo.proName = item["productname"].string!
-                        comInfo.marketName = item["marketname"].string!
-                        self.comInfos.append(comInfo)                    }
-                        self.comInfos.sort({ (s1:CommentInfo, s2:CommentInfo) -> Bool in
-                        s1.date?.timeIntervalSinceReferenceDate >= s2.date?.timeIntervalSinceReferenceDate
-                    })
-                    self.resComInfos = self.comInfos
-                    self.tbData.reloadData()
-                    self.tbData.headerEndRefreshing()
-                    self.isLoadOK = "YES"
-                    self.segmentCon.enabled = true
-                    if(self.comInfos.count > 0)
-                    {
-                        self.maxDateForCom = self.comInfos.first?.date
-                    }
-                }
-            }
-        }
         
         if self.isLoadOK == "YES"
         {
@@ -598,59 +435,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
 
     }
     
-    @IBAction func indexChange(sender: AnyObject) {
-        self.segmentCon.enabled = false
-        switch self.segmentCon.selectedSegmentIndex
-        {
-        case 0:
-            self.segmentindex = 0
-            if(self.maxDateForMsg != nil)
-            {
-//                self.resInfos = self.msgInfos
-//                self.tbData.reloadData()
-//                self.segmentCon.enabled = true
-                let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-                pullDownLoadDatas()
-            }
-            else
-            {
-                initLoadDatas()
-                //pullDownLoadDatas()
-            }
-            //self.segmentCon.enabled = false
-        case 1:
-            self.segmentindex = 1
-            if(self.maxDateForCom != nil)
-            {
-//                self.resComInfos = self.comInfos
-//                self.tbData.reloadData()
-//                self.segmentCon.enabled = true
-                let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-                pullDownLoadDatas()//来回切换选项卡应该是一个下拉加载新数据的动作
-            }
-            else
-            {
-                initLoadDatas()
-                //pullDownLoadDatas()
-            }
-            //self.segmentCon.enabled = false
-        default:
-            break
-        }
-    }
     
     @IBAction func clearMsg(sender: AnyObject) {
-        if(segmentindex == 0)
-        {
+
             self.resInfos = []
             self.msgInfos = []
-        }
-        else
-        {
-            self.resComInfos = []
-            self.comInfos = []
-        }
-            self.tbData.reloadData()        
+
+            self.tbData.reloadData()
     }
     
     
@@ -660,18 +451,9 @@ class MsgInfo : NSObject
 {
     var msg : String?
     var dateStr : NSDate?
+    var url : String?
 }
 
-class CommentInfo : NSObject
-{
-    var id : Int?
-    var date : NSDate?
-    var title : String?
-    var url : String?
-    var imgUrl : String?
-    var proName : String?
-    var marketName : String?
-}
 
 extension UILabel{
     func initAutoHeight(rect:CGRect,textColor:UIColor, fontSize:CGFloat, text:NSString, lineSpacing:CGFloat){//自适应高度

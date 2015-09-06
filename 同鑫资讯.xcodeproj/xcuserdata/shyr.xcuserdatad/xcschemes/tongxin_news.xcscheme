@@ -35,7 +35,7 @@
             BlueprintIdentifier = "35C712111B8595B3004B267A"
             BuildableName = "&#x540c;&#x946b;&#x8d44;&#x8baf;.app"
             BlueprintName = "tongxin_news"
-            ReferencedContainer = "container:tongxin_news.xcodeproj">
+            ReferencedContainer = "container:&#x540c;&#x946b;&#x8d44;&#x8baf;.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "35C712111B8595B3004B267A"
             BuildableName = "&#x540c;&#x946b;&#x8d44;&#x8baf;.app"
             BlueprintName = "tongxin_news"
-            ReferencedContainer = "container:tongxin_news.xcodeproj">
+            ReferencedContainer = "container:&#x540c;&#x946b;&#x8d44;&#x8baf;.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
