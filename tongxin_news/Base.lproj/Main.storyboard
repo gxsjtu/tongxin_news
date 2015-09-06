@@ -988,10 +988,10 @@
                     </tabBar>
                     <connections>
                         <segue destination="4cq-Lm-6BC" kind="modal" identifier="DummyFromHome2Login" id="l5V-MJ-5VB"/>
-                        <segue destination="pdH-4A-opM" kind="relationship" relationship="viewControllers" id="7Yv-o8-wRi"/>
                         <segue destination="HhN-9W-iAJ" kind="relationship" relationship="viewControllers" id="Gct-yn-xYh"/>
                         <segue destination="YUd-7R-Tb7" kind="relationship" relationship="viewControllers" id="VfC-9H-x8Q"/>
                         <segue destination="LSS-2S-FyB" kind="relationship" relationship="viewControllers" id="ixP-iv-EMj"/>
+                        <segue destination="pdH-4A-opM" kind="relationship" relationship="viewControllers" id="7Yv-o8-wRi"/>
                         <segue destination="as7-B9-UyQ" kind="relationship" relationship="viewControllers" id="wbX-3d-BiX"/>
                     </connections>
                 </tabBarController>
