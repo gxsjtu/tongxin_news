@@ -1161,15 +1161,29 @@
         <!--商圈-->
         <scene sceneID="2ko-MZ-RM4">
             <objects>
-                <viewController id="pdH-4A-opM" sceneMemberID="viewController">
+                <viewController id="pdH-4A-opM" customClass="EcosystemViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="asM-Ns-BG3"/>
                         <viewControllerLayoutGuide type="bottom" id="P90-Vc-Qp5"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="V1p-Io-wm3">
+                    <view key="view" contentMode="scaleToFill" id="V1p-Io-wm3" customClass="ec">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="筹建中，敬请期待！" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwd-h4-hXc">
+                                <rect key="frame" x="55" y="273" width="210" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="cwd-h4-hXc" secondAttribute="trailing" constant="39" id="Fri-SX-A00"/>
+                            <constraint firstItem="cwd-h4-hXc" firstAttribute="top" secondItem="asM-Ns-BG3" secondAttribute="bottom" constant="253" id="dLr-pV-P8S"/>
+                            <constraint firstItem="cwd-h4-hXc" firstAttribute="leading" secondItem="V1p-Io-wm3" secondAttribute="leadingMargin" constant="39" id="etN-Nt-CqX"/>
+                            <constraint firstItem="P90-Vc-Qp5" firstAttribute="top" secondItem="cwd-h4-hXc" secondAttribute="bottom" constant="225" id="vIp-BL-DRH"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="商圈" image="Circle" id="H75-vf-G7o"/>
                 </viewController>
