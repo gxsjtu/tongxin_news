@@ -64,13 +64,14 @@ class EcosystemViewController: UIViewController {
                         }
                         for(id, name) in self.channels
                         {
-                            let dk = DKCircleButton(frame: CGRect(x: (self.channelCount % 3) * 90 + 20, y: (self.channelCount / 3) * 90 + 20, width: 90, height: 90))
+                            let dk = DKCircleButton(frame: CGRect(x: (self.channelCount % 3) * 105 + 10, y: (self.channelCount / 3) * 105 + 10, width: 90, height: 90))
                             self.vEcoChannels.addSubview(dk)
                             dk.setTitle(name, forState: UIControlState.Normal)
                             dk.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                             dk.backgroundColor = UIColor.redColor()
                             self.channelCount++
                         }
+                        self.vEcoChannels.contentSize = CGSize(width: Double(self.view.frame.width), height: Double((self.channelCount / 3) * 135))
                     }
                 }
         }
