@@ -95,9 +95,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
 
         var format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        
-        if(resInfos[indexPath.row].url != nil)
-        {
+
             let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
             
             if(tbCell.viewWithTag(1) != nil){
@@ -132,51 +130,19 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             lblUrl.text = resInfos[indexPath.row].url
             lblUrl.hidden = true
             tbCell.addSubview(lblUrl)
+        
+        
+        if(resInfos[indexPath.row].url != nil)
+            {
             tbCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-            
-            return tbCell
         }
-    else
-    {
-        let tbCell = tableView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as! UITableViewCell
-        
-        if(tbCell.viewWithTag(1) != nil){
-            tbCell.viewWithTag(1)?.removeFromSuperview()
-        }
-        if(tbCell.viewWithTag(2) != nil){
-            tbCell.viewWithTag(2)?.removeFromSuperview()
-        }
-        if(tbCell.viewWithTag(3) != nil)
+        else
         {
-            tbCell.viewWithTag(3)?.removeFromSuperview()
+            tbCell.accessoryType = UITableViewCellAccessoryType.None
         }
         
-        var msg : String = resInfos[indexPath.row].msg!
-        var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
-        
-        
-        var lblMsg : UILabel = UILabel(frame: CGRect(x: 5, y: 2, width: tbCell.frame.size.width, height: 0))
-        lblMsg.tag = 1
-        lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        lblMsg.numberOfLines = 0
-        lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
-        tbCell.addSubview(lblMsg)
-        var lblDate : UILabel = UILabel(frame: CGRect(x: 5, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
-        lblDate.tag = 2
-        lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        lblDate.numberOfLines = 0
-        lblDate.initAutoHeight(lblDate.frame, textColor: UIColor.orangeColor(), fontSize: 14, text: date, lineSpacing: 1)
-        tbCell.addSubview(lblDate)
-        var lblUrl : UILabel = UILabel()
-        lblUrl.tag = 3
-        lblUrl.text = resInfos[indexPath.row].url
-        lblUrl.hidden = true
-        tbCell.addSubview(lblUrl)
-
-        tbCell.accessoryType = UITableViewCellAccessoryType.None
-        
-        return tbCell
-    }
+            return tbCell
+  
     }
     
 
@@ -193,6 +159,20 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             }
         }
 
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+        if identifier == "ComToCommentDetail"
+        {
+            if let cell = sender as? UITableViewCell
+                {
+                    if((cell.viewWithTag(3) as! UILabel).text == nil)
+                    {
+                        return false
+                    }
+                }
+        }
+        return true
     }
     
     @IBAction func unwindFromComment2Inbox(segue: UIStoryboardSegue)
