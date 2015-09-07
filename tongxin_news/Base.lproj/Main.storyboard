@@ -431,7 +431,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyi-7L-I14">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <rect key="frame" x="-4" y="0.0" width="328" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Jn3-Dn-3YI"/>
                                 </constraints>
@@ -448,18 +448,18 @@
                                 </items>
                             </navigationBar>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMc-R5-r5M">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="-4" y="64" width="328" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="BMc-R5-r5M" firstAttribute="leading" secondItem="BpB-Kr-MIL" secondAttribute="leadingMargin" constant="-16" id="07Z-ri-9Pz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BMc-R5-r5M" secondAttribute="trailing" constant="-16" id="G0f-5d-EXT"/>
+                            <constraint firstItem="BMc-R5-r5M" firstAttribute="leading" secondItem="BpB-Kr-MIL" secondAttribute="leadingMargin" constant="-20" id="07Z-ri-9Pz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="BMc-R5-r5M" secondAttribute="trailing" constant="-20" id="G0f-5d-EXT"/>
                             <constraint firstItem="BMc-R5-r5M" firstAttribute="top" secondItem="Nyi-7L-I14" secondAttribute="top" constant="64" id="KUj-EN-WdB"/>
                             <constraint firstItem="Nyi-7L-I14" firstAttribute="top" secondItem="YtI-K7-QSb" secondAttribute="bottom" constant="-20" id="dls-QV-Vir"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Nyi-7L-I14" secondAttribute="trailing" constant="-16" id="gpK-aT-e6a"/>
-                            <constraint firstItem="Nyi-7L-I14" firstAttribute="leading" secondItem="BpB-Kr-MIL" secondAttribute="leadingMargin" constant="-16" id="luQ-af-yAM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nyi-7L-I14" secondAttribute="trailing" constant="-20" id="gpK-aT-e6a"/>
+                            <constraint firstItem="Nyi-7L-I14" firstAttribute="leading" secondItem="BpB-Kr-MIL" secondAttribute="leadingMargin" constant="-20" id="luQ-af-yAM"/>
                             <constraint firstItem="8nX-Xc-4oM" firstAttribute="top" secondItem="BMc-R5-r5M" secondAttribute="bottom" id="oe8-W5-pxg"/>
                         </constraints>
                     </view>
@@ -1084,7 +1084,7 @@
                         <viewControllerLayoutGuide type="top" id="asM-Ns-BG3"/>
                         <viewControllerLayoutGuide type="bottom" id="P90-Vc-Qp5"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="V1p-Io-wm3" customClass="ec">
+                    <view key="view" contentMode="scaleToFill" id="V1p-Io-wm3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1119,11 +1119,83 @@
                     <connections>
                         <outlet property="navEco" destination="G9C-9L-YHu" id="aFo-jj-yaf"/>
                         <outlet property="vEcoChannels" destination="EnZ-Ni-fGA" id="aR2-Ax-v2S"/>
+                        <segue destination="pk3-pF-bah" kind="modal" id="iAn-Dq-xel"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaD-39-NmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-258" y="1650"/>
+        </scene>
+        <!--Channel View Controller-->
+        <scene sceneID="XzG-yR-ZEX">
+            <objects>
+                <viewController storyboardIdentifier="ChannelVC" id="pk3-pF-bah" customClass="ChannelViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cwT-Ed-0Nd"/>
+                        <viewControllerLayoutGuide type="bottom" id="VV3-Ph-lIz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uQP-O6-hmi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jhL-FP-hxK">
+                                <rect key="frame" x="-4" y="64" width="328" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRI-LB-9UM">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="xNF-KC-mhk"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="unV-dp-nTh">
+                                        <nil key="title"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="gTG-Xh-Azp">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="Pco-gh-28J" kind="unwind" unwindAction="unwindFromChannel2Ecosystem:" id="CeN-Ik-ygQ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="yjN-hK-KQr">
+                                            <rect key="frame" x="99" y="28" width="131" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="供应"/>
+                                                <segment title="采购"/>
+                                            </segments>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </segmentedControl>
+                                        <barButtonItem key="rightBarButtonItem" title="Item" systemItem="add" id="eXA-VO-5qk">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="vIo-yV-d6T" kind="modal" identifier="Channel2ChannelCatalog" id="J5p-wG-X4N"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VV3-Ph-lIz" firstAttribute="top" secondItem="jhL-FP-hxK" secondAttribute="bottom" constant="-64" id="3Wk-Xu-ztH"/>
+                            <constraint firstItem="eRI-LB-9UM" firstAttribute="leading" secondItem="uQP-O6-hmi" secondAttribute="leadingMargin" constant="-20" id="CG2-dH-9ww"/>
+                            <constraint firstItem="eRI-LB-9UM" firstAttribute="top" secondItem="cwT-Ed-0Nd" secondAttribute="bottom" constant="-20" id="Hfd-I0-3l6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eRI-LB-9UM" secondAttribute="trailing" constant="-20" id="N3e-TX-v9v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jhL-FP-hxK" secondAttribute="trailing" constant="-20" id="beK-iN-yDC"/>
+                            <constraint firstItem="jhL-FP-hxK" firstAttribute="top" secondItem="eRI-LB-9UM" secondAttribute="top" constant="64" id="bxl-nL-SAg"/>
+                            <constraint firstItem="jhL-FP-hxK" firstAttribute="leading" secondItem="uQP-O6-hmi" secondAttribute="leadingMargin" constant="-20" id="gFX-sf-j4D"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnChannelAdd" destination="eXA-VO-5qk" id="KRb-44-qBh"/>
+                        <outlet property="navChannel" destination="eRI-LB-9UM" id="LHM-8o-43T"/>
+                        <outlet property="segChannel" destination="yjN-hK-KQr" id="zdY-Oq-GZM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pLq-FZ-ZSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Pco-gh-28J" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="171" y="1648"/>
         </scene>
         <!--Comment Content View Controller-->
         <scene sceneID="Dck-5d-kFQ">
@@ -1285,6 +1357,121 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMA-ZO-RTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="558" y="1118"/>
+        </scene>
+        <!--添加供需时的catalog选择-->
+        <scene sceneID="Yly-nd-5hp">
+            <objects>
+                <viewController title="添加供需时的catalog选择" id="vIo-yV-d6T" customClass="ChannelCatalogViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WgK-L5-PcA"/>
+                        <viewControllerLayoutGuide type="bottom" id="OIa-6A-XXh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QDE-XN-kaz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nCo-t0-EgA">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="TPD-CW-Lfj"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="Zoh-QW-diq">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="8Fp-LL-WrP">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="pYS-Iw-V9Q" kind="unwind" unwindAction="unwindFromChannelCatalog2Channel:" id="Aqn-Lo-pV6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rDh-IB-AMJ">
+                                <rect key="frame" x="-4" y="64" width="328" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChannelCatalogCell" rowHeight="80" id="RXL-rg-k50" customClass="ChannelCatalogTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RXL-rg-k50" id="dwA-9C-e2S">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VwK-JA-N5b">
+                                                    <rect key="frame" x="8" y="8" width="287" height="64"/>
+                                                    <subviews>
+                                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5eJ-46-BRV">
+                                                            <rect key="frame" x="122" y="22" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkc-6e-m66">
+                                                            <rect key="frame" x="8" y="2" width="91" height="60"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="91" id="h0Q-g4-JKo"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="S0q-Ww-ywr">
+                                                            <rect key="frame" x="107" y="2" width="172" height="60"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="S0q-Ww-ywr" secondAttribute="trailing" constant="8" id="7MY-LW-WxT"/>
+                                                        <constraint firstItem="S0q-Ww-ywr" firstAttribute="top" secondItem="VwK-JA-N5b" secondAttribute="top" constant="2" id="HL7-O3-jz7"/>
+                                                        <constraint firstItem="pkc-6e-m66" firstAttribute="top" secondItem="VwK-JA-N5b" secondAttribute="top" constant="2" id="I0q-mO-5iV"/>
+                                                        <constraint firstItem="pkc-6e-m66" firstAttribute="leading" secondItem="S0q-Ww-ywr" secondAttribute="leading" constant="-99" id="csK-4J-Elu"/>
+                                                        <constraint firstAttribute="bottom" secondItem="pkc-6e-m66" secondAttribute="bottom" constant="2" id="edz-xT-uyh"/>
+                                                        <constraint firstItem="pkc-6e-m66" firstAttribute="leading" secondItem="VwK-JA-N5b" secondAttribute="leading" constant="8" id="xls-7c-Tww"/>
+                                                        <constraint firstAttribute="bottom" secondItem="S0q-Ww-ywr" secondAttribute="bottom" constant="2" id="yjX-JN-anY"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="VwK-JA-N5b" firstAttribute="leading" secondItem="dwA-9C-e2S" secondAttribute="leadingMargin" id="6ib-re-fWp"/>
+                                                <constraint firstItem="VwK-JA-N5b" firstAttribute="top" secondItem="dwA-9C-e2S" secondAttribute="topMargin" id="R8e-Nf-hgh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="VwK-JA-N5b" secondAttribute="trailing" constant="-8" id="kNn-oE-3kn"/>
+                                                <constraint firstItem="VwK-JA-N5b" firstAttribute="bottom" secondItem="dwA-9C-e2S" secondAttribute="bottomMargin" id="u9W-aM-nIp"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblChannelCatalogDesc" destination="S0q-Ww-ywr" id="SFF-hu-i90"/>
+                                            <outlet property="lblChannelCatalogId" destination="5eJ-46-BRV" id="kcw-yj-nUh"/>
+                                            <outlet property="lblChannelCatalogName" destination="pkc-6e-m66" id="jWx-3x-yUC"/>
+                                            <outlet property="vChannelCatalogCell" destination="VwK-JA-N5b" id="MOj-Fa-LGz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vIo-yV-d6T" id="TG5-Yo-nBI"/>
+                                    <outlet property="delegate" destination="vIo-yV-d6T" id="RMQ-9l-H8y"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OIa-6A-XXh" firstAttribute="top" secondItem="rDh-IB-AMJ" secondAttribute="bottom" constant="-64" id="1FB-Y9-hNk"/>
+                            <constraint firstItem="nCo-t0-EgA" firstAttribute="top" secondItem="rDh-IB-AMJ" secondAttribute="top" constant="-64" id="3Ql-3l-fUi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nCo-t0-EgA" secondAttribute="trailing" constant="-20" id="603-qF-UZR"/>
+                            <constraint firstItem="rDh-IB-AMJ" firstAttribute="leading" secondItem="QDE-XN-kaz" secondAttribute="leadingMargin" constant="-20" id="RmN-JX-dKB"/>
+                            <constraint firstItem="nCo-t0-EgA" firstAttribute="top" secondItem="WgK-L5-PcA" secondAttribute="bottom" constant="-20" id="Ub0-Bl-3wa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rDh-IB-AMJ" secondAttribute="trailing" constant="-20" id="nVu-ip-wmy"/>
+                            <constraint firstItem="nCo-t0-EgA" firstAttribute="leading" secondItem="QDE-XN-kaz" secondAttribute="leadingMargin" constant="-20" id="sYR-Jn-5bQ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navChannelCatalog" destination="nCo-t0-EgA" id="mch-Er-pHM"/>
+                        <outlet property="vChannelCatalog" destination="rDh-IB-AMJ" id="ADY-Nd-dR9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mSo-VR-PEE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pYS-Iw-V9Q" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="1782"/>
         </scene>
     </scenes>
     <resources>

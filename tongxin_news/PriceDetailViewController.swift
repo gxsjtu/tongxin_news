@@ -120,21 +120,21 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        if identifier == "PriceDetail2PriceHistory"
-        {
-            if let cell = sender as? PriceDetailVCTableViewCell
-            {
-                if cell.lblPriceDetailIsOrdered.text == "NO"
-                {
-                    let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("您尚未订阅该产品，无法查看历史数据！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                    return false
-                }
-            }
-        }
-        return true
-    }
+//    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+//        if identifier == "PriceDetail2PriceHistory"
+//        {
+//            if let cell = sender as? PriceDetailVCTableViewCell
+//            {
+//                if cell.lblPriceDetailIsOrdered.text == "NO"
+//                {
+//                    let alert = SKTipAlertView()
+//                    alert.showRedNotificationForString("您尚未订阅该产品，无法查看历史数据！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+//                    return false
+//                }
+//            }
+//        }
+//        return true
+//    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

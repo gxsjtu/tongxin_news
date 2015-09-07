@@ -13,6 +13,9 @@
 		3515CB251B9BE45000EC54D7 /* EcosystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB241B9BE45000EC54D7 /* EcosystemViewController.swift */; };
 		3515CB291B9C05DF00EC54D7 /* DKCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB281B9C05DF00EC54D7 /* DKCircleButton.m */; };
 		3515CB431B9D19FA00EC54D7 /* UIColor+MLPFlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB421B9D19FA00EC54D7 /* UIColor+MLPFlatColors.m */; };
+		3515CB461B9D552600EC54D7 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB451B9D552600EC54D7 /* ChannelViewController.swift */; };
+		3515CB481B9D62AA00EC54D7 /* ChannelCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */; };
+		3515CB4A1B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */; };
 		355C95A51B8AF089005595EA /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A41B8AF089005595EA /* PriceViewController.swift */; };
 		355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A61B8C0665005595EA /* PriceDetailViewController.swift */; };
 		355C95A91B8C1407005595EA /* PriceVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */; };
@@ -76,6 +79,9 @@
 		3515CB281B9C05DF00EC54D7 /* DKCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCircleButton.m; sourceTree = "<group>"; };
 		3515CB411B9D19FA00EC54D7 /* UIColor+MLPFlatColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MLPFlatColors.h"; sourceTree = "<group>"; };
 		3515CB421B9D19FA00EC54D7 /* UIColor+MLPFlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MLPFlatColors.m"; sourceTree = "<group>"; };
+		3515CB451B9D552600EC54D7 /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
+		3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCatalogViewController.swift; sourceTree = "<group>"; };
+		3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCatalogTableViewCell.swift; sourceTree = "<group>"; };
 		355C95A41B8AF089005595EA /* PriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
 		355C95A61B8C0665005595EA /* PriceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceDetailViewController.swift; sourceTree = "<group>"; };
 		355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceVCTableViewCell.swift; sourceTree = "<group>"; };
@@ -294,6 +300,9 @@
 				35B2789A1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift */,
 				35B278B51B9045F600FA2399 /* PriceChartViewController.swift */,
 				3515CB241B9BE45000EC54D7 /* EcosystemViewController.swift */,
+				3515CB451B9D552600EC54D7 /* ChannelViewController.swift */,
+				3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */,
+				3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -466,6 +475,7 @@
 				35B278441B8D952100FA2399 /* CommentDetailViewController.swift in Sources */,
 				3515CB221B94367200EC54D7 /* ChartColors.swift in Sources */,
 				35C7127A1B86AFA5004B267A /* Upload.swift in Sources */,
+				3515CB4A1B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift in Sources */,
 				35C712731B86AFA5004B267A /* Download.swift in Sources */,
 				35C712741B86AFA5004B267A /* Manager.swift in Sources */,
 				35B2785D1B8D955500FA2399 /* HNKSimpleFetcher.m in Sources */,
@@ -480,6 +490,7 @@
 				35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */,
 				35B278641B8EA2FD00FA2399 /* CommentContentViewController.swift in Sources */,
 				35B278B61B9045F600FA2399 /* PriceChartViewController.swift in Sources */,
+				3515CB461B9D552600EC54D7 /* ChannelViewController.swift in Sources */,
 				35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */,
 				3515CB231B94367200EC54D7 /* ChartSeries.swift in Sources */,
 				35B278471B8D952100FA2399 /* CommentVCTableViewCell.swift in Sources */,
@@ -487,6 +498,7 @@
 				35C712781B86AFA5004B267A /* ResponseSerialization.swift in Sources */,
 				35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */,
 				35C712181B8595B3004B267A /* AppDelegate.swift in Sources */,
+				3515CB481B9D62AA00EC54D7 /* ChannelCatalogViewController.swift in Sources */,
 				35B2785B1B8D955500FA2399 /* HNKDiskFetcher.m in Sources */,
 				35B2789B1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift in Sources */,
 				35B2785A1B8D955500FA2399 /* HNKDiskCache.m in Sources */,

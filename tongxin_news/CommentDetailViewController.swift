@@ -68,21 +68,21 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
         }
     }
 
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-        if identifier == "CommentDetail2CommentContent"
-        {
-            if let cell = sender as? CommentDetailVCTableViewCell
-            {
-                if cell.lblCommentDetailIsOrdered.text == "NO"
-                {
-                    let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("您尚未订阅该产品，无法查看详细内容！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                    return false
-                }
-            }
-        }
-        return true
-    }
+//    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+//        if identifier == "CommentDetail2CommentContent"
+//        {
+//            if let cell = sender as? CommentDetailVCTableViewCell
+//            {
+//                if cell.lblCommentDetailIsOrdered.text == "NO"
+//                {
+//                    let alert = SKTipAlertView()
+//                    alert.showRedNotificationForString("您尚未订阅该产品，无法查看详细内容！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+//                    return false
+//                }
+//            }
+//        }
+//        return true
+//    }
     
     @IBAction func commentContent2CommentDetail(segue: UIStoryboardSegue)
     {

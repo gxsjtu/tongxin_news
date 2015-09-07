@@ -10,14 +10,13 @@ import UIKit
 
 class EcosystemViewController: UIViewController {
     
-    var channels: Dictionary<String, String> = Dictionary<String, String>()
+    var channels = [(String, String)]()
     var channelCount = 0
     @IBOutlet weak var navEco: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        vEcoChannels.showsVerticalScrollIndicator = true
         self.navEco.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         getChannels()
     }
@@ -39,6 +38,19 @@ class EcosystemViewController: UIViewController {
     }
     */
     
+    @IBAction func  unwindFromChannel2Ecosystem(segue: UIStoryboardSegue)
+    {
+        
+    }
+    
+    func channelButtonClicked(sender: UIButton)
+    {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = Int(sender.tag)
+        des.channelName = sender.titleLabel!.text!
+        self.presentViewController(des, animated: true, completion: nil)
+    }
+    
     func getChannels()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -59,7 +71,7 @@ class EcosystemViewController: UIViewController {
                         {
                             if let i = item.dictionary
                             {
-                                self.channels[i["id"]!.stringValue] = i["Name"]!.stringValue
+                                self.channels.append((i["id"]!.stringValue, i["Name"]!.stringValue))
                             }
                         }
                         for(id, name) in self.channels
@@ -82,7 +94,9 @@ class EcosystemViewController: UIViewController {
                             self.vEcoChannels.addSubview(dk!)
                             dk!.setTitle(name, forState: UIControlState.Normal)
                             dk!.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-                            dk!.backgroundColor = UIColor.randomFlatLightColor()
+                            dk!.backgroundColor = UIColor.randomFlatDarkColor()
+                            dk!.addTarget(self, action: "channelButtonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+                            dk!.tag = id.toInt()!
                             self.channelCount++
                         }
                         self.vEcoChannels.contentSize = CGSize(width: Double(self.view.frame.width), height: Double((self.channelCount / 3) * 135))
