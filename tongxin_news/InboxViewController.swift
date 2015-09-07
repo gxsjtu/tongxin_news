@@ -113,7 +113,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
 
             
-            var lblMsg : UILabel = UILabel(frame: CGRect(x: 5, y: 2, width: tbCell.frame.size.width, height: 0))
+            var lblMsg : UILabel = UILabel(frame: CGRect(x: 5, y: 2, width: (tbCell.frame.size.width-8), height: 0))
             lblMsg.tag = 1
             lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblMsg.numberOfLines = 0
