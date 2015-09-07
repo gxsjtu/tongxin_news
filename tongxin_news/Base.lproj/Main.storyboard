@@ -1088,7 +1088,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EnZ-Ni-fGA">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EnZ-Ni-fGA">
                                 <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                             </scrollView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9C-9L-YHu">
@@ -1106,8 +1106,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="EnZ-Ni-fGA" firstAttribute="leading" secondItem="V1p-Io-wm3" secondAttribute="leadingMargin" constant="-16" id="Aef-67-MPS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="G9C-9L-YHu" secondAttribute="trailing" constant="-16" id="FTA-20-7fc"/>
                             <constraint firstItem="G9C-9L-YHu" firstAttribute="leading" secondItem="V1p-Io-wm3" secondAttribute="leadingMargin" constant="-16" id="Pxz-Gc-2Bx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EnZ-Ni-fGA" secondAttribute="trailing" constant="-16" id="ZJ8-E2-0Ls"/>
+                            <constraint firstItem="EnZ-Ni-fGA" firstAttribute="top" secondItem="G9C-9L-YHu" secondAttribute="top" constant="64" id="ZSH-A7-EdF"/>
+                            <constraint firstItem="P90-Vc-Qp5" firstAttribute="top" secondItem="EnZ-Ni-fGA" secondAttribute="bottom" constant="-113" id="mj6-Bb-G5C"/>
                             <constraint firstItem="G9C-9L-YHu" firstAttribute="top" secondItem="asM-Ns-BG3" secondAttribute="bottom" constant="-20" id="wo3-WU-r3T"/>
                         </constraints>
                     </view>
