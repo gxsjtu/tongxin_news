@@ -73,16 +73,16 @@ class EcosystemViewController: UIViewController {
                             }
                             else if self.channelCount % 3 == 1
                             {
-                                dk = DKCircleButton(frame: CGRect(x: 105 + delta, y: (self.channelCount / 3) * 105 + 10, width: 90, height: 90))
+                                dk = DKCircleButton(frame: CGRect(x: 105 + delta, y: (self.channelCount / 3) * 105 + 20, width: 90, height: 90))
                             }
                             else if self.channelCount % 3 == 2
                             {
-                                dk = DKCircleButton(frame: CGRect(x: 2 * 105 + delta, y: (self.channelCount / 3) * 105 + 10, width: 90, height: 90))
+                                dk = DKCircleButton(frame: CGRect(x: 2 * 105 + delta, y: (self.channelCount / 3) * 105 + 20, width: 90, height: 90))
                             }
                             self.vEcoChannels.addSubview(dk!)
                             dk!.setTitle(name, forState: UIControlState.Normal)
                             dk!.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-                            dk!.backgroundColor = UIColor.redColor()
+                            dk!.backgroundColor = UIColor.randomFlatLightColor()
                             self.channelCount++
                         }
                         self.vEcoChannels.contentSize = CGSize(width: Double(self.view.frame.width), height: Double((self.channelCount / 3) * 135))
