@@ -1405,16 +1405,16 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkc-6e-m66">
-                                                            <rect key="frame" x="8" y="2" width="91" height="60"/>
+                                                            <rect key="frame" x="8" y="2" width="106" height="60"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="91" id="h0Q-g4-JKo"/>
+                                                                <constraint firstAttribute="width" constant="106" id="h0Q-g4-JKo"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="S0q-Ww-ywr">
-                                                            <rect key="frame" x="107" y="2" width="172" height="60"/>
+                                                            <rect key="frame" x="122" y="2" width="157" height="60"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                                             <nil key="highlightedColor"/>
@@ -1424,7 +1424,7 @@
                                                         <constraint firstAttribute="trailing" secondItem="S0q-Ww-ywr" secondAttribute="trailing" constant="8" id="7MY-LW-WxT"/>
                                                         <constraint firstItem="S0q-Ww-ywr" firstAttribute="top" secondItem="VwK-JA-N5b" secondAttribute="top" constant="2" id="HL7-O3-jz7"/>
                                                         <constraint firstItem="pkc-6e-m66" firstAttribute="top" secondItem="VwK-JA-N5b" secondAttribute="top" constant="2" id="I0q-mO-5iV"/>
-                                                        <constraint firstItem="pkc-6e-m66" firstAttribute="leading" secondItem="S0q-Ww-ywr" secondAttribute="leading" constant="-99" id="csK-4J-Elu"/>
+                                                        <constraint firstItem="pkc-6e-m66" firstAttribute="leading" secondItem="S0q-Ww-ywr" secondAttribute="leading" constant="-114" id="csK-4J-Elu"/>
                                                         <constraint firstAttribute="bottom" secondItem="pkc-6e-m66" secondAttribute="bottom" constant="2" id="edz-xT-uyh"/>
                                                         <constraint firstItem="pkc-6e-m66" firstAttribute="leading" secondItem="VwK-JA-N5b" secondAttribute="leading" constant="8" id="xls-7c-Tww"/>
                                                         <constraint firstAttribute="bottom" secondItem="S0q-Ww-ywr" secondAttribute="bottom" constant="2" id="yjX-JN-anY"/>
@@ -1443,6 +1443,7 @@
                                             <outlet property="lblChannelCatalogId" destination="5eJ-46-BRV" id="kcw-yj-nUh"/>
                                             <outlet property="lblChannelCatalogName" destination="pkc-6e-m66" id="jWx-3x-yUC"/>
                                             <outlet property="vChannelCatalogCell" destination="VwK-JA-N5b" id="MOj-Fa-LGz"/>
+                                            <segue destination="Ndc-BY-6Em" kind="modal" identifier="ChannelCatalog2ChannelItem" id="nWw-cP-DeB"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1472,6 +1473,62 @@
                 <exit id="pYS-Iw-V9Q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="636" y="1782"/>
+        </scene>
+        <!--供需新增-->
+        <scene sceneID="1n3-Pn-Zdo">
+            <objects>
+                <viewController title="供需新增" id="Ndc-BY-6Em" customClass="ChannelItemAddViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CdJ-Aq-sK6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vtm-Cv-rah"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LpY-Gv-Peo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUy-cw-kOt">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="lNB-Vx-UlC"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="1hp-1S-giS">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="j7x-mz-m7S">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="GK2-zV-lQs" kind="unwind" unwindAction="unwindFromChannelItemAdd2ChannelCatalog:" id="1lX-4z-F2I"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="5cu-RV-IE2">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GP-v9-aya">
+                                <rect key="frame" x="-4" y="64" width="328" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="5GP-v9-aya" secondAttribute="trailing" constant="-20" id="0Ht-MG-AHu"/>
+                            <constraint firstItem="Vtm-Cv-rah" firstAttribute="top" secondItem="5GP-v9-aya" secondAttribute="bottom" id="HTd-2x-CRP"/>
+                            <constraint firstItem="fUy-cw-kOt" firstAttribute="top" secondItem="5GP-v9-aya" secondAttribute="top" constant="-64" id="ROL-aS-NfX"/>
+                            <constraint firstItem="5GP-v9-aya" firstAttribute="leading" secondItem="LpY-Gv-Peo" secondAttribute="leadingMargin" constant="-20" id="k5I-EY-4cj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fUy-cw-kOt" secondAttribute="trailing" constant="-20" id="oO0-2K-2vW"/>
+                            <constraint firstItem="fUy-cw-kOt" firstAttribute="top" secondItem="CdJ-Aq-sK6" secondAttribute="bottom" constant="-20" id="x9a-rI-wll"/>
+                            <constraint firstItem="fUy-cw-kOt" firstAttribute="leading" secondItem="LpY-Gv-Peo" secondAttribute="leadingMargin" constant="-20" id="yck-cg-BuO"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navChannelItem" destination="fUy-cw-kOt" id="FOM-ud-oZK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4W1-kS-oTc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="GK2-zV-lQs" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1104" y="1782"/>
         </scene>
     </scenes>
     <resources>

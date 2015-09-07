@@ -21,6 +21,7 @@
 		355C95A91B8C1407005595EA /* PriceVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */; };
 		355C95AB1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */; };
 		355C95AD1B8C5145005595EA /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95AC1B8C5145005595EA /* InboxViewController.swift */; };
+		3587005C1B9D776800B09351 /* ChannelItemAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */; };
 		35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */; };
 		35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874D1B8AB15900B44C7E /* MJRefreshConst.m */; };
 		35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874F1B8AB15900B44C7E /* MJRefreshFooterView.m */; };
@@ -87,6 +88,7 @@
 		355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceVCTableViewCell.swift; sourceTree = "<group>"; };
 		355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceDetailVCTableViewCell.swift; sourceTree = "<group>"; };
 		355C95AC1B8C5145005595EA /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
+		3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelItemAddViewController.swift; sourceTree = "<group>"; };
 		35AC87491B8AB15900B44C7E /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		35AC874A1B8AB15900B44C7E /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
 		35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 				3515CB451B9D552600EC54D7 /* ChannelViewController.swift */,
 				3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */,
 				3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */,
+				3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				3515CB4A1B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift in Sources */,
 				35C712731B86AFA5004B267A /* Download.swift in Sources */,
 				35C712741B86AFA5004B267A /* Manager.swift in Sources */,
+				3587005C1B9D776800B09351 /* ChannelItemAddViewController.swift in Sources */,
 				35B2785D1B8D955500FA2399 /* HNKSimpleFetcher.m in Sources */,
 				355C95AB1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift in Sources */,
 				35B2785C1B8D955500FA2399 /* HNKNetworkFetcher.m in Sources */,

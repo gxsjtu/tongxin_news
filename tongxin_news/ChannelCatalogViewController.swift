@@ -47,15 +47,26 @@ class ChannelCatalogViewController: UIViewController, UITableViewDelegate, UITab
         return cell
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ChannelCatalog2ChannelItem"
+        {
+            if let cell = sender as? ChannelCatalogTableViewCell
+            {
+                if let des = segue.destinationViewController as? ChannelItemAddViewController
+                {
+                    des.channelName = self.channelName
+                    des.catalogName = cell.lblChannelCatalogName.text!
+                    des.catalogId = cell.lblChannelCatalogId.text!.toInt()!
+                }
+            }
+        }
     }
-    */
+    
+    @IBAction func unwindFromChannelItemAdd2ChannelCatalog(segue: UIStoryboardSegue)
+    {
+        
+    }
     
     
     func getChannelCatalog()
