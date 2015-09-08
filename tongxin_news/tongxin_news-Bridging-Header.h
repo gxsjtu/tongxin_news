@@ -13,3 +13,4 @@
 #import "DLRadioButton.h"
 #import "TSLocation.h"
 #import "TSLocateView.h"
+#import "KASlideShow.h"

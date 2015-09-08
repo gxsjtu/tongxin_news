@@ -1510,9 +1510,28 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Les-Th-b6M">
                                         <rect key="frame" x="0.0" y="0.0" width="328" height="180"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sY7-Rj-a8f">
+                                                <rect key="frame" x="0.0" y="120" width="328" height="60"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="Li2-Jt-ANm"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <state key="normal" title="添加图片">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didAddImage:" destination="Ndc-BY-6Em" eventType="touchUpInside" id="MXG-gy-OOB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="sY7-Rj-a8f" firstAttribute="leading" secondItem="Les-Th-b6M" secondAttribute="leading" id="8qR-ib-Sxr"/>
+                                            <constraint firstAttribute="bottom" secondItem="sY7-Rj-a8f" secondAttribute="bottom" id="AFh-fQ-xtf"/>
                                             <constraint firstAttribute="height" constant="180" id="oD2-or-Zl6"/>
+                                            <constraint firstAttribute="trailing" secondItem="sY7-Rj-a8f" secondAttribute="trailing" id="oih-7a-Xwm"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcI-qB-C0d">
@@ -1629,7 +1648,7 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4zW-fw-fPX">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="如：50吨" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4zW-fw-fPX">
                                                 <rect key="frame" x="84" y="79" width="236" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="can-ye-hLc"/>
@@ -1640,7 +1659,7 @@
                                                     <outlet property="delegate" destination="Ndc-BY-6Em" id="bdk-LD-ij8"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONU-Cc-Wki">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="如：15866666666" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONU-Cc-Wki">
                                                 <rect key="frame" x="84" y="116" width="236" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Lzh-3Y-2vD"/>
@@ -1651,7 +1670,7 @@
                                                     <outlet property="delegate" destination="Ndc-BY-6Em" id="NqA-vG-ugt"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-cC-dBw">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="如：张三" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-cC-dBw">
                                                 <rect key="frame" x="84" y="153" width="236" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="KmI-Nb-R9n"/>
@@ -1798,6 +1817,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnAddImage" destination="sY7-Rj-a8f" id="1je-Ug-QmA"/>
                         <outlet property="btnChannelItemLocation" destination="gFL-uI-ClO" id="67a-9A-89z"/>
                         <outlet property="lblSPText" destination="uiI-IN-YH8" id="JJ9-bg-CGL"/>
                         <outlet property="navChannelItem" destination="fUy-cw-kOt" id="FOM-ud-oZK"/>

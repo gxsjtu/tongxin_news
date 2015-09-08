@@ -27,6 +27,7 @@
 		358700791B9E78BC00B09351 /* TSLocateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 358700741B9E78BC00B09351 /* TSLocateView.m */; };
 		3587007A1B9E78BC00B09351 /* TSLocateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 358700751B9E78BC00B09351 /* TSLocateView.xib */; };
 		3587007B1B9E78BC00B09351 /* TSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 358700771B9E78BC00B09351 /* TSLocation.m */; };
+		3587007F1B9EA4A000B09351 /* KASlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3587007E1B9EA4A000B09351 /* KASlideShow.m */; };
 		35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */; };
 		35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874D1B8AB15900B44C7E /* MJRefreshConst.m */; };
 		35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874F1B8AB15900B44C7E /* MJRefreshFooterView.m */; };
@@ -102,6 +103,8 @@
 		358700751B9E78BC00B09351 /* TSLocateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSLocateView.xib; sourceTree = "<group>"; };
 		358700761B9E78BC00B09351 /* TSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLocation.h; sourceTree = "<group>"; };
 		358700771B9E78BC00B09351 /* TSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocation.m; sourceTree = "<group>"; };
+		3587007D1B9EA4A000B09351 /* KASlideShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KASlideShow.h; sourceTree = "<group>"; };
+		3587007E1B9EA4A000B09351 /* KASlideShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KASlideShow.m; sourceTree = "<group>"; };
 		35AC87491B8AB15900B44C7E /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		35AC874A1B8AB15900B44C7E /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
 		35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
@@ -239,6 +242,15 @@
 			name = TSLocateView;
 			sourceTree = "<group>";
 		};
+		3587007C1B9EA47500B09351 /* KASlideShow */ = {
+			isa = PBXGroup;
+			children = (
+				3587007D1B9EA4A000B09351 /* KASlideShow.h */,
+				3587007E1B9EA4A000B09351 /* KASlideShow.m */,
+			);
+			name = KASlideShow;
+			sourceTree = "<group>";
+		};
 		35AC87481B8AB14A00B44C7E /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +316,7 @@
 		35C712141B8595B3004B267A /* tongxin_news */ = {
 			isa = PBXGroup;
 			children = (
+				3587007C1B9EA47500B09351 /* KASlideShow */,
 				358700711B9E78AA00B09351 /* TSLocateView */,
 				3587006A1B9D898900B09351 /* RadioButton */,
 				3515CB401B9D19EB00EC54D7 /* UIColor+MLPFlatColors */,
@@ -497,6 +510,7 @@
 				35AC87601B8AB2F800B44C7E /* UserSettingViewController.swift in Sources */,
 				35C7127D1B86B008004B267A /* EndPoints.swift in Sources */,
 				35B278621B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift in Sources */,
+				3587007F1B9EA4A000B09351 /* KASlideShow.m in Sources */,
 				35C712821B86B126004B267A /* HomeTabBarViewController.swift in Sources */,
 				35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */,
 				355C95A91B8C1407005595EA /* PriceVCTableViewCell.swift in Sources */,

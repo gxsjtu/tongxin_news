@@ -10,6 +10,11 @@ import UIKit
 
 class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIActionSheetDelegate {
 
+    @IBAction func didAddImage(sender: AnyObject) {
+        
+    }
+    
+    @IBOutlet weak var btnAddImage: UIButton!
     @IBOutlet weak var btnChannelItemLocation: UIButton!
     @IBOutlet weak var txtChannelItemDesc: UITextView!
     @IBOutlet weak var txtChannelItemContact: UITextField!
@@ -39,6 +44,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         
         rbSelf.otherButtons = [rbOther]
         rbSelf.selected = true
+        btnAddImage.backgroundColor = UIColor(red: 68/255, green: 73/255, blue: 75/255, alpha: 0.6)
     }
     
     @IBAction func didPopupLocation(sender: AnyObject) {
@@ -49,6 +55,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         location.titleLabel.textColor = UIColor.whiteColor()
         location.showInView(self.view)
     }
+    
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         if let locationView = actionSheet as? TSLocateView
