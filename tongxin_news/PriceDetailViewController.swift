@@ -65,24 +65,24 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         }
         else
         {
-            if let change = products[indexPath.row].5.toInt()
+            let change = NSString(string: products[indexPath.row].5).floatValue
+            
+            if change == 0
             {
-                if change == 0
-                {
-                    cell.lblPriceDetailChange.textColor = UIColor.blackColor()
-                    cell.lblPriceDetailChange.text = "平"
-                }
-                else if change > 0
-                {
-                    cell.lblPriceDetailChange.textColor = UIColor.redColor()
-                    cell.lblPriceDetailChange.text = "涨 " + String(change)
-                }
-                else
-                {
-                    cell.lblPriceDetailChange.textColor = UIColor.greenColor()
-                    cell.lblPriceDetailChange.text = "跌 " + String(-change)
-                }
+                cell.lblPriceDetailChange.textColor = UIColor.blackColor()
+                cell.lblPriceDetailChange.text = "平"
             }
+            else if change > 0
+            {
+                cell.lblPriceDetailChange.textColor = UIColor.redColor()
+                cell.lblPriceDetailChange.text = "涨 " + String(stringInterpolationSegment: change)
+            }
+            else
+            {
+                cell.lblPriceDetailChange.textColor = UIColor.greenColor()
+                cell.lblPriceDetailChange.text = "跌 " + String(stringInterpolationSegment: -change)
+            }
+            
         }
         return cell
     }

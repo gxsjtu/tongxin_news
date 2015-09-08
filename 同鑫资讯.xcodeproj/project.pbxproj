@@ -22,6 +22,11 @@
 		355C95AB1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */; };
 		355C95AD1B8C5145005595EA /* InboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95AC1B8C5145005595EA /* InboxViewController.swift */; };
 		3587005C1B9D776800B09351 /* ChannelItemAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */; };
+		358700701B9D8C3C00B09351 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3587006F1B9D8C3C00B09351 /* DLRadioButton.m */; };
+		358700781B9E78BC00B09351 /* ProvincesAndCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 358700721B9E78BC00B09351 /* ProvincesAndCities.plist */; };
+		358700791B9E78BC00B09351 /* TSLocateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 358700741B9E78BC00B09351 /* TSLocateView.m */; };
+		3587007A1B9E78BC00B09351 /* TSLocateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 358700751B9E78BC00B09351 /* TSLocateView.xib */; };
+		3587007B1B9E78BC00B09351 /* TSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 358700771B9E78BC00B09351 /* TSLocation.m */; };
 		35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */; };
 		35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874D1B8AB15900B44C7E /* MJRefreshConst.m */; };
 		35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874F1B8AB15900B44C7E /* MJRefreshFooterView.m */; };
@@ -89,6 +94,14 @@
 		355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceDetailVCTableViewCell.swift; sourceTree = "<group>"; };
 		355C95AC1B8C5145005595EA /* InboxViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxViewController.swift; sourceTree = "<group>"; };
 		3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelItemAddViewController.swift; sourceTree = "<group>"; };
+		3587006E1B9D8C3C00B09351 /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
+		3587006F1B9D8C3C00B09351 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
+		358700721B9E78BC00B09351 /* ProvincesAndCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProvincesAndCities.plist; sourceTree = "<group>"; };
+		358700731B9E78BC00B09351 /* TSLocateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLocateView.h; sourceTree = "<group>"; };
+		358700741B9E78BC00B09351 /* TSLocateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocateView.m; sourceTree = "<group>"; };
+		358700751B9E78BC00B09351 /* TSLocateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSLocateView.xib; sourceTree = "<group>"; };
+		358700761B9E78BC00B09351 /* TSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLocation.h; sourceTree = "<group>"; };
+		358700771B9E78BC00B09351 /* TSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocation.m; sourceTree = "<group>"; };
 		35AC87491B8AB15900B44C7E /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		35AC874A1B8AB15900B44C7E /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
 		35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
@@ -204,6 +217,28 @@
 			name = "UIColor+MLPFlatColors";
 			sourceTree = "<group>";
 		};
+		3587006A1B9D898900B09351 /* RadioButton */ = {
+			isa = PBXGroup;
+			children = (
+				3587006E1B9D8C3C00B09351 /* DLRadioButton.h */,
+				3587006F1B9D8C3C00B09351 /* DLRadioButton.m */,
+			);
+			name = RadioButton;
+			sourceTree = "<group>";
+		};
+		358700711B9E78AA00B09351 /* TSLocateView */ = {
+			isa = PBXGroup;
+			children = (
+				358700721B9E78BC00B09351 /* ProvincesAndCities.plist */,
+				358700731B9E78BC00B09351 /* TSLocateView.h */,
+				358700741B9E78BC00B09351 /* TSLocateView.m */,
+				358700751B9E78BC00B09351 /* TSLocateView.xib */,
+				358700761B9E78BC00B09351 /* TSLocation.h */,
+				358700771B9E78BC00B09351 /* TSLocation.m */,
+			);
+			name = TSLocateView;
+			sourceTree = "<group>";
+		};
 		35AC87481B8AB14A00B44C7E /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +304,8 @@
 		35C712141B8595B3004B267A /* tongxin_news */ = {
 			isa = PBXGroup;
 			children = (
+				358700711B9E78AA00B09351 /* TSLocateView */,
+				3587006A1B9D898900B09351 /* RadioButton */,
 				3515CB401B9D19EB00EC54D7 /* UIColor+MLPFlatColors */,
 				3515CB261B9C05CB00EC54D7 /* DKCircleButton */,
 				3515CB1D1B94366700EC54D7 /* SwiftChart */,
@@ -442,6 +479,8 @@
 			files = (
 				35C7121F1B8595B3004B267A /* Images.xcassets in Resources */,
 				35B2783E1B8D94AB00FA2399 /* Main.storyboard in Resources */,
+				358700781B9E78BC00B09351 /* ProvincesAndCities.plist in Resources */,
+				3587007A1B9E78BC00B09351 /* TSLocateView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +518,7 @@
 				3515CB221B94367200EC54D7 /* ChartColors.swift in Sources */,
 				35C7127A1B86AFA5004B267A /* Upload.swift in Sources */,
 				3515CB4A1B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift in Sources */,
+				358700791B9E78BC00B09351 /* TSLocateView.m in Sources */,
 				35C712731B86AFA5004B267A /* Download.swift in Sources */,
 				35C712741B86AFA5004B267A /* Manager.swift in Sources */,
 				3587005C1B9D776800B09351 /* ChannelItemAddViewController.swift in Sources */,
@@ -490,6 +530,7 @@
 				35C712801B86B09E004B267A /* SwiftyJSON.swift in Sources */,
 				35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */,
 				35C712861B86B2BE004B267A /* MBProgressHUD.m in Sources */,
+				358700701B9D8C3C00B09351 /* DLRadioButton.m in Sources */,
 				35C712771B86AFA5004B267A /* Request.swift in Sources */,
 				35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */,
 				35B278641B8EA2FD00FA2399 /* CommentContentViewController.swift in Sources */,
@@ -501,6 +542,7 @@
 				35B278601B8D955500FA2399 /* UIView+Haneke.m in Sources */,
 				35C712781B86AFA5004B267A /* ResponseSerialization.swift in Sources */,
 				35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */,
+				3587007B1B9E78BC00B09351 /* TSLocation.m in Sources */,
 				35C712181B8595B3004B267A /* AppDelegate.swift in Sources */,
 				3515CB481B9D62AA00EC54D7 /* ChannelCatalogViewController.swift in Sources */,
 				35B2785B1B8D955500FA2399 /* HNKDiskFetcher.m in Sources */,
@@ -621,6 +663,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = tongxin_news/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -638,6 +681,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = tongxin_news/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
