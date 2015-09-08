@@ -23,6 +23,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        self.tvPriceTableView.rowHeight = 44.0
         self.navPrice.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         selection = HTHorizontalSelectionList(frame: CGRect(x: 0, y: 0, width: vSelectionView.frame.width, height: vSelectionView.frame.height))
         selection?.delegate = self

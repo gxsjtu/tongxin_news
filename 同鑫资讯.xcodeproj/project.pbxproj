@@ -28,6 +28,7 @@
 		3587007A1B9E78BC00B09351 /* TSLocateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 358700751B9E78BC00B09351 /* TSLocateView.xib */; };
 		3587007B1B9E78BC00B09351 /* TSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 358700771B9E78BC00B09351 /* TSLocation.m */; };
 		3587007F1B9EA4A000B09351 /* KASlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3587007E1B9EA4A000B09351 /* KASlideShow.m */; };
+		358700811B9EBCD100B09351 /* ChannelVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358700801B9EBCD100B09351 /* ChannelVCTableViewCell.swift */; };
 		35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */; };
 		35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874D1B8AB15900B44C7E /* MJRefreshConst.m */; };
 		35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874F1B8AB15900B44C7E /* MJRefreshFooterView.m */; };
@@ -105,6 +106,7 @@
 		358700771B9E78BC00B09351 /* TSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocation.m; sourceTree = "<group>"; };
 		3587007D1B9EA4A000B09351 /* KASlideShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KASlideShow.h; sourceTree = "<group>"; };
 		3587007E1B9EA4A000B09351 /* KASlideShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KASlideShow.m; sourceTree = "<group>"; };
+		358700801B9EBCD100B09351 /* ChannelVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelVCTableViewCell.swift; sourceTree = "<group>"; };
 		35AC87491B8AB15900B44C7E /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		35AC874A1B8AB15900B44C7E /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
 		35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
@@ -356,6 +358,7 @@
 				3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */,
 				3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */,
 				3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */,
+				358700801B9EBCD100B09351 /* ChannelVCTableViewCell.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				3515CB291B9C05DF00EC54D7 /* DKCircleButton.m in Sources */,
 				35B2785E1B8D955500FA2399 /* UIButton+Haneke.m in Sources */,
 				35C7127B1B86AFA5004B267A /* Validation.swift in Sources */,
+				358700811B9EBCD100B09351 /* ChannelVCTableViewCell.swift in Sources */,
 				3515CB211B94367200EC54D7 /* Chart.swift in Sources */,
 				3515CB251B9BE45000EC54D7 /* EcosystemViewController.swift in Sources */,
 				35B278441B8D952100FA2399 /* CommentDetailViewController.swift in Sources */,

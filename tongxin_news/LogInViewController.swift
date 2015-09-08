@@ -50,7 +50,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBAction func didLogInClicked(sender: AnyObject) {
         let mobile = lblMobile.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         let password = lblPassword.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-//        let token = NSUserDefaults.standardUserDefaults().stringForKey("token")
+        //let token = NSUserDefaults.standardUserDefaults().stringForKey("token")
         let token: String? = "abcd"
         
         if mobile == ""
