@@ -134,7 +134,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.lblChannelCellDate.text = sdata[indexPath.row].4
             cell.lblChannelCellLocation.text = sdata[indexPath.row].2
             cell.lblChannelCellName.text = sdata[indexPath.row].1
-            cell.lblChannelItemId.text = sdata[indexPath.row].5
+            cell.lblChannelItemId.text = sdata[indexPath.row].6
         }
         else
         {
@@ -143,8 +143,22 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.lblChannelCellDate.text = pdata[indexPath.row].4
             cell.lblChannelCellLocation.text = pdata[indexPath.row].2
             cell.lblChannelCellName.text = pdata[indexPath.row].1
-            cell.lblChannelItemId.text = pdata[indexPath.row].5
+            cell.lblChannelItemId.text = pdata[indexPath.row].6
         }
         return cell
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ChannelList2ItemDetail"
+        {
+            if let des = segue.destinationViewController as? ChannelItemDetailViewController
+            {
+                if let cell = sender as? ChannelVCTableViewCell
+                {
+                    des.navTitle = "商圈 - " + channelName
+                    des.itemId = cell.lblChannelItemId.text!
+                }
+            }
+        }
     }
 }

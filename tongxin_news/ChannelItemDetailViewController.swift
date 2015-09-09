@@ -18,14 +18,18 @@ class ChannelItemDetailViewController: UIViewController {
     @IBOutlet weak var lblChannelItemQty: UILabel!
     @IBOutlet weak var lblChannelItemName: UILabel!
     @IBOutlet weak var lblChannelItemCapt: UILabel!
+    @IBOutlet weak var navChannelItemDetail: UINavigationBar!
     
-    var itemId = 0
+    var itemId = "0"
     var navTitle = "未知"
     var images = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        getChannelItemDetail()
+        self.navChannelItemDetail.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
+        self.navChannelItemDetail.topItem?.title = navTitle
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,9 +41,10 @@ class ChannelItemDetailViewController: UIViewController {
     func getChannelItemDetail()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.SPList.rawValue, parameters: ["method": "getItem", "id": itemId])
+        request(.GET, EndPoints.SPList.rawValue, parameters: ["method": "getitem", "id": itemId])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                println(request)
                 if let anError = error
                 {
                     let alert = SKTipAlertView()
@@ -51,11 +56,11 @@ class ChannelItemDetailViewController: UIViewController {
                     {
                         if i["type"]!.stringValue == "true"
                         {
-                            self.lblChannelItemCapt.text = "采购"
+                            self.lblChannelItemCapt.text = "采购："
                         }
                         else
                         {
-                            self.lblChannelItemCapt.text = "销售"
+                            self.lblChannelItemCapt.text = "销售："
                         }
                         if i["deliver"]!.stringValue == "true"
                         {
@@ -65,6 +70,12 @@ class ChannelItemDetailViewController: UIViewController {
                         {
                             self.lblChannelItemDeliver.text = "发货"
                         }
+                        self.lblChannelItemContact.text = i["contact"]!.stringValue
+                        self.lblChannelItemLocation.text = i["location"]!.stringValue
+                        self.lblChannelItemMobile.text = i["mobile"]!.stringValue
+                        self.lblChannelItemName.text = i["name"]!.stringValue
+                        self.lblChannelItemQty.text = i["quantity"]!.stringValue
+                        self.txtChannelItemDesc.text = i["description"]!.stringValue
                     }
                 }
         }
