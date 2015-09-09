@@ -223,6 +223,11 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
                 {
                 self.addRes = "YES"
                 self.itemId = res["id"].string!
+                let mainBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                    let vc : ChannelItemDetailViewController = mainBoard.instantiateViewControllerWithIdentifier("ItemDetailView") as! ChannelItemDetailViewController
+                    vc.title = self.navChannelItem.topItem?.title
+                    vc.itemId = self.itemId!.toInt()!
+                    self.presentViewController(vc, animated: true, completion: nil)
                 }
                 else
                 {
