@@ -10,6 +10,17 @@ import UIKit
 
 class ChannelItemDetailViewController: UIViewController {
 
+    @IBOutlet weak var txtChannelItemDesc: UITextView!
+    @IBOutlet weak var lblChannelItemDeliver: UILabel!
+    @IBOutlet weak var lblChannelItemLocation: UILabel!
+    @IBOutlet weak var lblChannelItemContact: UILabel!
+    @IBOutlet weak var lblChannelItemMobile: UILabel!
+    @IBOutlet weak var lblChannelItemQty: UILabel!
+    @IBOutlet weak var lblChannelItemName: UILabel!
+    @IBOutlet weak var lblChannelItemCapt: UILabel!
+    
+    var itemId = 0
+    var navTitle = "未知"
     override func viewDidLoad() {
         super.viewDidLoad()
 
