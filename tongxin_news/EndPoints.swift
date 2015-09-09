@@ -19,4 +19,5 @@ enum EndPoints: String
     case MessageInfo = "http://api.shtx.com.cn/Handlers/MessageHandler.ashx"
     case Channel = "http://api.shtx.com.cn/Handlers/ChannelHandler.ashx"
     case SPList = "http://api.shtx.com.cn/Handlers/SupplyHandler.ashx"
+    case ChannelUploadImg = "http://api.shtx.com.cn/Handlers/SupplyHandler.ashx?method=upload"
 }
