@@ -12,9 +12,9 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
 
     var channelName = "未知"
     var channelId = 0
-    //avatar, name, location, contact, date,type
-    var pdata = [(String, String, String, String, String, String)]()
-    var sdata = [(String, String, String, String, String, String)]()
+    //avatar, name, location, contact, date, type, id
+    var pdata = [(String, String, String, String, String, String, String)]()
+    var sdata = [(String, String, String, String, String, String, String)]()
     @IBOutlet weak var segChannel: UISegmentedControl!
     @IBOutlet weak var navChannel: UINavigationBar!
     @IBOutlet weak var vSPList: UITableView!
@@ -23,6 +23,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
 
         // Do any additional setup after loading the view.
         self.navChannel.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
+        getSPList()
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,6 +47,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
         if buttonIndex == 0
         {
             //刷新列表
+            getSPList()
         }
         else if buttonIndex == 1
         {
@@ -62,13 +64,13 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
     func getSPList()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.SPList.rawValue, parameters: ["method": "getsupply", "channelId": channelId])
+        request(.GET, EndPoints.SPList.rawValue, parameters: ["method": "getsupply", "channel": channelId])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error
                 {
                     let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                    alert.showRedNotificationForString("加载失败，请点击右上角按钮刷新重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
                 else if let data: AnyObject = data
                 {
@@ -78,13 +80,13 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
                         {
                             if let i = item.dictionary
                             {
-                                if i["type"]!.stringValue == "0"
+                                if i["type"]!.stringValue == "true"
                                 {
-                                   self.sdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue))
+                                   self.pdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue, i["id"]!.stringValue))
                                 }
                                 else
                                 {
-                                   self.pdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue))
+                                   self.sdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue, i["id"]!.stringValue))
                                 }
                             }
                         }
@@ -95,6 +97,11 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func unwindFromChannelCatalog2Channel(segue: UIStoryboardSegue)
+    {
+        
+    }
+    
+    @IBAction func unwindFromChannelItemDetail2Channel(segue: UIStoryboardSegue)
     {
         
     }
@@ -122,19 +129,21 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier("SPListCell") as! ChannelVCTableViewCell
         if segChannel.selectedSegmentIndex == 0
         {
-            cell.imageView?.hnk_setImageFromURL(NSURL(string: sdata[indexPath.row].0))
+            cell.imgChannelCellAvatar.hnk_setImageFromURL(NSURL(string: sdata[indexPath.row].0))
             cell.lblChannelCellContact.text = sdata[indexPath.row].3
             cell.lblChannelCellDate.text = sdata[indexPath.row].4
             cell.lblChannelCellLocation.text = sdata[indexPath.row].2
             cell.lblChannelCellName.text = sdata[indexPath.row].1
+            cell.lblChannelItemId.text = sdata[indexPath.row].5
         }
         else
         {
-            cell.imageView?.hnk_setImageFromURL(NSURL(string: pdata[indexPath.row].0))
+            cell.imgChannelCellAvatar.hnk_setImageFromURL(NSURL(string: pdata[indexPath.row].0))
             cell.lblChannelCellContact.text = pdata[indexPath.row].3
             cell.lblChannelCellDate.text = pdata[indexPath.row].4
             cell.lblChannelCellLocation.text = pdata[indexPath.row].2
             cell.lblChannelCellName.text = pdata[indexPath.row].1
+            cell.lblChannelItemId.text = pdata[indexPath.row].5
         }
         return cell
     }
