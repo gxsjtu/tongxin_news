@@ -12,9 +12,9 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
 
     var channelName = "未知"
     var channelId = 0
-    //avatar, name, location, contact, date
-    var pdata = [(String, String, String, String, String)]()
-    var sdata = [(String, String, String, String, String)]()
+    //avatar, name, location, contact, date,type
+    var pdata = [(String, String, String, String, String, String)]()
+    var sdata = [(String, String, String, String, String, String)]()
     @IBOutlet weak var segChannel: UISegmentedControl!
     @IBOutlet weak var navChannel: UINavigationBar!
     @IBOutlet weak var vSPList: UITableView!
@@ -62,7 +62,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
     func getSPList()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.Channel.rawValue, parameters: ["method": "getcatalog", "channelId": channelId])
+        request(.GET, EndPoints.SPList.rawValue, parameters: ["method": "getsupply", "channelId": channelId])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error
@@ -80,11 +80,11 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
                             {
                                 if i["type"]!.stringValue == "0"
                                 {
-                                   //self.sdata.append((i["id"]!.stringValue, i["Name"]!.stringValue, i["Desc"]!.stringValue))
+                                   self.sdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue))
                                 }
                                 else
                                 {
-                                   //self.pdata.append((i["id"]!.stringValue, i["Name"]!.stringValue, i["Desc"]!.stringValue))
+                                   self.pdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue))
                                 }
                             }
                         }

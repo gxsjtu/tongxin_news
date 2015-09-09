@@ -1173,8 +1173,15 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pAD-bV-qlw">
+                                <rect key="frame" x="-4" y="64" width="328" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="eyC-yD-5V7"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jhL-FP-hxK">
-                                <rect key="frame" x="-4" y="64" width="328" height="568"/>
+                                <rect key="frame" x="-4" y="108" width="328" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SPListCell" rowHeight="65" id="jdn-oO-lAl" customClass="ChannelVCTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
@@ -1297,13 +1304,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VV3-Ph-lIz" firstAttribute="top" secondItem="jhL-FP-hxK" secondAttribute="bottom" constant="-64" id="3Wk-Xu-ztH"/>
+                            <constraint firstItem="eRI-LB-9UM" firstAttribute="top" secondItem="pAD-bV-qlw" secondAttribute="top" constant="-64" id="8WM-CL-tlz"/>
+                            <constraint firstItem="pAD-bV-qlw" firstAttribute="top" secondItem="jhL-FP-hxK" secondAttribute="top" constant="-44" id="8b5-we-kf8"/>
                             <constraint firstItem="eRI-LB-9UM" firstAttribute="leading" secondItem="uQP-O6-hmi" secondAttribute="leadingMargin" constant="-20" id="CG2-dH-9ww"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jhL-FP-hxK" secondAttribute="trailing" constant="-20" id="EFe-Cm-edQ"/>
                             <constraint firstItem="eRI-LB-9UM" firstAttribute="top" secondItem="cwT-Ed-0Nd" secondAttribute="bottom" constant="-20" id="Hfd-I0-3l6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eRI-LB-9UM" secondAttribute="trailing" constant="-20" id="N3e-TX-v9v"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jhL-FP-hxK" secondAttribute="trailing" constant="-20" id="beK-iN-yDC"/>
-                            <constraint firstItem="jhL-FP-hxK" firstAttribute="top" secondItem="eRI-LB-9UM" secondAttribute="top" constant="64" id="bxl-nL-SAg"/>
-                            <constraint firstItem="jhL-FP-hxK" firstAttribute="leading" secondItem="uQP-O6-hmi" secondAttribute="leadingMargin" constant="-20" id="gFX-sf-j4D"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pAD-bV-qlw" secondAttribute="trailing" constant="-20" id="Pfs-tQ-MoM"/>
+                            <constraint firstItem="pAD-bV-qlw" firstAttribute="leading" secondItem="uQP-O6-hmi" secondAttribute="leadingMargin" constant="-20" id="YjO-Ec-VSu"/>
+                            <constraint firstItem="jhL-FP-hxK" firstAttribute="leading" secondItem="uQP-O6-hmi" secondAttribute="leadingMargin" constant="-20" id="p6e-2p-7EV"/>
+                            <constraint firstItem="VV3-Ph-lIz" firstAttribute="top" secondItem="jhL-FP-hxK" secondAttribute="bottom" id="qaV-Q4-Vze"/>
                         </constraints>
                     </view>
                     <connections>
