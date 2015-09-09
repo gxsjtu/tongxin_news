@@ -21,6 +21,7 @@ class ChannelItemDetailViewController: UIViewController {
     
     var itemId = 0
     var navTitle = "未知"
+    var images = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,6 +31,43 @@ class ChannelItemDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        getChannelItemDetail()
+    }
+    
+    func getChannelItemDetail()
+    {
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        request(.GET, EndPoints.SPList.rawValue, parameters: ["method": "getItem", "id": itemId])
+            .responseJSON { (request, response, data, error) in
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                if let anError = error
+                {
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请点击右上角刷新重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                }
+                else if let data: AnyObject = data
+                {
+                    if let i = JSON(data).dictionary
+                    {
+                        if i["type"]!.stringValue == "true"
+                        {
+                            self.lblChannelItemCapt.text = "采购"
+                        }
+                        else
+                        {
+                            self.lblChannelItemCapt.text = "销售"
+                        }
+                        if i["deliver"]!.stringValue == "true"
+                        {
+                            self.lblChannelItemDeliver.text = "自提"
+                        }
+                        else
+                        {
+                            self.lblChannelItemDeliver.text = "发货"
+                        }
+                    }
+                }
+        }
     }
     
 
