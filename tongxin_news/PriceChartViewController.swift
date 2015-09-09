@@ -62,6 +62,19 @@ class PriceChartViewController: UIViewController, ChartDelegate {
         chart.addSeries(series1)
         
         self.vChart.addSubview(chart)
+        
+        //添加constraints
+        let leading = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.LeadingMargin, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.LeadingMargin, multiplier: 1, constant: 0)
+        
+        let traling = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.TrailingMargin, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.TrailingMargin, multiplier: 1, constant: 0)
+        
+        let top = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
+        
+        let bottom = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
+        
+        chart.setTranslatesAutoresizingMaskIntoConstraints(false)
+        NSLayoutConstraint.activateConstraints([leading, traling, top, bottom])
+
     }
 
     override func didReceiveMemoryWarning() {

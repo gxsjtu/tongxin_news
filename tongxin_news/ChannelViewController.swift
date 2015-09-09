@@ -35,6 +35,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
         let actions = UIActionSheet()
         actions.title = "操作"
         actions.delegate = self
+        actions.cancelButtonIndex = 2
         actions.addButtonWithTitle("刷新供需列表")
         actions.addButtonWithTitle("发布供需")
         actions.addButtonWithTitle("取消")
@@ -56,15 +57,41 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
                 self.presentViewController(catalogVC, animated: true, completion: nil)
             }
         }
-        else
-        {
-            actionSheet.hidden = true
-        }
     }
     
     func getSPList()
     {
-        
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        request(.GET, EndPoints.Channel.rawValue, parameters: ["method": "getcatalog", "channelId": channelId])
+            .responseJSON { (request, response, data, error) in
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                if let anError = error
+                {
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                }
+                else if let data: AnyObject = data
+                {
+                    if let res = JSON(data).array
+                    {
+                        for item in res
+                        {
+                            if let i = item.dictionary
+                            {
+                                if i["type"]!.stringValue == "0"
+                                {
+                                   //self.sdata.append((i["id"]!.stringValue, i["Name"]!.stringValue, i["Desc"]!.stringValue))
+                                }
+                                else
+                                {
+                                   //self.pdata.append((i["id"]!.stringValue, i["Name"]!.stringValue, i["Desc"]!.stringValue))
+                                }
+                            }
+                        }
+                        self.vSPList.reloadData()
+                    }
+                }
+        }
     }
     
     @IBAction func unwindFromChannelCatalog2Channel(segue: UIStoryboardSegue)

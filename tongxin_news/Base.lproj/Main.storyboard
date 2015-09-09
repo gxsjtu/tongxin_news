@@ -904,7 +904,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8L-2T-cO4">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <rect key="frame" x="-4" y="0.0" width="328" height="64"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="dqE-jZ-1Ob"/>
                                 </constraints>
@@ -920,10 +920,10 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fgg-dX-kOL">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="-4" y="64" width="328" height="504"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="brQ-Oo-Zm7">
-                                        <rect key="frame" x="122" y="483" width="198" height="21"/>
+                                        <rect key="frame" x="130" y="483" width="198" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="198" id="GCX-VV-07L"/>
                                             <constraint firstAttribute="height" constant="21" id="dJh-N0-FW2"/>
@@ -956,11 +956,11 @@
                         <constraints>
                             <constraint firstItem="0Wp-cO-Jvv" firstAttribute="top" secondItem="fgg-dX-kOL" secondAttribute="bottom" id="6Bk-8g-7ru"/>
                             <constraint firstItem="x8L-2T-cO4" firstAttribute="top" secondItem="oXY-vb-N0z" secondAttribute="bottom" constant="-20" id="EoA-ql-AJG"/>
-                            <constraint firstItem="x8L-2T-cO4" firstAttribute="leading" secondItem="dSd-kR-ONS" secondAttribute="leadingMargin" constant="-16" id="b02-qh-ywt"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="x8L-2T-cO4" secondAttribute="trailing" constant="-16" id="cdC-w4-oTc"/>
+                            <constraint firstItem="x8L-2T-cO4" firstAttribute="leading" secondItem="dSd-kR-ONS" secondAttribute="leadingMargin" constant="-20" id="b02-qh-ywt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="x8L-2T-cO4" secondAttribute="trailing" constant="-20" id="cdC-w4-oTc"/>
                             <constraint firstItem="x8L-2T-cO4" firstAttribute="top" secondItem="fgg-dX-kOL" secondAttribute="top" constant="-64" id="d4J-oI-pB8"/>
-                            <constraint firstItem="fgg-dX-kOL" firstAttribute="leading" secondItem="dSd-kR-ONS" secondAttribute="leadingMargin" constant="-16" id="fdr-Oy-Osm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fgg-dX-kOL" secondAttribute="trailing" constant="-16" id="fz9-eJ-1fc"/>
+                            <constraint firstItem="fgg-dX-kOL" firstAttribute="leading" secondItem="dSd-kR-ONS" secondAttribute="leadingMargin" constant="-20" id="fdr-Oy-Osm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fgg-dX-kOL" secondAttribute="trailing" constant="-20" id="fz9-eJ-1fc"/>
                         </constraints>
                     </view>
                     <connections>
