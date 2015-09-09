@@ -29,6 +29,7 @@
 		3587007B1B9E78BC00B09351 /* TSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 358700771B9E78BC00B09351 /* TSLocation.m */; };
 		3587007F1B9EA4A000B09351 /* KASlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3587007E1B9EA4A000B09351 /* KASlideShow.m */; };
 		358700811B9EBCD100B09351 /* ChannelVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358700801B9EBCD100B09351 /* ChannelVCTableViewCell.swift */; };
+		358700831B9FE86200B09351 /* ChannelItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358700821B9FE86200B09351 /* ChannelItemDetailViewController.swift */; };
 		35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */; };
 		35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874D1B8AB15900B44C7E /* MJRefreshConst.m */; };
 		35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874F1B8AB15900B44C7E /* MJRefreshFooterView.m */; };
@@ -107,6 +108,7 @@
 		3587007D1B9EA4A000B09351 /* KASlideShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KASlideShow.h; sourceTree = "<group>"; };
 		3587007E1B9EA4A000B09351 /* KASlideShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KASlideShow.m; sourceTree = "<group>"; };
 		358700801B9EBCD100B09351 /* ChannelVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelVCTableViewCell.swift; sourceTree = "<group>"; };
+		358700821B9FE86200B09351 /* ChannelItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelItemDetailViewController.swift; sourceTree = "<group>"; };
 		35AC87491B8AB15900B44C7E /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		35AC874A1B8AB15900B44C7E /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
 		35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */,
 				3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */,
 				358700801B9EBCD100B09351 /* ChannelVCTableViewCell.swift */,
+				358700821B9FE86200B09351 /* ChannelItemDetailViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -567,6 +570,7 @@
 				35B2789B1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift in Sources */,
 				35B2785A1B8D955500FA2399 /* HNKDiskCache.m in Sources */,
 				35B278591B8D955500FA2399 /* HNKCache.m in Sources */,
+				358700831B9FE86200B09351 /* ChannelItemDetailViewController.swift in Sources */,
 				35B278991B8FFEFD00FA2399 /* PriceHistoryViewController.swift in Sources */,
 				3515CB431B9D19FA00EC54D7 /* UIColor+MLPFlatColors.m in Sources */,
 				35C712651B86AEE9004B267A /* SKAlertView.m in Sources */,
