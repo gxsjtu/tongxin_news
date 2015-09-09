@@ -8,19 +8,23 @@
 
 import UIKit
 
-class ChannelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate {
+class ChannelViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIActionSheetDelegate,UISearchBarDelegate {
 
     var channelName = "未知"
     var channelId = 0
     //avatar, name, location, contact, date, type, id
     var pdata = [(String, String, String, String, String, String, String)]()
     var sdata = [(String, String, String, String, String, String, String)]()
+    var pdataRes = [(String, String, String, String, String, String, String)]()
+    var sdataRes = [(String, String, String, String, String, String, String)]()
     @IBOutlet weak var segChannel: UISegmentedControl!
     @IBOutlet weak var navChannel: UINavigationBar!
     @IBOutlet weak var vSPList: UITableView!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.searchBar.delegate = self
         // Do any additional setup after loading the view.
         self.navChannel.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         getSPList()
@@ -90,6 +94,8 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
                                 }
                             }
                         }
+                        self.pdataRes = self.pdata
+                        self.sdataRes = self.sdata
                         self.vSPList.reloadData()
                     }
                 }
@@ -107,6 +113,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func didSegChanged(sender: AnyObject) {
+        self.searchBar.text = ""
         self.vSPList.reloadData()
     }
     
@@ -117,11 +124,11 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if segChannel.selectedSegmentIndex == 0
         {
-            return sdata.count
+            return sdataRes.count
         }
         else
         {
-            return pdata.count
+            return pdataRes.count
         }
     }
     
@@ -130,20 +137,20 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
         if segChannel.selectedSegmentIndex == 0
         {
             cell.imgChannelCellAvatar.hnk_setImageFromURL(NSURL(string: sdata[indexPath.row].0))
-            cell.lblChannelCellContact.text = sdata[indexPath.row].3
-            cell.lblChannelCellDate.text = sdata[indexPath.row].4
-            cell.lblChannelCellLocation.text = sdata[indexPath.row].2
-            cell.lblChannelCellName.text = sdata[indexPath.row].1
-            cell.lblChannelItemId.text = sdata[indexPath.row].6
+            cell.lblChannelCellContact.text = sdataRes[indexPath.row].3
+            cell.lblChannelCellDate.text = sdataRes[indexPath.row].4
+            cell.lblChannelCellLocation.text = sdataRes[indexPath.row].2
+            cell.lblChannelCellName.text = sdataRes[indexPath.row].1
+            cell.lblChannelItemId.text = sdataRes[indexPath.row].6
         }
         else
         {
             cell.imgChannelCellAvatar.hnk_setImageFromURL(NSURL(string: pdata[indexPath.row].0))
-            cell.lblChannelCellContact.text = pdata[indexPath.row].3
-            cell.lblChannelCellDate.text = pdata[indexPath.row].4
-            cell.lblChannelCellLocation.text = pdata[indexPath.row].2
-            cell.lblChannelCellName.text = pdata[indexPath.row].1
-            cell.lblChannelItemId.text = pdata[indexPath.row].6
+            cell.lblChannelCellContact.text = pdataRes[indexPath.row].3
+            cell.lblChannelCellDate.text = pdataRes[indexPath.row].4
+            cell.lblChannelCellLocation.text = pdataRes[indexPath.row].2
+            cell.lblChannelCellName.text = pdataRes[indexPath.row].1
+            cell.lblChannelItemId.text = pdataRes[indexPath.row].6
         }
         return cell
     }
@@ -160,5 +167,56 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
                 }
             }
         }
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if(searchText == "")
+        {
+            self.pdataRes = self.pdata
+            self.sdataRes = self.sdata
+            //self.resInfos = self.msgInfos
+            //self.resComInfos = self.comInfos
+        }
+        else
+        {
+          if(self.segChannel.selectedSegmentIndex == 0)
+          {
+            self.sdataRes.removeAll(keepCapacity: false)
+            for s in self.sdata
+            {
+            if(s.1.componentsSeparatedByString(searchText).count > 1)
+            {
+                self.sdataRes.append(s)
+            }
+            }
+            }
+            else if self.segChannel.selectedSegmentIndex == 1
+            {
+            self.pdataRes.removeAll(keepCapacity: false)
+                for p in self.pdata
+                {
+                    if(p.1.componentsSeparatedByString(searchText).count > 1)
+                    {
+                        self.pdataRes.append(p)
+                    }
+            }
+            }
+        }
+       self.vSPList.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
+        self.sdataRes.removeAll(keepCapacity: false)
+        self.pdataRes.removeAll(keepCapacity: false)
+        self.sdataRes = self.sdata
+        self.pdataRes = self.pdata
+        
+        self.vSPList.reloadData()
     }
 }

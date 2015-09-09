@@ -148,8 +148,10 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     
     func uploadImage()
     {
-        if(self.imageList.count > 0)
+        if(self.imageList.count < 0)
         {
+            
+        }
         let uploadURL : String = EndPoints.ChannelUploadImg.rawValue
         let request = NSMutableURLRequest(URL: NSURL(string: uploadURL)!)
         request.HTTPMethod = "POST"
@@ -173,12 +175,23 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
             
             if (error != nil){
             println(error)
-        }else{ //没有错误的情况
+            }else{ //没有错误的情况
                 self.imagesName = NSString(data:data,encoding:NSUTF8StringEncoding)! as String
+                if self.imagesName == "-1"//报错的情况
+                {
+                        println("error")
+                }
+                else
+                {
+                    if(self.imagesName == "0")//没有上传图片的情况
+                    {
+                        self.imagesName = ""
+                    }
                 self.createData(self.imagesName)
+                }
             }
             })
-        }
+        
     }
     
     func createData(var images : String?)
