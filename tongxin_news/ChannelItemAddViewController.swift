@@ -37,6 +37,8 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     var stateStr : String?//交货地－省份
     var cityStr : String?//交货地－城市
     var imagesName : String?//图片名字
+    var itemId : String?
+    var addRes : String?
     @IBOutlet weak var navChannelItem: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -205,18 +207,27 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
             sOro = "1"
         }
         
-        request(.GET,EndPoints.ChannelItemAdd.rawValue,parameters:["method":"create","catalogID":cId,"product":self.txtChannelItemSP.text,"quantity":self.txtChannelItemQty.text,"mobile":self.txtChannelItemMobile.text,"contact":self.txtChannelItemContact.text,"description":self.txtChannelItemDesc.text,"deliveryType":sOro!,"type":sOrP!,"province":self.stateStr!,"city":self.cityStr!,"images":images!]).responseJSON{
+        request(.GET,EndPoints.SPList.rawValue,parameters:["method":"create","catalogID":cId,"product":self.txtChannelItemSP.text,"quantity":self.txtChannelItemQty.text,"mobile":self.txtChannelItemMobile.text,"contact":self.txtChannelItemContact.text,"description":self.txtChannelItemDesc.text,"deliveryType":sOro!,"type":sOrP!,"province":self.stateStr!,"city":self.cityStr!,"images":images!]).responseJSON{
             (request,response,data,error) in
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             if let hasError = error
             {
                 println(hasError)
+                self.addRes = "NO"
             }
             else if let dataRes : AnyObject = data
             {
                 var res = JSON(dataRes)
                 var result = res["result"].string!
-                println(result)
+                if(result == "ok")
+                {
+                self.addRes = "YES"
+                self.itemId = res["id"].string!
+                }
+                else
+                {
+                    self.addRes = "NO"
+                }
             }
         }
 
