@@ -1517,7 +1517,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rDh-IB-AMJ">
-                                <rect key="frame" x="10" y="64" width="300" height="568"/>
+                                <rect key="frame" x="10" y="64" width="300" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChannelCatalogCell" rowHeight="80" id="RXL-rg-k50" customClass="ChannelCatalogTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
@@ -1585,7 +1585,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="OIa-6A-XXh" firstAttribute="top" secondItem="rDh-IB-AMJ" secondAttribute="bottom" constant="-64" id="1FB-Y9-hNk"/>
+                            <constraint firstItem="OIa-6A-XXh" firstAttribute="top" secondItem="rDh-IB-AMJ" secondAttribute="bottom" id="1FB-Y9-hNk"/>
                             <constraint firstItem="nCo-t0-EgA" firstAttribute="top" secondItem="rDh-IB-AMJ" secondAttribute="top" constant="-64" id="3Ql-3l-fUi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nCo-t0-EgA" secondAttribute="trailing" constant="-20" id="603-qF-UZR"/>
                             <constraint firstItem="rDh-IB-AMJ" firstAttribute="leading" secondItem="QDE-XN-kaz" secondAttribute="leadingMargin" constant="-6" id="RmN-JX-dKB"/>
