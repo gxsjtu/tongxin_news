@@ -9,10 +9,6 @@
 import UIKit
 
 class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIActionSheetDelegate,KASlideShowDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
-
-    @IBAction func didAddImage(sender: AnyObject) {
-        
-    }
     
     @IBOutlet weak var slideView: KASlideShow!
     @IBOutlet weak var btnAddImage: UIButton!
@@ -226,7 +222,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
                 let mainBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
                     let vc : ChannelItemDetailViewController = mainBoard.instantiateViewControllerWithIdentifier("ItemDetailView") as! ChannelItemDetailViewController
                     vc.title = self.navChannelItem.topItem?.title
-                    vc.itemId = self.itemId!.toInt()!
+                    vc.itemId = self.itemId!
                     self.presentViewController(vc, animated: true, completion: nil)
                 }
                 else
