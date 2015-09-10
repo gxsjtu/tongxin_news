@@ -136,7 +136,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier("SPListCell") as! ChannelVCTableViewCell
         if segChannel.selectedSegmentIndex == 0
         {
-            cell.imgChannelCellAvatar.hnk_setImageFromURL(NSURL(string: sdata[indexPath.row].0))
+            cell.imgChannelCellAvatar.sd_setImageWithURL(NSURL(string: sdata[indexPath.row].0))
             cell.lblChannelCellContact.text = sdataRes[indexPath.row].3
             cell.lblChannelCellDate.text = sdataRes[indexPath.row].4
             cell.lblChannelCellLocation.text = sdataRes[indexPath.row].2
@@ -145,7 +145,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         else
         {
-            cell.imgChannelCellAvatar.hnk_setImageFromURL(NSURL(string: pdata[indexPath.row].0))
+            cell.imgChannelCellAvatar.sd_setImageWithURL(NSURL(string: pdata[indexPath.row].0))
             cell.lblChannelCellContact.text = pdataRes[indexPath.row].3
             cell.lblChannelCellDate.text = pdataRes[indexPath.row].4
             cell.lblChannelCellLocation.text = pdataRes[indexPath.row].2
@@ -199,7 +199,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
                     {
                         self.pdataRes.append(p)
                     }
-            }
+                }
             }
         }
        self.vSPList.reloadData()

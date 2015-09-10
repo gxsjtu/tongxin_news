@@ -53,7 +53,8 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         self.btnAddImage.addTarget(self, action: "addImage", forControlEvents: UIControlEvents.TouchUpInside)
         self.slideView.delegate = self
         self.slideView.delay = 1
-        self.slideView.transitionDuration = 0.5
+        self.slideView.transitionDuration = 3.0
+        self.slideView.transitionType = KASlideShowTransitionType.Slide
         self.slideView.imagesContentMode = UIViewContentMode.ScaleAspectFill
         self.slideView.addGesture(KASlideShowGestureType.Tap)
     }
@@ -152,6 +153,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         {
             
         }
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         let uploadURL : String = EndPoints.ChannelUploadImg.rawValue
         let request = NSMutableURLRequest(URL: NSURL(string: uploadURL)!)
         request.HTTPMethod = "POST"
@@ -248,8 +250,25 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     }
     
     @IBAction func addData(sender: UIBarButtonItem) {
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            uploadImage()
+        if txtChannelItemSP.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
+        {
+            let alert = SKTipAlertView()
+            alert.showRedNotificationForString(lblSPText + "内容不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+            return
+        }
+        if txtChannelItemQty.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
+        {
+            let alert = SKTipAlertView()
+            alert.showRedNotificationForString("供需数量不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+            return
+        }
+        if txtChannelItemMobile.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
+        {
+            let alert = SKTipAlertView()
+            alert.showRedNotificationForString("联系方式不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+            return
+        }
+        uploadImage()
     }
     
     /*
