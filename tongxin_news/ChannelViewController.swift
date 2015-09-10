@@ -80,6 +80,10 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
                 {
                     if let res = JSON(data).array
                     {
+                        self.pdata.removeAll(keepCapacity: false)
+                        self.pdataRes.removeAll(keepCapacity: false)
+                        self.sdata.removeAll(keepCapacity: false)
+                        self.sdataRes.removeAll(keepCapacity: false)
                         for item in res
                         {
                             if let i = item.dictionary
