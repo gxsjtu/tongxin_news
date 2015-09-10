@@ -253,7 +253,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         if txtChannelItemSP.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
         {
             let alert = SKTipAlertView()
-            alert.showRedNotificationForString(lblSPText + "内容不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+            alert.showRedNotificationForString(lblSPText.text! + "内容不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
             return
         }
         if txtChannelItemQty.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
