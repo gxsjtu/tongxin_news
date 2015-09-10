@@ -22,7 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var systemVesion : NSString = UIDevice.currentDevice().systemVersion
         if systemVesion.doubleValue < 8.0{
             UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound | UIRemoteNotificationType.Badge)
-            UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationType.Alert)
         }else{
             UIApplication.sharedApplication().registerForRemoteNotifications()
             var userNotificationSettings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge, categories: nil)
@@ -78,11 +77,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for var i = 0; i < deviceToken.length; i++ {
             tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
         }
+        println(tokenString)
         NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: "token")
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
         NSNotificationCenter.defaultCenter().postNotificationName("Badge", object: nil, userInfo: userInfo)
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println(error)
     }
 }
 
