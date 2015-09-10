@@ -10,6 +10,7 @@ import UIKit
 
 class ChannelItemDetailViewController: UIViewController {
 
+    @IBOutlet weak var slideChannelItem: KASlideShow!
     @IBOutlet weak var txtChannelItemDesc: UITextView!
     @IBOutlet weak var lblChannelItemDeliver: UILabel!
     @IBOutlet weak var lblChannelItemLocation: UILabel!
@@ -22,7 +23,6 @@ class ChannelItemDetailViewController: UIViewController {
     
     var itemId = "0"
     var navTitle = "未知"
-    var images = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -30,8 +30,16 @@ class ChannelItemDetailViewController: UIViewController {
         getChannelItemDetail()
         self.navChannelItemDetail.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navChannelItemDetail.topItem?.title = navTitle
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        self.slideChannelItem.transitionDuration = 3.0
+        self.slideChannelItem.transitionType = KASlideShowTransitionType.Slide
+        self.slideChannelItem.imagesContentMode = UIViewContentMode.ScaleAspectFill
     }
 
+    @IBAction func didRefreshChannelItems(sender: AnyObject) {
+        getChannelItemDetail()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -44,7 +52,6 @@ class ChannelItemDetailViewController: UIViewController {
         request(.GET, EndPoints.SPList.rawValue, parameters: ["method": "getitem", "id": itemId])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                println(request)
                 if let anError = error
                 {
                     let alert = SKTipAlertView()
@@ -76,6 +83,21 @@ class ChannelItemDetailViewController: UIViewController {
                         self.lblChannelItemName.text = i["name"]!.stringValue
                         self.lblChannelItemQty.text = i["quantity"]!.stringValue
                         self.txtChannelItemDesc.text = i["description"]!.stringValue
+                        
+                        for avatars in i["avatars"]!.arrayValue
+                        {
+                            if let avatar = avatars.dictionary
+                            {
+                                MBProgressHUD.showHUDAddedTo(self.slideChannelItem, animated: true)
+                                SDWebImageDownloader.sharedDownloader().downloadImageWithURL(NSURL(string: avatar["avatar"]!.stringValue), options: SDWebImageDownloaderOptions.allZeros, progress: nil, completed: { (image: UIImage!, data: NSData!, error: NSError!, finished: Bool) -> Void in
+                                    if finished == true
+                                    {
+                                        self.slideChannelItem.addImage(image)
+                                        MBProgressHUD.hideAllHUDsForView(self.slideChannelItem, animated: true)
+                                        self.slideChannelItem.start()
+                                    }})
+                            }
+                        }
                     }
                 }
         }
