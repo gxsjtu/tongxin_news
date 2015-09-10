@@ -1905,7 +1905,7 @@
                                         <rect key="frame" x="0.0" y="179" width="328" height="325"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpy-w4-lWu" customClass="DLRadioButton">
-                                                <rect key="frame" x="50" y="8" width="80" height="30"/>
+                                                <rect key="frame" x="50" y="4" width="80" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="L8n-CE-s5m"/>
                                                     <constraint firstAttribute="width" constant="80" id="Mhc-oB-jae"/>
@@ -1925,8 +1925,177 @@
                                                     <action selector="didSPChanged:" destination="Ndc-BY-6Em" eventType="touchUpInside" id="lSx-WO-CiT"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="采购" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiI-IN-YH8">
+                                                <rect key="frame" x="42" y="42" width="34" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="34" id="cFP-aF-iLq"/>
+                                                    <constraint firstAttribute="height" constant="21" id="q6k-5t-vBo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总量" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h4-Zz-UKF">
+                                                <rect key="frame" x="42" y="79" width="34" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="34" id="HuY-2h-0oZ"/>
+                                                    <constraint firstAttribute="height" constant="21" id="Ys7-NE-5j8"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系方式" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGi-gZ-Gmf">
+                                                <rect key="frame" x="8" y="116" width="68" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="UiX-Ai-GDX"/>
+                                                    <constraint firstAttribute="width" constant="68" id="pN0-IE-fyz"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsC-Ss-EZ1">
+                                                <rect key="frame" x="25" y="153" width="51" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="51" id="Fgq-UV-yPg"/>
+                                                    <constraint firstAttribute="height" constant="21" id="d6m-6W-XbO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="产品描述" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9X-Cu-1C7">
+                                                <rect key="frame" x="8" y="206" width="68" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="8m0-Ms-n2r"/>
+                                                    <constraint firstAttribute="width" constant="68" id="bxo-S9-Sre"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交货地" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJE-vs-7Jy">
+                                                <rect key="frame" x="25" y="259" width="51" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="51" id="DWC-L5-Mur"/>
+                                                    <constraint firstAttribute="height" constant="21" id="NlX-DU-4eE"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提货方式" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9P-6Y-THa">
+                                                <rect key="frame" x="8" y="297" width="68" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="7Cy-si-F2w"/>
+                                                    <constraint firstAttribute="width" constant="68" id="yKP-Dq-smx"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填，如：50吨" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4zW-fw-fPX">
+                                                <rect key="frame" x="84" y="75" width="236" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="can-ye-hLc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Ndc-BY-6Em" id="bdk-LD-ij8"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填，如：15866666666" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONU-Cc-Wki">
+                                                <rect key="frame" x="84" y="112" width="236" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Lzh-3Y-2vD"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Ndc-BY-6Em" id="NqA-vG-ugt"/>
+                                                </connections>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="如：张三" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-cC-dBw">
+                                                <rect key="frame" x="84" y="149" width="236" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="KmI-Nb-R9n"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Ndc-BY-6Em" id="T8D-gu-ta0"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIM-DO-XHt" customClass="DLRadioButton">
+                                                <rect key="frame" x="103" y="293" width="60" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="iRG-6N-Shr"/>
+                                                    <constraint firstAttribute="width" constant="60" id="vv1-sU-w5Y"/>
+                                                </constraints>
+                                                <state key="normal" title="自提">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNS-m1-9D6" customClass="DLRadioButton">
+                                                <rect key="frame" x="232" y="293" width="60" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="Ttm-9h-AZl"/>
+                                                    <constraint firstAttribute="height" constant="30" id="eMd-yp-eFu"/>
+                                                </constraints>
+                                                <state key="normal" title="发货">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJa-gr-TpF">
+                                                <rect key="frame" x="84" y="187" width="236" height="60"/>
+                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="7TS-6Q-hMg"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Ndc-BY-6Em" id="uhM-kX-rA0"/>
+                                                </connections>
+                                            </textView>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填，如：冲花边料，船板料" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wy1-x1-9bj">
+                                                <rect key="frame" x="85" y="38" width="235" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Xdz-iL-RSW"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="Ndc-BY-6Em" id="zK1-sT-AUi"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFL-uI-ClO">
+                                                <rect key="frame" x="84" y="254" width="236" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="选择交货地">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didPopupLocation:" destination="Ndc-BY-6Em" eventType="touchUpInside" id="iKZ-Pe-AYg"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSG-xx-PED" customClass="DLRadioButton">
-                                                <rect key="frame" x="198" y="8" width="80" height="30"/>
+                                                <rect key="frame" x="198" y="4" width="80" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="74M-wL-2rR"/>
                                                     <constraint firstAttribute="height" constant="30" id="Ood-Oz-tNm"/>
@@ -1945,175 +2114,6 @@
                                                     <action selector="didSPChanged:" destination="Ndc-BY-6Em" eventType="touchUpInside" id="J9T-15-dIV"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="采购" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiI-IN-YH8">
-                                                <rect key="frame" x="42" y="46" width="34" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="34" id="cFP-aF-iLq"/>
-                                                    <constraint firstAttribute="height" constant="21" id="q6k-5t-vBo"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总量" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5h4-Zz-UKF">
-                                                <rect key="frame" x="42" y="83" width="34" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="34" id="HuY-2h-0oZ"/>
-                                                    <constraint firstAttribute="height" constant="21" id="Ys7-NE-5j8"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系方式" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGi-gZ-Gmf">
-                                                <rect key="frame" x="8" y="120" width="68" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="UiX-Ai-GDX"/>
-                                                    <constraint firstAttribute="width" constant="68" id="pN0-IE-fyz"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="联系人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OsC-Ss-EZ1">
-                                                <rect key="frame" x="25" y="157" width="51" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="51" id="Fgq-UV-yPg"/>
-                                                    <constraint firstAttribute="height" constant="21" id="d6m-6W-XbO"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="产品描述" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C9X-Cu-1C7">
-                                                <rect key="frame" x="8" y="210" width="68" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="8m0-Ms-n2r"/>
-                                                    <constraint firstAttribute="width" constant="68" id="bxo-S9-Sre"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="交货地" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJE-vs-7Jy">
-                                                <rect key="frame" x="25" y="263" width="51" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="51" id="DWC-L5-Mur"/>
-                                                    <constraint firstAttribute="height" constant="21" id="NlX-DU-4eE"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提货方式" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9P-6Y-THa">
-                                                <rect key="frame" x="8" y="300" width="68" height="21"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="21" id="7Cy-si-F2w"/>
-                                                    <constraint firstAttribute="width" constant="68" id="yKP-Dq-smx"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="如：50吨" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4zW-fw-fPX">
-                                                <rect key="frame" x="84" y="79" width="236" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="can-ye-hLc"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="Ndc-BY-6Em" id="bdk-LD-ij8"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="如：15866666666" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONU-Cc-Wki">
-                                                <rect key="frame" x="84" y="116" width="236" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Lzh-3Y-2vD"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="Ndc-BY-6Em" id="NqA-vG-ugt"/>
-                                                </connections>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="如：张三" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-cC-dBw">
-                                                <rect key="frame" x="84" y="153" width="236" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="KmI-Nb-R9n"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="Ndc-BY-6Em" id="T8D-gu-ta0"/>
-                                                </connections>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gIM-DO-XHt" customClass="DLRadioButton">
-                                                <rect key="frame" x="103" y="296" width="60" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="iRG-6N-Shr"/>
-                                                    <constraint firstAttribute="width" constant="60" id="vv1-sU-w5Y"/>
-                                                </constraints>
-                                                <state key="normal" title="自提">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uNS-m1-9D6" customClass="DLRadioButton">
-                                                <rect key="frame" x="232" y="296" width="60" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="Ttm-9h-AZl"/>
-                                                    <constraint firstAttribute="height" constant="30" id="eMd-yp-eFu"/>
-                                                </constraints>
-                                                <state key="normal" title="发货">
-                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                                        <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJa-gr-TpF">
-                                                <rect key="frame" x="84" y="191" width="236" height="60"/>
-                                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="60" id="7TS-6Q-hMg"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="Ndc-BY-6Em" id="uhM-kX-rA0"/>
-                                                </connections>
-                                            </textView>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="如：冲花边料，船板料" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wy1-x1-9bj">
-                                                <rect key="frame" x="85" y="42" width="235" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="Xdz-iL-RSW"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="Ndc-BY-6Em" id="zK1-sT-AUi"/>
-                                                </connections>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFL-uI-ClO">
-                                                <rect key="frame" x="84" y="258" width="236" height="30"/>
-                                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <state key="normal" title="选择交货地">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="didPopupLocation:" destination="Ndc-BY-6Em" eventType="touchUpInside" id="iKZ-Pe-AYg"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -2129,7 +2129,7 @@
                                             <constraint firstItem="EGi-gZ-Gmf" firstAttribute="leading" secondItem="QcI-qB-C0d" secondAttribute="leading" constant="8" id="B1y-qI-en0"/>
                                             <constraint firstItem="iJE-vs-7Jy" firstAttribute="top" secondItem="C9X-Cu-1C7" secondAttribute="top" constant="53" id="Csk-3I-JVF"/>
                                             <constraint firstAttribute="trailing" secondItem="ONU-Cc-Wki" secondAttribute="trailing" constant="8" id="DKU-Gn-Rx9"/>
-                                            <constraint firstItem="NSG-xx-PED" firstAttribute="top" secondItem="QcI-qB-C0d" secondAttribute="top" constant="8" id="DZM-NZ-VeG"/>
+                                            <constraint firstItem="NSG-xx-PED" firstAttribute="top" secondItem="QcI-qB-C0d" secondAttribute="top" constant="4" id="DZM-NZ-VeG"/>
                                             <constraint firstItem="OsC-Ss-EZ1" firstAttribute="top" secondItem="C9X-Cu-1C7" secondAttribute="top" constant="-53" id="DkO-U1-aZk"/>
                                             <constraint firstItem="Wy1-x1-9bj" firstAttribute="top" secondItem="uiI-IN-YH8" secondAttribute="top" constant="-4" id="J3O-zF-Nhm"/>
                                             <constraint firstItem="OsC-Ss-EZ1" firstAttribute="leading" secondItem="4cB-cC-dBw" secondAttribute="leading" constant="-59" id="Lyi-t8-dPW"/>
@@ -2149,9 +2149,9 @@
                                             <constraint firstItem="xJa-gr-TpF" firstAttribute="leading" secondItem="C9X-Cu-1C7" secondAttribute="leading" constant="76" id="fFS-EQ-2J3"/>
                                             <constraint firstItem="uNS-m1-9D6" firstAttribute="baseline" secondItem="u9P-6Y-THa" secondAttribute="baseline" constant="1" id="fzB-g7-qNV"/>
                                             <constraint firstItem="xJa-gr-TpF" firstAttribute="top" secondItem="4cB-cC-dBw" secondAttribute="top" constant="38" id="jXB-As-wf6"/>
-                                            <constraint firstItem="u9P-6Y-THa" firstAttribute="top" secondItem="iJE-vs-7Jy" secondAttribute="top" constant="37" id="lKA-jK-toW"/>
+                                            <constraint firstItem="u9P-6Y-THa" firstAttribute="top" secondItem="iJE-vs-7Jy" secondAttribute="top" constant="38" id="lKA-jK-toW"/>
                                             <constraint firstAttribute="trailing" secondItem="4zW-fw-fPX" secondAttribute="trailing" constant="8" id="nKf-12-HLh"/>
-                                            <constraint firstItem="gpy-w4-lWu" firstAttribute="top" secondItem="QcI-qB-C0d" secondAttribute="top" constant="8" id="plz-WJ-poA"/>
+                                            <constraint firstItem="gpy-w4-lWu" firstAttribute="top" secondItem="QcI-qB-C0d" secondAttribute="top" constant="4" id="plz-WJ-poA"/>
                                             <constraint firstAttribute="trailing" secondItem="Wy1-x1-9bj" secondAttribute="trailing" constant="8" id="sTi-Ni-Iug"/>
                                             <constraint firstItem="EGi-gZ-Gmf" firstAttribute="top" secondItem="OsC-Ss-EZ1" secondAttribute="top" constant="-37" id="swX-wl-N0T"/>
                                             <constraint firstItem="5h4-Zz-UKF" firstAttribute="top" secondItem="uiI-IN-YH8" secondAttribute="top" constant="37" id="vAo-vm-Vfa"/>
@@ -2198,7 +2198,7 @@
                         <outlet property="txtChannelItemMobile" destination="ONU-Cc-Wki" id="Toy-gE-gZF"/>
                         <outlet property="txtChannelItemQty" destination="4zW-fw-fPX" id="tqF-fR-ZBp"/>
                         <outlet property="txtChannelItemSP" destination="Wy1-x1-9bj" id="fEC-U2-OhG"/>
-                        <outlet property="vChannelItemAddContent" destination="QcI-qB-C0d" id="atO-St-HtP"/>
+                        <outlet property="vChannelItemAddContent" destination="QcI-qB-C0d" id="nyQ-OG-w3p"/>
                         <outlet property="vChannelItemAddImage" destination="Les-Th-b6M" id="DPy-Ts-DbJ"/>
                     </connections>
                 </viewController>
