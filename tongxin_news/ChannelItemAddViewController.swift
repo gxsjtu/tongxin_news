@@ -56,7 +56,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         self.slideView.delay = 1
         self.slideView.transitionDuration = 3.0
         self.slideView.transitionType = KASlideShowTransitionType.Slide
-        self.slideView.imagesContentMode = UIViewContentMode.ScaleAspectFill
+        self.slideView.imagesContentMode = UIViewContentMode.ScaleToFill
         self.slideView.addGesture(KASlideShowGestureType.Tap)
     }
     
@@ -133,28 +133,14 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         self.dismissViewControllerAnimated(true, completion: nil)
         let gotImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        let midImage : UIImage = self.imageWithImageSimple(gotImage, scaledToSize: CGSizeMake(self.slideView.frame.width, self.slideView.frame.height))
         self.imageList.append(gotImage)
-        self.slideView.addImage(midImage)
+        self.slideView.addImage(gotImage)
         self.slideView.start()
-    }
-    
-    func imageWithImageSimple(image : UIImage, scaledToSize newSize : CGSize) -> UIImage
-    {
-        UIGraphicsBeginImageContext(newSize)
-        image.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
-        let newImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage
     }
     
     
     func uploadImage()
     {
-        if(self.imageList.count < 0)
-        {
-            
-        }
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         let uploadURL : String = EndPoints.ChannelUploadImg.rawValue
         let request = NSMutableURLRequest(URL: NSURL(string: uploadURL)!)

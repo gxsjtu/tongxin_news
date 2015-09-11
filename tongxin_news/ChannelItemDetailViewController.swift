@@ -33,7 +33,7 @@ class ChannelItemDetailViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.slideChannelItem.transitionDuration = 3.0
         self.slideChannelItem.transitionType = KASlideShowTransitionType.Slide
-        self.slideChannelItem.imagesContentMode = UIViewContentMode.ScaleAspectFill
+        self.slideChannelItem.imagesContentMode = UIViewContentMode.ScaleToFill
     }
 
     @IBAction func didRefreshChannelItems(sender: AnyObject) {
@@ -85,6 +85,7 @@ class ChannelItemDetailViewController: UIViewController {
                         self.txtChannelItemDesc.text = i["description"]!.stringValue
                         
                         self.slideChannelItem.images.removeAllObjects()
+                        var newSize : CGSize = CGSize(width: self.slideChannelItem.frame.width, height: self.slideChannelItem.frame.height)
                         for avatars in i["avatars"]!.arrayValue
                         {
                             if let avatar = avatars.dictionary
