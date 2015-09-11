@@ -35,6 +35,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     var imagesName : String?//图片名字
     var itemId : String?
     var addRes : String?
+    var isLocationEmpty = true
     @IBOutlet weak var navChannelItem: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +76,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
             let location = locationView.locate
             if buttonIndex == 0
             {
+                isLocationEmpty == false
                 locationView.hidden = true
                 self.stateStr = location.state
                 self.cityStr = location.city
@@ -232,13 +234,13 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
                 var result = res["result"].string!
                 if(result == "ok")
                 {
-                self.addRes = "YES"
-                self.itemId = res["id"].string!
-                let mainBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-                    let vc : ChannelItemDetailViewController = mainBoard.instantiateViewControllerWithIdentifier("ItemDetailView") as! ChannelItemDetailViewController
-                    vc.navTitle = self.navChannelItem.topItem!.title!
-                    vc.itemId = self.itemId!
-                    self.presentViewController(vc, animated: true, completion: nil)
+                    self.addRes = "YES"
+                    self.itemId = res["id"].string!
+                    let mainBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                        let vc : ChannelItemDetailViewController = mainBoard.instantiateViewControllerWithIdentifier("ItemDetailView") as! ChannelItemDetailViewController
+                        vc.navTitle = self.navChannelItem.topItem!.title!
+                        vc.itemId = self.itemId!
+                        self.presentViewController(vc, animated: true, completion: nil)
                 }
                 else
                 {
@@ -266,6 +268,12 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         {
             let alert = SKTipAlertView()
             alert.showRedNotificationForString("联系方式不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+            return
+        }
+        if isLocationEmpty == true
+        {
+            let alert = SKTipAlertView()
+            alert.showRedNotificationForString("发货地不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
             return
         }
         uploadImage()
