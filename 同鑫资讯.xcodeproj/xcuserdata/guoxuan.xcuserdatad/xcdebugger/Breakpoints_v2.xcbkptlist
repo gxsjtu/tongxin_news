@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tongxin_news/AppDelegate.swift"
-            timestampString = "463565525.025652"
+            timestampString = "463638417.039651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "application(_:didRegisterForRemoteNotificationsWithDeviceToken:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -112,6 +112,22 @@
             startingLineNumber = "24"
             endingLineNumber = "24"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tongxin_news/HomeTabBarViewController.swift"
+            timestampString = "463638392.402017"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

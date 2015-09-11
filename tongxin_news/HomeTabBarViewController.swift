@@ -24,7 +24,6 @@ class HomeTabBarViewController: UITabBarController {
     override func viewWillAppear(animated: Bool) {
         NSNotificationCenter.defaultCenter().postNotificationName("Badge", object: nil, userInfo: nil)
     }
-    
 
     /*
     // MARK: - Navigation
