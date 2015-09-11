@@ -77,7 +77,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         for var i = 0; i < deviceToken.length; i++ {
             tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
         }
-        println(tokenString)
         NSUserDefaults.standardUserDefaults().setObject(tokenString, forKey: "token")
     }
     
