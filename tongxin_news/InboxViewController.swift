@@ -98,11 +98,22 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             format.dateFormat = "yyyy-MM-dd HH:mm:ss"
             var msg : String = resInfos[indexPath.row].msg!
             var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
-            var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width - 10, height: 0))
-            lb.initAutoHeight(lb.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
-            var lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
-            lbDate.initAutoHeight(lbDate.frame, textColor: UIColor.yellowColor(), fontSize: 10, text: date, lineSpacing: 1)
-            return (lb.frame.height + lbDate.frame.height + 10)
+            if(self.resInfos[indexPath.row].url != nil && self.resInfos[indexPath.row].url != "")
+            {
+                var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width - 40, height: 0))
+                lb.initAutoHeight(lb.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
+                var lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
+                lbDate.initAutoHeight(lbDate.frame, textColor: UIColor.yellowColor(), fontSize: 10, text: date, lineSpacing: 1)
+                return (lb.frame.height + lbDate.frame.height + 10)
+            }
+            else
+            {
+                var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width - 10, height: 0))
+                lb.initAutoHeight(lb.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
+                var lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
+                lbDate.initAutoHeight(lbDate.frame, textColor: UIColor.yellowColor(), fontSize: 10, text: date, lineSpacing: 1)
+                return (lb.frame.height + lbDate.frame.height + 10)
+            }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -127,6 +138,34 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
 
             
+           
+            var lblUrl : UILabel = UILabel()
+            lblUrl.tag = 3
+            lblUrl.text = resInfos[indexPath.row].url
+            lblUrl.hidden = true
+            tbCell.addSubview(lblUrl)
+        
+        
+        if(resInfos[indexPath.row].url != nil && resInfos[indexPath.row].url != "")
+            {
+            tbCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            var lblMsg : UILabel = UILabel(frame: CGRect(x: 5, y: 2, width: (tbCell.frame.size.width-38), height: 0))
+            lblMsg.tag = 1
+            lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
+            lblMsg.numberOfLines = 0
+            lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
+            tbCell.addSubview(lblMsg)
+                var lblDate : UILabel = UILabel(frame: CGRect(x: 5, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
+                lblDate.tag = 2
+                lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
+                lblDate.numberOfLines = 0
+                lblDate.initAutoHeight(lblDate.frame, textColor: UIColor.orangeColor(), fontSize: 14, text: date, lineSpacing: 1)
+                tbCell.addSubview(lblDate)
+
+        }
+        else
+        {
+            tbCell.accessoryType = UITableViewCellAccessoryType.None
             var lblMsg : UILabel = UILabel(frame: CGRect(x: 5, y: 2, width: (tbCell.frame.size.width-8), height: 0))
             lblMsg.tag = 1
             lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -139,20 +178,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             lblDate.numberOfLines = 0
             lblDate.initAutoHeight(lblDate.frame, textColor: UIColor.orangeColor(), fontSize: 14, text: date, lineSpacing: 1)
             tbCell.addSubview(lblDate)
-            var lblUrl : UILabel = UILabel()
-            lblUrl.tag = 3
-            lblUrl.text = resInfos[indexPath.row].url
-            lblUrl.hidden = true
-            tbCell.addSubview(lblUrl)
-        
-        
-        if(resInfos[indexPath.row].url != nil && resInfos[indexPath.row].url != "")
-            {
-            tbCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-        }
-        else
-        {
-            tbCell.accessoryType = UITableViewCellAccessoryType.None
+
         }
         
             return tbCell
