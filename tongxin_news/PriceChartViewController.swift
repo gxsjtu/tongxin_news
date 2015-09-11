@@ -64,17 +64,21 @@ class PriceChartViewController: UIViewController, ChartDelegate {
         self.vChart.addSubview(chart)
         
         //添加constraints
-        let leading = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.LeadingMargin, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.LeadingMargin, multiplier: 1, constant: 0)
+        let leading = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
         
-        let traling = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.TrailingMargin, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.TrailingMargin, multiplier: 1, constant: 0)
+        let trailing = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
         
         let top = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         
         let bottom = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         
+        
+        self.vChart.addConstraint(leading)
+        self.vChart.addConstraint(trailing)
+        self.vChart.addConstraint(top)
+        self.vChart.addConstraint(bottom)
+        
         chart.setTranslatesAutoresizingMaskIntoConstraints(false)
-        NSLayoutConstraint.activateConstraints([leading, traling, top, bottom])
-
     }
 
     override func didReceiveMemoryWarning() {

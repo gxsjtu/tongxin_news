@@ -43,16 +43,19 @@ class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate
         vSelectionView.addSubview(selection)
         
         //添加constraints
-        let leading = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.LeadingMargin, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.LeadingMargin, multiplier: 1, constant: 0)
+        let leading = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
         
-        let traling = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.TrailingMargin, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.TrailingMargin, multiplier: 1, constant: 0)
+        let trailing = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
         
         let top = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         
         let bottom = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
         
+        self.vSelectionView.addConstraint(leading)
+        self.vSelectionView.addConstraint(trailing)
+        self.vSelectionView.addConstraint(top)
+        self.vSelectionView.addConstraint(bottom)
         selection.setTranslatesAutoresizingMaskIntoConstraints(false)
-        NSLayoutConstraint.activateConstraints([leading, traling, top, bottom])
         
         var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
         var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
