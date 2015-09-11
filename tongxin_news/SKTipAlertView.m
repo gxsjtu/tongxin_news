@@ -131,7 +131,7 @@ id sharedTipAlertView = nil;
 }
 
 -(void)handleHideTap:(UITapGestureRecognizer*)sender{
-    NSLog(@"handleHideTap %@",sender.view);
+//    NSLog(@"handleHideTap %@",sender.view);
     UIView *view = sender.view;
     if ([self.bottomArray indexOfObject:view] != NSNotFound) {
         [self.bottomArray removeObject:view];
@@ -143,7 +143,7 @@ id sharedTipAlertView = nil;
 }
 
 -(void)hideNotificationView:(NSTimer*)sender{
-    NSLog(@"hideNotificationView %@",sender.userInfo);
+//    NSLog(@"hideNotificationView %@",sender.userInfo);
     UIView *view = [sender.userInfo objectForKey:@"view"];
     NSString *positionString = [sender.userInfo objectForKey:@"position"];
     if ([positionString isEqualToString:@"bottom"]) {
@@ -173,7 +173,7 @@ id sharedTipAlertView = nil;
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(destroyView:) userInfo:userInfo repeats:NO];
 }
 -(void)destroyView:(NSTimer*)sender{
-    NSLog(@"destroyView %@",sender.userInfo); //just remove from windows so that arc will manage this
+//    NSLog(@"destroyView %@",sender.userInfo); //just remove from windows so that arc will manage this
     UIView *view = [sender.userInfo objectForKey:@"view"];
     [view removeFromSuperview];
 }
