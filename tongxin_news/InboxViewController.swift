@@ -310,6 +310,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 {
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                    self.tbData.footerEndRefreshing()
                 }
                 else if let dataList : NSArray = data! as? NSArray
                 {
@@ -375,6 +376,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     self.isLoadOK = "NO"
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                    self.tbData.headerEndRefreshing()
                 }
                 else if let dataList : NSArray = data! as? NSArray
                 {
