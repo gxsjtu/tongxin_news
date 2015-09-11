@@ -215,12 +215,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
 
                 self.msgInfos = []
                 self.resInfos = []
-            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getInboxMsg"]).responseJSON{
+            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getInboxMsg"]).responseJSON{
                 (request,response,data,error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error
                 {
-                    println(anError)
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
                 else if let dataList : NSArray = data! as? NSArray
                 {
@@ -302,12 +303,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 
                 self.nowDate = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
             }
-            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
+            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
                 (request,response,data,error) in
                 
                 if let anError = error
                 {
-                    println(anError)
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
                 else if let dataList : NSArray = data! as? NSArray
                 {
@@ -364,14 +366,15 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 
                 self.nowDate = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
             }
-            request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
+            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
                 (request,response,data,error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
                 if let anError = error
                 {
                     self.isLoadOK = "NO"
-                    println(anError)
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
                 else if let dataList : NSArray = data! as? NSArray
                 {
@@ -406,11 +409,12 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             //下拉成功 未读消息清零
             UIApplication.sharedApplication().applicationIconBadgeNumber = 0
             self.tabBarItem.badgeValue = nil
-            request(.GET,EndPoints.MessageInfo.rawValue,parameters:["mobile":self.mobile!,"method":"clearMessage"]).responseJSON{
+            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET,EndPoints.MessageInfo.rawValue,parameters:["mobile":self.mobile!,"method":"clearMessage"]).responseJSON{
                 (request,response, data, error) in
                 if let anError = error
                 {
-                    println(anError)
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
                 else if let res : AnyObject = data
                 {

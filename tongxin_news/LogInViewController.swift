@@ -74,12 +74,13 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         }
         
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile, "password": password, "method": "signin", "token": token!,])
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile, "password": password, "method": "signin", "token": token!,])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error
                 {
-                    println(anError)
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
                 else if let data: AnyObject = data
                 {

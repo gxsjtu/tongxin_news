@@ -54,7 +54,7 @@ class EcosystemViewController: UIViewController {
     func getChannels()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.Channel.rawValue, parameters: ["method": "getchannel"])
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.Channel.rawValue, parameters: ["method": "getchannel"])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error

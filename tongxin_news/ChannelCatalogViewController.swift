@@ -72,7 +72,7 @@ class ChannelCatalogViewController: UIViewController, UITableViewDelegate, UITab
     func getChannelCatalog()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.Channel.rawValue, parameters: ["method": "getcatalog", "channelId": channelId])
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.Channel.rawValue, parameters: ["method": "getcatalog", "channelId": channelId])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error

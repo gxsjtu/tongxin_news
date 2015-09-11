@@ -79,7 +79,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     func getProductHierarchy()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.GetProductHierarchy.rawValue, parameters: ["method": "getmarkets"])
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetProductHierarchy.rawValue, parameters: ["method": "getmarkets"])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 

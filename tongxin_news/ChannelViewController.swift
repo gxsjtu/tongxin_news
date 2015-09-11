@@ -68,7 +68,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
     func getSPList()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.SPList.rawValue, parameters: ["method": "getsupply", "channel": channelId])
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SPList.rawValue, parameters: ["method": "getsupply", "channel": channelId])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error

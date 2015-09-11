@@ -96,7 +96,7 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
     func getComments()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getproducts", "marketId": marketId, "mobile": mobile])
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getproducts", "marketId": marketId, "mobile": mobile])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error

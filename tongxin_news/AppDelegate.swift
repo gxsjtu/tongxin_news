@@ -12,12 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var manager: Manager?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
 //        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound |
 //            UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
+        
+        let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        manager = Manager(configuration: configuration)
 
         var systemVesion : NSString = UIDevice.currentDevice().systemVersion
         if systemVesion.doubleValue < 8.0{

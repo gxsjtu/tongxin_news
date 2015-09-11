@@ -63,7 +63,7 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
     func getPriceHistory()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.GetPrices.rawValue, parameters: ["method": "getHistoryPrices", "productId": productId, "start": txtPriceHistoryStart.text, "end": txtPriceHistoryEnd.text])
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetPrices.rawValue, parameters: ["method": "getHistoryPrices", "productId": productId, "start": txtPriceHistoryStart.text, "end": txtPriceHistoryEnd.text])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error

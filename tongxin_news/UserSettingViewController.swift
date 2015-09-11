@@ -51,12 +51,13 @@ class UserSettingViewController : UIViewController
         {
             var mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
             let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            request(.GET, EndPoints.UserSet.rawValue, parameters:["mobile":mobile!,"method":"getUserInfo"])
+            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.UserSet.rawValue, parameters:["mobile":mobile!,"method":"getUserInfo"])
                 .responseJSON { (request,response,data,error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error
                 {
-                    println(anError)
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
                 else if let data: AnyObject = data
                 {

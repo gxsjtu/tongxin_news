@@ -95,7 +95,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     func getProducts()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        request(.GET, EndPoints.GetPrices.rawValue, parameters: ["mobile": mobile, "marketId": marketId, "method": "getPrices"])
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetPrices.rawValue, parameters: ["mobile": mobile, "marketId": marketId, "method": "getPrices"])
             .responseJSON { (request, response, data, error) in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 if let anError = error

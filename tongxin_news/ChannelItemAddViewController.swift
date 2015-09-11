@@ -220,12 +220,13 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
             sOro = "1"
         }
         
-        request(.GET,EndPoints.SPList.rawValue,parameters:["method":"create","catalogID":cId,"product":self.txtChannelItemSP.text,"quantity":self.txtChannelItemQty.text,"mobile":self.txtChannelItemMobile.text,"contact":self.txtChannelItemContact.text,"description":self.txtChannelItemDesc.text,"deliveryType":sOro!,"type":sOrP!,"province":self.stateStr!,"city":self.cityStr!,"images":images!]).responseJSON{
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET,EndPoints.SPList.rawValue,parameters:["method":"create","catalogID":cId,"product":self.txtChannelItemSP.text,"quantity":self.txtChannelItemQty.text,"mobile":self.txtChannelItemMobile.text,"contact":self.txtChannelItemContact.text,"description":self.txtChannelItemDesc.text,"deliveryType":sOro!,"type":sOrP!,"province":self.stateStr!,"city":self.cityStr!,"images":images!]).responseJSON{
             (request,response,data,error) in
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             if let hasError = error
             {
-                println(hasError)
+                let alert = SKTipAlertView()
+                alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 self.addRes = "NO"
             }
             else if let dataRes : AnyObject = data
