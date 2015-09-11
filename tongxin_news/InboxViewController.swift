@@ -139,7 +139,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             tbCell.addSubview(lblUrl)
         
         
-        if(resInfos[indexPath.row].url != nil)
+        if(resInfos[indexPath.row].url != nil && resInfos[indexPath.row].url != "")
             {
             tbCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         }
@@ -173,7 +173,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         {
             if let cell = sender as? UITableViewCell
                 {
-                    if((cell.viewWithTag(3) as! UILabel).text == nil)
+                    if((cell.viewWithTag(3) as! UILabel).text == nil || (cell.viewWithTag(3) as! UILabel).text == "")
                     {
                         return false
                     }
