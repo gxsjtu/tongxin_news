@@ -49,7 +49,14 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     {
         if notification.userInfo == nil
         {
-            self.tabBarItem.badgeValue = String(UIApplication.sharedApplication().applicationIconBadgeNumber)
+            if UIApplication.sharedApplication().applicationIconBadgeNumber == 0
+            {
+                self.tabBarItem.badgeValue = nil
+            }
+            else
+            {
+                self.tabBarItem.badgeValue = String(UIApplication.sharedApplication().applicationIconBadgeNumber)
+            }
         }
         else
         {
