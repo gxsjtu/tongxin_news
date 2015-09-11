@@ -47,10 +47,17 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     
     func updateBadgeNumber(notification: NSNotification)
     {
-        if let aps: AnyObject = notification.userInfo?["aps"] {
-            if let apsDict = aps as? [String : AnyObject]{
-                if let badge: AnyObject = apsDict["badge"] {
-                    self.tabBarItem.badgeValue = String(badge as! Int)
+        if notification.userInfo == nil
+        {
+            self.tabBarItem.badgeValue = String(UIApplication.sharedApplication().applicationIconBadgeNumber)
+        }
+        else
+        {
+            if let aps: AnyObject = notification.userInfo?["aps"] {
+                if let apsDict = aps as? [String : AnyObject]{
+                    if let badge: AnyObject = apsDict["badge"] {
+                        self.tabBarItem.badgeValue = String(badge as! Int)
+                    }
                 }
             }
         }
