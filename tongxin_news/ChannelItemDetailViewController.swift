@@ -85,6 +85,7 @@ class ChannelItemDetailViewController: UIViewController {
                         self.txtChannelItemDesc.text = i["description"]!.stringValue
                         
                         self.slideChannelItem.images.removeAllObjects()
+                        var newSize : CGSize = CGSize(width: self.slideChannelItem.frame.width, height: self.slideChannelItem.frame.height)
                         for avatars in i["avatars"]!.arrayValue
                         {
                             if let avatar = avatars.dictionary
@@ -93,7 +94,11 @@ class ChannelItemDetailViewController: UIViewController {
                                 SDWebImageDownloader.sharedDownloader().downloadImageWithURL(NSURL(string: avatar["avatar"]!.stringValue), options: SDWebImageDownloaderOptions.allZeros, progress: nil, completed: { (image: UIImage!, data: NSData!, error: NSError!, finished: Bool) -> Void in
                                     if finished == true
                                     {
-                                        self.slideChannelItem.addImage(image)
+                                        UIGraphicsBeginImageContext(newSize)
+                                        image.drawInRect(CGRectMake(0, 0, newSize.width, newSize.height))
+                                        let newImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+                                        UIGraphicsEndImageContext()
+                                        self.slideChannelItem.addImage(newImage)
                                         MBProgressHUD.hideAllHUDsForView(self.slideChannelItem, animated: true)
                                         self.slideChannelItem.start()
                                     }})

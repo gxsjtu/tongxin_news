@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tongxin_news/ChannelItemDetailViewController.swift"
-            timestampString = "463540994.88827"
+            timestampString = "463648597.969714"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "getChannelItemDetail()"
             landmarkType = "5">
          </BreakpointContent>
@@ -143,7 +143,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
             endingLineNumber = "159"
-            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -193,6 +193,54 @@
             endingLineNumber = "136"
             landmarkName = "tableView(_:cellForRowAtIndexPath:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tongxin_news/ChannelItemDetailViewController.swift"
+            timestampString = "463648597.969714"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "getChannelItemDetail()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x540c;&#x946b;&#x8d44;&#x8baf;.ChannelItemDetailViewController.(getChannelItemDetail (&#x540c;&#x946b;&#x8d44;&#x8baf;.ChannelItemDetailViewController) -&gt; () -&gt; ()).(closure #1)"
+                  moduleName = "&#x540c;&#x946b;&#x8d44;&#x8baf;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shyr/Desktop/tongxin_news/tongxin_news/ChannelItemDetailViewController.swift"
+                  timestampString = "463647806.455299"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "13651">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "&#x540c;&#x946b;&#x8d44;&#x8baf;.ChannelItemDetailViewController.(getChannelItemDetail (&#x540c;&#x946b;&#x8d44;&#x8baf;.ChannelItemDetailViewController) -&gt; () -&gt; ()).(closure #1)"
+                  moduleName = "&#x540c;&#x946b;&#x8d44;&#x8baf;"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/shyr/Desktop/tongxin_news/tongxin_news/ChannelItemDetailViewController.swift"
+                  timestampString = "463647806.455556"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "103"
+                  endingLineNumber = "103"
+                  offsetFromSymbolStart = "13663">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
