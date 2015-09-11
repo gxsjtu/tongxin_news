@@ -45,7 +45,7 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
         
         let cell = tableView.dequeueReusableCellWithIdentifier("CommentDetailCell", forIndexPath: indexPath) as! CommentDetailVCTableViewCell
         cell.lblCommentDetailTitle.preferredMaxLayoutWidth = cell.lblCommentDetailTitle.frame.width
-        cell.imgCommentDetailLogo.sd_setImageWithURL(NSURL(string: products[indexPath.row].0))
+        cell.imgCommentDetailLogo.sd_setImageWithURL(NSURL(string: products[indexPath.row].0), placeholderImage: UIImage(named: "index"))
         cell.lblCommentDetailDate.text = products[indexPath.row].3
         cell.lblCommentDetailTitle.text = products[indexPath.row].2
         cell.lblCommentDetailName.text = products[indexPath.row].5

@@ -84,6 +84,7 @@ class ChannelItemDetailViewController: UIViewController {
                         self.lblChannelItemQty.text = i["quantity"]!.stringValue
                         self.txtChannelItemDesc.text = i["description"]!.stringValue
                         
+                        self.slideChannelItem.images.removeAllObjects()
                         for avatars in i["avatars"]!.arrayValue
                         {
                             if let avatar = avatars.dictionary
