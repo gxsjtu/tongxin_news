@@ -23,7 +23,7 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
     var navTitle = "未知"
     var productId = ""
     var end = NSDate()
-    var start = NSDate().dateByAddingTimeInterval(-24*60*60*7)
+    var start = NSDate().dateByAddingTimeInterval(-24 * 60 * 60 * PriceChartInterval)
     let formatter = NSDateFormatter()
     
     //low, high, date, change
