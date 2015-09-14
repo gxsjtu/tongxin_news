@@ -10,6 +10,9 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var navInbox: UINavigationBar!
     @IBOutlet weak var tbData: UITableView!
     
+    @IBAction func didInboxRefresh(sender: AnyObject) {
+        initLoadDatas()
+    }
     var msgInfos : Array<MsgInfo> = []
     var resInfos : Array<MsgInfo> = []
     var segmentindex : Int = 0
@@ -29,7 +32,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
 //    var minDateForCom : NSDate?
     override func viewDidLoad() {
         super.viewDidLoad()
-         initLoadDatas()
+        initLoadDatas()
         self.navInbox.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.tbData.dataSource = self
         self.tbData.delegate = self
