@@ -200,10 +200,10 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         
         if self.rbSelf.selected
         {
-            sOro = "0"
+            sOro = "1"
         }else if self.rbOther.selected
         {
-            sOro = "1"
+            sOro = "0"
         }
         
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET,EndPoints.SPList.rawValue,parameters:["method":"create","catalogID":cId,"product":self.txtChannelItemSP.text,"quantity":self.txtChannelItemQty.text,"mobile":self.txtChannelItemMobile.text,"contact":self.txtChannelItemContact.text,"description":self.txtChannelItemDesc.text,"deliveryType":sOro!,"type":sOrP!,"province":self.stateStr!,"city":self.cityStr!,"images":images!]).responseJSON{
