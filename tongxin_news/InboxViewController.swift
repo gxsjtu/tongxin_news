@@ -218,6 +218,22 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         return true
     }
     
+    func tableView(tableView: UITableView, shouldShowMenuForRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, canPerformAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject) -> Bool {
+        if (action == Selector("copy:")) {
+            return true
+        }
+        return false
+    }
+    
+    func tableView(tableView: UITableView, performAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject!){
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        UIPasteboard.generalPasteboard().string = (cell!.viewWithTag(1) as! UILabel).text
+    }
+    
     @IBAction func unwindFromComment2Inbox(segue: UIStoryboardSegue)
     {
     
