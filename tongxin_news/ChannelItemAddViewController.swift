@@ -76,7 +76,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
             let location = locationView.locate
             if buttonIndex == 0
             {
-                isLocationEmpty == false
+                isLocationEmpty = false
                 locationView.hidden = true
                 self.stateStr = location.state
                 self.cityStr = location.city
