@@ -10,6 +10,9 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var navInbox: UINavigationBar!
     @IBOutlet weak var tbData: UITableView!
     
+    @IBAction func didInboxRefresh(sender: AnyObject) {
+        initLoadDatas()
+    }
     var msgInfos : Array<MsgInfo> = []
     var resInfos : Array<MsgInfo> = []
     var segmentindex : Int = 0
@@ -29,7 +32,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
 //    var minDateForCom : NSDate?
     override func viewDidLoad() {
         super.viewDidLoad()
-         initLoadDatas()
+        initLoadDatas()
         self.navInbox.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.tbData.dataSource = self
         self.tbData.delegate = self
@@ -149,13 +152,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         if(resInfos[indexPath.row].url != nil && resInfos[indexPath.row].url != "")
             {
             tbCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-            var lblMsg : UILabel = UILabel(frame: CGRect(x: 5, y: 2, width: (tbCell.frame.size.width-38), height: 0))
+            var lblMsg : UILabel = UILabel(frame: CGRect(x: 10, y: 2, width: (tbCell.frame.size.width-38), height: 0))
             lblMsg.tag = 1
             lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblMsg.numberOfLines = 0
             lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
             tbCell.addSubview(lblMsg)
-                var lblDate : UILabel = UILabel(frame: CGRect(x: 5, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
+                var lblDate : UILabel = UILabel(frame: CGRect(x: 10, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
                 lblDate.tag = 2
                 lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
                 lblDate.numberOfLines = 0
@@ -166,13 +169,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         else
         {
             tbCell.accessoryType = UITableViewCellAccessoryType.None
-            var lblMsg : UILabel = UILabel(frame: CGRect(x: 5, y: 2, width: (tbCell.frame.size.width-8), height: 0))
+            var lblMsg : UILabel = UILabel(frame: CGRect(x: 10, y: 2, width: (tbCell.frame.size.width-8), height: 0))
             lblMsg.tag = 1
             lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblMsg.numberOfLines = 0
             lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
             tbCell.addSubview(lblMsg)
-            var lblDate : UILabel = UILabel(frame: CGRect(x: 5, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
+            var lblDate : UILabel = UILabel(frame: CGRect(x: 10, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
             lblDate.tag = 2
             lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblDate.numberOfLines = 0
@@ -213,6 +216,22 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 }
         }
         return true
+    }
+    
+    func tableView(tableView: UITableView, shouldShowMenuForRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, canPerformAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject) -> Bool {
+        if (action == Selector("copy:")) {
+            return true
+        }
+        return false
+    }
+    
+    func tableView(tableView: UITableView, performAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject!){
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        UIPasteboard.generalPasteboard().string = (cell!.viewWithTag(1) as! UILabel).text
     }
     
     @IBAction func unwindFromComment2Inbox(segue: UIStoryboardSegue)
