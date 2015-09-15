@@ -152,13 +152,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         if(resInfos[indexPath.row].url != nil && resInfos[indexPath.row].url != "")
             {
             tbCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-            var lblMsg : UILabel = UILabel(frame: CGRect(x: 5, y: 2, width: (tbCell.frame.size.width-38), height: 0))
+            var lblMsg : UILabel = UILabel(frame: CGRect(x: 10, y: 2, width: (tbCell.frame.size.width-38), height: 0))
             lblMsg.tag = 1
             lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblMsg.numberOfLines = 0
             lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
             tbCell.addSubview(lblMsg)
-                var lblDate : UILabel = UILabel(frame: CGRect(x: 5, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
+                var lblDate : UILabel = UILabel(frame: CGRect(x: 10, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
                 lblDate.tag = 2
                 lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
                 lblDate.numberOfLines = 0
@@ -169,13 +169,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         else
         {
             tbCell.accessoryType = UITableViewCellAccessoryType.None
-            var lblMsg : UILabel = UILabel(frame: CGRect(x: 5, y: 2, width: (tbCell.frame.size.width-8), height: 0))
+            var lblMsg : UILabel = UILabel(frame: CGRect(x: 10, y: 2, width: (tbCell.frame.size.width-8), height: 0))
             lblMsg.tag = 1
             lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblMsg.numberOfLines = 0
             lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
             tbCell.addSubview(lblMsg)
-            var lblDate : UILabel = UILabel(frame: CGRect(x: 5, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
+            var lblDate : UILabel = UILabel(frame: CGRect(x: 10, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
             lblDate.tag = 2
             lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblDate.numberOfLines = 0
