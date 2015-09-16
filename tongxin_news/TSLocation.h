@@ -5,10 +5,8 @@
 //  Created by ShawnMa on 12/27/11.
 //  Copyright (c) 2011 TelenavSoftware, Inc. All rights reserved.
 //
-
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import <Foundation/Foundation.h>
 @interface TSLocation : NSObject
 
 @property (copy, nonatomic) NSString *country;

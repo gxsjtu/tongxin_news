@@ -61,8 +61,8 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     }
     
     @IBAction func didPopupLocation(sender: AnyObject) {
-        
-        let location = TSLocateView(title: "选择发货地", delegate: self)
+        let location: TSLocateView = TSLocateView(title: "选择发货地", delegate: self)
+        location.frame.size = CGSizeMake(self.view.frame.width, 260)
         location.backgroundColor = UIColor(red: 36/255, green: 124/255, blue: 151/255, alpha: 1)
         location.titleLabel.frame = CGRectMake(0, 0, self.view.frame.width, 40)
         location.titleLabel.textColor = UIColor.whiteColor()
@@ -77,7 +77,6 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
             if buttonIndex == 0
             {
                 isLocationEmpty = false
-                locationView.hidden = true
                 self.stateStr = location.state
                 self.cityStr = location.city
                 btnChannelItemLocation.setTitle(location.state + location.city, forState: UIControlState.Normal)
