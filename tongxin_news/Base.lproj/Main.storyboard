@@ -1180,7 +1180,7 @@
                     <connections>
                         <outlet property="navEco" destination="G9C-9L-YHu" id="aFo-jj-yaf"/>
                         <outlet property="vEcoChannels" destination="EnZ-Ni-fGA" id="aR2-Ax-v2S"/>
-                        <segue destination="pk3-pF-bah" kind="modal" id="iAn-Dq-xel"/>
+                        <segue destination="pk3-pF-bah" kind="modal" identifier="Channel2List" id="iAn-Dq-xel"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaD-39-NmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1394,7 +1394,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pLq-FZ-ZSx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Pco-gh-28J" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="171" y="1648"/>
+            <point key="canvasLocation" x="152" y="1983"/>
         </scene>
         <!--Comment Content View Controller-->
         <scene sceneID="Dck-5d-kFQ">
