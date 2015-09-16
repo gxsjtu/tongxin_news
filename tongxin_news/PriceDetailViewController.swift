@@ -79,7 +79,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
             }
             else
             {
-                cell.lblPriceDetailChange.textColor = UIColor.greenColor()
+                cell.lblPriceDetailChange.textColor = UIColor(red: 35/255, green: 124/255, blue: 2/255, alpha: 1.0)
                 cell.lblPriceDetailChange.text = "跌 " + String(stringInterpolationSegment: -change)
             }
             
