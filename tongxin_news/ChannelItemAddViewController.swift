@@ -50,6 +50,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         rbSelf.otherButtons = [rbOther]
         rbSelf.selected = true
         btnAddImage.backgroundColor = UIColor(red: 68/255, green: 73/255, blue: 75/255, alpha: 0.6)
+        btnChannelItemLocation.backgroundColor = UIColor(red: 36/255, green: 124/255, blue: 151/255, alpha: 1)
         
         self.btnAddImage.addTarget(self, action: "addImage", forControlEvents: UIControlEvents.TouchUpInside)
         self.slideView.delegate = self

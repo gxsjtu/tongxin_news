@@ -44,6 +44,14 @@ class ChannelCatalogViewController: UIViewController, UITableViewDelegate, UITab
         cell.lblChannelCatalogName.text = catalogs[indexPath.row].1
         cell.lblChannelCatalogDesc.text = catalogs[indexPath.row].2
         cell.lblChannelCatalogId.text = catalogs[indexPath.row].0
+        
+        let cellSelectionView = UIView()
+        cellSelectionView.backgroundColor = UIColor(red: 180/255, green: 138/255, blue: 171/255, alpha: 0.5)
+        cellSelectionView.layer.cornerRadius = 10.0
+        cell.selectedBackgroundView = cellSelectionView
+        cell.lblChannelCatalogDesc.highlightedTextColor = UIColor.blackColor()
+        cell.lblChannelCatalogName.highlightedTextColor = UIColor.blackColor()
+        
         return cell
     }
 
