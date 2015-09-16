@@ -40,6 +40,13 @@ class ChannelItemDetailViewController: UIViewController {
         getChannelItemDetail()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "unwindFromDetail2List"
+        {
+            self.slideChannelItem.stop()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
