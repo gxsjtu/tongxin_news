@@ -103,7 +103,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
             if(self.resInfos[indexPath.row].url != nil && self.resInfos[indexPath.row].url != "")
             {
-                var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width - 40, height: 0))
+                var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 40, height: 0))
                 lb.initAutoHeight(lb.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
                 var lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
                 lbDate.initAutoHeight(lbDate.frame, textColor: UIColor.yellowColor(), fontSize: 10, text: date, lineSpacing: 1)
@@ -242,7 +242,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     func initLoadDatas()
     {
         var isLogined : String? = NSUserDefaults.standardUserDefaults().stringForKey("isLoggedIn")
-        
+        NSUserDefaults.standardUserDefaults().setObject("15802161396", forKey: "mobile")
         if(isLogined != "yes")
         {
             //转向login页面
