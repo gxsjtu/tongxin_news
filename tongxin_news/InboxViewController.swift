@@ -242,7 +242,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     func initLoadDatas()
     {
         var isLogined : String? = NSUserDefaults.standardUserDefaults().stringForKey("isLoggedIn")
-        NSUserDefaults.standardUserDefaults().setObject("15802161396", forKey: "mobile")
         if(isLogined != "yes")
         {
             //转向login页面
