@@ -50,6 +50,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         rbSelf.otherButtons = [rbOther]
         rbSelf.selected = true
         btnAddImage.backgroundColor = UIColor(red: 68/255, green: 73/255, blue: 75/255, alpha: 0.6)
+        btnChannelItemLocation.backgroundColor = UIColor(red: 36/255, green: 124/255, blue: 151/255, alpha: 1)
         
         self.btnAddImage.addTarget(self, action: "addImage", forControlEvents: UIControlEvents.TouchUpInside)
         self.slideView.delegate = self
@@ -61,8 +62,8 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     }
     
     @IBAction func didPopupLocation(sender: AnyObject) {
-        
-        let location = TSLocateView(title: "选择发货地", delegate: self)
+        let location: TSLocateView = TSLocateView(title: "选择发货地", delegate: self)
+        location.frame.size = CGSizeMake(self.view.frame.width, 260)
         location.backgroundColor = UIColor(red: 36/255, green: 124/255, blue: 151/255, alpha: 1)
         location.titleLabel.frame = CGRectMake(0, 0, self.view.frame.width, 40)
         location.titleLabel.textColor = UIColor.whiteColor()
@@ -77,7 +78,6 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
             if buttonIndex == 0
             {
                 isLocationEmpty = false
-                locationView.hidden = true
                 self.stateStr = location.state
                 self.cityStr = location.city
                 btnChannelItemLocation.setTitle(location.state + location.city, forState: UIControlState.Normal)
@@ -223,6 +223,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
                 {
                     self.addRes = "YES"
                     self.itemId = res["id"].string!
+                    self.slideView.stop()
                     let mainBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
                         let vc : ChannelItemDetailViewController = mainBoard.instantiateViewControllerWithIdentifier("ItemDetailView") as! ChannelItemDetailViewController
                         vc.navTitle = self.navChannelItem.topItem!.title!

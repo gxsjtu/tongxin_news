@@ -40,9 +40,6 @@
 		3587005C1B9D776800B09351 /* ChannelItemAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */; };
 		358700701B9D8C3C00B09351 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3587006F1B9D8C3C00B09351 /* DLRadioButton.m */; };
 		358700781B9E78BC00B09351 /* ProvincesAndCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 358700721B9E78BC00B09351 /* ProvincesAndCities.plist */; };
-		358700791B9E78BC00B09351 /* TSLocateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 358700741B9E78BC00B09351 /* TSLocateView.m */; };
-		3587007A1B9E78BC00B09351 /* TSLocateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 358700751B9E78BC00B09351 /* TSLocateView.xib */; };
-		3587007B1B9E78BC00B09351 /* TSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 358700771B9E78BC00B09351 /* TSLocation.m */; };
 		3587007F1B9EA4A000B09351 /* KASlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3587007E1B9EA4A000B09351 /* KASlideShow.m */; };
 		358700811B9EBCD100B09351 /* ChannelVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358700801B9EBCD100B09351 /* ChannelVCTableViewCell.swift */; };
 		358700831B9FE86200B09351 /* ChannelItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358700821B9FE86200B09351 /* ChannelItemDetailViewController.swift */; };
@@ -85,6 +82,9 @@
 		35C712911B86CC5D004B267A /* HTHorizontalSelectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7128B1B86CC5D004B267A /* HTHorizontalSelectionList.m */; };
 		35C712921B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7128E1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m */; };
 		35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */; };
+		35DC5E631BA94F700000FA22 /* TSLocateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DC5E5F1BA94F700000FA22 /* TSLocateView.m */; };
+		35DC5E641BA94F700000FA22 /* TSLocateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DC5E601BA94F700000FA22 /* TSLocateView.xib */; };
+		35DC5E651BA94F700000FA22 /* TSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DC5E621BA94F700000FA22 /* TSLocation.m */; };
 		35E3E8521BA6B3BC0009E8DD /* FuturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3E8511BA6B3BC0009E8DD /* FuturesViewController.swift */; };
 		35E3E8541BA6C3750009E8DD /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E3E8531BA6C3750009E8DD /* Parameter.swift */; };
 /* End PBXBuildFile section */
@@ -143,11 +143,6 @@
 		3587006E1B9D8C3C00B09351 /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		3587006F1B9D8C3C00B09351 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
 		358700721B9E78BC00B09351 /* ProvincesAndCities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ProvincesAndCities.plist; sourceTree = "<group>"; };
-		358700731B9E78BC00B09351 /* TSLocateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLocateView.h; sourceTree = "<group>"; };
-		358700741B9E78BC00B09351 /* TSLocateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocateView.m; sourceTree = "<group>"; };
-		358700751B9E78BC00B09351 /* TSLocateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSLocateView.xib; sourceTree = "<group>"; };
-		358700761B9E78BC00B09351 /* TSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLocation.h; sourceTree = "<group>"; };
-		358700771B9E78BC00B09351 /* TSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocation.m; sourceTree = "<group>"; };
 		3587007D1B9EA4A000B09351 /* KASlideShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KASlideShow.h; sourceTree = "<group>"; };
 		3587007E1B9EA4A000B09351 /* KASlideShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KASlideShow.m; sourceTree = "<group>"; };
 		358700801B9EBCD100B09351 /* ChannelVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelVCTableViewCell.swift; sourceTree = "<group>"; };
@@ -209,6 +204,11 @@
 		35C7128E1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListCustomViewCell.m; sourceTree = "<group>"; };
 		35C7128F1B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionListLabelCell.h; sourceTree = "<group>"; };
 		35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListLabelCell.m; sourceTree = "<group>"; };
+		35DC5E5E1BA94F700000FA22 /* TSLocateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLocateView.h; sourceTree = "<group>"; };
+		35DC5E5F1BA94F700000FA22 /* TSLocateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocateView.m; sourceTree = "<group>"; };
+		35DC5E601BA94F700000FA22 /* TSLocateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSLocateView.xib; sourceTree = "<group>"; };
+		35DC5E611BA94F700000FA22 /* TSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLocation.h; sourceTree = "<group>"; };
+		35DC5E621BA94F700000FA22 /* TSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocation.m; sourceTree = "<group>"; };
 		35E3E8511BA6B3BC0009E8DD /* FuturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuturesViewController.swift; sourceTree = "<group>"; };
 		35E3E8531BA6C3750009E8DD /* Parameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -304,12 +304,12 @@
 		358700711B9E78AA00B09351 /* TSLocateView */ = {
 			isa = PBXGroup;
 			children = (
+				35DC5E5E1BA94F700000FA22 /* TSLocateView.h */,
+				35DC5E5F1BA94F700000FA22 /* TSLocateView.m */,
+				35DC5E601BA94F700000FA22 /* TSLocateView.xib */,
+				35DC5E611BA94F700000FA22 /* TSLocation.h */,
+				35DC5E621BA94F700000FA22 /* TSLocation.m */,
 				358700721B9E78BC00B09351 /* ProvincesAndCities.plist */,
-				358700731B9E78BC00B09351 /* TSLocateView.h */,
-				358700741B9E78BC00B09351 /* TSLocateView.m */,
-				358700751B9E78BC00B09351 /* TSLocateView.xib */,
-				358700761B9E78BC00B09351 /* TSLocation.h */,
-				358700771B9E78BC00B09351 /* TSLocation.m */,
 			);
 			name = TSLocateView;
 			sourceTree = "<group>";
@@ -545,7 +545,7 @@
 				35C7121F1B8595B3004B267A /* Images.xcassets in Resources */,
 				35B2783E1B8D94AB00FA2399 /* Main.storyboard in Resources */,
 				358700781B9E78BC00B09351 /* ProvincesAndCities.plist in Resources */,
-				3587007A1B9E78BC00B09351 /* TSLocateView.xib in Resources */,
+				35DC5E641BA94F700000FA22 /* TSLocateView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +562,8 @@
 				35AC87601B8AB2F800B44C7E /* UserSettingViewController.swift in Sources */,
 				35C7127D1B86B008004B267A /* EndPoints.swift in Sources */,
 				35B278621B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift in Sources */,
+				35DC5E631BA94F700000FA22 /* TSLocateView.m in Sources */,
+				35DC5E651BA94F700000FA22 /* TSLocation.m in Sources */,
 				3587007F1B9EA4A000B09351 /* KASlideShow.m in Sources */,
 				35E3E8521BA6B3BC0009E8DD /* FuturesViewController.swift in Sources */,
 				35C712821B86B126004B267A /* HomeTabBarViewController.swift in Sources */,
@@ -587,7 +589,6 @@
 				3515CB221B94367200EC54D7 /* ChartColors.swift in Sources */,
 				35C7127A1B86AFA5004B267A /* Upload.swift in Sources */,
 				3515CB4A1B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift in Sources */,
-				358700791B9E78BC00B09351 /* TSLocateView.m in Sources */,
 				35C712731B86AFA5004B267A /* Download.swift in Sources */,
 				356803951BA0304600BB50AE /* UIImage+GIF.m in Sources */,
 				35C712741B86AFA5004B267A /* Manager.swift in Sources */,
@@ -617,7 +618,6 @@
 				35B278471B8D952100FA2399 /* CommentVCTableViewCell.swift in Sources */,
 				35C712781B86AFA5004B267A /* ResponseSerialization.swift in Sources */,
 				35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */,
-				3587007B1B9E78BC00B09351 /* TSLocation.m in Sources */,
 				35C712181B8595B3004B267A /* AppDelegate.swift in Sources */,
 				35E3E8541BA6C3750009E8DD /* Parameter.swift in Sources */,
 				3515CB481B9D62AA00EC54D7 /* ChannelCatalogViewController.swift in Sources */,

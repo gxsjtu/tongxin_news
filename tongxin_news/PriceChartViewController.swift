@@ -55,7 +55,7 @@ class PriceChartViewController: UIViewController, ChartDelegate {
         chart.xLabelsFormatter = {(labelIndex: Int, labelValue: Float) -> String in
             return ""}
         let series0 = ChartSeries(low)
-        series0.color = UIColor.greenColor()
+        series0.color = UIColor(red: 35/255, green: 124/255, blue: 2/255, alpha: 1.0)
         chart.addSeries(series0)
         let series1 = ChartSeries(high)
         series1.color = UIColor.redColor()

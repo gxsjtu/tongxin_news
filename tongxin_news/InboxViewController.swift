@@ -450,36 +450,34 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     {
                         self.maxDateForMsg = self.msgInfos.first?.dateStr
                     }
+                    if self.isLoadOK == "YES"
+                    {
+                        //下拉成功 未读消息清零
+                        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+                        self.tabBarItem.badgeValue = nil
+                        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET,EndPoints.MessageInfo.rawValue,parameters:["mobile":self.mobile!,"method":"clearMessage"]).responseJSON{
+                            (request,response, data, error) in
+                            if let anError = error
+                            {
+                                let alert = SKTipAlertView()
+                                alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                            }
+                            else if let res : AnyObject = data
+                            {
+                                var result = JSON(res)
+                                if(result["result"].string! == "ok")
+                                {
+                                    println("清理成功")
+                                }
+                                else
+                                {
+                                    println("清理失败")
+                                }
+                            }
+                        }
+                    }
                 }
             }
-        
-        if self.isLoadOK == "YES"
-        {
-            //下拉成功 未读消息清零
-            UIApplication.sharedApplication().applicationIconBadgeNumber = 0
-            self.tabBarItem.badgeValue = nil
-            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET,EndPoints.MessageInfo.rawValue,parameters:["mobile":self.mobile!,"method":"clearMessage"]).responseJSON{
-                (request,response, data, error) in
-                if let anError = error
-                {
-                    let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                }
-                else if let res : AnyObject = data
-                {
-                    var result = JSON(res)
-                    if(result["result"].string! == "ok")
-                    {
-                        println("清理成功")
-                    }
-                    else
-                    {
-                        println("清理失败")
-                    }
-                }
-            }
-        }
-
     }
     
     

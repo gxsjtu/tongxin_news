@@ -129,7 +129,7 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
                 }
                 else
                 {
-                    cell.lblPriceHistoryChange.textColor = UIColor.greenColor()
+                    cell.lblPriceHistoryChange.textColor = UIColor(red: 35/255, green: 124/255, blue: 2/255, alpha: 1.0)
                     cell.lblPriceHistoryChange.text = "跌 " + String(-change)
                 }
             }
