@@ -346,7 +346,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 finalDate = dateStr
                 actionStr = "pullDown"
                 
-                self.nowDate = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
+//                self.nowDate = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
             }
             (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
                 (request,response,data,error) in
@@ -373,6 +373,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
                         s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
                     })
+                    self.nowDate = NSDate()//刷新成功后记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
                     self.resInfos = self.msgInfos
                     self.tbData.reloadData()
                     self.tbData.footerEndRefreshing()
@@ -410,7 +411,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 finalDate = dateStr
                 actionStr = "pullDown"
                 
-                self.nowDate = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
+//                self.nowDate = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
             }
             (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
                 (request,response,data,error) in
@@ -439,6 +440,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
                         s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
                     })
+                    self.nowDate = NSDate()//刷新成功后记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
                     self.resInfos = self.msgInfos
                     self.tbData.reloadData()
                     self.tbData.headerEndRefreshing()
