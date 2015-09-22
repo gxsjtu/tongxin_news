@@ -17,9 +17,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     var resInfos : Array<MsgInfo> = []
     var segmentindex : Int = 0
     var products = [(String, String, String, String, String)]()
-    
-//    var comInfos : Array<CommentInfo> = []
-//    var resComInfos : Array<CommentInfo> = []
     var nowDate : NSDate?
     var nowDateForCom : NSDate?
     var mobile : String?
@@ -28,8 +25,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     //记录刷新时间
     var maxDateForMsg : NSDate?
     var minDateForMsg : NSDate?
-//    var maxDateForCom : NSDate?
-//    var minDateForCom : NSDate?
     override func viewDidLoad() {
         super.viewDidLoad()
         initLoadDatas()
@@ -103,7 +98,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
             if(self.resInfos[indexPath.row].url != nil && self.resInfos[indexPath.row].url != "")
             {
-                var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 40, height: 0))
+                var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 50, height: 0))
                 lb.initAutoHeight(lb.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
                 var lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
                 lbDate.initAutoHeight(lbDate.frame, textColor: UIColor.yellowColor(), fontSize: 10, text: date, lineSpacing: 1)
@@ -152,7 +147,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         if(resInfos[indexPath.row].url != nil && resInfos[indexPath.row].url != "")
             {
             tbCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-            var lblMsg : UILabel = UILabel(frame: CGRect(x: 10, y: 2, width: (tbCell.frame.size.width-38), height: 0))
+            var lblMsg : UILabel = UILabel(frame: CGRect(x: 10, y: 2, width: (tbCell.frame.size.width-48), height: 0))
             lblMsg.tag = 1
             lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblMsg.numberOfLines = 0
@@ -241,6 +236,9 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     
     func initLoadDatas()
     {
+//        NSUserDefaults.standardUserDefaults().setObject("yes", forKey: "isLoggedIn")
+//        NSUserDefaults.standardUserDefaults().setObject("15802161396", forKey: "mobile")
+        
         var isLogined : String? = NSUserDefaults.standardUserDefaults().stringForKey("isLoggedIn")
         if(isLogined != "yes")
         {
