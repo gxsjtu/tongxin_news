@@ -96,6 +96,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                         {
                             NSUserDefaults.standardUserDefaults().setObject("yes", forKey: "isLoggedIn")
                             NSUserDefaults.standardUserDefaults().setObject(mobile, forKey: "mobile")
+                            NSUserDefaults.standardUserDefaults().setObject(password, forKey: "password")
                             //转向home页面
                             if let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("HomeTabBarVC") as? HomeTabBarViewController
                             {

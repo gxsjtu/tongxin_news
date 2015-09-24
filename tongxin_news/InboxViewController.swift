@@ -236,64 +236,47 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     
     func initLoadDatas()
     {
-//        NSUserDefaults.standardUserDefaults().setObject("yes", forKey: "isLoggedIn")
-//        NSUserDefaults.standardUserDefaults().setObject("15802161396", forKey: "mobile")
-        
-        var isLogined : String? = NSUserDefaults.standardUserDefaults().stringForKey("isLoggedIn")
-        if(isLogined != "yes")
-        {
-            //转向login页面
-            if let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
+        self.mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+        var format = NSDateFormatter()
+        format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
+            self.msgInfos = []
+            self.resInfos = []
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getInboxMsg"]).responseJSON{
+            (request,response,data,error) in
+            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+            if let anError = error
             {
-                self.presentViewController(loginVC, animated: true, completion: nil)
+                let alert = SKTipAlertView()
+                alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
             }
-        }
-        else
-        {
-            self.mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
-            var format = NSDateFormatter()
-            format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
-            let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-
-                self.msgInfos = []
-                self.resInfos = []
-            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getInboxMsg"]).responseJSON{
-                (request,response,data,error) in
-                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = error
+            else if let dataList : NSArray = data! as? NSArray
+            {
+                
+                for (var i = 0; i < dataList.count; i++)
                 {
-                    let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                }
-                else if let dataList : NSArray = data! as? NSArray
-                {
+                    let res = JSON(dataList[i])
                     
-                    for (var i = 0; i < dataList.count; i++)
-                    {
-                        let res = JSON(dataList[i])
-                        
-                        var msgData : MsgInfo = MsgInfo()
-                        msgData.dateStr =  format.dateFromString(res["date"].string!)
-                        msgData.msg = res["msg"].string
-                        msgData.url = res["url"].string
-                        self.msgInfos.append(msgData)
-                    }
-                    self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
-                        s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
-                    })
-                    self.resInfos = self.msgInfos
-                    self.tbData.reloadData()
-                    //self.segmentCon.enabled = true
-                    if(self.msgInfos.count > 0)
-                    {
-                    self.maxDateForMsg = self.msgInfos.first?.dateStr
-                    self.minDateForMsg = self.msgInfos.last?.dateStr
-                    }
+                    var msgData : MsgInfo = MsgInfo()
+                    msgData.dateStr =  format.dateFromString(res["date"].string!)
+                    msgData.msg = res["msg"].string
+                    msgData.url = res["url"].string
+                    self.msgInfos.append(msgData)
+                }
+                self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
+                    s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
+                })
+                self.resInfos = self.msgInfos
+                self.tbData.reloadData()
+                //self.segmentCon.enabled = true
+                if(self.msgInfos.count > 0)
+                {
+                self.maxDateForMsg = self.msgInfos.first?.dateStr
+                self.minDateForMsg = self.msgInfos.last?.dateStr
                 }
             }
-
         }
-        
     }
     
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
