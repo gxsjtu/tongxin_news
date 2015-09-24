@@ -65,7 +65,7 @@ class ChannelCatalogViewController: UIViewController, UITableViewDelegate, UITab
                 {
                     des.channelName = self.channelName
                     des.catalogName = cell.lblChannelCatalogName.text!
-                    des.catalogId = cell.lblChannelCatalogId.text!.toInt()!
+                    des.catalogId = Int(cell.lblChannelCatalogId.text!)!
                 }
             }
         }
@@ -81,14 +81,14 @@ class ChannelCatalogViewController: UIViewController, UITableViewDelegate, UITab
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.Channel.rawValue, parameters: ["method": "getcatalog", "channelId": channelId])
-            .responseJSON { (request, response, data, error) in
+            .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = error
+                if let anError = response.result.error
                 {
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
-                else if let data: AnyObject = data
+                else if let data: AnyObject = response.data
                 {
                     if let res = JSON(data).array
                     {

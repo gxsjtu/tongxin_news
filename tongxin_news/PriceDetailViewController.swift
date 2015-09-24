@@ -119,14 +119,15 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetPrices.rawValue, parameters: ["mobile": mobile, "marketId": marketId, "method": "getPrices"])
-            .responseJSON { (request, response, data, error) in
+            .responseJSON { response in
+                print(response)
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = error
+                if let anError = response.result.error
                 {
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请点击右上角刷新按钮！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
-                else if let data: AnyObject = data
+                else if let data: AnyObject = response.data
                 {
                     if let res = JSON(data).array
                     {

@@ -92,23 +92,23 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-            var format = NSDateFormatter()
+            let format = NSDateFormatter()
             format.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            var msg : String = resInfos[indexPath.row].msg!
-            var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
+            let msg : String = resInfos[indexPath.row].msg!
+            let date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
             if(self.resInfos[indexPath.row].url != nil && self.resInfos[indexPath.row].url != "")
             {
-                var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 50, height: 0))
+                let lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 50, height: 0))
                 lb.initAutoHeight(lb.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
-                var lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
+                let lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
                 lbDate.initAutoHeight(lbDate.frame, textColor: UIColor.yellowColor(), fontSize: 10, text: date, lineSpacing: 1)
                 return (lb.frame.height + lbDate.frame.height + 10)
             }
             else
             {
-                var lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width - 10, height: 0))
+                let lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width - 10, height: 0))
                 lb.initAutoHeight(lb.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
-                var lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
+                let lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
                 lbDate.initAutoHeight(lbDate.frame, textColor: UIColor.yellowColor(), fontSize: 10, text: date, lineSpacing: 1)
                 return (lb.frame.height + lbDate.frame.height + 10)
             }
@@ -116,10 +116,10 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-        var format = NSDateFormatter()
+        let format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
-            let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UITableViewCell
+            let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) 
             
             if(tbCell.viewWithTag(1) != nil){
                 tbCell.viewWithTag(1)?.removeFromSuperview()
@@ -132,12 +132,12 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 tbCell.viewWithTag(3)?.removeFromSuperview()
             }
            
-            var msg : String = resInfos[indexPath.row].msg!
-            var date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
+            let msg : String = resInfos[indexPath.row].msg!
+            let date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
 
             
            
-            var lblUrl : UILabel = UILabel()
+            let lblUrl : UILabel = UILabel()
             lblUrl.tag = 3
             lblUrl.text = resInfos[indexPath.row].url
             lblUrl.hidden = true
@@ -147,13 +147,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         if(resInfos[indexPath.row].url != nil && resInfos[indexPath.row].url != "")
             {
             tbCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-            var lblMsg : UILabel = UILabel(frame: CGRect(x: 10, y: 2, width: (tbCell.frame.size.width-48), height: 0))
+            let lblMsg : UILabel = UILabel(frame: CGRect(x: 10, y: 2, width: (tbCell.frame.size.width-48), height: 0))
             lblMsg.tag = 1
             lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblMsg.numberOfLines = 0
             lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
             tbCell.addSubview(lblMsg)
-                var lblDate : UILabel = UILabel(frame: CGRect(x: 10, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
+                let lblDate : UILabel = UILabel(frame: CGRect(x: 10, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
                 lblDate.tag = 2
                 lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
                 lblDate.numberOfLines = 0
@@ -164,13 +164,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         else
         {
             tbCell.accessoryType = UITableViewCellAccessoryType.None
-            var lblMsg : UILabel = UILabel(frame: CGRect(x: 10, y: 2, width: (tbCell.frame.size.width-8), height: 0))
+            let lblMsg : UILabel = UILabel(frame: CGRect(x: 10, y: 2, width: (tbCell.frame.size.width-8), height: 0))
             lblMsg.tag = 1
             lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblMsg.numberOfLines = 0
             lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
             tbCell.addSubview(lblMsg)
-            var lblDate : UILabel = UILabel(frame: CGRect(x: 10, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
+            let lblDate : UILabel = UILabel(frame: CGRect(x: 10, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
             lblDate.tag = 2
             lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
             lblDate.numberOfLines = 0
@@ -199,7 +199,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
 
     }
     
-    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         if identifier == "ComToCommentDetail"
         {
             if let cell = sender as? UITableViewCell
@@ -217,14 +217,14 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         return true
     }
     
-    func tableView(tableView: UITableView, canPerformAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject) -> Bool {
+    func tableView(tableView: UITableView, canPerformAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
         if (action == Selector("copy:")) {
             return true
         }
         return false
     }
     
-    func tableView(tableView: UITableView, performAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject!){
+    func tableView(tableView: UITableView, performAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?){
         let cell = tableView.cellForRowAtIndexPath(indexPath)
         UIPasteboard.generalPasteboard().string = (cell!.viewWithTag(1) as! UILabel).text
     }
@@ -237,34 +237,34 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     func initLoadDatas()
     {
         self.mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
-        var format = NSDateFormatter()
+        let format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
 
             self.msgInfos = []
             self.resInfos = []
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getInboxMsg"]).responseJSON{
-            (request,response,data,error) in
+            response in
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-            if let anError = error
+            if let anError = response.result.error
             {
                 let alert = SKTipAlertView()
                 alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
             }
-            else if let dataList : NSArray = data! as? NSArray
+            else if let dataList : NSArray = response.data! as? NSArray
             {
                 
                 for (var i = 0; i < dataList.count; i++)
                 {
                     let res = JSON(dataList[i])
                     
-                    var msgData : MsgInfo = MsgInfo()
+                    let msgData : MsgInfo = MsgInfo()
                     msgData.dateStr =  format.dateFromString(res["date"].string!)
                     msgData.msg = res["msg"].string
                     msgData.url = res["url"].string
                     self.msgInfos.append(msgData)
                 }
-                self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
+                self.msgInfos.sortInPlace({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
                     s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
                 })
                 self.resInfos = self.msgInfos
@@ -305,7 +305,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         var minDate : NSDate?
         var finalDate : String?
         var actionStr : String?
-        var format = NSDateFormatter()
+        let format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
 
 //        if(self.segmentindex == 0)
@@ -322,35 +322,35 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 {
                 self.nowDate = NSDate()
                 }
-                var dateStr : String = format.stringFromDate(self.nowDate!)//如果上一次刷新时间为空赋值当前时间 不为空直接把上次刷新时间传给方法
+                let dateStr : String = format.stringFromDate(self.nowDate!)//如果上一次刷新时间为空赋值当前时间 不为空直接把上次刷新时间传给方法
                 finalDate = dateStr
                 actionStr = "pullDown"
                 
 //                self.nowDate = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
             }
             (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
-                (request,response,data,error) in
+                response in
                 
-                if let anError = error
+                if let anError = response.result.error
                 {
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                     self.tbData.footerEndRefreshing()
                 }
-                else if let dataList : NSArray = data! as? NSArray
+                else if let dataList : NSArray = response.data! as? NSArray
                 {
                     
                     for (var i = 0; i < dataList.count; i++)
                     {
                         let res = JSON(dataList[i])
                         
-                        var msgData : MsgInfo = MsgInfo()
+                        let msgData : MsgInfo = MsgInfo()
                         msgData.dateStr =  format.dateFromString(res["date"].string!)
                         msgData.msg = res["msg"].string
                         msgData.url = res["url"].string
                         self.msgInfos.append(msgData)
                     }
-                    self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
+                    self.msgInfos.sortInPlace({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
                         s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
                     })
                     self.nowDate = NSDate()//刷新成功后记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
@@ -371,7 +371,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         var maxDate : NSDate?
         var finalDate : String?
         var actionStr : String?
-        var format = NSDateFormatter()
+        let format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
 
             maxDate = self.maxDateForMsg
@@ -387,37 +387,37 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 {
                 self.nowDate = NSDate()
                 }
-                var dateStr : String = format.stringFromDate(self.nowDate!)//如果上一次刷新时间为空赋值当前时间 不为空直接把上次刷新时间传给方法
+                let dateStr : String = format.stringFromDate(self.nowDate!)//如果上一次刷新时间为空赋值当前时间 不为空直接把上次刷新时间传给方法
                 finalDate = dateStr
                 actionStr = "pullDown"
                 
 //                self.nowDate = NSDate()//记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
             }
             (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
-                (request,response,data,error) in
+                response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
-                if let anError = error
+                if let anError = response.result.error
                 {
                     self.isLoadOK = "NO"
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                     self.tbData.headerEndRefreshing()
                 }
-                else if let dataList : NSArray = data! as? NSArray
+                else if let dataList : NSArray = response.data! as? NSArray
                 {
                     
                     for (var i = 0; i < dataList.count; i++)
                     {
                         let res = JSON(dataList[i])
                         
-                        var msgData : MsgInfo = MsgInfo()
+                        let msgData : MsgInfo = MsgInfo()
                         msgData.dateStr =  format.dateFromString(res["date"].string!)
                         msgData.msg = res["msg"].string
                         msgData.url = res["url"].string
                         self.msgInfos.append(msgData)
                     }
-                    self.msgInfos.sort({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
+                    self.msgInfos.sortInPlace({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
                         s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
                     })
                     self.nowDate = NSDate()//刷新成功后记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
@@ -436,22 +436,22 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                         UIApplication.sharedApplication().applicationIconBadgeNumber = 0
                         self.tabBarItem.badgeValue = nil
                         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET,EndPoints.MessageInfo.rawValue,parameters:["mobile":self.mobile!,"method":"clearMessage"]).responseJSON{
-                            (request,response, data, error) in
-                            if let anError = error
+                            response in
+                            if let anError = response.result.error
                             {
                                 let alert = SKTipAlertView()
                                 alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                             }
-                            else if let res : AnyObject = data
+                            else if let res : AnyObject = response.data
                             {
                                 var result = JSON(res)
                                 if(result["result"].string! == "ok")
                                 {
-                                    println("清理成功")
+                                    print("清理成功")
                                 }
                                 else
                                 {
-                                    println("清理失败")
+                                    print("清理失败")
                                 }
                             }
                         }
@@ -487,8 +487,8 @@ extension UILabel{
     self.font = UIFont.systemFontOfSize(fontSize)
     self.lineBreakMode = NSLineBreakMode.ByWordWrapping
     self.numberOfLines = 0
-    var attributedString = NSMutableAttributedString(string: text as String)
-    var paragraphStyle = NSMutableParagraphStyle()
+    let attributedString = NSMutableAttributedString(string: text as String)
+    let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.lineSpacing = lineSpacing
     paragraphStyle.lineBreakMode = NSLineBreakMode.ByCharWrapping
     attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, text.length))

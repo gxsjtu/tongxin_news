@@ -37,7 +37,7 @@ class PriceDetailVCTableViewCell: SWTableViewCell, SWTableViewCellDelegate {
         {
             if let priceCell = cell as? PriceDetailVCTableViewCell
             {
-                var mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+                _ = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
                 var productId = priceCell.lblPriceDetailId.text
                 if priceCell.lblPriceDetailIsOrdered.text == "yes"
                 {

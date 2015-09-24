@@ -130,7 +130,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         
     }
     
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         self.dismissViewControllerAnimated(true, completion: nil)
         let gotImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         self.imageList.append(gotImage)
@@ -145,17 +145,17 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         let uploadURL : String = EndPoints.ChannelUploadImg.rawValue
         let request = NSMutableURLRequest(URL: NSURL(string: uploadURL)!)
         request.HTTPMethod = "POST"
-          var boundary:String="-------------------21212222222222222222222"
-        var contentType : String = "multipart/form-data;boundary="+boundary
+          let boundary:String="-------------------21212222222222222222222"
+        let contentType : String = "multipart/form-data;boundary="+boundary
         request.addValue(contentType, forHTTPHeaderField: "Content-Type")
-        var body = NSMutableData()
+        let body = NSMutableData()
         for img in self.imageList
         {
         body.appendData(NSString(format: "\r\n--\(boundary)\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
         body.appendData(NSString(format:"Content-Disposition:form-data;name=\"userfile\";filename=\"dd.jpg\"\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
         body.appendData(NSString(format:"Content-Type:application/octet-stream\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
-        var data = UIImagePNGRepresentation(img)
-        body.appendData(data)
+        let data = UIImagePNGRepresentation(img)
+        body.appendData(data!)
         body.appendData(NSString(format:"\r\n--\(boundary)").dataUsingEncoding(NSUTF8StringEncoding)!)
         }
         request.HTTPBody=body
@@ -164,12 +164,12 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
             (response, data, error) ->Void in
             
             if (error != nil){
-            println(error)
+            print(error)
             }else{ //没有错误的情况
-                self.imagesName = NSString(data:data,encoding:NSUTF8StringEncoding)! as String
+                self.imagesName = NSString(data:data!,encoding:NSUTF8StringEncoding)! as String
                 if self.imagesName == "-1"//报错的情况
                 {
-                        println("error")
+                        print("error")
                 }
                 else
                 {
@@ -206,16 +206,16 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
             sOro = "0"
         }
         
-        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET,EndPoints.SPList.rawValue,parameters:["method":"create","catalogID":cId,"product":self.txtChannelItemSP.text,"quantity":self.txtChannelItemQty.text,"mobile":self.txtChannelItemMobile.text,"contact":self.txtChannelItemContact.text,"description":self.txtChannelItemDesc.text,"deliveryType":sOro!,"type":sOrP!,"province":self.stateStr!,"city":self.cityStr!,"images":images!]).responseJSON{
-            (request,response,data,error) in
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SPList.rawValue, parameters:["method": "create", "catalogID":cId, "product":self.txtChannelItemSP.text!, "quantity":self.txtChannelItemQty.text!, "mobile":self.txtChannelItemMobile.text!, "contact":self.txtChannelItemContact.text!, "description":self.txtChannelItemDesc.text!, "deliveryType":sOro!, "type":sOrP!,"province": self.stateStr!, "city": self.cityStr!, "images":images!]).responseJSON{
+            response in
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-            if let hasError = error
+            if let hasError = response.result.error
             {
                 let alert = SKTipAlertView()
                 alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 self.addRes = "NO"
             }
-            else if let dataRes : AnyObject = data
+            else if let dataRes : AnyObject = response.data
             {
                 var res = JSON(dataRes)
                 var result = res["result"].string!
@@ -240,19 +240,19 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     }
     
     @IBAction func addData(sender: UIBarButtonItem) {
-        if txtChannelItemSP.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
+        if txtChannelItemSP.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
         {
             let alert = SKTipAlertView()
             alert.showRedNotificationForString(lblSPText.text! + "内容不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
             return
         }
-        if txtChannelItemQty.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
+        if txtChannelItemQty.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
         {
             let alert = SKTipAlertView()
             alert.showRedNotificationForString("供需数量不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
             return
         }
-        if txtChannelItemMobile.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
+        if txtChannelItemMobile.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
         {
             let alert = SKTipAlertView()
             alert.showRedNotificationForString("联系方式不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)

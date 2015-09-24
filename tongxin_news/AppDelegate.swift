@@ -23,33 +23,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         manager = Manager(configuration: configuration)
 
-        var systemVesion : NSString = UIDevice.currentDevice().systemVersion
-        if systemVesion.doubleValue < 8.0{
-            UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound | UIRemoteNotificationType.Badge)
-        }else{
-            UIApplication.sharedApplication().registerForRemoteNotifications()
-            var userNotificationSettings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Alert | UIUserNotificationType.Sound | UIUserNotificationType.Badge, categories: nil)
-            UIApplication.sharedApplication().registerUserNotificationSettings(userNotificationSettings)
-        }
+
+            if #available(iOS 8.0, *) {
+                UIApplication.sharedApplication().registerForRemoteNotifications()
+                let userNotificationSettings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert, UIUserNotificationType.Sound, UIUserNotificationType.Badge], categories: nil)
+                UIApplication.sharedApplication().registerUserNotificationSettings(userNotificationSettings)
+
+            } else {
+                            UIApplication.sharedApplication().registerForRemoteNotificationTypes([UIRemoteNotificationType.Alert, UIRemoteNotificationType.Sound, UIRemoteNotificationType.Badge])
+            }
         
         
         if let isLoggedIn = NSUserDefaults.standardUserDefaults().stringForKey("isLoggedIn")
         {
             if isLoggedIn == "yes"
             {
-                var mobile: String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
-                var password: String? = NSUserDefaults.standardUserDefaults().stringForKey("password")
+                let mobile: String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+                let password: String? = NSUserDefaults.standardUserDefaults().stringForKey("password")
                 
                 manager!.request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile!, "password": password!, "method": "checkuser"])
-                    .responseJSON { (request, response, data, error) in
-                        if let anError = error
+                    .responseJSON { response in
+                        if let anError = response.result.error
                         {
                             if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
                             {
                                 self.window?.rootViewController = loginVC
                             }
                         }
-                        else if let data: AnyObject = data
+                        else if let data: AnyObject = response.data
                         {
                             let res = JSON(data)
                             if let result = res["result"].string

@@ -63,15 +63,15 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
     func getPriceHistory()
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetPrices.rawValue, parameters: ["method": "getHistoryPrices", "productId": productId, "start": txtPriceHistoryStart.text, "end": txtPriceHistoryEnd.text])
-            .responseJSON { (request, response, data, error) in
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetPrices.rawValue, parameters: ["method": "getHistoryPrices", "productId": productId, "start": txtPriceHistoryStart.text!, "end": txtPriceHistoryEnd.text!])
+            .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = error
+                if let anError = response.result.error
                 {
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
-                else if let data: AnyObject = data
+                else if let data: AnyObject = response.data
                 {
                     if let res = JSON(data).array
                     {
@@ -115,7 +115,7 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
         }
         else
         {
-            if let change = history[indexPath.row].3.toInt()
+            if let change = Int(history[indexPath.row].3)
             {
                 if change == 0
                 {

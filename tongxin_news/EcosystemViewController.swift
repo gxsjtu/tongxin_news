@@ -55,14 +55,14 @@ class EcosystemViewController: UIViewController {
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.Channel.rawValue, parameters: ["method": "getchannel"])
-            .responseJSON { (request, response, data, error) in
+            .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = error
+                if let anError = response.result.error
                 {
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
-                else if let data: AnyObject = data
+                else if let data: AnyObject = response.data
                 {
                     if let res = JSON(data).array
                     {
@@ -96,7 +96,7 @@ class EcosystemViewController: UIViewController {
                             dk!.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
                             dk!.backgroundColor = UIColor.randomFlatDarkColor()
                             dk!.addTarget(self, action: "channelButtonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
-                            dk!.tag = id.toInt()!
+                            dk!.tag = Int(id)!
                             self.channelCount++
                         }
                         self.vEcoChannels.contentSize = CGSize(width: Double(self.view.frame.width), height: Double((self.channelCount / 3) * 135))

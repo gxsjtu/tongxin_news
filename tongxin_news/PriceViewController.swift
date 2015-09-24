@@ -53,10 +53,10 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         self.vSelectionView.addConstraint(trailing)
         self.vSelectionView.addConstraint(top)
         self.vSelectionView.addConstraint(bottom)
-        selection.setTranslatesAutoresizingMaskIntoConstraints(false)
+        selection.translatesAutoresizingMaskIntoConstraints = false
         
-        var leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        var rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
         
         leftSwipe.direction = .Left
         rightSwipe.direction = .Right
@@ -80,15 +80,15 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     {
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetProductHierarchy.rawValue, parameters: ["method": "getmarkets"])
-            .responseJSON { (request, response, data, error) in
+            .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
-                if let anError = error
+                if let anError = response.result.error
                 {
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请点击右上角刷新按钮！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
-                else if let data: AnyObject = data
+                else if let data: AnyObject = response.data
                 {
                     if let res1 = JSON(data).array
                     {

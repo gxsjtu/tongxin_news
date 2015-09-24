@@ -24,7 +24,7 @@ class PriceChartViewController: UIViewController, ChartDelegate {
     var date = [String]()
     
     func didTouchChart(chart: Chart, indexes: Array<Int?>, x: Float, left: CGFloat) {
-        for (serieIndex, dataIndex) in enumerate(indexes) {
+        for (serieIndex, dataIndex) in indexes.enumerate() {
             if dataIndex != nil {
                 lblPriceChartDate.text = date[dataIndex!]
                 lblPriceChartPrice.text = "最低 " + String(stringInterpolationSegment: low[dataIndex!]) + "  最高 " + String(stringInterpolationSegment: high[dataIndex!])
@@ -43,7 +43,7 @@ class PriceChartViewController: UIViewController, ChartDelegate {
         self.navChart.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navChart.topItem?.title = navTitle
         
-        for (l: String, h: String, d: String, c: String) in history.reverse()
+        for (l, h, d, c): (String, String, String, String) in Array(history.reverse())
         {
             low.append((l as NSString).floatValue)
             high.append((h as NSString).floatValue)
@@ -78,7 +78,7 @@ class PriceChartViewController: UIViewController, ChartDelegate {
         self.vChart.addConstraint(top)
         self.vChart.addConstraint(bottom)
         
-        chart.setTranslatesAutoresizingMaskIntoConstraints(false)
+        chart.translatesAutoresizingMaskIntoConstraints = false
     }
 
     override func didReceiveMemoryWarning() {

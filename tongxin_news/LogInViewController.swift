@@ -48,8 +48,8 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     */
 
     @IBAction func didLogInClicked(sender: AnyObject) {
-        let mobile = lblMobile.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-        let password = lblPassword.text.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let mobile = lblMobile.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        let password = lblPassword.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
         let token = NSUserDefaults.standardUserDefaults().stringForKey("token")
         
         if mobile == ""
@@ -73,18 +73,14 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile, "password": password, "method": "signin", "token": token!,])
-            .responseJSON { (request, response, data, error) in
+            .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = error
-                {
-                    let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                }
-                else if let data: AnyObject = data
-                {
-                    let res = JSON(data)
+                switch response.result {
+                case .Success:
+                    let res = JSON(response.result.value!)
+                    print(res)
                     if let result = res["result"].string
                     {
                         if result == "error"
@@ -104,6 +100,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                             }
                         }
                     }
+                case .Failure:
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
         }
     }
