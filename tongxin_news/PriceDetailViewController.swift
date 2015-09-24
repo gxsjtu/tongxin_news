@@ -48,6 +48,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PriceDetailCell", forIndexPath: indexPath) as! PriceDetailVCTableViewCell
+        cell.delegate = cell
         cell.lblPriceDetailName.text = products[indexPath.row].0
         cell.lblPriceDetailDate.text = products[indexPath.row].4
         cell.lblPriceDetailLow.text = "最低 " + products[indexPath.row].2
@@ -84,6 +85,28 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
             }
             
         }
+        
+        var rightButtons : [AnyObject] = [AnyObject]()
+        
+        let rightSubBtn = UIButton()
+        
+        if cell.lblPriceDetailIsOrdered.text == "YES"
+        {
+            rightSubBtn.setTitle("取消关注", forState: UIControlState.Normal)
+            rightSubBtn.backgroundColor = UIColor.redColor()
+            rightSubBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        }
+        else
+        {
+            rightSubBtn.setTitle("添加关注", forState: UIControlState.Normal)
+            rightSubBtn.backgroundColor = UIColor(red: 35/255, green: 124/255, blue: 2/255, alpha: 1.0)
+            rightSubBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        }
+        
+        rightButtons.append(rightSubBtn)
+        
+        cell.setRightUtilityButtons(rightButtons, withButtonWidth: 90)
+        
         return cell
     }
     

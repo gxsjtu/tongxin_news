@@ -6,32 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "tongxin_news/AppDelegate.swift"
-            timestampString = "464750995.03042"
+            filePath = "tongxin_news/PriceDetailVCTableViewCell.swift"
+            timestampString = "464759905.209377"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tongxin_news/AppDelegate.swift"
-            timestampString = "464752493.26761"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "swipeableTableViewCellShouldHideUtilityButtonsOnSwipe(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

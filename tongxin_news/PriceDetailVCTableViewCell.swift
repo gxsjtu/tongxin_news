@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PriceDetailVCTableViewCell: UITableViewCell {
+class PriceDetailVCTableViewCell: SWTableViewCell, SWTableViewCellDelegate {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +26,29 @@ class PriceDetailVCTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func swipeableTableViewCellShouldHideUtilityButtonsOnSwipe(cell: SWTableViewCell!) -> Bool {
+        return true
+    }
+    
+    func swipeableTableViewCell(cell: SWTableViewCell!, didTriggerRightUtilityButtonWithIndex index: Int) {
+        if index == 0
+        {
+            if let priceCell = cell as? PriceDetailVCTableViewCell
+            {
+                var mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+                var productId = priceCell.lblPriceDetailId.text
+                if priceCell.lblPriceDetailIsOrdered.text == "yes"
+                {
+                    //取消订阅
+                }
+                else
+                {
+                    //订阅
+                }
+            }
+        }
     }
 
 }
