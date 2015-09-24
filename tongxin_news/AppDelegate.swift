@@ -44,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     .responseJSON { (request, response, data, error) in
                         if let anError = error
                         {
-                            if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? HomeTabBarViewController
+                            if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
                             {
                                 self.window?.rootViewController = loginVC
                             }
@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             {
                                 if result == "error"
                                 {
-                                    if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? HomeTabBarViewController
+                                    if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
                                     {
                                         self.window?.rootViewController = loginVC
                                     }
@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             else
             {
-                if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? HomeTabBarViewController
+                if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
                 {
                     self.window?.rootViewController = loginVC
                 }
@@ -83,7 +83,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         else
         {
-            if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? HomeTabBarViewController
+            if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
             {
                 self.window?.rootViewController = loginVC
             }
