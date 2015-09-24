@@ -80,7 +80,6 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                 switch response.result {
                 case .Success:
                     let res = JSON(response.result.value!)
-                    print(res)
                     if let result = res["result"].string
                     {
                         if result == "error"

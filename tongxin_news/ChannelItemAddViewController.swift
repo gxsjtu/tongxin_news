@@ -141,7 +141,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     
     func uploadImage()
     {
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         let uploadURL : String = EndPoints.ChannelUploadImg.rawValue
         let request = NSMutableURLRequest(URL: NSURL(string: uploadURL)!)
         request.HTTPMethod = "POST"
@@ -184,9 +184,9 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         
     }
     
-    func createData(var images : String?)
+    func createData(images: String?)
     {
-        var cId = self.catalogId
+        let cId = self.catalogId
         var sOrP : String?
         var sOro : String?
         if self.rbSupply.selected
@@ -209,31 +209,35 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SPList.rawValue, parameters:["method": "create", "catalogID":cId, "product":self.txtChannelItemSP.text!, "quantity":self.txtChannelItemQty.text!, "mobile":self.txtChannelItemMobile.text!, "contact":self.txtChannelItemContact.text!, "description":self.txtChannelItemDesc.text!, "deliveryType":sOro!, "type":sOrP!,"province": self.stateStr!, "city": self.cityStr!, "images":images!]).responseJSON{
             response in
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-            if let hasError = response.result.error
-            {
-                let alert = SKTipAlertView()
-                alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                self.addRes = "NO"
-            }
-            else if let dataRes : AnyObject = response.data
-            {
-                var res = JSON(dataRes)
-                var result = res["result"].string!
-                if(result == "ok")
+            
+            switch response.result {
+            case .Success:
+                if let data: AnyObject = response.result.value
                 {
-                    self.addRes = "YES"
-                    self.itemId = res["id"].string!
-                    self.slideView.stop()
-                    let mainBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                    var res = JSON(data)
+                    let result = res["result"].string!
+                    if(result == "ok")
+                    {
+                        self.addRes = "YES"
+                        self.itemId = res["id"].string!
+                        self.slideView.stop()
+                        let mainBoard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
                         let vc : ChannelItemDetailViewController = mainBoard.instantiateViewControllerWithIdentifier("ItemDetailView") as! ChannelItemDetailViewController
                         vc.navTitle = self.navChannelItem.topItem!.title!
                         vc.itemId = self.itemId!
                         self.presentViewController(vc, animated: true, completion: nil)
+                    }
+                    else
+                    {
+                        self.addRes = "NO"
+                    }
+
                 }
-                else
-                {
-                    self.addRes = "NO"
-                }
+                
+            case .Failure:
+                let alert = SKTipAlertView()
+                alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                self.addRes = "NO"
             }
         }
 

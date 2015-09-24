@@ -55,59 +55,61 @@ class ChannelItemDetailViewController: UIViewController {
     
     func getChannelItemDetail()
     {
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SPList.rawValue, parameters: ["method": "getitem", "id": itemId])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = response.result.error
-                {
-                    let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("加载失败，请点击右上角刷新重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                }
-                else if let data: AnyObject = response.data
-                {
-                    if let i = JSON(data).dictionary
+                
+                switch response.result {
+                case .Success:
+                    if let data: AnyObject = response.result.value
                     {
-                        if i["type"]!.stringValue == "true"
+                        if let i = JSON(data).dictionary
                         {
-                            self.lblChannelItemCapt.text = "采购："
-                        }
-                        else
-                        {
-                            self.lblChannelItemCapt.text = "销售："
-                        }
-                        if i["deliver"]!.stringValue == "true"
-                        {
-                            self.lblChannelItemDeliver.text = "自提"
-                        }
-                        else
-                        {
-                            self.lblChannelItemDeliver.text = "发货"
-                        }
-                        self.lblChannelItemContact.text = i["contact"]!.stringValue
-                        self.lblChannelItemLocation.text = i["location"]!.stringValue
-                        self.lblChannelItemMobile.text = i["mobile"]!.stringValue
-                        self.lblChannelItemName.text = i["name"]!.stringValue
-                        self.lblChannelItemQty.text = i["quantity"]!.stringValue
-                        self.txtChannelItemDesc.text = i["description"]!.stringValue
-                        
-                        self.slideChannelItem.images.removeAllObjects()
-                        var newSize : CGSize = CGSize(width: self.slideChannelItem.frame.width, height: self.slideChannelItem.frame.height)
-                        for avatars in i["avatars"]!.arrayValue
-                        {
-                            if let avatar = avatars.dictionary
+                            if i["type"]!.stringValue == "true"
                             {
-                                MBProgressHUD.showHUDAddedTo(self.slideChannelItem, animated: true)
-                                SDWebImageDownloader.sharedDownloader().downloadImageWithURL(NSURL(string: avatar["avatar"]!.stringValue), options: SDWebImageDownloaderOptions(), progress: nil, completed: { (image: UIImage!, data: NSData!, error: NSError!, finished: Bool) -> Void in
-                                    if finished == true
-                                    {
-                                        self.slideChannelItem.addImage(image)
-                                        MBProgressHUD.hideAllHUDsForView(self.slideChannelItem, animated: true)
-                                        self.slideChannelItem.start()
-                                    }})
+                                self.lblChannelItemCapt.text = "采购："
+                            }
+                            else
+                            {
+                                self.lblChannelItemCapt.text = "销售："
+                            }
+                            if i["deliver"]!.stringValue == "true"
+                            {
+                                self.lblChannelItemDeliver.text = "自提"
+                            }
+                            else
+                            {
+                                self.lblChannelItemDeliver.text = "发货"
+                            }
+                            self.lblChannelItemContact.text = i["contact"]!.stringValue
+                            self.lblChannelItemLocation.text = i["location"]!.stringValue
+                            self.lblChannelItemMobile.text = i["mobile"]!.stringValue
+                            self.lblChannelItemName.text = i["name"]!.stringValue
+                            self.lblChannelItemQty.text = i["quantity"]!.stringValue
+                            self.txtChannelItemDesc.text = i["description"]!.stringValue
+                            
+                            self.slideChannelItem.images.removeAllObjects()
+                            for avatars in i["avatars"]!.arrayValue
+                            {
+                                if let avatar = avatars.dictionary
+                                {
+                                    MBProgressHUD.showHUDAddedTo(self.slideChannelItem, animated: true)
+                                    SDWebImageDownloader.sharedDownloader().downloadImageWithURL(NSURL(string: avatar["avatar"]!.stringValue), options: SDWebImageDownloaderOptions(), progress: nil, completed: { (image: UIImage!, data: NSData!, error: NSError!, finished: Bool) -> Void in
+                                        if finished == true
+                                        {
+                                            self.slideChannelItem.addImage(image)
+                                            MBProgressHUD.hideAllHUDsForView(self.slideChannelItem, animated: true)
+                                            self.slideChannelItem.start()
+                                        }})
+                                }
                             }
                         }
                     }
+                    
+                case .Failure:
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请点击右上角刷新重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
         }
     }

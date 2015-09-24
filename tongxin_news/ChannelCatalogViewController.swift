@@ -79,31 +79,32 @@ class ChannelCatalogViewController: UIViewController, UITableViewDelegate, UITab
     
     func getChannelCatalog()
     {
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.Channel.rawValue, parameters: ["method": "getcatalog", "channelId": channelId])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = response.result.error
-                {
+                
+                switch response.result {
+                case .Success:
+                    if let data: AnyObject = response.result.value
+                    {
+                        if let res = JSON(data).array
+                        {
+                            for item in res
+                            {
+                                if let i = item.dictionary
+                                {
+                                    self.catalogs.append((i["id"]!.stringValue, i["Name"]!.stringValue, i["Desc"]!.stringValue))
+                                }
+                            }
+                            self.vChannelCatalog.reloadData()
+                        }
+                    }
+
+                case .Failure:
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
-                else if let data: AnyObject = response.data
-                {
-                    if let res = JSON(data).array
-                    {
-                        for item in res
-                        {
-                            if let i = item.dictionary
-                            {
-                                self.catalogs.append((i["id"]!.stringValue, i["Name"]!.stringValue, i["Desc"]!.stringValue))
-                            }
-                        }
-                        self.vChannelCatalog.reloadData()
-                    }
-                }
         }
     }
-
-
 }

@@ -95,29 +95,33 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
     
     func getComments()
     {
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["method": "getproducts", "marketId": marketId, "mobile": mobile])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = response.result.error
-                {
+                
+                switch response.result {
+                case .Success:
+                    if let data: AnyObject = response.result.value
+                    {
+                        if let res = JSON(data).array
+                        {
+                            self.products.removeAll(keepCapacity: true)
+                            for item in res
+                            {
+                                if let i = item.dictionary
+                                {
+                                    self.products.append((i["avatar"]!.stringValue, i["url"]!.stringValue, i["title"]!.stringValue, i["date"]!.stringValue, i["id"]!.stringValue, i["productname"]!.stringValue, i["isOrder"]!.stringValue))
+                                }
+                            }
+                            self.tvCommentDetail.reloadData()
+                        }
+
+                    }
+                    
+                case .Failure:
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请点击右上角刷新按钮！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                }
-                else if let data: AnyObject = response.data
-                {
-                    if let res = JSON(data).array
-                    {
-                        self.products.removeAll(keepCapacity: true)
-                        for item in res
-                        {
-                            if let i = item.dictionary
-                            {
-                                self.products.append((i["avatar"]!.stringValue, i["url"]!.stringValue, i["title"]!.stringValue, i["date"]!.stringValue, i["id"]!.stringValue, i["productname"]!.stringValue, i["isOrder"]!.stringValue))
-                            }
-                        }
-                        self.tvCommentDetail.reloadData()
-                    }
                 }
         }
     }

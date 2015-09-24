@@ -43,16 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 manager!.request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile!, "password": password!, "method": "checkuser"])
                     .responseJSON { response in
-                        if let anError = response.result.error
-                        {
-                            if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
-                            {
-                                self.window?.rootViewController = loginVC
-                            }
-                        }
-                        else if let data: AnyObject = response.data
-                        {
-                            let res = JSON(data)
+                        switch response.result {
+                        case .Success:
+                            let res = JSON(response.result.value!)
                             if let result = res["result"].string
                             {
                                 if result == "error"
@@ -70,6 +63,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                         self.window?.rootViewController = homeVC
                                     }
                                 }
+                            }
+                        case .Failure:
+                            if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
+                            {
+                                self.window?.rootViewController = loginVC
                             }
                         }
                 }

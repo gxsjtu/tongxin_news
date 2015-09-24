@@ -62,29 +62,32 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
     
     func getPriceHistory()
     {
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetPrices.rawValue, parameters: ["method": "getHistoryPrices", "productId": productId, "start": txtPriceHistoryStart.text!, "end": txtPriceHistoryEnd.text!])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = response.result.error
-                {
+                
+                switch response.result {
+                case .Success:
+                    if let data: AnyObject = response.result.value
+                    {
+                        if let res = JSON(data).array
+                        {
+                            self.history.removeAll(keepCapacity: true)
+                            for item in res
+                            {
+                                if let i = item.dictionary
+                                {
+                                    self.history.append((i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue))
+                                }
+                            }
+                            self.tvPriceHistory.reloadData()
+                        }
+                    }
+                    
+                case .Failure:
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                }
-                else if let data: AnyObject = response.data
-                {
-                    if let res = JSON(data).array
-                    {
-                        self.history.removeAll(keepCapacity: true)
-                        for item in res
-                        {
-                            if let i = item.dictionary
-                            {
-                                self.history.append((i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue))
-                            }
-                        }
-                        self.tvPriceHistory.reloadData()
-                    }
                 }
         }
     }

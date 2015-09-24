@@ -67,41 +67,44 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func getSPList()
     {
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SPList.rawValue, parameters: ["method": "getsupply", "channel": channelId])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = response.result.error
-                {
-                    let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("加载失败，请点击右上角按钮刷新重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                }
-                else if let data: AnyObject = response.data
-                {
-                    if let res = JSON(data).array
+                
+                switch response.result {
+                case .Success:
+                    if let data: AnyObject = response.result.value
                     {
-                        self.pdata.removeAll(keepCapacity: false)
-                        self.pdataRes.removeAll(keepCapacity: false)
-                        self.sdata.removeAll(keepCapacity: false)
-                        self.sdataRes.removeAll(keepCapacity: false)
-                        for item in res
+                        if let res = JSON(data).array
                         {
-                            if let i = item.dictionary
+                            self.pdata.removeAll(keepCapacity: false)
+                            self.pdataRes.removeAll(keepCapacity: false)
+                            self.sdata.removeAll(keepCapacity: false)
+                            self.sdataRes.removeAll(keepCapacity: false)
+                            for item in res
                             {
-                                if i["type"]!.stringValue == "true"
+                                if let i = item.dictionary
                                 {
-                                   self.pdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue, i["id"]!.stringValue))
-                                }
-                                else
-                                {
-                                   self.sdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue, i["id"]!.stringValue))
+                                    if i["type"]!.stringValue == "true"
+                                    {
+                                        self.pdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue, i["id"]!.stringValue))
+                                    }
+                                    else
+                                    {
+                                        self.sdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue, i["id"]!.stringValue))
+                                    }
                                 }
                             }
+                            self.pdataRes = self.pdata
+                            self.sdataRes = self.sdata
+                            self.vSPList.reloadData()
                         }
-                        self.pdataRes = self.pdata
-                        self.sdataRes = self.sdata
-                        self.vSPList.reloadData()
                     }
+                    
+                case .Failure:
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请点击右上角按钮刷新重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
         }
     }

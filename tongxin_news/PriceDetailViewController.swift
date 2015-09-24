@@ -117,29 +117,32 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func getProducts()
     {
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetPrices.rawValue, parameters: ["mobile": mobile, "marketId": marketId, "method": "getPrices"])
             .responseJSON { response in
-                print(response)
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = response.result.error
-                {
+                
+                switch response.result {
+                case .Success:
+                    if let data: AnyObject = response.result.value
+                    {
+                        if let res = JSON(data).array
+                        {
+                            self.products.removeAll(keepCapacity: true)
+                            for item in res
+                            {
+                                if let i = item.dictionary
+                                {self.products.append((i["ProductName"]!.stringValue, i["ProductId"]!.stringValue, i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue, i["isOrder"]!.stringValue))
+                                }
+                            }
+                            self.tvPriceDetail.reloadData()
+                        }
+
+                    }
+                    
+                case .Failure:
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请点击右上角刷新按钮！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                }
-                else if let data: AnyObject = response.data
-                {
-                    if let res = JSON(data).array
-                    {
-                        self.products.removeAll(keepCapacity: true)
-                        for item in res
-                        {
-                            if let i = item.dictionary
-                            {self.products.append((i["ProductName"]!.stringValue, i["ProductId"]!.stringValue, i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue, i["isOrder"]!.stringValue))
-                            }
-                        }
-                        self.tvPriceDetail.reloadData()
-                    }
                 }
         }
     }

@@ -239,42 +239,47 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         self.mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
         let format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
 
-            self.msgInfos = []
-            self.resInfos = []
+        self.msgInfos = []
+        self.resInfos = []
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getInboxMsg"]).responseJSON{
             response in
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-            if let anError = response.result.error
-            {
+            
+            switch response.result {
+            case .Success:
+                if let data: AnyObject = response.result.value
+                {
+                    if let dataList: NSArray = data as? NSArray
+                    {
+                        for (var i = 0; i < dataList.count; i++)
+                        {
+                            let res = JSON(dataList[i])
+                            
+                            let msgData : MsgInfo = MsgInfo()
+                            msgData.dateStr =  format.dateFromString(res["date"].string!)
+                            msgData.msg = res["msg"].string
+                            msgData.url = res["url"].string
+                            self.msgInfos.append(msgData)
+                        }
+                        self.msgInfos.sortInPlace({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
+                            s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
+                        })
+                        self.resInfos = self.msgInfos
+                        self.tbData.reloadData()
+                        //self.segmentCon.enabled = true
+                        if(self.msgInfos.count > 0)
+                        {
+                            self.maxDateForMsg = self.msgInfos.first?.dateStr
+                            self.minDateForMsg = self.msgInfos.last?.dateStr
+                        }
+                    }
+                }
+                
+            case .Failure:
                 let alert = SKTipAlertView()
                 alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-            }
-            else if let dataList : NSArray = response.data! as? NSArray
-            {
-                
-                for (var i = 0; i < dataList.count; i++)
-                {
-                    let res = JSON(dataList[i])
-                    
-                    let msgData : MsgInfo = MsgInfo()
-                    msgData.dateStr =  format.dateFromString(res["date"].string!)
-                    msgData.msg = res["msg"].string
-                    msgData.url = res["url"].string
-                    self.msgInfos.append(msgData)
-                }
-                self.msgInfos.sortInPlace({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
-                    s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
-                })
-                self.resInfos = self.msgInfos
-                self.tbData.reloadData()
-                //self.segmentCon.enabled = true
-                if(self.msgInfos.count > 0)
-                {
-                self.maxDateForMsg = self.msgInfos.first?.dateStr
-                self.minDateForMsg = self.msgInfos.last?.dateStr
-                }
             }
         }
     }
@@ -331,39 +336,42 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getMsgByAction","actionStr" : actionStr!,"dateStr": finalDate!]).responseJSON{
                 response in
                 
-                if let anError = response.result.error
-                {
+                switch response.result {
+                case .Success:
+                    if let data: AnyObject = response.result.value
+                    {
+                        if let dataList : NSArray = data as? NSArray
+                        {
+                            for (var i = 0; i < dataList.count; i++)
+                            {
+                                let res = JSON(dataList[i])
+                                
+                                let msgData : MsgInfo = MsgInfo()
+                                msgData.dateStr =  format.dateFromString(res["date"].string!)
+                                msgData.msg = res["msg"].string
+                                msgData.url = res["url"].string
+                                self.msgInfos.append(msgData)
+                            }
+                            self.msgInfos.sortInPlace({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
+                                s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
+                            })
+                            self.nowDate = NSDate()//刷新成功后记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
+                            self.resInfos = self.msgInfos
+                            self.tbData.reloadData()
+                            self.tbData.footerEndRefreshing()
+                            if(self.msgInfos.count > 0)
+                            {
+                                self.minDateForMsg = self.msgInfos.last?.dateStr
+                            }
+                        }
+                    }
+                    
+                case .Failure:
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                     self.tbData.footerEndRefreshing()
                 }
-                else if let dataList : NSArray = response.data! as? NSArray
-                {
-                    
-                    for (var i = 0; i < dataList.count; i++)
-                    {
-                        let res = JSON(dataList[i])
-                        
-                        let msgData : MsgInfo = MsgInfo()
-                        msgData.dateStr =  format.dateFromString(res["date"].string!)
-                        msgData.msg = res["msg"].string
-                        msgData.url = res["url"].string
-                        self.msgInfos.append(msgData)
-                    }
-                    self.msgInfos.sortInPlace({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
-                        s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
-                    })
-                    self.nowDate = NSDate()//刷新成功后记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
-                    self.resInfos = self.msgInfos
-                    self.tbData.reloadData()
-                    self.tbData.footerEndRefreshing()
-                    if(self.msgInfos.count > 0)
-                    {
-                        self.minDateForMsg = self.msgInfos.last?.dateStr
-                    }
-                }
             }
-
     }
     //下拉加载更大日期
     func pullDownLoadDatas()
@@ -397,65 +405,71 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
-                if let anError = response.result.error
-                {
-                    self.isLoadOK = "NO"
-                    let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                    self.tbData.headerEndRefreshing()
-                }
-                else if let dataList : NSArray = response.data! as? NSArray
-                {
-                    
-                    for (var i = 0; i < dataList.count; i++)
+                switch response.result {
+                case .Success:
+                    if let data: AnyObject = response.result.value
                     {
-                        let res = JSON(dataList[i])
-                        
-                        let msgData : MsgInfo = MsgInfo()
-                        msgData.dateStr =  format.dateFromString(res["date"].string!)
-                        msgData.msg = res["msg"].string
-                        msgData.url = res["url"].string
-                        self.msgInfos.append(msgData)
-                    }
-                    self.msgInfos.sortInPlace({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
-                        s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
-                    })
-                    self.nowDate = NSDate()//刷新成功后记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
-                    self.resInfos = self.msgInfos
-                    self.tbData.reloadData()
-                    self.tbData.headerEndRefreshing()
-                    self.isLoadOK = "YES"
-                    //self.segmentCon.enabled = true
-                    if(self.msgInfos.count > 0)
-                    {
-                        self.maxDateForMsg = self.msgInfos.first?.dateStr
-                    }
-                    if self.isLoadOK == "YES"
-                    {
-                        //下拉成功 未读消息清零
-                        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
-                        self.tabBarItem.badgeValue = nil
-                        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET,EndPoints.MessageInfo.rawValue,parameters:["mobile":self.mobile!,"method":"clearMessage"]).responseJSON{
-                            response in
-                            if let anError = response.result.error
+                        if let dataList: NSArray = data as? NSArray
+                        {
+                            for (var i = 0; i < dataList.count; i++)
                             {
-                                let alert = SKTipAlertView()
-                                alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                                let res = JSON(dataList[i])
+                                
+                                let msgData : MsgInfo = MsgInfo()
+                                msgData.dateStr =  format.dateFromString(res["date"].string!)
+                                msgData.msg = res["msg"].string
+                                msgData.url = res["url"].string
+                                self.msgInfos.append(msgData)
                             }
-                            else if let res : AnyObject = response.data
+                            self.msgInfos.sortInPlace({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
+                                s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
+                            })
+                            self.nowDate = NSDate()//刷新成功后记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
+                            self.resInfos = self.msgInfos
+                            self.tbData.reloadData()
+                            self.tbData.headerEndRefreshing()
+                            self.isLoadOK = "YES"
+                            //self.segmentCon.enabled = true
+                            if(self.msgInfos.count > 0)
                             {
-                                var result = JSON(res)
-                                if(result["result"].string! == "ok")
-                                {
-                                    print("清理成功")
-                                }
-                                else
-                                {
-                                    print("清理失败")
+                                self.maxDateForMsg = self.msgInfos.first?.dateStr
+                            }
+                            if self.isLoadOK == "YES"
+                            {
+                                //下拉成功 未读消息清零
+                                UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+                                self.tabBarItem.badgeValue = nil
+                                (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET,EndPoints.MessageInfo.rawValue,parameters:["mobile":self.mobile!,"method":"clearMessage"]).responseJSON{
+                                    response in
+                                    
+                                    switch response.result {
+                                    case .Success:
+                                        if let data: AnyObject = response.result.value
+                                        {
+                                            var result = JSON(data)
+                                            if(result["result"].string! == "ok")
+                                            {
+                                                print("清理成功")
+                                            }
+                                            else
+                                            {
+                                                print("清理失败")
+                                            }
+                                        }
+                                        
+                                    case .Failure:
+                                        let alert = SKTipAlertView()
+                                        alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                                    }
                                 }
                             }
                         }
                     }
+                case .Failure:
+                    self.isLoadOK = "NO"
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                    self.tbData.headerEndRefreshing()
                 }
             }
     }

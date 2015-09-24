@@ -53,54 +53,57 @@ class EcosystemViewController: UIViewController {
     
     func getChannels()
     {
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.Channel.rawValue, parameters: ["method": "getchannel"])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                if let anError = response.result.error
-                {
+                
+                switch response.result {
+                case .Success:
+                    if let data: AnyObject = response.result.value
+                    {
+                        if let res = JSON(data).array
+                        {
+                            self.channels.removeAll(keepCapacity: true)
+                            for item in res
+                            {
+                                if let i = item.dictionary
+                                {
+                                    self.channels.append((i["id"]!.stringValue, i["Name"]!.stringValue))
+                                }
+                            }
+                            for(id, name) in self.channels
+                            {
+                                var dk: DKCircleButton?
+                                let delta = (Int)(self.view.frame.width - 90 * 3 - 15 * 2) / 2
+                                
+                                if self.channelCount % 3 == 0
+                                {
+                                    dk = DKCircleButton(frame: CGRect(x: delta, y: (self.channelCount / 3) * 105 + 20, width: 90, height: 90))
+                                }
+                                else if self.channelCount % 3 == 1
+                                {
+                                    dk = DKCircleButton(frame: CGRect(x: 105 + delta, y: (self.channelCount / 3) * 105 + 20, width: 90, height: 90))
+                                }
+                                else if self.channelCount % 3 == 2
+                                {
+                                    dk = DKCircleButton(frame: CGRect(x: 2 * 105 + delta, y: (self.channelCount / 3) * 105 + 20, width: 90, height: 90))
+                                }
+                                self.vEcoChannels.addSubview(dk!)
+                                dk!.setTitle(name, forState: UIControlState.Normal)
+                                dk!.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+                                dk!.backgroundColor = UIColor.randomFlatDarkColor()
+                                dk!.addTarget(self, action: "channelButtonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
+                                dk!.tag = Int(id)!
+                                self.channelCount++
+                            }
+                            self.vEcoChannels.contentSize = CGSize(width: Double(self.view.frame.width), height: Double((self.channelCount / 3) * 135))
+                        }
+                    }
+                    
+                case .Failure:
                     let alert = SKTipAlertView()
                     alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                }
-                else if let data: AnyObject = response.data
-                {
-                    if let res = JSON(data).array
-                    {
-                        self.channels.removeAll(keepCapacity: true)
-                        for item in res
-                        {
-                            if let i = item.dictionary
-                            {
-                                self.channels.append((i["id"]!.stringValue, i["Name"]!.stringValue))
-                            }
-                        }
-                        for(id, name) in self.channels
-                        {
-                            var dk: DKCircleButton?
-                            let delta = (Int)(self.view.frame.width - 90 * 3 - 15 * 2) / 2
-                            
-                            if self.channelCount % 3 == 0
-                            {
-                                dk = DKCircleButton(frame: CGRect(x: delta, y: (self.channelCount / 3) * 105 + 20, width: 90, height: 90))
-                            }
-                            else if self.channelCount % 3 == 1
-                            {
-                                dk = DKCircleButton(frame: CGRect(x: 105 + delta, y: (self.channelCount / 3) * 105 + 20, width: 90, height: 90))
-                            }
-                            else if self.channelCount % 3 == 2
-                            {
-                                dk = DKCircleButton(frame: CGRect(x: 2 * 105 + delta, y: (self.channelCount / 3) * 105 + 20, width: 90, height: 90))
-                            }
-                            self.vEcoChannels.addSubview(dk!)
-                            dk!.setTitle(name, forState: UIControlState.Normal)
-                            dk!.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-                            dk!.backgroundColor = UIColor.randomFlatDarkColor()
-                            dk!.addTarget(self, action: "channelButtonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
-                            dk!.tag = Int(id)!
-                            self.channelCount++
-                        }
-                        self.vEcoChannels.contentSize = CGSize(width: Double(self.view.frame.width), height: Double((self.channelCount / 3) * 135))
-                    }
                 }
         }
     }

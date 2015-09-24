@@ -78,46 +78,48 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     
     func getProductHierarchy()
     {
-        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetProductHierarchy.rawValue, parameters: ["method": "getmarkets"])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
-                if let anError = response.result.error
-                {
-                    let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("加载失败，请点击右上角刷新按钮！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                }
-                else if let data: AnyObject = response.data
-                {
-                    if let res1 = JSON(data).array
+                switch response.result {
+                case .Success:
+                    if let data: AnyObject = response.result.value
                     {
-                        self.marketData.removeAll(keepCapacity: true)
-                        self.market.removeAll(keepCapacity: true)
-                        self.selectionData.removeAll(keepCapacity: true)
-                        for r in res1
+                        if let res1 = JSON(data).array
                         {
-                            if let res2 = r.dictionary
+                            self.marketData.removeAll(keepCapacity: true)
+                            self.market.removeAll(keepCapacity: true)
+                            self.selectionData.removeAll(keepCapacity: true)
+                            for r in res1
                             {
-                                self.selectionData.append(res2["name"]!.string!)
-                                if let res3 = res2["markets"]?.array
+                                if let res2 = r.dictionary
                                 {
-                                    var oneMarket = [(String, String)]()
-                                    for r3 in res3
+                                    self.selectionData.append(res2["name"]!.string!)
+                                    if let res3 = res2["markets"]?.array
                                     {
-                                        if let res4 = r3.dictionary
+                                        var oneMarket = [(String, String)]()
+                                        for r3 in res3
                                         {
-                                            oneMarket.append((res4["id"]!.stringValue, res4["name"]!.stringValue))
+                                            if let res4 = r3.dictionary
+                                            {
+                                                oneMarket.append((res4["id"]!.stringValue, res4["name"]!.stringValue))
+                                            }
                                         }
+                                        self.market[res2["name"]!.string!] = oneMarket
                                     }
-                                    self.market[res2["name"]!.string!] = oneMarket
                                 }
                             }
+                            self.selection.reloadData()
+                            self.selection.setSelectedButtonIndex(0, animated: true)
+                            self.selectionList(self.selection, didSelectButtonWithIndex: 0)
                         }
-                        self.selection.reloadData()
-                        self.selection.setSelectedButtonIndex(0, animated: true)
-                        self.selectionList(self.selection, didSelectButtonWithIndex: 0)
                     }
+                    
+                case .Failure:
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请点击右上角刷新按钮！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
         }
     }
