@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HeL-gn-24I">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="HeL-gn-24I">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -46,8 +46,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentCell" id="OF6-hl-H3r" customClass="CommentVCTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OF6-hl-H3r" id="HXD-h4-hs4">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJN-hw-ekJ">
@@ -149,6 +151,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fh-fN-kCc">
+                                <rect key="frame" x="205" y="489" width="99" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="99" id="Ckt-o4-rWc"/>
+                                    <constraint firstAttribute="height" constant="30" id="Z9H-3G-NVQ"/>
+                                </constraints>
+                                <state key="normal" title="申请试用">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hR-Wl-9hA">
+                                <rect key="frame" x="16" y="489" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Nbh-zI-Wew"/>
+                                    <constraint firstAttribute="width" constant="80" id="iay-B5-UA0"/>
+                                </constraints>
+                                <state key="normal" title="忘记密码？">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -156,7 +178,9 @@
                             <constraint firstAttribute="centerX" secondItem="895-mm-QNF" secondAttribute="centerX" id="7gU-E4-9XB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4SZ-6H-1TY" secondAttribute="trailing" constant="-20" id="Bh8-69-22Y"/>
                             <constraint firstItem="RTg-xw-4OG" firstAttribute="trailing" secondItem="9sT-Xy-ALJ" secondAttribute="trailingMargin" id="DLj-vD-23B"/>
+                            <constraint firstItem="ude-Yo-5Up" firstAttribute="top" secondItem="4fh-fN-kCc" secondAttribute="bottom" constant="8" id="DoR-F5-5vt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zVu-Bf-EF0" secondAttribute="trailing" id="JD1-IF-nVc"/>
+                            <constraint firstItem="ude-Yo-5Up" firstAttribute="top" secondItem="6hR-Wl-9hA" secondAttribute="bottom" constant="8" id="L97-3j-8pw"/>
                             <constraint firstItem="doy-Tt-NZo" firstAttribute="top" secondItem="ude-Yo-5Up" secondAttribute="bottom" constant="20" id="LbS-bK-7iz"/>
                             <constraint firstItem="4SZ-6H-1TY" firstAttribute="top" secondItem="pUx-2G-90j" secondAttribute="bottom" constant="-20" id="MwR-Kv-8oV"/>
                             <constraint firstItem="895-mm-QNF" firstAttribute="top" secondItem="pUx-2G-90j" secondAttribute="bottom" constant="30" id="USP-HD-MPA"/>
@@ -166,14 +190,18 @@
                             <constraint firstItem="4SZ-6H-1TY" firstAttribute="leading" secondItem="9sT-Xy-ALJ" secondAttribute="leadingMargin" constant="-20" id="eoK-kC-IEk"/>
                             <constraint firstItem="doy-Tt-NZo" firstAttribute="top" secondItem="4SZ-6H-1TY" secondAttribute="bottom" id="l89-bu-c6Z"/>
                             <constraint firstItem="RTg-xw-4OG" firstAttribute="leading" secondItem="9sT-Xy-ALJ" secondAttribute="leadingMargin" id="lqU-Ea-RoQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4fh-fN-kCc" secondAttribute="trailing" id="o3l-At-WlC"/>
                             <constraint firstItem="pPq-vK-8Ru" firstAttribute="leading" secondItem="9sT-Xy-ALJ" secondAttribute="leadingMargin" id="pOv-V4-DSr"/>
                             <constraint firstItem="zVu-Bf-EF0" firstAttribute="top" secondItem="pUx-2G-90j" secondAttribute="bottom" constant="135" id="sZ8-da-kDd"/>
+                            <constraint firstItem="6hR-Wl-9hA" firstAttribute="leading" secondItem="9sT-Xy-ALJ" secondAttribute="leadingMargin" id="xao-fL-BjG"/>
                             <constraint firstItem="zVu-Bf-EF0" firstAttribute="leading" secondItem="9sT-Xy-ALJ" secondAttribute="leadingMargin" id="yOF-Dp-npT"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnApplyTrial" destination="4fh-fN-kCc" id="7Ix-eO-YUI"/>
                         <outlet property="btnLogInName" destination="zVu-Bf-EF0" id="ece-eU-IVf"/>
                         <outlet property="btnLogInPwd" destination="pPq-vK-8Ru" id="XaC-JH-QtM"/>
+                        <outlet property="btnforgetPassword" destination="6hR-Wl-9hA" id="xLB-KW-9cl"/>
                         <outlet property="imgLogInBg" destination="4SZ-6H-1TY" id="rya-Hi-D87"/>
                         <outlet property="imgLogInLogo" destination="895-mm-QNF" id="glL-5Z-bH8"/>
                         <outlet property="lblMobile" destination="zVu-Bf-EF0" id="UoZ-37-rmg"/>
@@ -228,8 +256,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PriceCell" id="IbR-O3-h2z" customClass="PriceVCTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IbR-O3-h2z" id="hGi-wk-3aS">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FF-qa-xRy">
@@ -314,8 +344,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CommentDetailCell" rowHeight="65" id="hrE-AN-MrY" customClass="CommentDetailVCTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hrE-AN-MrY" id="nKi-wd-Gcp">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rbt-vC-Z91">
@@ -366,6 +398,12 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="id" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8uy-Gf-xsK">
+                                                    <rect key="frame" x="122" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Rbt-vC-Z91" secondAttribute="bottom" constant="-4" id="3Rj-KI-Pl3"/>
@@ -386,6 +424,7 @@
                                             <outlet property="lblCommentDetailName" destination="s6i-kF-iZS" id="Iht-ne-ptD"/>
                                             <outlet property="lblCommentDetailTitle" destination="0lj-jc-CYr" id="9zC-Hg-o1j"/>
                                             <outlet property="lblCommentDetailUrl" destination="lr9-yK-tLd" id="eQP-zO-khO"/>
+                                            <outlet property="lblCommentProductId" destination="8uy-Gf-xsK" id="P7d-L3-1gD"/>
                                             <segue destination="zyf-UU-29u" kind="modal" identifier="CommentDetail2CommentContent" id="EW3-2M-Cha"/>
                                         </connections>
                                     </tableViewCell>
@@ -512,8 +551,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PriceDetailCell" id="PHI-DY-RFt" customClass="PriceDetailVCTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PHI-DY-RFt" id="g4L-S9-Ifp">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzE-BW-5tU">
@@ -643,8 +684,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PriceHistoryCell" id="SjC-xL-qnF" customClass="PriceHistoryTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SjC-xL-qnF" id="r5P-Ql-XbX">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最低" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kus-jq-okE">
@@ -735,14 +778,14 @@
                                 </connections>
                             </tableView>
                             <datePicker opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pBJ-mB-7c3">
-                                <rect key="frame" x="0.0" y="424" width="320" height="162"/>
+                                <rect key="frame" x="0.0" y="370" width="320" height="216"/>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <date key="date" timeIntervalSinceReferenceDate="462420821.25278097">
                                     <!--2015-08-28 02:13:41 +0000-->
                                 </date>
                             </datePicker>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Yw-C8-Ogx">
-                                <rect key="frame" x="0.0" y="380" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="326" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="HJV-pH-QOx"/>
                                 </constraints>
@@ -1091,9 +1134,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="Fwt-Uy-8ku">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fwt-Uy-8ku" id="aiL-aJ-XV9">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -1244,8 +1288,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SPListCell" rowHeight="65" id="jdn-oO-lAl" customClass="ChannelVCTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jdn-oO-lAl" id="FeB-xc-xcN">
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="60j-rX-Uxf">
@@ -1588,8 +1634,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ChannelCatalogCell" rowHeight="80" id="RXL-rg-k50" customClass="ChannelCatalogTableViewCell" customModule="同鑫资讯" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="22" width="300" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RXL-rg-k50" id="dwA-9C-e2S">
+                                            <rect key="frame" x="0.0" y="0.0" width="267" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VwK-JA-N5b">
@@ -2275,9 +2323,4 @@
         <image name="price" width="32" height="32"/>
         <image name="user" width="32" height="32"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
 </document>

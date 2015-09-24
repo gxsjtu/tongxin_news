@@ -10,6 +10,8 @@ import UIKit
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var btnforgetPassword: UIButton!
+    @IBOutlet weak var btnApplyTrial: UIButton!
     @IBOutlet weak var btnLogInPwd: UITextField!
     @IBOutlet weak var btnLogInName: UITextField!
     @IBOutlet weak var imgLogInBg: UIImageView!
@@ -25,6 +27,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         imgLogInLogo.image = UIImage(named: "logo")
         btnLogInName.delegate = self
         btnLogInPwd.delegate = self
+        btnApplyTrial.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
     }
 
     override func didReceiveMemoryWarning() {

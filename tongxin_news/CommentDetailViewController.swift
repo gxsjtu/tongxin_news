@@ -10,7 +10,7 @@ import UIKit
 
 class CommentDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    //avatar, url, title, date, id, productname
+    //avatar, url, title, date, id, productname, isOrder
     var products = [(String, String, String, String, String, String, String)]()
     var market = "未知"
     var group = "未知"
@@ -26,6 +26,16 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
         self.navBarCommentetail.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navBarCommentetail.topItem?.title = group + " - " + market
         getComments()
+    }
+    
+    func updateRowAtIndexPath(indexPath: NSIndexPath, isorder: String)
+    {
+        products[indexPath.row].6 = isorder
+        tvCommentDetail.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("CommentDetail2CommentContent", sender: tableView.cellForRowAtIndexPath(indexPath))
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,13 +54,39 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("CommentDetailCell", forIndexPath: indexPath) as! CommentDetailVCTableViewCell
+        cell.delegate = cell
+        cell.parentVC = self
         cell.lblCommentDetailTitle.preferredMaxLayoutWidth = cell.lblCommentDetailTitle.frame.width
         cell.imgCommentDetailLogo.sd_setImageWithURL(NSURL(string: products[indexPath.row].0), placeholderImage: UIImage(named: "index"))
         cell.lblCommentDetailDate.text = products[indexPath.row].3
         cell.lblCommentDetailTitle.text = products[indexPath.row].2
         cell.lblCommentDetailName.text = products[indexPath.row].5
         cell.lblCommentDetailUrl.text = products[indexPath.row].1
+        cell.lblCommentProductId.text = products[indexPath.row].4
         cell.lblCommentDetailIsOrdered.text = products[indexPath.row].6
+        
+        var rightButtons : [AnyObject] = [AnyObject]()
+        
+        let rightSubBtn = UIButton()
+        
+        if cell.lblCommentDetailIsOrdered.text == "YES"
+        {
+            rightSubBtn.setTitle("取消关注", forState: UIControlState.Normal)
+            rightSubBtn.backgroundColor = UIColor.redColor()
+            rightSubBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        }
+        else
+        {
+            rightSubBtn.setTitle("添加关注", forState: UIControlState.Normal)
+            rightSubBtn.backgroundColor = UIColor(red: 35/255, green: 124/255, blue: 2/255, alpha: 1.0)
+            rightSubBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        }
+        
+        rightButtons.append(rightSubBtn)
+        
+        cell.setRightUtilityButtons(rightButtons, withButtonWidth: 90)
+
+        
         return cell
     }
     
@@ -111,6 +147,7 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
                             {
                                 if let i = item.dictionary
                                 {
+                                    print(i["isOrder"]!.stringValue)
                                     self.products.append((i["avatar"]!.stringValue, i["url"]!.stringValue, i["title"]!.stringValue, i["date"]!.stringValue, i["id"]!.stringValue, i["productname"]!.stringValue, i["isOrder"]!.stringValue))
                                 }
                             }

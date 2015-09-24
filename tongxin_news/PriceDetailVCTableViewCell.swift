@@ -14,6 +14,8 @@ class PriceDetailVCTableViewCell: SWTableViewCell, SWTableViewCellDelegate {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    weak var parentVC: PriceDetailViewController?
 
     @IBOutlet weak var lblPriceDetailChange: UILabel!
     @IBOutlet weak var lblPriceDetailName: UILabel!
@@ -37,16 +39,49 @@ class PriceDetailVCTableViewCell: SWTableViewCell, SWTableViewCellDelegate {
         {
             if let priceCell = cell as? PriceDetailVCTableViewCell
             {
-                _ = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
-                var productId = priceCell.lblPriceDetailId.text
-                if priceCell.lblPriceDetailIsOrdered.text == "yes"
+                let mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+                let productId = priceCell.lblPriceDetailId.text
+                var isorder = "YES"
+                if priceCell.lblPriceDetailIsOrdered.text == "YES"
                 {
                     //取消订阅
+                    isorder = "NO"
                 }
                 else
                 {
                     //订阅
+                    isorder = "YES"
                 }
+                
+                (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.OrderProduct.rawValue,parameters:["mobile": mobile!, "method": "order", "productId": productId!, "isOrder": isorder]).responseJSON{
+                    response in
+                    switch response.result {
+                    case .Success:
+                        if let data: AnyObject = response.result.value
+                        {
+                            let res = JSON(data)
+                            if let result = res["result"].string
+                            {
+                                if result == "error"
+                                {
+                                    let alert = SKTipAlertView()
+                                    alert.showRedNotificationForString("订阅失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                                }
+                                else
+                                {
+                                    priceCell.lblPriceDetailIsOrdered.text = isorder
+                                    priceCell.hideUtilityButtonsAnimated(true)
+                                    self.parentVC?.updateRowAtIndexPath((self.parentVC?.tvPriceDetail.indexPathForCell(priceCell))!, isorder: isorder)
+                                }
+                            }
+                        }
+                        
+                    case .Failure:
+                        let alert = SKTipAlertView()
+                        alert.showRedNotificationForString("订阅失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                    }
+                }
+
             }
         }
     }

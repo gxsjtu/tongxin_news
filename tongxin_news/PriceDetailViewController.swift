@@ -46,9 +46,20 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         return products.count
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier("PriceDetail2PriceHistory", sender: tableView.cellForRowAtIndexPath(indexPath))
+    }
+    
+    func updateRowAtIndexPath(indexPath: NSIndexPath, isorder: String)
+    {
+        products[indexPath.row].6 = isorder
+        tvPriceDetail.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PriceDetailCell", forIndexPath: indexPath) as! PriceDetailVCTableViewCell
         cell.delegate = cell
+        cell.parentVC = self
         cell.lblPriceDetailName.text = products[indexPath.row].0
         cell.lblPriceDetailDate.text = products[indexPath.row].4
         cell.lblPriceDetailLow.text = "最低 " + products[indexPath.row].2
@@ -146,22 +157,6 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 }
         }
     }
-    
-//    override func shouldPerformSegueWithIdentifier(identifier: String?, sender: AnyObject?) -> Bool {
-//        if identifier == "PriceDetail2PriceHistory"
-//        {
-//            if let cell = sender as? PriceDetailVCTableViewCell
-//            {
-//                if cell.lblPriceDetailIsOrdered.text == "NO"
-//                {
-//                    let alert = SKTipAlertView()
-//                    alert.showRedNotificationForString("您尚未订阅该产品，无法查看历史数据！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-//                    return false
-//                }
-//            }
-//        }
-//        return true
-//    }
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
