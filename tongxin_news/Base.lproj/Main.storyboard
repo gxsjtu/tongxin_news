@@ -94,6 +94,71 @@
             </objects>
             <point key="canvasLocation" x="-67" y="-116"/>
         </scene>
+        <!--Forget Password View Controller-->
+        <scene sceneID="h0e-XN-irf">
+            <objects>
+                <viewController id="BMq-gu-a1J" customClass="ForgetPasswordViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G5z-ko-8wC"/>
+                        <viewControllerLayoutGuide type="bottom" id="mYP-G0-itF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Es-o9-Gkj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xoo-Aq-DDm">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="A7U-3r-vTA"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="发送密码" id="M01-Ou-O0z"/>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkL-8I-eH3">
+                                <rect key="frame" x="20" y="264" width="280" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="sVy-cz-kyD"/>
+                                </constraints>
+                                <state key="normal" title="确定">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didSendPasswodClicked:" destination="BMq-gu-a1J" eventType="touchUpInside" id="jNj-MN-CW6"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填：注册手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Goc-K7-gpX">
+                                <rect key="frame" x="20" y="214" width="280" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WjW-h6-a4g"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dkL-8I-eH3" firstAttribute="top" secondItem="Goc-K7-gpX" secondAttribute="bottom" constant="10" id="1VZ-dy-Jx8"/>
+                            <constraint firstAttribute="trailing" secondItem="Xoo-Aq-DDm" secondAttribute="trailing" id="NJy-qZ-qnl"/>
+                            <constraint firstAttribute="trailing" secondItem="Goc-K7-gpX" secondAttribute="trailing" constant="20" id="R4C-YK-pGN"/>
+                            <constraint firstItem="Goc-K7-gpX" firstAttribute="leading" secondItem="8Es-o9-Gkj" secondAttribute="leading" constant="20" id="WRs-ME-S4t"/>
+                            <constraint firstItem="Xoo-Aq-DDm" firstAttribute="leading" secondItem="8Es-o9-Gkj" secondAttribute="leading" id="ZoH-Ml-Nl9"/>
+                            <constraint firstAttribute="trailing" secondItem="dkL-8I-eH3" secondAttribute="trailing" constant="20" id="dGO-Ec-t9n"/>
+                            <constraint firstItem="dkL-8I-eH3" firstAttribute="centerY" secondItem="8Es-o9-Gkj" secondAttribute="centerYWithinMargins" id="lqG-fQ-5KI"/>
+                            <constraint firstAttribute="topMargin" secondItem="Xoo-Aq-DDm" secondAttribute="top" id="oak-O2-psW"/>
+                            <constraint firstItem="dkL-8I-eH3" firstAttribute="leading" secondItem="8Es-o9-Gkj" secondAttribute="leading" constant="20" id="vqw-ZK-ZYE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navForgetPassword" destination="Xoo-Aq-DDm" id="hsd-zA-pGk"/>
+                        <outlet property="txtMobile" destination="Goc-K7-gpX" id="3VE-j6-0YD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Te3-vO-bZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-832" y="473"/>
+        </scene>
         <!--登陆-->
         <scene sceneID="qew-oz-Mwi">
             <objects>
@@ -174,6 +239,9 @@
                                 <state key="normal" title="忘记密码？">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="BMq-gu-a1J" kind="modal" id="AA4-bU-pg1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -205,7 +273,6 @@
                         <outlet property="btnApplyTrial" destination="4fh-fN-kCc" id="7Ix-eO-YUI"/>
                         <outlet property="btnLogInName" destination="zVu-Bf-EF0" id="ece-eU-IVf"/>
                         <outlet property="btnLogInPwd" destination="pPq-vK-8Ru" id="XaC-JH-QtM"/>
-                        <outlet property="btnforgetPassword" destination="6hR-Wl-9hA" id="xLB-KW-9cl"/>
                         <outlet property="imgLogInBg" destination="4SZ-6H-1TY" id="rya-Hi-D87"/>
                         <outlet property="imgLogInLogo" destination="895-mm-QNF" id="glL-5Z-bH8"/>
                         <outlet property="lblMobile" destination="zVu-Bf-EF0" id="UoZ-37-rmg"/>

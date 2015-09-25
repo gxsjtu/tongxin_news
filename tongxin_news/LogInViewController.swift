@@ -9,8 +9,7 @@
 import UIKit
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
-
-    @IBOutlet weak var btnforgetPassword: UIButton!
+    
     @IBOutlet weak var btnApplyTrial: UIButton!
     @IBOutlet weak var btnLogInPwd: UITextField!
     @IBOutlet weak var btnLogInName: UITextField!
