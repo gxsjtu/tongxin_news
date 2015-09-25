@@ -31,6 +31,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         self.navInbox.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.tbData.dataSource = self
         self.tbData.delegate = self
+        self.tbData.estimatedRowHeight = 1000
         self.searchCon.delegate = self
         
         self.tbData.addHeaderWithCallback(pullDownLoadDatas)
@@ -91,92 +92,41 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         return self.resInfos.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-            let format = NSDateFormatter()
-            format.dateFormat = "yyyy-MM-dd HH:mm:ss"
-            let msg : String = resInfos[indexPath.row].msg!
-            let date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
-            if(self.resInfos[indexPath.row].url != nil && self.resInfos[indexPath.row].url != "")
-            {
-                let lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width - 50, height: 0))
-                lb.initAutoHeight(lb.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
-                let lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
-                lbDate.initAutoHeight(lbDate.frame, textColor: UIColor.yellowColor(), fontSize: 10, text: date, lineSpacing: 1)
-                return (lb.frame.height + lbDate.frame.height + 10)
-            }
-            else
-            {
-                let lb : UILabel!  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width - 10, height: 0))
-                lb.initAutoHeight(lb.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
-                let lbDate : UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: 320, height: 0))
-                lbDate.initAutoHeight(lbDate.frame, textColor: UIColor.yellowColor(), fontSize: 10, text: date, lineSpacing: 1)
-                return (lb.frame.height + lbDate.frame.height + 10)
-            }
-    }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
-            let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) 
-            
-            if(tbCell.viewWithTag(1) != nil){
-                tbCell.viewWithTag(1)?.removeFromSuperview()
-            }
-            if(tbCell.viewWithTag(2) != nil){
-                tbCell.viewWithTag(2)?.removeFromSuperview()
-            }
-            if(tbCell.viewWithTag(3) != nil)
-            {
-                tbCell.viewWithTag(3)?.removeFromSuperview()
-            }
-           
-            let msg : String = resInfos[indexPath.row].msg!
-            let date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
-
-            
-           
-            let lblUrl : UILabel = UILabel()
-            lblUrl.tag = 3
-            lblUrl.text = resInfos[indexPath.row].url
-            lblUrl.hidden = true
-            tbCell.addSubview(lblUrl)
+            let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        if(tbCell.viewWithTag(3) != nil)
+        {
+            tbCell.viewWithTag(3)?.removeFromSuperview()
+        }
+        let lblUrl : UILabel = UILabel()
+        lblUrl.tag = 3
+        lblUrl.text = resInfos[indexPath.row].url
+        lblUrl.hidden = true
+        tbCell.addSubview(lblUrl)
         
+            let msg : String = resInfos[indexPath.row].msg! + "\n"
+            let date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
+            let str : String = msg + date
+        let attribute = NSMutableAttributedString(string:str)
+        let attr1 = [NSForegroundColorAttributeName:UIColor.blackColor()]
+        attribute.addAttributes(attr1, range: NSMakeRange(0, (msg as NSString).length - 1))
+        let attr2 = [NSForegroundColorAttributeName:UIColor.orangeColor()]
+        attribute.addAttributes(attr2, range: NSMakeRange(((msg as NSString).length), (str as NSString).length - (msg as NSString).length))
+            tbCell.textLabel?.attributedText = attribute
+            tbCell.textLabel?.numberOfLines = 0
         
         if(resInfos[indexPath.row].url != nil && resInfos[indexPath.row].url != "")
-            {
+        {
             tbCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-            let lblMsg : UILabel = UILabel(frame: CGRect(x: 10, y: 2, width: (tbCell.frame.size.width-48), height: 0))
-            lblMsg.tag = 1
-            lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
-            lblMsg.numberOfLines = 0
-            lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
-            tbCell.addSubview(lblMsg)
-                let lblDate : UILabel = UILabel(frame: CGRect(x: 10, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
-                lblDate.tag = 2
-                lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
-                lblDate.numberOfLines = 0
-                lblDate.initAutoHeight(lblDate.frame, textColor: UIColor.orangeColor(), fontSize: 14, text: date, lineSpacing: 1)
-                tbCell.addSubview(lblDate)
-
         }
         else
         {
             tbCell.accessoryType = UITableViewCellAccessoryType.None
-            let lblMsg : UILabel = UILabel(frame: CGRect(x: 10, y: 2, width: (tbCell.frame.size.width-8), height: 0))
-            lblMsg.tag = 1
-            lblMsg.lineBreakMode = NSLineBreakMode.ByWordWrapping
-            lblMsg.numberOfLines = 0
-            lblMsg.initAutoHeight(lblMsg.frame, textColor: UIColor.blackColor(), fontSize: 17, text: msg, lineSpacing: 1)
-            tbCell.addSubview(lblMsg)
-            let lblDate : UILabel = UILabel(frame: CGRect(x: 10, y: lblMsg.frame.size.height + 2, width: tbCell.frame.size.width, height: 0))
-            lblDate.tag = 2
-            lblDate.lineBreakMode = NSLineBreakMode.ByWordWrapping
-            lblDate.numberOfLines = 0
-            lblDate.initAutoHeight(lblDate.frame, textColor: UIColor.orangeColor(), fontSize: 14, text: date, lineSpacing: 1)
-            tbCell.addSubview(lblDate)
-
         }
         
             return tbCell
