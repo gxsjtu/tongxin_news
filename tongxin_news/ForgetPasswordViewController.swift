@@ -20,7 +20,7 @@ class ForgetPasswordViewController: UIViewController {
         }
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.Register.rawValue, parameters: ["mobile": mobile, "method": ""])
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.Register.rawValue, parameters: ["mobile": mobile, "method": "send"])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 switch response.result {
