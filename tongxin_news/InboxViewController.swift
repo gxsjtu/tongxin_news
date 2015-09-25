@@ -191,12 +191,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
 
-        self.msgInfos = []
-        self.resInfos = []
+//        self.msgInfos = []
+//        self.resInfos = []
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getInboxMsg"]).responseJSON{
             response in
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-            
+            self.msgInfos = []
+            self.resInfos = []
             switch response.result {
             case .Success:
                 if let data: AnyObject = response.result.value
