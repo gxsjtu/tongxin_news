@@ -32,6 +32,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         self.tbData.dataSource = self
         self.tbData.delegate = self
         self.tbData.estimatedRowHeight = 1000
+        self.tbData.rowHeight = UITableViewAutomaticDimension
         self.searchCon.delegate = self
         
         self.tbData.addHeaderWithCallback(pullDownLoadDatas)
@@ -42,6 +43,11 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         
         //监听Badge消息
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBadgeNumber:", name: "Badge", object: nil)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tbData.reloadData()
     }
     
     func updateBadgeNumber(notification: NSNotification)
