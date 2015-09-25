@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		350901911BB4F7600010FFFE /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350901901BB4F7600010FFFE /* ForgetPasswordViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		3515CB211B94367200EC54D7 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB1E1B94367200EC54D7 /* Chart.swift */; };
 		3515CB221B94367200EC54D7 /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB1F1B94367200EC54D7 /* ChartColors.swift */; };
 		3515CB231B94367200EC54D7 /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB201B94367200EC54D7 /* ChartSeries.swift */; };
@@ -101,6 +102,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		350901901BB4F7600010FFFE /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		3515CB1E1B94367200EC54D7 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		3515CB1F1B94367200EC54D7 /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
 		3515CB201B94367200EC54D7 /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 				35E3E8511BA6B3BC0009E8DD /* FuturesViewController.swift */,
 				35E3E8531BA6C3750009E8DD /* Parameter.swift */,
 				35F6657C1BB3F18700A3AEDE /* ApplyTrialViewController.swift */,
+				350901901BB4F7600010FFFE /* ForgetPasswordViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -635,6 +638,7 @@
 				35C712921B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m in Sources */,
 				35C712661B86AEE9004B267A /* SKTipAlertView.m in Sources */,
 				35C712911B86CC5D004B267A /* HTHorizontalSelectionList.m in Sources */,
+				350901911BB4F7600010FFFE /* ForgetPasswordViewController.swift in Sources */,
 				35F665741BB3B9DC00A3AEDE /* Request.swift in Sources */,
 				356803981BA0304600BB50AE /* UIImageView+HighlightedWebCache.m in Sources */,
 				3515CB291B9C05DF00EC54D7 /* DKCircleButton.m in Sources */,
