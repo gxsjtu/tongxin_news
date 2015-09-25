@@ -30,15 +30,15 @@ class ApplyTrialViewController: UIViewController {
                     let res = JSON(response.result.value!)
                     if let result = res["result"].string
                     {
-                        if result == "error"
-                        {
-                            let alert = SKTipAlertView()
-                            alert.showRedNotificationForString("该手机号已注册，请使用其他手机号码！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                        }
-                        else
+                        if result == "ok"
                         {
                             let alert = SKTipAlertView()
                             alert.showGreenNotificationForString("申请成功，请返回登陆页！", forDuration: 4.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                        }
+                        else
+                        { 
+                            let alert = SKTipAlertView()
+                            alert.showRedNotificationForString("该手机号已注册，请使用其他手机号码！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                         }
                     }
                 case .Failure:
