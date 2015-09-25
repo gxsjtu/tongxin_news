@@ -39,7 +39,13 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         return true
     }
-
+    
+    @IBAction func unwindFromApplyTrial2Login(segue: UIStoryboardSegue)
+    {
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 
@@ -77,7 +83,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         }
         
          MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile, "password": password, "method": "signin", "token": token!,])
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile, "password": password, "method": "signin", "token": token!])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 switch response.result {

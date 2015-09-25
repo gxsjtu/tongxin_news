@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -160,6 +161,9 @@
                                 <state key="normal" title="申请试用">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ssS-VV-UVX" kind="modal" id="5LX-4U-CUM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hR-Wl-9hA">
                                 <rect key="frame" x="16" y="489" width="80" height="30"/>
@@ -211,6 +215,91 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vpt-qr-del" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-511" y="88"/>
+        </scene>
+        <!--Apply Trial View Controller-->
+        <scene sceneID="UMr-uJ-1QH">
+            <objects>
+                <viewController id="ssS-VV-UVX" customClass="ApplyTrialViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wLh-jK-ezQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="JRO-Ex-OUY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ng0-Av-OC9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KXA-Em-LHp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="k5s-0u-0b1"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="申请试用" id="kg3-yZ-lOd">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="gTk-wj-aDQ">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="4WG-cA-qgg" kind="unwind" unwindAction="unwindFromApplyTrial2Login:" id="vt4-cO-5wL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填：手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEf-UM-Dlt">
+                                <rect key="frame" x="20" y="214" width="280" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="26w-nX-lxR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKn-cs-bKd">
+                                <rect key="frame" x="20" y="264" width="280" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="aZZ-eM-Kc3"/>
+                                </constraints>
+                                <state key="normal" title="确定">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didRegisterClicked:" destination="ssS-VV-UVX" eventType="touchUpInside" id="oQI-EE-v2h"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="申请成功后，账号即时生效，请返回登录页面输入注册手机的短息密码进行登录" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="yFd-WY-3n4">
+                                <rect key="frame" x="20" y="461" width="280" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="QIx-wH-e29"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="eEf-UM-Dlt" secondAttribute="trailing" constant="20" id="25L-nG-I92"/>
+                            <constraint firstItem="AKn-cs-bKd" firstAttribute="leading" secondItem="Ng0-Av-OC9" secondAttribute="leading" constant="20" id="B5U-XO-nrc"/>
+                            <constraint firstItem="AKn-cs-bKd" firstAttribute="top" secondItem="eEf-UM-Dlt" secondAttribute="bottom" constant="10" id="E4g-5G-g5g"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="yFd-WY-3n4" secondAttribute="bottom" constant="57" id="Fjq-A0-3IL"/>
+                            <constraint firstAttribute="trailing" secondItem="AKn-cs-bKd" secondAttribute="trailing" constant="20" id="GfS-FE-m5B"/>
+                            <constraint firstAttribute="trailing" secondItem="yFd-WY-3n4" secondAttribute="trailing" constant="20" id="PGb-8C-Zyk"/>
+                            <constraint firstItem="KXA-Em-LHp" firstAttribute="leading" secondItem="Ng0-Av-OC9" secondAttribute="leading" id="SRE-sK-04i"/>
+                            <constraint firstItem="eEf-UM-Dlt" firstAttribute="leading" secondItem="Ng0-Av-OC9" secondAttribute="leading" constant="20" id="ULk-Al-zIh"/>
+                            <constraint firstItem="yFd-WY-3n4" firstAttribute="leading" secondItem="Ng0-Av-OC9" secondAttribute="leading" constant="20" id="afO-qJ-6Zv"/>
+                            <constraint firstAttribute="trailing" secondItem="KXA-Em-LHp" secondAttribute="trailing" id="k0g-b7-ol5"/>
+                            <constraint firstAttribute="topMargin" secondItem="KXA-Em-LHp" secondAttribute="top" id="o19-qW-xJq"/>
+                            <constraint firstItem="AKn-cs-bKd" firstAttribute="centerY" secondItem="Ng0-Av-OC9" secondAttribute="centerYWithinMargins" id="tVE-Wa-Cv8"/>
+                        </constraints>
+                    </view>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="navApplyTrial" destination="KXA-Em-LHp" id="qEW-uO-YBX"/>
+                        <outlet property="txtMobile" destination="eEf-UM-Dlt" id="abk-ic-krH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jNk-g4-jIj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="4WG-cA-qgg" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="-113" y="314"/>
         </scene>
         <!--行情-->
         <scene sceneID="hYJ-wm-2aY">
