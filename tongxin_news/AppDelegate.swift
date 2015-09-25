@@ -23,15 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         manager = Manager(configuration: configuration)
 
+        if #available(iOS 8.0, *) {
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+            let userNotificationSettings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert, UIUserNotificationType.Sound, UIUserNotificationType.Badge], categories: nil)
+            UIApplication.sharedApplication().registerUserNotificationSettings(userNotificationSettings)
 
-            if #available(iOS 8.0, *) {
-                UIApplication.sharedApplication().registerForRemoteNotifications()
-                let userNotificationSettings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert, UIUserNotificationType.Sound, UIUserNotificationType.Badge], categories: nil)
-                UIApplication.sharedApplication().registerUserNotificationSettings(userNotificationSettings)
-
-            } else {
-                            UIApplication.sharedApplication().registerForRemoteNotificationTypes([UIRemoteNotificationType.Alert, UIRemoteNotificationType.Sound, UIRemoteNotificationType.Badge])
-            }
+        } else {
+            UIApplication.sharedApplication().registerForRemoteNotificationTypes([UIRemoteNotificationType.Alert, UIRemoteNotificationType.Sound, UIRemoteNotificationType.Badge])
+        }
         
         
         if let isLoggedIn = NSUserDefaults.standardUserDefaults().stringForKey("isLoggedIn")

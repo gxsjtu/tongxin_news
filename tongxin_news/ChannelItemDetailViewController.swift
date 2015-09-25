@@ -10,12 +10,18 @@ import UIKit
 
 class ChannelItemDetailViewController: UIViewController {
 
+    @IBAction func didCallClicked(sender: AnyObject) {
+        if let mobile = btnMobile.titleLabel?.text
+        {
+            UIApplication.sharedApplication().openURL(NSURL(string: ("tel://" + mobile))!)
+        }
+    }
+    @IBOutlet weak var btnMobile: UIButton!
     @IBOutlet weak var slideChannelItem: KASlideShow!
     @IBOutlet weak var txtChannelItemDesc: UITextView!
     @IBOutlet weak var lblChannelItemDeliver: UILabel!
     @IBOutlet weak var lblChannelItemLocation: UILabel!
     @IBOutlet weak var lblChannelItemContact: UILabel!
-    @IBOutlet weak var lblChannelItemMobile: UILabel!
     @IBOutlet weak var lblChannelItemQty: UILabel!
     @IBOutlet weak var lblChannelItemName: UILabel!
     @IBOutlet weak var lblChannelItemCapt: UILabel!
@@ -84,7 +90,7 @@ class ChannelItemDetailViewController: UIViewController {
                             }
                             self.lblChannelItemContact.text = i["contact"]!.stringValue
                             self.lblChannelItemLocation.text = i["location"]!.stringValue
-                            self.lblChannelItemMobile.text = i["mobile"]!.stringValue
+                            self.btnMobile.setTitle(i["mobile"]!.stringValue, forState: UIControlState.Normal)
                             self.lblChannelItemName.text = i["name"]!.stringValue
                             self.lblChannelItemQty.text = i["quantity"]!.stringValue
                             self.txtChannelItemDesc.text = i["description"]!.stringValue

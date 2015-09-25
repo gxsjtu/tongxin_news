@@ -10,6 +10,9 @@ import UIKit
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
     
+    @IBAction func didCallClicked(sender: AnyObject) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://021-62156169")!)
+    }
     @IBOutlet weak var btnApplyTrial: UIButton!
     @IBOutlet weak var btnLogInPwd: UITextField!
     @IBOutlet weak var btnLogInName: UITextField!
