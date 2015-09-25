@@ -112,7 +112,14 @@
                                     <constraint firstAttribute="height" constant="64" id="A7U-3r-vTA"/>
                                 </constraints>
                                 <items>
-                                    <navigationItem title="发送密码" id="M01-Ou-O0z"/>
+                                    <navigationItem title="发送密码" id="M01-Ou-O0z">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="sgn-ab-jSE">
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <connections>
+                                                <segue destination="IGH-ai-osY" kind="unwind" unwindAction="unwindFromApplyTrial2Login:" id="i8d-hs-yol"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
                                 </items>
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkL-8I-eH3">
@@ -156,6 +163,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Te3-vO-bZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="IGH-ai-osY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-832" y="473"/>
         </scene>
