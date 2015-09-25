@@ -71,7 +71,10 @@ class PriceDetailVCTableViewCell: SWTableViewCell, SWTableViewCellDelegate {
                                 {
                                     priceCell.lblPriceDetailIsOrdered.text = isorder
                                     priceCell.hideUtilityButtonsAnimated(true)
-                                    self.parentVC?.updateRowAtIndexPath((self.parentVC?.tvPriceDetail.indexPathForCell(priceCell))!, isorder: isorder)
+                                    if let index = self.parentVC?.tvPriceDetail.indexPathForCell(priceCell)
+                                    {
+                                        self.parentVC?.updateRowAtIndexPath(index, isorder: isorder)
+                                    }
                                 }
                             }
                         }
