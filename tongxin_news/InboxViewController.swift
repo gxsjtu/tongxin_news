@@ -193,13 +193,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
 
 //        self.msgInfos = []
 //        self.resInfos = []
-        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile":self.mobile!,"method":"getInboxMsg"]).responseJSON{
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile": self.mobile!, "method": "getInboxMsg"]).responseJSON{
             response in
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-            self.msgInfos = []
-            self.resInfos = []
             switch response.result {
             case .Success:
+                self.msgInfos = []
+                self.resInfos = []
                 if let data: AnyObject = response.result.value
                 {
                     if let dataList: NSArray = data as? NSArray

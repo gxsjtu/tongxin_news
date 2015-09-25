@@ -8,7 +8,12 @@
 
 import UIKit
 
-class ForgetPasswordViewController: UIViewController {
+class ForgetPasswordViewController: UIViewController, UITextFieldDelegate {
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
 
     @IBAction func didSendPasswodClicked(sender: AnyObject) {
         let mobile = txtMobile.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
@@ -53,6 +58,7 @@ class ForgetPasswordViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.navForgetPassword.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
+        self.txtMobile.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
