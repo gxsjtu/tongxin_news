@@ -76,9 +76,8 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         searchBar.text = ""
-            self.resInfos = []
-            self.resInfos = self.msgInfos
-
+        self.resInfos = []
+        self.resInfos = self.msgInfos
         self.tbData.reloadData()
     }
     
@@ -98,7 +97,8 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         let format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
-            let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        tbCell
         if(tbCell.viewWithTag(3) != nil)
         {
             tbCell.viewWithTag(3)?.removeFromSuperview()
@@ -109,16 +109,16 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         lblUrl.hidden = true
         tbCell.addSubview(lblUrl)
         
-            let msg : String = resInfos[indexPath.row].msg! + "\n"
-            let date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
-            let str : String = msg + date
+        let msg : String = resInfos[indexPath.row].msg! + "\n"
+        let date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
+        let str : String = msg + date
         let attribute = NSMutableAttributedString(string:str)
         let attr1 = [NSForegroundColorAttributeName:UIColor.blackColor()]
         attribute.addAttributes(attr1, range: NSMakeRange(0, (msg as NSString).length - 1))
         let attr2 = [NSForegroundColorAttributeName:UIColor.orangeColor()]
         attribute.addAttributes(attr2, range: NSMakeRange(((msg as NSString).length), (str as NSString).length - (msg as NSString).length))
-            tbCell.textLabel?.attributedText = attribute
-            tbCell.textLabel?.numberOfLines = 0
+        tbCell.textLabel?.attributedText = attribute
+        tbCell.textLabel?.numberOfLines = 0
         
         if(resInfos[indexPath.row].url != nil && resInfos[indexPath.row].url != "")
         {
