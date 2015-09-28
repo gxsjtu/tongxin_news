@@ -11,10 +11,7 @@ import UIKit
 class ChannelItemDetailViewController: UIViewController {
 
     @IBAction func didCallClicked(sender: AnyObject) {
-        if let mobile = btnMobile.titleLabel?.text
-        {
             UIApplication.sharedApplication().openURL(NSURL(string: ("tel://" + mobile))!)
-        }
     }
     @IBOutlet weak var btnMobile: UIButton!
     @IBOutlet weak var slideChannelItem: KASlideShow!
@@ -29,6 +26,8 @@ class ChannelItemDetailViewController: UIViewController {
     
     var itemId = "0"
     var navTitle = "未知"
+    var mobile = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +39,7 @@ class ChannelItemDetailViewController: UIViewController {
         self.slideChannelItem.transitionDuration = 3.0
         self.slideChannelItem.transitionType = KASlideShowTransitionType.Slide
         self.slideChannelItem.imagesContentMode = UIViewContentMode.ScaleToFill
+        btnMobile.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
     }
 
     @IBAction func didRefreshChannelItems(sender: AnyObject) {
@@ -90,7 +90,8 @@ class ChannelItemDetailViewController: UIViewController {
                             }
                             self.lblChannelItemContact.text = i["contact"]!.stringValue
                             self.lblChannelItemLocation.text = i["location"]!.stringValue
-                            self.btnMobile.setTitle(i["mobile"]!.stringValue, forState: UIControlState.Normal)
+                            self.mobile = i["mobile"]!.stringValue
+                            self.btnMobile.setTitle(self.mobile + "（点击拨打）", forState: UIControlState.Normal)
                             self.lblChannelItemName.text = i["name"]!.stringValue
                             self.lblChannelItemQty.text = i["quantity"]!.stringValue
                             self.txtChannelItemDesc.text = i["description"]!.stringValue

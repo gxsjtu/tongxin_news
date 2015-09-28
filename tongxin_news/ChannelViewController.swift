@@ -139,6 +139,14 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
         }
     }
     
+//    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//        let vc : ChannelItemDetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ItemDetailView") as! ChannelItemDetailViewController
+//        
+//        vc.navTitle = "商圈 - " + channelName
+//        vc.itemId = (tableView.cellForRowAtIndexPath(indexPath) as! ChannelVCTableViewCell).lblChannelItemId.text!
+//        presentViewController(vc, animated: true, completion: nil)
+//    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("SPListCell") as! ChannelVCTableViewCell
         if segChannel.selectedSegmentIndex == 0

@@ -10,6 +10,28 @@ import UIKit
 
 class ForgetPasswordViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var btnSend: UIButton!
+    var counter = 60
+    var timer: NSTimer?
+    
+    func updateCounter()
+    {
+        var title = ""
+        counter--
+        if counter == 0
+        {
+            btnSend.enabled = true
+            title = "确定"
+            self.btnSend.backgroundColor = UIColor.orangeColor()
+            timer?.invalidate()
+        }
+        else
+        {
+            title = String(counter) + "秒后重新发送"
+        }
+        btnSend.setTitle(title, forState: UIControlState.Normal)
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
@@ -23,6 +45,13 @@ class ForgetPasswordViewController: UIViewController, UITextFieldDelegate {
             alert.showRedNotificationForString("请输入注册的手机号码！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
             return
         }
+        
+        //一分钟后才可以重新发送
+        
+        self.btnSend.enabled = false
+        self.btnSend.backgroundColor = UIColor.grayColor()
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: Selector("updateCounter"), userInfo: nil, repeats: true)
+        counter = 60
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.Register.rawValue, parameters: ["mobile": mobile, "method": "send"])
