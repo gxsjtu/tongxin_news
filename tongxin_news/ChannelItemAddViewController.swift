@@ -139,13 +139,14 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     }
     
     
-    func uploadImage()
+    func uploadImage(parameters : Dictionary<String,String>) -> (URLRequestConvertible,NSData)
     {
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+
         let uploadURL : String = EndPoints.ChannelUploadImg.rawValue
         let request = NSMutableURLRequest(URL: NSURL(string: uploadURL)!)
         request.HTTPMethod = "POST"
-          let boundary:String="-------------------21212222222222222222222"
+        
+        let boundary:String="-------------------21212222222222222222222"
         let contentType : String = "multipart/form-data;boundary="+boundary
         request.addValue(contentType, forHTTPHeaderField: "Content-Type")
         let body = NSMutableData()
@@ -156,35 +157,19 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         body.appendData(NSString(format:"Content-Type:application/octet-stream\r\n\r\n").dataUsingEncoding(NSUTF8StringEncoding)!)
         let data = UIImagePNGRepresentation(img)
         body.appendData(data!)
-        body.appendData(NSString(format:"\r\n--\(boundary)").dataUsingEncoding(NSUTF8StringEncoding)!)
         }
-        request.HTTPBody=body
-        let que=NSOperationQueue()
-        NSURLConnection.sendAsynchronousRequest(request, queue: que, completionHandler: {
-            (response, data, error) ->Void in
-            
-            if (error != nil){
-            print(error)
-            }else{ //没有错误的情况
-                self.imagesName = NSString(data:data!,encoding:NSUTF8StringEncoding)! as String
-                if self.imagesName == "-1"//报错的情况
-                {
-                        print("error")
-                }
-                else
-                {
-                    if(self.imagesName == "0")//没有上传图片的情况
-                    {
-                        self.imagesName = ""
-                    }
-                self.createData(self.imagesName)
-                }
-            }
-            })
+        for(key,value) in parameters
+        {
+            body.appendData("\r\n--\(boundary)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
+            body.appendData("Content-Disposition: form-data; name=\"\(key)\"\r\n\r\n\(value)".dataUsingEncoding(NSUTF8StringEncoding)!)
+        }
+         body.appendData(NSString(format:"\r\n--\(boundary)").dataUsingEncoding(NSUTF8StringEncoding)!)
         
+        return (ParameterEncoding.URL.encode(request, parameters: nil).0, body)
     }
+
     
-    func createData(images: String?)
+    func createData()
     {
         let cId = self.catalogId
         var sOrP : String?
@@ -206,41 +191,55 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
             sOro = "0"
         }
         
-        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SPList.rawValue, parameters:["method": "create", "catalogID":cId, "product":self.txtChannelItemSP.text!, "quantity":self.txtChannelItemQty.text!, "mobile":self.txtChannelItemMobile.text!, "contact":self.txtChannelItemContact.text!, "description":self.txtChannelItemDesc.text!, "deliveryType":sOro!, "type":sOrP!,"province": self.stateStr!, "city": self.cityStr!, "images":images!]).responseJSON{
-            response in
-            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-            
-            switch response.result {
+        var parameters : Dictionary<String, String> = ["type":sOrP!,"deliveryType":sOro!]
+        parameters["method"] = "create"
+        parameters["catalogID"] = String(cId)
+        parameters["product"] = self.txtChannelItemSP.text!
+        parameters["quantity"] = self.txtChannelItemQty.text!
+        parameters["mobile"] = self.txtChannelItemMobile.text!
+        parameters["contact"] = self.txtChannelItemContact.text!
+        parameters["description"] = self.txtChannelItemDesc.text!
+        parameters["province"] = self.stateStr!
+        parameters["city"] = self.cityStr!
+        
+        
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        let urlRequest = self.uploadImage(parameters)
+        upload(urlRequest.0, data: urlRequest.1).responseJSON{
+        response in
+           
+        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        
+        switch response.result {
             case .Success:
                 if let data: AnyObject = response.result.value
-                {
-                    var res = JSON(data)
-                    let result = res["result"].string!
-                    if(result == "ok")
                     {
-                        self.addRes = "YES"
-                        self.itemId = res["id"].string!
-                        self.slideView.stop()
-                        let vc : ChannelItemDetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ItemDetailView") as! ChannelItemDetailViewController
-                        vc.navTitle = self.navChannelItem.topItem!.title!
-                        vc.itemId = self.itemId!
-                        self.presentViewController(vc, animated: true, completion: nil)
-                    }
-                    else
-                    {
+                        var res = JSON(data)
+                        let result = res["result"].string!
+                        if(result == "ok")
+                            {
+                                self.addRes = "YES"
+                                self.itemId = res["id"].string!
+                                self.slideView.stop()
+                                let vc : ChannelItemDetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ItemDetailView") as! ChannelItemDetailViewController
+                                vc.navTitle = self.navChannelItem.topItem!.title!
+                                vc.itemId = self.itemId!
+                                self.presentViewController(vc, animated: true, completion: nil)
+                            }
+                            else
+                            {
+                                self.addRes = "NO"
+                            }
+                        }
+            
+                case .Failure:
+                    let alert = SKTipAlertView()
+                        alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                         self.addRes = "NO"
                     }
-
-                }
-                
-            case .Failure:
-                let alert = SKTipAlertView()
-                alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                self.addRes = "NO"
-            }
         }
-
     }
+    
     
     @IBAction func addData(sender: UIBarButtonItem) {
         if txtChannelItemSP.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
@@ -267,7 +266,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
             alert.showRedNotificationForString("发货地不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
             return
         }
-        uploadImage()
+        createData()
     }
     
     /*
