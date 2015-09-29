@@ -221,7 +221,6 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         let urlRequest = self.uploadImage(parameters)
         upload(urlRequest.0, data: urlRequest.1).responseJSON{
         response in
-           print(response)
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
         switch response.result {
             case .Success:
@@ -230,7 +229,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
                         var res = JSON(data)
                         let result = res["result"].string!
                         if(result == "ok")
-                            {
+                           {
                                 self.addRes = "YES"
                                 self.itemId = res["id"].string!
                                 self.slideView.stop()
