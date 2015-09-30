@@ -30,11 +30,11 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     var channelName = "未知"
     var catalogName = "未知"
     var catalogId = 0
+    var channelId = 0
     var stateStr : String?//交货地－省份
     var cityStr : String?//交货地－城市
     var imagesName : String?//图片名字
     var itemId : String?
-    var addRes : String?
     var isLocationEmpty = true
     @IBOutlet weak var navChannelItem: UINavigationBar!
     override func viewDidLoad() {
@@ -218,24 +218,20 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
                         let result = res["result"].string!
                         if(result == "ok")
                             {
-                                self.addRes = "YES"
-                                self.itemId = res["id"].string!
-                                self.slideView.stop()
-                                let vc : ChannelItemDetailViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ItemDetailView") as! ChannelItemDetailViewController
-                                vc.navTitle = self.navChannelItem.topItem!.title!
-                                vc.itemId = self.itemId!
+                                let alert = SKTipAlertView()
+                                alert.showRedNotificationForString("添加成功，请等待审核！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                                
+                                let vc : ChannelViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+                                vc.channelId = self.channelId
+                                vc.channelName = self.channelName
                                 self.presentViewController(vc, animated: true, completion: nil)
-                            }
-                            else
-                            {
-                                self.addRes = "NO"
-                            }
+                             }
                         }
             
                 case .Failure:
+                    print(response.debugDescription)
                     let alert = SKTipAlertView()
                         alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                        self.addRes = "NO"
                     }
         }
     }
