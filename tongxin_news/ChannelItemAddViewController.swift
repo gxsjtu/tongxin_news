@@ -30,11 +30,11 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     var channelName = "未知"
     var catalogName = "未知"
     var catalogId = 0
+    var channelId = 0
     var stateStr : String?//交货地－省份
     var cityStr : String?//交货地－城市
     var imagesName : String?//图片名字
     var itemId : String?
-    var addRes : String?
     var isLocationEmpty = true
     @IBOutlet weak var navChannelItem: UINavigationBar!
     override func viewDidLoad() {
@@ -237,17 +237,13 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
                                 vc.navTitle = self.navChannelItem.topItem!.title!
                                 vc.itemId = self.itemId!
                                 self.presentViewController(vc, animated: true, completion: nil)
-                            }
-                            else
-                            {
-                                self.addRes = "NO"
-                            }
+                             }
                         }
             
                 case .Failure:
+                    print(response.debugDescription)
                     let alert = SKTipAlertView()
                         alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                        self.addRes = "NO"
                     }
         }
     }

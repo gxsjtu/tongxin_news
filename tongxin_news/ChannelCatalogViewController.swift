@@ -66,6 +66,7 @@ class ChannelCatalogViewController: UIViewController, UITableViewDelegate, UITab
                     des.channelName = self.channelName
                     des.catalogName = cell.lblChannelCatalogName.text!
                     des.catalogId = Int(cell.lblChannelCatalogId.text!)!
+                    des.channelId = self.channelId
                 }
             }
         }
