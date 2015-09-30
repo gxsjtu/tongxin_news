@@ -18,8 +18,7 @@ enum EndPoints: String
     case GetCommentHierarchy = "http://api.shtx.com.cn/Handlers/PLHandler.ashx"
     case MessageInfo = "http://api.shtx.com.cn/Handlers/MessageHandler.ashx"
     case Channel = "http://api.shtx.com.cn/Handlers/ChannelHandler.ashx"
-    case SPList = "http://api.shtx.com.cn/Handlers/SupplyHandler.ashx"
-    case ChannelUploadImg = "http://api.shtx.com.cn/Handlers/SupplyHandler.ashx?method=upload"
+    case SPList = "http://172.20.66.198:3838/Handlers/SupplyHandler.ashx"
     case OrderProduct = "http://api.shtx.com.cn/Handlers/orderHandler.ashx"
     case Register = "http://api.shtx.com.cn/Handlers/CustomerHandler.ashx"
 }

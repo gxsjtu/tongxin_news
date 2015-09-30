@@ -142,7 +142,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     func uploadImage(parameters : Dictionary<String,String>) -> (URLRequestConvertible,NSData)
     {
 
-        let uploadURL : String = EndPoints.ChannelUploadImg.rawValue
+        let uploadURL : String = EndPoints.SPList.rawValue
         let request = NSMutableURLRequest(URL: NSURL(string: uploadURL)!)
         request.HTTPMethod = "POST"
         
@@ -172,8 +172,8 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     func createData()
     {
         let cId = self.catalogId
-        var sOrP : String?
-        var sOro : String?
+        var sOrP : String = "1"
+        var sOro : String = "1"
         if self.rbSupply.selected
         {
             sOrP = "0"
@@ -191,14 +191,28 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
             sOro = "0"
         }
         
-        var parameters : Dictionary<String, String> = ["type":sOrP!,"deliveryType":sOro!]
+        var parameters : Dictionary<String, String> = ["type":sOrP, "deliveryType":sOro]
         parameters["method"] = "create"
         parameters["catalogID"] = String(cId)
         parameters["product"] = self.txtChannelItemSP.text!
         parameters["quantity"] = self.txtChannelItemQty.text!
         parameters["mobile"] = self.txtChannelItemMobile.text!
-        parameters["contact"] = self.txtChannelItemContact.text!
-        parameters["description"] = self.txtChannelItemDesc.text!
+        if let contact = self.txtChannelItemContact.text
+        {
+            parameters["contact"] = contact
+        }
+        else
+        {
+            parameters["contact"] = ""
+        }
+        if let desc = self.txtChannelItemDesc.text
+        {
+            parameters["description"] = desc
+        }
+        else
+        {
+            parameters["description"] = ""
+        }
         parameters["province"] = self.stateStr!
         parameters["city"] = self.cityStr!
         
@@ -207,9 +221,8 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         let urlRequest = self.uploadImage(parameters)
         upload(urlRequest.0, data: urlRequest.1).responseJSON{
         response in
-           
+           print(response)
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-        
         switch response.result {
             case .Success:
                 if let data: AnyObject = response.result.value
