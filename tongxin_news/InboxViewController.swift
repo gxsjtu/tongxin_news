@@ -225,16 +225,47 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                         })
                         self.resInfos = self.msgInfos
                         self.tbData.reloadData()
+                        self.isLoadOK = "YES"
                         //self.segmentCon.enabled = true
                         if(self.msgInfos.count > 0)
                         {
                             self.maxDateForMsg = self.msgInfos.first?.dateStr
                             self.minDateForMsg = self.msgInfos.last?.dateStr
                         }
+                        if self.isLoadOK == "YES"
+                        {
+                            //下拉成功 未读消息清零
+                            UIApplication.sharedApplication().applicationIconBadgeNumber = 0
+                            self.tabBarItem.badgeValue = nil
+                            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET,EndPoints.MessageInfo.rawValue,parameters:["mobile":self.mobile!,"method":"clearMessage"]).responseJSON{
+                                response in
+                                
+                                switch response.result {
+                                case .Success:
+                                    if let data: AnyObject = response.result.value
+                                    {
+                                        var result = JSON(data)
+                                        if(result["result"].string! == "ok")
+                                        {
+                                            print("清理成功")
+                                        }
+                                        else
+                                        {
+                                            print("清理失败")
+                                        }
+                                    }
+                                    
+                                case .Failure:
+                                    let alert = SKTipAlertView()
+                                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                                }
+                            }
+                        }
                     }
                 }
                 
             case .Failure:
+                self.isLoadOK = "NO"
                 let alert = SKTipAlertView()
                 alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
             }
