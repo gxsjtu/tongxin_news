@@ -12,6 +12,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
 
     var channelName = "未知"
     var channelId = 0
+    var fromAdd = false
     //avatar, name, location, contact, date, type, id
     var pdata = [(String, String, String, String, String, String, String)]()
     var sdata = [(String, String, String, String, String, String, String)]()
@@ -28,6 +29,15 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
         // Do any additional setup after loading the view.
         self.navChannel.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         getSPList()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if fromAdd == true
+        {
+            let alert = SKTipAlertView()
+            alert.showGreenNotificationForString("添加成功，请等待系统审核！", forDuration: 3.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+            self.fromAdd = false
+        }
     }
 
     override func didReceiveMemoryWarning() {

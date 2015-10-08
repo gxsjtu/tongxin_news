@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ForgetPasswordViewController: UIViewController, UITextFieldDelegate {
+class ForgetPasswordViewController: UIViewController {
     
     @IBOutlet weak var btnSend: UIButton!
     var counter = 60
@@ -17,7 +17,6 @@ class ForgetPasswordViewController: UIViewController, UITextFieldDelegate {
     func updateCounter()
     {
         var title = ""
-        counter--
         if counter == 0
         {
             btnSend.enabled = true
@@ -27,14 +26,10 @@ class ForgetPasswordViewController: UIViewController, UITextFieldDelegate {
         }
         else
         {
+            self.counter--
             title = String(counter) + "秒后重新发送"
         }
         btnSend.setTitle(title, forState: UIControlState.Normal)
-    }
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return true
     }
 
     @IBAction func didSendPasswodClicked(sender: AnyObject) {
@@ -65,17 +60,19 @@ class ForgetPasswordViewController: UIViewController, UITextFieldDelegate {
                         if result == "ok"
                         {
                             let alert = SKTipAlertView()
-                            alert.showGreenNotificationForString("密码已发送至该手机，请查收！", forDuration: 4.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                            alert.showGreenNotificationForString("密码已发送至该手机，请查收！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                         }
                         else
                         {
                             let alert = SKTipAlertView()
-                            alert.showRedNotificationForString("该手机号尚未注册，请使用有效手机号码！", forDuration: 4.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                            alert.showRedNotificationForString("该手机号尚未注册，请使用有效手机号码！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                            self.counter = 0
                         }
                     }
                 case .Failure:
                     let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("短信发送失败，请重试！", forDuration: 4.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                    alert.showRedNotificationForString("短信发送失败，请重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                    self.counter = 0
                 }
         }
     }
@@ -87,7 +84,10 @@ class ForgetPasswordViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         self.navForgetPassword.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
-        self.txtMobile.delegate = self
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+                self.txtMobile.endEditing(false)
     }
 
     override func didReceiveMemoryWarning() {

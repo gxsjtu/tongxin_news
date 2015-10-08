@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LogInViewController: UIViewController, UITextFieldDelegate {
+class LogInViewController: UIViewController {
     
     @IBAction func didCallClicked(sender: AnyObject) {
         UIApplication.sharedApplication().openURL(NSURL(string: "tel://021-62156169")!)
@@ -21,14 +21,17 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var lblMobile: UITextField!
     @IBOutlet weak var lblPassword: UITextField!
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.btnLogInName.endEditing(false)
+        self.btnLogInPwd.endEditing(false)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         imgLogInBg.image = UIImage(named: "background")
         imgLogInLogo.image = UIImage(named: "logo")
-        btnLogInName.delegate = self
-        btnLogInPwd.delegate = self
         btnApplyTrial.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
     }
 
@@ -37,14 +40,9 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return true
-    }
-    
     @IBAction func unwindFromApplyTrial2Login(segue: UIStoryboardSegue)
     {
-        
+
     }
     
     

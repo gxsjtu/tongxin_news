@@ -61,6 +61,10 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         self.slideView.addGesture(KASlideShowGestureType.Tap)
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.txtChannelItemMobile.endEditing(false)
+    }
+    
     @IBAction func didPopupLocation(sender: AnyObject) {
         let location: TSLocateView = TSLocateView(title: "选择发货地", delegate: self)
         location.frame.size = CGSizeMake(self.view.frame.width, 260)
@@ -221,7 +225,6 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         let urlRequest = self.uploadImage(parameters)
         upload(urlRequest.0, data: urlRequest.1).responseJSON{
         response in
-           print(response)
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
         switch response.result {
             case .Success:
@@ -231,18 +234,16 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
                         let result = res["result"].string!
                         if(result == "ok")
                             {
-                                let alert = SKTipAlertView()
-                                alert.showRedNotificationForString("添加成功，请等待审核！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                                
+                                self.slideView.stop()
                                 let vc : ChannelViewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
                                 vc.channelId = self.channelId
                                 vc.channelName = self.channelName
+                                vc.fromAdd = true
                                 self.presentViewController(vc, animated: true, completion: nil)
                              }
                         }
             
                 case .Failure:
-                    print(response.debugDescription)
                     let alert = SKTipAlertView()
                         alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                     }

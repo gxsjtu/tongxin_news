@@ -8,14 +8,9 @@
 
 import UIKit
 
-class ApplyTrialViewController: UIViewController, UITextFieldDelegate {
+class ApplyTrialViewController: UIViewController {
 
     @IBOutlet weak var navApplyTrial: UINavigationBar!
-    
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return true
-    }
     
     @IBAction func didRegisterClicked(sender: AnyObject) {
         let mobile = txtMobile.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
@@ -60,7 +55,6 @@ class ApplyTrialViewController: UIViewController, UITextFieldDelegate {
 
         // Do any additional setup after loading the view.
         self.navApplyTrial.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
-        self.txtMobile.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,6 +62,9 @@ class ApplyTrialViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+                self.txtMobile.endEditing(false)
+    }
 
     /*
     // MARK: - Navigation
