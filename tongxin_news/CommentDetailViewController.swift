@@ -147,7 +147,6 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
                             {
                                 if let i = item.dictionary
                                 {
-                                    print(i["isOrder"]!.stringValue)
                                     self.products.append((i["avatar"]!.stringValue, i["url"]!.stringValue, i["title"]!.stringValue, i["date"]!.stringValue, i["id"]!.stringValue, i["productname"]!.stringValue, i["isOrder"]!.stringValue))
                                 }
                             }
