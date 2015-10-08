@@ -141,7 +141,7 @@
                                     <constraint firstAttribute="height" constant="40" id="WjW-h6-a4g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -189,7 +189,7 @@
                                     <constraint firstAttribute="height" constant="40" id="ZEr-un-mEZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RTg-xw-4OG">
                                 <rect key="frame" x="16" y="265" width="288" height="40"/>
@@ -224,7 +224,7 @@
                                     <constraint firstAttribute="height" constant="40" id="wsk-km-z5d"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4fh-fN-kCc">
                                 <rect key="frame" x="205" y="489" width="99" height="30"/>
@@ -340,7 +340,7 @@
                                     <constraint firstAttribute="height" constant="40" id="26w-nX-lxR"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AKn-cs-bKd">
                                 <rect key="frame" x="20" y="264" width="280" height="40"/>
@@ -2289,10 +2289,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填，如：15866666666" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONU-Cc-Wki">
                                                 <rect key="frame" x="84" y="117" width="236" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="Ndc-BY-6Em" id="NqA-vG-ugt"/>
-                                                </connections>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="如：张三" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4cB-cC-dBw">
                                                 <rect key="frame" x="84" y="154" width="236" height="30"/>
