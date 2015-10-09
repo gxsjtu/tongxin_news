@@ -151,7 +151,7 @@
                                     <constraint firstAttribute="height" constant="40" id="WjW-h6-a4g"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                         </subviews>
                         <animations/>
