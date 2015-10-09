@@ -38,7 +38,7 @@ class ApplyTrialViewController: UIViewController {
                         else
                         { 
                             let alert = SKTipAlertView()
-                            alert.showRedNotificationForString("该手机号已注册，请使用其他手机号码！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                            alert.showRedNotificationForString(result, forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                         }
                     }
                 case .Failure:

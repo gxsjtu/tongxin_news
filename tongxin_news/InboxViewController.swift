@@ -182,7 +182,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, performAction action: Selector, forRowAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?){
         let cell = tableView.cellForRowAtIndexPath(indexPath)
-        UIPasteboard.generalPasteboard().string = (cell!.viewWithTag(1) as! UILabel).text
+        UIPasteboard.generalPasteboard().string = cell?.textLabel?.text
     }
     
     @IBAction func unwindFromComment2Inbox(segue: UIStoryboardSegue)
