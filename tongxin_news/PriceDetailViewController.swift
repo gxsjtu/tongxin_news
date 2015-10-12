@@ -62,8 +62,8 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         cell.parentVC = self
         cell.lblPriceDetailName.text = products[indexPath.row].0
         cell.lblPriceDetailDate.text = products[indexPath.row].4
-        cell.lblPriceDetailLow.text = "最低 " + products[indexPath.row].2
-        cell.lblPriceDetailHigh.text = "最高 " + products[indexPath.row].3
+        cell.lblPriceDetailLow.text =  products[indexPath.row].2
+        cell.lblPriceDetailHigh.text = products[indexPath.row].3
         cell.lblPriceDetailId.text = products[indexPath.row].1
         cell.lblPriceDetailIsOrdered.text = products[indexPath.row].6
         if products[indexPath.row].5 == ""
@@ -82,17 +82,23 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
             if change == 0
             {
                 cell.lblPriceDetailChange.textColor = UIColor.blackColor()
-                cell.lblPriceDetailChange.text = "平"
+                cell.lblPriceDetailChangeCapt.textColor = UIColor.blackColor()
+                cell.lblPriceDetailChange.text = "一"
+                cell.lblPriceDetailChangeCapt.text = "平"
             }
             else if change > 0
             {
                 cell.lblPriceDetailChange.textColor = UIColor.redColor()
-                cell.lblPriceDetailChange.text = "涨 " + String(stringInterpolationSegment: change)
+                cell.lblPriceDetailChangeCapt.textColor = UIColor.redColor()
+                cell.lblPriceDetailChange.text = String(stringInterpolationSegment: change) + "▲"
+                cell.lblPriceDetailChangeCapt.text = "涨"
             }
             else
             {
                 cell.lblPriceDetailChange.textColor = UIColor(red: 35/255, green: 124/255, blue: 2/255, alpha: 1.0)
-                cell.lblPriceDetailChange.text = "跌 " + String(stringInterpolationSegment: -change)
+                cell.lblPriceDetailChangeCapt.textColor = UIColor(red: 35/255, green: 124/255, blue: 2/255, alpha: 1.0)
+                cell.lblPriceDetailChange.text = String(stringInterpolationSegment: -change) + "▼"
+                cell.lblPriceDetailChangeCapt.text = "跌"
             }
             
         }

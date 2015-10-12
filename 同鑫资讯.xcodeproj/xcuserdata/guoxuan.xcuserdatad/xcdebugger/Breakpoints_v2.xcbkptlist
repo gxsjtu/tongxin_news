@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tongxin_news/PriceDetailVCTableViewCell.swift"
-            timestampString = "464842183.637309"
+            timestampString = "466312431.838471"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
             landmarkName = "swipeableTableViewCell(_:didTriggerRightUtilityButtonWithIndex:)"
             landmarkType = "5">
          </BreakpointContent>

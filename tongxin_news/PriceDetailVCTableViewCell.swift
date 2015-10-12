@@ -24,6 +24,7 @@ class PriceDetailVCTableViewCell: SWTableViewCell, SWTableViewCellDelegate {
     @IBOutlet weak var lblPriceDetailHigh: UILabel!
     @IBOutlet weak var lblPriceDetailId: UILabel!
     @IBOutlet weak var lblPriceDetailIsOrdered: UILabel!
+    @IBOutlet weak var lblPriceDetailChangeCapt: UILabel!
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
