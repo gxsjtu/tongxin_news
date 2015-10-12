@@ -450,17 +450,6 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="6RZ-6Z-VlX">
-                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="RGv-f0-hWS"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="YUd-7R-Tb7" id="Y9g-IM-9A6"/>
-                                </connections>
-                            </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkK-kU-9xD">
                                 <rect key="frame" x="-4" y="108" width="328" height="35"/>
                                 <animations/>
@@ -499,23 +488,31 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Cx7-Wh-dUV">
+                                <rect key="frame" x="0.0" y="64" width="320" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="jfv-ZG-kG7"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vkK-kU-9xD" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leading" constant="-4" id="1SW-Qw-emN"/>
+                            <constraint firstAttribute="trailing" secondItem="Cx7-Wh-dUV" secondAttribute="trailing" id="7Ph-F4-Arx"/>
+                            <constraint firstItem="Cx7-Wh-dUV" firstAttribute="top" secondItem="aVj-O3-gKb" secondAttribute="bottom" id="C9r-XW-wOt"/>
                             <constraint firstAttribute="trailing" secondItem="5qx-JR-mAN" secondAttribute="trailing" id="IqD-a6-2VR"/>
-                            <constraint firstItem="vkK-kU-9xD" firstAttribute="top" secondItem="6RZ-6Z-VlX" secondAttribute="bottom" id="Pel-6f-qjn"/>
                             <constraint firstItem="aVj-O3-gKb" firstAttribute="top" secondItem="m0N-ZL-nwu" secondAttribute="bottom" constant="-20" id="PpD-nH-oQa"/>
                             <constraint firstItem="5qx-JR-mAN" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leading" id="W8J-D7-c6L"/>
                             <constraint firstAttribute="trailing" secondItem="vkK-kU-9xD" secondAttribute="trailing" constant="-4" id="XUy-az-pBy"/>
-                            <constraint firstItem="6RZ-6Z-VlX" firstAttribute="top" secondItem="aVj-O3-gKb" secondAttribute="bottom" id="Y6P-fR-i8m"/>
-                            <constraint firstItem="6RZ-6Z-VlX" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leading" id="YdN-KQ-Jcy"/>
                             <constraint firstItem="5qx-JR-mAN" firstAttribute="top" secondItem="vkK-kU-9xD" secondAttribute="bottom" id="a6s-8S-syv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aVj-O3-gKb" secondAttribute="trailing" constant="-20" id="aoN-ij-CWl"/>
                             <constraint firstAttribute="bottomMargin" secondItem="5qx-JR-mAN" secondAttribute="bottom" constant="55" id="dFe-9F-eSo"/>
+                            <constraint firstItem="Cx7-Wh-dUV" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leading" id="oiB-8y-Vzk"/>
                             <constraint firstItem="aVj-O3-gKb" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leadingMargin" constant="-20" id="plQ-dK-y8p"/>
-                            <constraint firstAttribute="trailing" secondItem="6RZ-6Z-VlX" secondAttribute="trailing" id="xKn-MS-nIg"/>
+                            <constraint firstItem="vkK-kU-9xD" firstAttribute="top" secondItem="Cx7-Wh-dUV" secondAttribute="bottom" id="qcn-HU-4eH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="行情" image="price" id="XRP-Vr-ZEW"/>
@@ -532,7 +529,6 @@
                 <searchDisplayController id="SXc-M3-hON">
                     <connections>
                         <outlet property="delegate" destination="YUd-7R-Tb7" id="fUZ-ey-p2u"/>
-                        <outlet property="searchBar" destination="6RZ-6Z-VlX" id="zIa-XY-qPC"/>
                         <outlet property="searchContentsController" destination="YUd-7R-Tb7" id="mWA-hs-Ycd"/>
                         <outlet property="searchResultsDataSource" destination="YUd-7R-Tb7" id="oYV-pQ-JDk"/>
                         <outlet property="searchResultsDelegate" destination="YUd-7R-Tb7" id="2xf-da-UiB"/>
