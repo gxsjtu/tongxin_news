@@ -13,11 +13,11 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
     var channelName = "未知"
     var channelId = 0
     var fromAdd = false
-    //avatar, name, location, contact, date, type, id
-    var pdata = [(String, String, String, String, String, String, String)]()
-    var sdata = [(String, String, String, String, String, String, String)]()
-    var pdataRes = [(String, String, String, String, String, String, String)]()
-    var sdataRes = [(String, String, String, String, String, String, String)]()
+    //avatar, name, location, contact, date, type, id, isChecked
+    var pdata = [(String, String, String, String, String, String, String, String)]()
+    var sdata = [(String, String, String, String, String, String, String, String)]()
+    var pdataRes = [(String, String, String, String, String, String, String, String)]()
+    var sdataRes = [(String, String, String, String, String, String, String, String)]()
     @IBOutlet weak var segChannel: UISegmentedControl!
     @IBOutlet weak var navChannel: UINavigationBar!
     @IBOutlet weak var vSPList: UITableView!
@@ -98,11 +98,11 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
                                 {
                                     if i["type"]!.stringValue == "true"
                                     {
-                                        self.pdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue, i["id"]!.stringValue))
+                                        self.pdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue, i["id"]!.stringValue, i["ischecked"]!.stringValue))
                                     }
                                     else
                                     {
-                                        self.sdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue, i["id"]!.stringValue))
+                                        self.sdata.append((i["avatar"]!.stringValue, i["name"]!.stringValue, i["location"]!.stringValue, i["contact"]!.stringValue, i["date"]!.stringValue, i["type"]!.stringValue, i["id"]!.stringValue, i["ischecked"]!.stringValue))
                                     }
                                 }
                             }
@@ -167,6 +167,21 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.lblChannelCellLocation.text = sdataRes[indexPath.row].2
             cell.lblChannelCellName.text = sdataRes[indexPath.row].1
             cell.lblChannelItemId.text = sdataRes[indexPath.row].6
+            
+            if sdataRes[indexPath.row].7 == ""
+            {
+                cell.lblChannelCellIsChecked.text = "待审核"
+            }
+            else if sdataRes[indexPath.row].7 == "true"
+            {
+                cell.lblChannelCellIsChecked.text = "已审核"
+                cell.lblChannelCellIsChecked.textColor = UIColor(red: 35/255, green: 124/255, blue: 2/255, alpha: 1.0)
+            }
+            else
+            {
+                cell.lblChannelCellIsChecked.text = "已拒绝"
+                cell.lblChannelCellIsChecked.textColor = UIColor.redColor()
+            }
         }
         else
         {

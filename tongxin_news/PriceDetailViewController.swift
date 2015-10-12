@@ -68,12 +68,10 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         cell.lblPriceDetailIsOrdered.text = products[indexPath.row].6
         if products[indexPath.row].5 == ""
         {
-            cell.lblPriceDetailChange.hidden = true
-        }
-        else if products[indexPath.row].5 == "***"
-        {
             cell.lblPriceDetailChange.textColor = UIColor.blackColor()
-            cell.lblPriceDetailChange.text = "涨跌 ***"
+            cell.lblPriceDetailChangeCapt.textColor = UIColor.blackColor()
+            cell.lblPriceDetailChange.text = ""
+            cell.lblPriceDetailChangeCapt.text = ""
         }
         else
         {
