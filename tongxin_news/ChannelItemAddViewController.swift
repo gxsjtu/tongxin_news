@@ -201,6 +201,10 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         parameters["product"] = self.txtChannelItemSP.text!
         parameters["quantity"] = self.txtChannelItemQty.text!
         parameters["mobile"] = self.txtChannelItemMobile.text!
+        let created = ""
+        NSUserDefaults.standardUserDefaults().setObject(created, forKey: "mobile")
+        parameters["createdBy"] = created
+        
         if let contact = self.txtChannelItemContact.text
         {
             parameters["contact"] = contact
