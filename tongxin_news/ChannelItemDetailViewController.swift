@@ -27,6 +27,7 @@ class ChannelItemDetailViewController: UIViewController {
     var itemId = "0"
     var navTitle = "未知"
     var mobile = ""
+    var tap: UITapGestureRecognizer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +41,26 @@ class ChannelItemDetailViewController: UIViewController {
         self.slideChannelItem.transitionType = KASlideShowTransitionType.Slide
         self.slideChannelItem.imagesContentMode = UIViewContentMode.ScaleToFill
         btnMobile.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
+        
+        tap = UITapGestureRecognizer(target: self, action: "tapOnSlide:")
+        tap?.numberOfTapsRequired = 1
+        self.slideChannelItem.addGestureRecognizer(tap!)
+    }
+    
+    func tapOnSlide(recognizer:UITapGestureRecognizer) {
+        
+        let channelItemImage = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelItemImageVC") as! ChannelItemImageViewController
+        channelItemImage.image = slideChannelItem.images[(Int)(self.slideChannelItem.currentIndex)] as? UIImage
+        self.presentViewController(channelItemImage, animated: true, completion: nil)
     }
 
     @IBAction func didRefreshChannelItems(sender: AnyObject) {
         getChannelItemDetail()
+    }
+    
+    @IBAction func unwindFromImage2Detail(segue: UIStoryboardSegue)
+    {
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

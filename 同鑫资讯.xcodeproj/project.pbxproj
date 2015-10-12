@@ -52,6 +52,7 @@
 		35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC87551B8AB15900B44C7E /* UIScrollView+MJRefresh.m */; };
 		35AC875E1B8AB15900B44C7E /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC87571B8AB15900B44C7E /* UIView+MJExtension.m */; };
 		35AC87601B8AB2F800B44C7E /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */; };
+		35B1F2391BCB631200AA9F38 /* ChannelItemImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B1F2381BCB631200AA9F38 /* ChannelItemImageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		35B2783E1B8D94AB00FA2399 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35B2783C1B8D94AB00FA2399 /* Main.storyboard */; };
 		35B278441B8D952100FA2399 /* CommentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278401B8D952100FA2399 /* CommentDetailViewController.swift */; };
 		35B278461B8D952100FA2399 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278421B8D952100FA2399 /* CommentViewController.swift */; };
@@ -176,6 +177,7 @@
 		35AC87561B8AB15900B44C7E /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		35AC87571B8AB15900B44C7E /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
+		35B1F2381BCB631200AA9F38 /* ChannelItemImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelItemImageViewController.swift; sourceTree = "<group>"; };
 		35B2783D1B8D94AB00FA2399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		35B278401B8D952100FA2399 /* CommentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDetailViewController.swift; sourceTree = "<group>"; };
 		35B278421B8D952100FA2399 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
@@ -442,6 +444,7 @@
 				35E3E8531BA6C3750009E8DD /* Parameter.swift */,
 				35F6657C1BB3F18700A3AEDE /* ApplyTrialViewController.swift */,
 				350901901BB4F7600010FFFE /* ForgetPasswordViewController.swift */,
+				35B1F2381BCB631200AA9F38 /* ChannelItemImageViewController.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */,
 				355C95A91B8C1407005595EA /* PriceVCTableViewCell.swift in Sources */,
 				355C95A51B8AF089005595EA /* PriceViewController.swift in Sources */,
+				35B1F2391BCB631200AA9F38 /* ChannelItemImageViewController.swift in Sources */,
 				35B278461B8D952100FA2399 /* CommentViewController.swift in Sources */,
 				35F665771BB3B9DC00A3AEDE /* Result.swift in Sources */,
 				35F665721BB3B9DC00A3AEDE /* MultipartFormData.swift in Sources */,
@@ -763,7 +767,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "同鑫资讯";
-				PROVISIONING_PROFILE = "a569d800-8e27-4420-98ab-d1f79380228e";
+				PROVISIONING_PROFILE = "7d46fa6d-d5bc-4c7e-b3e8-07c46d8b6857";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -803,7 +807,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "同鑫资讯";
-				PROVISIONING_PROFILE = "a569d800-8e27-4420-98ab-d1f79380228e";
+				PROVISIONING_PROFILE = "7d46fa6d-d5bc-4c7e-b3e8-07c46d8b6857";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -823,7 +827,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tongxin.info;
 				PRODUCT_NAME = "同鑫资讯";
-				PROVISIONING_PROFILE = "a569d800-8e27-4420-98ab-d1f79380228e";
+				PROVISIONING_PROFILE = "7d46fa6d-d5bc-4c7e-b3e8-07c46d8b6857";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "tongxin_news/tongxin_news-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -843,7 +847,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tongxin.info;
 				PRODUCT_NAME = "同鑫资讯";
-				PROVISIONING_PROFILE = "a569d800-8e27-4420-98ab-d1f79380228e";
+				PROVISIONING_PROFILE = "7d46fa6d-d5bc-4c7e-b3e8-07c46d8b6857";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "tongxin_news/tongxin_news-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

@@ -885,7 +885,7 @@
                                                     <color key="textColor" red="0.11764705882352941" green="0.42352941176470588" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7v-cR-crk">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7v-cR-crk">
                                                     <rect key="frame" x="201" y="37" width="42" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2330,6 +2330,51 @@
                 <exit id="y5q-CR-Ns6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="347" y="2291"/>
+        </scene>
+        <!--Channel Item Image View Controller-->
+        <scene sceneID="YkL-xV-qt5">
+            <objects>
+                <viewController storyboardIdentifier="ChannelItemImageVC" id="Sh9-05-hau" customClass="ChannelItemImageViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D1F-VH-I0q"/>
+                        <viewControllerLayoutGuide type="bottom" id="TTD-su-r2S"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mwR-1q-eY5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T0W-Sp-Cl1">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <animations/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="5ak-KO-FT7" appends="YES" id="yAT-sg-ERd"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="T0W-Sp-Cl1" secondAttribute="trailing" id="6v2-Au-2xT"/>
+                            <constraint firstItem="T0W-Sp-Cl1" firstAttribute="top" secondItem="mwR-1q-eY5" secondAttribute="topMargin" constant="20" id="YYH-ZF-Izk"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="T0W-Sp-Cl1" secondAttribute="bottom" id="wbS-db-dpA"/>
+                            <constraint firstItem="T0W-Sp-Cl1" firstAttribute="leading" secondItem="mwR-1q-eY5" secondAttribute="leading" id="yTB-oo-bbJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="channelItemImage" destination="T0W-Sp-Cl1" id="hI5-aN-2Ea"/>
+                        <outlet property="tap" destination="5ak-KO-FT7" id="wWZ-o4-Qbu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRV-Pk-uIv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="k5V-eH-DCg" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="5ak-KO-FT7">
+                    <connections>
+                        <segue destination="k5V-eH-DCg" kind="unwind" unwindAction="unwindFromImage2Detail:" id="izZ-sU-cOS"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="767" y="2436"/>
         </scene>
         <!--供需新增-->
         <scene sceneID="1n3-Pn-Zdo">
