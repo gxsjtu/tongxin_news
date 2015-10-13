@@ -1709,7 +1709,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbh-Wc-IKZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbh-Wc-IKZ">
                                                     <rect key="frame" x="231" y="41" width="64" height="21"/>
                                                     <animations/>
                                                     <constraints>
@@ -1727,8 +1727,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="审批状态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3I-qQ-y5T">
-                                                    <rect key="frame" x="231" y="21" width="56" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="审批状态" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3I-qQ-y5T">
+                                                    <rect key="frame" x="231" y="21" width="64" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2189,7 +2189,7 @@
                                     <action selector="didCallClicked:" destination="sMY-EY-DmT" eventType="touchUpInside" id="iQp-HY-akw"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9io-9v-bac">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9io-9v-bac">
                                 <rect key="frame" x="20" y="404" width="280" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -2198,7 +2198,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FKg-e0-v4L">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FKg-e0-v4L">
                                 <rect key="frame" x="20" y="442" width="280" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -2207,7 +2207,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U5a-fE-iEC">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U5a-fE-iEC">
                                 <rect key="frame" x="20" y="480" width="280" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -2216,7 +2216,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-RG-zoD">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-RG-zoD">
                                 <rect key="frame" x="20" y="518" width="280" height="46"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.13233044743537903" green="0.74066931009292603" blue="0.94469934701919556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2245,6 +2245,7 @@
                             <constraint firstItem="89U-bQ-QSR" firstAttribute="leading" secondItem="knN-En-v8A" secondAttribute="leading" constant="20" id="If0-IW-ecN"/>
                             <constraint firstItem="9io-9v-bac" firstAttribute="leading" secondItem="knN-En-v8A" secondAttribute="leading" constant="20" id="JGJ-i3-qy6"/>
                             <constraint firstItem="4eF-Lk-D2p" firstAttribute="top" secondItem="qPl-qO-hV2" secondAttribute="bottom" constant="8" id="Oqj-X5-XwK"/>
+                            <constraint firstItem="9io-9v-bac" firstAttribute="top" secondItem="89U-bQ-QSR" secondAttribute="bottom" constant="8" id="PzH-wa-BrM"/>
                             <constraint firstAttribute="trailing" secondItem="FKg-e0-v4L" secondAttribute="trailing" constant="20" id="Scz-T9-oEo"/>
                             <constraint firstAttribute="trailing" secondItem="ZB4-Jh-xi3" secondAttribute="trailing" constant="20" id="bKQ-XW-ceH"/>
                             <constraint firstAttribute="trailing" secondItem="89U-bQ-QSR" secondAttribute="trailing" constant="20" id="dQY-em-Vwr"/>
@@ -2418,9 +2419,6 @@
                                                                 <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="didSPChanged:" destination="Ndc-BY-6Em" eventType="touchUpInside" id="J9T-15-dIV"/>
-                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpy-w4-lWu" customClass="DLRadioButton">
                                                         <rect key="frame" x="50" y="4" width="80" height="30"/>
@@ -2439,10 +2437,6 @@
                                                                 <color key="value" red="0.1176470588" green="0.42352941179999998" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
-                                                        <connections>
-                                                            <action selector="didSPChanged:" destination="Ndc-BY-6Em" eventType="valueChanged" id="Ggv-cZ-6Ae"/>
-                                                            <action selector="didSPChanged:" destination="Ndc-BY-6Em" eventType="touchUpInside" id="lSx-WO-CiT"/>
-                                                        </connections>
                                                     </button>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="货物名称（必填），如：冲花边料，船板料" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wy1-x1-9bj">
                                                         <rect key="frame" x="8" y="43" width="320" height="40"/>
