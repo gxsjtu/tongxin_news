@@ -488,7 +488,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Cx7-Wh-dUV">
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cx7-Wh-dUV">
                                 <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                                 <animations/>
                                 <constraints>
@@ -520,6 +520,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="navPrice" destination="aVj-O3-gKb" id="auH-kE-wyv"/>
+                        <outlet property="searchBar" destination="Cx7-Wh-dUV" id="KBJ-E9-Qtj"/>
                         <outlet property="searchDisplayController" destination="SXc-M3-hON" id="7lG-ep-ShB"/>
                         <outlet property="tvPriceTableView" destination="5qx-JR-mAN" id="Cs1-4J-X8X"/>
                         <outlet property="vSelectionView" destination="vkK-kU-9xD" id="Jbh-s6-zmU"/>
@@ -762,7 +763,7 @@
         <!--Price Detail View Controller-->
         <scene sceneID="876-yt-7fG">
             <objects>
-                <viewController id="ycC-fZ-orG" customClass="PriceDetailViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="priceDetailView" id="ycC-fZ-orG" customClass="PriceDetailViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rE0-qd-goo"/>
                         <viewControllerLayoutGuide type="bottom" id="Qg3-0Y-QHP"/>
@@ -895,6 +896,13 @@
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEj-N8-NxE">
+                                                    <rect key="frame" x="151" y="23" width="42" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
@@ -928,6 +936,7 @@
                                             <outlet property="lblPriceDetailIsOrdered" destination="bew-GB-7bj" id="9le-0u-TXq"/>
                                             <outlet property="lblPriceDetailLow" destination="RT8-6q-18A" id="7gu-T7-Xmc"/>
                                             <outlet property="lblPriceDetailName" destination="2i6-it-j1b" id="n2A-Ig-L6g"/>
+                                            <outlet property="lblPriceMarketName" destination="pEj-N8-NxE" id="HMH-gl-CfZ"/>
                                             <segue destination="ktW-bq-n8X" kind="modal" identifier="PriceDetail2PriceHistory" id="aqn-SM-eJQ"/>
                                         </connections>
                                     </tableViewCell>

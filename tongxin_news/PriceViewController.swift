@@ -195,8 +195,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        let vc : PriceDetailViewController = mainStoryboard.instantiateViewControllerWithIdentifier("priceDetailView") as! PriceDetailViewController
+        let vc : PriceDetailViewController = self.storyboard!.instantiateViewControllerWithIdentifier("priceDetailView") as! PriceDetailViewController
         vc.searchKey = searchBar.text!
         vc.isSearch = true
         self.presentViewController(vc, animated: true, completion: nil)
