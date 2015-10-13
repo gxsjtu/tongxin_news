@@ -16,12 +16,15 @@ class ChannelVCTableViewCell: UITableViewCell {
     @IBOutlet weak var lblChannelCellName: UILabel!
     @IBOutlet weak var lblChannelCellLocation: UILabel!
     @IBOutlet weak var imgChannelCellAvatar: UIImageView!
+    @IBOutlet weak var lblChannelCellIsChecked: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
+
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

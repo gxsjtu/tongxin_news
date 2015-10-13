@@ -121,7 +121,9 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         else if self.proList[indexPath.row].Change == "***"//products[indexPath.row].5 == "***"
         {
             cell.lblPriceDetailChange.textColor = UIColor.blackColor()
-            cell.lblPriceDetailChange.text = "涨跌 ***"
+            cell.lblPriceDetailChangeCapt.textColor = UIColor.blackColor()
+            cell.lblPriceDetailChange.text = ""
+            cell.lblPriceDetailChangeCapt.text = ""
         }
         else
         {
