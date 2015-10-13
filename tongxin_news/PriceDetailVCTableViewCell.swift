@@ -17,6 +17,8 @@ class PriceDetailVCTableViewCell: SWTableViewCell, SWTableViewCellDelegate {
     
     weak var parentVC: PriceDetailViewController?
 
+    @IBOutlet weak var lblPriceMarketName: UILabel!
+    
     @IBOutlet weak var lblPriceDetailChange: UILabel!
     @IBOutlet weak var lblPriceDetailName: UILabel!
     @IBOutlet weak var lblPriceDetailDate: UILabel!

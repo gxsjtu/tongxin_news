@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, HTHorizontalSelectionListDataSource, UITableViewDelegate, UITableViewDataSource {
+class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, HTHorizontalSelectionListDataSource, UITableViewDelegate, UITableViewDataSource , UISearchBarDelegate{
     
     @IBOutlet weak var navPrice: UINavigationBar!
     @IBOutlet weak var tvPriceTableView: UITableView!
@@ -18,6 +18,8 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     var market = Dictionary<String, [(String, String)]>()
     
     @IBOutlet weak var vSelectionView: UIView!
+    
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         selection?.dataSource = self
         tvPriceTableView.delegate = self
         tvPriceTableView.dataSource = self
+        self.searchBar.delegate = self
         
         self.selection.selectionIndicatorStyle = HTHorizontalSelectionIndicatorStyle.BottomBar
         self.selection.selectionIndicatorColor = UIColor.redColor()
@@ -183,9 +186,25 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
                 {
                     des.market = cell.textLabel!.text!
                     des.marketId = cell.lblPriceCellMarketId.text!
+                    des.isSearch = false
                 }
                 des.mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")!
             }
         }
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        let vc : PriceDetailViewController = mainStoryboard.instantiateViewControllerWithIdentifier("priceDetailView") as! PriceDetailViewController
+        vc.searchKey = searchBar.text!
+        vc.isSearch = true
+        self.presentViewController(vc, animated: true, completion: nil)
+        
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
     }
 }
