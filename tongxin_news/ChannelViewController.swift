@@ -171,6 +171,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
             if sdataRes[indexPath.row].7 == ""
             {
                 cell.lblChannelCellIsChecked.text = "待审核"
+                cell.lblChannelCellIsChecked.textColor = UIColor.blackColor()
             }
             else if sdataRes[indexPath.row].7 == "true"
             {
@@ -191,6 +192,22 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.lblChannelCellLocation.text = pdataRes[indexPath.row].2
             cell.lblChannelCellName.text = pdataRes[indexPath.row].1
             cell.lblChannelItemId.text = pdataRes[indexPath.row].6
+            
+            if pdataRes[indexPath.row].7 == ""
+            {
+                cell.lblChannelCellIsChecked.text = "待审核"
+                cell.lblChannelCellIsChecked.textColor = UIColor.blackColor()
+            }
+            else if pdataRes[indexPath.row].7 == "true"
+            {
+                cell.lblChannelCellIsChecked.text = "已审核"
+                cell.lblChannelCellIsChecked.textColor = UIColor(red: 35/255, green: 124/255, blue: 2/255, alpha: 1.0)
+            }
+            else
+            {
+                cell.lblChannelCellIsChecked.text = "已拒绝"
+                cell.lblChannelCellIsChecked.textColor = UIColor.redColor()
+            }
         }
         return cell
     }
