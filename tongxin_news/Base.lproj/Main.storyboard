@@ -1709,11 +1709,11 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbh-Wc-IKZ">
-                                                    <rect key="frame" x="231" y="41" width="64" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbh-Wc-IKZ">
+                                                    <rect key="frame" x="245" y="41" width="50" height="21"/>
                                                     <animations/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="64" id="9cu-Jg-HpM"/>
+                                                        <constraint firstAttribute="width" constant="50" id="9cu-Jg-HpM"/>
                                                         <constraint firstAttribute="height" constant="21" id="DXB-uT-YmK"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1727,8 +1727,8 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="审批状态" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3I-qQ-y5T">
-                                                    <rect key="frame" x="231" y="21" width="64" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="审批状态" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e3I-qQ-y5T">
+                                                    <rect key="frame" x="245" y="21" width="50" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1748,7 +1748,7 @@
                                                 <constraint firstItem="S3n-Am-Pa2" firstAttribute="top" secondItem="FeB-xc-xcN" secondAttribute="topMargin" constant="-6" id="CxA-d8-hju"/>
                                                 <constraint firstItem="OCa-t8-953" firstAttribute="leading" secondItem="kpL-KW-AKY" secondAttribute="leading" constant="67" id="IWA-9f-SiO"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="vbh-Wc-IKZ" secondAttribute="trailing" constant="-16" id="JxI-7H-ZYf"/>
-                                                <constraint firstItem="e3I-qQ-y5T" firstAttribute="width" secondItem="vbh-Wc-IKZ" secondAttribute="width" constant="-8" id="MaU-fc-72y"/>
+                                                <constraint firstItem="e3I-qQ-y5T" firstAttribute="width" secondItem="vbh-Wc-IKZ" secondAttribute="width" id="MaU-fc-72y"/>
                                                 <constraint firstItem="OCa-t8-953" firstAttribute="top" secondItem="WXh-oc-0jd" secondAttribute="top" constant="20" id="S31-xy-mcR"/>
                                                 <constraint firstItem="WXh-oc-0jd" firstAttribute="top" secondItem="JYv-ux-wah" secondAttribute="top" constant="19" id="SXA-W6-tU6"/>
                                                 <constraint firstItem="kpL-KW-AKY" firstAttribute="leading" secondItem="60j-rX-Uxf" secondAttribute="leading" constant="68" id="fem-hP-aFB"/>
@@ -2184,7 +2184,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="dEO-Pg-Jse"/>
                                 </constraints>
-                                <state key="normal" title=""/>
+                                <state key="normal" title="">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="didCallClicked:" destination="sMY-EY-DmT" eventType="touchUpInside" id="iQp-HY-akw"/>
                                 </connections>
