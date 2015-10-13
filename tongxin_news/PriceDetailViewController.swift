@@ -113,7 +113,16 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func updateRowAtIndexPath(indexPath: NSIndexPath, isorder: String)
     {
+        if(self.isSearch)
+        {
+            self.marketList[indexPath.section].priceList[indexPath.row].IsOrder = isorder
+//            self.proList[indexPath.row].IsOrder = isorder
+//            tvPriceDetail.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        }
+        else
+        {
         self.proList[indexPath.row].IsOrder = isorder
+        }
         tvPriceDetail.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
     }
     
