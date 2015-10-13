@@ -841,7 +841,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tongxin.info;
 				PRODUCT_NAME = "同鑫资讯";
-				PROVISIONING_PROFILE = "7d46fa6d-d5bc-4c7e-b3e8-07c46d8b6857";
+				PROVISIONING_PROFILE = "a569d800-8e27-4420-98ab-d1f79380228e";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "tongxin_news/tongxin_news-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -861,7 +861,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tongxin.info;
 				PRODUCT_NAME = "同鑫资讯";
-				PROVISIONING_PROFILE = "7d46fa6d-d5bc-4c7e-b3e8-07c46d8b6857";
+				PROVISIONING_PROFILE = "a569d800-8e27-4420-98ab-d1f79380228e";
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "tongxin_news/tongxin_news-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

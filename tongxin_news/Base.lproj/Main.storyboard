@@ -2159,6 +2159,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4eF-Lk-D2p">
                                                 <rect key="frame" x="8" y="188" width="312" height="30"/>
                                                 <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="50U-WN-uEV"/>
                                                 </constraints>
@@ -2168,6 +2169,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPl-qO-hV2">
                                                 <rect key="frame" x="8" y="226" width="312" height="30"/>
                                                 <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="U9A-FR-EqX"/>
                                                 </constraints>
@@ -2177,6 +2179,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZB4-Jh-xi3">
                                                 <rect key="frame" x="8" y="264" width="312" height="30"/>
                                                 <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="8mF-ZT-AB9"/>
                                                 </constraints>
@@ -2186,6 +2189,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9io-9v-bac">
                                                 <rect key="frame" x="8" y="302" width="312" height="30"/>
                                                 <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Cfb-bI-tyj"/>
                                                 </constraints>
@@ -2209,6 +2213,7 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FKg-e0-v4L">
                                                 <rect key="frame" x="8" y="378" width="312" height="30"/>
                                                 <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="9ip-48-B5S"/>
                                                 </constraints>
@@ -2218,13 +2223,14 @@
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U5a-fE-iEC">
                                                 <rect key="frame" x="8" y="416" width="312" height="30"/>
                                                 <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="kwD-l3-VUT"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-RG-zoD">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-RG-zoD">
                                                 <rect key="frame" x="8" y="454" width="312" height="217"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.13233044743537903" green="0.74066931009292603" blue="0.94469934701919556" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2234,28 +2240,29 @@
                                             </textView>
                                         </subviews>
                                         <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="leadingMargin" secondItem="ZHN-RG-zoD" secondAttribute="leading" id="3Nf-JX-19t"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="qPl-qO-hV2" secondAttribute="trailing" id="4mj-ja-etw"/>
                                             <constraint firstAttribute="leadingMargin" secondItem="9io-9v-bac" secondAttribute="leading" id="78e-Xs-4I1"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="U5a-fE-iEC" secondAttribute="trailing" id="7Hq-sX-H6E"/>
                                             <constraint firstAttribute="leadingMargin" secondItem="qPl-qO-hV2" secondAttribute="leading" id="BaX-8X-heW"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="FKg-e0-v4L" secondAttribute="trailing" id="CII-r0-iuf"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="ZHN-RG-zoD" secondAttribute="trailing" id="DBv-yC-bQP"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="89U-bQ-QSR" secondAttribute="trailing" id="Ekh-70-f1V"/>
                                             <constraint firstAttribute="leadingMargin" secondItem="ZB4-Jh-xi3" secondAttribute="leading" id="FwR-dP-2em"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="ZHN-RG-zoD" secondAttribute="bottom" id="G53-qS-XeZ"/>
                                             <constraint firstAttribute="leadingMargin" secondItem="89U-bQ-QSR" secondAttribute="leading" id="GHF-oc-x7L"/>
                                             <constraint firstItem="SBG-g1-8qP" firstAttribute="leading" secondItem="2OP-ud-ceE" secondAttribute="leadingMargin" constant="-8" id="HyI-wW-M7G"/>
                                             <constraint firstItem="9io-9v-bac" firstAttribute="top" secondItem="ZB4-Jh-xi3" secondAttribute="bottom" constant="8" id="LVV-4I-0n5"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="9io-9v-bac" secondAttribute="trailing" id="MIi-4f-txv"/>
+                                            <constraint firstItem="ZHN-RG-zoD" firstAttribute="top" secondItem="U5a-fE-iEC" secondAttribute="bottom" constant="8" id="NZk-Df-uSE"/>
                                             <constraint firstItem="U5a-fE-iEC" firstAttribute="top" secondItem="FKg-e0-v4L" secondAttribute="bottom" constant="8" id="RqA-W4-Cp3"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="SBG-g1-8qP" secondAttribute="trailing" constant="-8" id="TI4-tB-QtF"/>
                                             <constraint firstItem="SBG-g1-8qP" firstAttribute="top" secondItem="2OP-ud-ceE" secondAttribute="topMargin" constant="-8" id="UEo-W8-rsk"/>
-                                            <constraint firstItem="ZHN-RG-zoD" firstAttribute="top" secondItem="U5a-fE-iEC" secondAttribute="bottom" constant="8" id="UK3-t6-LAp"/>
                                             <constraint firstItem="ZB4-Jh-xi3" firstAttribute="top" secondItem="qPl-qO-hV2" secondAttribute="bottom" constant="8" id="YK7-cM-o6z"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="ZHN-RG-zoD" secondAttribute="bottom" id="bNv-Hy-HMu"/>
                                             <constraint firstItem="4eF-Lk-D2p" firstAttribute="top" secondItem="SBG-g1-8qP" secondAttribute="bottom" constant="8" id="cRg-Fo-V76"/>
                                             <constraint firstItem="qPl-qO-hV2" firstAttribute="top" secondItem="4eF-Lk-D2p" secondAttribute="bottom" constant="8" id="lJX-Rh-HiM"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="ZHN-RG-zoD" secondAttribute="trailing" id="lbh-eh-byd"/>
                                             <constraint firstAttribute="leadingMargin" secondItem="4eF-Lk-D2p" secondAttribute="leading" id="now-5x-JDH"/>
                                             <constraint firstAttribute="leadingMargin" secondItem="U5a-fE-iEC" secondAttribute="leading" id="obv-s7-JkZ"/>
                                             <constraint firstAttribute="leadingMargin" secondItem="FKg-e0-v4L" secondAttribute="leading" id="rz2-V4-2Oz"/>
@@ -2263,7 +2270,6 @@
                                             <constraint firstItem="89U-bQ-QSR" firstAttribute="top" secondItem="9io-9v-bac" secondAttribute="bottom" constant="8" id="yD4-7X-o5S"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="ZB4-Jh-xi3" secondAttribute="trailing" id="ya7-Ul-Wo4"/>
                                             <constraint firstItem="FKg-e0-v4L" firstAttribute="top" secondItem="89U-bQ-QSR" secondAttribute="bottom" constant="8" id="ybm-A3-Gnl"/>
-                                            <constraint firstAttribute="leadingMargin" secondItem="ZHN-RG-zoD" secondAttribute="leading" id="zIo-Em-zAZ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -2304,6 +2310,7 @@
                         <outlet property="lblChannelItemQty" destination="qPl-qO-hV2" id="ReK-7I-H5y"/>
                         <outlet property="navChannelItemDetail" destination="Trn-C3-A8v" id="xlx-tC-fZ7"/>
                         <outlet property="slideChannelItem" destination="SBG-g1-8qP" id="egX-ow-nve"/>
+                        <outlet property="svBase" destination="eFQ-mF-n9a" id="WTn-5d-Zo2"/>
                         <outlet property="txtChannelItemDesc" destination="ZHN-RG-zoD" id="A8E-az-cR3"/>
                     </connections>
                 </viewController>
