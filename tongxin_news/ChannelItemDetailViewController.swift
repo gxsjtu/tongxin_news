@@ -23,6 +23,7 @@ class ChannelItemDetailViewController: UIViewController {
     @IBOutlet weak var lblChannelItemName: UITextField!
     @IBOutlet weak var navChannelItemDetail: UINavigationBar!
     
+    @IBOutlet weak var svBase: UIScrollView!
     @IBOutlet weak var lblChannelItemPrice: UITextField!
     var itemId = "0"
     var navTitle = "未知"
@@ -44,9 +45,10 @@ class ChannelItemDetailViewController: UIViewController {
         tap = UITapGestureRecognizer(target: self, action: "tapOnSlide:")
         tap?.numberOfTapsRequired = 1
         self.slideChannelItem.addGestureRecognizer(tap!)
-        
-        self.btnMobile.titleLabel?.textAlignment = NSTextAlignment.Center
-        self.btnMobile.titleLabel?.numberOfLines = 0
+    }
+    
+    override func viewDidLayoutSubviews() {
+        self.svBase.contentSize = CGSize(width: self.view.frame.width, height: 640)
     }
     
     func tapOnSlide(recognizer:UITapGestureRecognizer) {
@@ -91,7 +93,6 @@ class ChannelItemDetailViewController: UIViewController {
                     {
                         if let i = JSON(data).dictionary
                         {
-                            print(i)
                             if i["deliver"]!.stringValue == "true"
                             {
                                 self.lblChannelItemDeliver.text = "自提"
@@ -104,8 +105,8 @@ class ChannelItemDetailViewController: UIViewController {
                             self.lblChannelItemLocation.text = i["location"]!.stringValue
                             self.mobile = i["mobile"]!.stringValue
                             self.btnMobile.setTitle(self.mobile + "（点击拨打）", forState: UIControlState.Normal)
-                            self.lblChannelItemName.text = i["quantity"]!.stringValue
-                            self.lblChannelItemQty.text = i["name"]!.stringValue
+                            self.lblChannelItemName.text = i["name"]!.stringValue
+                            self.lblChannelItemQty.text = i["quantity"]!.stringValue
                             self.txtChannelItemDesc.text = i["description"]!.stringValue
                             self.lblChannelItemPrice.text = i["price"]!.stringValue
           
