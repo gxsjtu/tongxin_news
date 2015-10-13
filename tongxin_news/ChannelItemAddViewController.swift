@@ -10,6 +10,8 @@ import UIKit
 
 class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIActionSheetDelegate,KASlideShowDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    @IBOutlet weak var txtChannelItemPrice: UITextField!//价格
+    @IBOutlet weak var svBase: UIScrollView!
     @IBOutlet weak var slideView: KASlideShow!
     @IBOutlet weak var btnAddImage: UIButton!
     @IBOutlet weak var btnChannelItemLocation: UIButton!
@@ -20,7 +22,6 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     @IBOutlet weak var txtChannelItemSP: UITextField!//供应／采购
     @IBOutlet weak var rbOther: DLRadioButton!
     @IBOutlet weak var rbSelf: DLRadioButton!
-    @IBOutlet weak var lblSPText: UILabel!
     @IBOutlet weak var rbPurchase: DLRadioButton!
     @IBOutlet weak var rbSupply: DLRadioButton!
     @IBOutlet weak var vChannelItemAddContent: UIView!
@@ -37,10 +38,15 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     var itemId : String?
     var isLocationEmpty = true
     @IBOutlet weak var navChannelItem: UINavigationBar!
+    
+    override func viewDidLayoutSubviews() {
+        self.svBase.contentSize = CGSize(width: self.view.frame.width, height: 960)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
         self.navChannelItem.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navChannelItem.topItem?.title = "商圈 - " + channelName + " - " + catalogName
         
@@ -59,6 +65,8 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         self.slideView.transitionType = KASlideShowTransitionType.Slide
         self.slideView.imagesContentMode = UIViewContentMode.ScaleToFill
         self.slideView.addGesture(KASlideShowGestureType.Tap)
+        
+        self.txtChannelItemDesc.placeholder = "货物详细描述"
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -101,17 +109,6 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
-    }
-
-    @IBAction func didSPChanged(sender: AnyObject) {
-        if rbSupply.selected == true
-        {
-            lblSPText.text = rbSupply.titleLabel?.text
-        }
-        else
-        {
-            lblSPText.text = rbPurchase.titleLabel?.text
-        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -211,6 +208,16 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         {
             parameters["contact"] = ""
         }
+        
+        if let contact = self.txtChannelItemPrice.text
+        {
+            parameters["price"] = contact
+        }
+        else
+        {
+            parameters["price"] = ""
+        }
+        
         if let desc = self.txtChannelItemDesc.text
         {
             parameters["description"] = desc
@@ -219,6 +226,8 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         {
             parameters["description"] = ""
         }
+        
+        
         parameters["province"] = self.stateStr!
         parameters["city"] = self.cityStr!
         
@@ -257,7 +266,7 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         if txtChannelItemSP.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""
         {
             let alert = SKTipAlertView()
-            alert.showRedNotificationForString(lblSPText.text! + "内容不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+            alert.showRedNotificationForString("货物内容不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
             return
         }
         if txtChannelItemQty.text!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()) == ""

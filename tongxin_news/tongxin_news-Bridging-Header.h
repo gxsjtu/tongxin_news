@@ -17,3 +17,4 @@
 #import "UIImageView+WebCache.h"
 #import "SWTableViewCell.h"
 #import "SWUtilityButtonView.h"
+#import "UITextView+Placeholder.h"
