@@ -10,12 +10,15 @@ import UIKit
 
 class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var products = [(String, String, String, String, String, String, String)]()
+//    var products = [(String, String, String, String, String, String, String)]()
     var market = "未知"
     var group = "未知"
     var mobile = ""
     var marketId = ""
-
+    var searchKey = ""
+    var isSearch : Bool = false
+    var marketList : Array<Market> = []
+    var proList : Array<ProPrices> = []
     @IBOutlet weak var tvPriceDetail: UITableView!
     @IBOutlet weak var navBarPriceDetail: UINavigationBar!
     override func viewDidLoad() {
@@ -23,8 +26,16 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
         // Do any additional setup after loading the view.
         self.navBarPriceDetail.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
-        self.navBarPriceDetail.topItem?.title = group + " - " + market
-        getProducts()
+        if(self.isSearch)
+        {
+            self.navBarPriceDetail.topItem?.title = "查询结果"
+            getSearchResults()
+        }
+        else
+        {
+            self.navBarPriceDetail.topItem?.title = group + " - " + market
+            getProducts()
+        }
         tvPriceDetail.dataSource = self
         tvPriceDetail.delegate = self
     }
@@ -39,11 +50,36 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        if(self.isSearch)
+        {
+          return self.marketList.count
+        }
+        else
+        {
         return 1
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        if(self.isSearch)
+        {
+           return self.marketList[section].priceList.count
+        }
+        else
+        {
+        return self.proList.count
+        }
+    }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if(self.isSearch)
+        {
+            return self.marketList[section].Name
+        }
+        else
+        {
+            return ""
+        }
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -52,32 +88,44 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func updateRowAtIndexPath(indexPath: NSIndexPath, isorder: String)
     {
-        products[indexPath.row].6 = isorder
+//        products[indexPath.row].6 = isorder
+        self.proList[indexPath.row].IsOrder = isorder
         tvPriceDetail.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+     
         let cell = tableView.dequeueReusableCellWithIdentifier("PriceDetailCell", forIndexPath: indexPath) as! PriceDetailVCTableViewCell
         cell.delegate = cell
         cell.parentVC = self
-        cell.lblPriceDetailName.text = products[indexPath.row].0
-        cell.lblPriceDetailDate.text = products[indexPath.row].4
-        cell.lblPriceDetailLow.text =  products[indexPath.row].2
-        cell.lblPriceDetailHigh.text = products[indexPath.row].3
-        cell.lblPriceDetailId.text = products[indexPath.row].1
-        cell.lblPriceDetailIsOrdered.text = products[indexPath.row].6
-        if products[indexPath.row].5 == ""
+        if(self.isSearch)
+        {
+            self.proList = []
+            self.proList = self.marketList[indexPath.section].priceList
+            cell.lblPriceMarketName.text = self.marketList[indexPath.section].Name
+        }
+        else
+        {
+            cell.lblPriceMarketName.text = self.market
+        }
+        cell.lblPriceDetailName.text = self.proList[indexPath.row].ProName//products[indexPath.row].0
+        cell.lblPriceDetailDate.text = self.proList[indexPath.row].Date//products[indexPath.row].4
+        cell.lblPriceDetailLow.text =  self.proList[indexPath.row].LPrice//products[indexPath.row].2
+        cell.lblPriceDetailHigh.text = self.proList[indexPath.row].HPrice//products[indexPath.row].3
+        cell.lblPriceDetailId.text = self.proList[indexPath.row].ProId//products[indexPath.row].1
+        cell.lblPriceDetailIsOrdered.text = self.proList[indexPath.row].IsOrder//products[indexPath.row].6
+        if self.proList[indexPath.row].Change == ""//products[indexPath.row].5 == ""
         {
             cell.lblPriceDetailChange.hidden = true
         }
-        else if products[indexPath.row].5 == "***"
+        else if self.proList[indexPath.row].Change == "***"//products[indexPath.row].5 == "***"
         {
             cell.lblPriceDetailChange.textColor = UIColor.blackColor()
             cell.lblPriceDetailChange.text = "涨跌 ***"
         }
         else
         {
-            let change = NSString(string: products[indexPath.row].5).floatValue
+            let change = NSString(string: self.proList[indexPath.row].Change!).floatValue//NSString(string: products[indexPath.row].5).floatValue
             
             if change == 0
             {
@@ -145,11 +193,23 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
                     {
                         if let res = JSON(data).array
                         {
-                            self.products.removeAll(keepCapacity: true)
+//                            self.products.removeAll(keepCapacity: true)
+                            self.proList = []
                             for item in res
                             {
                                 if let i = item.dictionary
-                                {self.products.append((i["ProductName"]!.stringValue, i["ProductId"]!.stringValue, i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue, i["isOrder"]!.stringValue))
+                                {
+                                    let pro : ProPrices = ProPrices()
+                                    pro.ProName = i["ProductName"]!.stringValue
+                                    pro.ProId = i["ProductId"]!.stringValue
+                                    pro.LPrice = i["LPrice"]!.stringValue
+                                    pro.HPrice = i["HPrice"]!.stringValue
+                                    pro.Change = i["Change"]!.stringValue
+                                    pro.Date = i["Date"]!.stringValue
+                                    pro.IsOrder = i["isOrder"]!.stringValue
+                                    
+                                    self.proList.append(pro)
+//                                    self.products.append((i["ProductName"]!.stringValue, i["ProductId"]!.stringValue, i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue, i["isOrder"]!.stringValue))
                                 }
                             }
                             self.tvPriceDetail.reloadData()
@@ -172,10 +232,77 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
             {
                 if let des = segue.destinationViewController as? PriceHistoryViewController
                 {
-                    des.navTitle = market + " - " + cell.lblPriceDetailName.text!
+                    print(cell.lblPriceDetailId.text)
+                    des.navTitle = cell.lblPriceMarketName.text! + " - " + cell.lblPriceDetailName.text!
                     des.productId = cell.lblPriceDetailId.text!
                 }
             }
         }
     }
+    
+    func getSearchResults()
+    {
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetSearchPrices.rawValue, parameters: ["mobile": mobile, "searchKey": self.searchKey, "method": "getSearchResult"])
+            .responseJSON { response in
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                
+                switch response.result {
+                case .Success:
+                    if let data: AnyObject = response.result.value
+                    {
+                        if let dataList : NSArray = data as? NSArray
+                        {
+                            for (var i = 0; i < dataList.count; i++)
+                            {
+                                let res = JSON(dataList[i])
+                                let market : Market = Market()
+                                market.Id = res["id"].stringValue
+                                market.Name = res["name"].stringValue
+                                let proRes  = res["products"].array!
+                                
+                                for(var j = 0;j < proRes.count; j++)
+                                {
+                                    let pro = proRes[j]
+                                    let price : ProPrices = ProPrices()
+                                    price.ProId = pro["ProductId"].stringValue
+                                    price.ProName = pro["ProductName"].string
+                                    price.LPrice = pro["LPrice"].string
+                                    price.HPrice = pro["HPrice"].string
+                                    price.Date = pro["Date"].string
+                                    price.Change = pro["Change"].string
+                                    price.IsOrder = pro["isOrder"].string
+                                    market.priceList.append(price)
+                                }
+                                self.marketList.append(market)
+                            }
+                            self.tvPriceDetail.reloadData()
+                        }
+                        
+                    }
+                    
+                case .Failure:
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("加载失败，请点击右上角刷新按钮！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                }
+        }
+    }
+}
+
+class Market : NSObject
+{
+    var Id : String?
+    var Name : String?
+    var priceList : Array<ProPrices> = []
+}
+
+class ProPrices : NSObject
+{
+    var ProId : String?
+    var ProName : String?
+    var LPrice : String?
+    var HPrice : String?
+    var Date : String?
+    var Change : String?
+    var IsOrder : String?
 }
