@@ -280,6 +280,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
                     {
                         if let dataList : NSArray = data as? NSArray
                         {
+                            self.marketList = []
                             for (var i = 0; i < dataList.count; i++)
                             {
                                 let res = JSON(dataList[i])
