@@ -67,14 +67,22 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let header = view as? UITableViewHeaderFooterView
+        {
+            header.contentView.backgroundColor = UIColor(red: 35/255, green: 189/255, blue: 241/255, alpha: 1.0)
+            header.textLabel?.textColor = UIColor.whiteColor()
+        }
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(self.isSearch)
         {
-           return self.marketList[section].priceList.count
+            return self.marketList[section].priceList.count
         }
         else
         {
-        return self.proList.count
+            return self.proList.count
         }
     }
     
@@ -105,7 +113,6 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func updateRowAtIndexPath(indexPath: NSIndexPath, isorder: String)
     {
-//        products[indexPath.row].6 = isorder
         self.proList[indexPath.row].IsOrder = isorder
         tvPriceDetail.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
     }
