@@ -104,8 +104,8 @@ class ChannelItemDetailViewController: UIViewController {
                             self.lblChannelItemLocation.text = i["location"]!.stringValue
                             self.mobile = i["mobile"]!.stringValue
                             self.btnMobile.setTitle(self.mobile + "（点击拨打）", forState: UIControlState.Normal)
-                            self.lblChannelItemName.text = i["quantity"]!.stringValue
-                            self.lblChannelItemQty.text = i["name"]!.stringValue
+                            self.lblChannelItemName.text = i["name"]!.stringValue
+                            self.lblChannelItemQty.text = i["quantity"]!.stringValue
                             self.txtChannelItemDesc.text = i["description"]!.stringValue
                             self.lblChannelItemPrice.text = i["price"]!.stringValue
           
