@@ -41,7 +41,14 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     @IBAction func btnRefresh(sender: AnyObject) {
+        if(self.isSearch)
+        {
+            getSearchResults()
+        }
+        else
+        {
         getProducts()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -79,6 +86,16 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         else
         {
             return ""
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if(self.isSearch)
+        {
+            return 40
+        }else
+        {
+            return 0
         }
     }
     
@@ -244,6 +261,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func getSearchResults()
     {
+        print(self.searchKey)
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetSearchPrices.rawValue, parameters: ["mobile": mobile, "searchKey": self.searchKey, "method": "getSearchResult"])
             .responseJSON { response in
