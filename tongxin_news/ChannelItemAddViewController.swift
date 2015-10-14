@@ -10,6 +10,7 @@ import UIKit
 
 class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIActionSheetDelegate,KASlideShowDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     
+    @IBOutlet weak var vBase: UIView!
     @IBOutlet weak var txtChannelItemPrice: UITextField!//价格
     @IBOutlet weak var svBase: UIScrollView!
     @IBOutlet weak var slideView: KASlideShow!
@@ -40,7 +41,8 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     @IBOutlet weak var navChannelItem: UINavigationBar!
     
     override func viewDidLayoutSubviews() {
-        self.svBase.contentSize = CGSize(width: self.view.frame.width, height: 960)
+        print(self.vBase.frame.size)
+        self.svBase.contentSize = self.vBase.frame.size
     }
     override func viewDidLoad() {
         super.viewDidLoad()
