@@ -772,12 +772,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-R4-0lz">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-R4-0lz">
                                 <rect key="frame" x="-4" y="0.0" width="328" height="64"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="gWX-lG-DDT"/>
                                 </constraints>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Title" id="t7e-pf-Vl2">
                                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="K2d-p5-8rN">
@@ -2435,8 +2438,8 @@
                                                                 <rect key="frame" x="206" y="0.0" width="80" height="30"/>
                                                                 <animations/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="30" id="O72-zk-BwM"/>
-                                                                    <constraint firstAttribute="width" constant="80" id="lJZ-Ub-Ggy"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="Gkq-sK-JJm"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="jBG-q5-cP5"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                                 <state key="normal" title="采购">
@@ -2564,13 +2567,12 @@
                                                             <constraint firstAttribute="trailingMargin" secondItem="4cB-cC-dBw" secondAttribute="trailing" id="CK7-Wu-qCb"/>
                                                             <constraint firstAttribute="trailingMargin" secondItem="ONU-Cc-Wki" secondAttribute="trailing" id="CNn-A5-lh4"/>
                                                             <constraint firstItem="gIM-DO-XHt" firstAttribute="top" secondItem="gFL-uI-ClO" secondAttribute="bottom" constant="8" id="DBn-Am-EzA"/>
-                                                            <constraint firstItem="NSG-xx-PED" firstAttribute="leading" secondItem="QcI-qB-C0d" secondAttribute="leadingMargin" constant="198" id="DQb-mW-3lk"/>
                                                             <constraint firstAttribute="trailingMargin" secondItem="gFL-uI-ClO" secondAttribute="trailing" id="ECJ-2t-B5h"/>
                                                             <constraint firstAttribute="leadingMargin" secondItem="xJa-gr-TpF" secondAttribute="leading" id="Eua-gl-3gf"/>
+                                                            <constraint firstItem="NSG-xx-PED" firstAttribute="top" secondItem="QcI-qB-C0d" secondAttribute="topMargin" constant="-8" id="GhH-K9-mWe"/>
                                                             <constraint firstItem="ONU-Cc-Wki" firstAttribute="top" secondItem="gZh-39-470" secondAttribute="bottom" constant="8" id="HHh-j6-0q5"/>
                                                             <constraint firstAttribute="leadingMargin" secondItem="4zW-fw-fPX" secondAttribute="leading" id="HNE-NN-moo"/>
                                                             <constraint firstItem="gpy-w4-lWu" firstAttribute="top" secondItem="QcI-qB-C0d" secondAttribute="topMargin" constant="-8" id="I0v-DM-7oQ"/>
-                                                            <constraint firstItem="NSG-xx-PED" firstAttribute="top" secondItem="QcI-qB-C0d" secondAttribute="topMargin" constant="-8" id="KgN-OL-Ef5"/>
                                                             <constraint firstAttribute="leadingMargin" secondItem="Wy1-x1-9bj" secondAttribute="leading" id="PC2-TC-bS4"/>
                                                             <constraint firstItem="4zW-fw-fPX" firstAttribute="top" secondItem="Wy1-x1-9bj" secondAttribute="bottom" constant="8" id="PIo-7e-d1E"/>
                                                             <constraint firstAttribute="leadingMargin" secondItem="gZh-39-470" secondAttribute="leading" id="Q6L-7P-O7O"/>
@@ -2578,6 +2580,7 @@
                                                             <constraint firstAttribute="trailingMargin" secondItem="uNS-m1-9D6" secondAttribute="trailing" constant="36" id="UUe-f0-guu"/>
                                                             <constraint firstItem="4cB-cC-dBw" firstAttribute="top" secondItem="ONU-Cc-Wki" secondAttribute="bottom" constant="8" id="Wx4-RR-uhS"/>
                                                             <constraint firstAttribute="leadingMargin" secondItem="ONU-Cc-Wki" secondAttribute="leading" id="dp6-Vb-x5q"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="NSG-xx-PED" secondAttribute="trailing" constant="26" id="eTG-Y3-pAM"/>
                                                             <constraint firstItem="Wy1-x1-9bj" firstAttribute="top" secondItem="gpy-w4-lWu" secondAttribute="bottom" constant="8" id="eco-Ro-dPR"/>
                                                             <constraint firstAttribute="leadingMargin" secondItem="4cB-cC-dBw" secondAttribute="leading" id="ecz-fz-9Fb"/>
                                                             <constraint firstAttribute="trailingMargin" secondItem="gZh-39-470" secondAttribute="trailing" id="efv-t8-jD0"/>
