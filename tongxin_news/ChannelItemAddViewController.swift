@@ -41,7 +41,6 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     @IBOutlet weak var navChannelItem: UINavigationBar!
     
     override func viewDidLayoutSubviews() {
-        print(self.vBase.frame.size)
         self.svBase.contentSize = self.vBase.frame.size
     }
     override func viewDidLoad() {

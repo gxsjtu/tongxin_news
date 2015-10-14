@@ -198,6 +198,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         let vc : PriceDetailViewController = self.storyboard!.instantiateViewControllerWithIdentifier("priceDetailView") as! PriceDetailViewController
         vc.searchKey = searchBar.text!
         vc.isSearch = true
+        vc.mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")!
         self.presentViewController(vc, animated: true, completion: nil)
         
     }
