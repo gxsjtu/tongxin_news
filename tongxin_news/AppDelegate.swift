@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound |
 //            UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
-        UITabBar.appearance().tintColor = UIColor(red: 255/255, green: 62/255, blue: 63/255, alpha: 1.0)
+        UITabBar.appearance().tintColor = UIColor(red: 36/255, green: 190/255, blue: 242/255, alpha: 1.0)
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         manager = Manager(configuration: configuration)
 

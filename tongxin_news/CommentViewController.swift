@@ -38,6 +38,7 @@ class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate
         self.selection.showsEdgeFadeEffect = true
         self.selection.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         self.selection.selectionIndicatorHorizontalPadding = 5.0
+        self.selection.setTitleFont(UIFont.boldSystemFontOfSize(16), forState: UIControlState.Selected)
         
         vSelectionView.addSubview(selection)
         

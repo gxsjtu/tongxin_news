@@ -25,7 +25,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="oOb-X8-iEB"/>
                                 </constraints>
-                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -123,7 +123,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="A7U-3r-vTA"/>
                                 </constraints>
-                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -344,7 +344,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="k5s-0u-0b1"/>
                                 </constraints>
-                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -439,7 +439,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="9mr-cG-V2A"/>
                                 </constraints>
-                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -566,7 +566,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="ehT-1A-Dsm"/>
                                 </constraints>
-                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -734,7 +734,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="Jn3-Dn-3YI"/>
                                 </constraints>
-                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -789,13 +789,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-R4-0lz">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6A-R4-0lz">
                                 <rect key="frame" x="-4" y="0.0" width="328" height="64"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="gWX-lG-DDT"/>
                                 </constraints>
-                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -1131,13 +1131,13 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-YG-rHL">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JZk-YG-rHL">
                                 <rect key="frame" x="-4" y="0.0" width="328" height="64"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="84S-8i-IuM"/>
                                 </constraints>
-                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -1290,12 +1290,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x8L-2T-cO4">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8L-2T-cO4">
                                 <rect key="frame" x="-4" y="0.0" width="328" height="64"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="dqE-jZ-1Ob"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Title" id="5ej-Bf-1i3">
                                         <barButtonItem key="leftBarButtonItem" systemItem="reply" id="gI7-ur-ZxU">
@@ -1404,13 +1408,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0D-O4-e5a">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0D-O4-e5a">
                                 <rect key="frame" x="-4" y="0.0" width="328" height="64"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="YWj-7b-cfY"/>
                                 </constraints>
-                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -1471,7 +1475,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="TJn-sh-X9H"/>
                                 </constraints>
-                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -1563,13 +1567,13 @@
                                 <rect key="frame" x="-4" y="64" width="328" height="568"/>
                                 <animations/>
                             </scrollView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9C-9L-YHu">
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G9C-9L-YHu">
                                 <rect key="frame" x="-4" y="0.0" width="328" height="64"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="I3c-1z-NMc"/>
                                 </constraints>
-                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -1859,7 +1863,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="w0F-Ao-OzV"/>
                                 </constraints>
-                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -1977,7 +1981,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="07p-Tu-LJd"/>
                                 </constraints>
-                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
