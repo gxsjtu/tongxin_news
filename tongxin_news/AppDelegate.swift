@@ -101,6 +101,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+        //校验是否退出登录
+        let mobile: String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+        let token: String? = NSUserDefaults.standardUserDefaults().stringForKey("token")
+        
+        manager!.request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile!, "token": token!, "method": "checkToken"])
+            .responseJSON { response in
+                switch response.result {
+                case .Success:
+                    let res = JSON(response.result.value!)
+                    if let result = res["result"].string
+                    {
+                        if result == "error"
+                        {
+                            if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
+                            {
+                                loginVC.isForcedLogout = true
+                                self.window?.rootViewController = loginVC
+                            }
+                        }
+                    }
+                case .Failure:
+                    if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
+                    {
+                        self.window?.rootViewController = loginVC
+                    }
+                }
+        }
     }
     
     func applicationDidBecomeActive(application: UIApplication) {
@@ -122,7 +149,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        NSNotificationCenter.defaultCenter().postNotificationName("Badge", object: nil, userInfo: userInfo)
+        if let logout = userInfo["shyr"] as? Int
+        {
+            if logout == 1
+            {
+                if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
+                {
+                    loginVC.isForcedLogout = true
+                    self.window?.rootViewController = loginVC
+                }
+            }
+        }
+        else
+        {
+           NSNotificationCenter.defaultCenter().postNotificationName("Badge", object: nil, userInfo: userInfo)
+        }
     }
 }
 

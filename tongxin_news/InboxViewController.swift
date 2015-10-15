@@ -242,18 +242,19 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                                 
                                 switch response.result {
                                 case .Success:
-                                    if let data: AnyObject = response.result.value
-                                    {
-                                        var result = JSON(data)
-                                        if(result["result"].string! == "ok")
-                                        {
-                                            print("清理成功")
-                                        }
-                                        else
-                                        {
-                                            print("清理失败")
-                                        }
-                                    }
+                                    break
+//                                    if let data: AnyObject = response.result.value
+//                                    {
+//                                        var result = JSON(data)
+//                                        if(result["result"].string! == "ok")
+//                                        {
+//                                            print("清理成功")
+//                                        }
+//                                        else
+//                                        {
+//                                            print("清理失败")
+//                                        }
+//                                    }
                                     
                                 case .Failure:
                                     let alert = SKTipAlertView()

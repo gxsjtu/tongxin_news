@@ -10,6 +10,8 @@ import UIKit
 
 class LogInViewController: UIViewController {
     
+    var isForcedLogout = false
+    
     @IBAction func didCallClicked(sender: AnyObject) {
         UIApplication.sharedApplication().openURL(NSURL(string: "tel://021-62156169")!)
     }
@@ -33,6 +35,16 @@ class LogInViewController: UIViewController {
         imgLogInBg.image = UIImage(named: "background")
         imgLogInLogo.image = UIImage(named: "logo")
         btnApplyTrial.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
+       
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if isForcedLogout == true
+        {
+            let alert = SKTipAlertView()
+            alert.showRedNotificationForString("该账号已从其他客户端登录，您已被强制下线！", forDuration: 4.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
