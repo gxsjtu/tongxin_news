@@ -26,7 +26,6 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         
         // Do any additional setup after loading the view.
         self.tvPriceTableView.rowHeight = 44.0
-        self.navPrice.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         selection = HTHorizontalSelectionList()
         selection?.delegate = self
         selection?.dataSource = self
@@ -172,6 +171,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     }
     
     @IBAction func unwindFromPriceDetail2Price(segue:UIStoryboardSegue){}
+    @IBAction func unwindFromUserSetting2Price(segue:UIStoryboardSegue){}
     
     // MARK: - Navigation
     

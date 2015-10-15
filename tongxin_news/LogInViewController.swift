@@ -32,7 +32,6 @@ class LogInViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        imgLogInBg.image = UIImage(named: "background")
         imgLogInLogo.image = UIImage(named: "logo")
         btnApplyTrial.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
        

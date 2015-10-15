@@ -19,7 +19,6 @@ class ChannelCatalogViewController: UIViewController, UITableViewDelegate, UITab
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navChannelCatalog.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navChannelCatalog.topItem?.title = "商圈 - " + channelName
         getChannelCatalog()
     }

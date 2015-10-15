@@ -25,7 +25,6 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navBarPriceDetail.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         if(self.isSearch)
         {
             self.navBarPriceDetail.topItem?.title = "查询结果"

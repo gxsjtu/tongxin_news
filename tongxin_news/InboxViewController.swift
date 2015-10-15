@@ -28,7 +28,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         initLoadDatas()
-        self.navInbox.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.tbData.dataSource = self
         self.tbData.delegate = self
         self.tbData.estimatedRowHeight = 1000

@@ -35,7 +35,6 @@ class ChannelItemDetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         getChannelItemDetail()
-        self.navChannelItemDetail.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navChannelItemDetail.topItem?.title = navTitle
         self.slideChannelItem.transitionDuration = 3.0
         self.slideChannelItem.transitionType = KASlideShowTransitionType.Slide

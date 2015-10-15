@@ -17,7 +17,6 @@ class EcosystemViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navEco.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         getChannels()
     }
     @IBOutlet weak var vEcoChannels: UIScrollView!

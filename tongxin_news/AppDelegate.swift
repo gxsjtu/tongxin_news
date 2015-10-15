@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound |
 //            UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
-        
+        UITabBar.appearance().tintColor = UIColor(red: 255/255, green: 62/255, blue: 63/255, alpha: 1.0)
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         manager = Manager(configuration: configuration)
 
@@ -39,8 +39,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             {
                 let mobile: String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
                 let password: String? = NSUserDefaults.standardUserDefaults().stringForKey("password")
+                let token: String? = NSUserDefaults.standardUserDefaults().stringForKey("token")
                 
-                manager!.request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile!, "password": password!, "method": "checkuser"])
+                manager!.request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile!, "password": password!, "method": "checkuser", "token": token!])
                     .responseJSON { response in
                         switch response.result {
                         case .Success:
@@ -105,6 +106,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let mobile: String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
         let token: String? = NSUserDefaults.standardUserDefaults().stringForKey("token")
         
+        if mobile == nil
+        {
+            if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
+            {
+                self.window?.rootViewController = loginVC
+                return
+            }
+        }
+        
+        if token == nil
+        {
+            if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
+            {
+                self.window?.rootViewController = loginVC
+                return
+            }
+        }
+        
         manager!.request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile!, "token": token!, "method": "checkToken"])
             .responseJSON { response in
                 switch response.result {
@@ -117,6 +136,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
                             {
                                 loginVC.isForcedLogout = true
+                                NSUserDefaults.standardUserDefaults().setObject("no", forKey: "isLoggedIn")
                                 self.window?.rootViewController = loginVC
                             }
                         }
@@ -156,6 +176,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
                 {
                     loginVC.isForcedLogout = true
+                    NSUserDefaults.standardUserDefaults().setObject("no", forKey: "isLoggedIn")
                     self.window?.rootViewController = loginVC
                 }
             }

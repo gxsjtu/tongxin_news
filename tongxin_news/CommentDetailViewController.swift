@@ -23,7 +23,6 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navBarCommentetail.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navBarCommentetail.topItem?.title = group + " - " + market
         getComments()
     }

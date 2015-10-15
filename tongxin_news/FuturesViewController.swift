@@ -17,7 +17,6 @@ class FuturesViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navFutures.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.wvFutures.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
     }
 

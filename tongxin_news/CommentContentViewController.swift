@@ -20,7 +20,6 @@ class CommentContentViewController: UIViewController, UIWebViewDelegate {
 
         // Do any additional setup after loading the view.
         self.wvCommentContent.delegate = self
-        self.navCommentContent.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navCommentContent.topItem?.title = navTitle
         self.wvCommentContent.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
     }

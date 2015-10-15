@@ -54,7 +54,6 @@ class ApplyTrialViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navApplyTrial.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
     }
 
     override func didReceiveMemoryWarning() {

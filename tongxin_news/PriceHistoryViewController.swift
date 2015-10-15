@@ -33,7 +33,6 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navPriceHistory.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.dpPriceHistory.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         self.toolbarPriceHistory.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
         self.vContainer.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)

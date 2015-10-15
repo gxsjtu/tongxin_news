@@ -48,7 +48,6 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
 
         // Do any additional setup after loading the view.
 
-        self.navChannelItem.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navChannelItem.topItem?.title = "商圈 - " + channelName + " - " + catalogName
         
         rbPurchase.otherButtons = [rbSupply]

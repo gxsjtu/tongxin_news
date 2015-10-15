@@ -27,7 +27,6 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
         super.viewDidLoad()
         self.searchBar.delegate = self
         // Do any additional setup after loading the view.
-        self.navChannel.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         getSPList()
     }
     

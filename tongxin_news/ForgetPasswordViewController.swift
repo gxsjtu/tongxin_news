@@ -83,7 +83,6 @@ class ForgetPasswordViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navForgetPassword.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {

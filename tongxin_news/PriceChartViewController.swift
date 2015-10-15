@@ -40,7 +40,6 @@ class PriceChartViewController: UIViewController, ChartDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navChart.setBackgroundImage(UIImage(named: "background"), forBarMetrics: UIBarMetrics.Default)
         self.navChart.topItem?.title = navTitle
         
         for (l, h, d, _): (String, String, String, String) in Array(history.reverse())
