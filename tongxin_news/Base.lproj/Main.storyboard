@@ -795,8 +795,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="gWX-lG-DDT"/>
                                 </constraints>
+                                <color key="barTintColor" red="1" green="0.24313725489999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
                                 <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Title" id="t7e-pf-Vl2">
