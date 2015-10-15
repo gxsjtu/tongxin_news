@@ -76,6 +76,23 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        if(searchBar.text == "")
+        {
+            self.resInfos = self.msgInfos
+            //self.resComInfos = self.comInfos
+        }
+        else
+        {
+            self.resInfos = Array<MsgInfo>()
+            for msgInfo in self.msgInfos
+            {
+                if(msgInfo.msg!.componentsSeparatedByString(searchBar.text!).count > 1)
+                {
+                    resInfos.append(msgInfo)
+                }
+            }
+        }
+        self.tbData.reloadData()
         searchBar.resignFirstResponder()
     }
     
