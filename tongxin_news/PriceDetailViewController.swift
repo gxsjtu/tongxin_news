@@ -149,6 +149,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         if self.proList[indexPath.row].Change == ""//products[indexPath.row].5 == ""
         {
             cell.lblPriceDetailChange.hidden = true
+            cell.lblPriceDetailChangeCapt.hidden = true
         }
         else if self.proList[indexPath.row].Change == "***"//products[indexPath.row].5 == "***"
         {
