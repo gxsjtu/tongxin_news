@@ -276,9 +276,9 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func getSearchResults()
     {
-        print(self.searchKey)
+        let key = self.searchKey.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetSearchPrices.rawValue, parameters: ["mobile": mobile, "searchKey": self.searchKey, "method": "getSearchResult"])
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetSearchPrices.rawValue, parameters: ["mobile": mobile, "searchKey": key!, "method": "getSearchResult"])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
