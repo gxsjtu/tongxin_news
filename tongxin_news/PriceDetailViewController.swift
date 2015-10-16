@@ -46,7 +46,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         }
         else
         {
-        getProducts()
+            getProducts()
         }
     }
     
@@ -58,11 +58,11 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if(self.isSearch)
         {
-          return self.marketList.count
+            return self.marketList.count
         }
         else
         {
-        return 1
+            return 1
         }
     }
     

@@ -1004,10 +1004,14 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vao-A8-tM1" firstAttribute="leading" secondItem="DoC-GZ-1MN" secondAttribute="leading" id="998-IW-t0J"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="vao-A8-tM1" secondAttribute="bottom" id="DR5-kh-We6"/>
                             <constraint firstItem="h6A-R4-0lz" firstAttribute="top" secondItem="rE0-qd-goo" secondAttribute="bottom" constant="-20" id="KzF-Gn-QDC"/>
                             <constraint firstItem="h6A-R4-0lz" firstAttribute="top" secondItem="vao-A8-tM1" secondAttribute="top" constant="-64" id="OSO-q5-wC7"/>
+                            <constraint firstItem="vao-A8-tM1" firstAttribute="top" secondItem="h6A-R4-0lz" secondAttribute="bottom" id="Sg6-5i-Fmc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h6A-R4-0lz" secondAttribute="trailing" constant="-20" id="URk-mu-W9P"/>
                             <constraint firstItem="vao-A8-tM1" firstAttribute="leading" secondItem="DoC-GZ-1MN" secondAttribute="leadingMargin" constant="-16" id="Zkq-4b-p0s"/>
+                            <constraint firstAttribute="trailing" secondItem="vao-A8-tM1" secondAttribute="trailing" id="m8x-RW-buE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vao-A8-tM1" secondAttribute="trailing" constant="-16" id="wby-Zi-T7o"/>
                             <constraint firstItem="Qg3-0Y-QHP" firstAttribute="top" secondItem="vao-A8-tM1" secondAttribute="bottom" id="wvJ-xN-fjj"/>
                             <constraint firstItem="h6A-R4-0lz" firstAttribute="leading" secondItem="DoC-GZ-1MN" secondAttribute="leadingMargin" constant="-20" id="x9M-bK-T5P"/>
