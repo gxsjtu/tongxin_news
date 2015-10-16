@@ -270,6 +270,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func getSearchResults()
     {
+             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.POST, EndPoints.GetSearchPrices.rawValue, parameters: ["mobile": mobile, "searchKey": self.searchKey, "method": "getSearchResult"])
                 .responseJSON { response in
                     MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
