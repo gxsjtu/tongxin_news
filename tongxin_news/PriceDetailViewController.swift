@@ -148,13 +148,6 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
         cell.lblPriceDetailIsOrdered.text = self.proList[indexPath.row].IsOrder//products[indexPath.row].6
         if self.proList[indexPath.row].Change == ""//products[indexPath.row].5 == ""
         {
-            cell.lblPriceDetailChange.hidden = true
-            cell.lblPriceDetailChangeCapt.hidden = true
-        }
-        else if self.proList[indexPath.row].Change == "***"//products[indexPath.row].5 == "***"
-        {
-            cell.lblPriceDetailChange.textColor = UIColor.blackColor()
-            cell.lblPriceDetailChangeCapt.textColor = UIColor.blackColor()
             cell.lblPriceDetailChange.text = ""
             cell.lblPriceDetailChangeCapt.text = ""
         }
@@ -277,53 +270,51 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func getSearchResults()
     {
-        let key = self.searchKey.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.alphanumericCharacterSet())
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetSearchPrices.rawValue, parameters: ["mobile": mobile, "searchKey": key!, "method": "getSearchResult"])
-            .responseJSON { response in
-                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                
-                switch response.result {
-                case .Success:
-                    if let data: AnyObject = response.result.value
-                    {
-                        if let dataList : NSArray = data as? NSArray
+            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.POST, EndPoints.GetSearchPrices.rawValue, parameters: ["mobile": mobile, "searchKey": self.searchKey, "method": "getSearchResult"])
+                .responseJSON { response in
+                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                    
+                    switch response.result {
+                    case .Success:
+                        if let data: AnyObject = response.result.value
                         {
-                            self.marketList = []
-                            for (var i = 0; i < dataList.count; i++)
+                            if let dataList : NSArray = data as? NSArray
                             {
-                                let res = JSON(dataList[i])
-                                let market : Market = Market()
-                                market.Id = res["id"].stringValue
-                                market.Name = res["name"].stringValue
-                                let proRes  = res["products"].array!
-                                
-                                for(var j = 0;j < proRes.count; j++)
+                                self.marketList = []
+                                for (var i = 0; i < dataList.count; i++)
                                 {
-                                    let pro = proRes[j]
-                                    let price : ProPrices = ProPrices()
-                                    price.ProId = pro["ProductId"].stringValue
-                                    price.ProName = pro["ProductName"].string
-                                    price.LPrice = pro["LPrice"].string
-                                    price.HPrice = pro["HPrice"].string
-                                    price.Date = pro["Date"].string
-                                    price.Change = pro["Change"].string
-                                    price.IsOrder = pro["isOrder"].string
-                                    market.priceList.append(price)
+                                    let res = JSON(dataList[i])
+                                    let market : Market = Market()
+                                    market.Id = res["id"].stringValue
+                                    market.Name = res["name"].stringValue
+                                    let proRes  = res["products"].array!
+                                    
+                                    for(var j = 0;j < proRes.count; j++)
+                                    {
+                                        let pro = proRes[j]
+                                        let price : ProPrices = ProPrices()
+                                        price.ProId = pro["ProductId"].stringValue
+                                        price.ProName = pro["ProductName"].string
+                                        price.LPrice = pro["LPrice"].string
+                                        price.HPrice = pro["HPrice"].string
+                                        price.Date = pro["Date"].string
+                                        price.Change = pro["Change"].string
+                                        price.IsOrder = pro["isOrder"].string
+                                        market.priceList.append(price)
+                                    }
+                                    self.marketList.append(market)
                                 }
-                                self.marketList.append(market)
+                                self.tvPriceDetail.reloadData()
                             }
-                            self.tvPriceDetail.reloadData()
+                            
                         }
                         
+                    case .Failure:
+                        let alert = SKTipAlertView()
+                        alert.showRedNotificationForString("加载失败，请点击右上角刷新按钮！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                     }
-                    
-                case .Failure:
-                    let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("加载失败，请点击右上角刷新按钮！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                }
+            }
         }
-    }
 }
 
 class Market : NSObject

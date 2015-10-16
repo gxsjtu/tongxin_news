@@ -10,22 +10,21 @@ import UIKit
 
 class EcosystemViewController: UIViewController {
     
-    var channels = [(String, String)]()
-    var channelCount = 0
+    @IBOutlet weak var vContent: UIView!
+    @IBOutlet weak var svBase: UIScrollView!
     @IBOutlet weak var navEco: UINavigationBar!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        getChannels()
     }
+    
     @IBOutlet weak var vEcoChannels: UIScrollView!
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
@@ -37,75 +36,105 @@ class EcosystemViewController: UIViewController {
     }
     */
     
+    @IBAction func jibenjinshu(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 1
+        des.channelName = "基本金属"
+        self.presentViewController(des, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func feijiuyouse(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 2
+        des.channelName = "废旧有色"
+        self.presentViewController(des, animated: true, completion: nil)
+    }
+    @IBOutlet weak var feijiuyouse: UIButton!
+    
+    @IBAction func guijinshu(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 3
+        des.channelName = "贵金属"
+        self.presentViewController(des, animated: true, completion: nil)
+    }
+    @IBOutlet weak var guijinshu: UIButton!
     @IBAction func  unwindFromChannel2Ecosystem(segue: UIStoryboardSegue)
     {
         
     }
     
-    func channelButtonClicked(sender: UIButton)
-    {
+    @IBAction func qita(sender: AnyObject) {
         let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
-        des.channelId = Int(sender.tag)
-        des.channelName = sender.titleLabel!.text!
+        des.channelId = 15
+        des.channelName = "其他"
         self.presentViewController(des, animated: true, completion: nil)
     }
-    
-    func getChannels()
-    {
-         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.Channel.rawValue, parameters: ["method": "getchannel"])
-            .responseJSON { response in
-                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                
-                switch response.result {
-                case .Success:
-                    if let data: AnyObject = response.result.value
-                    {
-                        if let res = JSON(data).array
-                        {
-                            self.channels.removeAll(keepCapacity: true)
-                            for item in res
-                            {
-                                if let i = item.dictionary
-                                {
-                                    self.channels.append((i["id"]!.stringValue, i["Name"]!.stringValue))
-                                }
-                            }
-                            for(id, name) in self.channels
-                            {
-                                var dk: DKCircleButton?
-                                let delta = (Int)(self.view.frame.width - 90 * 3 - 15 * 2) / 2
-                                
-                                if self.channelCount % 3 == 0
-                                {
-                                    dk = DKCircleButton(frame: CGRect(x: delta, y: (self.channelCount / 3) * 105 + 20, width: 90, height: 90))
-                                }
-                                else if self.channelCount % 3 == 1
-                                {
-                                    dk = DKCircleButton(frame: CGRect(x: 105 + delta, y: (self.channelCount / 3) * 105 + 20, width: 90, height: 90))
-                                }
-                                else if self.channelCount % 3 == 2
-                                {
-                                    dk = DKCircleButton(frame: CGRect(x: 2 * 105 + delta, y: (self.channelCount / 3) * 105 + 20, width: 90, height: 90))
-                                }
-                                self.vEcoChannels.addSubview(dk!)
-                                dk!.setTitle(name, forState: UIControlState.Normal)
-                                dk!.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-                                dk!.backgroundColor = UIColor.randomFlatDarkColor()
-                                dk!.addTarget(self, action: "channelButtonClicked:", forControlEvents: UIControlEvents.TouchUpInside)
-                                dk!.tag = Int(id)!
-                                self.channelCount++
-                            }
-                            self.vEcoChannels.contentSize = CGSize(width: Double(self.view.frame.width), height: Double((self.channelCount / 3) * 135))
-                        }
-                    }
-                    
-                case .Failure:
-                    let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                }
-        }
+    @IBAction func zaishengsuoliao(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 14
+        des.channelName = "再生塑料"
+        self.presentViewController(des, animated: true, completion: nil)
     }
-
-
+    @IBAction func feizhi(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 13
+        des.channelName = "废纸"
+        self.presentViewController(des, animated: true, completion: nil)
+    }
+    @IBAction func xiyouxiaojinshu(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 12
+        des.channelName = "稀有小金属"
+        self.presentViewController(des, animated: true, completion: nil)
+    }
+    @IBOutlet weak var xiyouxiaojinshu: UIButton!
+    @IBAction func tiehejin(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 11
+        des.channelName = "铁合金"
+        self.presentViewController(des, animated: true, completion: nil)
+    }
+    @IBAction func tiekuangshi(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 10
+        des.channelName = "铁矿石"
+        self.presentViewController(des, animated: true, completion: nil)
+    }
+    @IBAction func shengtie(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 9
+        des.channelName = "生铁"
+        self.presentViewController(des, animated: true, completion: nil)
+    }
+    @IBAction func buxiugang(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 8
+        des.channelName = "不锈钢"
+        self.presentViewController(des, animated: true, completion: nil)
+    }
+    @IBAction func feibuxiugang(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 7
+        des.channelName = "废不锈钢"
+        self.presentViewController(des, animated: true, completion: nil)
+    }
+    @IBAction func gangpi(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 6
+        des.channelName = "钢坯"
+        self.presentViewController(des, animated: true, completion: nil)
+    }
+    @IBAction func jiancai(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 5
+        des.channelName = "建材"
+        self.presentViewController(des, animated: true, completion: nil)
+    }
+    @IBAction func feigang(sender: AnyObject) {
+        let des = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelVC") as! ChannelViewController
+        des.channelId = 4
+        des.channelName = "废钢"
+        self.presentViewController(des, animated: true, completion: nil)
+    }
 }

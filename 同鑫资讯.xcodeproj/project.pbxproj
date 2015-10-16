@@ -12,7 +12,6 @@
 		3515CB221B94367200EC54D7 /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB1F1B94367200EC54D7 /* ChartColors.swift */; };
 		3515CB231B94367200EC54D7 /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB201B94367200EC54D7 /* ChartSeries.swift */; };
 		3515CB251B9BE45000EC54D7 /* EcosystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB241B9BE45000EC54D7 /* EcosystemViewController.swift */; };
-		3515CB291B9C05DF00EC54D7 /* DKCircleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB281B9C05DF00EC54D7 /* DKCircleButton.m */; };
 		3515CB431B9D19FA00EC54D7 /* UIColor+MLPFlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB421B9D19FA00EC54D7 /* UIColor+MLPFlatColors.m */; };
 		3515CB461B9D552600EC54D7 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB451B9D552600EC54D7 /* ChannelViewController.swift */; };
 		3515CB481B9D62AA00EC54D7 /* ChannelCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */; };
@@ -109,8 +108,6 @@
 		3515CB1F1B94367200EC54D7 /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
 		3515CB201B94367200EC54D7 /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
 		3515CB241B9BE45000EC54D7 /* EcosystemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcosystemViewController.swift; sourceTree = "<group>"; };
-		3515CB271B9C05DF00EC54D7 /* DKCircleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DKCircleButton.h; sourceTree = "<group>"; };
-		3515CB281B9C05DF00EC54D7 /* DKCircleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DKCircleButton.m; sourceTree = "<group>"; };
 		3515CB411B9D19FA00EC54D7 /* UIColor+MLPFlatColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MLPFlatColors.h"; sourceTree = "<group>"; };
 		3515CB421B9D19FA00EC54D7 /* UIColor+MLPFlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MLPFlatColors.m"; sourceTree = "<group>"; };
 		3515CB451B9D552600EC54D7 /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
@@ -270,15 +267,6 @@
 			name = SwiftChart;
 			sourceTree = "<group>";
 		};
-		3515CB261B9C05CB00EC54D7 /* DKCircleButton */ = {
-			isa = PBXGroup;
-			children = (
-				3515CB271B9C05DF00EC54D7 /* DKCircleButton.h */,
-				3515CB281B9C05DF00EC54D7 /* DKCircleButton.m */,
-			);
-			name = DKCircleButton;
-			sourceTree = "<group>";
-		};
 		3515CB401B9D19EB00EC54D7 /* UIColor+MLPFlatColors */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,7 +404,6 @@
 				358700711B9E78AA00B09351 /* TSLocateView */,
 				3587006A1B9D898900B09351 /* RadioButton */,
 				3515CB401B9D19EB00EC54D7 /* UIColor+MLPFlatColors */,
-				3515CB261B9C05CB00EC54D7 /* DKCircleButton */,
 				3515CB1D1B94366700EC54D7 /* SwiftChart */,
 				35AC87481B8AB14A00B44C7E /* MJRefresh */,
 				35C712891B86CC4C004B267A /* HTHorizontalSelectionList */,
@@ -658,7 +645,6 @@
 				350901911BB4F7600010FFFE /* ForgetPasswordViewController.swift in Sources */,
 				35F665741BB3B9DC00A3AEDE /* Request.swift in Sources */,
 				356803981BA0304600BB50AE /* UIImageView+HighlightedWebCache.m in Sources */,
-				3515CB291B9C05DF00EC54D7 /* DKCircleButton.m in Sources */,
 				358700811B9EBCD100B09351 /* ChannelVCTableViewCell.swift in Sources */,
 				35F665751BB3B9DC00A3AEDE /* Response.swift in Sources */,
 				3515CB211B94367200EC54D7 /* Chart.swift in Sources */,
