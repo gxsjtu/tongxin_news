@@ -31,6 +31,25 @@ class UserSettingViewController : UIViewController
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet weak var isSound: UISwitch!
+    
+    @IBAction func isSoundChanged(sender: AnyObject) {
+        let mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.UserSet.rawValue, parameters:["mobile":mobile!, "method":"setUserInfo", "isSound": self.isSound.on])
+            .responseJSON { response in
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                switch response.result {
+                case .Success:
+                    break
+                case .Failure:
+                    self.isSound.setOn(!self.isSound.on, animated: true)
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("修改声音设置失败，请重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                }
+        }
+    }
+    
     func IsLogin()
     {
         let isLogined : String? = NSUserDefaults.standardUserDefaults().stringForKey("isLoggedIn")
@@ -47,7 +66,7 @@ class UserSettingViewController : UIViewController
         {
             let mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.UserSet.rawValue, parameters:["mobile":mobile!,"method":"getUserInfo"])
+            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.UserSet.rawValue, parameters:["mobile":mobile!, "method":"getUserInfo"])
                 .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                     
@@ -57,8 +76,19 @@ class UserSettingViewController : UIViewController
                         if let result = res["endDate"].string
                         {
                             self.TxtDateValue.text = result
-                            self.TxtMobile.text = mobile
                         }
+                        if let isSound = res["isSound"].string
+                        {
+                            if isSound == "true"
+                            {
+                               self.isSound.setOn(true, animated: true)
+                            }
+                            else
+                            {
+                                self.isSound.setOn(false, animated: true)
+                            }
+                        }
+                        self.TxtMobile.text = mobile
                     case .Failure:
                         let alert = SKTipAlertView()
                         alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)

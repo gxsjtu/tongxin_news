@@ -2404,18 +2404,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="服务有效期" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e9N-nd-dGN">
-                                <rect key="frame" x="12" y="257" width="91" height="36"/>
+                                <rect key="frame" x="12" y="260" width="91" height="36"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="VDI-KO-CdI"/>
-                                    <constraint firstAttribute="width" constant="91" id="kjQ-gF-aK2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GXK-p1-Nvu">
-                                <rect key="frame" x="107" y="260" width="193" height="30"/>
+                                <rect key="frame" x="107" y="263" width="193" height="30"/>
                                 <animations/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2464,16 +2463,32 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="信息声音提醒" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPG-rC-0D5">
+                                <rect key="frame" x="12" y="313" width="102" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ep-yd-5gN">
+                                <rect key="frame" x="251" y="308" width="51" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="isSoundChanged:" destination="as7-B9-UyQ" eventType="valueChanged" id="u9q-g7-qqf"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="5ep-yd-5gN" firstAttribute="top" secondItem="GXK-p1-Nvu" secondAttribute="bottom" constant="15" id="0IX-eg-bBz"/>
                             <constraint firstItem="e9N-nd-dGN" firstAttribute="leading" secondItem="Op1-ai-T7u" secondAttribute="leading" constant="12" id="3e8-gW-13a"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Bhj-o1-FUn" secondAttribute="bottom" constant="20" id="452-uW-UxQ"/>
+                            <constraint firstItem="e9N-nd-dGN" firstAttribute="centerX" secondItem="KhZ-rT-M95" secondAttribute="centerX" id="4rm-fm-mpj"/>
                             <constraint firstItem="7qz-UU-gq7" firstAttribute="leading" secondItem="KhZ-rT-M95" secondAttribute="trailing" constant="4" id="7b2-dr-Zan"/>
-                            <constraint firstItem="GXK-p1-Nvu" firstAttribute="top" secondItem="7qz-UU-gq7" secondAttribute="bottom" constant="11" id="9gy-Te-YPB"/>
+                            <constraint firstItem="GXK-p1-Nvu" firstAttribute="top" secondItem="7qz-UU-gq7" secondAttribute="bottom" constant="14" id="9gy-Te-YPB"/>
                             <constraint firstAttribute="trailing" secondItem="GXK-p1-Nvu" secondAttribute="trailing" constant="20" id="9h5-cX-8jg"/>
-                            <constraint firstItem="e9N-nd-dGN" firstAttribute="top" secondItem="KhZ-rT-M95" secondAttribute="bottom" constant="5" id="C4S-uu-77U"/>
+                            <constraint firstItem="e9N-nd-dGN" firstAttribute="top" secondItem="KhZ-rT-M95" secondAttribute="bottom" constant="8" id="C4S-uu-77U"/>
                             <constraint firstItem="Yvq-wV-PKo" firstAttribute="centerX" secondItem="Op1-ai-T7u" secondAttribute="centerX" id="DJj-47-AK7"/>
                             <constraint firstItem="uIh-lQ-lY3" firstAttribute="leading" secondItem="Op1-ai-T7u" secondAttribute="leading" id="JJz-Vh-rEh"/>
                             <constraint firstItem="7qz-UU-gq7" firstAttribute="top" secondItem="Yvq-wV-PKo" secondAttribute="bottom" constant="39" id="OSH-cj-cgc"/>
@@ -2481,8 +2496,11 @@
                             <constraint firstAttribute="trailing" secondItem="uIh-lQ-lY3" secondAttribute="trailing" id="deC-oI-fJ3"/>
                             <constraint firstAttribute="trailing" secondItem="7qz-UU-gq7" secondAttribute="trailing" constant="20" id="hg0-Ce-VMB"/>
                             <constraint firstAttribute="trailing" secondItem="Bhj-o1-FUn" secondAttribute="trailing" constant="14" id="hkC-WU-dxE"/>
+                            <constraint firstItem="xPG-rC-0D5" firstAttribute="leading" secondItem="Op1-ai-T7u" secondAttribute="leading" constant="12" id="oPj-wF-OR4"/>
                             <constraint firstItem="GXK-p1-Nvu" firstAttribute="leading" secondItem="e9N-nd-dGN" secondAttribute="trailing" constant="4" id="pSf-iR-QsD"/>
+                            <constraint firstAttribute="trailing" secondItem="5ep-yd-5gN" secondAttribute="trailing" constant="20" id="rue-G9-MAC"/>
                             <constraint firstItem="Bhj-o1-FUn" firstAttribute="leading" secondItem="Op1-ai-T7u" secondAttribute="leading" constant="14" id="vIe-wP-C6A"/>
+                            <constraint firstItem="xPG-rC-0D5" firstAttribute="top" secondItem="e9N-nd-dGN" secondAttribute="bottom" constant="17" id="w6T-UR-4us"/>
                             <constraint firstItem="Yvq-wV-PKo" firstAttribute="top" secondItem="uIh-lQ-lY3" secondAttribute="bottom" constant="36" id="wJm-sr-q03"/>
                             <constraint firstItem="KhZ-rT-M95" firstAttribute="leading" secondItem="Op1-ai-T7u" secondAttribute="leading" constant="12" id="x3v-al-gYn"/>
                             <constraint firstItem="KhZ-rT-M95" firstAttribute="top" secondItem="Yvq-wV-PKo" secondAttribute="bottom" constant="36" id="xlg-S4-Au5"/>
@@ -2492,6 +2510,7 @@
                         <outlet property="TxtDateValue" destination="GXK-p1-Nvu" id="dGa-QP-LaG"/>
                         <outlet property="TxtMobile" destination="7qz-UU-gq7" id="aco-lf-Iwz"/>
                         <outlet property="imgUserLogo" destination="Yvq-wV-PKo" id="dfv-bo-cBR"/>
+                        <outlet property="isSound" destination="5ep-yd-5gN" id="s6w-b2-nGh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMA-ZO-RTO" userLabel="First Responder" sceneMemberID="firstResponder"/>
