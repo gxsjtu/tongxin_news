@@ -54,6 +54,8 @@ class ApplyTrialViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.txtMobile.leftViewMode = UITextFieldViewMode.Always
+        self.txtMobile.leftView = UIImageView(image: UIImage(named: "mobile.png"))
     }
 
     override func didReceiveMemoryWarning() {

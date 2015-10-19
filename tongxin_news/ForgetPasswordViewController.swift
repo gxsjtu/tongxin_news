@@ -83,6 +83,8 @@ class ForgetPasswordViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.txtMobile.leftView = UIImageView(image: UIImage(named: "mobile"))
+        self.txtMobile.leftViewMode = UITextFieldViewMode.Always
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
