@@ -69,7 +69,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
         if let header = view as? UITableViewHeaderFooterView
         {
-            header.contentView.backgroundColor = UIColor(red: 82/255, green: 166/255, blue: 192/255, alpha: 1.0)
+            header.contentView.backgroundColor = UIColor(red: 82/255, green: 166/255, blue: 192/255, alpha: 0.6)
             header.textLabel?.textColor = UIColor.whiteColor()
         }
     }
