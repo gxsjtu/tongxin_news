@@ -10,6 +10,7 @@ import UIKit
 
 class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, HTHorizontalSelectionListDataSource, UITableViewDelegate, UITableViewDataSource , UISearchBarDelegate{
     
+    @IBOutlet weak var more: UIButton!
     @IBOutlet weak var navPrice: UINavigationBar!
     @IBOutlet weak var tvPriceTableView: UITableView!
     var selectionData = [String]()
@@ -25,6 +26,8 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        self.more.titleLabel?.font = UIFont.boldSystemFontOfSize(16.0)
+        
         self.tvPriceTableView.rowHeight = 44.0
         selection = HTHorizontalSelectionList()
         selection?.delegate = self
@@ -46,7 +49,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         //添加constraints
         let leading = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
         
-        let trailing = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+        let trailing = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -20)
         
         let top = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         
@@ -147,6 +150,16 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     }
     
     func selectionList(selectionList: HTHorizontalSelectionList!, didSelectButtonWithIndex index: Int) {
+        
+        if index == self.selectionData.count - 1
+        {
+            self.more.hidden = true
+        }
+        else
+        {
+            self.more.hidden = false
+        }
+        
         let group = selectionData[index]
         marketData.removeAll(keepCapacity: true)
         for m in market[group]!

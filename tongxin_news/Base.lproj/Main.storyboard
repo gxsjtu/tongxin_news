@@ -41,9 +41,23 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sg9-Qy-HPQ">
-                                <rect key="frame" x="-4" y="64" width="328" height="35"/>
+                                <rect key="frame" x="-4" y="64" width="324" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBo-36-MHk">
+                                        <rect key="frame" x="304" y="0.0" width="20" height="35"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="2PU-CG-DvD"/>
+                                            <constraint firstAttribute="height" constant="35" id="e5a-7O-tLI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                        <state key="normal" title="&gt;">
+                                            <color key="titleColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="1Po-NS-88B"/>
                                 </constraints>
@@ -84,10 +98,13 @@
                         <constraints>
                             <constraint firstItem="vjY-lB-WuW" firstAttribute="leading" secondItem="Kep-V5-kRz" secondAttribute="leadingMargin" constant="-16" id="2MS-JU-zT9"/>
                             <constraint firstItem="vjY-lB-WuW" firstAttribute="top" secondItem="Sg9-Qy-HPQ" secondAttribute="top" constant="34" id="6hg-T8-fDX"/>
+                            <constraint firstAttribute="trailing" secondItem="HBo-36-MHk" secondAttribute="trailing" id="NZx-U8-ngb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vjY-lB-WuW" secondAttribute="trailing" constant="-16" id="Nw5-1R-ELs"/>
                             <constraint firstItem="S8f-rX-dHr" firstAttribute="top" secondItem="aEm-li-Esw" secondAttribute="bottom" constant="-20" id="THJ-sl-Abp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Sg9-Qy-HPQ" secondAttribute="trailing" constant="-20" id="Umr-6E-1my"/>
+                            <constraint firstAttribute="trailing" secondItem="Sg9-Qy-HPQ" secondAttribute="trailing" id="Ulv-Ak-R4l"/>
+                            <constraint firstItem="Sg9-Qy-HPQ" firstAttribute="leading" secondItem="Kep-V5-kRz" secondAttribute="leading" constant="-4" id="ZTP-3z-rrx"/>
                             <constraint firstItem="S8f-rX-dHr" firstAttribute="leading" secondItem="Kep-V5-kRz" secondAttribute="leadingMargin" constant="-20" id="aFt-pC-LXm"/>
+                            <constraint firstItem="HBo-36-MHk" firstAttribute="top" secondItem="S8f-rX-dHr" secondAttribute="bottom" id="dVT-hC-X9q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="S8f-rX-dHr" secondAttribute="trailing" constant="-20" id="iXA-z7-GYC"/>
                             <constraint firstItem="S8f-rX-dHr" firstAttribute="top" secondItem="Sg9-Qy-HPQ" secondAttribute="top" constant="-64" id="jP4-Ob-SFB"/>
                             <constraint firstItem="Sg9-Qy-HPQ" firstAttribute="leading" secondItem="Kep-V5-kRz" secondAttribute="leadingMargin" constant="-20" id="mE8-3c-ftZ"/>
@@ -96,6 +113,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="评论" image="comment" id="ab0-YT-EIU"/>
                     <connections>
+                        <outlet property="more" destination="HBo-36-MHk" id="tbt-1e-ZIa"/>
                         <outlet property="navComment" destination="S8f-rX-dHr" id="9hr-Pr-R7A"/>
                         <outlet property="tvComment" destination="vjY-lB-WuW" id="mCd-Tt-rLF"/>
                         <outlet property="vSelectionView" destination="Sg9-Qy-HPQ" id="CmL-5D-KFg"/>
@@ -499,8 +517,21 @@
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkK-kU-9xD">
                                 <rect key="frame" x="-4" y="108" width="328" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1M-Dd-cH4">
+                                        <rect key="frame" x="308" y="0.0" width="20" height="35"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="kfD-aO-h9n"/>
+                                            <constraint firstAttribute="width" constant="20" id="pi6-sh-mn1"/>
+                                        </constraints>
+                                        <state key="normal" title="&gt;">
+                                            <color key="titleColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="Iny-4c-NYV"/>
                                 </constraints>
@@ -552,11 +583,13 @@
                             <constraint firstItem="Cx7-Wh-dUV" firstAttribute="top" secondItem="aVj-O3-gKb" secondAttribute="bottom" id="C9r-XW-wOt"/>
                             <constraint firstAttribute="trailing" secondItem="5qx-JR-mAN" secondAttribute="trailing" id="IqD-a6-2VR"/>
                             <constraint firstItem="aVj-O3-gKb" firstAttribute="top" secondItem="m0N-ZL-nwu" secondAttribute="bottom" constant="-20" id="PpD-nH-oQa"/>
+                            <constraint firstItem="p1M-Dd-cH4" firstAttribute="top" secondItem="aVj-O3-gKb" secondAttribute="bottom" constant="44" id="QOS-tU-A80"/>
                             <constraint firstItem="5qx-JR-mAN" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leading" id="W8J-D7-c6L"/>
                             <constraint firstAttribute="trailing" secondItem="vkK-kU-9xD" secondAttribute="trailing" constant="-4" id="XUy-az-pBy"/>
                             <constraint firstItem="5qx-JR-mAN" firstAttribute="top" secondItem="vkK-kU-9xD" secondAttribute="bottom" id="a6s-8S-syv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aVj-O3-gKb" secondAttribute="trailing" constant="-20" id="aoN-ij-CWl"/>
                             <constraint firstAttribute="bottomMargin" secondItem="5qx-JR-mAN" secondAttribute="bottom" constant="55" id="dFe-9F-eSo"/>
+                            <constraint firstAttribute="trailing" secondItem="p1M-Dd-cH4" secondAttribute="trailing" constant="-4" id="kd7-zL-U7a"/>
                             <constraint firstItem="Cx7-Wh-dUV" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leading" id="oiB-8y-Vzk"/>
                             <constraint firstItem="aVj-O3-gKb" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leadingMargin" constant="-20" id="plQ-dK-y8p"/>
                             <constraint firstItem="vkK-kU-9xD" firstAttribute="top" secondItem="Cx7-Wh-dUV" secondAttribute="bottom" id="qcn-HU-4eH"/>
@@ -566,6 +599,7 @@
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="more" destination="p1M-Dd-cH4" id="onV-HH-NYb"/>
                         <outlet property="navPrice" destination="aVj-O3-gKb" id="auH-kE-wyv"/>
                         <outlet property="searchBar" destination="Cx7-Wh-dUV" id="KBJ-E9-Qtj"/>
                         <outlet property="searchDisplayController" destination="SXc-M3-hON" id="7lG-ep-ShB"/>

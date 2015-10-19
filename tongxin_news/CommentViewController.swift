@@ -10,6 +10,7 @@ import UIKit
 
 class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate, HTHorizontalSelectionListDataSource, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var more: UIButton!
     @IBOutlet weak var navComment: UINavigationBar!
     @IBOutlet weak var tvComment: UITableView!
     @IBOutlet weak var vSelectionView: UIView!
@@ -26,6 +27,8 @@ class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.more.titleLabel?.font = UIFont.boldSystemFontOfSize(16.0)
+        
         selection = HTHorizontalSelectionList(frame: CGRect(x: 0, y: 0, width: vSelectionView.frame.width, height: vSelectionView.frame.height))
         selection?.delegate = self
         selection?.dataSource = self
@@ -45,7 +48,7 @@ class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate
         //添加constraints
         let leading = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
         
-        let trailing = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: 0)
+        let trailing = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -20)
         
         let top = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
         
@@ -143,6 +146,16 @@ class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate
     }
     
     func selectionList(selectionList: HTHorizontalSelectionList!, didSelectButtonWithIndex index: Int) {
+        
+        if index == self.selectionData.count - 1
+        {
+            self.more.hidden = true
+        }
+        else
+        {
+            self.more.hidden = false
+        }
+        
         let group = selectionData[index]
         marketData.removeAll(keepCapacity: true)
         for m in market[group]!

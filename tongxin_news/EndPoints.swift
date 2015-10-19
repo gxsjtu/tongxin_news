@@ -11,7 +11,7 @@ import Foundation
 enum EndPoints: String
 {
     case SignIn = "http://api.shtx.com.cn/Handlers/LoginHandler.ashx"
-    case UserSet = "http://172.20.68.162:3838/Handlers/UserInfoHandler.ashx"
+    case UserSet = "http://api.shtx.com.cn/Handlers/UserInfoHandler.ashx"
     case InBoxMsg = "http://api.shtx.com.cn/Handlers/InboxMsgHandler.ashx"
     case GetProductHierarchy = "http://api.shtx.com.cn/Handlers/XHMarketHandler.ashx"
     case GetPrices = "http://api.shtx.com.cn/Handlers/PriceHandler.ashx"
