@@ -22,6 +22,10 @@ class MyPublishViewController: UIViewController, UITableViewDataSource, UITableV
         self.loadMyPublish()
     }
     
+    @IBAction func refreshMyPublish(sender: AnyObject) {
+        self.loadMyPublish()
+    }
+    
     func loadMyPublish()
     {
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -52,6 +56,11 @@ class MyPublishViewController: UIViewController, UITableViewDataSource, UITableV
                     alert.showRedNotificationForString("加载失败，请点击右上角按钮刷新重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                 }
         }
+    }
+    
+    @IBAction func unwindFromChannelItemDetail2Channel(segue: UIStoryboardSegue)
+    {
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -104,14 +113,25 @@ class MyPublishViewController: UIViewController, UITableViewDataSource, UITableV
         return cell
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "myPublish2Detail"
+        {
+            if let des = segue.destinationViewController as? ChannelItemDetailViewController
+            {
+                if let cell = sender as? MyPublishTableViewCell
+                {
+                    des.navTitle = "我的发布"
+                    des.itemId = cell.lblId.text!
+                }
+            }
+        }
     }
-    */
+
 
 }

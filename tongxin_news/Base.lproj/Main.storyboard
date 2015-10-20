@@ -1909,6 +1909,12 @@
                                                 <segue destination="Sqn-Mb-Mlu" kind="unwind" unwindAction="unWindFromMyPublish2UserSetting:" id="bLh-36-p6P"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="45A-KX-RwA">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="refreshMyPublish:" destination="4YZ-wn-Iaa" id="RtF-Y7-XVn"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -2060,6 +2066,7 @@
                                             <outlet property="lblLocation" destination="Hnh-4u-B7g" id="dBD-ng-NE4"/>
                                             <outlet property="lblName" destination="Zs8-pZ-rBs" id="c98-9M-c8D"/>
                                             <outlet property="lblNameCapt" destination="8oB-db-XW7" id="jMw-l6-fdl"/>
+                                            <segue destination="sMY-EY-DmT" kind="modal" identifier="myPublish2Detail" id="oGa-pe-VZD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2084,7 +2091,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4S-Cm-cOq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Sqn-Mb-Mlu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="322" y="2367"/>
+            <point key="canvasLocation" x="-8" y="3012"/>
         </scene>
         <!--收件箱-->
         <scene sceneID="xED-Fi-xdx">
@@ -3298,6 +3305,7 @@
                     <size key="freeformSize" width="320" height="736"/>
                     <connections>
                         <outlet property="btnMobile" destination="89U-bQ-QSR" id="H8c-r0-Jd6"/>
+                        <outlet property="fromAll" destination="fLV-vY-azW" id="VeF-de-Xbk"/>
                         <outlet property="lblChannelItemContact" destination="9io-9v-bac" id="WX4-vh-DSd"/>
                         <outlet property="lblChannelItemDeliver" destination="U5a-fE-iEC" id="noN-uF-brN"/>
                         <outlet property="lblChannelItemLocation" destination="FKg-e0-v4L" id="lvP-Ry-nYQ"/>
@@ -3313,7 +3321,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="921-fu-JgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="y5q-CR-Ns6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="347" y="2291"/>
+            <point key="canvasLocation" x="603" y="2631"/>
         </scene>
         <!--Channel Item Image View Controller-->
         <scene sceneID="YkL-xV-qt5">
@@ -3423,11 +3431,6 @@
                                                                     <color key="titleColor" red="0.1176470588" green="0.42352941179999998" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NSG-xx-PED" customClass="DLRadioButton">
                                                                 <rect key="frame" x="206" y="0.0" width="80" height="30"/>
@@ -3441,11 +3444,6 @@
                                                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
-                                                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
                                                             </button>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="货物名称（必填），如：冲花边料，船板料" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wy1-x1-9bj">
                                                                 <rect key="frame" x="8" y="38" width="304" height="30"/>
@@ -3744,4 +3742,7 @@
         <image name="铁合金" width="90" height="90"/>
         <image name="铁矿石" width="90" height="90"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oGa-pe-VZD"/>
+    </inferredMetricsTieBreakers>
 </document>

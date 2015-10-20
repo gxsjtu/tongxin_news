@@ -10,6 +10,8 @@ import UIKit
 
 class ChannelItemDetailViewController: UIViewController {
 
+    @IBOutlet weak var fromAll: UIBarButtonItem!
+    @IBOutlet weak var fromMyPublish: UIBarButtonItem!
     @IBAction func didCallClicked(sender: AnyObject) {
             UIApplication.sharedApplication().openURL(NSURL(string: ("tel://" + mobile))!)
     }
