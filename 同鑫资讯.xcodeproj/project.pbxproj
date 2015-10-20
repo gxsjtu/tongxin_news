@@ -16,6 +16,7 @@
 		3515CB461B9D552600EC54D7 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB451B9D552600EC54D7 /* ChannelViewController.swift */; };
 		3515CB481B9D62AA00EC54D7 /* ChannelCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */; };
 		3515CB4A1B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */; };
+		3517CBD91BD5EDD500EE40FB /* MyFocusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517CBD81BD5EDD500EE40FB /* MyFocusTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		355C95A51B8AF089005595EA /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A41B8AF089005595EA /* PriceViewController.swift */; };
 		355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A61B8C0665005595EA /* PriceDetailViewController.swift */; };
 		355C95A91B8C1407005595EA /* PriceVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */; };
@@ -50,7 +51,6 @@
 		35AC875C1B8AB15900B44C7E /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC87531B8AB15900B44C7E /* UIScrollView+MJExtension.m */; };
 		35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC87551B8AB15900B44C7E /* UIScrollView+MJRefresh.m */; };
 		35AC875E1B8AB15900B44C7E /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC87571B8AB15900B44C7E /* UIView+MJExtension.m */; };
-		35AC87601B8AB2F800B44C7E /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */; };
 		35B1F2391BCB631200AA9F38 /* ChannelItemImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B1F2381BCB631200AA9F38 /* ChannelItemImageViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		35B1F23D1BCCB96300AA9F38 /* UITextView+Placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B1F23B1BCCB96300AA9F38 /* UITextView+Placeholder.m */; settings = {ASSET_TAGS = (); }; };
 		35B2783E1B8D94AB00FA2399 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35B2783C1B8D94AB00FA2399 /* Main.storyboard */; };
@@ -62,6 +62,8 @@
 		35B278991B8FFEFD00FA2399 /* PriceHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278981B8FFEFD00FA2399 /* PriceHistoryViewController.swift */; };
 		35B2789B1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B2789A1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift */; };
 		35B278B61B9045F600FA2399 /* PriceChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278B51B9045F600FA2399 /* PriceChartViewController.swift */; };
+		35BB22591BD4E8BB00A01E36 /* UserSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB22581BD4E8BB00A01E36 /* UserSettingTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		35BB225B1BD5D53A00A01E36 /* MyFocusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB225A1BD5D53A00A01E36 /* MyFocusViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		35C712181B8595B3004B267A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712171B8595B3004B267A /* AppDelegate.swift */; };
 		35C7121F1B8595B3004B267A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121E1B8595B3004B267A /* Images.xcassets */; };
 		35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712401B85C0BE004B267A /* LogInViewController.swift */; };
@@ -113,6 +115,7 @@
 		3515CB451B9D552600EC54D7 /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCatalogViewController.swift; sourceTree = "<group>"; };
 		3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCatalogTableViewCell.swift; sourceTree = "<group>"; };
+		3517CBD81BD5EDD500EE40FB /* MyFocusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFocusTableViewCell.swift; sourceTree = "<group>"; };
 		355C95A41B8AF089005595EA /* PriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
 		355C95A61B8C0665005595EA /* PriceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceDetailViewController.swift; sourceTree = "<group>"; };
 		355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceVCTableViewCell.swift; sourceTree = "<group>"; };
@@ -174,7 +177,6 @@
 		35AC87551B8AB15900B44C7E /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		35AC87561B8AB15900B44C7E /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		35AC87571B8AB15900B44C7E /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
-		35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
 		35B1F2381BCB631200AA9F38 /* ChannelItemImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelItemImageViewController.swift; sourceTree = "<group>"; };
 		35B1F23B1BCCB96300AA9F38 /* UITextView+Placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+Placeholder.m"; sourceTree = "<group>"; };
 		35B1F23C1BCCB96300AA9F38 /* UITextView+Placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+Placeholder.h"; sourceTree = "<group>"; };
@@ -187,6 +189,8 @@
 		35B278981B8FFEFD00FA2399 /* PriceHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceHistoryViewController.swift; sourceTree = "<group>"; };
 		35B2789A1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		35B278B51B9045F600FA2399 /* PriceChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceChartViewController.swift; sourceTree = "<group>"; };
+		35BB22581BD4E8BB00A01E36 /* UserSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingTableViewController.swift; sourceTree = "<group>"; };
+		35BB225A1BD5D53A00A01E36 /* MyFocusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFocusViewController.swift; sourceTree = "<group>"; };
 		35C712121B8595B3004B267A /* 同鑫资讯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "同鑫资讯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C712161B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35C712171B8595B3004B267A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -417,9 +421,9 @@
 				35C712601B86AEE8004B267A /* tongxin_news-Bridging-Header.h */,
 				35C7121E1B8595B3004B267A /* Images.xcassets */,
 				35C7127C1B86B008004B267A /* EndPoints.swift */,
+				35BB22581BD4E8BB00A01E36 /* UserSettingTableViewController.swift */,
 				35C712401B85C0BE004B267A /* LogInViewController.swift */,
 				35C712811B86B126004B267A /* HomeTabBarViewController.swift */,
-				35AC875F1B8AB2F800B44C7E /* UserSettingViewController.swift */,
 				355C95A41B8AF089005595EA /* PriceViewController.swift */,
 				355C95A61B8C0665005595EA /* PriceDetailViewController.swift */,
 				355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */,
@@ -445,6 +449,8 @@
 				35F6657C1BB3F18700A3AEDE /* ApplyTrialViewController.swift */,
 				350901901BB4F7600010FFFE /* ForgetPasswordViewController.swift */,
 				35B1F2381BCB631200AA9F38 /* ChannelItemImageViewController.swift */,
+				35BB225A1BD5D53A00A01E36 /* MyFocusViewController.swift */,
+				3517CBD81BD5EDD500EE40FB /* MyFocusTableViewCell.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -623,7 +629,6 @@
 				35F6656F1BB3B9DC00A3AEDE /* Download.swift in Sources */,
 				35AC875E1B8AB15900B44C7E /* UIView+MJExtension.m in Sources */,
 				35EF0F141BB394D300F99399 /* NSMutableArray+SWUtilityButtons.m in Sources */,
-				35AC87601B8AB2F800B44C7E /* UserSettingViewController.swift in Sources */,
 				35C7127D1B86B008004B267A /* EndPoints.swift in Sources */,
 				35B278621B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift in Sources */,
 				35DC5E631BA94F700000FA22 /* TSLocateView.m in Sources */,
@@ -642,6 +647,7 @@
 				35C712921B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m in Sources */,
 				35C712661B86AEE9004B267A /* SKTipAlertView.m in Sources */,
 				35C712911B86CC5D004B267A /* HTHorizontalSelectionList.m in Sources */,
+				35BB22591BD4E8BB00A01E36 /* UserSettingTableViewController.swift in Sources */,
 				350901911BB4F7600010FFFE /* ForgetPasswordViewController.swift in Sources */,
 				35F665741BB3B9DC00A3AEDE /* Request.swift in Sources */,
 				356803981BA0304600BB50AE /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -652,6 +658,7 @@
 				3515CB251B9BE45000EC54D7 /* EcosystemViewController.swift in Sources */,
 				3568038D1BA0304600BB50AE /* SDImageCache.m in Sources */,
 				35B278441B8D952100FA2399 /* CommentDetailViewController.swift in Sources */,
+				35BB225B1BD5D53A00A01E36 /* MyFocusViewController.swift in Sources */,
 				3568038C1BA0304600BB50AE /* NSData+ImageContentType.m in Sources */,
 				3515CB221B94367200EC54D7 /* ChartColors.swift in Sources */,
 				35EF0F151BB394D300F99399 /* SWCellScrollView.m in Sources */,
@@ -687,6 +694,7 @@
 				3515CB231B94367200EC54D7 /* ChartSeries.swift in Sources */,
 				3568038B1BA0304600BB50AE /* MKAnnotationView+WebCache.m in Sources */,
 				35B278471B8D952100FA2399 /* CommentVCTableViewCell.swift in Sources */,
+				3517CBD91BD5EDD500EE40FB /* MyFocusTableViewCell.swift in Sources */,
 				35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */,
 				35C712181B8595B3004B267A /* AppDelegate.swift in Sources */,
 				35F6657D1BB3F18700A3AEDE /* ApplyTrialViewController.swift in Sources */,
