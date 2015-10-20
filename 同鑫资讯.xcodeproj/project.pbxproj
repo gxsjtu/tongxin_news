@@ -17,6 +17,8 @@
 		3515CB481B9D62AA00EC54D7 /* ChannelCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */; };
 		3515CB4A1B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */; };
 		3517CBD91BD5EDD500EE40FB /* MyFocusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517CBD81BD5EDD500EE40FB /* MyFocusTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		3517CBDB1BD6095300EE40FB /* MyPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517CBDA1BD6095300EE40FB /* MyPublishViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		3517CBDD1BD62AC000EE40FB /* MyPublishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517CBDC1BD62AC000EE40FB /* MyPublishTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		355C95A51B8AF089005595EA /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A41B8AF089005595EA /* PriceViewController.swift */; };
 		355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A61B8C0665005595EA /* PriceDetailViewController.swift */; };
 		355C95A91B8C1407005595EA /* PriceVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */; };
@@ -116,6 +118,8 @@
 		3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCatalogViewController.swift; sourceTree = "<group>"; };
 		3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCatalogTableViewCell.swift; sourceTree = "<group>"; };
 		3517CBD81BD5EDD500EE40FB /* MyFocusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFocusTableViewCell.swift; sourceTree = "<group>"; };
+		3517CBDA1BD6095300EE40FB /* MyPublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPublishViewController.swift; sourceTree = "<group>"; };
+		3517CBDC1BD62AC000EE40FB /* MyPublishTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPublishTableViewCell.swift; sourceTree = "<group>"; };
 		355C95A41B8AF089005595EA /* PriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
 		355C95A61B8C0665005595EA /* PriceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceDetailViewController.swift; sourceTree = "<group>"; };
 		355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceVCTableViewCell.swift; sourceTree = "<group>"; };
@@ -451,6 +455,8 @@
 				35B1F2381BCB631200AA9F38 /* ChannelItemImageViewController.swift */,
 				35BB225A1BD5D53A00A01E36 /* MyFocusViewController.swift */,
 				3517CBD81BD5EDD500EE40FB /* MyFocusTableViewCell.swift */,
+				3517CBDA1BD6095300EE40FB /* MyPublishViewController.swift */,
+				3517CBDC1BD62AC000EE40FB /* MyPublishTableViewCell.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -669,6 +675,8 @@
 				35EF0F171BB394D300F99399 /* SWTableViewCell.m in Sources */,
 				356803971BA0304600BB50AE /* UIImage+WebP.m in Sources */,
 				35B1F23D1BCCB96300AA9F38 /* UITextView+Placeholder.m in Sources */,
+				3517CBDD1BD62AC000EE40FB /* MyPublishTableViewCell.swift in Sources */,
+				3517CBDB1BD6095300EE40FB /* MyPublishViewController.swift in Sources */,
 				35AC875B1B8AB15900B44C7E /* MJRefreshHeaderView.m in Sources */,
 				3568039A1BA0304600BB50AE /* UIView+WebCacheOperation.m in Sources */,
 				356803921BA0304600BB50AE /* SDWebImageManager.m in Sources */,
