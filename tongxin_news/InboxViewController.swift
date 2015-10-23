@@ -21,6 +21,8 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     var nowDateForCom : NSDate?
     var mobile : String?
     var isLoadOK : String?//是否下拉加载数据成功 用来清零未读消息
+    var isPullDown : String?
+    var firstCellStr : String?
     
     //记录刷新时间
     var maxDateForMsg : NSDate?
@@ -125,6 +127,10 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         {
             tbCell.viewWithTag(3)?.removeFromSuperview()
         }
+        if(tbCell.viewWithTag(4) != nil)
+        {
+            tbCell.viewWithTag(4)?.removeFromSuperview()
+        }
         let lblUrl : UILabel = UILabel()
         lblUrl.tag = 3
         lblUrl.text = resInfos[indexPath.row].url
@@ -141,6 +147,11 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         attribute.addAttributes(attr2, range: NSMakeRange(((msg as NSString).length), (str as NSString).length - (msg as NSString).length))
         tbCell.textLabel?.attributedText = attribute
         tbCell.textLabel?.numberOfLines = 0
+//        let aa = tbCell.frame.height
+//        let imgHere : UIImageView = UIImageView(frame: CGRectMake(180, tbCell.frame.height - 40, 110, 36))
+//        imgHere.image = UIImage(named: "here.png")
+//        imgHere.tag = 4
+//        tbCell.addSubview(imgHere)
         
         if(resInfos[indexPath.row].url != nil && resInfos[indexPath.row].url != "")
         {
@@ -151,8 +162,24 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
             tbCell.accessoryType = UITableViewCellAccessoryType.None
         }
         
-            return tbCell
+        
+        return tbCell
   
+    }
+    
+    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        let imgHere : UIImageView = UIImageView(frame: CGRectMake(180, cell.frame.height - 40, 110, 36))
+        imgHere.image = UIImage(named: "here.png")
+        imgHere.tag = 4
+        if(cell.textLabel?.text == self.firstCellStr && self.isPullDown == "YES")
+        {
+            imgHere.hidden = false
+        }
+        else
+        {
+        imgHere.hidden = true
+        }
+        cell.addSubview(imgHere)
     }
     
 
@@ -386,6 +413,9 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         var actionStr : String?
         let format = NSDateFormatter()
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
+        let format1 = NSDateFormatter()
+        format1.dateFormat = "yyyy-MM-dd HH:mm:ss"
+
 
             maxDate = self.maxDateForMsg
             
@@ -412,6 +442,10 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 
                 switch response.result {
                 case .Success:
+                    if(self.resInfos.count>0)
+                    {
+                    self.firstCellStr = self.resInfos[0].msg! + "\n" + format1.stringFromDate(self.resInfos[0].dateStr!)
+                    }
                     if let data: AnyObject = response.result.value
                     {
                         if let dataList: NSArray = data as? NSArray
@@ -429,6 +463,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                             self.msgInfos.sortInPlace({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
                                 s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
                             })
+                            self.isPullDown = "YES" //表示当前时下拉刷新操作
                             self.nowDate = NSDate()//刷新成功后记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
                             self.resInfos = self.msgInfos
                             self.tbData.reloadData()
@@ -477,7 +512,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                     self.tbData.headerEndRefreshing()
                 }
             }
-    }
+        }
     
     
     @IBAction func clearMsg(sender: AnyObject) {
