@@ -27,7 +27,6 @@ class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.more.titleLabel?.font = UIFont.boldSystemFontOfSize(16.0)
         
         selection = HTHorizontalSelectionList(frame: CGRect(x: 0, y: 0, width: vSelectionView.frame.width, height: vSelectionView.frame.height))
         selection?.delegate = self
@@ -40,8 +39,8 @@ class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate
         self.selection.bottomTrimHidden = true
         self.selection.showsEdgeFadeEffect = true
         self.selection.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
-        self.selection.selectionIndicatorHorizontalPadding = 5.0
-        self.selection.setTitleFont(UIFont.boldSystemFontOfSize(16), forState: UIControlState.Selected)
+        self.selection.setTitleFont(UIFont.boldSystemFontOfSize(15), forState: UIControlState.Normal)
+        self.selection.setTitleFont(UIFont.boldSystemFontOfSize(17), forState: UIControlState.Selected)
         
         vSelectionView.addSubview(selection)
         
