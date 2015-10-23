@@ -28,7 +28,7 @@
 
 const CGFloat kHTHorizontalSelectionListHorizontalMargin = 10;
 const CGFloat kHTHorizontalSelectionListTrimHeight = 0.5;
-const CGFloat kHTHorizontalSelectionListLabelCellInternalPadding = 15;
+const CGFloat kHTHorizontalSelectionListLabelCellInternalPadding = 5;
 
 
 static NSString *LabelCellIdentifier = @"LabelCell";

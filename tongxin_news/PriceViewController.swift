@@ -26,7 +26,6 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.more.titleLabel?.font = UIFont.boldSystemFontOfSize(16.0)
         
         self.tvPriceTableView.rowHeight = 44.0
         selection = HTHorizontalSelectionList()
@@ -41,9 +40,9 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         self.selection.bottomTrimHidden = true
         self.selection.showsEdgeFadeEffect = true
         self.selection.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
-        self.selection.selectionIndicatorHorizontalPadding = 5.0
-        self.selection.setTitleFont(UIFont.boldSystemFontOfSize(16), forState: UIControlState.Selected)
-        
+        self.selection.setTitleFont(UIFont.boldSystemFontOfSize(17), forState: UIControlState.Selected)
+        self.selection.setTitleFont(UIFont.boldSystemFontOfSize(15), forState: UIControlState.Normal)
+
         vSelectionView.addSubview(selection)
         
         //添加constraints

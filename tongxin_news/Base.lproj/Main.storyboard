@@ -41,7 +41,7 @@
                                 </items>
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vjY-lB-WuW">
-                                <rect key="frame" x="0.0" y="98" width="320" height="421"/>
+                                <rect key="frame" x="0.0" y="104" width="320" height="415"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -71,14 +71,14 @@
                                 </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sg9-Qy-HPQ">
-                                <rect key="frame" x="-4" y="64" width="324" height="35"/>
+                                <rect key="frame" x="-4" y="64" width="324" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBo-36-MHk">
-                                        <rect key="frame" x="304" y="0.0" width="20" height="35"/>
+                                        <rect key="frame" x="304" y="0.0" width="20" height="40"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="2PU-CG-DvD"/>
-                                            <constraint firstAttribute="height" constant="35" id="e5a-7O-tLI"/>
+                                            <constraint firstAttribute="height" constant="40" id="e5a-7O-tLI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                         <state key="normal" title="&gt;">
@@ -89,7 +89,7 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="1Po-NS-88B"/>
+                                    <constraint firstAttribute="height" constant="40" id="1Po-NS-88B"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -97,7 +97,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vjY-lB-WuW" firstAttribute="leading" secondItem="Kep-V5-kRz" secondAttribute="leadingMargin" constant="-16" id="2MS-JU-zT9"/>
-                            <constraint firstItem="vjY-lB-WuW" firstAttribute="top" secondItem="Sg9-Qy-HPQ" secondAttribute="top" constant="34" id="6hg-T8-fDX"/>
+                            <constraint firstItem="vjY-lB-WuW" firstAttribute="top" secondItem="Sg9-Qy-HPQ" secondAttribute="bottom" id="5Sg-Qd-NPc"/>
                             <constraint firstAttribute="trailing" secondItem="HBo-36-MHk" secondAttribute="trailing" id="NZx-U8-ngb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vjY-lB-WuW" secondAttribute="trailing" constant="-16" id="Nw5-1R-ELs"/>
                             <constraint firstItem="S8f-rX-dHr" firstAttribute="top" secondItem="aEm-li-Esw" secondAttribute="bottom" constant="-20" id="THJ-sl-Abp"/>
@@ -172,7 +172,7 @@
                                             <action selector="didSendPasswodClicked:" destination="BMq-gu-a1J" eventType="touchUpInside" id="jNj-MN-CW6"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填：注册手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Goc-K7-gpX">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填：注册手机号" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Goc-K7-gpX">
                                         <rect key="frame" x="8" y="152" width="304" height="40"/>
                                         <animations/>
                                         <constraints>
@@ -233,7 +233,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HnV-AA-yeb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zVu-Bf-EF0">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="手机号码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="zVu-Bf-EF0">
                                         <rect key="frame" x="8" y="168" width="304" height="40"/>
                                         <animations/>
                                         <constraints>
@@ -249,7 +249,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pPq-vK-8Ru">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="pPq-vK-8Ru">
                                         <rect key="frame" x="8" y="216" width="304" height="40"/>
                                         <animations/>
                                         <constraints>
@@ -425,7 +425,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填：手机号码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEf-UM-Dlt">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="必填：手机号码" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="eEf-UM-Dlt">
                                         <rect key="frame" x="8" y="152" width="304" height="40"/>
                                         <animations/>
                                         <constraints>
@@ -515,13 +515,13 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkK-kU-9xD">
-                                <rect key="frame" x="-4" y="108" width="328" height="35"/>
+                                <rect key="frame" x="-4" y="108" width="328" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1M-Dd-cH4">
-                                        <rect key="frame" x="308" y="0.0" width="20" height="35"/>
+                                        <rect key="frame" x="308" y="0.0" width="20" height="40"/>
                                         <animations/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="kfD-aO-h9n"/>
+                                            <constraint firstAttribute="height" constant="40" id="kfD-aO-h9n"/>
                                             <constraint firstAttribute="width" constant="20" id="pi6-sh-mn1"/>
                                         </constraints>
                                         <state key="normal" title="&gt;">
@@ -532,11 +532,11 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="Iny-4c-NYV"/>
+                                    <constraint firstAttribute="height" constant="40" id="Iny-4c-NYV"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="5qx-JR-mAN">
-                                <rect key="frame" x="0.0" y="143" width="320" height="370"/>
+                                <rect key="frame" x="0.0" y="148" width="320" height="365"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
