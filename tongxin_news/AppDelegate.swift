@@ -142,10 +142,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         }
                     }
                 case .Failure:
-                    if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
-                    {
-                        self.window?.rootViewController = loginVC
-                    }
+//                    if let loginVC = self.window?.rootViewController?.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
+//                    {
+//                        self.window?.rootViewController = loginVC
+//                    }
+                    break
                 }
         }
     }

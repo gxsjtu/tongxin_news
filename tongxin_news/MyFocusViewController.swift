@@ -17,6 +17,10 @@ class MyFocusItem
 
 class MyFocusViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBAction func refreshMyPublish(sender: AnyObject) {
+        LoadMyFocus()
+    }
+
     @IBOutlet weak var tvMyFocus: UITableView!
     //市场，产品，id
     var myFocus = Array<MyFocusItem>()
@@ -43,6 +47,7 @@ class MyFocusViewController: UIViewController, UITableViewDataSource, UITableVie
                     {
                         if let res = JSON(data).array
                         {
+                            self.myFocus.removeAll(keepCapacity: true)
                             for item in res
                             {
                                 if let i = item.dictionary
