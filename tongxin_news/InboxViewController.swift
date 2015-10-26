@@ -240,15 +240,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         format.dateFormat = "yyyy-MM-dd HH:mm:ss SSS"
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
 
-//        self.msgInfos = []
-//        self.resInfos = []
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.InBoxMsg.rawValue,parameters:["mobile": self.mobile!, "method": "getInboxMsg"]).responseJSON{
             response in
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             switch response.result {
             case .Success:
-                self.msgInfos = []
-                self.resInfos = []
+                self.msgInfos.removeAll(keepCapacity: true)
+                self.resInfos.removeAll(keepCapacity: true)
                 if let data: AnyObject = response.result.value
                 {
                     if let dataList: NSArray = data as? NSArray
@@ -263,9 +261,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                             msgData.url = res["url"].string
                             self.msgInfos.append(msgData)
                         }
-//                        self.msgInfos.sortInPlace({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
-//                            s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
-//                        })
                         self.resInfos = self.msgInfos
                         self.tbData.reloadData()
                         self.isLoadOK = "YES"
@@ -384,9 +379,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                                 msgData.url = res["url"].string
                                 self.msgInfos.append(msgData)
                             }
-//                            self.msgInfos.sortInPlace({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
-//                                s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
-//                            })
                             self.nowDate = NSDate()//刷新成功后记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
                             self.resInfos = self.msgInfos
                             self.tbData.reloadData()
@@ -458,12 +450,9 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                                 msgData.dateStr =  format.dateFromString(res["date"].string!)
                                 msgData.msg = res["msg"].string
                                 msgData.url = res["url"].string
-                                self.msgInfos.append(msgData)
+//                                self.msgInfos.append(msgData)
                                 self.msgInfos.insert(msgData, atIndex: i)
                             }
-//                            self.msgInfos.sortInPlace({ (s1:MsgInfo, s2:MsgInfo) -> Bool in
-//                                s1.dateStr?.timeIntervalSinceReferenceDate >= s2.dateStr?.timeIntervalSinceReferenceDate
-//                            })
                             self.isPullDown = "YES" //表示当前时下拉刷新操作
                             self.nowDate = NSDate()//刷新成功后记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
                             self.resInfos = self.msgInfos
@@ -517,11 +506,9 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     
     
     @IBAction func clearMsg(sender: AnyObject) {
-
-            self.resInfos = []
-            self.msgInfos = []
-
-            self.tbData.reloadData()
+        self.msgInfos.removeAll(keepCapacity: true)
+        self.resInfos.removeAll(keepCapacity: true)
+        self.tbData.reloadData()
     }
     
     
