@@ -27,7 +27,9 @@ class PriceChartViewController: UIViewController, ChartDelegate {
         for (_, dataIndex) in indexes.enumerate() {
             if dataIndex != nil {
                 lblPriceChartDate.text = date[dataIndex!]
-                lblPriceChartPrice.text = "最低 " + String(stringInterpolationSegment: low[dataIndex!]) + "  最高 " + String(stringInterpolationSegment: high[dataIndex!])
+                let lowPrice: NSString =  NSString(format: "%.02f", low[dataIndex!])
+                let highPrice: NSString = NSString(format: "%.02f", high[dataIndex!])
+                lblPriceChartPrice.text = "最低 " + (lowPrice as String) + "  最高 " + (highPrice as String)
             }
         }
     }

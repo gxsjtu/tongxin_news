@@ -19,6 +19,20 @@
 		3517CBD91BD5EDD500EE40FB /* MyFocusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517CBD81BD5EDD500EE40FB /* MyFocusTableViewCell.swift */; };
 		3517CBDB1BD6095300EE40FB /* MyPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517CBDA1BD6095300EE40FB /* MyPublishViewController.swift */; };
 		3517CBDD1BD62AC000EE40FB /* MyPublishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517CBDC1BD62AC000EE40FB /* MyPublishTableViewCell.swift */; };
+		355483EE1BDA3AFF00AEFBEF /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483E01BDA3AFF00AEFBEF /* Alamofire.swift */; };
+		355483EF1BDA3AFF00AEFBEF /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483E11BDA3AFF00AEFBEF /* Download.swift */; };
+		355483F01BDA3AFF00AEFBEF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483E21BDA3AFF00AEFBEF /* Error.swift */; };
+		355483F11BDA3AFF00AEFBEF /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483E31BDA3AFF00AEFBEF /* Manager.swift */; };
+		355483F21BDA3AFF00AEFBEF /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483E41BDA3AFF00AEFBEF /* MultipartFormData.swift */; };
+		355483F31BDA3AFF00AEFBEF /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483E51BDA3AFF00AEFBEF /* ParameterEncoding.swift */; };
+		355483F41BDA3AFF00AEFBEF /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483E61BDA3AFF00AEFBEF /* Request.swift */; };
+		355483F51BDA3AFF00AEFBEF /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483E71BDA3AFF00AEFBEF /* Response.swift */; };
+		355483F61BDA3AFF00AEFBEF /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483E81BDA3AFF00AEFBEF /* ResponseSerialization.swift */; };
+		355483F71BDA3AFF00AEFBEF /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483E91BDA3AFF00AEFBEF /* Result.swift */; };
+		355483F81BDA3AFF00AEFBEF /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483EA1BDA3AFF00AEFBEF /* ServerTrustPolicy.swift */; };
+		355483F91BDA3AFF00AEFBEF /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483EB1BDA3AFF00AEFBEF /* Stream.swift */; };
+		355483FA1BDA3AFF00AEFBEF /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483EC1BDA3AFF00AEFBEF /* Upload.swift */; };
+		355483FB1BDA3AFF00AEFBEF /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483ED1BDA3AFF00AEFBEF /* Validation.swift */; };
 		355C95A51B8AF089005595EA /* PriceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A41B8AF089005595EA /* PriceViewController.swift */; };
 		355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A61B8C0665005595EA /* PriceDetailViewController.swift */; };
 		355C95A91B8C1407005595EA /* PriceVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */; };
@@ -89,20 +103,6 @@
 		35EF0F171BB394D300F99399 /* SWTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF0F0F1BB394D300F99399 /* SWTableViewCell.m */; };
 		35EF0F181BB394D300F99399 /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF0F111BB394D300F99399 /* SWUtilityButtonTapGestureRecognizer.m */; };
 		35EF0F191BB394D300F99399 /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF0F131BB394D300F99399 /* SWUtilityButtonView.m */; };
-		35F6656E1BB3B9DC00A3AEDE /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F665601BB3B9DC00A3AEDE /* Alamofire.swift */; };
-		35F6656F1BB3B9DC00A3AEDE /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F665611BB3B9DC00A3AEDE /* Download.swift */; };
-		35F665701BB3B9DC00A3AEDE /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F665621BB3B9DC00A3AEDE /* Error.swift */; };
-		35F665711BB3B9DC00A3AEDE /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F665631BB3B9DC00A3AEDE /* Manager.swift */; };
-		35F665721BB3B9DC00A3AEDE /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F665641BB3B9DC00A3AEDE /* MultipartFormData.swift */; };
-		35F665731BB3B9DC00A3AEDE /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F665651BB3B9DC00A3AEDE /* ParameterEncoding.swift */; };
-		35F665741BB3B9DC00A3AEDE /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F665661BB3B9DC00A3AEDE /* Request.swift */; };
-		35F665751BB3B9DC00A3AEDE /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F665671BB3B9DC00A3AEDE /* Response.swift */; };
-		35F665761BB3B9DC00A3AEDE /* ResponseSerialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F665681BB3B9DC00A3AEDE /* ResponseSerialization.swift */; };
-		35F665771BB3B9DC00A3AEDE /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F665691BB3B9DC00A3AEDE /* Result.swift */; };
-		35F665781BB3B9DC00A3AEDE /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F6656A1BB3B9DC00A3AEDE /* ServerTrustPolicy.swift */; };
-		35F665791BB3B9DC00A3AEDE /* Stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F6656B1BB3B9DC00A3AEDE /* Stream.swift */; };
-		35F6657A1BB3B9DC00A3AEDE /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F6656C1BB3B9DC00A3AEDE /* Upload.swift */; };
-		35F6657B1BB3B9DC00A3AEDE /* Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F6656D1BB3B9DC00A3AEDE /* Validation.swift */; };
 		35F6657D1BB3F18700A3AEDE /* ApplyTrialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F6657C1BB3F18700A3AEDE /* ApplyTrialViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +120,21 @@
 		3517CBD81BD5EDD500EE40FB /* MyFocusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFocusTableViewCell.swift; sourceTree = "<group>"; };
 		3517CBDA1BD6095300EE40FB /* MyPublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPublishViewController.swift; sourceTree = "<group>"; };
 		3517CBDC1BD62AC000EE40FB /* MyPublishTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPublishTableViewCell.swift; sourceTree = "<group>"; };
+		355483DF1BDA3AFF00AEFBEF /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
+		355483E01BDA3AFF00AEFBEF /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		355483E11BDA3AFF00AEFBEF /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
+		355483E21BDA3AFF00AEFBEF /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		355483E31BDA3AFF00AEFBEF /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
+		355483E41BDA3AFF00AEFBEF /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		355483E51BDA3AFF00AEFBEF /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		355483E61BDA3AFF00AEFBEF /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		355483E71BDA3AFF00AEFBEF /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		355483E81BDA3AFF00AEFBEF /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
+		355483E91BDA3AFF00AEFBEF /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		355483EA1BDA3AFF00AEFBEF /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
+		355483EB1BDA3AFF00AEFBEF /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
+		355483EC1BDA3AFF00AEFBEF /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
+		355483ED1BDA3AFF00AEFBEF /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		355C95A41B8AF089005595EA /* PriceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceViewController.swift; sourceTree = "<group>"; };
 		355C95A61B8C0665005595EA /* PriceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceDetailViewController.swift; sourceTree = "<group>"; };
 		355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceVCTableViewCell.swift; sourceTree = "<group>"; };
@@ -236,21 +251,6 @@
 		35EF0F111BB394D300F99399 /* SWUtilityButtonTapGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonTapGestureRecognizer.m; sourceTree = "<group>"; };
 		35EF0F121BB394D300F99399 /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonView.h; sourceTree = "<group>"; };
 		35EF0F131BB394D300F99399 /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
-		35F6655F1BB3B9DC00A3AEDE /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
-		35F665601BB3B9DC00A3AEDE /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
-		35F665611BB3B9DC00A3AEDE /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
-		35F665621BB3B9DC00A3AEDE /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
-		35F665631BB3B9DC00A3AEDE /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
-		35F665641BB3B9DC00A3AEDE /* MultipartFormData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
-		35F665651BB3B9DC00A3AEDE /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
-		35F665661BB3B9DC00A3AEDE /* Request.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		35F665671BB3B9DC00A3AEDE /* Response.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
-		35F665681BB3B9DC00A3AEDE /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
-		35F665691BB3B9DC00A3AEDE /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		35F6656A1BB3B9DC00A3AEDE /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
-		35F6656B1BB3B9DC00A3AEDE /* Stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stream.swift; sourceTree = "<group>"; };
-		35F6656C1BB3B9DC00A3AEDE /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
-		35F6656D1BB3B9DC00A3AEDE /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		35F6657C1BB3F18700A3AEDE /* ApplyTrialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyTrialViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -483,21 +483,21 @@
 		35C712671B86AF12004B267A /* Alamofire */ = {
 			isa = PBXGroup;
 			children = (
-				35F6655F1BB3B9DC00A3AEDE /* Alamofire.h */,
-				35F665601BB3B9DC00A3AEDE /* Alamofire.swift */,
-				35F665611BB3B9DC00A3AEDE /* Download.swift */,
-				35F665621BB3B9DC00A3AEDE /* Error.swift */,
-				35F665631BB3B9DC00A3AEDE /* Manager.swift */,
-				35F665641BB3B9DC00A3AEDE /* MultipartFormData.swift */,
-				35F665651BB3B9DC00A3AEDE /* ParameterEncoding.swift */,
-				35F665661BB3B9DC00A3AEDE /* Request.swift */,
-				35F665671BB3B9DC00A3AEDE /* Response.swift */,
-				35F665681BB3B9DC00A3AEDE /* ResponseSerialization.swift */,
-				35F665691BB3B9DC00A3AEDE /* Result.swift */,
-				35F6656A1BB3B9DC00A3AEDE /* ServerTrustPolicy.swift */,
-				35F6656B1BB3B9DC00A3AEDE /* Stream.swift */,
-				35F6656C1BB3B9DC00A3AEDE /* Upload.swift */,
-				35F6656D1BB3B9DC00A3AEDE /* Validation.swift */,
+				355483DF1BDA3AFF00AEFBEF /* Alamofire.h */,
+				355483E01BDA3AFF00AEFBEF /* Alamofire.swift */,
+				355483E11BDA3AFF00AEFBEF /* Download.swift */,
+				355483E21BDA3AFF00AEFBEF /* Error.swift */,
+				355483E31BDA3AFF00AEFBEF /* Manager.swift */,
+				355483E41BDA3AFF00AEFBEF /* MultipartFormData.swift */,
+				355483E51BDA3AFF00AEFBEF /* ParameterEncoding.swift */,
+				355483E61BDA3AFF00AEFBEF /* Request.swift */,
+				355483E71BDA3AFF00AEFBEF /* Response.swift */,
+				355483E81BDA3AFF00AEFBEF /* ResponseSerialization.swift */,
+				355483E91BDA3AFF00AEFBEF /* Result.swift */,
+				355483EA1BDA3AFF00AEFBEF /* ServerTrustPolicy.swift */,
+				355483EB1BDA3AFF00AEFBEF /* Stream.swift */,
+				355483EC1BDA3AFF00AEFBEF /* Upload.swift */,
+				355483ED1BDA3AFF00AEFBEF /* Validation.swift */,
 			);
 			name = Alamofire;
 			sourceTree = "<group>";
@@ -632,38 +632,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				355C95AD1B8C5145005595EA /* InboxViewController.swift in Sources */,
-				35F6656F1BB3B9DC00A3AEDE /* Download.swift in Sources */,
 				35AC875E1B8AB15900B44C7E /* UIView+MJExtension.m in Sources */,
 				35EF0F141BB394D300F99399 /* NSMutableArray+SWUtilityButtons.m in Sources */,
 				35C7127D1B86B008004B267A /* EndPoints.swift in Sources */,
 				35B278621B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift in Sources */,
 				35DC5E631BA94F700000FA22 /* TSLocateView.m in Sources */,
 				35DC5E651BA94F700000FA22 /* TSLocation.m in Sources */,
+				355483F31BDA3AFF00AEFBEF /* ParameterEncoding.swift in Sources */,
 				3587007F1B9EA4A000B09351 /* KASlideShow.m in Sources */,
 				35E3E8521BA6B3BC0009E8DD /* FuturesViewController.swift in Sources */,
 				35C712821B86B126004B267A /* HomeTabBarViewController.swift in Sources */,
-				35F6657B1BB3B9DC00A3AEDE /* Validation.swift in Sources */,
 				35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */,
 				355C95A91B8C1407005595EA /* PriceVCTableViewCell.swift in Sources */,
+				355483F01BDA3AFF00AEFBEF /* Error.swift in Sources */,
 				355C95A51B8AF089005595EA /* PriceViewController.swift in Sources */,
 				35B1F2391BCB631200AA9F38 /* ChannelItemImageViewController.swift in Sources */,
 				35B278461B8D952100FA2399 /* CommentViewController.swift in Sources */,
-				35F665771BB3B9DC00A3AEDE /* Result.swift in Sources */,
-				35F665721BB3B9DC00A3AEDE /* MultipartFormData.swift in Sources */,
 				35C712921B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m in Sources */,
 				35C712661B86AEE9004B267A /* SKTipAlertView.m in Sources */,
+				355483F61BDA3AFF00AEFBEF /* ResponseSerialization.swift in Sources */,
+				355483F51BDA3AFF00AEFBEF /* Response.swift in Sources */,
+				355483F11BDA3AFF00AEFBEF /* Manager.swift in Sources */,
 				35C712911B86CC5D004B267A /* HTHorizontalSelectionList.m in Sources */,
 				35BB22591BD4E8BB00A01E36 /* UserSettingTableViewController.swift in Sources */,
 				350901911BB4F7600010FFFE /* ForgetPasswordViewController.swift in Sources */,
-				35F665741BB3B9DC00A3AEDE /* Request.swift in Sources */,
 				356803981BA0304600BB50AE /* UIImageView+HighlightedWebCache.m in Sources */,
 				358700811B9EBCD100B09351 /* ChannelVCTableViewCell.swift in Sources */,
-				35F665751BB3B9DC00A3AEDE /* Response.swift in Sources */,
+				355483F81BDA3AFF00AEFBEF /* ServerTrustPolicy.swift in Sources */,
 				3515CB211B94367200EC54D7 /* Chart.swift in Sources */,
 				35EF0F161BB394D300F99399 /* SWLongPressGestureRecognizer.m in Sources */,
 				3515CB251B9BE45000EC54D7 /* EcosystemViewController.swift in Sources */,
 				3568038D1BA0304600BB50AE /* SDImageCache.m in Sources */,
+				355483F41BDA3AFF00AEFBEF /* Request.swift in Sources */,
+				355483EE1BDA3AFF00AEFBEF /* Alamofire.swift in Sources */,
+				355483F71BDA3AFF00AEFBEF /* Result.swift in Sources */,
 				35B278441B8D952100FA2399 /* CommentDetailViewController.swift in Sources */,
+				355483F21BDA3AFF00AEFBEF /* MultipartFormData.swift in Sources */,
 				35BB225B1BD5D53A00A01E36 /* MyFocusViewController.swift in Sources */,
 				3568038C1BA0304600BB50AE /* NSData+ImageContentType.m in Sources */,
 				3515CB221B94367200EC54D7 /* ChartColors.swift in Sources */,
@@ -673,19 +677,20 @@
 				3587005C1B9D776800B09351 /* ChannelItemAddViewController.swift in Sources */,
 				355C95AB1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift in Sources */,
 				35EF0F171BB394D300F99399 /* SWTableViewCell.m in Sources */,
+				355483FB1BDA3AFF00AEFBEF /* Validation.swift in Sources */,
 				356803971BA0304600BB50AE /* UIImage+WebP.m in Sources */,
 				35B1F23D1BCCB96300AA9F38 /* UITextView+Placeholder.m in Sources */,
+				355483F91BDA3AFF00AEFBEF /* Stream.swift in Sources */,
 				3517CBDD1BD62AC000EE40FB /* MyPublishTableViewCell.swift in Sources */,
 				3517CBDB1BD6095300EE40FB /* MyPublishViewController.swift in Sources */,
 				35AC875B1B8AB15900B44C7E /* MJRefreshHeaderView.m in Sources */,
 				3568039A1BA0304600BB50AE /* UIView+WebCacheOperation.m in Sources */,
 				356803921BA0304600BB50AE /* SDWebImageManager.m in Sources */,
 				35AC875C1B8AB15900B44C7E /* UIScrollView+MJExtension.m in Sources */,
+				355483EF1BDA3AFF00AEFBEF /* Download.swift in Sources */,
 				35C712801B86B09E004B267A /* SwiftyJSON.swift in Sources */,
 				35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */,
-				35F6657A1BB3B9DC00A3AEDE /* Upload.swift in Sources */,
 				35C712861B86B2BE004B267A /* MBProgressHUD.m in Sources */,
-				35F665711BB3B9DC00A3AEDE /* Manager.swift in Sources */,
 				358700701B9D8C3C00B09351 /* DLRadioButton.m in Sources */,
 				35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */,
 				356803991BA0304600BB50AE /* UIImageView+WebCache.m in Sources */,
@@ -693,13 +698,13 @@
 				35EF0F191BB394D300F99399 /* SWUtilityButtonView.m in Sources */,
 				3568038E1BA0304600BB50AE /* SDWebImageCompat.m in Sources */,
 				35B278B61B9045F600FA2399 /* PriceChartViewController.swift in Sources */,
-				35F665791BB3B9DC00A3AEDE /* Stream.swift in Sources */,
 				3568038F1BA0304600BB50AE /* SDWebImageDecoder.m in Sources */,
 				356803961BA0304600BB50AE /* UIImage+MultiFormat.m in Sources */,
 				3515CB461B9D552600EC54D7 /* ChannelViewController.swift in Sources */,
 				35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */,
 				35EF0F181BB394D300F99399 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				3515CB231B94367200EC54D7 /* ChartSeries.swift in Sources */,
+				355483FA1BDA3AFF00AEFBEF /* Upload.swift in Sources */,
 				3568038B1BA0304600BB50AE /* MKAnnotationView+WebCache.m in Sources */,
 				35B278471B8D952100FA2399 /* CommentVCTableViewCell.swift in Sources */,
 				3517CBD91BD5EDD500EE40FB /* MyFocusTableViewCell.swift in Sources */,
@@ -707,22 +712,17 @@
 				35C712181B8595B3004B267A /* AppDelegate.swift in Sources */,
 				35F6657D1BB3F18700A3AEDE /* ApplyTrialViewController.swift in Sources */,
 				35E3E8541BA6C3750009E8DD /* Parameter.swift in Sources */,
-				35F6656E1BB3B9DC00A3AEDE /* Alamofire.swift in Sources */,
 				3515CB481B9D62AA00EC54D7 /* ChannelCatalogViewController.swift in Sources */,
-				35F665761BB3B9DC00A3AEDE /* ResponseSerialization.swift in Sources */,
 				35B2789B1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift in Sources */,
 				356803911BA0304600BB50AE /* SDWebImageDownloaderOperation.m in Sources */,
 				356803931BA0304600BB50AE /* SDWebImagePrefetcher.m in Sources */,
 				356803901BA0304600BB50AE /* SDWebImageDownloader.m in Sources */,
-				35F665781BB3B9DC00A3AEDE /* ServerTrustPolicy.swift in Sources */,
 				356803941BA0304600BB50AE /* UIButton+WebCache.m in Sources */,
 				358700831B9FE86200B09351 /* ChannelItemDetailViewController.swift in Sources */,
 				35B278991B8FFEFD00FA2399 /* PriceHistoryViewController.swift in Sources */,
-				35F665731BB3B9DC00A3AEDE /* ParameterEncoding.swift in Sources */,
 				3515CB431B9D19FA00EC54D7 /* UIColor+MLPFlatColors.m in Sources */,
 				35C712651B86AEE9004B267A /* SKAlertView.m in Sources */,
 				35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */,
-				35F665701BB3B9DC00A3AEDE /* Error.swift in Sources */,
 				355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -839,7 +839,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: XUAN GUO (L4TXWGS3FM)";
 				INFOPLIST_FILE = tongxin_news/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tongxin.info;
 				PRODUCT_NAME = "同鑫资讯";
@@ -859,7 +859,7 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: XUAN GUO (L4TXWGS3FM)";
 				INFOPLIST_FILE = tongxin_news/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tongxin.info;
 				PRODUCT_NAME = "同鑫资讯";
