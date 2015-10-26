@@ -32,7 +32,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         initLoadDatas()
         self.tbData.dataSource = self
         self.tbData.delegate = self
-        self.tbData.estimatedRowHeight = 1000
+        self.tbData.estimatedRowHeight = 100
         self.tbData.rowHeight = UITableViewAutomaticDimension
         self.searchCon.delegate = self
         
