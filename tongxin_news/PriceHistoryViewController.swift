@@ -10,6 +10,7 @@ import UIKit
 
 class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var barBtnChart: UIBarButtonItem!
     @IBOutlet weak var tvPriceHistory: UITableView!
     @IBOutlet weak var navPriceHistory: UINavigationBar!
     @IBOutlet weak var vContainer: UIView!
@@ -45,7 +46,7 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
         txtPriceHistoryStart.text = formatter.stringFromDate(start)
         txtPriceHistoryEnd.text = formatter.stringFromDate(end)
         self.btnPriceHistoryQuery.layer.cornerRadius = 6.0
-        
+        self.barBtnChart.enabled = false
         getPriceHistory()
     }
     
@@ -81,6 +82,8 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
                                 }
                             }
                             self.tvPriceHistory.reloadData()
+
+                            self.barBtnChart.enabled = (self.history.count > 0)
                         }
                     }
                     
