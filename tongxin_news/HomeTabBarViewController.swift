@@ -8,12 +8,24 @@
 
 import UIKit
 
-class HomeTabBarViewController: UITabBarController {
+class HomeTabBarViewController: UITabBarController, UIGestureRecognizerDelegate {
+    
+    var guideTap: UITapGestureRecognizer?
+    var guideImage: UIImageView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        guideImage = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.height, height: self.view.frame.width))
+        guideImage?.userInteractionEnabled = false
+        self.view.addSubview(guideImage!)
+        
+        guideTap = UITapGestureRecognizer()
+        guideTap?.numberOfTapsRequired = 1
+        guideTap?.delegate = self
+        self.guideImage?.addGestureRecognizer(self.guideTap!)
+        
     }
 
     override func didReceiveMemoryWarning() {
