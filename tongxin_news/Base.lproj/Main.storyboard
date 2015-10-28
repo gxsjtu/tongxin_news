@@ -1332,6 +1332,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="barBtnChart" destination="Lhn-aD-ZEF" id="Wl8-8J-6bu"/>
                         <outlet property="btnPriceHistoryDateConfirm" destination="8g8-jd-Wcg" id="fgT-bV-X02"/>
                         <outlet property="btnPriceHistoryQuery" destination="B9i-Ao-xnq" id="dxA-qE-R91"/>
                         <outlet property="dpPriceHistory" destination="pBJ-mB-7c3" id="JZl-LI-1yC"/>
