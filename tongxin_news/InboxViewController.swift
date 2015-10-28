@@ -191,7 +191,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 if let cell = sender as? UITableViewCell
                 {
                     des.navTitle = "同鑫评论"
-                    des.url = (cell.viewWithTag(3) as! UILabel).text!
+                    des.url = (cell.viewWithTag(3) as! UILabel).text! + "&mobile="+self.mobile!
                 }
             }
         }
