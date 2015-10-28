@@ -18,7 +18,7 @@ class HomeTabBarViewController: UITabBarController, UIGestureRecognizerDelegate 
 
         // Do any additional setup after loading the view.
         guideImage = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.height, height: self.view.frame.width))
-        guideImage?.userInteractionEnabled = true
+        guideImage?.userInteractionEnabled = false
         self.view.addSubview(guideImage!)
         
         guideTap = UITapGestureRecognizer()

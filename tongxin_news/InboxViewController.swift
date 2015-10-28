@@ -168,7 +168,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        let imgHere : UIImageView = UIImageView(frame: CGRectMake(180, cell.frame.height - 40, 110, 36))
+        let imgHere : UIImageView = UIImageView(frame: CGRect(x: cell.frame.width - 150, y: cell.frame.height - 30, width: 150, height: 20))
         imgHere.image = UIImage(named: "here.png")
         imgHere.tag = 4
         if(cell.textLabel?.text == self.firstCellStr && self.isPullDown == "YES")
@@ -177,7 +177,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         }
         else
         {
-        imgHere.hidden = true
+            imgHere.hidden = true
         }
         cell.addSubview(imgHere)
     }
