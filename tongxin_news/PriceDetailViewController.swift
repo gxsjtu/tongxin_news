@@ -157,22 +157,22 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
             
             if change == 0
             {
-                cell.lblPriceDetailChange.textColor = UIColor.blackColor()
-                cell.lblPriceDetailChangeCapt.textColor = UIColor.blackColor()
+                cell.lblPriceDetailChange.textColor = UIColor(red: 254/255, green: 182/255, blue: 97/255, alpha: 1.0)
+                cell.lblPriceDetailChangeCapt.textColor = UIColor(red: 254/255, green: 182/255, blue: 97/255, alpha: 1.0)
                 cell.lblPriceDetailChange.text = "一"
                 cell.lblPriceDetailChangeCapt.text = "平"
             }
             else if change > 0
             {
-                cell.lblPriceDetailChange.textColor = UIColor.redColor()
-                cell.lblPriceDetailChangeCapt.textColor = UIColor.redColor()
+                cell.lblPriceDetailChange.textColor = UIColor(red: 255/255, green: 86/255, blue: 139/255, alpha: 1.0)
+                cell.lblPriceDetailChangeCapt.textColor = UIColor(red: 255/255, green: 86/255, blue: 139/255, alpha: 1.0)
                 cell.lblPriceDetailChange.text = String(stringInterpolationSegment: change) + "▲"
                 cell.lblPriceDetailChangeCapt.text = "涨"
             }
             else
             {
-                cell.lblPriceDetailChange.textColor = UIColor(red: 35/255, green: 124/255, blue: 2/255, alpha: 1.0)
-                cell.lblPriceDetailChangeCapt.textColor = UIColor(red: 35/255, green: 124/255, blue: 2/255, alpha: 1.0)
+                cell.lblPriceDetailChange.textColor = UIColor(red: 36/255, green: 190/255, blue: 241/255, alpha: 1.0)
+                cell.lblPriceDetailChangeCapt.textColor = UIColor(red: 36/255, green: 190/255, blue: 241/255, alpha: 1.0)
                 cell.lblPriceDetailChange.text = String(stringInterpolationSegment: -change) + "▼"
                 cell.lblPriceDetailChangeCapt.text = "跌"
             }

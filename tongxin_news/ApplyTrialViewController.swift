@@ -10,6 +10,7 @@ import UIKit
 
 class ApplyTrialViewController: UIViewController {
 
+    @IBOutlet weak var txtDesc: UITextView!
     @IBOutlet weak var navApplyTrial: UINavigationBar!
     
     @IBAction func didRegisterClicked(sender: AnyObject) {
@@ -56,6 +57,7 @@ class ApplyTrialViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.txtMobile.leftViewMode = UITextFieldViewMode.Always
         self.txtMobile.leftView = UIImageView(image: UIImage(named: "mobile.png"))
+        self.txtDesc.backgroundColor = UIColor.clearColor()
     }
 
     override func didReceiveMemoryWarning() {
