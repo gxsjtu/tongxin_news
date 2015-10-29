@@ -1113,7 +1113,7 @@
                                                         <constraint firstAttribute="width" constant="34" id="lge-v1-F2v"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.1176470588" green="0.42352941179999998" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.74509803919999995" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUj-zr-vch">
@@ -1124,7 +1124,7 @@
                                                         <constraint firstAttribute="width" constant="79" id="pog-MP-4mo"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.1176470588" green="0.42352941179999998" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.14117647059999999" green="0.74509803919999995" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最高" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAl-SI-Vbb">
@@ -1135,7 +1135,7 @@
                                                         <constraint firstAttribute="width" constant="34" id="QnC-BL-Beb"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.33725490200000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VnC-tB-vYT">
@@ -1146,7 +1146,7 @@
                                                         <constraint firstAttribute="height" constant="21" id="lOi-iR-gUQ"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="1" green="0.33725490200000002" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgr-z1-mEI">
@@ -3230,11 +3230,11 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-RG-zoD">
-                                                <rect key="frame" x="8" y="524" width="312" height="200"/>
+                                                <rect key="frame" x="8" y="524" width="312" height="155"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.14117647059999999" green="0.74509803919999995" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="ryf-Hv-S1M"/>
+                                                    <constraint firstAttribute="height" constant="155" id="ryf-Hv-S1M"/>
                                                 </constraints>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>

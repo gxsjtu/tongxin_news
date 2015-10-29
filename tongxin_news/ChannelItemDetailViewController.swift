@@ -46,7 +46,6 @@ class ChannelItemDetailViewController: UIViewController {
         tap = UITapGestureRecognizer(target: self, action: "tapOnSlide:")
         tap?.numberOfTapsRequired = 1
         self.slideChannelItem.addGestureRecognizer(tap!)
-        self.txtChannelItemDesc.textColor = UIColor.whiteColor()
     }
     
     override func viewDidLayoutSubviews() {
@@ -110,6 +109,7 @@ class ChannelItemDetailViewController: UIViewController {
                             self.lblChannelItemName.text = i["name"]!.stringValue
                             self.lblChannelItemQty.text = i["quantity"]!.stringValue
                             self.txtChannelItemDesc.text = i["description"]!.stringValue
+                            self.txtChannelItemDesc.textColor = UIColor.whiteColor()
                             self.lblChannelItemPrice.text = i["price"]!.stringValue
           
                             self.slideChannelItem.images.removeAllObjects()
