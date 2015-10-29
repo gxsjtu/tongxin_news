@@ -46,6 +46,7 @@ class ChannelItemDetailViewController: UIViewController {
         tap = UITapGestureRecognizer(target: self, action: "tapOnSlide:")
         tap?.numberOfTapsRequired = 1
         self.slideChannelItem.addGestureRecognizer(tap!)
+        self.txtChannelItemDesc.textColor = UIColor.whiteColor()
     }
     
     override func viewDidLayoutSubviews() {
