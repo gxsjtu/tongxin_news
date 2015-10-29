@@ -120,7 +120,7 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
         }
         else
         {
-            if let change = Int(history[indexPath.row].3)
+            if let change = Double(history[indexPath.row].3)
             {
                 if change == 0
                 {
@@ -130,12 +130,12 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
                 else if change > 0
                 {
                     cell.lblPriceHistoryChange.textColor = UIColor(red: 255/255, green: 86/255, blue: 139/255, alpha: 1.0)
-                    cell.lblPriceHistoryChange.text = "涨 " + String(change)
+                    cell.lblPriceHistoryChange.text = "涨 " + String(change) + "▲"
                 }
                 else
                 {
                     cell.lblPriceHistoryChange.textColor = UIColor(red: 36/255, green: 190/255, blue: 241/255, alpha: 1.0)
-                    cell.lblPriceHistoryChange.text = "跌 " + String(-change)
+                    cell.lblPriceHistoryChange.text = "跌 " + String(-change) + "▼"
                 }
             }
         }
