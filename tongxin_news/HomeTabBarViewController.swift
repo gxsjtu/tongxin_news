@@ -70,7 +70,6 @@ class HomeTabBarViewController: UITabBarController, UIGestureRecognizerDelegate 
     
     override func viewWillAppear(animated: Bool) {
         NSNotificationCenter.defaultCenter().postNotificationName("Badge", object: nil, userInfo: nil)
-        print("home will appear")
     }
 
     /*

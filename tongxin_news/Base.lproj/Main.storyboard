@@ -941,7 +941,6 @@
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="CwJ-mV-A3i"/>
-                                                        <constraint firstAttribute="width" constant="185" id="rBA-ol-bxL"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
@@ -1039,6 +1038,7 @@
                                                 <constraint firstItem="2i6-it-j1b" firstAttribute="top" secondItem="g4L-S9-Ifp" secondAttribute="topMargin" constant="-8" id="dqD-oQ-bJ6"/>
                                                 <constraint firstItem="RT8-6q-18A" firstAttribute="top" secondItem="2i6-it-j1b" secondAttribute="bottom" constant="1" id="lFJ-ll-7LO"/>
                                                 <constraint firstItem="kfB-qh-zEY" firstAttribute="top" secondItem="bZ6-D2-Xg4" secondAttribute="bottom" constant="-6" id="nVI-He-bjM"/>
+                                                <constraint firstItem="lzE-BW-5tU" firstAttribute="leading" secondItem="2i6-it-j1b" secondAttribute="trailing" constant="8" id="rdF-lL-uBB"/>
                                                 <constraint firstItem="kfB-qh-zEY" firstAttribute="width" secondItem="bZ6-D2-Xg4" secondAttribute="width" constant="-38" id="tj8-IL-Zr2"/>
                                                 <constraint firstItem="RT8-6q-18A" firstAttribute="leading" secondItem="2i6-it-j1b" secondAttribute="leading" id="uYd-nt-aMf"/>
                                                 <constraint firstItem="bZ6-D2-Xg4" firstAttribute="top" secondItem="2i6-it-j1b" secondAttribute="bottom" constant="1" id="zVy-an-1g6"/>
