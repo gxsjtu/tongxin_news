@@ -3,37 +3,37 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "58px同鑫LOGO.png",
+      "filename" : "58px.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "87px同鑫LOGO.png",
+      "filename" : "87px.png",
       "scale" : "3x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "80px同鑫LOGO.png",
+      "filename" : "120px-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "120px同鑫LOGO.png",
+      "filename" : "180px-1.png",
       "scale" : "3x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "120px同鑫LOGO-1.png",
+      "filename" : "120px.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "180同鑫LOGO.png",
+      "filename" : "180px.png",
       "scale" : "3x"
     }
   ],

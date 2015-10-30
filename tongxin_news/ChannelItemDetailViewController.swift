@@ -46,6 +46,19 @@ class ChannelItemDetailViewController: UIViewController {
         tap = UITapGestureRecognizer(target: self, action: "tapOnSlide:")
         tap?.numberOfTapsRequired = 1
         self.slideChannelItem.addGestureRecognizer(tap!)
+        
+        self.lblChannelItemPrice.leftView = UIImageView(image: UIImage(named: "sp_price"))
+        self.lblChannelItemPrice.leftViewMode = .Always
+        self.lblChannelItemQty.leftView = UIImageView(image: UIImage(named: "sp_qty"))
+        self.lblChannelItemQty.leftViewMode = .Always
+        self.lblChannelItemContact.leftView = UIImageView(image: UIImage(named: "sp_contact"))
+        self.lblChannelItemContact.leftViewMode = .Always
+        self.lblChannelItemLocation.leftView = UIImageView(image: UIImage(named: "sp_location"))
+        self.lblChannelItemLocation.leftViewMode = .Always
+        self.lblChannelItemDeliver.leftView = UIImageView(image: UIImage(named: "sp_delivery"))
+        self.lblChannelItemDeliver.leftViewMode = .Always
+        self.lblChannelItemName.leftView = UIImageView(image: UIImage(named: "sp_name"))
+        self.lblChannelItemName.leftViewMode = .Always
     }
     
     override func viewDidLayoutSubviews() {
@@ -96,21 +109,21 @@ class ChannelItemDetailViewController: UIViewController {
                         {
                             if i["deliver"]!.stringValue == "true"
                             {
-                                self.lblChannelItemDeliver.text = "自提"
+                                self.lblChannelItemDeliver.text = "  自提"
                             }
                             else
                             {
-                                self.lblChannelItemDeliver.text = "发货"
+                                self.lblChannelItemDeliver.text = "  发货"
                             }
-                            self.lblChannelItemContact.text = i["contact"]!.stringValue
-                            self.lblChannelItemLocation.text = i["location"]!.stringValue
+                            self.lblChannelItemContact.text = "  " + i["contact"]!.stringValue
+                            self.lblChannelItemLocation.text = "  " + i["location"]!.stringValue
                             self.mobile = i["mobile"]!.stringValue
                             self.btnMobile.setTitle("  " + self.mobile + "（点击拨打）", forState: UIControlState.Normal)
-                            self.lblChannelItemName.text = i["name"]!.stringValue
-                            self.lblChannelItemQty.text = i["quantity"]!.stringValue
-                            self.txtChannelItemDesc.text = i["description"]!.stringValue
+                            self.lblChannelItemName.text = "  " + i["name"]!.stringValue
+                            self.lblChannelItemQty.text = "  " + i["quantity"]!.stringValue
+                            self.txtChannelItemDesc.text = "  " + i["description"]!.stringValue
                             self.txtChannelItemDesc.textColor = UIColor.whiteColor()
-                            self.lblChannelItemPrice.text = i["price"]!.stringValue
+                            self.lblChannelItemPrice.text = "  " + i["price"]!.stringValue
           
                             self.slideChannelItem.images.removeAllObjects()
                             for avatars in i["avatars"]!.arrayValue
