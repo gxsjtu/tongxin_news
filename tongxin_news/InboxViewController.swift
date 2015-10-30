@@ -2,7 +2,6 @@ import UIKit
 
 class InboxViewController : UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate
 {
-    
     @IBOutlet weak var clearBar: UIBarButtonItem!
     //@IBOutlet weak var segmentCon: UISegmentedControl!
     //@IBOutlet weak var lblMsg: UILabel!
@@ -30,6 +29,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         initLoadDatas()
+        self.tbData.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
         self.tbData.dataSource = self
         self.tbData.delegate = self
         self.tbData.estimatedRowHeight = 100
@@ -119,10 +119,11 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let format = NSDateFormatter()
+
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
         let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        tbCell
+
         if(tbCell.viewWithTag(3) != nil)
         {
             tbCell.viewWithTag(3)?.removeFromSuperview()

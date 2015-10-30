@@ -12,20 +12,55 @@ class HomeTabBarViewController: UITabBarController, UIGestureRecognizerDelegate 
     
     var guideTap: UITapGestureRecognizer?
     var guideImage: UIImageView?
+    var guideImages = ["g_inbox", "g_price", "g_comment", "g_circle", "g_futures"]
+    var isFromLoggin = false
+    var count = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        guideImage = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.height, height: self.view.frame.width))
+        guideImage = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         guideImage?.userInteractionEnabled = false
         self.view.addSubview(guideImage!)
         
         guideTap = UITapGestureRecognizer()
         guideTap?.numberOfTapsRequired = 1
         guideTap?.delegate = self
+        guideTap?.addTarget(self, action: Selector("tapOnMain:"))
         self.guideImage?.addGestureRecognizer(self.guideTap!)
         
+        if isFromLoggin == true
+        {
+             if let isFirstLogged = NSUserDefaults.standardUserDefaults().stringForKey("isFirstLogged")
+             {
+                if isFirstLogged == "yes"
+                {
+                    self.guideImage?.userInteractionEnabled = true
+                    count = 0
+                    guideImage?.image = UIImage(named: guideImages[count])
+                }
+                else
+                {
+                    //播放广告
+                }
+             }
+        }
+    }
+    
+    func tapOnMain(tap: UITapGestureRecognizer)
+    {
+        count++;
+        if self.guideImages.count <= count
+        {
+            self.guideImage?.image = nil
+            self.guideImage?.userInteractionEnabled = false
+            self.guideTap?.removeTarget(self, action: Selector("tapOnMain:"))
+        }
+        else
+        {
+            self.guideImage?.image = UIImage(named: guideImages[count])
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,6 +70,7 @@ class HomeTabBarViewController: UITabBarController, UIGestureRecognizerDelegate 
     
     override func viewWillAppear(animated: Bool) {
         NSNotificationCenter.defaultCenter().postNotificationName("Badge", object: nil, userInfo: nil)
+        print("home will appear")
     }
 
     /*

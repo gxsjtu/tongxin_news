@@ -116,9 +116,18 @@ class LogInViewController: UIViewController {
                             NSUserDefaults.standardUserDefaults().setObject("yes", forKey: "isLoggedIn")
                             NSUserDefaults.standardUserDefaults().setObject(mobile, forKey: "mobile")
                             NSUserDefaults.standardUserDefaults().setObject(password, forKey: "password")
+                            if let _ = NSUserDefaults.standardUserDefaults().stringForKey("isFirstLogged")
+                            {
+                                NSUserDefaults.standardUserDefaults().setObject("no", forKey: "isFirstLogged")
+                            }
+                            else
+                            {
+                                NSUserDefaults.standardUserDefaults().setObject("yes", forKey: "isFirstLogged")
+                            }
                             //转向home页面
                             if let homeVC = self.storyboard?.instantiateViewControllerWithIdentifier("HomeTabBarVC") as? HomeTabBarViewController
                             {
+                                homeVC.isFromLoggin = true
                                 self.presentViewController(homeVC, animated: true, completion: nil)
                             }
                         }
