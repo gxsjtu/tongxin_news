@@ -323,7 +323,7 @@
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="895-mm-QNF">
-                                        <rect key="frame" x="99" y="116" width="122" height="122"/>
+                                        <rect key="frame" x="102" y="122" width="116" height="116"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="895-mm-QNF" secondAttribute="height" multiplier="1:1" id="fUn-TI-Gct"/>
@@ -348,7 +348,7 @@
                                     <constraint firstItem="pPq-vK-8Ru" firstAttribute="top" secondItem="zVu-Bf-EF0" secondAttribute="bottom" constant="8" id="bFi-9F-IKl"/>
                                     <constraint firstAttribute="leadingMargin" secondItem="RTg-xw-4OG" secondAttribute="leading" id="buZ-bX-qfx"/>
                                     <constraint firstAttribute="bottomMargin" secondItem="ude-Yo-5Up" secondAttribute="bottom" id="col-7y-NgX"/>
-                                    <constraint firstItem="895-mm-QNF" firstAttribute="width" secondItem="HnV-AA-yeb" secondAttribute="width" multiplier="0.38" id="cxs-R0-agW"/>
+                                    <constraint firstItem="895-mm-QNF" firstAttribute="width" secondItem="HnV-AA-yeb" secondAttribute="width" multiplier="0.36" id="cxs-R0-agW"/>
                                     <constraint firstItem="6mN-nn-DDy" firstAttribute="top" secondItem="HnV-AA-yeb" secondAttribute="topMargin" constant="-8" id="dbs-fH-3h1"/>
                                     <constraint firstItem="RTg-xw-4OG" firstAttribute="top" secondItem="pPq-vK-8Ru" secondAttribute="bottom" constant="8" id="iDA-XT-sCD"/>
                                     <constraint firstAttribute="leadingMargin" secondItem="zVu-Bf-EF0" secondAttribute="leading" id="lrj-D3-Nlh"/>
