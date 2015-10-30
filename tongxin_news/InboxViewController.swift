@@ -29,7 +29,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         initLoadDatas()
-        self.tbData.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0)
         self.tbData.dataSource = self
         self.tbData.delegate = self
         self.tbData.estimatedRowHeight = 100
