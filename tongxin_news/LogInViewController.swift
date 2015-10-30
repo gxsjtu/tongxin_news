@@ -57,7 +57,7 @@ class LogInViewController: UIViewController {
     
     @IBAction func unwindFromApplyTrial2Login(segue: UIStoryboardSegue)
     {
-
+        self.isForcedLogout = false
     }
     
     
