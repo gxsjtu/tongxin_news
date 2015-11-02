@@ -127,31 +127,25 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         {
             tbCell.viewWithTag(3)?.removeFromSuperview()
         }
-        if(tbCell.viewWithTag(4) != nil)
-        {
-            tbCell.viewWithTag(4)?.removeFromSuperview()
-        }
+
         let lblUrl : UILabel = UILabel()
         lblUrl.tag = 3
         lblUrl.text = resInfos[indexPath.row].url
         lblUrl.hidden = true
         tbCell.addSubview(lblUrl)
-        
-        let msg : String = resInfos[indexPath.row].msg! + "\n"
+        let isHideImgStr : String = self.resInfos[indexPath.row].msg! + format.stringFromDate(self.resInfos[indexPath.row].dateStr!)
         let date : String = format.stringFromDate(resInfos[indexPath.row].dateStr!)
-        let str : String = msg + date
-        let attribute = NSMutableAttributedString(string:str)
-        let attr1 = [NSForegroundColorAttributeName:UIColor.blackColor()]
-        attribute.addAttributes(attr1, range: NSMakeRange(0, (msg as NSString).length - 1))
-        let attr2 = [NSForegroundColorAttributeName:UIColor.orangeColor()]
-        attribute.addAttributes(attr2, range: NSMakeRange(((msg as NSString).length), (str as NSString).length - (msg as NSString).length))
-        tbCell.textLabel?.attributedText = attribute
-        tbCell.textLabel?.numberOfLines = 0
-//        let aa = tbCell.frame.height
-//        let imgHere : UIImageView = UIImageView(frame: CGRectMake(180, tbCell.frame.height - 40, 110, 36))
-//        imgHere.image = UIImage(named: "here.png")
-//        imgHere.tag = 4
-//        tbCell.addSubview(imgHere)
+        (tbCell.viewWithTag(1) as! UILabel).text = self.resInfos[indexPath.row].msg
+        (tbCell.viewWithTag(2) as! UILabel).text = date
+
+        if(isHideImgStr == self.firstCellStr && self.isPullDown == "YES")
+        {
+            (tbCell.viewWithTag(4) as! UIImageView).hidden = false
+        }
+        else
+        {
+            (tbCell.viewWithTag(4) as! UIImageView).hidden = true
+        }
         
         if(resInfos[indexPath.row].url != nil && resInfos[indexPath.row].url != "")
         {
@@ -165,23 +159,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         return tbCell
   
     }
-    
-    func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        let imgHere : UIImageView = UIImageView(frame: CGRect(x: cell.frame.width - 130, y: cell.frame.height - 32, width: 100, height: 20))
-        imgHere.contentMode = .ScaleAspectFit
-        imgHere.image = UIImage(named: "here.png")
-        imgHere.tag = 4
-        if(cell.textLabel?.text == self.firstCellStr && self.isPullDown == "YES")
-        {
-            imgHere.hidden = false
-        }
-        else
-        {
-            imgHere.hidden = true
-        }
-        cell.addSubview(imgHere)
-    }
-    
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ComToCommentDetail"
@@ -436,7 +413,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                 case .Success:
                     if(self.resInfos.count>0)
                     {
-                    self.firstCellStr = self.resInfos[0].msg! + "\n" + format1.stringFromDate(self.resInfos[0].dateStr!)
+                    self.firstCellStr = self.resInfos[0].msg! + format1.stringFromDate(self.resInfos[0].dateStr!)
                     }
                     if let data: AnyObject = response.result.value
                     {
@@ -519,25 +496,5 @@ class MsgInfo : NSObject
     var msg : String?
     var dateStr : NSDate?
     var url : String?
-}
-
-
-extension UILabel{
-    func initAutoHeight(rect:CGRect,textColor:UIColor, fontSize:CGFloat, text:NSString, lineSpacing:CGFloat){//自适应高度
-    self.frame = rect
-    self.textColor = textColor
-    self.font = UIFont.systemFontOfSize(fontSize)
-    self.lineBreakMode = NSLineBreakMode.ByWordWrapping
-    self.numberOfLines = 0
-    let attributedString = NSMutableAttributedString(string: text as String)
-    let paragraphStyle = NSMutableParagraphStyle()
-    paragraphStyle.lineSpacing = lineSpacing
-    paragraphStyle.lineBreakMode = NSLineBreakMode.ByCharWrapping
-    attributedString.addAttribute(NSParagraphStyleAttributeName, value: paragraphStyle, range: NSMakeRange(0, text.length))
-    self.attributedText = attributedString
-    self.sizeToFit()
-    self.frame.size.width = rect.width
-    self.frame.size.height = max(self.frame.size.height, rect.height)
-    }
 }
 
