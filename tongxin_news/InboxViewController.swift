@@ -122,6 +122,8 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
         let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        tbCell.viewWithTag(6)?.layer.masksToBounds = true
+        tbCell.viewWithTag(6)?.layer.cornerRadius = 8.0
 
         if(tbCell.viewWithTag(3) != nil)
         {
@@ -149,15 +151,14 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         
         if(resInfos[indexPath.row].url != nil && resInfos[indexPath.row].url != "")
         {
-            tbCell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            (tbCell.viewWithTag(5) as! UIImageView).hidden = false
         }
         else
         {
-            tbCell.accessoryType = UITableViewCellAccessoryType.None
+            (tbCell.viewWithTag(5) as! UIImageView).hidden = true
         }
         
         return tbCell
-  
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

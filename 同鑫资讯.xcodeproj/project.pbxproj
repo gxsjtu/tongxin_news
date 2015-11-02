@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3502271B1BE7556E00DE2B6B /* InboxTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3502271A1BE7556E00DE2B6B /* InboxTableViewCell.swift */; };
 		350901911BB4F7600010FFFE /* ForgetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 350901901BB4F7600010FFFE /* ForgetPasswordViewController.swift */; };
 		3515CB211B94367200EC54D7 /* Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB1E1B94367200EC54D7 /* Chart.swift */; };
 		3515CB221B94367200EC54D7 /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB1F1B94367200EC54D7 /* ChartColors.swift */; };
@@ -107,6 +108,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3502271A1BE7556E00DE2B6B /* InboxTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InboxTableViewCell.swift; sourceTree = "<group>"; };
 		350901901BB4F7600010FFFE /* ForgetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForgetPasswordViewController.swift; sourceTree = "<group>"; };
 		3515CB1E1B94367200EC54D7 /* Chart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chart.swift; sourceTree = "<group>"; };
 		3515CB1F1B94367200EC54D7 /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 				3517CBD81BD5EDD500EE40FB /* MyFocusTableViewCell.swift */,
 				3517CBDA1BD6095300EE40FB /* MyPublishViewController.swift */,
 				3517CBDC1BD62AC000EE40FB /* MyPublishTableViewCell.swift */,
+				3502271A1BE7556E00DE2B6B /* InboxTableViewCell.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -649,6 +652,7 @@
 				35B1F2391BCB631200AA9F38 /* ChannelItemImageViewController.swift in Sources */,
 				35B278461B8D952100FA2399 /* CommentViewController.swift in Sources */,
 				35C712921B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m in Sources */,
+				3502271B1BE7556E00DE2B6B /* InboxTableViewCell.swift in Sources */,
 				35C712661B86AEE9004B267A /* SKTipAlertView.m in Sources */,
 				355483F61BDA3AFF00AEFBEF /* ResponseSerialization.swift in Sources */,
 				355483F51BDA3AFF00AEFBEF /* Response.swift in Sources */,
