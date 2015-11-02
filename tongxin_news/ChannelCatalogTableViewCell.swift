@@ -24,4 +24,10 @@ class ChannelCatalogTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    override func layoutSubviews() {
+        let cellSelectionView = UIView(frame: vChannelCatalogCell.frame)
+        cellSelectionView.backgroundColor = UIColor(red: 180/255, green: 138/255, blue: 171/255, alpha: 0.5)
+        cellSelectionView.layer.cornerRadius = 10.0
+        self.selectedBackgroundView = cellSelectionView    }
 }
