@@ -2168,6 +2168,14 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcc-6i-zLJ">
+                                <rect key="frame" x="-4" y="64" width="328" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="djS-HO-fkq"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="CWQ-eA-vrw">
                                 <rect key="frame" x="0.0" y="108" width="320" height="411"/>
                                 <animations/>
@@ -2179,8 +2187,42 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fwt-Uy-8ku" id="aiL-aJ-XV9">
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMr-0s-1rB">
+                                                    <rect key="frame" x="8" y="0.0" width="279" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n3q-ZR-ofV">
+                                                    <rect key="frame" x="131" y="22" width="156" height="21"/>
+                                                    <animations/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8h-Nd-mPg">
+                                                    <rect key="frame" x="8" y="22" width="115" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="ZMr-0s-1rB" firstAttribute="top" secondItem="aiL-aJ-XV9" secondAttribute="top" id="4gM-es-aYV"/>
+                                                <constraint firstItem="H8h-Nd-mPg" firstAttribute="width" secondItem="aiL-aJ-XV9" secondAttribute="width" multiplier="0.4" id="9O4-bN-Eui"/>
+                                                <constraint firstAttribute="bottom" secondItem="n3q-ZR-ofV" secondAttribute="bottom" id="BkA-aJ-Xqz"/>
+                                                <constraint firstItem="H8h-Nd-mPg" firstAttribute="top" secondItem="ZMr-0s-1rB" secondAttribute="bottom" constant="1" id="ER5-15-hRK"/>
+                                                <constraint firstItem="n3q-ZR-ofV" firstAttribute="leading" secondItem="H8h-Nd-mPg" secondAttribute="trailing" constant="8" id="GfW-xg-G1Y"/>
+                                                <constraint firstAttribute="bottom" secondItem="H8h-Nd-mPg" secondAttribute="bottom" id="NS8-qn-ctu"/>
+                                                <constraint firstAttribute="trailing" secondItem="n3q-ZR-ofV" secondAttribute="trailing" id="WUD-Xx-WLs"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZMr-0s-1rB" secondAttribute="bottom" constant="22" id="Z1G-Dc-lXj"/>
+                                                <constraint firstItem="ZMr-0s-1rB" firstAttribute="leading" secondItem="aiL-aJ-XV9" secondAttribute="leading" constant="8" id="jzj-cM-rYx"/>
+                                                <constraint firstAttribute="trailing" secondItem="ZMr-0s-1rB" secondAttribute="trailing" id="pBM-Np-lvm"/>
+                                                <constraint firstItem="H8h-Nd-mPg" firstAttribute="leading" secondItem="aiL-aJ-XV9" secondAttribute="leading" constant="8" id="sFx-ZF-u9b"/>
+                                                <constraint firstItem="n3q-ZR-ofV" firstAttribute="top" secondItem="ZMr-0s-1rB" secondAttribute="bottom" constant="1" id="ux2-nH-OFt"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
@@ -2189,14 +2231,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcc-6i-zLJ">
-                                <rect key="frame" x="-4" y="64" width="328" height="44"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="djS-HO-fkq"/>
-                                </constraints>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
