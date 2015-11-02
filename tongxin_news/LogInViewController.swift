@@ -98,7 +98,7 @@ class LogInViewController: UIViewController {
         }
         
          MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile, "password": password, "method": "signin", "token": token!])
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SignIn.rawValue, parameters: ["mobile": mobile, "password": password, "method": "signin", "token": token!, "phoneType": 0])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 switch response.result {
