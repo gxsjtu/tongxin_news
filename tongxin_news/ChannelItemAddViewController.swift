@@ -8,11 +8,9 @@
 
 import UIKit
 
-class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIActionSheetDelegate,KASlideShowDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class ChannelItemAddViewController: UITableViewController, UIActionSheetDelegate, KASlideShowDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, UITextViewDelegate {
     
-    @IBOutlet weak var vBase: UIView!
     @IBOutlet weak var txtChannelItemPrice: UITextField!//价格
-    @IBOutlet weak var svBase: UIScrollView!
     @IBOutlet weak var slideView: KASlideShow!
     @IBOutlet weak var btnAddImage: UIButton!
     @IBOutlet weak var btnChannelItemLocation: UIButton!
@@ -25,8 +23,6 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     @IBOutlet weak var rbSelf: DLRadioButton!
     @IBOutlet weak var rbPurchase: DLRadioButton!
     @IBOutlet weak var rbSupply: DLRadioButton!
-    @IBOutlet weak var vChannelItemAddContent: UIView!
-    @IBOutlet weak var vChannelItemAddImage: UIView!
     let imagePick : UIImagePickerController = UIImagePickerController()
     var imageList : Array<UIImage> = []
     var channelName = "未知"
@@ -38,17 +34,13 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
     var imagesName : String?//图片名字
     var itemId : String?
     var isLocationEmpty = true
-    @IBOutlet weak var navChannelItem: UINavigationBar!
     
-    override func viewDidLayoutSubviews() {
-        self.svBase.contentSize = self.vBase.frame.size
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 
-        self.navChannelItem.topItem?.title = "商圈 - " + channelName + " - " + catalogName
+        self.title = "商圈 - " + channelName + " - " + catalogName
         
         rbPurchase.otherButtons = [rbSupply]
         rbPurchase.selected = true
@@ -56,7 +48,6 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         rbSelf.otherButtons = [rbOther]
         rbSelf.selected = true
         btnAddImage.backgroundColor = UIColor(red: 68/255, green: 73/255, blue: 75/255, alpha: 0.6)
-        btnChannelItemLocation.backgroundColor = UIColor(red: 36/255, green: 124/255, blue: 151/255, alpha: 1)
         
         self.btnAddImage.addTarget(self, action: "addImage", forControlEvents: UIControlEvents.TouchUpInside)
         self.slideView.delegate = self
@@ -69,9 +60,9 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         self.txtChannelItemDesc.placeholder = "货物详细描述"
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.txtChannelItemMobile.endEditing(false)
-    }
+//    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        self.txtChannelItemMobile.endEditing(false)
+//    }
     
     @IBAction func didPopupLocation(sender: AnyObject) {
         let location: TSLocateView = TSLocateView(title: "选择交货地", delegate: self)
@@ -232,11 +223,11 @@ class ChannelItemAddViewController: UIViewController, UITextFieldDelegate, UITex
         parameters["city"] = self.cityStr!
         
         
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        MBProgressHUD.showHUDAddedTo(self.navigationController?.view, animated: true)
         let urlRequest = self.uploadImage(parameters)
         upload(urlRequest.0, data: urlRequest.1).responseJSON{
         response in
-        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        MBProgressHUD.hideAllHUDsForView(self.navigationController?.view, animated: true)
         switch response.result {
             case .Success:
                 if let data: AnyObject = response.result.value

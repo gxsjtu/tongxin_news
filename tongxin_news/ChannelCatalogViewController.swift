@@ -55,12 +55,15 @@ class ChannelCatalogViewController: UIViewController, UITableViewDelegate, UITab
         {
             if let cell = sender as? ChannelCatalogTableViewCell
             {
-                if let des = segue.destinationViewController as? ChannelItemAddViewController
+                if let tmp = segue.destinationViewController as? UINavigationController
                 {
-                    des.channelName = self.channelName
-                    des.catalogName = cell.lblChannelCatalogName.text!
-                    des.catalogId = Int(cell.lblChannelCatalogId.text!)!
-                    des.channelId = self.channelId
+                    if let des = tmp.topViewController as? ChannelItemAddViewController
+                    {
+                        des.channelName = self.channelName
+                        des.catalogName = cell.lblChannelCatalogName.text!
+                        des.catalogId = Int(cell.lblChannelCatalogId.text!)!
+                        des.channelId = self.channelId
+                    }
                 }
             }
         }
