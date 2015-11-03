@@ -3361,7 +3361,7 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89U-bQ-QSR">
                                                     <rect key="frame" x="8" y="2" width="398" height="40"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="0.20392156859999999" green="0.70980392160000005" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="nnM-Rq-bu4"/>
                                                     </constraints>
@@ -3450,7 +3450,7 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-RG-zoD">
                                                     <rect key="frame" x="8" y="2" width="398" height="155"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" red="0.14117647059999999" green="0.74509803919999995" blue="0.94509803920000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" red="0.20392156859999999" green="0.70980392160000005" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="155" id="ryf-Hv-S1M"/>
                                                     </constraints>
@@ -4007,6 +4007,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
                         <color key="barTintColor" red="0.20392156859999999" green="0.70980392160000005" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
