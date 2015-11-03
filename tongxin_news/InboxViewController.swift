@@ -45,11 +45,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateBadgeNumber:", name: "Badge", object: nil)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        self.tbData.reloadData()
-    }
-    
     func updateBadgeNumber(notification: NSNotification)
     {
         if notification.userInfo == nil
@@ -122,7 +117,6 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
         let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
-        tbCell.viewWithTag(6)?.layer.masksToBounds = true
         tbCell.viewWithTag(6)?.layer.cornerRadius = 8.0
 
         if(tbCell.viewWithTag(3) != nil)

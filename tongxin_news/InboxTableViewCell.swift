@@ -24,7 +24,6 @@ class InboxTableViewCell: UITableViewCell {
     
     override func layoutSubviews() {
         let selection = UIView(frame: self.vCellMain.frame)
-        selection.layer.masksToBounds = true
         selection.layer.cornerRadius = 8.0
         selection.backgroundColor = UIColor(red: 180/255, green: 138/255, blue: 171/255, alpha: 0.5)
         self.selectedBackgroundView = selection
