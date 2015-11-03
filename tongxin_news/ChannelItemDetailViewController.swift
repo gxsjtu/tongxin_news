@@ -8,10 +8,10 @@
 
 import UIKit
 
-class ChannelItemDetailViewController: UIViewController {
+class ChannelItemDetailViewController: UITableViewController {
 
-    @IBOutlet weak var fromAll: UIBarButtonItem!
-    @IBOutlet weak var fromMyPublish: UIBarButtonItem!
+//    @IBOutlet weak var fromAll: UIBarButtonItem!
+//    @IBOutlet weak var fromMyPublish: UIBarButtonItem!
     @IBAction func didCallClicked(sender: AnyObject) {
             UIApplication.sharedApplication().openURL(NSURL(string: ("tel://" + mobile))!)
     }
@@ -23,21 +23,27 @@ class ChannelItemDetailViewController: UIViewController {
     @IBOutlet weak var lblChannelItemContact: UITextField!
     @IBOutlet weak var lblChannelItemQty: UITextField!
     @IBOutlet weak var lblChannelItemName: UITextField!
-    @IBOutlet weak var navChannelItemDetail: UINavigationBar!
-    
-    @IBOutlet weak var svBase: UIScrollView!
+
     @IBOutlet weak var lblChannelItemPrice: UITextField!
     var itemId = "0"
     var navTitle = "未知"
     var mobile = ""
     var tap: UITapGestureRecognizer?
     
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 9
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         getChannelItemDetail()
-        self.navChannelItemDetail.topItem?.title = navTitle
+        self.title = navTitle
         self.slideChannelItem.transitionDuration = 3.0
         self.slideChannelItem.transitionType = KASlideShowTransitionType.Slide
         self.slideChannelItem.imagesContentMode = UIViewContentMode.ScaleToFill
@@ -59,10 +65,6 @@ class ChannelItemDetailViewController: UIViewController {
         self.lblChannelItemDeliver.leftViewMode = .Always
         self.lblChannelItemName.leftView = UIImageView(image: UIImage(named: "sp_name"))
         self.lblChannelItemName.leftViewMode = .Always
-    }
-    
-    override func viewDidLayoutSubviews() {
-        self.svBase.contentSize = CGSize(width: self.view.frame.width, height: 640)
     }
     
     func tapOnSlide(recognizer:UITapGestureRecognizer) {

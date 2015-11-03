@@ -214,12 +214,15 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ChannelList2ItemDetail"
         {
-            if let des = segue.destinationViewController as? ChannelItemDetailViewController
+            if let tmp = segue.destinationViewController as? UINavigationController
             {
-                if let cell = sender as? ChannelVCTableViewCell
+                if let des = tmp.topViewController as? ChannelItemDetailViewController
                 {
-                    des.navTitle = "商圈 - " + channelName
-                    des.itemId = cell.lblChannelItemId.text!
+                    if let cell = sender as? ChannelVCTableViewCell
+                    {
+                        des.navTitle = "商圈 - " + channelName
+                        des.itemId = cell.lblChannelItemId.text!
+                    }
                 }
             }
         }

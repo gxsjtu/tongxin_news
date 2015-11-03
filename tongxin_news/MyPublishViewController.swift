@@ -122,12 +122,15 @@ class MyPublishViewController: UIViewController, UITableViewDataSource, UITableV
         // Pass the selected object to the new view controller.
         if segue.identifier == "myPublish2Detail"
         {
-            if let des = segue.destinationViewController as? ChannelItemDetailViewController
+            if let tmp = segue.destinationViewController as? UINavigationController
             {
-                if let cell = sender as? MyPublishTableViewCell
+                if let des = tmp.topViewController as? ChannelItemDetailViewController
                 {
-                    des.navTitle = "我的发布"
-                    des.itemId = cell.lblId.text!
+                    if let cell = sender as? MyPublishTableViewCell
+                    {
+                        des.navTitle = "我的发布"
+                        des.itemId = cell.lblId.text!
+                    }
                 }
             }
         }
