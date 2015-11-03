@@ -71,7 +71,10 @@ class ChannelCatalogViewController: UIViewController, UITableViewDelegate, UITab
     
     @IBAction func unwindFromChannelItemAdd2ChannelCatalog(segue: UIStoryboardSegue)
     {
-        
+        if let source = segue.sourceViewController as? ChannelItemAddViewController
+        {
+            source.slideView.stop()
+        }
     }
     
     

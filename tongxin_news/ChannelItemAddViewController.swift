@@ -58,6 +58,7 @@ class ChannelItemAddViewController: UITableViewController, UIActionSheetDelegate
         self.slideView.addGesture(KASlideShowGestureType.Tap)
         
         self.txtChannelItemDesc.placeholder = "货物详细描述"
+        self.txtChannelItemDesc.placeholderColor = UIColor.whiteColor()
     }
     
 //    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -129,7 +130,6 @@ class ChannelItemAddViewController: UITableViewController, UIActionSheetDelegate
         self.slideView.addImage(gotImage)
         self.slideView.start()
     }
-    
     
     func uploadImage(parameters : Dictionary<String,String>) -> (URLRequestConvertible,NSData)
     {
