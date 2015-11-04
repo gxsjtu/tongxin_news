@@ -260,7 +260,6 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
             {
                 if let des = segue.destinationViewController as? PriceHistoryViewController
                 {
-                    print(cell.lblPriceDetailId.text)
                     des.navTitle = cell.lblPriceMarketName.text! + " - " + cell.lblPriceDetailName.text!
                     des.productId = cell.lblPriceDetailId.text!
                 }
