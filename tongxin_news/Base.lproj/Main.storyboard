@@ -3245,25 +3245,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XKl-w4-Bcw" id="shW-tb-VxC">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4eF-Lk-D2p">
-                                                    <rect key="frame" x="8" y="2" width="398" height="40"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="50U-WN-uEV"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstItem="4eF-Lk-D2p" firstAttribute="top" secondItem="shW-tb-VxC" secondAttribute="top" constant="2" id="037-ZQ-LIH"/>
-                                                <constraint firstAttribute="bottom" secondItem="4eF-Lk-D2p" secondAttribute="bottom" constant="1" id="O6I-w6-Iyk"/>
-                                                <constraint firstAttribute="trailing" secondItem="4eF-Lk-D2p" secondAttribute="trailing" constant="8" id="P14-Qv-3kr"/>
-                                                <constraint firstItem="4eF-Lk-D2p" firstAttribute="leading" secondItem="shW-tb-VxC" secondAttribute="leading" constant="8" id="fxq-Qn-C1z"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -3273,25 +3255,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eyA-l4-WvU" id="Ahd-pE-6XN">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPl-qO-hV2">
-                                                    <rect key="frame" x="8" y="2" width="398" height="40"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="U9A-FR-EqX"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="qPl-qO-hV2" secondAttribute="trailing" constant="8" id="lmB-nG-CtN"/>
-                                                <constraint firstAttribute="bottom" secondItem="qPl-qO-hV2" secondAttribute="bottom" constant="1" id="p73-2N-ouR"/>
-                                                <constraint firstItem="qPl-qO-hV2" firstAttribute="leading" secondItem="Ahd-pE-6XN" secondAttribute="leading" constant="8" id="r1L-2t-O5R"/>
-                                                <constraint firstItem="qPl-qO-hV2" firstAttribute="top" secondItem="Ahd-pE-6XN" secondAttribute="top" constant="2" id="rcP-Ul-IRZ"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -3301,25 +3265,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jqK-Qr-feV" id="14g-Ht-zKf">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZB4-Jh-xi3">
-                                                    <rect key="frame" x="8" y="2" width="398" height="40"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="8mF-ZT-AB9"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="ZB4-Jh-xi3" secondAttribute="trailing" constant="8" id="bPb-zu-7ay"/>
-                                                <constraint firstItem="ZB4-Jh-xi3" firstAttribute="leading" secondItem="14g-Ht-zKf" secondAttribute="leading" constant="8" id="lwV-w7-gAf"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZB4-Jh-xi3" secondAttribute="bottom" constant="1" id="pNl-Dd-NvH"/>
-                                                <constraint firstItem="ZB4-Jh-xi3" firstAttribute="top" secondItem="14g-Ht-zKf" secondAttribute="top" constant="2" id="wVR-Yx-ntW"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -3329,25 +3275,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="x1g-T2-vYU" id="uKE-De-0e9">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9io-9v-bac">
-                                                    <rect key="frame" x="8" y="2" width="398" height="40"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="Cfb-bI-tyj"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstItem="9io-9v-bac" firstAttribute="top" secondItem="uKE-De-0e9" secondAttribute="top" constant="2" id="874-ff-HPV"/>
-                                                <constraint firstItem="9io-9v-bac" firstAttribute="leading" secondItem="uKE-De-0e9" secondAttribute="leading" constant="8" id="Dlc-p7-gN3"/>
-                                                <constraint firstAttribute="bottom" secondItem="9io-9v-bac" secondAttribute="bottom" constant="1" id="fCe-EP-DkP"/>
-                                                <constraint firstAttribute="trailing" secondItem="9io-9v-bac" secondAttribute="trailing" constant="8" id="lht-44-rxx"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -3357,30 +3285,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KMQ-Bs-bR1" id="eEq-Cx-Epe">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="89U-bQ-QSR">
-                                                    <rect key="frame" x="8" y="2" width="398" height="40"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" red="0.20392156859999999" green="0.70980392160000005" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="nnM-Rq-bu4"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <state key="normal" title="">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="didCallClicked:" destination="7sY-JK-W36" eventType="touchUpInside" id="4b0-yj-HEJ"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="89U-bQ-QSR" secondAttribute="bottom" constant="1" id="2bG-Lc-wKH"/>
-                                                <constraint firstItem="89U-bQ-QSR" firstAttribute="top" secondItem="eEq-Cx-Epe" secondAttribute="top" constant="2" id="8zu-jx-rzm"/>
-                                                <constraint firstAttribute="trailing" secondItem="89U-bQ-QSR" secondAttribute="trailing" constant="8" id="qNO-oE-c3k"/>
-                                                <constraint firstItem="89U-bQ-QSR" firstAttribute="leading" secondItem="eEq-Cx-Epe" secondAttribute="leading" constant="8" id="z5f-fa-wnA"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -3390,25 +3295,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IBC-ph-8d5" id="nzR-0l-rcr">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FKg-e0-v4L">
-                                                    <rect key="frame" x="8" y="2" width="398" height="40"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="9ip-48-B5S"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstItem="FKg-e0-v4L" firstAttribute="leading" secondItem="nzR-0l-rcr" secondAttribute="leading" constant="8" id="35U-nr-SL0"/>
-                                                <constraint firstAttribute="bottom" secondItem="FKg-e0-v4L" secondAttribute="bottom" constant="1" id="HL8-mo-hpF"/>
-                                                <constraint firstItem="FKg-e0-v4L" firstAttribute="top" secondItem="nzR-0l-rcr" secondAttribute="top" constant="2" id="SrO-4c-58v"/>
-                                                <constraint firstAttribute="trailing" secondItem="FKg-e0-v4L" secondAttribute="trailing" constant="8" id="XTU-Zk-55V"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -3418,54 +3305,17 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gu9-GH-31h" id="Ff6-xf-wVI">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U5a-fE-iEC">
-                                                    <rect key="frame" x="8" y="2" width="398" height="40"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="40" id="kwD-l3-VUT"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
-                                            </subviews>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="U5a-fE-iEC" secondAttribute="trailing" constant="8" id="8Z2-ot-l25"/>
-                                                <constraint firstItem="U5a-fE-iEC" firstAttribute="top" secondItem="Ff6-xf-wVI" secondAttribute="top" constant="2" id="ApX-Ol-sE8"/>
-                                                <constraint firstItem="U5a-fE-iEC" firstAttribute="leading" secondItem="Ff6-xf-wVI" secondAttribute="leading" constant="8" id="Oib-d9-pTR"/>
-                                                <constraint firstAttribute="bottom" secondItem="U5a-fE-iEC" secondAttribute="bottom" constant="1" id="Q6i-Mq-F4D"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="160" id="End-bw-ud4">
-                                        <rect key="frame" x="0.0" y="508" width="414" height="160"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="End-bw-ud4">
+                                        <rect key="frame" x="0.0" y="508" width="414" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="End-bw-ud4" id="Tit-7J-1Kj">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="159"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHN-RG-zoD">
-                                                    <rect key="frame" x="8" y="2" width="398" height="155"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" red="0.20392156859999999" green="0.70980392160000005" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="155" id="ryf-Hv-S1M"/>
-                                                    </constraints>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
-                                            </subviews>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="ZHN-RG-zoD" secondAttribute="trailing" constant="8" id="2qN-l7-3fU"/>
-                                                <constraint firstAttribute="bottom" secondItem="ZHN-RG-zoD" secondAttribute="bottom" constant="2" id="NCZ-Gc-4fW"/>
-                                                <constraint firstItem="ZHN-RG-zoD" firstAttribute="top" secondItem="Tit-7J-1Kj" secondAttribute="top" constant="2" id="qUz-y0-xuJ"/>
-                                                <constraint firstItem="ZHN-RG-zoD" firstAttribute="leading" secondItem="Tit-7J-1Kj" secondAttribute="leading" constant="8" id="uXP-yU-BwT"/>
-                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -3494,15 +3344,15 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="736"/>
                     <connections>
-                        <outlet property="btnMobile" destination="89U-bQ-QSR" id="Lkm-Zj-Dbm"/>
-                        <outlet property="lblChannelItemContact" destination="9io-9v-bac" id="2h3-xG-O8V"/>
-                        <outlet property="lblChannelItemDeliver" destination="U5a-fE-iEC" id="6YO-sl-F7r"/>
-                        <outlet property="lblChannelItemLocation" destination="FKg-e0-v4L" id="jPQ-o8-Qrz"/>
-                        <outlet property="lblChannelItemName" destination="4eF-Lk-D2p" id="c2e-gB-oea"/>
-                        <outlet property="lblChannelItemPrice" destination="ZB4-Jh-xi3" id="HU9-A6-84L"/>
-                        <outlet property="lblChannelItemQty" destination="qPl-qO-hV2" id="qoP-mT-0Lv"/>
+                        <outlet property="cellContact" destination="x1g-T2-vYU" id="WVj-lh-KYg"/>
+                        <outlet property="cellDelivery" destination="gu9-GH-31h" id="RWW-8i-91E"/>
+                        <outlet property="cellDesc" destination="End-bw-ud4" id="C8G-aD-DNU"/>
+                        <outlet property="cellLocation" destination="IBC-ph-8d5" id="EEY-bx-02R"/>
+                        <outlet property="cellMobile" destination="KMQ-Bs-bR1" id="zKT-dV-b5z"/>
+                        <outlet property="cellPrice" destination="jqK-Qr-feV" id="ame-hS-ss7"/>
+                        <outlet property="cellQty" destination="eyA-l4-WvU" id="81w-e6-mSv"/>
+                        <outlet property="cellSP" destination="XKl-w4-Bcw" id="u9q-em-bSR"/>
                         <outlet property="slideChannelItem" destination="SBG-g1-8qP" id="KEv-wQ-8ES"/>
-                        <outlet property="txtChannelItemDesc" destination="ZHN-RG-zoD" id="9d4-5s-K7v"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZbV-I0-yXh" userLabel="First Responder" sceneMemberID="firstResponder"/>

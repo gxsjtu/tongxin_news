@@ -10,21 +10,16 @@ import UIKit
 
 class ChannelItemDetailViewController: UITableViewController {
 
-//    @IBOutlet weak var fromAll: UIBarButtonItem!
-//    @IBOutlet weak var fromMyPublish: UIBarButtonItem!
-    @IBAction func didCallClicked(sender: AnyObject) {
-            UIApplication.sharedApplication().openURL(NSURL(string: ("tel://" + mobile))!)
-    }
-    @IBOutlet weak var btnMobile: UIButton!
+    @IBOutlet weak var cellDesc: UITableViewCell!
+    @IBOutlet weak var cellMobile: UITableViewCell!
+    @IBOutlet weak var cellDelivery: UITableViewCell!
+    @IBOutlet weak var cellLocation: UITableViewCell!
+    @IBOutlet weak var cellContact: UITableViewCell!
+    @IBOutlet weak var cellPrice: UITableViewCell!
+    @IBOutlet weak var cellQty: UITableViewCell!
+    @IBOutlet weak var cellSP: UITableViewCell!
     @IBOutlet weak var slideChannelItem: KASlideShow!
-    @IBOutlet weak var txtChannelItemDesc: UITextView!
-    @IBOutlet weak var lblChannelItemDeliver: UITextField!
-    @IBOutlet weak var lblChannelItemLocation: UITextField!
-    @IBOutlet weak var lblChannelItemContact: UITextField!
-    @IBOutlet weak var lblChannelItemQty: UITextField!
-    @IBOutlet weak var lblChannelItemName: UITextField!
-
-    @IBOutlet weak var lblChannelItemPrice: UITextField!
+    
     var itemId = "0"
     var navTitle = "未知"
     var mobile = ""
@@ -42,29 +37,36 @@ class ChannelItemDetailViewController: UITableViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.tableView.rowHeight = 100
+        self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
         getChannelItemDetail()
         self.title = navTitle
         self.slideChannelItem.transitionDuration = 3.0
         self.slideChannelItem.transitionType = KASlideShowTransitionType.Slide
         self.slideChannelItem.imagesContentMode = UIViewContentMode.ScaleToFill
-        btnMobile.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         
         tap = UITapGestureRecognizer(target: self, action: "tapOnSlide:")
         tap?.numberOfTapsRequired = 1
         self.slideChannelItem.addGestureRecognizer(tap!)
         
-        self.lblChannelItemPrice.leftView = UIImageView(image: UIImage(named: "sp_price"))
-        self.lblChannelItemPrice.leftViewMode = .Always
-        self.lblChannelItemQty.leftView = UIImageView(image: UIImage(named: "sp_qty"))
-        self.lblChannelItemQty.leftViewMode = .Always
-        self.lblChannelItemContact.leftView = UIImageView(image: UIImage(named: "sp_contact"))
-        self.lblChannelItemContact.leftViewMode = .Always
-        self.lblChannelItemLocation.leftView = UIImageView(image: UIImage(named: "sp_location"))
-        self.lblChannelItemLocation.leftViewMode = .Always
-        self.lblChannelItemDeliver.leftView = UIImageView(image: UIImage(named: "sp_delivery"))
-        self.lblChannelItemDeliver.leftViewMode = .Always
-        self.lblChannelItemName.leftView = UIImageView(image: UIImage(named: "sp_name"))
-        self.lblChannelItemName.leftViewMode = .Always
+        self.cellSP.imageView?.image = UIImage(named: "sp_name")
+        self.cellPrice.imageView?.image = UIImage(named: "sp_price")
+        self.cellLocation.imageView?.image = UIImage(named: "sp_location")
+        self.cellDelivery.imageView?.image = UIImage(named: "sp_delivery")
+        self.cellContact.imageView?.image = UIImage(named: "sp_contact")
+        self.cellQty.imageView?.image = UIImage(named: "sp_qty")
+        self.cellMobile.imageView?.image = UIImage(named: "sp_mobile")
+        self.cellDesc.imageView?.image = UIImage(named: "sp_desc")
+        
+        self.cellDesc.textLabel?.font = UIFont.systemFontOfSize(15)
+        self.cellDesc.textLabel?.numberOfLines = 0
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 5
+        {
+            UIApplication.sharedApplication().openURL(NSURL(string: ("tel://" + mobile))!)
+        }
     }
     
     func tapOnSlide(recognizer:UITapGestureRecognizer) {
@@ -111,21 +113,20 @@ class ChannelItemDetailViewController: UITableViewController {
                         {
                             if i["deliver"]!.stringValue == "true"
                             {
-                                self.lblChannelItemDeliver.text = "  自提"
+                                self.cellDelivery.textLabel?.text = "自提"
                             }
                             else
                             {
-                                self.lblChannelItemDeliver.text = "  发货"
+                                self.cellDelivery.textLabel?.text = "发货"
                             }
-                            self.lblChannelItemContact.text = "  " + i["contact"]!.stringValue
-                            self.lblChannelItemLocation.text = "  " + i["location"]!.stringValue
+                            self.cellContact.textLabel?.text = i["contact"]!.stringValue
+                            self.cellLocation.textLabel?.text = i["location"]!.stringValue
                             self.mobile = i["mobile"]!.stringValue
-                            self.btnMobile.setTitle("  " + self.mobile + "（点击拨打）", forState: UIControlState.Normal)
-                            self.lblChannelItemName.text = "  " + i["name"]!.stringValue
-                            self.lblChannelItemQty.text = "  " + i["quantity"]!.stringValue
-                            self.txtChannelItemDesc.text = "  " + i["description"]!.stringValue
-                            self.txtChannelItemDesc.textColor = UIColor.whiteColor()
-                            self.lblChannelItemPrice.text = "  " + i["price"]!.stringValue
+                            self.cellMobile.textLabel?.text = self.mobile + "（点击拨打）"
+                            self.cellSP.textLabel?.text  = i["name"]!.stringValue
+                            self.cellQty.textLabel?.text = i["quantity"]!.stringValue
+                            self.cellDesc.textLabel?.text = i["description"]!.stringValue
+                            self.cellPrice.textLabel?.text = i["price"]!.stringValue
           
                             self.slideChannelItem.images.removeAllObjects()
                             for avatars in i["avatars"]!.arrayValue
