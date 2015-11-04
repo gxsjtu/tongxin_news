@@ -170,6 +170,7 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
         UIView.animateWithDuration(1, animations: {() -> Void in
             self.dpPriceHistory.frame.size = CGSize(width: self.view.frame.width, height: 200)},
             completion: nil)
+        self.dpPriceHistory.date = formatter.dateFromString(self.txtPriceHistoryStart.text!)!
     }
     
     @IBAction func btnPriceHistoryEndTouchDown(sender: AnyObject) {
@@ -179,6 +180,7 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
         UIView.animateWithDuration(1, animations: {() -> Void in
             self.dpPriceHistory.frame.size = CGSize(width: self.view.frame.width, height: 200)},
             completion: nil)
+        self.dpPriceHistory.date = formatter.dateFromString(self.txtPriceHistoryEnd.text!)!
     }
     
     override func didReceiveMemoryWarning() {
