@@ -18,7 +18,7 @@ class ChannelItemImageViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.channelItemImage.contentMode = UIViewContentMode.ScaleToFill
+        self.channelItemImage.contentMode = UIViewContentMode.ScaleAspectFit
         self.channelItemImage.image = self.image
         tap.numberOfTapsRequired = 1
         self.channelItemImage.userInteractionEnabled = true
