@@ -47,7 +47,6 @@ class ChannelItemDetailViewController: UITableViewController {
         
         tap = UITapGestureRecognizer(target: self, action: "tapOnSlide:")
         tap?.numberOfTapsRequired = 1
-        self.slideChannelItem.addGestureRecognizer(tap!)
         
         self.cellSP.imageView?.image = UIImage(named: "sp_name")
         self.cellPrice.imageView?.image = UIImage(named: "sp_price")
@@ -67,6 +66,7 @@ class ChannelItemDetailViewController: UITableViewController {
     func didFinishLoadImages()
     {
         MBProgressHUD.hideAllHUDsForView(self.slideChannelItem, animated: true)
+        self.slideChannelItem.addGestureRecognizer(tap!)
         self.slideChannelItem.start()
     }
     
@@ -108,6 +108,7 @@ class ChannelItemDetailViewController: UITableViewController {
     func getChannelItemDetail()
     {
          MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        self.slideChannelItem.removeGestures()
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SPList.rawValue, parameters: ["method": "getitem", "id": itemId])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
