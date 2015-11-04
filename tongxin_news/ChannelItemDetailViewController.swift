@@ -60,6 +60,14 @@ class ChannelItemDetailViewController: UITableViewController {
         
         self.cellDesc.textLabel?.font = UIFont.systemFontOfSize(15)
         self.cellDesc.textLabel?.numberOfLines = 0
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("didFinishLoadImages"), name: "didFinishLoadImages", object: self)
+    }
+    
+    func didFinishLoadImages()
+    {
+        MBProgressHUD.hideAllHUDsForView(self.slideChannelItem, animated: true)
+        self.slideChannelItem.start()
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -70,7 +78,6 @@ class ChannelItemDetailViewController: UITableViewController {
     }
     
     func tapOnSlide(recognizer:UITapGestureRecognizer) {
-        
         let channelItemImage = self.storyboard?.instantiateViewControllerWithIdentifier("ChannelItemImageVC") as! ChannelItemImageViewController
         channelItemImage.image = slideChannelItem.images[(Int)(self.slideChannelItem.currentIndex)] as? UIImage
         self.presentViewController(channelItemImage, animated: true, completion: nil)
@@ -81,8 +88,8 @@ class ChannelItemDetailViewController: UITableViewController {
     }
     
     @IBAction func unwindFromImage2Detail(segue: UIStoryboardSegue)
-    {
-        
+    {""
+        self.slideChannelItem.start()
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -128,7 +135,9 @@ class ChannelItemDetailViewController: UITableViewController {
                             self.cellDesc.textLabel?.text = i["description"]!.stringValue
                             self.cellPrice.textLabel?.text = i["price"]!.stringValue
           
+                            self.slideChannelItem.stop()
                             self.slideChannelItem.images.removeAllObjects()
+                            var imageCount = 0
                             for avatars in i["avatars"]!.arrayValue
                             {
                                 if let avatar = avatars.dictionary
@@ -137,11 +146,14 @@ class ChannelItemDetailViewController: UITableViewController {
                                     SDWebImageDownloader.sharedDownloader().downloadImageWithURL(NSURL(string: avatar["avatar"]!.stringValue), options: SDWebImageDownloaderOptions(), progress: nil, completed: { (image: UIImage!, data: NSData!, error: NSError!, finished: Bool) -> Void in
                                         if finished == true
                                         {
-                                            MBProgressHUD.hideAllHUDsForView(self.slideChannelItem, animated: true)
                                             if image != nil
                                             {
+                                                imageCount++
                                                 self.slideChannelItem.addImage(image)
-                                                self.slideChannelItem.start()
+                                                if imageCount == i["avatars"]!.arrayValue.count
+                                                {
+                                                    NSNotificationCenter.defaultCenter().postNotificationName("didFinishLoadImages", object: self)
+                                                }
                                             }
                                         }})
                                 }

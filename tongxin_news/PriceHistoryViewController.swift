@@ -166,11 +166,19 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
     @IBAction func btnPriceHistoryStartTouchDown(sender: AnyObject) {
         self.toolbarPriceHistory.hidden = false
         self.dpPriceHistory.hidden = false
+        self.dpPriceHistory.frame.size = CGSize(width: self.view.frame.width, height: 0)
+        UIView.animateWithDuration(1, animations: {() -> Void in
+            self.dpPriceHistory.frame.size = CGSize(width: self.view.frame.width, height: 200)},
+            completion: nil)
     }
     
     @IBAction func btnPriceHistoryEndTouchDown(sender: AnyObject) {
         self.toolbarPriceHistory.hidden = false
         self.dpPriceHistory.hidden = false
+        self.dpPriceHistory.frame.size = CGSize(width: self.view.frame.width, height: 0)
+        UIView.animateWithDuration(1, animations: {() -> Void in
+            self.dpPriceHistory.frame.size = CGSize(width: self.view.frame.width, height: 200)},
+            completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
