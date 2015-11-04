@@ -137,9 +137,12 @@ class ChannelItemDetailViewController: UITableViewController {
                                     SDWebImageDownloader.sharedDownloader().downloadImageWithURL(NSURL(string: avatar["avatar"]!.stringValue), options: SDWebImageDownloaderOptions(), progress: nil, completed: { (image: UIImage!, data: NSData!, error: NSError!, finished: Bool) -> Void in
                                         if finished == true
                                         {
-                                            self.slideChannelItem.addImage(image)
                                             MBProgressHUD.hideAllHUDsForView(self.slideChannelItem, animated: true)
-                                            self.slideChannelItem.start()
+                                            if image != nil
+                                            {
+                                                self.slideChannelItem.addImage(image)
+                                                self.slideChannelItem.start()
+                                            }
                                         }})
                                 }
                             }
