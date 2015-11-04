@@ -3309,11 +3309,11 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="End-bw-ud4">
-                                        <rect key="frame" x="0.0" y="508" width="414" height="200"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="220" id="End-bw-ud4">
+                                        <rect key="frame" x="0.0" y="508" width="414" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="End-bw-ud4" id="Tit-7J-1Kj">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="199"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="219"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>

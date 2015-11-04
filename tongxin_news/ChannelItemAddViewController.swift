@@ -74,7 +74,6 @@ class ChannelItemAddViewController: UITableViewController, UIActionSheetDelegate
         location.showInView(self.view)
     }
     
-    
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
         if let locationView = actionSheet as? TSLocateView
         {
