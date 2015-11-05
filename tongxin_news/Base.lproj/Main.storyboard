@@ -3337,13 +3337,14 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="KdH-JU-As4">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="didRefreshChannelItems:" destination="7sY-JK-W36" id="IEs-BZ-pH8"/>
+                                <action selector="didRefreshChannelItems:" destination="7sY-JK-W36" id="po0-BX-Al9"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="414" height="736"/>
                     <connections>
+                        <outlet property="btnRefresh" destination="KdH-JU-As4" id="In9-rA-k7j"/>
                         <outlet property="cellContact" destination="x1g-T2-vYU" id="WVj-lh-KYg"/>
                         <outlet property="cellDelivery" destination="gu9-GH-31h" id="RWW-8i-91E"/>
                         <outlet property="cellDesc" destination="End-bw-ud4" id="C8G-aD-DNU"/>
@@ -3899,6 +3900,6 @@
         <image name="铁矿石" width="90" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0TJ-Gr-WZB"/>
+        <segue reference="Gp3-Eg-VU8"/>
     </inferredMetricsTieBreakers>
 </document>

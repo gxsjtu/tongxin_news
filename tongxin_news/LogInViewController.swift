@@ -13,7 +13,7 @@ class LogInViewController: UIViewController {
     var isForcedLogout = false
     
     @IBAction func didCallClicked(sender: AnyObject) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://021-62156169")!)
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://4008720588")!)
     }
     @IBOutlet weak var btnApplyTrial: UIButton!
     @IBOutlet weak var btnLogInPwd: UITextField!

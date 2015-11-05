@@ -10,6 +10,7 @@ import UIKit
 
 class ChannelItemDetailViewController: UITableViewController {
 
+    @IBOutlet weak var btnRefresh: UIBarButtonItem!
     @IBOutlet weak var cellDesc: UITableViewCell!
     @IBOutlet weak var cellMobile: UITableViewCell!
     @IBOutlet weak var cellDelivery: UITableViewCell!
@@ -68,6 +69,7 @@ class ChannelItemDetailViewController: UITableViewController {
         MBProgressHUD.hideAllHUDsForView(self.slideChannelItem, animated: true)
         self.slideChannelItem.addGestureRecognizer(tap!)
         self.slideChannelItem.start()
+        self.btnRefresh.enabled = true
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -84,11 +86,12 @@ class ChannelItemDetailViewController: UITableViewController {
     }
 
     @IBAction func didRefreshChannelItems(sender: AnyObject) {
+        self.btnRefresh.enabled = false
         getChannelItemDetail()
     }
     
     @IBAction func unwindFromImage2Detail(segue: UIStoryboardSegue)
-    {""
+    {
         self.slideChannelItem.start()
     }
     
