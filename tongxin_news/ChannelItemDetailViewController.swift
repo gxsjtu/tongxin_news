@@ -40,6 +40,7 @@ class ChannelItemDetailViewController: UITableViewController {
         // Do any additional setup after loading the view.
         self.tableView.rowHeight = 100
         self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        self.btnRefresh.enabled = false
         getChannelItemDetail()
         self.title = navTitle
         self.slideChannelItem.transitionDuration = 3.0

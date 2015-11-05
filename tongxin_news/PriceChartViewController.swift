@@ -46,12 +46,13 @@ class PriceChartViewController: UIViewController, ChartDelegate {
         
         for (l, h, d, _): (String, String, String, String) in Array(history.reverse())
         {
+            print(d)
             low.append((l as NSString).floatValue)
             high.append((h as NSString).floatValue)
             date.append(d)
         }
-        
-        let chart = Chart(frame: CGRect(x: 10, y: 10, width: self.vChart.frame.width - 20, height: self.vChart.frame.height - 120))
+
+        let chart = Chart()
         chart.delegate = self
         chart.xLabelsFormatter = {(labelIndex: Int, labelValue: Float) -> String in
             return ""}
@@ -63,7 +64,6 @@ class PriceChartViewController: UIViewController, ChartDelegate {
         chart.addSeries(series1)
         
         self.vChart.addSubview(chart)
-        
         //添加constraints
         let leading = NSLayoutConstraint(item: chart, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.vChart, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
         
