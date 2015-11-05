@@ -55,7 +55,7 @@
     NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
     paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
     
-    NSDictionary * attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:14.0],
+    NSDictionary * attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:15.0],
                                   NSParagraphStyleAttributeName:paragraphStyle
                                   };
     
