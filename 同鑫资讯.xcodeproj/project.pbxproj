@@ -13,7 +13,6 @@
 		3515CB221B94367200EC54D7 /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB1F1B94367200EC54D7 /* ChartColors.swift */; };
 		3515CB231B94367200EC54D7 /* ChartSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB201B94367200EC54D7 /* ChartSeries.swift */; };
 		3515CB251B9BE45000EC54D7 /* EcosystemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB241B9BE45000EC54D7 /* EcosystemViewController.swift */; };
-		3515CB431B9D19FA00EC54D7 /* UIColor+MLPFlatColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB421B9D19FA00EC54D7 /* UIColor+MLPFlatColors.m */; };
 		3515CB461B9D552600EC54D7 /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB451B9D552600EC54D7 /* ChannelViewController.swift */; };
 		3515CB481B9D62AA00EC54D7 /* ChannelCatalogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */; };
 		3515CB4A1B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */; };
@@ -114,8 +113,6 @@
 		3515CB1F1B94367200EC54D7 /* ChartColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
 		3515CB201B94367200EC54D7 /* ChartSeries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartSeries.swift; sourceTree = "<group>"; };
 		3515CB241B9BE45000EC54D7 /* EcosystemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EcosystemViewController.swift; sourceTree = "<group>"; };
-		3515CB411B9D19FA00EC54D7 /* UIColor+MLPFlatColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MLPFlatColors.h"; sourceTree = "<group>"; };
-		3515CB421B9D19FA00EC54D7 /* UIColor+MLPFlatColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MLPFlatColors.m"; sourceTree = "<group>"; };
 		3515CB451B9D552600EC54D7 /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 		3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCatalogViewController.swift; sourceTree = "<group>"; };
 		3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCatalogTableViewCell.swift; sourceTree = "<group>"; };
@@ -277,15 +274,6 @@
 			name = SwiftChart;
 			sourceTree = "<group>";
 		};
-		3515CB401B9D19EB00EC54D7 /* UIColor+MLPFlatColors */ = {
-			isa = PBXGroup;
-			children = (
-				3515CB411B9D19FA00EC54D7 /* UIColor+MLPFlatColors.h */,
-				3515CB421B9D19FA00EC54D7 /* UIColor+MLPFlatColors.m */,
-			);
-			name = "UIColor+MLPFlatColors";
-			sourceTree = "<group>";
-		};
 		356803691BA02F0F00BB50AE /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -413,7 +401,6 @@
 				3587007C1B9EA47500B09351 /* KASlideShow */,
 				358700711B9E78AA00B09351 /* TSLocateView */,
 				3587006A1B9D898900B09351 /* RadioButton */,
-				3515CB401B9D19EB00EC54D7 /* UIColor+MLPFlatColors */,
 				3515CB1D1B94366700EC54D7 /* SwiftChart */,
 				35AC87481B8AB14A00B44C7E /* MJRefresh */,
 				35C712891B86CC4C004B267A /* HTHorizontalSelectionList */,
@@ -724,7 +711,6 @@
 				356803941BA0304600BB50AE /* UIButton+WebCache.m in Sources */,
 				358700831B9FE86200B09351 /* ChannelItemDetailViewController.swift in Sources */,
 				35B278991B8FFEFD00FA2399 /* PriceHistoryViewController.swift in Sources */,
-				3515CB431B9D19FA00EC54D7 /* UIColor+MLPFlatColors.m in Sources */,
 				35C712651B86AEE9004B267A /* SKAlertView.m in Sources */,
 				35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */,
 				355C95A71B8C0665005595EA /* PriceDetailViewController.swift in Sources */,

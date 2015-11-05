@@ -51,9 +51,20 @@
     if (w == 0) {
         w = SK_ALERT_VIEW_DEFAULT_WIDTH;
     }
-    CGSize retsize = [text sizeWithFont:[UIFont systemFontOfSize:14.0] constrainedToSize:CGSizeMake(w, SK_ALERT_VIEW_MAX_HEIGHT) lineBreakMode:NSLineBreakByWordWrapping];
     
-    return CGSizeMake(retsize.width+SK_LR_PADDING*2, retsize.height+SK_TB_PADDING*2);
+    NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
+    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+    
+    NSDictionary * attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:14.0],
+                                  NSParagraphStyleAttributeName:paragraphStyle
+                                  };
+    
+    CGRect retsize = [text boundingRectWithSize:CGSizeMake(w, SK_ALERT_VIEW_MAX_HEIGHT)
+                                         options:NSStringDrawingUsesLineFragmentOrigin
+                                      attributes:attributes
+                                         context:nil];
+
+    return CGSizeMake(retsize.size.width+SK_LR_PADDING*2, retsize.size.height+SK_TB_PADDING*2);
 }
 
 @end

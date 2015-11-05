@@ -46,7 +46,6 @@ class PriceChartViewController: UIViewController, ChartDelegate {
         
         for (l, h, d, _): (String, String, String, String) in Array(history.reverse())
         {
-            print(d)
             low.append((l as NSString).floatValue)
             high.append((h as NSString).floatValue)
             date.append(d)

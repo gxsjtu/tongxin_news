@@ -7,7 +7,6 @@
 #import "MBProgressHUD.h"
 #import "HTHorizontalSelectionList.h"
 #import "MJRefresh.h"
-#import "UIColor+MLPFlatColors.h"
 #import "DLRadioButton.h"
 #import "TSLocation.h"
 #import "TSLocateView.h"
