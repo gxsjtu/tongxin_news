@@ -10,6 +10,7 @@ import UIKit
 
 class InboxTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblMsg: UILabel!
     @IBOutlet weak var vCellMain: UIView!
     override func awakeFromNib() {
         super.awakeFromNib()
