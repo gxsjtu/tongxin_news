@@ -1617,11 +1617,11 @@
                                             <animations/>
                                             <constraints>
                                                 <constraint firstItem="tlK-8B-2p5" firstAttribute="top" secondItem="NEL-CO-PFu" secondAttribute="top" constant="11" id="2rv-IV-iQS"/>
-                                                <constraint firstAttribute="bottom" secondItem="gy0-GX-rgz" secondAttribute="bottom" constant="11" id="2uI-O9-65N"/>
-                                                <constraint firstItem="gy0-GX-rgz" firstAttribute="top" secondItem="NEL-CO-PFu" secondAttribute="top" constant="11" id="3jd-pg-oCA"/>
-                                                <constraint firstAttribute="trailing" secondItem="gy0-GX-rgz" secondAttribute="trailing" constant="8" id="HH6-OZ-PAw"/>
-                                                <constraint firstItem="gy0-GX-rgz" firstAttribute="leading" secondItem="tlK-8B-2p5" secondAttribute="trailing" constant="8" id="NFt-Db-cuq"/>
+                                                <constraint firstItem="gy0-GX-rgz" firstAttribute="leading" secondItem="tlK-8B-2p5" secondAttribute="trailing" constant="8" id="BEV-qh-M3W"/>
+                                                <constraint firstAttribute="trailing" secondItem="gy0-GX-rgz" secondAttribute="trailing" constant="8" id="LUk-WS-heb"/>
+                                                <constraint firstItem="gy0-GX-rgz" firstAttribute="top" secondItem="NEL-CO-PFu" secondAttribute="top" constant="11" id="Twm-fK-1vF"/>
                                                 <constraint firstAttribute="bottom" secondItem="tlK-8B-2p5" secondAttribute="bottom" constant="11" id="eAR-SH-r1Y"/>
+                                                <constraint firstAttribute="bottom" secondItem="gy0-GX-rgz" secondAttribute="bottom" constant="11" id="uyI-Oq-NxA"/>
                                                 <constraint firstItem="tlK-8B-2p5" firstAttribute="leading" secondItem="NEL-CO-PFu" secondAttribute="leading" constant="8" id="wPS-86-uon"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -1645,22 +1645,38 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLp-R5-DDG">
-                                                    <rect key="frame" x="118" y="11" width="194" height="21"/>
+                                                    <rect key="frame" x="118" y="11" width="120" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylv-pP-51s">
+                                                    <rect key="frame" x="246" y="7" width="66" height="30"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.20392156859999999" green="0.70980392160000005" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="66" id="et5-pb-veX"/>
+                                                    </constraints>
+                                                    <state key="normal" title="续费">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="didPayClicked:" destination="wzG-bF-rGO" eventType="touchUpInside" id="ooa-A4-C6Q"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="sxX-DY-NBP" secondAttribute="bottom" constant="11" id="C0P-JA-Jzf"/>
+                                                <constraint firstItem="QLp-R5-DDG" firstAttribute="top" secondItem="of6-gb-uBq" secondAttribute="top" constant="11" id="IFv-J3-2Ed"/>
+                                                <constraint firstItem="ylv-pP-51s" firstAttribute="leading" secondItem="QLp-R5-DDG" secondAttribute="trailing" constant="8" id="Nvr-VP-HXX"/>
                                                 <constraint firstItem="sxX-DY-NBP" firstAttribute="top" secondItem="of6-gb-uBq" secondAttribute="top" constant="11" id="QDW-5U-dYw"/>
-                                                <constraint firstAttribute="trailing" secondItem="QLp-R5-DDG" secondAttribute="trailing" constant="8" id="Ygk-MS-lj8"/>
-                                                <constraint firstItem="QLp-R5-DDG" firstAttribute="top" secondItem="of6-gb-uBq" secondAttribute="top" constant="11" id="ZtZ-Q4-bbo"/>
                                                 <constraint firstItem="sxX-DY-NBP" firstAttribute="leading" secondItem="of6-gb-uBq" secondAttribute="leading" constant="8" id="aY0-tm-NI5"/>
-                                                <constraint firstItem="QLp-R5-DDG" firstAttribute="leading" secondItem="sxX-DY-NBP" secondAttribute="trailing" constant="8" id="svw-hs-79B"/>
-                                                <constraint firstAttribute="bottom" secondItem="QLp-R5-DDG" secondAttribute="bottom" constant="11" id="xG8-Pt-LvC"/>
+                                                <constraint firstAttribute="trailing" secondItem="ylv-pP-51s" secondAttribute="trailing" constant="8" id="cB6-pj-CgK"/>
+                                                <constraint firstItem="QLp-R5-DDG" firstAttribute="leading" secondItem="sxX-DY-NBP" secondAttribute="trailing" constant="8" id="doD-Gx-8tO"/>
+                                                <constraint firstAttribute="bottom" secondItem="QLp-R5-DDG" secondAttribute="bottom" constant="11" id="v4r-vf-DXZ"/>
+                                                <constraint firstItem="ylv-pP-51s" firstAttribute="centerY" secondItem="of6-gb-uBq" secondAttribute="centerYWithinMargins" id="wzS-dU-qzF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -1794,6 +1810,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnPay" destination="ylv-pP-51s" id="ABZ-2S-Ehv"/>
+                        <outlet property="cellEnd" destination="PeO-P2-L2A" id="P6h-nR-THR"/>
                         <outlet property="isSound" destination="AZZ-QG-xDU" id="Ny9-gI-HvO"/>
                         <outlet property="txtDateValue" destination="QLp-R5-DDG" id="ngo-VN-GlT"/>
                         <outlet property="txtMobile" destination="gy0-GX-rgz" id="ls3-wO-DUF"/>

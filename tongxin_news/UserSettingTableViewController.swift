@@ -7,12 +7,64 @@
 //
 
 import UIKit
+import StoreKit
 
-class UserSettingTableViewController: UITableViewController {
+class UserSettingTableViewController: UITableViewController, SKPaymentTransactionObserver, SKProductsRequestDelegate {
+
+    @IBOutlet weak var cellEnd: UITableViewCell!
+    @IBOutlet weak var btnPay: UIButton!
+    let productId = "shtx0001"
+    var product: SKProduct?
+    
+    @IBAction func didPayClicked(sender: AnyObject) {
+        if let relProduct = self.product
+        {
+            let payment = SKPayment(product: relProduct)
+            SKPaymentQueue.defaultQueue().addPayment(payment)
+        }
+    }
+    
+    func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
+        
+        for transaction in transactions {
+                switch transaction.transactionState {
+                case .Purchased:
+                    SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                    break;
+                case .Failed:
+                    SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                    break;
+                    // case .Restored:
+                    //[self restoreTransaction:transaction];
+                default:
+                    break;
+                }
+            }
+    }
+    
+    func productsRequest (request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
+        let count: Int = response.products.count
+        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        if (count > 0) {
+            let validProduct: SKProduct = response.products[0] as SKProduct
+            if (validProduct.productIdentifier == self.productId) {
+                self.product = validProduct
+                self.btnPay.enabled = true
+                self.btnPay.alpha = 1
+            } else {
+                print(validProduct.productIdentifier)
+            }
+        } else {
+            print("nothing")
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.btnPay.enabled = false
+        self.btnPay.alpha = 0.3
+        cellEnd.selectionStyle = .None
+        SKPaymentQueue.defaultQueue().addTransactionObserver(self)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -113,8 +165,6 @@ class UserSettingTableViewController: UITableViewController {
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.UserSet.rawValue, parameters:["mobile":mobile!, "method":"getUserInfo"])
                 .responseJSON { response in
-                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                    
                     switch response.result {
                     case .Success:
                         let res = JSON(response.result.value!)
@@ -134,7 +184,15 @@ class UserSettingTableViewController: UITableViewController {
                             }
                         }
                         self.txtMobile.text = mobile
+                        if (SKPaymentQueue.canMakePayments())
+                        {
+                            let productID: NSSet = NSSet(object: self.productId);
+                            let productsRequest: SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>);
+                            productsRequest.delegate = self;
+                            productsRequest.start();
+                        }
                     case .Failure:
+                        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                         let alert = SKTipAlertView()
                         alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                     }

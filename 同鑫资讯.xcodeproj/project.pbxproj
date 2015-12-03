@@ -92,6 +92,7 @@
 		35C712911B86CC5D004B267A /* HTHorizontalSelectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7128B1B86CC5D004B267A /* HTHorizontalSelectionList.m */; };
 		35C712921B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7128E1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m */; };
 		35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */; };
+		35DC3D051C0FF8900027E680 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DC3D041C0FF8900027E680 /* StoreKit.framework */; };
 		35DC5E631BA94F700000FA22 /* TSLocateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DC5E5F1BA94F700000FA22 /* TSLocateView.m */; };
 		35DC5E641BA94F700000FA22 /* TSLocateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DC5E601BA94F700000FA22 /* TSLocateView.xib */; };
 		35DC5E651BA94F700000FA22 /* TSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DC5E621BA94F700000FA22 /* TSLocation.m */; };
@@ -231,6 +232,7 @@
 		35C7128E1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListCustomViewCell.m; sourceTree = "<group>"; };
 		35C7128F1B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionListLabelCell.h; sourceTree = "<group>"; };
 		35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListLabelCell.m; sourceTree = "<group>"; };
+		35DC3D041C0FF8900027E680 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		35DC5E5E1BA94F700000FA22 /* TSLocateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLocateView.h; sourceTree = "<group>"; };
 		35DC5E5F1BA94F700000FA22 /* TSLocateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocateView.m; sourceTree = "<group>"; };
 		35DC5E601BA94F700000FA22 /* TSLocateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSLocateView.xib; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35DC3D051C0FF8900027E680 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -379,6 +382,7 @@
 		35C712091B8595B3004B267A = {
 			isa = PBXGroup;
 			children = (
+				35DC3D041C0FF8900027E680 /* StoreKit.framework */,
 				35C712141B8595B3004B267A /* tongxin_news */,
 				35C712131B8595B3004B267A /* Products */,
 			);
@@ -578,6 +582,9 @@
 						DevelopmentTeam = L4TXWGS3FM;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 						};
