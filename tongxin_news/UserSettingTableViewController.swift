@@ -58,7 +58,8 @@ class UserSettingTableViewController: UITableViewController, SKPaymentTransactio
                             case .Success:
                                 SKPaymentQueue.defaultQueue().finishTransaction(transaction)
                                 self.lblEnd.fadeOutWithCompletion({() -> Void in
-                                    self.lblEnd.text = ((self.lblEnd.text?.toDate(DateFormat.Custom("YYYY-MM-DD")))! + 1.years).toString( DateFormat.Custom("YYYY-MM-DD"))
+                                    let d = self.lblEnd.text?.toRegion(DateFormat.ISO8601Date, region: Region.LocalRegion())?.localDate
+                                    self.lblEnd.text = (d! + 1.years).toString(DateFormat.ISO8601Date)
                                     self.lblEnd.shine()
                                 })
                                 break
