@@ -3,6 +3,14 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[TSLocateView showInView:]:TSLocateView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.frame.size">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = ":PriceHistoryViewController.swift">
          <PersistentStrings>
             <PersistentString
@@ -11,18 +19,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = ":PriceDetailViewController.swift">
+         contextName = "UserSettingTableViewController.paymentQueue(SKPaymentQueue, updatedTransactions : [SKPaymentTransaction]) -&gt; ():UserSettingTableViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "market">
+               value = "transaction.transactionState">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[TSLocateView showInView:]:TSLocateView.m">
+         contextName = ":PriceDetailViewController.swift">
          <PersistentStrings>
             <PersistentString
-               value = "self.frame.size">
+               value = "market">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

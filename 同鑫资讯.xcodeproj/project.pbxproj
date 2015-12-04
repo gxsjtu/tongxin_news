@@ -92,6 +92,10 @@
 		35C712911B86CC5D004B267A /* HTHorizontalSelectionList.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7128B1B86CC5D004B267A /* HTHorizontalSelectionList.m */; };
 		35C712921B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C7128E1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m */; };
 		35C712931B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */; };
+		35CF724E1C116A85006E95AF /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CF724A1C116A85006E95AF /* DataStructures.swift */; };
+		35CF724F1C116A85006E95AF /* DateInRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CF724B1C116A85006E95AF /* DateInRegion.swift */; };
+		35CF72501C116A85006E95AF /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CF724C1C116A85006E95AF /* NSDate+Extension.swift */; };
+		35CF72531C116AAD006E95AF /* RQShineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CF72521C116AAD006E95AF /* RQShineLabel.m */; };
 		35DC3D051C0FF8900027E680 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35DC3D041C0FF8900027E680 /* StoreKit.framework */; };
 		35DC5E631BA94F700000FA22 /* TSLocateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DC5E5F1BA94F700000FA22 /* TSLocateView.m */; };
 		35DC5E641BA94F700000FA22 /* TSLocateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DC5E601BA94F700000FA22 /* TSLocateView.xib */; };
@@ -232,6 +236,12 @@
 		35C7128E1B86CC5D004B267A /* HTHorizontalSelectionListCustomViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListCustomViewCell.m; sourceTree = "<group>"; };
 		35C7128F1B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionListLabelCell.h; sourceTree = "<group>"; };
 		35C712901B86CC5D004B267A /* HTHorizontalSelectionListLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTHorizontalSelectionListLabelCell.m; sourceTree = "<group>"; };
+		35CF724A1C116A85006E95AF /* DataStructures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStructures.swift; sourceTree = "<group>"; };
+		35CF724B1C116A85006E95AF /* DateInRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateInRegion.swift; sourceTree = "<group>"; };
+		35CF724C1C116A85006E95AF /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
+		35CF724D1C116A85006E95AF /* SwiftDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftDate.h; sourceTree = "<group>"; };
+		35CF72511C116AAD006E95AF /* RQShineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RQShineLabel.h; sourceTree = "<group>"; };
+		35CF72521C116AAD006E95AF /* RQShineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQShineLabel.m; sourceTree = "<group>"; };
 		35DC3D041C0FF8900027E680 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		35DC5E5E1BA94F700000FA22 /* TSLocateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLocateView.h; sourceTree = "<group>"; };
 		35DC5E5F1BA94F700000FA22 /* TSLocateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocateView.m; sourceTree = "<group>"; };
@@ -399,6 +409,8 @@
 		35C712141B8595B3004B267A /* tongxin_news */ = {
 			isa = PBXGroup;
 			children = (
+				35DC3D111C102F900027E680 /* SwiftDate */,
+				35DC3D091C102A080027E680 /* RQShineLabel */,
 				35B1F23A1BCCB90400AA9F38 /* UITextView-Placeholder */,
 				35EF0F071BB393A200F99399 /* SWTableViewCell */,
 				356803691BA02F0F00BB50AE /* SDWebImage */,
@@ -527,6 +539,26 @@
 			name = HTHorizontalSelectionList;
 			sourceTree = "<group>";
 		};
+		35DC3D091C102A080027E680 /* RQShineLabel */ = {
+			isa = PBXGroup;
+			children = (
+				35CF72511C116AAD006E95AF /* RQShineLabel.h */,
+				35CF72521C116AAD006E95AF /* RQShineLabel.m */,
+			);
+			name = RQShineLabel;
+			sourceTree = "<group>";
+		};
+		35DC3D111C102F900027E680 /* SwiftDate */ = {
+			isa = PBXGroup;
+			children = (
+				35CF724A1C116A85006E95AF /* DataStructures.swift */,
+				35CF724B1C116A85006E95AF /* DateInRegion.swift */,
+				35CF724C1C116A85006E95AF /* NSDate+Extension.swift */,
+				35CF724D1C116A85006E95AF /* SwiftDate.h */,
+			);
+			name = SwiftDate;
+			sourceTree = "<group>";
+		};
 		35EF0F071BB393A200F99399 /* SWTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,6 +668,7 @@
 				35DC5E631BA94F700000FA22 /* TSLocateView.m in Sources */,
 				35DC5E651BA94F700000FA22 /* TSLocation.m in Sources */,
 				355483F31BDA3AFF00AEFBEF /* ParameterEncoding.swift in Sources */,
+				35CF72531C116AAD006E95AF /* RQShineLabel.m in Sources */,
 				3587007F1B9EA4A000B09351 /* KASlideShow.m in Sources */,
 				35E3E8521BA6B3BC0009E8DD /* FuturesViewController.swift in Sources */,
 				35C712821B86B126004B267A /* HomeTabBarViewController.swift in Sources */,
@@ -667,6 +700,7 @@
 				35B278441B8D952100FA2399 /* CommentDetailViewController.swift in Sources */,
 				355483F21BDA3AFF00AEFBEF /* MultipartFormData.swift in Sources */,
 				35BB225B1BD5D53A00A01E36 /* MyFocusViewController.swift in Sources */,
+				35CF72501C116A85006E95AF /* NSDate+Extension.swift in Sources */,
 				3568038C1BA0304600BB50AE /* NSData+ImageContentType.m in Sources */,
 				3515CB221B94367200EC54D7 /* ChartColors.swift in Sources */,
 				35EF0F151BB394D300F99399 /* SWCellScrollView.m in Sources */,
@@ -698,7 +732,9 @@
 				35B278B61B9045F600FA2399 /* PriceChartViewController.swift in Sources */,
 				3568038F1BA0304600BB50AE /* SDWebImageDecoder.m in Sources */,
 				356803961BA0304600BB50AE /* UIImage+MultiFormat.m in Sources */,
+				35CF724F1C116A85006E95AF /* DateInRegion.swift in Sources */,
 				3515CB461B9D552600EC54D7 /* ChannelViewController.swift in Sources */,
+				35CF724E1C116A85006E95AF /* DataStructures.swift in Sources */,
 				35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */,
 				35EF0F181BB394D300F99399 /* SWUtilityButtonTapGestureRecognizer.m in Sources */,
 				3515CB231B94367200EC54D7 /* ChartSeries.swift in Sources */,

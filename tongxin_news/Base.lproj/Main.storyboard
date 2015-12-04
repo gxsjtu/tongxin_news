@@ -1606,7 +1606,7 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gy0-GX-rgz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gy0-GX-rgz" customClass="RQShineLabel">
                                                     <rect key="frame" x="118" y="11" width="194" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1644,14 +1644,14 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLp-R5-DDG">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QLp-R5-DDG" customClass="RQShineLabel">
                                                     <rect key="frame" x="118" y="11" width="120" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylv-pP-51s">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ylv-pP-51s">
                                                     <rect key="frame" x="246" y="7" width="66" height="30"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.20392156859999999" green="0.70980392160000005" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -1810,11 +1810,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="barItemBack" destination="igQ-eX-i4n" id="Ldd-Lz-I6M"/>
+                        <outlet property="btnLogout" destination="RhM-qO-sN2" id="XFV-uO-Q4Z"/>
                         <outlet property="btnPay" destination="ylv-pP-51s" id="ABZ-2S-Ehv"/>
                         <outlet property="cellEnd" destination="PeO-P2-L2A" id="P6h-nR-THR"/>
                         <outlet property="isSound" destination="AZZ-QG-xDU" id="Ny9-gI-HvO"/>
-                        <outlet property="txtDateValue" destination="QLp-R5-DDG" id="ngo-VN-GlT"/>
-                        <outlet property="txtMobile" destination="gy0-GX-rgz" id="ls3-wO-DUF"/>
+                        <outlet property="lblEnd" destination="QLp-R5-DDG" id="PgJ-Zy-Rb7"/>
+                        <outlet property="txtMobile" destination="gy0-GX-rgz" id="9w4-va-u04"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aUh-XP-Mnp" userLabel="First Responder" sceneMemberID="firstResponder"/>

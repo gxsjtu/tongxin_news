@@ -11,37 +11,80 @@ import StoreKit
 
 class UserSettingTableViewController: UITableViewController, SKPaymentTransactionObserver, SKProductsRequestDelegate {
 
+    @IBOutlet weak var btnLogout: UIButton!
+    @IBOutlet weak var barItemBack: UIBarButtonItem!
     @IBOutlet weak var cellEnd: UITableViewCell!
     @IBOutlet weak var btnPay: UIButton!
     let productId = "shtx0001"
     var product: SKProduct?
+    
+    override func viewDidAppear(animated: Bool) {
+        self.lblEnd.shine()
+        self.txtMobile.shine()
+    }
+    
+    deinit
+    {
+        SKPaymentQueue.defaultQueue().removeTransactionObserver(self)
+    }
     
     @IBAction func didPayClicked(sender: AnyObject) {
         if let relProduct = self.product
         {
             let payment = SKPayment(product: relProduct)
             SKPaymentQueue.defaultQueue().addPayment(payment)
+            self.btnPay.alpha = 0.3
+            self.btnPay.enabled = false
+            self.barItemBack.enabled = false
+            self.btnLogout.enabled = false
+            self.btnLogout.alpha = 0.3
         }
     }
     
     func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        
+        self.btnPay.alpha = 1
+        self.btnPay.enabled = true
+        self.barItemBack.enabled = true
+        self.btnLogout.enabled = true
+        self.btnLogout.alpha = 1
         for transaction in transactions {
                 switch transaction.transactionState {
                 case .Purchased:
-                    SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                    //延期
+                    let mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+                    (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.OrderProduct.rawValue, parameters:["mobile":mobile!, "method":"renew"])
+                        .responseJSON { response in
+                            switch response.result {
+                            case .Success:
+                                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                                self.lblEnd.fadeOutWithCompletion({() -> Void in
+                                    self.lblEnd.text = ((self.lblEnd.text?.toDate(DateFormat.Custom("YYYY-MM-DD")))! + 1.years).toString( DateFormat.Custom("YYYY-MM-DD"))
+                                    self.lblEnd.shine()
+                                })
+                                break
+                            case .Failure:
+                                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                                let alert = SKTipAlertView()
+                                alert.showRedNotificationForString("续费失败，请重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+                            }
+                    }
                     break;
+                    
                 case .Failed:
                     SKPaymentQueue.defaultQueue().finishTransaction(transaction)
+                    let alert = SKTipAlertView()
+                    alert.showRedNotificationForString("续费失败，请重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                     break;
                     // case .Restored:
                     //[self restoreTransaction:transaction];
+                    
                 default:
                     break;
                 }
             }
     }
     
+    @IBOutlet weak var lblEnd: RQShineLabel!
     func productsRequest (request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
         let count: Int = response.products.count
         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
@@ -64,6 +107,8 @@ class UserSettingTableViewController: UITableViewController, SKPaymentTransactio
         self.btnPay.enabled = false
         self.btnPay.alpha = 0.3
         cellEnd.selectionStyle = .None
+        self.lblEnd.textColor = UIColor.blackColor()
+        self.txtMobile.textColor = UIColor.blackColor()
         SKPaymentQueue.defaultQueue().addTransactionObserver(self)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -78,6 +123,7 @@ class UserSettingTableViewController: UITableViewController, SKPaymentTransactio
         NSUserDefaults.standardUserDefaults().removeObjectForKey("isLoggedIn")
         NSUserDefaults.standardUserDefaults().removeObjectForKey("mobile")
         NSUserDefaults.standardUserDefaults().removeObjectForKey("password")
+        SKPaymentQueue.defaultQueue().removeTransactionObserver(self)
         //转向login页面
         if let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
         {
@@ -102,8 +148,7 @@ class UserSettingTableViewController: UITableViewController, SKPaymentTransactio
         }
     }
     @IBOutlet weak var isSound: UISwitch!
-    @IBOutlet weak var txtDateValue: UILabel!
-    @IBOutlet weak var txtMobile: UILabel!
+    @IBOutlet weak var txtMobile: RQShineLabel!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -170,7 +215,7 @@ class UserSettingTableViewController: UITableViewController, SKPaymentTransactio
                         let res = JSON(response.result.value!)
                         if let result = res["endDate"].string
                         {
-                            self.txtDateValue.text = result
+                            self.lblEnd.text = result
                         }
                         if let isSound = res["isSound"].string
                         {
