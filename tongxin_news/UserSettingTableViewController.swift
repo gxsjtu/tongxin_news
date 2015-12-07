@@ -41,6 +41,7 @@ class UserSettingTableViewController: UITableViewController, SKPaymentTransactio
         }
     }
     
+    //测试github客户端
     func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         self.btnPay.alpha = 1
         self.btnPay.enabled = true
