@@ -9,46 +9,15 @@
 import UIKit
 import StoreKit
 
-class UserSettingTableViewController: UITableViewController, SKPaymentTransactionObserver, SKProductsRequestDelegate {
+class UserSettingTableViewController: UITableViewController {
 
     @IBOutlet weak var btnLogout: UIButton!
     @IBOutlet weak var barItemBack: UIBarButtonItem!
     @IBOutlet weak var cellEnd: UITableViewCell!
-    @IBOutlet weak var btnPay: UIButton!
-    let productId = "shtx0001"
-    var product: SKProduct?
-    
-    override func viewDidAppear(animated: Bool) {
-        self.lblEnd.shine()
-        self.txtMobile.shine()
-    }
-    
-    deinit
-    {
-        SKPaymentQueue.defaultQueue().removeTransactionObserver(self)
-    }
-    
-    @IBAction func didPayClicked(sender: AnyObject) {
-        if let relProduct = self.product
-        {
-            let payment = SKPayment(product: relProduct)
-            SKPaymentQueue.defaultQueue().addPayment(payment)
-            self.btnPay.alpha = 0.3
-            self.btnPay.enabled = false
-            self.barItemBack.enabled = false
-            self.btnLogout.enabled = false
-            self.btnLogout.alpha = 0.3
-        }
-    }
     
     //测试github客户端
     //测试pull request
     func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        self.btnPay.alpha = 1
-        self.btnPay.enabled = true
-        self.barItemBack.enabled = true
-        self.btnLogout.enabled = true
-        self.btnLogout.alpha = 1
         for transaction in transactions {
                 switch transaction.transactionState {
                 case .Purchased:
@@ -88,31 +57,10 @@ class UserSettingTableViewController: UITableViewController, SKPaymentTransactio
     }
     
     @IBOutlet weak var lblEnd: RQShineLabel!
-    func productsRequest (request: SKProductsRequest, didReceiveResponse response: SKProductsResponse) {
-        let count: Int = response.products.count
-        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-        if (count > 0) {
-            let validProduct: SKProduct = response.products[0] as SKProduct
-            if (validProduct.productIdentifier == self.productId) {
-                self.product = validProduct
-                self.btnPay.enabled = true
-                self.btnPay.alpha = 1
-            } else {
-                print(validProduct.productIdentifier)
-            }
-        } else {
-            print("nothing")
-        }
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.btnPay.enabled = false
-        self.btnPay.alpha = 0.3
         cellEnd.selectionStyle = .None
-        self.lblEnd.textColor = UIColor.blackColor()
-        self.txtMobile.textColor = UIColor.blackColor()
-        SKPaymentQueue.defaultQueue().addTransactionObserver(self)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -126,7 +74,6 @@ class UserSettingTableViewController: UITableViewController, SKPaymentTransactio
         NSUserDefaults.standardUserDefaults().removeObjectForKey("isLoggedIn")
         NSUserDefaults.standardUserDefaults().removeObjectForKey("mobile")
         NSUserDefaults.standardUserDefaults().removeObjectForKey("password")
-        SKPaymentQueue.defaultQueue().removeTransactionObserver(self)
         //转向login页面
         if let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController
         {
@@ -178,7 +125,7 @@ class UserSettingTableViewController: UITableViewController, SKPaymentTransactio
         // #warning Incomplete implementation, return the number of rows
         if section == 0
         {
-            return 2
+            return 1
         }
         else if section == 1
         {
@@ -232,13 +179,6 @@ class UserSettingTableViewController: UITableViewController, SKPaymentTransactio
                             }
                         }
                         self.txtMobile.text = mobile
-                        if (SKPaymentQueue.canMakePayments())
-                        {
-                            let productID: NSSet = NSSet(object: self.productId);
-                            let productsRequest: SKProductsRequest = SKProductsRequest(productIdentifiers: productID as! Set<String>);
-                            productsRequest.delegate = self;
-                            productsRequest.start();
-                        }
                     case .Failure:
                         MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                         let alert = SKTipAlertView()
