@@ -15,54 +15,9 @@ class UserSettingTableViewController: UITableViewController {
 
     @IBOutlet weak var btnLogout: UIButton!
     @IBOutlet weak var barItemBack: UIBarButtonItem!
-    @IBOutlet weak var cellEnd: UITableViewCell!
-    
-    //测试github客户端
-    //测试pull request
-    func paymentQueue(queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
-        for transaction in transactions {
-                switch transaction.transactionState {
-                case .Purchased:
-                    //延期
-                    let mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
-                    (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.OrderProduct.rawValue, parameters:["mobile":mobile!, "method":"renew"])
-                        .responseJSON { response in
-                            switch response.result {
-                            case .Success:
-                                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
-                                self.lblEnd.fadeOutWithCompletion({() -> Void in
-                                    let d = self.lblEnd.text?.toRegion(DateFormat.ISO8601Date, region: Region.LocalRegion())?.localDate
-                                    self.lblEnd.text = (d! + 1.years).toString(DateFormat.ISO8601Date)
-                                    self.lblEnd.shine()
-                                })
-                                break
-                            case .Failure:
-                                SKPaymentQueue.defaultQueue().finishTransaction(transaction)
-                                let alert = SKTipAlertView()
-                                alert.showRedNotificationForString("续费失败，请重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                            }
-                    }
-                    break;
-                    
-                case .Failed:
-                    SKPaymentQueue.defaultQueue().finishTransaction(transaction)
-                    let alert = SKTipAlertView()
-                    alert.showRedNotificationForString("续费失败，请重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
-                    break;
-                    // case .Restored:
-                    //[self restoreTransaction:transaction];
-                    
-                default:
-                    break;
-                }
-            }
-    }
-    
-    @IBOutlet weak var lblEnd: RQShineLabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        cellEnd.selectionStyle = .None
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -165,10 +120,6 @@ class UserSettingTableViewController: UITableViewController {
                     switch response.result {
                     case .Success:
                         let res = JSON(response.result.value!)
-                        if let result = res["endDate"].string
-                        {
-                            self.lblEnd.text = result
-                        }
                         if let isSound = res["isSound"].string
                         {
                             if isSound == "true"
