@@ -9,6 +9,8 @@
 import UIKit
 import StoreKit
 
+
+//测试#和sha
 class UserSettingTableViewController: UITableViewController {
 
     @IBOutlet weak var btnLogout: UIButton!
