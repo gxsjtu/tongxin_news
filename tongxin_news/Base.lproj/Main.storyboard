@@ -3091,6 +3091,7 @@
                         <outlet property="cellPrice" destination="jqK-Qr-feV" id="ame-hS-ss7"/>
                         <outlet property="cellQty" destination="eyA-l4-WvU" id="81w-e6-mSv"/>
                         <outlet property="cellSP" destination="XKl-w4-Bcw" id="u9q-em-bSR"/>
+                        <outlet property="cellSlider" destination="URQ-4U-XtW" id="MNR-dl-ucb"/>
                         <outlet property="slideChannelItem" destination="SBG-g1-8qP" id="KEv-wQ-8ES"/>
                     </connections>
                 </tableViewController>

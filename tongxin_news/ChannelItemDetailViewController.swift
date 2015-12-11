@@ -10,6 +10,7 @@ import UIKit
 
 class ChannelItemDetailViewController: UITableViewController {
 
+    @IBOutlet weak var cellSlider: UITableViewCell!
     @IBOutlet weak var btnRefresh: UIBarButtonItem!
     @IBOutlet weak var cellDesc: UITableViewCell!
     @IBOutlet weak var cellMobile: UITableViewCell!
@@ -116,51 +117,66 @@ class ChannelItemDetailViewController: UITableViewController {
         (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.SPList.rawValue, parameters: ["method": "getitem", "id": itemId])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                
                 switch response.result {
                 case .Success:
                     if let data: AnyObject = response.result.value
                     {
                         if let i = JSON(data).dictionary
                         {
-                            if i["deliver"]!.stringValue == "true"
+                            if i["errorcode"]!.stringValue == "ok"
                             {
-                                self.cellDelivery.textLabel?.text = "自提"
+                                self.cellDesc.hidden = true
+                                self.cellMobile.hidden = true
+                                self.cellDelivery.hidden = true
+                                self.cellLocation.hidden = true
+                                self.cellContact.hidden = true
+                                self.cellPrice.hidden = true
+                                self.cellQty.hidden = true
+                                self.cellSP.hidden = true
+                                self.cellSlider.hidden = true
+                                self.tableView.backgroundView = UIImageView(image: UIImage(named: "404forSupply"))
                             }
                             else
                             {
-                                self.cellDelivery.textLabel?.text = "发货"
-                            }
-                            self.cellContact.textLabel?.text = i["contact"]!.stringValue
-                            self.cellLocation.textLabel?.text = i["location"]!.stringValue
-                            self.mobile = i["mobile"]!.stringValue
-                            self.cellMobile.textLabel?.text = self.mobile + "（点击拨打）"
-                            self.cellSP.textLabel?.text  = i["name"]!.stringValue
-                            self.cellQty.textLabel?.text = i["quantity"]!.stringValue
-                            self.cellDesc.textLabel?.text = i["description"]!.stringValue
-                            self.cellPrice.textLabel?.text = i["price"]!.stringValue
-          
-                            self.slideChannelItem.stop()
-                            self.slideChannelItem.images.removeAllObjects()
-                            var imageCount = 0
-                            for avatars in i["avatars"]!.arrayValue
-                            {
-                                if let avatar = avatars.dictionary
+                                if i["deliver"]!.stringValue == "true"
                                 {
-                                    MBProgressHUD.showHUDAddedTo(self.slideChannelItem, animated: true)
-                                    SDWebImageDownloader.sharedDownloader().downloadImageWithURL(NSURL(string: avatar["avatar"]!.stringValue), options: SDWebImageDownloaderOptions(), progress: nil, completed: { (image: UIImage!, data: NSData!, error: NSError!, finished: Bool) -> Void in
-                                        if finished == true
-                                        {
-                                            if image != nil
+                                    self.cellDelivery.textLabel?.text = "自提"
+                                }
+                                else
+                                {
+                                    self.cellDelivery.textLabel?.text = "发货"
+                                }
+                                self.cellContact.textLabel?.text = i["contact"]!.stringValue
+                                self.cellLocation.textLabel?.text = i["location"]!.stringValue
+                                self.mobile = i["mobile"]!.stringValue
+                                self.cellMobile.textLabel?.text = self.mobile + "（点击拨打）"
+                                self.cellSP.textLabel?.text  = i["name"]!.stringValue
+                                self.cellQty.textLabel?.text = i["quantity"]!.stringValue
+                                self.cellDesc.textLabel?.text = i["description"]!.stringValue
+                                self.cellPrice.textLabel?.text = i["price"]!.stringValue
+              
+                                self.slideChannelItem.stop()
+                                self.slideChannelItem.images.removeAllObjects()
+                                var imageCount = 0
+                                for avatars in i["avatars"]!.arrayValue
+                                {
+                                    if let avatar = avatars.dictionary
+                                    {
+                                        MBProgressHUD.showHUDAddedTo(self.slideChannelItem, animated: true)
+                                        SDWebImageDownloader.sharedDownloader().downloadImageWithURL(NSURL(string: avatar["avatar"]!.stringValue), options: SDWebImageDownloaderOptions(), progress: nil, completed: { (image: UIImage!, data: NSData!, error: NSError!, finished: Bool) -> Void in
+                                            if finished == true
                                             {
-                                                imageCount++
-                                                self.slideChannelItem.addImage(image)
-                                                if imageCount == i["avatars"]!.arrayValue.count
+                                                if image != nil
                                                 {
-                                                    NSNotificationCenter.defaultCenter().postNotificationName("didFinishLoadImages", object: self)
+                                                    imageCount++
+                                                    self.slideChannelItem.addImage(image)
+                                                    if imageCount == i["avatars"]!.arrayValue.count
+                                                    {
+                                                        NSNotificationCenter.defaultCenter().postNotificationName("didFinishLoadImages", object: self)
+                                                    }
                                                 }
-                                            }
-                                        }})
+                                            }})
+                                    }
                                 }
                             }
                         }
