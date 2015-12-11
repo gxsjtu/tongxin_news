@@ -166,6 +166,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.lblChannelCellLocation.text = sdataRes[indexPath.row].2
             cell.lblChannelCellName.text = sdataRes[indexPath.row].1
             cell.lblChannelItemId.text = sdataRes[indexPath.row].6
+            cell.lblCaption.text = "供应："
             
             if sdataRes[indexPath.row].7 == ""
             {
@@ -191,6 +192,7 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
             cell.lblChannelCellLocation.text = pdataRes[indexPath.row].2
             cell.lblChannelCellName.text = pdataRes[indexPath.row].1
             cell.lblChannelItemId.text = pdataRes[indexPath.row].6
+            cell.lblCaption.text = "采购："
             
             if pdataRes[indexPath.row].7 == ""
             {
@@ -243,24 +245,24 @@ class ChannelViewController: UIViewController, UITableViewDataSource, UITableVie
             self.sdataRes.removeAll(keepCapacity: false)
             for s in self.sdata
             {
-            if(s.1.componentsSeparatedByString(searchText).count > 1)
-            {
-                self.sdataRes.append(s)
-            }
-            }
-            }
-            else if self.segChannel.selectedSegmentIndex == 1
-            {
-            self.pdataRes.removeAll(keepCapacity: false)
-                for p in self.pdata
+                if(s.1.componentsSeparatedByString(searchText).count > 1)
                 {
-                    if(p.1.componentsSeparatedByString(searchText).count > 1)
+                    self.sdataRes.append(s)
+                }
+                else if self.segChannel.selectedSegmentIndex == 1
+                {
+                    self.pdataRes.removeAll(keepCapacity: false)
+                    for p in self.pdata
                     {
-                        self.pdataRes.append(p)
+                        if(p.1.componentsSeparatedByString(searchText).count > 1)
+                        {
+                            self.pdataRes.append(p)
+                        }
                     }
                 }
-            }
-        }
+             }
+          }
+       }
        self.vSPList.reloadData()
     }
     

@@ -10,6 +10,7 @@ import UIKit
 
 class ChannelVCTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lblCaption: UILabel!
     @IBOutlet weak var lblChannelItemId: UILabel!
     @IBOutlet weak var lblChannelCellDate: UILabel!
     @IBOutlet weak var lblChannelCellContact: UILabel!

@@ -2631,7 +2631,7 @@
                                                         <constraint firstAttribute="height" constant="60" id="qci-s3-aYv"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="供应：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3n-Am-Pa2">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3n-Am-Pa2">
                                                     <rect key="frame" x="76" y="2" width="60" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="ZRw-lV-zBf"/>
@@ -2739,6 +2739,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="imgChannelCellAvatar" destination="60j-rX-Uxf" id="L9z-Mc-4id"/>
+                                            <outlet property="lblCaption" destination="S3n-Am-Pa2" id="wVx-ek-qch"/>
                                             <outlet property="lblChannelCellContact" destination="OCa-t8-953" id="Z53-2d-hmY"/>
                                             <outlet property="lblChannelCellDate" destination="vbh-Wc-IKZ" id="zCw-h9-dbZ"/>
                                             <outlet property="lblChannelCellIsChecked" destination="e3I-qQ-y5T" id="IRe-Zf-6cY"/>
@@ -3598,6 +3599,6 @@
         <image name="铁矿石" width="90" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Gp3-Eg-VU8"/>
+        <segue reference="0TJ-Gr-WZB"/>
     </inferredMetricsTieBreakers>
 </document>
