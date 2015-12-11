@@ -274,7 +274,7 @@ class ChannelItemAddViewController: UITableViewController, UIActionSheetDelegate
         if isLocationEmpty == true
         {
             let alert = SKTipAlertView()
-            alert.showRedNotificationForString("发货地不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
+            alert.showRedNotificationForString("交货地不能为空！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
             return
         }
         createData()
