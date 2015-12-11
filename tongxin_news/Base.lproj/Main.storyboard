@@ -1957,7 +1957,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C4S-Cm-cOq" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Sqn-Mb-Mlu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-8" y="3012"/>
+            <point key="canvasLocation" x="-249" y="3053"/>
         </scene>
         <!--收件箱-->
         <scene sceneID="xED-Fi-xdx">
@@ -3567,7 +3567,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uzd-UV-Jks" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="636" y="2982"/>
+            <point key="canvasLocation" x="451" y="3053"/>
         </scene>
     </scenes>
     <resources>

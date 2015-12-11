@@ -22,7 +22,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tongxin_news/UserSettingTableViewController.swift"
@@ -35,14 +35,14 @@
             landmarkType = "5">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "&#x540c;&#x946b;&#x8d44;&#x8baf;.UserSettingTableViewController.(IsLogin (&#x540c;&#x946b;&#x8d44;&#x8baf;.UserSettingTableViewController) -&gt; () -&gt; ()).(closure #1)"
                   moduleName = "&#x540c;&#x946b;&#x8d44;&#x8baf;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/Document/X-Projects/tongxin_news/tongxin_news/UserSettingTableViewController.swift"
-                  timestampString = "471489535.437347"
+                  timestampString = "471490128.608112"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "135"
@@ -50,14 +50,14 @@
                   offsetFromSymbolStart = "1376">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "&#x540c;&#x946b;&#x8d44;&#x8baf;.UserSettingTableViewController.(IsLogin (&#x540c;&#x946b;&#x8d44;&#x8baf;.UserSettingTableViewController) -&gt; () -&gt; ()).(closure #1)"
                   moduleName = "&#x540c;&#x946b;&#x8d44;&#x8baf;"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Volumes/Document/X-Projects/tongxin_news/tongxin_news/UserSettingTableViewController.swift"
-                  timestampString = "471489535.437913"
+                  timestampString = "471490128.609022"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "135"
@@ -80,6 +80,38 @@
             startingLineNumber = "136"
             endingLineNumber = "136"
             landmarkName = "IsLogin()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tongxin_news/MyPublishViewController.swift"
+            timestampString = "471491806.415185"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "prepareForSegue(_:sender:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tongxin_news/MyPublishViewController.swift"
+            timestampString = "471491806.415185"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "prepareForSegue(_:sender:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

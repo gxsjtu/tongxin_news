@@ -76,8 +76,13 @@ class MyPublishViewController: UIViewController, UITableViewDataSource, UITableV
         return myPublish.count
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("myPublish2Detail", sender: tableView.cellForRowAtIndexPath(indexPath))
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("myPublishCell", forIndexPath: indexPath) as! MyPublishTableViewCell
+        cell.parentVC = self
         if myPublish[indexPath.row].7 == ""
         {
             cell.lblApproval.text = "待审核"
