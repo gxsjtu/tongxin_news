@@ -123,7 +123,7 @@ class ChannelItemDetailViewController: UITableViewController {
                     {
                         if let i = JSON(data).dictionary
                         {
-                            if i["errorcode"]!.stringValue == "ok"
+                            if i["errorcode"]!.stringValue == "error"
                             {
                                 self.cellDesc.hidden = true
                                 self.cellMobile.hidden = true

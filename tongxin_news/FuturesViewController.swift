@@ -12,7 +12,7 @@ class FuturesViewController: UIViewController {
 
     @IBOutlet weak var navFutures: UINavigationBar!
     @IBOutlet weak var wvFutures: UIWebView!
-    var url = "http://dzwx.cfkd.net/shtxh5/"
+    var url = "http://futures.shtx.com.cn/"
     override func viewDidLoad() {
         super.viewDidLoad()
 
