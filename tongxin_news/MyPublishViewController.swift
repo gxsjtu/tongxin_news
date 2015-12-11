@@ -110,6 +110,20 @@ class MyPublishViewController: UIViewController, UITableViewDataSource, UITableV
             cell.lblNameCapt.text = "销售"
             cell.lblNameCapt.textColor = UIColor(red: 255/255, green: 37/255, blue: 0/255, alpha: 1.0)
         }
+        
+        var rightButtons : [AnyObject] = [AnyObject]()
+        
+        let rightSubBtn = UIButton()
+        
+        rightSubBtn.setTitle("删除", forState: UIControlState.Normal)
+        rightSubBtn.backgroundColor = UIColor.redColor()
+        rightSubBtn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        
+        rightButtons.append(rightSubBtn)
+        
+        cell.setRightUtilityButtons(rightButtons, withButtonWidth: 60)
+
+        
         return cell
     }
 

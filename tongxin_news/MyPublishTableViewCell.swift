@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MyPublishTableViewCell: UITableViewCell {
+class MyPublishTableViewCell: SWTableViewCell, SWTableViewCellDelegate {
 
     @IBOutlet weak var lblId: UILabel!
     @IBOutlet weak var lblAvatar: UIImageView!
@@ -27,6 +27,17 @@ class MyPublishTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        self.delegate = self
     }
 
+    func swipeableTableViewCellShouldHideUtilityButtonsOnSwipe(cell: SWTableViewCell!) -> Bool {
+        return true
+    }
+    
+    func swipeableTableViewCell(cell: SWTableViewCell!, didTriggerRightUtilityButtonWithIndex index: Int) {
+        if index == 0
+        {
+        
+        }
+    }
 }

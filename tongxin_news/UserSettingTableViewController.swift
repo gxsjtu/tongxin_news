@@ -55,7 +55,7 @@ class UserSettingTableViewController: UITableViewController {
         }
     }
     @IBOutlet weak var isSound: UISwitch!
-    @IBOutlet weak var txtMobile: RQShineLabel!
+    @IBOutlet weak var txtMobile: UILabel!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -117,6 +117,7 @@ class UserSettingTableViewController: UITableViewController {
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.UserSet.rawValue, parameters:["mobile":mobile!, "method":"getUserInfo"])
                 .responseJSON { response in
+                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                     switch response.result {
                     case .Success:
                         let res = JSON(response.result.value!)
@@ -133,7 +134,6 @@ class UserSettingTableViewController: UITableViewController {
                         }
                         self.txtMobile.text = mobile
                     case .Failure:
-                        MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                         let alert = SKTipAlertView()
                         alert.showRedNotificationForString("加载失败，请返回重试！", forDuration: 2.0, andPosition: SKTipAlertViewPositionTop, permanent: false)
                     }

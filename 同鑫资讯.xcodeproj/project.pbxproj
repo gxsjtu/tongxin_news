@@ -95,7 +95,6 @@
 		35CF724E1C116A85006E95AF /* DataStructures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CF724A1C116A85006E95AF /* DataStructures.swift */; };
 		35CF724F1C116A85006E95AF /* DateInRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CF724B1C116A85006E95AF /* DateInRegion.swift */; };
 		35CF72501C116A85006E95AF /* NSDate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CF724C1C116A85006E95AF /* NSDate+Extension.swift */; };
-		35CF72531C116AAD006E95AF /* RQShineLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35CF72521C116AAD006E95AF /* RQShineLabel.m */; };
 		35DC5E631BA94F700000FA22 /* TSLocateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DC5E5F1BA94F700000FA22 /* TSLocateView.m */; };
 		35DC5E641BA94F700000FA22 /* TSLocateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 35DC5E601BA94F700000FA22 /* TSLocateView.xib */; };
 		35DC5E651BA94F700000FA22 /* TSLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 35DC5E621BA94F700000FA22 /* TSLocation.m */; };
@@ -239,8 +238,6 @@
 		35CF724B1C116A85006E95AF /* DateInRegion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateInRegion.swift; sourceTree = "<group>"; };
 		35CF724C1C116A85006E95AF /* NSDate+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSDate+Extension.swift"; sourceTree = "<group>"; };
 		35CF724D1C116A85006E95AF /* SwiftDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiftDate.h; sourceTree = "<group>"; };
-		35CF72511C116AAD006E95AF /* RQShineLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RQShineLabel.h; sourceTree = "<group>"; };
-		35CF72521C116AAD006E95AF /* RQShineLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RQShineLabel.m; sourceTree = "<group>"; };
 		35DC5E5E1BA94F700000FA22 /* TSLocateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLocateView.h; sourceTree = "<group>"; };
 		35DC5E5F1BA94F700000FA22 /* TSLocateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocateView.m; sourceTree = "<group>"; };
 		35DC5E601BA94F700000FA22 /* TSLocateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSLocateView.xib; sourceTree = "<group>"; };
@@ -406,7 +403,6 @@
 			isa = PBXGroup;
 			children = (
 				35DC3D111C102F900027E680 /* SwiftDate */,
-				35DC3D091C102A080027E680 /* RQShineLabel */,
 				35B1F23A1BCCB90400AA9F38 /* UITextView-Placeholder */,
 				35EF0F071BB393A200F99399 /* SWTableViewCell */,
 				356803691BA02F0F00BB50AE /* SDWebImage */,
@@ -535,15 +531,6 @@
 			name = HTHorizontalSelectionList;
 			sourceTree = "<group>";
 		};
-		35DC3D091C102A080027E680 /* RQShineLabel */ = {
-			isa = PBXGroup;
-			children = (
-				35CF72511C116AAD006E95AF /* RQShineLabel.h */,
-				35CF72521C116AAD006E95AF /* RQShineLabel.m */,
-			);
-			name = RQShineLabel;
-			sourceTree = "<group>";
-		};
 		35DC3D111C102F900027E680 /* SwiftDate */ = {
 			isa = PBXGroup;
 			children = (
@@ -664,7 +651,6 @@
 				35DC5E631BA94F700000FA22 /* TSLocateView.m in Sources */,
 				35DC5E651BA94F700000FA22 /* TSLocation.m in Sources */,
 				355483F31BDA3AFF00AEFBEF /* ParameterEncoding.swift in Sources */,
-				35CF72531C116AAD006E95AF /* RQShineLabel.m in Sources */,
 				3587007F1B9EA4A000B09351 /* KASlideShow.m in Sources */,
 				35E3E8521BA6B3BC0009E8DD /* FuturesViewController.swift in Sources */,
 				35C712821B86B126004B267A /* HomeTabBarViewController.swift in Sources */,

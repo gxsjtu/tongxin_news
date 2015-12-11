@@ -16,4 +16,3 @@
 #import "SWTableViewCell.h"
 #import "SWUtilityButtonView.h"
 #import "UITextView+Placeholder.h"
-#import "RQShineLabel.h"
