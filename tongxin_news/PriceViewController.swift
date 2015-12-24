@@ -7,9 +7,15 @@
 //
 
 import UIKit
+import SnapKit
 
 class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, HTHorizontalSelectionListDataSource, UITableViewDelegate, UITableViewDataSource , UISearchBarDelegate{
     
+    @IBAction func btnMoreClicked(sender: AnyObject) {
+        self.ChannelView4Prices?.view.hidden = false
+        self.ChannelView4Prices?.cvInBucket.reloadData()
+        self.ChannelView4Prices?.cvOutBucket.reloadData()
+    }
     @IBOutlet weak var more: UIButton!
     @IBOutlet weak var navPrice: UINavigationBar!
     @IBOutlet weak var tvPriceTableView: UITableView!
@@ -17,6 +23,10 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     var marketData = [(String, String)]()
     var selection: HTHorizontalSelectionList!
     var market = Dictionary<String, [(String, String)]>()
+    var inBucket = [(Int, String)]()
+    var outBucket = [(Int, String)]()
+
+    var ChannelView4Prices: ChannelView4PricesVC?
     
     @IBOutlet weak var vSelectionView: UIView!
     
@@ -27,6 +37,15 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         
         // Do any additional setup after loading the view.
         
+        self.ChannelView4Prices = UIStoryboard(name: "ChannelLayer4Prices", bundle: nil).instantiateViewControllerWithIdentifier("ChannelView4PricesVC") as? ChannelView4PricesVC
+        self.ChannelView4Prices?.view.hidden = true
+        self.ChannelView4Prices?.parentVC = self
+        self.view.addSubview((self.ChannelView4Prices?.view)!)
+        self.ChannelView4Prices?.view.snp_makeConstraints(closure: {(make) -> Void in
+            make.edges.equalTo(self.view)
+        })
+        
+        self.more.hidden = true
         self.tvPriceTableView.rowHeight = 44.0
         selection = HTHorizontalSelectionList()
         selection?.delegate = self
@@ -46,19 +65,9 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         vSelectionView.addSubview(selection)
         
         //添加constraints
-        let leading = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Leading, multiplier: 1, constant: 0)
-        
-        let trailing = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Trailing, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Trailing, multiplier: 1, constant: -20)
-        
-        let top = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Top, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Top, multiplier: 1, constant: 0)
-        
-        let bottom = NSLayoutConstraint(item: selection, attribute: NSLayoutAttribute.Bottom, relatedBy: NSLayoutRelation.Equal, toItem: self.vSelectionView, attribute: NSLayoutAttribute.Bottom, multiplier: 1, constant: 0)
-        
-        self.vSelectionView.addConstraint(leading)
-        self.vSelectionView.addConstraint(trailing)
-        self.vSelectionView.addConstraint(top)
-        self.vSelectionView.addConstraint(bottom)
-        selection.translatesAutoresizingMaskIntoConstraints = false
+        self.selection.snp_makeConstraints(closure: {(make) -> Void in
+            make.edges.equalTo(self.vSelectionView).inset(EdgeInsets(top: 0, left: 0, bottom: 0, right: self.more.frame.width + 8))
+        })
         
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
@@ -84,12 +93,14 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     func getProductHierarchy()
     {
          MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetProductHierarchy.rawValue, parameters: ["method": "getmarkets"])
+         let mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetProductHierarchy.rawValue, parameters: ["method": "getmarkets", "mobile": mobile!])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
                 switch response.result {
                 case .Success:
+                    self.more.hidden = false
                     if let data: AnyObject = response.result.value
                     {
                         if let res1 = JSON(data).array
@@ -101,7 +112,19 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
                             {
                                 if let res2 = r.dictionary
                                 {
-                                    self.selectionData.append(res2["name"]!.string!)
+                                    if let bucket = res2["inBucket"]!.string
+                                    {
+                                        if bucket == "true"
+                                        {
+                                            self.inBucket.append((res2["id"]!.int!, res2["name"]!.string!))
+                                            self.selectionData.append(res2["name"]!.string!)
+                                        }
+                                        else
+                                        {
+                                            self.outBucket.append((res2["id"]!.int!, res2["name"]!.string!))
+                                        }
+                                    }
+
                                     if let res3 = res2["markets"]?.array
                                     {
                                         var oneMarket = [(String, String)]()
@@ -119,6 +142,9 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
                             self.selection.reloadData()
                             self.selection.setSelectedButtonIndex(0, animated: true)
                             self.selectionList(self.selection, didSelectButtonWithIndex: 0)
+                            
+                            self.ChannelView4Prices?.inBucket = self.inBucket
+                            self.ChannelView4Prices?.outBucket = self.outBucket
                         }
                     }
                     
@@ -149,16 +175,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     }
     
     func selectionList(selectionList: HTHorizontalSelectionList!, didSelectButtonWithIndex index: Int) {
-        
-        if index == self.selectionData.count - 1
-        {
-            self.more.hidden = true
-        }
-        else
-        {
-            self.more.hidden = false
-        }
-        
+
         let group = selectionData[index]
         marketData.removeAll(keepCapacity: true)
         for m in market[group]!

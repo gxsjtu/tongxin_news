@@ -19,6 +19,7 @@
 		3517CBD91BD5EDD500EE40FB /* MyFocusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517CBD81BD5EDD500EE40FB /* MyFocusTableViewCell.swift */; };
 		3517CBDB1BD6095300EE40FB /* MyPublishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517CBDA1BD6095300EE40FB /* MyPublishViewController.swift */; };
 		3517CBDD1BD62AC000EE40FB /* MyPublishTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3517CBDC1BD62AC000EE40FB /* MyPublishTableViewCell.swift */; };
+		3543C9D11C2BBAD60045A97B /* ChannelCell4Prices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3543C9D01C2BBAD60045A97B /* ChannelCell4Prices.swift */; };
 		355483EE1BDA3AFF00AEFBEF /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483E01BDA3AFF00AEFBEF /* Alamofire.swift */; };
 		355483EF1BDA3AFF00AEFBEF /* Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483E11BDA3AFF00AEFBEF /* Download.swift */; };
 		355483F01BDA3AFF00AEFBEF /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 355483E21BDA3AFF00AEFBEF /* Error.swift */; };
@@ -54,6 +55,8 @@
 		356803981BA0304600BB50AE /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 356803861BA0304600BB50AE /* UIImageView+HighlightedWebCache.m */; };
 		356803991BA0304600BB50AE /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 356803881BA0304600BB50AE /* UIImageView+WebCache.m */; };
 		3568039A1BA0304600BB50AE /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3568038A1BA0304600BB50AE /* UIView+WebCacheOperation.m */; };
+		356ECDD41C2B87E100DA5DB9 /* ChannelLayer4Prices.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356ECDD31C2B87E100DA5DB9 /* ChannelLayer4Prices.storyboard */; };
+		356ECDD61C2B9EF500DA5DB9 /* ChannelView4PricesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356ECDD51C2B9EF500DA5DB9 /* ChannelView4PricesVC.swift */; };
 		3587005C1B9D776800B09351 /* ChannelItemAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */; };
 		358700701B9D8C3C00B09351 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3587006F1B9D8C3C00B09351 /* DLRadioButton.m */; };
 		358700781B9E78BC00B09351 /* ProvincesAndCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 358700721B9E78BC00B09351 /* ProvincesAndCities.plist */; };
@@ -107,6 +110,7 @@
 		35EF0F181BB394D300F99399 /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF0F111BB394D300F99399 /* SWUtilityButtonTapGestureRecognizer.m */; };
 		35EF0F191BB394D300F99399 /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF0F131BB394D300F99399 /* SWUtilityButtonView.m */; };
 		35F6657D1BB3F18700A3AEDE /* ApplyTrialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F6657C1BB3F18700A3AEDE /* ApplyTrialViewController.swift */; };
+		6A5A9A38291781ECC7B74551 /* Pods_tongxin_news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7519CFC329B2A12FB04D9A /* Pods_tongxin_news.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +126,7 @@
 		3517CBD81BD5EDD500EE40FB /* MyFocusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFocusTableViewCell.swift; sourceTree = "<group>"; };
 		3517CBDA1BD6095300EE40FB /* MyPublishViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPublishViewController.swift; sourceTree = "<group>"; };
 		3517CBDC1BD62AC000EE40FB /* MyPublishTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPublishTableViewCell.swift; sourceTree = "<group>"; };
+		3543C9D01C2BBAD60045A97B /* ChannelCell4Prices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelCell4Prices.swift; sourceTree = "<group>"; };
 		355483DF1BDA3AFF00AEFBEF /* Alamofire.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alamofire.h; sourceTree = "<group>"; };
 		355483E01BDA3AFF00AEFBEF /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		355483E11BDA3AFF00AEFBEF /* Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Download.swift; sourceTree = "<group>"; };
@@ -175,6 +180,8 @@
 		356803881BA0304600BB50AE /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		356803891BA0304600BB50AE /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		3568038A1BA0304600BB50AE /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		356ECDD31C2B87E100DA5DB9 /* ChannelLayer4Prices.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChannelLayer4Prices.storyboard; sourceTree = "<group>"; };
+		356ECDD51C2B9EF500DA5DB9 /* ChannelView4PricesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelView4PricesVC.swift; sourceTree = "<group>"; };
 		3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelItemAddViewController.swift; sourceTree = "<group>"; };
 		3587006E1B9D8C3C00B09351 /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		3587006F1B9D8C3C00B09351 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
@@ -258,6 +265,9 @@
 		35EF0F121BB394D300F99399 /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonView.h; sourceTree = "<group>"; };
 		35EF0F131BB394D300F99399 /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
 		35F6657C1BB3F18700A3AEDE /* ApplyTrialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyTrialViewController.swift; sourceTree = "<group>"; };
+		7A1819621FEC93D8CB2FD3EB /* Pods-tongxin_news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tongxin_news.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tongxin_news/Pods-tongxin_news.debug.xcconfig"; sourceTree = "<group>"; };
+		87C0E35C5000495A304FFDBE /* Pods-tongxin_news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tongxin_news.release.xcconfig"; path = "Pods/Target Support Files/Pods-tongxin_news/Pods-tongxin_news.release.xcconfig"; sourceTree = "<group>"; };
+		BA7519CFC329B2A12FB04D9A /* Pods_tongxin_news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tongxin_news.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +275,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A5A9A38291781ECC7B74551 /* Pods_tongxin_news.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +399,8 @@
 			children = (
 				35C712141B8595B3004B267A /* tongxin_news */,
 				35C712131B8595B3004B267A /* Products */,
+				DCB39FD3FEE17F75D6F282C6 /* Pods */,
+				50AD9827BCBE034E73ED9A81 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -455,6 +468,9 @@
 				3517CBDA1BD6095300EE40FB /* MyPublishViewController.swift */,
 				3517CBDC1BD62AC000EE40FB /* MyPublishTableViewCell.swift */,
 				3502271A1BE7556E00DE2B6B /* InboxTableViewCell.swift */,
+				356ECDD31C2B87E100DA5DB9 /* ChannelLayer4Prices.storyboard */,
+				356ECDD51C2B9EF500DA5DB9 /* ChannelView4PricesVC.swift */,
+				3543C9D01C2BBAD60045A97B /* ChannelCell4Prices.swift */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
@@ -561,6 +577,23 @@
 			name = SWTableViewCell;
 			sourceTree = "<group>";
 		};
+		50AD9827BCBE034E73ED9A81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA7519CFC329B2A12FB04D9A /* Pods_tongxin_news.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCB39FD3FEE17F75D6F282C6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7A1819621FEC93D8CB2FD3EB /* Pods-tongxin_news.debug.xcconfig */,
+				87C0E35C5000495A304FFDBE /* Pods-tongxin_news.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -568,9 +601,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35C712311B8595B3004B267A /* Build configuration list for PBXNativeTarget "tongxin_news" */;
 			buildPhases = (
+				70BC6B6EC2CC1356A29479B6 /* Check Pods Manifest.lock */,
 				35C7120E1B8595B3004B267A /* Sources */,
 				35C7120F1B8595B3004B267A /* Frameworks */,
 				35C712101B8595B3004B267A /* Resources */,
+				E516DFD90E2D641666127722 /* Embed Pods Frameworks */,
+				62B9BCF59853E82F05658C33 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -630,6 +666,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35C7121F1B8595B3004B267A /* Images.xcassets in Resources */,
+				356ECDD41C2B87E100DA5DB9 /* ChannelLayer4Prices.storyboard in Resources */,
 				35B2783E1B8D94AB00FA2399 /* Main.storyboard in Resources */,
 				358700781B9E78BC00B09351 /* ProvincesAndCities.plist in Resources */,
 				35DC5E641BA94F700000FA22 /* TSLocateView.xib in Resources */,
@@ -637,6 +674,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		62B9BCF59853E82F05658C33 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tongxin_news/Pods-tongxin_news-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70BC6B6EC2CC1356A29479B6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E516DFD90E2D641666127722 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tongxin_news/Pods-tongxin_news-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		35C7120E1B8595B3004B267A /* Sources */ = {
@@ -691,6 +776,7 @@
 				3587005C1B9D776800B09351 /* ChannelItemAddViewController.swift in Sources */,
 				355C95AB1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift in Sources */,
 				35EF0F171BB394D300F99399 /* SWTableViewCell.m in Sources */,
+				356ECDD61C2B9EF500DA5DB9 /* ChannelView4PricesVC.swift in Sources */,
 				355483FB1BDA3AFF00AEFBEF /* Validation.swift in Sources */,
 				356803971BA0304600BB50AE /* UIImage+WebP.m in Sources */,
 				35B1F23D1BCCB96300AA9F38 /* UITextView+Placeholder.m in Sources */,
@@ -709,6 +795,7 @@
 				35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */,
 				356803991BA0304600BB50AE /* UIImageView+WebCache.m in Sources */,
 				35B278641B8EA2FD00FA2399 /* CommentContentViewController.swift in Sources */,
+				3543C9D11C2BBAD60045A97B /* ChannelCell4Prices.swift in Sources */,
 				35EF0F191BB394D300F99399 /* SWUtilityButtonView.m in Sources */,
 				3568038E1BA0304600BB50AE /* SDWebImageCompat.m in Sources */,
 				35B278B61B9045F600FA2399 /* PriceChartViewController.swift in Sources */,
@@ -849,6 +936,7 @@
 		};
 		35C712321B8595B3004B267A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A1819621FEC93D8CB2FD3EB /* Pods-tongxin_news.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -870,6 +958,7 @@
 		};
 		35C712331B8595B3004B267A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 87C0E35C5000495A304FFDBE /* Pods-tongxin_news.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
