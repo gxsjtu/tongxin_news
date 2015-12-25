@@ -13,8 +13,8 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
     
     @IBOutlet weak var cvOutBucket: UICollectionView!
     @IBOutlet weak var cvInBucket: UICollectionView!
-    var inBucket = [(Int, String)]()
-    var outBucket = [(Int, String)]()
+    var inBucket = [(id: Int, name: String)]()
+    var outBucket = [(id: Int, name: String)]()
     var parentVC: UIViewController?
 
     @IBOutlet weak var outView: UIView!
@@ -32,6 +32,7 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
             }
             parent.selection.selectedButtonIndex = 0
             parent.selection.reloadData()
+            parent.selectionList(parent.selection, didSelectButtonWithIndex: 0)
             //更新数据库
             let mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
             (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetProductHierarchy.rawValue, parameters: ["mobile": mobile!, "method": "groupChannel", "groups": inBucketString])
@@ -77,7 +78,7 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
         if collectionView == self.cvInBucket
         {
             let cell = collectionView.dequeueReusableCellWithReuseIdentifier("inCell", forIndexPath: indexPath) as! ChannelCell4Prices
-            cell.lblChannel.text = self.inBucket[indexPath.row].1
+            cell.lblChannel.text = self.inBucket[indexPath.row].name
             cell.layer.cornerRadius = 8
             cell.layer.masksToBounds = true
             if cell.lblChannel.text?.lengthOfBytesUsingEncoding(NSUnicodeStringEncoding) > 8
@@ -159,6 +160,10 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if collectionView == self.cvInBucket
         {
+            if indexPath.row == 0
+            {
+                return
+            }
             let tmp: (Int, String) = self.inBucket[indexPath.row]
             self.inBucket.removeAtIndex(indexPath.row)
             self.outBucket.append(tmp)

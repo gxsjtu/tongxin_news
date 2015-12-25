@@ -13,6 +13,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
 //    var products = [(String, String, String, String, String, String, String)]()
     var market = "未知"
     var group = "未知"
+    var groupId = 0
     var mobile = ""
     var marketId = ""
     var searchKey = ""
@@ -211,7 +212,7 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
     func getProducts()
     {
          MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetPrices.rawValue, parameters: ["mobile": mobile, "marketId": marketId, "method": "getPrices"])
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetPrices.rawValue, parameters: ["mobile": mobile, "marketId": marketId, "method": "getPrices", "groupId": self.groupId])
             .responseJSON { response in
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 

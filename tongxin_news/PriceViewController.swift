@@ -16,6 +16,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         self.ChannelView4Prices?.cvInBucket.reloadData()
         self.ChannelView4Prices?.cvOutBucket.reloadData()
     }
+    
     @IBOutlet weak var more: UIButton!
     @IBOutlet weak var navPrice: UINavigationBar!
     @IBOutlet weak var tvPriceTableView: UITableView!
@@ -23,8 +24,8 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
     var marketData = [(String, String)]()
     var selection: HTHorizontalSelectionList!
     var market = Dictionary<String, [(String, String)]>()
-    var inBucket = [(Int, String)]()
-    var outBucket = [(Int, String)]()
+    var inBucket = [(id: Int, name: String)]()
+    var outBucket = [(id: Int, name: String)]()
 
     var ChannelView4Prices: ChannelView4PricesVC?
     
@@ -66,7 +67,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         
         //添加constraints
         self.selection.snp_makeConstraints(closure: {(make) -> Void in
-            make.edges.equalTo(self.vSelectionView).inset(EdgeInsets(top: 0, left: 0, bottom: 0, right: self.more.frame.width + 8))
+            make.edges.equalTo(self.vSelectionView).inset(EdgeInsets(top: 0, left: 0, bottom: 0, right: self.more.frame.width + 10))
         })
         
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
@@ -108,6 +109,8 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
                             self.marketData.removeAll(keepCapacity: true)
                             self.market.removeAll(keepCapacity: true)
                             self.selectionData.removeAll(keepCapacity: true)
+                            self.inBucket.removeAll(keepCapacity: true)
+                            self.outBucket.removeAll(keepCapacity: true)
                             for r in res1
                             {
                                 if let res2 = r.dictionary
@@ -211,7 +214,8 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         {
             if let des = segue.destinationViewController as? PriceDetailViewController
             {
-                des.group = self.selectionData[self.selection.selectedButtonIndex]
+                des.group = self.inBucket[self.selection.selectedButtonIndex].name
+                des.groupId = self.inBucket[self.selection.selectedButtonIndex].id
                 if let cell = sender as? PriceVCTableViewCell
                 {
                     des.market = cell.textLabel!.text!
