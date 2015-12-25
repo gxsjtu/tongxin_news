@@ -77,7 +77,7 @@
                                             <constraint firstAttribute="height" constant="32" id="e5a-7O-tLI"/>
                                         </constraints>
                                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="icon-ios7-arrow-down-32"/>
+                                        <state key="normal" image="icon-ios7-arrow-down-128"/>
                                         <connections>
                                             <action selector="btnMoreClicked:" destination="LSS-2S-FyB" eventType="touchUpInside" id="M4l-kW-XAD"/>
                                         </connections>
@@ -484,10 +484,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVj-O3-gKb">
-                                <rect key="frame" x="-8" y="0.0" width="336" height="64"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="9mr-cG-V2A"/>
+                                    <constraint firstAttribute="height" constant="64" id="6EE-Js-kHy"/>
                                 </constraints>
                                 <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
@@ -520,7 +520,7 @@
                                             <constraint firstAttribute="height" constant="32" id="PMO-Lo-UBu"/>
                                         </constraints>
                                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="icon-ios7-arrow-down-32"/>
+                                        <state key="normal" image="icon-ios7-arrow-down-128"/>
                                         <connections>
                                             <action selector="btnMoreClicked:" destination="YUd-7R-Tb7" eventType="touchUpInside" id="1ya-o7-SiN"/>
                                         </connections>
@@ -570,17 +570,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vkK-kU-9xD" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leading" constant="-4" id="1SW-Qw-emN"/>
+                            <constraint firstItem="Cx7-Wh-dUV" firstAttribute="top" secondItem="aVj-O3-gKb" secondAttribute="bottom" id="589-sR-d6n"/>
                             <constraint firstAttribute="trailing" secondItem="Cx7-Wh-dUV" secondAttribute="trailing" id="7Ph-F4-Arx"/>
-                            <constraint firstItem="Cx7-Wh-dUV" firstAttribute="top" secondItem="aVj-O3-gKb" secondAttribute="bottom" id="C9r-XW-wOt"/>
+                            <constraint firstAttribute="topMargin" secondItem="aVj-O3-gKb" secondAttribute="top" id="DYu-1J-k7l"/>
                             <constraint firstAttribute="trailing" secondItem="5qx-JR-mAN" secondAttribute="trailing" id="IqD-a6-2VR"/>
-                            <constraint firstItem="aVj-O3-gKb" firstAttribute="top" secondItem="m0N-ZL-nwu" secondAttribute="bottom" constant="-20" id="PpD-nH-oQa"/>
+                            <constraint firstItem="aVj-O3-gKb" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leading" id="U1M-pi-O65"/>
                             <constraint firstItem="5qx-JR-mAN" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leading" id="W8J-D7-c6L"/>
                             <constraint firstAttribute="trailing" secondItem="vkK-kU-9xD" secondAttribute="trailing" constant="-4" id="XUy-az-pBy"/>
                             <constraint firstItem="5qx-JR-mAN" firstAttribute="top" secondItem="vkK-kU-9xD" secondAttribute="bottom" id="a6s-8S-syv"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aVj-O3-gKb" secondAttribute="trailing" constant="-24" id="aoN-ij-CWl"/>
                             <constraint firstAttribute="bottomMargin" secondItem="5qx-JR-mAN" secondAttribute="bottom" constant="55" id="dFe-9F-eSo"/>
+                            <constraint firstAttribute="trailing" secondItem="aVj-O3-gKb" secondAttribute="trailing" id="eCo-NP-1Zv"/>
                             <constraint firstItem="Cx7-Wh-dUV" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leading" id="oiB-8y-Vzk"/>
-                            <constraint firstItem="aVj-O3-gKb" firstAttribute="leading" secondItem="Xjl-1K-e3W" secondAttribute="leadingMargin" constant="-24" id="plQ-dK-y8p"/>
                             <constraint firstItem="vkK-kU-9xD" firstAttribute="top" secondItem="Cx7-Wh-dUV" secondAttribute="bottom" id="qcn-HU-4eH"/>
                         </constraints>
                     </view>
@@ -2021,7 +2021,7 @@
                                                 <view tag="6" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97B-6X-1wi">
                                                     <rect key="frame" x="8" y="0.0" width="304" height="46"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="here" translatesAutoresizingMaskIntoConstraints="NO" id="n3q-ZR-ofV">
+                                                        <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="here" translatesAutoresizingMaskIntoConstraints="NO" id="n3q-ZR-ofV">
                                                             <rect key="frame" x="168" y="28" width="98" height="18"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
@@ -2037,6 +2037,7 @@
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="more" translatesAutoresizingMaskIntoConstraints="NO" id="5Te-hY-dYU">
                                                             <rect key="frame" x="274" y="8" width="30" height="30"/>
+                                                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="30" id="1TF-We-c7K"/>
                                                                 <constraint firstAttribute="width" constant="30" id="dCY-7a-GF7"/>
@@ -3582,9 +3583,9 @@
         <image name="comment" width="25" height="25"/>
         <image name="futures" width="25" height="25"/>
         <image name="here" width="98" height="11"/>
-        <image name="icon-ios7-arrow-down-32" width="25" height="25"/>
+        <image name="icon-ios7-arrow-down-128" width="128" height="128"/>
         <image name="login-bk" width="1080" height="1920"/>
-        <image name="more" width="24" height="24"/>
+        <image name="more" width="128" height="128"/>
         <image name="price" width="25" height="24"/>
         <image name="user" width="32" height="32"/>
         <image name="不锈钢" width="90" height="90"/>

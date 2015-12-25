@@ -11,6 +11,7 @@ import RAReorderableLayout
 
 class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAReorderableLayoutDelegate {
     
+    @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var cvOutBucket: UICollectionView!
     @IBOutlet weak var cvInBucket: UICollectionView!
     var inBucket = [(id: Int, name: String)]()
