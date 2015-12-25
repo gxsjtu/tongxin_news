@@ -133,8 +133,8 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hrz-ej-c1R">
-                                                    <rect key="frame" x="8" y="37" width="304" height="232"/>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hrz-ej-c1R">
+                                                    <rect key="frame" x="8" y="37" width="304" height="182"/>
                                                     <collectionViewLayout key="collectionViewLayout" id="6Vx-bM-YIw" customClass="RAReorderableLayout" customModule="RAReorderableLayout"/>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="outCell" id="1me-fe-0yS" customClass="ChannelCell4Prices" customModule="同鑫资讯" customModuleProvider="target">
@@ -186,7 +186,7 @@
                                         </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="S34-6q-7LT" secondAttribute="bottom" constant="-8" id="FLp-O5-KfY"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="S34-6q-7LT" secondAttribute="bottom" constant="-8" id="EG9-cg-pG1"/>
                                         <constraint firstItem="ckh-96-cx9" firstAttribute="top" secondItem="nA4-J8-9hm" secondAttribute="topMargin" constant="24" id="Jvn-Md-k76"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="coo-X8-zyV" secondAttribute="trailing" constant="-8" id="Nte-D6-7Lq"/>
                                         <constraint firstItem="S34-6q-7LT" firstAttribute="leading" secondItem="nA4-J8-9hm" secondAttribute="leadingMargin" constant="-8" id="ZZA-TK-HiY"/>

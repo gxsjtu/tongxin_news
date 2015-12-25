@@ -1,0 +1,6 @@
+framework module Pods_tongxin_news {
+  umbrella header "Pods-tongxin_news-umbrella.h"
+
+  export *
+  module * { export * }
+}
