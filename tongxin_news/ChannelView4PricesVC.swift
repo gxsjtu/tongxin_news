@@ -23,6 +23,7 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
     @IBAction func didClose(sender: AnyObject) {
         self.view.hidden = true
         var inBucketString = ""
+        let mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
         if let parent = self.parentVC as? PriceViewController
         {
             parent.selectionData.removeAll(keepCapacity: true)
@@ -36,6 +37,11 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
             parent.selection.selectedButtonIndex = 0
             parent.selection.reloadData()
             parent.selectionList(parent.selection, didSelectButtonWithIndex: 0)
+            
+            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetProductHierarchy.rawValue, parameters: ["mobile": mobile!, "method": "groupChannel", "groups": inBucketString])
+                .responseJSON { response in
+                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+            }
         }
         else if let parent = self.parentVC as? CommentViewController
         {
@@ -50,14 +56,15 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
             parent.selection.selectedButtonIndex = 0
             parent.selection.reloadData()
             parent.selectionList(parent.selection, didSelectButtonWithIndex: 0)
+            
+            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetCommentHierarchy.rawValue, parameters: ["mobile": mobile!, "method": "groupChannel", "groups": inBucketString])
+                .responseJSON { response in
+                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+            }
         }
         
         //更新数据库
-        let mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
-        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetProductHierarchy.rawValue, parameters: ["mobile": mobile!, "method": "groupChannel", "groups": inBucketString])
-            .responseJSON { response in
-                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-        }
+
     }
     
     override func viewDidLoad() {

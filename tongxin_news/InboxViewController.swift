@@ -33,6 +33,7 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
         self.tbData.delegate = self
         self.tbData.estimatedRowHeight = 100
         self.tbData.rowHeight = UITableViewAutomaticDimension
+        self.tbData.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         self.searchCon.delegate = self
         
         self.tbData.addHeaderWithCallback(pullDownLoadDatas)
@@ -113,11 +114,13 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let format = NSDateFormatter()
-
         format.dateFormat = "yyyy-MM-dd HH:mm:ss"
 
         let tbCell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         tbCell.viewWithTag(6)?.layer.cornerRadius = 8.0
+        
+        (tbCell.viewWithTag(5) as! UIImageView).image = UIImage(named: "more")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        (tbCell.viewWithTag(5) as! UIImageView).tintColor = UIColor.darkGrayColor()
 
         if(tbCell.viewWithTag(3) != nil)
         {
