@@ -292,6 +292,88 @@
 			name = SwiftChart;
 			sourceTree = "<group>";
 		};
+		3543C9D21C2D30440045A97B /* ChannelLayer */ = {
+			isa = PBXGroup;
+			children = (
+				356ECDD31C2B87E100DA5DB9 /* ChannelLayer4Prices.storyboard */,
+				356ECDD51C2B9EF500DA5DB9 /* ChannelView4PricesVC.swift */,
+				3543C9D01C2BBAD60045A97B /* ChannelCell4Prices.swift */,
+			);
+			name = ChannelLayer;
+			sourceTree = "<group>";
+		};
+		3543C9D31C2D30610045A97B /* UserSettings */ = {
+			isa = PBXGroup;
+			children = (
+				35BB22581BD4E8BB00A01E36 /* UserSettingTableViewController.swift */,
+				35BB225A1BD5D53A00A01E36 /* MyFocusViewController.swift */,
+				3517CBD81BD5EDD500EE40FB /* MyFocusTableViewCell.swift */,
+				3517CBDA1BD6095300EE40FB /* MyPublishViewController.swift */,
+				3517CBDC1BD62AC000EE40FB /* MyPublishTableViewCell.swift */,
+			);
+			name = UserSettings;
+			sourceTree = "<group>";
+		};
+		3543C9D41C2D30800045A97B /* Prices */ = {
+			isa = PBXGroup;
+			children = (
+				355C95A41B8AF089005595EA /* PriceViewController.swift */,
+				355C95A61B8C0665005595EA /* PriceDetailViewController.swift */,
+				355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */,
+				355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */,
+				35B278981B8FFEFD00FA2399 /* PriceHistoryViewController.swift */,
+				35B2789A1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift */,
+				35B278B51B9045F600FA2399 /* PriceChartViewController.swift */,
+			);
+			name = Prices;
+			sourceTree = "<group>";
+		};
+		3543C9D51C2D308B0045A97B /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				35B278401B8D952100FA2399 /* CommentDetailViewController.swift */,
+				35B278421B8D952100FA2399 /* CommentViewController.swift */,
+				35B278431B8D952100FA2399 /* CommentVCTableViewCell.swift */,
+				35B278611B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift */,
+				35B278631B8EA2FD00FA2399 /* CommentContentViewController.swift */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
+		3543C9D61C2D309A0045A97B /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				35B1F2381BCB631200AA9F38 /* ChannelItemImageViewController.swift */,
+				3515CB241B9BE45000EC54D7 /* EcosystemViewController.swift */,
+				3515CB451B9D552600EC54D7 /* ChannelViewController.swift */,
+				3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */,
+				3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */,
+				3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */,
+				358700801B9EBCD100B09351 /* ChannelVCTableViewCell.swift */,
+				358700821B9FE86200B09351 /* ChannelItemDetailViewController.swift */,
+			);
+			name = Business;
+			sourceTree = "<group>";
+		};
+		3543C9D71C2D30BF0045A97B /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				355C95AC1B8C5145005595EA /* InboxViewController.swift */,
+				3502271A1BE7556E00DE2B6B /* InboxTableViewCell.swift */,
+			);
+			name = Inbox;
+			sourceTree = "<group>";
+		};
+		3543C9D81C2D30D80045A97B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				35C712401B85C0BE004B267A /* LogInViewController.swift */,
+				35F6657C1BB3F18700A3AEDE /* ApplyTrialViewController.swift */,
+				350901901BB4F7600010FFFE /* ForgetPasswordViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		356803691BA02F0F00BB50AE /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -435,42 +517,16 @@
 				35C712601B86AEE8004B267A /* tongxin_news-Bridging-Header.h */,
 				35C7121E1B8595B3004B267A /* Images.xcassets */,
 				35C7127C1B86B008004B267A /* EndPoints.swift */,
-				35BB22581BD4E8BB00A01E36 /* UserSettingTableViewController.swift */,
-				35C712401B85C0BE004B267A /* LogInViewController.swift */,
+				3543C9D31C2D30610045A97B /* UserSettings */,
+				3543C9D81C2D30D80045A97B /* Login */,
 				35C712811B86B126004B267A /* HomeTabBarViewController.swift */,
-				355C95A41B8AF089005595EA /* PriceViewController.swift */,
-				355C95A61B8C0665005595EA /* PriceDetailViewController.swift */,
-				355C95A81B8C1407005595EA /* PriceVCTableViewCell.swift */,
-				355C95AA1B8C20CB005595EA /* PriceDetailVCTableViewCell.swift */,
-				355C95AC1B8C5145005595EA /* InboxViewController.swift */,
-				35B278401B8D952100FA2399 /* CommentDetailViewController.swift */,
-				35B278421B8D952100FA2399 /* CommentViewController.swift */,
-				35B278431B8D952100FA2399 /* CommentVCTableViewCell.swift */,
-				35B278611B8DA48A00FA2399 /* CommentDetailVCTableViewCell.swift */,
-				35B278631B8EA2FD00FA2399 /* CommentContentViewController.swift */,
-				35B278981B8FFEFD00FA2399 /* PriceHistoryViewController.swift */,
-				35B2789A1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift */,
-				35B278B51B9045F600FA2399 /* PriceChartViewController.swift */,
-				3515CB241B9BE45000EC54D7 /* EcosystemViewController.swift */,
-				3515CB451B9D552600EC54D7 /* ChannelViewController.swift */,
-				3515CB471B9D62AA00EC54D7 /* ChannelCatalogViewController.swift */,
-				3515CB491B9D693C00EC54D7 /* ChannelCatalogTableViewCell.swift */,
-				3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */,
-				358700801B9EBCD100B09351 /* ChannelVCTableViewCell.swift */,
-				358700821B9FE86200B09351 /* ChannelItemDetailViewController.swift */,
+				3543C9D41C2D30800045A97B /* Prices */,
+				3543C9D71C2D30BF0045A97B /* Inbox */,
+				3543C9D51C2D308B0045A97B /* Comments */,
+				3543C9D61C2D309A0045A97B /* Business */,
 				35E3E8511BA6B3BC0009E8DD /* FuturesViewController.swift */,
 				35E3E8531BA6C3750009E8DD /* Parameter.swift */,
-				35F6657C1BB3F18700A3AEDE /* ApplyTrialViewController.swift */,
-				350901901BB4F7600010FFFE /* ForgetPasswordViewController.swift */,
-				35B1F2381BCB631200AA9F38 /* ChannelItemImageViewController.swift */,
-				35BB225A1BD5D53A00A01E36 /* MyFocusViewController.swift */,
-				3517CBD81BD5EDD500EE40FB /* MyFocusTableViewCell.swift */,
-				3517CBDA1BD6095300EE40FB /* MyPublishViewController.swift */,
-				3517CBDC1BD62AC000EE40FB /* MyPublishTableViewCell.swift */,
-				3502271A1BE7556E00DE2B6B /* InboxTableViewCell.swift */,
-				356ECDD31C2B87E100DA5DB9 /* ChannelLayer4Prices.storyboard */,
-				356ECDD51C2B9EF500DA5DB9 /* ChannelView4PricesVC.swift */,
-				3543C9D01C2BBAD60045A97B /* ChannelCell4Prices.swift */,
+				3543C9D21C2D30440045A97B /* ChannelLayer */,
 			);
 			path = tongxin_news;
 			sourceTree = "<group>";
