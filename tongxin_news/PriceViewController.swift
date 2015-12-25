@@ -67,7 +67,7 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         
         //添加constraints
         self.selection.snp_makeConstraints(closure: {(make) -> Void in
-            make.edges.equalTo(self.vSelectionView).inset(EdgeInsets(top: 0, left: 0, bottom: 0, right: self.more.frame.width + 10))
+            make.edges.equalTo(self.vSelectionView).inset(EdgeInsets(top: 0, left: 0, bottom: 0, right: self.more.frame.width ))
         })
         
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
