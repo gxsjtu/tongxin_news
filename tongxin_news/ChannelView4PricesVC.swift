@@ -21,27 +21,44 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
     @IBOutlet weak var inView: UIView!
     @IBAction func didClose(sender: AnyObject) {
         self.view.hidden = true
+        var inBucketString = ""
         if let parent = self.parentVC as? PriceViewController
         {
             parent.selectionData.removeAll(keepCapacity: true)
-            var inBucketString = ""
             for index: (Int, String) in self.inBucket
             {
                 parent.selectionData.append(index.1)
                 inBucketString.appendContentsOf(String(index.0) + "|")
             }
+            parent.inBucket = self.inBucket
+            parent.outBucket = self.outBucket
             parent.selection.selectedButtonIndex = 0
             parent.selection.reloadData()
             parent.selectionList(parent.selection, didSelectButtonWithIndex: 0)
-            //更新数据库
-            let mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
-            (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetProductHierarchy.rawValue, parameters: ["mobile": mobile!, "method": "groupChannel", "groups": inBucketString])
-                .responseJSON { response in
-                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        }
+        else if let parent = self.parentVC as? CommentViewController
+        {
+            parent.selectionData.removeAll(keepCapacity: true)
+            for index: (Int, String) in self.inBucket
+            {
+                parent.selectionData.append(index.1)
+                inBucketString.appendContentsOf(String(index.0) + "|")
             }
+            parent.inBucket = self.inBucket
+            parent.outBucket = self.outBucket
+            parent.selection.selectedButtonIndex = 0
+            parent.selection.reloadData()
+            parent.selectionList(parent.selection, didSelectButtonWithIndex: 0)
+        }
+        
+        //更新数据库
+        let mobile : String? = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+        (UIApplication.sharedApplication().delegate as! AppDelegate).manager!.request(.GET, EndPoints.GetProductHierarchy.rawValue, parameters: ["mobile": mobile!, "method": "groupChannel", "groups": inBucketString])
+            .responseJSON { response in
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
         }
     }
-        
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -133,7 +133,7 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hrz-ej-c1R">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hrz-ej-c1R">
                                                     <rect key="frame" x="8" y="37" width="304" height="182"/>
                                                     <collectionViewLayout key="collectionViewLayout" id="6Vx-bM-YIw" customClass="RAReorderableLayout" customModule="RAReorderableLayout"/>
                                                     <cells>
@@ -173,7 +173,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Hrz-ej-c1R" secondAttribute="bottom" id="Flm-dl-4pI"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Hrz-ej-c1R" secondAttribute="bottom" constant="50" id="Flm-dl-4pI"/>
                                                 <constraint firstAttribute="topMargin" secondItem="NC0-Mn-3vs" secondAttribute="top" id="NcP-TG-Wgp"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="NC0-Mn-3vs" secondAttribute="leading" id="PZZ-Yw-oag"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="Hrz-ej-c1R" secondAttribute="leading" id="U5H-tr-ItQ"/>
