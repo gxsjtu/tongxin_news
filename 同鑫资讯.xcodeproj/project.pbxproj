@@ -221,17 +221,17 @@
 		35BB225A1BD5D53A00A01E36 /* MyFocusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFocusViewController.swift; sourceTree = "<group>"; };
 		35C712121B8595B3004B267A /* 同鑫资讯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "同鑫资讯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C712161B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		35C712171B8595B3004B267A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		35C7121E1B8595B3004B267A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		35C712171B8595B3004B267A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = tongxin_news/AppDelegate.swift; sourceTree = "<group>"; };
+		35C7121E1B8595B3004B267A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = tongxin_news/Images.xcassets; sourceTree = "<group>"; };
 		35C712401B85C0BE004B267A /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
-		35C712601B86AEE8004B267A /* tongxin_news-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "tongxin_news-Bridging-Header.h"; sourceTree = "<group>"; };
+		35C712601B86AEE8004B267A /* tongxin_news-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "tongxin_news-Bridging-Header.h"; path = "tongxin_news/tongxin_news-Bridging-Header.h"; sourceTree = "<group>"; };
 		35C712611B86AEE9004B267A /* SKAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAlertView.h; sourceTree = "<group>"; };
 		35C712621B86AEE9004B267A /* SKAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKAlertView.m; sourceTree = "<group>"; };
 		35C712631B86AEE9004B267A /* SKTipAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKTipAlertView.h; sourceTree = "<group>"; };
 		35C712641B86AEE9004B267A /* SKTipAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKTipAlertView.m; sourceTree = "<group>"; };
-		35C7127C1B86B008004B267A /* EndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoints.swift; sourceTree = "<group>"; };
+		35C7127C1B86B008004B267A /* EndPoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EndPoints.swift; path = tongxin_news/EndPoints.swift; sourceTree = "<group>"; };
 		35C7127F1B86B09E004B267A /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
-		35C712811B86B126004B267A /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarViewController.swift; sourceTree = "<group>"; };
+		35C712811B86B126004B267A /* HomeTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeTabBarViewController.swift; path = tongxin_news/HomeTabBarViewController.swift; sourceTree = "<group>"; };
 		35C712841B86B2BE004B267A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		35C712851B86B2BE004B267A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		35C7128A1B86CC5D004B267A /* HTHorizontalSelectionList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTHorizontalSelectionList.h; sourceTree = "<group>"; };
@@ -250,8 +250,8 @@
 		35DC5E601BA94F700000FA22 /* TSLocateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TSLocateView.xib; sourceTree = "<group>"; };
 		35DC5E611BA94F700000FA22 /* TSLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSLocation.h; sourceTree = "<group>"; };
 		35DC5E621BA94F700000FA22 /* TSLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSLocation.m; sourceTree = "<group>"; };
-		35E3E8511BA6B3BC0009E8DD /* FuturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FuturesViewController.swift; sourceTree = "<group>"; };
-		35E3E8531BA6C3750009E8DD /* Parameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
+		35E3E8511BA6B3BC0009E8DD /* FuturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FuturesViewController.swift; path = tongxin_news/FuturesViewController.swift; sourceTree = "<group>"; };
+		35E3E8531BA6C3750009E8DD /* Parameter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Parameter.swift; path = tongxin_news/Parameter.swift; sourceTree = "<group>"; };
 		35EF0F081BB394D300F99399 /* NSMutableArray+SWUtilityButtons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+SWUtilityButtons.h"; sourceTree = "<group>"; };
 		35EF0F091BB394D300F99399 /* NSMutableArray+SWUtilityButtons.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+SWUtilityButtons.m"; sourceTree = "<group>"; };
 		35EF0F0A1BB394D300F99399 /* SWCellScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWCellScrollView.h; sourceTree = "<group>"; };
@@ -480,7 +480,14 @@
 			isa = PBXGroup;
 			children = (
 				35C712141B8595B3004B267A /* tongxin_news */,
-				35C712131B8595B3004B267A /* Products */,
+				35C7121E1B8595B3004B267A /* Images.xcassets */,
+				35C712171B8595B3004B267A /* AppDelegate.swift */,
+				35B2783C1B8D94AB00FA2399 /* Main.storyboard */,
+				35C712601B86AEE8004B267A /* tongxin_news-Bridging-Header.h */,
+				35C7127C1B86B008004B267A /* EndPoints.swift */,
+				35C712811B86B126004B267A /* HomeTabBarViewController.swift */,
+				35E3E8511BA6B3BC0009E8DD /* FuturesViewController.swift */,
+				35E3E8531BA6C3750009E8DD /* Parameter.swift */,
 				DCB39FD3FEE17F75D6F282C6 /* Pods */,
 				50AD9827BCBE034E73ED9A81 /* Frameworks */,
 			);
@@ -492,6 +499,7 @@
 				35C712121B8595B3004B267A /* 同鑫资讯.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		35C712141B8595B3004B267A /* tongxin_news */ = {
@@ -512,20 +520,13 @@
 				35C7127E1B86B077004B267A /* SwiftyJSON */,
 				35C712671B86AF12004B267A /* Alamofire */,
 				35C7125F1B86AEB7004B267A /* SKAlertView */,
-				35C712171B8595B3004B267A /* AppDelegate.swift */,
-				35B2783C1B8D94AB00FA2399 /* Main.storyboard */,
-				35C712601B86AEE8004B267A /* tongxin_news-Bridging-Header.h */,
-				35C7121E1B8595B3004B267A /* Images.xcassets */,
-				35C7127C1B86B008004B267A /* EndPoints.swift */,
 				3543C9D31C2D30610045A97B /* UserSettings */,
 				3543C9D81C2D30D80045A97B /* Login */,
-				35C712811B86B126004B267A /* HomeTabBarViewController.swift */,
 				3543C9D41C2D30800045A97B /* Prices */,
 				3543C9D71C2D30BF0045A97B /* Inbox */,
 				3543C9D51C2D308B0045A97B /* Comments */,
 				3543C9D61C2D309A0045A97B /* Business */,
-				35E3E8511BA6B3BC0009E8DD /* FuturesViewController.swift */,
-				35E3E8531BA6C3750009E8DD /* Parameter.swift */,
+				35C712131B8595B3004B267A /* Products */,
 				3543C9D21C2D30440045A97B /* ChannelLayer */,
 			);
 			path = tongxin_news;
@@ -894,6 +895,7 @@
 				35B2783D1B8D94AB00FA2399 /* Base */,
 			);
 			name = Main.storyboard;
+			path = tongxin_news;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

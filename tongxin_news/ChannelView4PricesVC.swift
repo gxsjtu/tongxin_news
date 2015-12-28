@@ -199,8 +199,14 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
             self.outBucket.removeAtIndex(indexPath.row)
             self.inBucket.append(tmp)
         }
+        let origin = self.cvInBucket.collectionViewLayout.collectionViewContentSize()
         self.cvOutBucket.reloadData()
         self.cvInBucket.reloadData()
+        let new = self.cvInBucket.collectionViewLayout.collectionViewContentSize()
+        self.inView.frame.size = CGSize(width: self.inView.frame.size.width, height: self.inView.frame.size.height - (origin.height - new.height))
+        print(origin)
+        print(new)
+        print(self.inView.frame.size)
     }
 
     /*

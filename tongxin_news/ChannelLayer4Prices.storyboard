@@ -5,7 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Channel View4 PricesVC-->
@@ -92,6 +91,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="tyI-8r-69D" secondAttribute="trailing" id="0PM-UX-49N"/>
                                                 <constraint firstAttribute="topMargin" secondItem="HZG-fU-PAK" secondAttribute="top" id="3SJ-zJ-wcU"/>
                                                 <constraint firstItem="tyI-8r-69D" firstAttribute="leading" secondItem="HZG-fU-PAK" secondAttribute="trailing" constant="8" id="5od-57-nhQ"/>
+                                                <constraint firstAttribute="height" constant="227" id="72B-wr-IhX"/>
                                                 <constraint firstAttribute="topMargin" secondItem="tyI-8r-69D" secondAttribute="top" id="9d3-RQ-FYy"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="Pzf-tA-6vi" secondAttribute="leading" id="Cbo-KP-hPv"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Pzf-tA-6vi" secondAttribute="trailing" id="NF6-4r-PFr"/>
@@ -195,7 +195,6 @@
                                         <constraint firstItem="coo-X8-zyV" firstAttribute="top" secondItem="ckh-96-cx9" secondAttribute="bottom" constant="7" id="bIT-sx-3mK"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="ckh-96-cx9" secondAttribute="trailing" id="gdq-v1-fuT"/>
                                         <constraint firstItem="S34-6q-7LT" firstAttribute="top" secondItem="coo-X8-zyV" secondAttribute="bottom" id="h70-jV-HA7"/>
-                                        <constraint firstItem="coo-X8-zyV" firstAttribute="height" secondItem="nA4-J8-9hm" secondAttribute="height" multiplier="0.4" id="ibg-1h-i0P"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="S34-6q-7LT" secondAttribute="trailing" constant="-8" id="lvd-CH-d46"/>
                                     </constraints>
                                 </view>
