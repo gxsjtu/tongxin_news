@@ -82,7 +82,6 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
         self.cvOutBucket.delegate = self
         self.cvOutBucket.dataSource = self
         self.cvOutBucket.backgroundColor = UIColor.clearColor()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,7 +124,6 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
             {
                 cell.backgroundColor = UIColor(red: 52/255, green: 181/255, blue: 239/255, alpha: 1)
             }
-            
             return cell
         }
         else
