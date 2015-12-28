@@ -11,6 +11,7 @@ import RAReorderableLayout
 
 class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAReorderableLayoutDelegate {
     
+    @IBOutlet weak var consInViewHeight: NSLayoutConstraint!
     @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var cvOutBucket: UICollectionView!
     @IBOutlet weak var cvInBucket: UICollectionView!
@@ -81,6 +82,7 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
         self.cvOutBucket.delegate = self
         self.cvOutBucket.dataSource = self
         self.cvOutBucket.backgroundColor = UIColor.clearColor()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -203,10 +205,7 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
         self.cvOutBucket.reloadData()
         self.cvInBucket.reloadData()
         let new = self.cvInBucket.collectionViewLayout.collectionViewContentSize()
-        self.inView.frame.size = CGSize(width: self.inView.frame.size.width, height: self.inView.frame.size.height - (origin.height - new.height))
-        print(origin)
-        print(new)
-        print(self.inView.frame.size)
+        self.consInViewHeight.constant += (new.height - origin.height)
     }
 
     /*

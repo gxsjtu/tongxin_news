@@ -71,13 +71,13 @@
                                 <rect key="frame" x="-4" y="64" width="324" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBo-36-MHk">
-                                        <rect key="frame" x="292" y="4" width="32" height="32"/>
+                                        <rect key="frame" x="294" y="5" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="EtJ-0p-M5z"/>
-                                            <constraint firstAttribute="width" constant="32" id="hI6-pk-9xK"/>
+                                            <constraint firstAttribute="height" constant="30" id="EtJ-0p-M5z"/>
+                                            <constraint firstAttribute="width" constant="30" id="hI6-pk-9xK"/>
                                         </constraints>
                                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="icon-ios7-arrow-down-128"/>
+                                        <state key="normal" image="plus-128"/>
                                         <connections>
                                             <action selector="btnMoreClicked:" destination="LSS-2S-FyB" eventType="touchUpInside" id="M4l-kW-XAD"/>
                                         </connections>
@@ -514,13 +514,13 @@
                                 <rect key="frame" x="-4" y="108" width="324" height="40"/>
                                 <subviews>
                                     <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1M-Dd-cH4">
-                                        <rect key="frame" x="292" y="4" width="32" height="32"/>
+                                        <rect key="frame" x="294" y="5" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="32" id="93V-M4-WTD"/>
-                                            <constraint firstAttribute="height" constant="32" id="PMO-Lo-UBu"/>
+                                            <constraint firstAttribute="width" constant="30" id="93V-M4-WTD"/>
+                                            <constraint firstAttribute="height" constant="30" id="PMO-Lo-UBu"/>
                                         </constraints>
                                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" image="icon-ios7-arrow-down-128"/>
+                                        <state key="normal" image="plus-128"/>
                                         <connections>
                                             <action selector="btnMoreClicked:" destination="YUd-7R-Tb7" eventType="touchUpInside" id="1ya-o7-SiN"/>
                                         </connections>
@@ -3583,9 +3583,9 @@
         <image name="comment" width="25" height="25"/>
         <image name="futures" width="25" height="25"/>
         <image name="here" width="98" height="11"/>
-        <image name="icon-ios7-arrow-down-128" width="128" height="128"/>
         <image name="login-bk" width="1080" height="1920"/>
         <image name="more" width="128" height="128"/>
+        <image name="plus-128" width="128" height="128"/>
         <image name="price" width="25" height="24"/>
         <image name="user" width="32" height="32"/>
         <image name="不锈钢" width="90" height="90"/>

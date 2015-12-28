@@ -26,7 +26,7 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coo-X8-zyV">
-                                            <rect key="frame" x="0.0" y="64" width="320" height="227"/>
+                                            <rect key="frame" x="0.0" y="64" width="320" height="150"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的频道" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZG-fU-PAK">
                                                     <rect key="frame" x="8" y="8" width="68" height="21"/>
@@ -48,7 +48,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Pzf-tA-6vi">
-                                                    <rect key="frame" x="8" y="29" width="304" height="198"/>
+                                                    <rect key="frame" x="8" y="29" width="304" height="121"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <collectionViewLayout key="collectionViewLayout" id="9sh-l9-S5a" customClass="RAReorderableLayout" customModule="RAReorderableLayout"/>
                                                     <cells>
@@ -91,17 +91,17 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="tyI-8r-69D" secondAttribute="trailing" id="0PM-UX-49N"/>
                                                 <constraint firstAttribute="topMargin" secondItem="HZG-fU-PAK" secondAttribute="top" id="3SJ-zJ-wcU"/>
                                                 <constraint firstItem="tyI-8r-69D" firstAttribute="leading" secondItem="HZG-fU-PAK" secondAttribute="trailing" constant="8" id="5od-57-nhQ"/>
-                                                <constraint firstAttribute="height" constant="227" id="72B-wr-IhX"/>
                                                 <constraint firstAttribute="topMargin" secondItem="tyI-8r-69D" secondAttribute="top" id="9d3-RQ-FYy"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="Pzf-tA-6vi" secondAttribute="leading" id="Cbo-KP-hPv"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Pzf-tA-6vi" secondAttribute="trailing" id="NF6-4r-PFr"/>
+                                                <constraint firstAttribute="height" constant="150" id="Wjj-uz-pdR"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Pzf-tA-6vi" secondAttribute="bottom" constant="-8" id="iLY-9Y-WDw"/>
                                                 <constraint firstItem="Pzf-tA-6vi" firstAttribute="top" secondItem="HZG-fU-PAK" secondAttribute="bottom" id="mbF-es-Clg"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="HZG-fU-PAK" secondAttribute="leading" id="ouJ-nj-bzv"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S34-6q-7LT">
-                                            <rect key="frame" x="0.0" y="291" width="320" height="277"/>
+                                            <rect key="frame" x="0.0" y="214" width="320" height="354"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多频道" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NC0-Mn-3vs">
                                                     <rect key="frame" x="8" y="8" width="68" height="21"/>
@@ -123,7 +123,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hrz-ej-c1R">
-                                                    <rect key="frame" x="8" y="37" width="304" height="182"/>
+                                                    <rect key="frame" x="8" y="37" width="304" height="259"/>
                                                     <collectionViewLayout key="collectionViewLayout" id="6Vx-bM-YIw" customClass="RAReorderableLayout" customModule="RAReorderableLayout"/>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="outCell" id="1me-fe-0yS" customClass="ChannelCell4Prices" customModule="同鑫资讯" customModuleProvider="target">
@@ -211,6 +211,7 @@
                     </view>
                     <connections>
                         <outlet property="btnClose" destination="ckh-96-cx9" id="axD-lP-vHj"/>
+                        <outlet property="consInViewHeight" destination="Wjj-uz-pdR" id="lBi-o0-oaP"/>
                         <outlet property="cvInBucket" destination="Pzf-tA-6vi" id="iEC-6M-OvH"/>
                         <outlet property="cvOutBucket" destination="Hrz-ej-c1R" id="Xwh-bm-5aa"/>
                         <outlet property="inView" destination="coo-X8-zyV" id="ZHI-k7-Nrv"/>
