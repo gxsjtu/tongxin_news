@@ -83,6 +83,7 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
         self.cvOutBucket.delegate = self
         self.cvOutBucket.dataSource = self
         self.cvOutBucket.backgroundColor = UIColor.clearColor()
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -100,6 +101,8 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
             return self.outBucket.count
         }
     }
+    
+    
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         if collectionView == self.cvInBucket
@@ -146,7 +149,7 @@ class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAR
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        return UIEdgeInsets(top: 10, left: 20, bottom: 20, right: 20)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
