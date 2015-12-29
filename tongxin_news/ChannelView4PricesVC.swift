@@ -11,6 +11,7 @@ import RAReorderableLayout
 
 class ChannelView4PricesVC: UIViewController, RAReorderableLayoutDataSource, RAReorderableLayoutDelegate {
     
+    @IBOutlet weak var consBaseViewHeight: NSLayoutConstraint!
     @IBOutlet weak var consInViewHeight: NSLayoutConstraint!
     @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var cvOutBucket: UICollectionView!
