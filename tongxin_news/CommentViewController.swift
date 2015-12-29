@@ -16,7 +16,9 @@ class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate
         self.ChannelView4Comment?.cvInBucket.reloadData()
         self.ChannelView4Comment?.cvOutBucket.reloadData()
         self.ChannelView4Comment?.consInViewHeight.constant = (self.ChannelView4Comment?.cvInBucket.collectionViewLayout.collectionViewContentSize().height)! + 40
-        self.ChannelView4Comment?.consBaseViewHeight.constant = 500
+        let h1 = self.ChannelView4Comment?.cvInBucket.collectionViewLayout.collectionViewContentSize().height
+        let h2 = self.ChannelView4Comment?.cvOutBucket.collectionViewLayout.collectionViewContentSize().height
+        self.ChannelView4Comment?.consBaseViewHeight.constant = h1! + h2! + 200
     }
     @IBOutlet weak var more: UIButton!
     @IBOutlet weak var navComment: UINavigationBar!

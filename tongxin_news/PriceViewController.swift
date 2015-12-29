@@ -16,7 +16,9 @@ class PriceViewController: UIViewController, HTHorizontalSelectionListDelegate, 
         self.ChannelView4Prices?.cvInBucket.reloadData()
         self.ChannelView4Prices?.cvOutBucket.reloadData()
         self.ChannelView4Prices?.consInViewHeight.constant = (self.ChannelView4Prices?.cvInBucket.collectionViewLayout.collectionViewContentSize().height)! + 40
-        self.ChannelView4Prices?.consBaseViewHeight.constant = 600
+        let h1 = self.ChannelView4Prices?.cvInBucket.collectionViewLayout.collectionViewContentSize().height
+        let h2 = self.ChannelView4Prices?.cvOutBucket.collectionViewLayout.collectionViewContentSize().height
+        self.ChannelView4Prices?.consBaseViewHeight.constant = h1! + h2! + 200
     }
     
     @IBOutlet weak var more: UIButton!
