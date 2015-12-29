@@ -21,7 +21,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dh-2r-T1D">
-                                <rect key="frame" x="0.0" y="-1" width="320" height="519"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nA4-J8-9hm">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,9 +128,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="3dh-2r-T1D" firstAttribute="leading" secondItem="dW4-RS-Qrw" secondAttribute="leading" id="1go-GP-KUV"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="3dh-2r-T1D" secondAttribute="bottom" constant="50" id="BNn-Fk-Itf"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="3dh-2r-T1D" secondAttribute="bottom" constant="49" id="BNn-Fk-Itf"/>
                             <constraint firstAttribute="trailing" secondItem="3dh-2r-T1D" secondAttribute="trailing" id="fPU-0x-KUm"/>
-                            <constraint firstAttribute="top" secondItem="3dh-2r-T1D" secondAttribute="top" constant="1" id="qzh-wo-W0s"/>
+                            <constraint firstAttribute="top" secondItem="3dh-2r-T1D" secondAttribute="top" id="qzh-wo-W0s"/>
                         </constraints>
                     </view>
                     <connections>
