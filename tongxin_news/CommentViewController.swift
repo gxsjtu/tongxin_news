@@ -13,12 +13,13 @@ class CommentViewController: UIViewController, HTHorizontalSelectionListDelegate
 
     @IBAction func btnMoreClicked(sender: AnyObject) {
         self.ChannelView4Comment?.view.hidden = false
-        self.ChannelView4Comment?.cvInBucket.reloadData()
-        self.ChannelView4Comment?.cvOutBucket.reloadData()
-        self.ChannelView4Comment?.consInViewHeight.constant = (self.ChannelView4Comment?.cvInBucket.collectionViewLayout.collectionViewContentSize().height)! + 40
-        let h1 = self.ChannelView4Comment?.cvInBucket.collectionViewLayout.collectionViewContentSize().height
-        let h2 = self.ChannelView4Comment?.cvOutBucket.collectionViewLayout.collectionViewContentSize().height
-        self.ChannelView4Comment?.consBaseViewHeight.constant = h1! + h2! + 180
+        self.ChannelView4Comment?.cvBase.reloadData()
+//        self.ChannelView4Comment?.cvInBucket.reloadData()
+//        self.ChannelView4Comment?.cvOutBucket.reloadData()
+//        self.ChannelView4Comment?.consInViewHeight.constant = (self.ChannelView4Comment?.cvInBucket.collectionViewLayout.collectionViewContentSize().height)! + 40
+//        let h1 = self.ChannelView4Comment?.cvInBucket.collectionViewLayout.collectionViewContentSize().height
+//        let h2 = self.ChannelView4Comment?.cvOutBucket.collectionViewLayout.collectionViewContentSize().height
+//        self.ChannelView4Comment?.consBaseViewHeight.constant = h1! + h2! + 180
     }
     @IBOutlet weak var more: UIButton!
     @IBOutlet weak var navComment: UINavigationBar!

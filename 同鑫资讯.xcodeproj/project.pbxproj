@@ -57,6 +57,7 @@
 		3568039A1BA0304600BB50AE /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3568038A1BA0304600BB50AE /* UIView+WebCacheOperation.m */; };
 		356ECDD41C2B87E100DA5DB9 /* ChannelLayer4Prices.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 356ECDD31C2B87E100DA5DB9 /* ChannelLayer4Prices.storyboard */; };
 		356ECDD61C2B9EF500DA5DB9 /* ChannelView4PricesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356ECDD51C2B9EF500DA5DB9 /* ChannelView4PricesVC.swift */; };
+		35818F751C3263CC0002AC72 /* ChannelHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35818F741C3263CC0002AC72 /* ChannelHeaderView.swift */; };
 		3587005C1B9D776800B09351 /* ChannelItemAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */; };
 		358700701B9D8C3C00B09351 /* DLRadioButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3587006F1B9D8C3C00B09351 /* DLRadioButton.m */; };
 		358700781B9E78BC00B09351 /* ProvincesAndCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 358700721B9E78BC00B09351 /* ProvincesAndCities.plist */; };
@@ -182,6 +183,7 @@
 		3568038A1BA0304600BB50AE /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		356ECDD31C2B87E100DA5DB9 /* ChannelLayer4Prices.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ChannelLayer4Prices.storyboard; sourceTree = "<group>"; };
 		356ECDD51C2B9EF500DA5DB9 /* ChannelView4PricesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelView4PricesVC.swift; sourceTree = "<group>"; };
+		35818F741C3263CC0002AC72 /* ChannelHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelHeaderView.swift; sourceTree = "<group>"; };
 		3587005B1B9D776800B09351 /* ChannelItemAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelItemAddViewController.swift; sourceTree = "<group>"; };
 		3587006E1B9D8C3C00B09351 /* DLRadioButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLRadioButton.h; sourceTree = "<group>"; };
 		3587006F1B9D8C3C00B09351 /* DLRadioButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLRadioButton.m; sourceTree = "<group>"; };
@@ -298,6 +300,7 @@
 				356ECDD31C2B87E100DA5DB9 /* ChannelLayer4Prices.storyboard */,
 				356ECDD51C2B9EF500DA5DB9 /* ChannelView4PricesVC.swift */,
 				3543C9D01C2BBAD60045A97B /* ChannelCell4Prices.swift */,
+				35818F741C3263CC0002AC72 /* ChannelHeaderView.swift */,
 			);
 			name = ChannelLayer;
 			sourceTree = "<group>";
@@ -840,6 +843,7 @@
 				355483F91BDA3AFF00AEFBEF /* Stream.swift in Sources */,
 				3517CBDD1BD62AC000EE40FB /* MyPublishTableViewCell.swift in Sources */,
 				3517CBDB1BD6095300EE40FB /* MyPublishViewController.swift in Sources */,
+				35818F751C3263CC0002AC72 /* ChannelHeaderView.swift in Sources */,
 				35AC875B1B8AB15900B44C7E /* MJRefreshHeaderView.m in Sources */,
 				3568039A1BA0304600BB50AE /* UIView+WebCacheOperation.m in Sources */,
 				356803921BA0304600BB50AE /* SDWebImageManager.m in Sources */,
