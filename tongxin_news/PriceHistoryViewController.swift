@@ -85,7 +85,14 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
                                     overall += average
                                 }
                             }
-                            self.lblOverallAvg.text = "均价 " + ((NSString(format: "%.2f", overall / Double(res.count))) as String)
+                            if res.count > 0
+                            {
+                                self.lblOverallAvg.text = "均价 " + ((NSString(format: "%.2f", overall / Double(res.count))) as String)
+                            }
+                            else
+                            {
+                                self.lblOverallAvg.text?.removeAll()
+                            }
                             self.tvPriceHistory.reloadData()
 
                             self.barBtnChart.enabled = (self.history.count > 0)

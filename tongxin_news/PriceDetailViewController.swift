@@ -158,8 +158,8 @@ class PriceDetailViewController: UIViewController, UITableViewDelegate, UITableV
             
             if change == 0
             {
-                cell.lblPriceDetailChange.textColor = UIColor(red: 254/255, green: 182/255, blue: 97/255, alpha: 1.0)
-                cell.lblPriceDetailChangeCapt.textColor = UIColor(red: 254/255, green: 182/255, blue: 97/255, alpha: 1.0)
+                cell.lblPriceDetailChange.textColor = UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 1.0)
+                cell.lblPriceDetailChangeCapt.textColor = UIColor(red: 255/255, green: 128/255, blue: 0/255, alpha: 1.0)
                 cell.lblPriceDetailChange.text = "一"
                 cell.lblPriceDetailChangeCapt.text = "平"
             }
