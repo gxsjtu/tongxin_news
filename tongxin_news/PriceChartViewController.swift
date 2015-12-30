@@ -17,7 +17,7 @@ class PriceChartViewController: UIViewController, ChartDelegate {
     @IBOutlet weak var navChart: UINavigationBar!
     var navTitle = "未知"
         //low, high, date, change
-    var history = [(String, String, String, String)]()
+    var history = [(String, String, String, String, String)]()
     
     var low = [Float]()
     var high = [Float]()
@@ -44,7 +44,7 @@ class PriceChartViewController: UIViewController, ChartDelegate {
         // Do any additional setup after loading the view.
         self.navChart.topItem?.title = navTitle
         
-        for (l, h, d, _): (String, String, String, String) in Array(history.reverse())
+        for (l, h, d, _, _): (String, String, String, String, String) in Array(history.reverse())
         {
             low.append((l as NSString).floatValue)
             high.append((h as NSString).floatValue)

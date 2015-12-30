@@ -27,8 +27,8 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
     var start = NSDate().dateByAddingTimeInterval(-24 * 60 * 60 * PriceChartInterval)
     let formatter = NSDateFormatter()
     
-    //low, high, date, change
-    var history = [(String, String, String, String)]()
+    //low, high, date, change, AVERAGE
+    var history = [(String, String, String, String, String)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,7 +78,8 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
                             {
                                 if let i = item.dictionary
                                 {
-                                    self.history.append((i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue))
+                                    let average = (Double(i["HPrice"]!.stringValue)! + Double(i["LPrice"]!.stringValue)!) / 2
+                                    self.history.append((i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue, String(average)))
                                 }
                             }
                             self.tvPriceHistory.reloadData()
@@ -106,8 +107,9 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
         let cell = tableView.dequeueReusableCellWithIdentifier("PriceHistoryCell", forIndexPath: indexPath) as! PriceHistoryTableViewCell
         
         cell.lblPriceHistoryDate.text = history[indexPath.row].2
-        cell.lblPriceHistoryLow.text = history[indexPath.row].0
-        cell.lblPriceHistoryHigh.text = history[indexPath.row].1
+        cell.lblPriceHistoryLow.text = "最低 " + history[indexPath.row].0
+        cell.lblPriceHistoryHigh.text = "最高 " + history[indexPath.row].1
+        cell.lblAvergae.text = "均价 " + history[indexPath.row].4
         
         if history[indexPath.row].3 == ""
         {
