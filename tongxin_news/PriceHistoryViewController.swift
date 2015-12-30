@@ -10,6 +10,7 @@ import UIKit
 
 class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var lblOverallAvg: UILabel!
     @IBOutlet weak var barBtnChart: UIBarButtonItem!
     @IBOutlet weak var tvPriceHistory: UITableView!
     @IBOutlet weak var navPriceHistory: UINavigationBar!
@@ -74,14 +75,17 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
                         if let res = JSON(data).array
                         {
                             self.history.removeAll(keepCapacity: true)
+                            var overall = 0.0
                             for item in res
                             {
                                 if let i = item.dictionary
                                 {
                                     let average = (Double(i["HPrice"]!.stringValue)! + Double(i["LPrice"]!.stringValue)!) / 2
-                                    self.history.append((i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue, String(average)))
+                                    self.history.append((i["LPrice"]!.stringValue, i["HPrice"]!.stringValue, i["Date"]!.stringValue, i["Change"]!.stringValue, (NSString(format: "%.2f", average) as String)))
+                                    overall += average
                                 }
                             }
+                            self.lblOverallAvg.text = "均价 " + ((NSString(format: "%.2f", overall / Double(res.count))) as String)
                             self.tvPriceHistory.reloadData()
 
                             self.barBtnChart.enabled = (self.history.count > 0)
