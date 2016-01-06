@@ -10,6 +10,7 @@ import UIKit
 
 class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var vDate: UIView!
     @IBOutlet weak var lblOverallAvg: UILabel!
     @IBOutlet weak var barBtnChart: UIBarButtonItem!
     @IBOutlet weak var tvPriceHistory: UITableView!
@@ -35,11 +36,9 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.dpPriceHistory.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
-        self.toolbarPriceHistory.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+        self.vDate.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
+        self.vDate.hidden = true
         self.vContainer.backgroundColor = UIColor(red: 238/255, green: 238/255, blue: 238/255, alpha: 1.0)
-        self.toolbarPriceHistory.hidden = true
-        self.dpPriceHistory.hidden = true
         self.txtPriceHistoryEnd.delegate = self
         self.txtPriceHistoryStart.delegate = self
         self.navPriceHistory.topItem?.title = navTitle
@@ -157,8 +156,7 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
     }
 
     @IBAction func btnPriceHistoryQuery(sender: AnyObject) {
-        self.toolbarPriceHistory.hidden = true
-        self.dpPriceHistory.hidden = true
+        self.vDate.hidden = true
         
         if start.compare(end) == NSComparisonResult.OrderedDescending
         {
@@ -177,23 +175,17 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
     }
     
     @IBAction func btnPriceHistoryStartTouchDown(sender: AnyObject) {
-        self.toolbarPriceHistory.hidden = false
-        self.dpPriceHistory.hidden = false
-        self.dpPriceHistory.frame.size = CGSize(width: self.view.frame.width, height: 0)
-        UIView.animateWithDuration(1, animations: {() -> Void in
-            self.dpPriceHistory.frame.size = CGSize(width: self.view.frame.width, height: 200)},
-            completion: nil)
-        self.dpPriceHistory.date = formatter.dateFromString(self.txtPriceHistoryStart.text!)!
+        UIView.transitionWithView(self.vDate, duration: 1, options: .TransitionCurlUp, animations: {() -> Void in
+                    self.vDate.hidden = false
+                    self.dpPriceHistory.date = self.formatter.dateFromString(self.txtPriceHistoryStart.text!)!
+            }, completion: nil)
     }
     
     @IBAction func btnPriceHistoryEndTouchDown(sender: AnyObject) {
-        self.toolbarPriceHistory.hidden = false
-        self.dpPriceHistory.hidden = false
-        self.dpPriceHistory.frame.size = CGSize(width: self.view.frame.width, height: 0)
-        UIView.animateWithDuration(1, animations: {() -> Void in
-            self.dpPriceHistory.frame.size = CGSize(width: self.view.frame.width, height: 200)},
-            completion: nil)
-        self.dpPriceHistory.date = formatter.dateFromString(self.txtPriceHistoryEnd.text!)!
+        UIView.transitionWithView(self.vDate, duration: 1, options: .TransitionCurlUp, animations: {() -> Void in
+            self.vDate.hidden = false
+            self.dpPriceHistory.date = self.formatter.dateFromString(self.txtPriceHistoryEnd.text!)!
+            }, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
@@ -202,8 +194,7 @@ class PriceHistoryViewController: UIViewController, UITextFieldDelegate, UITable
     }
     
     @IBAction func btnDateConfirmClicked(sender: AnyObject) {
-        self.toolbarPriceHistory.hidden = true
-        self.dpPriceHistory.hidden = true
+        self.vDate.hidden = true
 
         let selectedDate = formatter.stringFromDate(self.dpPriceHistory.date)
         if whichTxtSelected == 1

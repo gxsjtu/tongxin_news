@@ -1127,30 +1127,6 @@
                                     <outlet property="delegate" destination="ktW-bq-n8X" id="nG8-eg-5JE"/>
                                 </connections>
                             </tableView>
-                            <datePicker opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pBJ-mB-7c3">
-                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
-                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="2Ch-gc-dU9"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="462420821.25278097">
-                                    <!--2015-08-28 02:13:41 +0000-->
-                                </date>
-                            </datePicker>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Yw-C8-Ogx">
-                                <rect key="frame" x="0.0" y="423" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="9vd-2S-SR9"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Mio-aG-dq3"/>
-                                    <barButtonItem title="确定" id="8g8-jd-Wcg">
-                                        <connections>
-                                            <action selector="btnDateConfirmClicked:" destination="ktW-bq-n8X" id="MjU-Rc-SPm"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPe-TM-00d">
                                 <rect key="frame" x="-4" y="64" width="383" height="86"/>
                                 <subviews>
@@ -1252,26 +1228,60 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKy-YL-F7q">
+                                <rect key="frame" x="0.0" y="423" width="375" height="244"/>
+                                <subviews>
+                                    <datePicker opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="pBJ-mB-7c3">
+                                        <rect key="frame" x="0.0" y="44" width="375" height="200"/>
+                                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="2Ch-gc-dU9"/>
+                                        </constraints>
+                                        <date key="date" timeIntervalSinceReferenceDate="462420821.25278097">
+                                            <!--2015-08-28 02:13:41 +0000-->
+                                        </date>
+                                    </datePicker>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Yw-C8-Ogx">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                        <items>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="Mio-aG-dq3"/>
+                                            <barButtonItem title="确定" id="8g8-jd-Wcg">
+                                                <connections>
+                                                    <action selector="btnDateConfirmClicked:" destination="ktW-bq-n8X" id="MjU-Rc-SPm"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="4Yw-C8-Ogx" firstAttribute="leading" secondItem="mKy-YL-F7q" secondAttribute="leadingMargin" constant="-8" id="1vo-fL-Oql"/>
+                                    <constraint firstItem="pBJ-mB-7c3" firstAttribute="leading" secondItem="mKy-YL-F7q" secondAttribute="leadingMargin" constant="-8" id="2WK-hF-s0w"/>
+                                    <constraint firstItem="4Yw-C8-Ogx" firstAttribute="top" secondItem="mKy-YL-F7q" secondAttribute="topMargin" constant="-8" id="3o5-bT-sTj"/>
+                                    <constraint firstItem="pBJ-mB-7c3" firstAttribute="top" secondItem="4Yw-C8-Ogx" secondAttribute="bottom" id="N61-hn-De7"/>
+                                    <constraint firstAttribute="height" constant="244" id="cm9-kv-hMB"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="pBJ-mB-7c3" secondAttribute="trailing" constant="-8" id="eIJ-rw-15L"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="4Yw-C8-Ogx" secondAttribute="trailing" constant="-8" id="eMx-Zk-oAS"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="pBJ-mB-7c3" secondAttribute="bottom" constant="-8" id="lsy-7v-ORo"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="RwY-oV-dSn" secondAttribute="trailing" id="15O-Fh-pbo"/>
                             <constraint firstItem="RwY-oV-dSn" firstAttribute="top" secondItem="kJS-Ea-8rc" secondAttribute="bottom" id="4KU-eA-Df3"/>
                             <constraint firstAttribute="topMargin" secondItem="JZk-YG-rHL" secondAttribute="top" id="7kp-He-TTA"/>
-                            <constraint firstItem="pBJ-mB-7c3" firstAttribute="top" secondItem="4Yw-C8-Ogx" secondAttribute="bottom" id="Bfh-F9-s83"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="mKy-YL-F7q" secondAttribute="bottom" id="GVF-PD-tL2"/>
                             <constraint firstAttribute="bottomMargin" secondItem="RwY-oV-dSn" secondAttribute="bottom" id="HfW-Uo-gkb"/>
                             <constraint firstItem="RwY-oV-dSn" firstAttribute="leading" secondItem="vUC-x4-siF" secondAttribute="leading" id="KoU-xa-KVQ"/>
                             <constraint firstAttribute="trailing" secondItem="JZk-YG-rHL" secondAttribute="trailing" id="LKL-Rm-9PL"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="pBJ-mB-7c3" secondAttribute="bottom" id="MgO-gd-HYT"/>
                             <constraint firstItem="kJS-Ea-8rc" firstAttribute="top" secondItem="KPe-TM-00d" secondAttribute="bottom" id="Os9-hs-62k"/>
+                            <constraint firstItem="mKy-YL-F7q" firstAttribute="leading" secondItem="vUC-x4-siF" secondAttribute="leading" id="YLw-ek-AqN"/>
                             <constraint firstItem="kJS-Ea-8rc" firstAttribute="leading" secondItem="vUC-x4-siF" secondAttribute="leading" id="YW4-7k-Mz1"/>
                             <constraint firstAttribute="trailing" secondItem="KPe-TM-00d" secondAttribute="trailing" constant="-4" id="YZD-JV-iLL"/>
                             <constraint firstItem="JZk-YG-rHL" firstAttribute="leading" secondItem="vUC-x4-siF" secondAttribute="leading" id="anr-A8-YVc"/>
                             <constraint firstAttribute="trailing" secondItem="kJS-Ea-8rc" secondAttribute="trailing" id="bdF-Tp-F2W"/>
-                            <constraint firstItem="pBJ-mB-7c3" firstAttribute="leading" secondItem="vUC-x4-siF" secondAttribute="leading" id="coQ-LL-dGf"/>
-                            <constraint firstAttribute="trailing" secondItem="4Yw-C8-Ogx" secondAttribute="trailing" id="gAt-ES-mxc"/>
-                            <constraint firstItem="4Yw-C8-Ogx" firstAttribute="leading" secondItem="vUC-x4-siF" secondAttribute="leading" id="pAd-pr-51l"/>
-                            <constraint firstAttribute="trailing" secondItem="pBJ-mB-7c3" secondAttribute="trailing" id="tRw-24-GWQ"/>
+                            <constraint firstAttribute="trailing" secondItem="mKy-YL-F7q" secondAttribute="trailing" id="bqa-N4-UFQ"/>
                             <constraint firstItem="KPe-TM-00d" firstAttribute="top" secondItem="JZk-YG-rHL" secondAttribute="bottom" id="x7Y-j7-ZnQ"/>
                             <constraint firstItem="KPe-TM-00d" firstAttribute="leading" secondItem="vUC-x4-siF" secondAttribute="leading" constant="-4" id="zg4-66-4Iz"/>
                         </constraints>
@@ -1290,6 +1300,7 @@
                         <outlet property="txtPriceHistoryEnd" destination="C7b-Sn-MRd" id="AG5-Nh-I0i"/>
                         <outlet property="txtPriceHistoryStart" destination="pP3-sJ-IGd" id="KOL-XN-6MI"/>
                         <outlet property="vContainer" destination="KPe-TM-00d" id="t0f-Uo-k2X"/>
+                        <outlet property="vDate" destination="mKy-YL-F7q" id="Vmb-LO-CJj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="877-D3-u5f" userLabel="First Responder" sceneMemberID="firstResponder"/>

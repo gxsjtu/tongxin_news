@@ -184,5 +184,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
            NSNotificationCenter.defaultCenter().postNotificationName("Badge", object: nil, userInfo: userInfo)
         }
     }
+    
+    func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
+        return true
+    }
 }
 

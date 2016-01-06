@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tongxin_news/PriceHistoryViewController.swift"
-            timestampString = "473146431.30965"
+            timestampString = "473153852.330254"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
             landmarkName = "btnPriceHistoryStartTouchDown(_:)"
             landmarkType = "5">
          </BreakpointContent>
