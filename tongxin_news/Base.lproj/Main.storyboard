@@ -732,7 +732,7 @@
                                             <outlet property="lblCommentDetailTitle" destination="0lj-jc-CYr" id="9zC-Hg-o1j"/>
                                             <outlet property="lblCommentDetailUrl" destination="lr9-yK-tLd" id="eQP-zO-khO"/>
                                             <outlet property="lblCommentProductId" destination="8uy-Gf-xsK" id="P7d-L3-1gD"/>
-                                            <segue destination="zyf-UU-29u" kind="modal" identifier="CommentDetail2CommentContent" id="EW3-2M-Cha"/>
+                                            <segue destination="HxM-A0-bGR" kind="modal" identifier="CommentDetail2CommentContent" id="cyK-wL-fDm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -763,64 +763,6 @@
                 <exit id="Smj-sN-SPc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="759" y="-121"/>
-        </scene>
-        <!--Comment Content View Controller-->
-        <scene sceneID="Na4-ac-3pm">
-            <objects>
-                <viewController id="zyf-UU-29u" customClass="CommentContentViewController" customModule="同鑫资讯" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YtI-K7-QSb"/>
-                        <viewControllerLayoutGuide type="bottom" id="8nX-Xc-4oM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BpB-Kr-MIL">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyi-7L-I14">
-                                <rect key="frame" x="-4" y="0.0" width="328" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="Jn3-Dn-3YI"/>
-                                </constraints>
-                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Title" id="BtA-MG-aAn">
-                                        <barButtonItem key="leftBarButtonItem" image="back" id="lGM-QJ-7Vj">
-                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <segue destination="eqw-fr-jJz" kind="unwind" unwindAction="commentContent2CommentDetail:" id="xic-ii-G4D"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BMc-R5-r5M">
-                                <rect key="frame" x="-4" y="64" width="328" height="504"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="BMc-R5-r5M" firstAttribute="leading" secondItem="BpB-Kr-MIL" secondAttribute="leadingMargin" constant="-20" id="07Z-ri-9Pz"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BMc-R5-r5M" secondAttribute="trailing" constant="-20" id="G0f-5d-EXT"/>
-                            <constraint firstItem="BMc-R5-r5M" firstAttribute="top" secondItem="Nyi-7L-I14" secondAttribute="top" constant="64" id="KUj-EN-WdB"/>
-                            <constraint firstItem="Nyi-7L-I14" firstAttribute="top" secondItem="YtI-K7-QSb" secondAttribute="bottom" constant="-20" id="dls-QV-Vir"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Nyi-7L-I14" secondAttribute="trailing" constant="-20" id="gpK-aT-e6a"/>
-                            <constraint firstItem="Nyi-7L-I14" firstAttribute="leading" secondItem="BpB-Kr-MIL" secondAttribute="leadingMargin" constant="-20" id="luQ-af-yAM"/>
-                            <constraint firstItem="8nX-Xc-4oM" firstAttribute="top" secondItem="BMc-R5-r5M" secondAttribute="bottom" id="oe8-W5-pxg"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="navCommentContent" destination="Nyi-7L-I14" id="YI9-vc-PKK"/>
-                        <outlet property="wvCommentContent" destination="BMc-R5-r5M" id="gi2-bh-7wX"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SiN-EG-FOk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="eqw-fr-jJz" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="1241" y="-121"/>
         </scene>
         <!--Price Detail View Controller-->
         <scene sceneID="876-yt-7fG">
@@ -2821,7 +2763,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="64" id="w0F-Ao-OzV"/>
                                 </constraints>
-                                <color key="barTintColor" red="0.13632562756538391" green="0.74459058046340942" blue="0.9486200213432312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.13725490196078433" green="0.74509803921568629" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <textAttributes key="titleTextAttributes">
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </textAttributes>
@@ -2866,7 +2808,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V5H-OY-1Yd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Iqs-4M-HjL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-451" y="2347"/>
+            <point key="canvasLocation" x="1340" y="-89"/>
         </scene>
         <!--添加供需时的catalog选择-->
         <scene sceneID="Yly-nd-5hp">
@@ -3631,6 +3573,7 @@
         <image name="铁矿石" width="90" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="cyK-wL-fDm"/>
         <segue reference="0TJ-Gr-WZB"/>
     </inferredMetricsTieBreakers>
 </document>
