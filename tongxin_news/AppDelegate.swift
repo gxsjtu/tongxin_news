@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
 
     var window: UIWindow?
     var manager: Manager?
@@ -19,6 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
 //        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: UIUserNotificationType.Sound |
 //            UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
+        
+        WXApi.registerApp("wx111043bb4959dc1e")
+        
         UITabBar.appearance().tintColor = UIColor(red: 36/255, green: 190/255, blue: 242/255, alpha: 1.0)
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         manager = Manager(configuration: configuration)
@@ -185,8 +188,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
+        return WXApi.handleOpenURL(url, delegate: self)
+    }
+    
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        return true
+        return WXApi.handleOpenURL(url, delegate: self)
     }
 }
 

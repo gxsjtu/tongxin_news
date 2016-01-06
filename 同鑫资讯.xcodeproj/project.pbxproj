@@ -82,10 +82,17 @@
 		35B278991B8FFEFD00FA2399 /* PriceHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278981B8FFEFD00FA2399 /* PriceHistoryViewController.swift */; };
 		35B2789B1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B2789A1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift */; };
 		35B278B61B9045F600FA2399 /* PriceChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278B51B9045F600FA2399 /* PriceChartViewController.swift */; };
+		35B35B5A1C3CBD8200D040AA /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B35B591C3CBD8200D040AA /* KxMenu.m */; };
+		35B35B5D1C3CE11C00D040AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35B35B5C1C3CE11C00D040AA /* Images.xcassets */; };
+		35B35B671C3CED8000D040AA /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B35B631C3CED8000D040AA /* libWeChatSDK.a */; };
+		35B35B6A1C3CF2DC00D040AA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B35B691C3CF2DC00D040AA /* SystemConfiguration.framework */; };
+		35B35B6C1C3CF30000D040AA /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B35B6B1C3CF30000D040AA /* libsqlite3.0.tbd */; };
+		35B35B6E1C3CF32A00D040AA /* libz.1.2.5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B35B6D1C3CF32A00D040AA /* libz.1.2.5.tbd */; };
+		35B35B701C3CF33A00D040AA /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B35B6F1C3CF33A00D040AA /* libc++.tbd */; };
+		35B35B721C3CF47400D040AA /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B35B711C3CF47400D040AA /* CoreTelephony.framework */; };
 		35BB22591BD4E8BB00A01E36 /* UserSettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB22581BD4E8BB00A01E36 /* UserSettingTableViewController.swift */; };
 		35BB225B1BD5D53A00A01E36 /* MyFocusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BB225A1BD5D53A00A01E36 /* MyFocusViewController.swift */; };
 		35C712181B8595B3004B267A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712171B8595B3004B267A /* AppDelegate.swift */; };
-		35C7121F1B8595B3004B267A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35C7121E1B8595B3004B267A /* Images.xcassets */; };
 		35C712411B85C0BE004B267A /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C712401B85C0BE004B267A /* LogInViewController.swift */; };
 		35C712651B86AEE9004B267A /* SKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712621B86AEE9004B267A /* SKAlertView.m */; };
 		35C712661B86AEE9004B267A /* SKTipAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35C712641B86AEE9004B267A /* SKTipAlertView.m */; };
@@ -219,12 +226,23 @@
 		35B278981B8FFEFD00FA2399 /* PriceHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceHistoryViewController.swift; sourceTree = "<group>"; };
 		35B2789A1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		35B278B51B9045F600FA2399 /* PriceChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceChartViewController.swift; sourceTree = "<group>"; };
+		35B35B581C3CBD8200D040AA /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KxMenu.h; path = "/Users/guoxuan/Downloads/kxmenu-master/Source/KxMenu.h"; sourceTree = "<absolute>"; };
+		35B35B591C3CBD8200D040AA /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KxMenu.m; path = "/Users/guoxuan/Downloads/kxmenu-master/Source/KxMenu.m"; sourceTree = "<absolute>"; };
+		35B35B5C1C3CE11C00D040AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		35B35B631C3CED8000D040AA /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
+		35B35B641C3CED8000D040AA /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
+		35B35B651C3CED8000D040AA /* WXApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApi.h; sourceTree = "<group>"; };
+		35B35B661C3CED8000D040AA /* WXApiObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXApiObject.h; sourceTree = "<group>"; };
+		35B35B691C3CF2DC00D040AA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		35B35B6B1C3CF30000D040AA /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		35B35B6D1C3CF32A00D040AA /* libz.1.2.5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.2.5.tbd; path = usr/lib/libz.1.2.5.tbd; sourceTree = SDKROOT; };
+		35B35B6F1C3CF33A00D040AA /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		35B35B711C3CF47400D040AA /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		35BB22581BD4E8BB00A01E36 /* UserSettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSettingTableViewController.swift; sourceTree = "<group>"; };
 		35BB225A1BD5D53A00A01E36 /* MyFocusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyFocusViewController.swift; sourceTree = "<group>"; };
 		35C712121B8595B3004B267A /* 同鑫资讯.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "同鑫资讯.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		35C712161B8595B3004B267A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35C712171B8595B3004B267A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = tongxin_news/AppDelegate.swift; sourceTree = "<group>"; };
-		35C7121E1B8595B3004B267A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = tongxin_news/Images.xcassets; sourceTree = "<group>"; };
 		35C712401B85C0BE004B267A /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		35C712601B86AEE8004B267A /* tongxin_news-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "tongxin_news-Bridging-Header.h"; path = "tongxin_news/tongxin_news-Bridging-Header.h"; sourceTree = "<group>"; };
 		35C712611B86AEE9004B267A /* SKAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKAlertView.h; sourceTree = "<group>"; };
@@ -277,6 +295,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35B35B721C3CF47400D040AA /* CoreTelephony.framework in Frameworks */,
+				35B35B701C3CF33A00D040AA /* libc++.tbd in Frameworks */,
+				35B35B6E1C3CF32A00D040AA /* libz.1.2.5.tbd in Frameworks */,
+				35B35B6C1C3CF30000D040AA /* libsqlite3.0.tbd in Frameworks */,
+				35B35B6A1C3CF2DC00D040AA /* SystemConfiguration.framework in Frameworks */,
+				35B35B671C3CED8000D040AA /* libWeChatSDK.a in Frameworks */,
 				6A5A9A38291781ECC7B74551 /* Pods_tongxin_news.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -479,11 +503,30 @@
 			name = "UITextView-Placeholder";
 			sourceTree = "<group>";
 		};
+		35B35B5B1C3CBD8700D040AA /* KxMenu */ = {
+			isa = PBXGroup;
+			children = (
+				35B35B581C3CBD8200D040AA /* KxMenu.h */,
+				35B35B591C3CBD8200D040AA /* KxMenu.m */,
+			);
+			name = KxMenu;
+			sourceTree = "<group>";
+		};
+		35B35B681C3CED8400D040AA /* Wechat */ = {
+			isa = PBXGroup;
+			children = (
+				35B35B631C3CED8000D040AA /* libWeChatSDK.a */,
+				35B35B641C3CED8000D040AA /* WechatAuthSDK.h */,
+				35B35B651C3CED8000D040AA /* WXApi.h */,
+				35B35B661C3CED8000D040AA /* WXApiObject.h */,
+			);
+			name = Wechat;
+			sourceTree = "<group>";
+		};
 		35C712091B8595B3004B267A = {
 			isa = PBXGroup;
 			children = (
 				35C712141B8595B3004B267A /* tongxin_news */,
-				35C7121E1B8595B3004B267A /* Images.xcassets */,
 				35C712171B8595B3004B267A /* AppDelegate.swift */,
 				35B2783C1B8D94AB00FA2399 /* Main.storyboard */,
 				35C712601B86AEE8004B267A /* tongxin_news-Bridging-Header.h */,
@@ -508,6 +551,9 @@
 		35C712141B8595B3004B267A /* tongxin_news */ = {
 			isa = PBXGroup;
 			children = (
+				35B35B681C3CED8400D040AA /* Wechat */,
+				35B35B5C1C3CE11C00D040AA /* Images.xcassets */,
+				35B35B5B1C3CBD8700D040AA /* KxMenu */,
 				35DC3D111C102F900027E680 /* SwiftDate */,
 				35B1F23A1BCCB90400AA9F38 /* UITextView-Placeholder */,
 				35EF0F071BB393A200F99399 /* SWTableViewCell */,
@@ -640,6 +686,11 @@
 		50AD9827BCBE034E73ED9A81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				35B35B711C3CF47400D040AA /* CoreTelephony.framework */,
+				35B35B6F1C3CF33A00D040AA /* libc++.tbd */,
+				35B35B6D1C3CF32A00D040AA /* libz.1.2.5.tbd */,
+				35B35B6B1C3CF30000D040AA /* libsqlite3.0.tbd */,
+				35B35B691C3CF2DC00D040AA /* SystemConfiguration.framework */,
 				BA7519CFC329B2A12FB04D9A /* Pods_tongxin_news.framework */,
 			);
 			name = Frameworks;
@@ -725,8 +776,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35C7121F1B8595B3004B267A /* Images.xcassets in Resources */,
 				356ECDD41C2B87E100DA5DB9 /* ChannelLayer4Prices.storyboard in Resources */,
+				35B35B5D1C3CE11C00D040AA /* Images.xcassets in Resources */,
 				35B2783E1B8D94AB00FA2399 /* Main.storyboard in Resources */,
 				358700781B9E78BC00B09351 /* ProvincesAndCities.plist in Resources */,
 				35DC5E641BA94F700000FA22 /* TSLocateView.xib in Resources */,
@@ -855,6 +906,7 @@
 				358700701B9D8C3C00B09351 /* DLRadioButton.m in Sources */,
 				35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */,
 				356803991BA0304600BB50AE /* UIImageView+WebCache.m in Sources */,
+				35B35B5A1C3CBD8200D040AA /* KxMenu.m in Sources */,
 				35B278641B8EA2FD00FA2399 /* CommentContentViewController.swift in Sources */,
 				3543C9D11C2BBAD60045A97B /* ChannelCell4Prices.swift in Sources */,
 				35EF0F191BB394D300F99399 /* SWUtilityButtonView.m in Sources */,
@@ -1009,6 +1061,10 @@
 				INFOPLIST_FILE = tongxin_news/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/tongxin_news",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tongxin.info;
 				PRODUCT_NAME = "同鑫资讯";
 				PROVISIONING_PROFILE = "";
@@ -1031,6 +1087,10 @@
 				INFOPLIST_FILE = tongxin_news/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/tongxin_news",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tongxin.info;
 				PRODUCT_NAME = "同鑫资讯";
 				PROVISIONING_PROFILE = "";
