@@ -43,6 +43,12 @@ class CommentContentViewController: UIViewController, UIWebViewDelegate {
     
     func Share2Others(id: AnyObject)
     {
+        //处理URL 去掉里面的电话号码
+        var range = self.url.rangeOfString("mobile=")
+        range?.startIndex = (range?.startIndex.advancedBy(7))!
+        range?.endIndex = (range?.endIndex.advancedBy(11))!
+        self.url = self.url.stringByReplacingCharactersInRange(range!, withString: "")
+        
         let message = WXMediaMessage()
         message.title = self.wxTitle
         if self.thumbnail != nil
