@@ -64,6 +64,9 @@
 		3587007F1B9EA4A000B09351 /* KASlideShow.m in Sources */ = {isa = PBXBuildFile; fileRef = 3587007E1B9EA4A000B09351 /* KASlideShow.m */; };
 		358700811B9EBCD100B09351 /* ChannelVCTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358700801B9EBCD100B09351 /* ChannelVCTableViewCell.swift */; };
 		358700831B9FE86200B09351 /* ChannelItemDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358700821B9FE86200B09351 /* ChannelItemDetailViewController.swift */; };
+		359C032C1C3DF17A00A29282 /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 359C032B1C3DF17A00A29282 /* KxMenu.m */; };
+		359C03371C3DFFBC00A29282 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 359C03361C3DFFBC00A29282 /* TencentOpenAPI.framework */; };
+		359C03391C3DFFEB00A29282 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 359C03381C3DFFEB00A29282 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		35AC87581B8AB15900B44C7E /* MJRefreshBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */; };
 		35AC87591B8AB15900B44C7E /* MJRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874D1B8AB15900B44C7E /* MJRefreshConst.m */; };
 		35AC875A1B8AB15900B44C7E /* MJRefreshFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35AC874F1B8AB15900B44C7E /* MJRefreshFooterView.m */; };
@@ -82,7 +85,6 @@
 		35B278991B8FFEFD00FA2399 /* PriceHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278981B8FFEFD00FA2399 /* PriceHistoryViewController.swift */; };
 		35B2789B1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B2789A1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift */; };
 		35B278B61B9045F600FA2399 /* PriceChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B278B51B9045F600FA2399 /* PriceChartViewController.swift */; };
-		35B35B5A1C3CBD8200D040AA /* KxMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 35B35B591C3CBD8200D040AA /* KxMenu.m */; };
 		35B35B5D1C3CE11C00D040AA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35B35B5C1C3CE11C00D040AA /* Images.xcassets */; };
 		35B35B671C3CED8000D040AA /* libWeChatSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B35B631C3CED8000D040AA /* libWeChatSDK.a */; };
 		35B35B6A1C3CF2DC00D040AA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B35B691C3CF2DC00D040AA /* SystemConfiguration.framework */; };
@@ -118,7 +120,7 @@
 		35EF0F181BB394D300F99399 /* SWUtilityButtonTapGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF0F111BB394D300F99399 /* SWUtilityButtonTapGestureRecognizer.m */; };
 		35EF0F191BB394D300F99399 /* SWUtilityButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 35EF0F131BB394D300F99399 /* SWUtilityButtonView.m */; };
 		35F6657D1BB3F18700A3AEDE /* ApplyTrialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F6657C1BB3F18700A3AEDE /* ApplyTrialViewController.swift */; };
-		6A5A9A38291781ECC7B74551 /* Pods_tongxin_news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA7519CFC329B2A12FB04D9A /* Pods_tongxin_news.framework */; };
+		437855CA24CB743CB0374A1B /* Pods_tongxin_news.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF0BBC6C79C45BF133E82B46 /* Pods_tongxin_news.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -199,6 +201,10 @@
 		3587007E1B9EA4A000B09351 /* KASlideShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KASlideShow.m; sourceTree = "<group>"; };
 		358700801B9EBCD100B09351 /* ChannelVCTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelVCTableViewCell.swift; sourceTree = "<group>"; };
 		358700821B9FE86200B09351 /* ChannelItemDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelItemDetailViewController.swift; sourceTree = "<group>"; };
+		359C032A1C3DF17A00A29282 /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KxMenu.h; sourceTree = "<group>"; };
+		359C032B1C3DF17A00A29282 /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KxMenu.m; sourceTree = "<group>"; };
+		359C03361C3DFFBC00A29282 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		359C03381C3DFFEB00A29282 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		35AC87491B8AB15900B44C7E /* MJRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefresh.h; sourceTree = "<group>"; };
 		35AC874A1B8AB15900B44C7E /* MJRefreshBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshBaseView.h; sourceTree = "<group>"; };
 		35AC874B1B8AB15900B44C7E /* MJRefreshBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJRefreshBaseView.m; sourceTree = "<group>"; };
@@ -226,8 +232,6 @@
 		35B278981B8FFEFD00FA2399 /* PriceHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceHistoryViewController.swift; sourceTree = "<group>"; };
 		35B2789A1B9022EA00FA2399 /* PriceHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		35B278B51B9045F600FA2399 /* PriceChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriceChartViewController.swift; sourceTree = "<group>"; };
-		35B35B581C3CBD8200D040AA /* KxMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KxMenu.h; path = "/Users/guoxuan/Downloads/kxmenu-master/Source/KxMenu.h"; sourceTree = "<absolute>"; };
-		35B35B591C3CBD8200D040AA /* KxMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KxMenu.m; path = "/Users/guoxuan/Downloads/kxmenu-master/Source/KxMenu.m"; sourceTree = "<absolute>"; };
 		35B35B5C1C3CE11C00D040AA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		35B35B631C3CED8000D040AA /* libWeChatSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libWeChatSDK.a; sourceTree = "<group>"; };
 		35B35B641C3CED8000D040AA /* WechatAuthSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WechatAuthSDK.h; sourceTree = "<group>"; };
@@ -285,9 +289,9 @@
 		35EF0F121BB394D300F99399 /* SWUtilityButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWUtilityButtonView.h; sourceTree = "<group>"; };
 		35EF0F131BB394D300F99399 /* SWUtilityButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWUtilityButtonView.m; sourceTree = "<group>"; };
 		35F6657C1BB3F18700A3AEDE /* ApplyTrialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplyTrialViewController.swift; sourceTree = "<group>"; };
-		7A1819621FEC93D8CB2FD3EB /* Pods-tongxin_news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tongxin_news.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tongxin_news/Pods-tongxin_news.debug.xcconfig"; sourceTree = "<group>"; };
-		87C0E35C5000495A304FFDBE /* Pods-tongxin_news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tongxin_news.release.xcconfig"; path = "Pods/Target Support Files/Pods-tongxin_news/Pods-tongxin_news.release.xcconfig"; sourceTree = "<group>"; };
-		BA7519CFC329B2A12FB04D9A /* Pods_tongxin_news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tongxin_news.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		995DED1071589B34C801F909 /* Pods-tongxin_news.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tongxin_news.debug.xcconfig"; path = "Pods/Target Support Files/Pods-tongxin_news/Pods-tongxin_news.debug.xcconfig"; sourceTree = "<group>"; };
+		C7BDC6C294708964F972ACB7 /* Pods-tongxin_news.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-tongxin_news.release.xcconfig"; path = "Pods/Target Support Files/Pods-tongxin_news/Pods-tongxin_news.release.xcconfig"; sourceTree = "<group>"; };
+		CF0BBC6C79C45BF133E82B46 /* Pods_tongxin_news.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_tongxin_news.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,18 +300,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				35B35B721C3CF47400D040AA /* CoreTelephony.framework in Frameworks */,
+				359C03371C3DFFBC00A29282 /* TencentOpenAPI.framework in Frameworks */,
 				35B35B701C3CF33A00D040AA /* libc++.tbd in Frameworks */,
 				35B35B6E1C3CF32A00D040AA /* libz.1.2.5.tbd in Frameworks */,
 				35B35B6C1C3CF30000D040AA /* libsqlite3.0.tbd in Frameworks */,
 				35B35B6A1C3CF2DC00D040AA /* SystemConfiguration.framework in Frameworks */,
 				35B35B671C3CED8000D040AA /* libWeChatSDK.a in Frameworks */,
-				6A5A9A38291781ECC7B74551 /* Pods_tongxin_news.framework in Frameworks */,
+				437855CA24CB743CB0374A1B /* Pods_tongxin_news.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A5A6AD12FA94469F3B1586E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				995DED1071589B34C801F909 /* Pods-tongxin_news.debug.xcconfig */,
+				C7BDC6C294708964F972ACB7 /* Pods-tongxin_news.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		3515CB1D1B94366700EC54D7 /* SwiftChart */ = {
 			isa = PBXGroup;
 			children = (
@@ -506,8 +520,8 @@
 		35B35B5B1C3CBD8700D040AA /* KxMenu */ = {
 			isa = PBXGroup;
 			children = (
-				35B35B581C3CBD8200D040AA /* KxMenu.h */,
-				35B35B591C3CBD8200D040AA /* KxMenu.m */,
+				359C032A1C3DF17A00A29282 /* KxMenu.h */,
+				359C032B1C3DF17A00A29282 /* KxMenu.m */,
 			);
 			name = KxMenu;
 			sourceTree = "<group>";
@@ -526,6 +540,7 @@
 		35C712091B8595B3004B267A = {
 			isa = PBXGroup;
 			children = (
+				359C03381C3DFFEB00A29282 /* TencentOpenApi_IOS_Bundle.bundle */,
 				35C712141B8595B3004B267A /* tongxin_news */,
 				35C712171B8595B3004B267A /* AppDelegate.swift */,
 				35B2783C1B8D94AB00FA2399 /* Main.storyboard */,
@@ -534,8 +549,8 @@
 				35C712811B86B126004B267A /* HomeTabBarViewController.swift */,
 				35E3E8511BA6B3BC0009E8DD /* FuturesViewController.swift */,
 				35E3E8531BA6C3750009E8DD /* Parameter.swift */,
-				DCB39FD3FEE17F75D6F282C6 /* Pods */,
 				50AD9827BCBE034E73ED9A81 /* Frameworks */,
+				0A5A6AD12FA94469F3B1586E /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -686,23 +701,15 @@
 		50AD9827BCBE034E73ED9A81 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				359C03361C3DFFBC00A29282 /* TencentOpenAPI.framework */,
 				35B35B711C3CF47400D040AA /* CoreTelephony.framework */,
 				35B35B6F1C3CF33A00D040AA /* libc++.tbd */,
 				35B35B6D1C3CF32A00D040AA /* libz.1.2.5.tbd */,
 				35B35B6B1C3CF30000D040AA /* libsqlite3.0.tbd */,
 				35B35B691C3CF2DC00D040AA /* SystemConfiguration.framework */,
-				BA7519CFC329B2A12FB04D9A /* Pods_tongxin_news.framework */,
+				CF0BBC6C79C45BF133E82B46 /* Pods_tongxin_news.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		DCB39FD3FEE17F75D6F282C6 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7A1819621FEC93D8CB2FD3EB /* Pods-tongxin_news.debug.xcconfig */,
-				87C0E35C5000495A304FFDBE /* Pods-tongxin_news.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -712,12 +719,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 35C712311B8595B3004B267A /* Build configuration list for PBXNativeTarget "tongxin_news" */;
 			buildPhases = (
-				70BC6B6EC2CC1356A29479B6 /* Check Pods Manifest.lock */,
+				080AFEEF16F1E90F1EC57EA8 /* Check Pods Manifest.lock */,
 				35C7120E1B8595B3004B267A /* Sources */,
 				35C7120F1B8595B3004B267A /* Frameworks */,
 				35C712101B8595B3004B267A /* Resources */,
-				E516DFD90E2D641666127722 /* Embed Pods Frameworks */,
-				62B9BCF59853E82F05658C33 /* Copy Pods Resources */,
+				B2EF978473BD6DE8B3CA2C39 /* Embed Pods Frameworks */,
+				EB7572D44B42B73EC15E8F31 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -776,6 +783,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				359C03391C3DFFEB00A29282 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				356ECDD41C2B87E100DA5DB9 /* ChannelLayer4Prices.storyboard in Resources */,
 				35B35B5D1C3CE11C00D040AA /* Images.xcassets in Resources */,
 				35B2783E1B8D94AB00FA2399 /* Main.storyboard in Resources */,
@@ -787,22 +795,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		62B9BCF59853E82F05658C33 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tongxin_news/Pods-tongxin_news-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		70BC6B6EC2CC1356A29479B6 /* Check Pods Manifest.lock */ = {
+		080AFEEF16F1E90F1EC57EA8 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -817,7 +810,7 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E516DFD90E2D641666127722 /* Embed Pods Frameworks */ = {
+		B2EF978473BD6DE8B3CA2C39 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -830,6 +823,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tongxin_news/Pods-tongxin_news-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB7572D44B42B73EC15E8F31 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-tongxin_news/Pods-tongxin_news-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -906,7 +914,7 @@
 				358700701B9D8C3C00B09351 /* DLRadioButton.m in Sources */,
 				35AC875D1B8AB15900B44C7E /* UIScrollView+MJRefresh.m in Sources */,
 				356803991BA0304600BB50AE /* UIImageView+WebCache.m in Sources */,
-				35B35B5A1C3CBD8200D040AA /* KxMenu.m in Sources */,
+				359C032C1C3DF17A00A29282 /* KxMenu.m in Sources */,
 				35B278641B8EA2FD00FA2399 /* CommentContentViewController.swift in Sources */,
 				3543C9D11C2BBAD60045A97B /* ChannelCell4Prices.swift in Sources */,
 				35EF0F191BB394D300F99399 /* SWUtilityButtonView.m in Sources */,
@@ -1050,7 +1058,7 @@
 		};
 		35C712321B8595B3004B267A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A1819621FEC93D8CB2FD3EB /* Pods-tongxin_news.debug.xcconfig */;
+			baseConfigurationReference = 995DED1071589B34C801F909 /* Pods-tongxin_news.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1058,6 +1066,11 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/tongxin_news",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = tongxin_news/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1076,7 +1089,7 @@
 		};
 		35C712331B8595B3004B267A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 87C0E35C5000495A304FFDBE /* Pods-tongxin_news.release.xcconfig */;
+			baseConfigurationReference = C7BDC6C294708964F972ACB7 /* Pods-tongxin_news.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -1084,6 +1097,11 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/tongxin_news",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = tongxin_news/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var manager: Manager?
@@ -21,12 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
 //            UIUserNotificationType.Alert | UIUserNotificationType.Badge, categories: nil))
         
         WXApi.registerApp("wx111043bb4959dc1e")
+        TencentOAuth.init(appId: "1105025168", andDelegate: nil)
         
         UITabBar.appearance().tintColor = UIColor(red: 36/255, green: 190/255, blue: 242/255, alpha: 1.0)
         let configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         manager = Manager(configuration: configuration)
 
-        
         UIApplication.sharedApplication().registerForRemoteNotifications()
         let userNotificationSettings : UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [UIUserNotificationType.Alert, UIUserNotificationType.Sound, UIUserNotificationType.Badge], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(userNotificationSettings)
@@ -189,11 +189,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, WXApiDelegate {
     }
     
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
-        return WXApi.handleOpenURL(url, delegate: self)
+        return true
     }
     
     func application(app: UIApplication, openURL url: NSURL, options: [String : AnyObject]) -> Bool {
-        return WXApi.handleOpenURL(url, delegate: self)
+        return true
     }
 }
 

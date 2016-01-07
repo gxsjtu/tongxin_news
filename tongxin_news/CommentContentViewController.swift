@@ -24,6 +24,12 @@ class CommentContentViewController: UIViewController, UIWebViewDelegate {
         friends.target = self
         friends.image = UIImage(named: "friends")
         
+        let QQ = KxMenuItem()
+        QQ.title = "分享给QQ好友"
+        QQ.action = Selector("Share2Others:")
+        QQ.target = self
+        QQ.image = UIImage(named: "QQ")
+        
         let refresh = KxMenuItem()
         refresh.title = "刷新"
         refresh.action = Selector("Share2Others:")
@@ -31,7 +37,7 @@ class CommentContentViewController: UIViewController, UIWebViewDelegate {
         refresh.image = UIImage(named: "refresh")
         
         KxMenu.setTintColor(UIColor(red: 35/255, green: 191/255, blue: 242/255, alpha: 1))
-        KxMenu.showMenuInView(self.view, fromRect: ((sender as! UIBarButtonItem).valueForKey("view")?.frame)!, menuItems: [moments, friends, refresh])
+        KxMenu.showMenuInView(self.view, fromRect: ((sender as! UIBarButtonItem).valueForKey("view")?.frame)!, menuItems: [moments, friends, QQ, refresh])
         
     }
     
@@ -66,6 +72,15 @@ class CommentContentViewController: UIViewController, UIWebViewDelegate {
             req.scene = Int32(WXSceneSession.rawValue)
             WXApi.sendReq(req)
         }
+        else if id.title == "分享给QQ好友"
+        {
+            let msg = QQApiNewsObject(URL: NSURL(string: self.url), title: self.wxTitle, description: nil, previewImageURL: NSURL(string: self.thumbnailUrl), targetContentType: QQApiURLTargetTypeNews)
+            
+            let qqReq = SendMessageToQQReq(content: msg)
+            
+            QQApiInterface.sendReq(qqReq)
+            
+        }
         else if id.title == "刷新"
         {
             self.wvCommentContent.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
@@ -74,8 +89,9 @@ class CommentContentViewController: UIViewController, UIWebViewDelegate {
     
     
     var navTitle = "未知"
-    var url = "http://app.shtx.com.cn/statichtml/404.html"
+    var url = "http://api.shtx.com.cn/upload/404.html"
     var thumbnail: UIImage?
+    var thumbnailUrl = "http://api.shtx.com.cn/upload/default.png"
     var wxTitle = ""
 
     @IBOutlet weak var wvCommentContent: UIWebView!

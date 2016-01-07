@@ -18,3 +18,5 @@
 #import "UITextView+Placeholder.h"
 #import "KxMenu.h"
 #import "WXApi.h"
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>

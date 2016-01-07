@@ -99,6 +99,7 @@ class CommentDetailViewController: UIViewController, UITableViewDataSource, UITa
                     des.navTitle = market + " - " + cell.lblCommentDetailName.text!
                     des.url = cell.lblCommentDetailUrl.text!
                     des.thumbnail = cell.imgCommentDetailLogo?.image
+                    des.thumbnailUrl = self.products[(self.tvCommentDetail.indexPathForCell(cell)?.row)!].0
                     des.wxTitle = cell.lblCommentDetailTitle.text!
                 }
             }
