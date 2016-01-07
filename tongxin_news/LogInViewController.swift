@@ -34,7 +34,6 @@ class LogInViewController: UIViewController {
         // Do any additional setup after loading the view.
         imgLogInLogo.image = UIImage(named: "logo")
         btnApplyTrial.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Right
-        
         self.lblMobile.leftView = UIImageView(image: UIImage(named: "mobile"))
         self.lblPassword.leftView = UIImageView(image: UIImage(named: "pwd"))
         self.lblMobile.leftViewMode = UITextFieldViewMode.Always

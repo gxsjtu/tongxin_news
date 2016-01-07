@@ -47,7 +47,7 @@ class CommentContentViewController: UIViewController, UIWebViewDelegate {
         var range = self.url.rangeOfString("mobile=")
         range?.startIndex = (range?.startIndex.advancedBy(7))!
         range?.endIndex = (range?.endIndex.advancedBy(11))!
-        self.url = self.url.stringByReplacingCharactersInRange(range!, withString: "")
+        let url = self.url.stringByReplacingCharactersInRange(range!, withString: "")
         
         let message = WXMediaMessage()
         message.title = self.wxTitle
@@ -61,7 +61,7 @@ class CommentContentViewController: UIViewController, UIWebViewDelegate {
         }
         
         let page = WXWebpageObject()
-        page.webpageUrl = self.url
+        page.webpageUrl = url
         message.mediaObject = page
         
         let req = SendMessageToWXReq()
@@ -80,7 +80,7 @@ class CommentContentViewController: UIViewController, UIWebViewDelegate {
         }
         else if id.title == "分享给QQ好友"
         {
-            let msg = QQApiNewsObject(URL: NSURL(string: self.url), title: self.wxTitle, description: nil, previewImageURL: NSURL(string: self.thumbnailUrl), targetContentType: QQApiURLTargetTypeNews)
+            let msg = QQApiNewsObject(URL: NSURL(string: url), title: self.wxTitle, description: nil, previewImageURL: NSURL(string: self.thumbnailUrl), targetContentType: QQApiURLTargetTypeNews)
             
             let qqReq = SendMessageToQQReq(content: msg)
             
