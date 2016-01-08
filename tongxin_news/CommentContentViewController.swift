@@ -89,7 +89,7 @@ class CommentContentViewController: UIViewController, UIWebViewDelegate {
         }
         else if id.title == "刷新"
         {
-            self.wvCommentContent.loadRequest(NSURLRequest(URL: NSURL(string: url)!))
+            self.wvCommentContent.loadRequest(NSURLRequest(URL: NSURL(string: self.url)!))
         }
     }
     
