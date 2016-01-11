@@ -29,7 +29,6 @@ class UserSettingTableViewController: UITableViewController {
     @IBAction func btnLogout(sender: AnyObject) {
         //点击退出按钮删除存储的登录用户信息
         NSUserDefaults.standardUserDefaults().removeObjectForKey("isLoggedIn")
-        NSUserDefaults.standardUserDefaults().removeObjectForKey("mobile")
         NSUserDefaults.standardUserDefaults().removeObjectForKey("password")
         //转向login页面
         if let loginVC = self.storyboard?.instantiateViewControllerWithIdentifier("LogIn") as? LogInViewController

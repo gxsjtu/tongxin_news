@@ -38,6 +38,11 @@ class LogInViewController: UIViewController {
         self.lblPassword.leftView = UIImageView(image: UIImage(named: "pwd"))
         self.lblMobile.leftViewMode = UITextFieldViewMode.Always
         self.lblPassword.leftViewMode = UITextFieldViewMode.Always
+        
+        if let mobile = NSUserDefaults.standardUserDefaults().stringForKey("mobile")
+        {
+            self.lblMobile.text = mobile
+        }
     }
     
     override func viewDidAppear(animated: Bool) {
