@@ -363,6 +363,8 @@ class InboxViewController : UIViewController, UITableViewDataSource, UITableView
                             self.nowDate = NSDate()//刷新成功后记录当前刷新的时间 如果没数据 为下一次刷新提供上一次刷新时间
                             self.resInfos = self.msgInfos
                             self.tbData.reloadData()
+                            //加载完成后定位到最后一行 
+                            self.tbData.scrollToRowAtIndexPath(NSIndexPath(forRow: self.resInfos.count - 1, inSection: 0),atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
                             self.tbData.footerEndRefreshing()
                             if(self.msgInfos.count > 0)
                             {
